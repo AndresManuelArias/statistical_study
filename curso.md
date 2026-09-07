@@ -18,11 +18,11 @@ ejecutar evaluador.py directamente
 
 ```sh
 
-export LD_LIBRARY_PATH=".venv/local-tk/usr/lib/x86_64-linux-gnu:.venv/local-tk/usr/lib"
-export PYTHONPATH=".venv/local-tk/usr/lib/python3.12:.venv/local-tk/usr/lib/python3.12/lib-dynload"
-export TCL_LIBRARY=".venv/local-tk/usr/share/tcltk/tcl8.6"
-export TK_LIBRARY=".venv/local-tk/usr/share/tcltk/tk8.6"
-.venv/bin/python evaluador.py
+export LD_LIBRARY_PATH="mi_entorno/local-tk/usr/lib/x86_64-linux-gnu:mi_entorno/local-tk/usr/lib"
+export PYTHONPATH="mi_entorno/local-tk/usr/lib/python3.12:mi_entorno/local-tk/usr/lib/python3.12/lib-dynload"
+export TCL_LIBRARY="mi_entorno/local-tk/usr/share/tcltk/tcl8.6"
+export TK_LIBRARY="mi_entorno/local-tk/usr/share/tcltk/tk8.6"
+mi_entorno/bin/python evaluador.py
 ```
 
 compilar evaluador.py (verifica sintaxis y genera bytecode)
@@ -61,4 +61,27 @@ export TK_LIBRARY="$DIR/.venv/local-tk/usr/share/tcltk/tk8.6"
 exec "$DIR/.venv/bin/python" "$DIR/evaluador.py" "$@"
 EOF
 chmod +x ejecutar.sh
+```
+
+
+---
+
+## Ejecutar evaluador.py en etapa-2
+
+Desde la raíz del proyecto (`etapa-2`), con el entorno `mi_entorno` que ya trae tkinter:
+
+```sh
+export LD_LIBRARY_PATH="mi_entorno/local-tk/usr/lib/x86_64-linux-gnu:mi_entorno/local-tk/usr/lib"
+export PYTHONPATH="mi_entorno/local-tk/usr/lib/python3.12:mi_entorno/local-tk/usr/lib/python3.12/lib-dynload"
+export TCL_LIBRARY="mi_entorno/local-tk/usr/share/tcltk/tcl8.6"
+export TK_LIBRARY="mi_entorno/local-tk/usr/share/tcltk/tk8.6"
+mi_entorno/bin/python evaluador.py
+```
+
+## ✅ Comando único (script)
+
+Ya existe `ejecutar.sh` en la raíz de `etapa-2` (con tkinter copiado a `mi_entorno/local-tk`):
+
+```sh
+./ejecutar.sh
 ```

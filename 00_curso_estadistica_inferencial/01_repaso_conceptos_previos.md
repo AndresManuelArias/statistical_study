@@ -145,9 +145,12 @@ print(f"\n|licenciados| con set = {len(licenciados)}")
 
 A ∪ B (casados ∪ divorciados)  = 45000  ¿cubre el universo? True
 A ∩ B (casados ∩ divorciados)  = 0  ¿disjuntos? True
-licenciados - divorciados      = 6564
+licenciados - divorciados      = 7199
 A^c (no licenciados)           = 33300  |Ω|-|A| = 33300
 ```
+
+> [!note] Sobre la pertenencia
+> La línea que verifica si un `marriage_id` pertenece a un conjunto usa un ID de ejemplo (el primer elemento del conjunto de divorciados), por lo que su valor exacto varía entre ejecuciones. Lo importante es que con `in` podemos comprobar si **cualquier** matrimonio dado cumple (∈) o no (∉) una propiedad.
 
 > [!note] Lectura estadística
 > - `casados ∪ divorciados = Ω` y `casados ∩ divorciados = ∅` → son una **partición** del universo (todo matrimonio está en una u otra categoría, nunca en ambas). En probabilidad, esto significa que son **sucesos complementarios**.

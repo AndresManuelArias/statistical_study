@@ -23,12 +23,22 @@ def cargar_schema():
 
 
 def descubrir_temas():
+    """Busca, en cada carpeta, el primer archivo .md que contenga preguntas
+    (tenga al menos un bloque '### Pregunta N'). Si ninguno las tiene,
+    usa el primer .md de la carpeta (comportamiento original)."""
     temas = []
     for carpeta in sorted(BASE_DIR.iterdir()):
         if carpeta.is_dir():
             mds = sorted(carpeta.glob("*.md"))
-            if mds:
-                temas.append((carpeta.name, mds[0]))
+            elegido = None
+            for m in mds:
+                if RE_PREGUNTA.search(m.read_text(encoding="utf-8")):
+                    elegido = m
+                    break
+            if elegido is None:
+                elegido = mds[0] if mds else None
+            if elegido is not None:
+                temas.append((carpeta.name, elegido))
     return temas
 
 
