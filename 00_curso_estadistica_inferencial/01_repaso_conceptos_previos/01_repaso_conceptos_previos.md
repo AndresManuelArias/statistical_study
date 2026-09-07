@@ -76,7 +76,7 @@ Un **conjunto** es una colección de objetos llamados **elementos**. Se nombran 
 
 ---
 
-# 🐍 Ejemplo en Python: Conjuntos sobre el dataset de matrimonios
+## 🐍 Ejemplo en Python: conjuntos sobre el dataset de matrimonios
 
 Aplicamos la teoría de conjuntos a los datos reales de matrimonios (`marriage_longevity_master.csv`, 45,000 registros). Usamos conjuntos de identificadores de matrimonios que cumplen una propiedad, tal como definiríamos sucesos en probabilidad.
 
@@ -221,7 +221,7 @@ $$
 > [!tip] Relación con la probabilidad
 > - Si $A \subseteq B$, entonces $P(A) \leq P(B)$: un subconjunto no puede ser más probable que el conjunto que lo contiene.
 > - Si $A \subseteq B$ y queremos $P(A \mid B)$ (probabilidad de $A$ **dado** $B$):
->   $$P(A \mid B) = \frac{|A|}{|B|} = \frac{P(A)}{P(B)}$$
+>   $P(A \mid B) = \frac{|A|}{|B|} = \frac{P(A)}{P(B)}$
 >   porque $A \cap B = A$ cuando $A \subseteq B$.
 > - Los sucesos de un experimento forman una **jerarquía de subconjuntos** dentro de $\Omega$.
 
@@ -236,7 +236,7 @@ Como $B$ exige cumplir la condición de $A$ **más** una condición extra, neces
 
 ---
 
-# 🐍 Ejemplo en Python: Subconjuntos sobre el dataset de matrimonios
+## 🐍 Ejemplo en Python: subconjuntos sobre el dataset de matrimonios
 
 ```python
 import csv
@@ -326,6 +326,196 @@ P(B) = |B|/|Ω| = 2987/45000 = 0.0664
 > - **P(B) = 0.0664** → en todo el universo, solo el 6.64% de los matrimonios cumplen ambas condiciones.
 > - Al ser $B \subseteq A$, se cumple $P(B) \leq P(A)$ y la probabilidad condicional se reduce a un cociente de cardinalidades.
 > - `casados ⊆ divorciados → False` confirma que son **disjuntos** (ninguno contiene al otro), coherente con ser una partición.
+
+## 📚 Temario de estudio: teoría de conjuntos
+
+### 4. Conjuntos vacío y universal
+
+* **URL del video:** [Conjuntos vacío y universal | Estadística Inferencial](http://www.youtube.com/watch?v=1nIX6IH43_Q)
+* **Temas principales:**
+* **Conjunto Vacío ($\emptyset$):**
+* Definición como el conjunto que no contiene ningún elemento ().
+* Notación mediante símbolo especial o llaves vacías ().
+* Propiedades: Es subconjunto de cualquier otro conjunto y es único ().
+
+
+* **Conjunto Universal ($U$):**
+* Definición como el conjunto que contiene a todos los elementos con una característica o dominio de conocimiento común ().
+* A diferencia del vacío, no existe un conjunto universal único en abstracto, sino que está acotado al contexto de trabajo ().
+
+
+* **Ejemplos prácticos:** Conjuntos de letras del abecedario, números naturales y animales ().
+
+
+
+---
+
+### 5. Conjunto complemento
+
+* **URL del video:** [Conjunto complemento | Estadística Inferencial](http://www.youtube.com/watch?v=HJAors8090A)
+* **Temas principales:**
+* **Diagramas de Venn-Euler:**
+* Representación gráfica mediante un rectángulo para el universo ($U$) y circunferencias para los subconjuntos ().
+
+
+* **Conjunto Complemento ($A^c$):**
+* Definición: Elementos que pertenecen al conjunto universal pero *no* pertenecen al conjunto dado ().
+* Expresión por comprensión: $A^c = \{x \in U \mid x \notin A\}$ ().
+
+
+* **Propiedades de la complementación:**
+* El complemento del conjunto vacío es el universo ().
+* El complemento del complemento de un conjunto es el conjunto mismo ($({A^c})^c = A$) ().
+* El complemento del universo es el vacío ().
+
+
+
+
+
+---
+
+### 6. Intersección de conjuntos
+
+* **URL del video:** [Intersección de conjuntos | Estadística Inferencial](http://www.youtube.com/watch?v=xjdowwI35C0)
+* **Temas principales:**
+* **Álgebra de conjuntos:** Introducción a las operaciones básicas de combinación ().
+* **Intersección ($A \cap B$):**
+* Definición: Elementos que pertenecen a ambos conjuntos de manera simultánea ().
+* Por comprensión: $A \cap B = \{x \mid x \in A \land x \in B\}$ ().
+
+
+* **Casos particulares de intersección:**
+* Intersección distinta del vacío ().
+* Intersección de conjuntos iguales ().
+* Intersección de un conjunto y su subconjunto ().
+* **Conjuntos disjuntos:** Aquellos cuya intersección es vacía ($A \cap B = \emptyset$) ().
+
+
+* **Propiedades básicas:** Intersección con el vacío, con el universo y con sí mismo ().
+
+
+
+---
+
+### 7. Unión de conjuntos
+
+* **URL del video:** [Unión de conjuntos | Estadística Inferencial](http://www.youtube.com/watch?v=AeUt0AzQ9Es)
+* **Temas principales:**
+* **Unión ($A \cup B$):**
+* Definición: Elementos que pertenecen a $A$, a $B$, o a ambos simultáneamente ().
+* Por comprensión: $A \cup B = \{x \mid x \in A \lor x \in B\}$ ().
+
+
+* **Casos y ejemplos:**
+* Unión con intersección distinta del vacío (los elementos repetidos no se duplican) ().
+* Unión de conjuntos iguales ().
+* Unión de un conjunto y su subconjunto ().
+* Unión de conjuntos disjuntos ().
+
+
+* **Propiedades de la unión:** Identidad con el vacío, con el universo y la idempotencia ($A \cup A = A$) ().
+
+
+
+---
+
+### 8. Diferencia de conjuntos
+
+* **URL del video:** [Diferencia de conjuntos | Estadística Inferencial](http://www.youtube.com/watch?v=JO7NsN4ZJp4)
+* **Temas principales:**
+* **Operación Diferencia ($A - B$):**
+* Definición: Elementos que pertenecen al conjunto $A$ pero no pertenecen al conjunto $B$ (equivalente a "quitarle" a $A$ los elementos que comparte con $B$) ().
+* Por comprensión: $A - B = \{x \mid x \in A \land x \notin B\}$ ().
+
+
+* **Casos prácticos:**
+* Intersección distinta del vacío ().
+* Conjuntos iguales ($A - A = \emptyset$) ().
+* Diferencia entre un conjunto y su subconjunto ().
+* Conjuntos disjuntos (el resultado es el primer conjunto completo) ().
+
+
+
+
+
+---
+
+### 9. Ejercicios de operaciones con conjuntos (parte 1)
+
+* **URL del video:** [Ejercicios de operaciones con conjuntos (parte 1) | Estadística Inferencial](http://www.youtube.com/watch?v=l-k3H8ePNDs)
+* **Temas principales:**
+* **Jerarquía de operaciones en conjuntos:** Se opera de adentro hacia afuera (empezando por paréntesis) ().
+* **Resolución gráfica paso a paso:**
+* Complemento de una unión: $(A \cup B)^c$ ().
+* Complemento de una diferencia: $(B - A)^c$ ().
+* Intersecciones complejas con conjuntos vacíos ().
+* Intersecciones de uniones múltiples: $(A \cup B) \cap (A \cup C)$ ().
+
+
+
+
+
+---
+
+### 10. Ejercicios de operaciones con conjuntos (parte 2)
+
+* **URL del video:** [Ejercicios de operaciones con conjuntos (parte 2) | Estadística Inferencial](http://www.youtube.com/watch?v=5ovNShM6GAk)
+* **Temas principales:**
+* **Resolución analítica por extensión:** A partir de conjuntos definidos con elementos numéricos o de letras dentro de un universo dado ().
+* **Cálculo paso a paso de:**
+* Unión de conjuntos ().
+* Diferencia y su respectivo complemento ($({A - B})^c$) ().
+* Intersecciones compuestas y validación de subconjuntos ().
+
+
+
+
+
+---
+
+### 11. Cardinalidad de un conjunto
+
+* **URL del video:** [Cardinalidad de un conjunto | Estadística Inferencial](http://www.youtube.com/watch?v=5ovNShM6GAk)
+* **Temas principales:**
+* **Concepto de Cardinalidad:** Número de elementos que pertenecen a un conjunto. Notaciones: $n(A)$, $\vert{}A\vert{}$ o $\#A$ ().
+* **Conjuntos similares:** Aquellos que poseen la misma cardinalidad pero diferentes elementos ().
+* **Propiedades y fórmulas de cardinalidad para uniones:**
+* *Caso 1 (Disjuntos):* $n(A \cup B) = n(A) + n(B)$ ().
+* *Caso 2 (Con intersección):* $n(A \cup B) = n(A) + n(B) - n(A \cap B)$ (Evita contar doble los elementos de la intersección) ().
+
+
+
+
+
+---
+
+### 12. Conjunto potencia
+
+* **URL del video:** [Conjunto potencia | Estadística Inferencial](http://www.youtube.com/watch?v=_2g4naWTsYg)
+* **Temas principales:**
+* **Definición de Conjunto Potencia ($\mathcal{P}(A)$):** Conjunto formado por *todos los subconjuntos* posibles de un conjunto dado $A$ ().
+* **Fórmula de la cardinalidad del conjunto potencia:**
+* $n(\mathcal{P}(A)) = 2^n$, donde $n$ es la cardinalidad del conjunto original ($n(A)$) ().
+
+
+* **Ejemplos prácticos:**
+* Obtención de subconjuntos unitarios, el vacío y el conjunto mismo para conjuntos de 2 y 3 elementos ().
+* Aplicación de la regla al conjunto vacío ($\mathcal{P}(\emptyset)$) ().
+
+
+
+
+
+---
+
+### 13. Ejercicios de operaciones con conjuntos (parte 3)
+
+* **URL del video:** [Ejercicios de operaciones con conjuntos (parte 3) | Estadística Inferencial](http://www.youtube.com/watch?v=U6U5aaL12tE)
+* **Temas principales:**
+* **Problemas de aplicación práctica (Encuestas y Diagramas de Venn):**
+* Traducción de enunciados de texto a operaciones de conjuntos ($U$, uniones, intersecciones y complementos) ().
+* Resolución de problemas con **dos conjuntos** (ej. uso de medios de transporte) aplicando la fórmula de cardinalidad por despeje ().
+* Resolución de problemas avanzados con **tres conjuntos** (ej. estudiantes de idiomas: inglés, francés, ruso) analizando las regiones de manera inversa: **comenzando siempre por la intersección central de los tres conjuntos** hacia las regiones exclusivas ().
 
 ## ✅ Evaluación
 

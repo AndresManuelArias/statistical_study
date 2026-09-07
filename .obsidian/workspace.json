@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "video temas a estudiar.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "video temas a estudiar"
+              "title": "01_repaso_conceptos_previos"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "video temas a estudiar.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "video temas a estudiar.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "video temas a estudiar.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,7 +190,10 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "video temas a estudiar.md",
+    "consulta_datos_practica.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
+    "00_curso_estadistica_inferencial/00_contenido/00_contenido_curso.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos-20260907130307.json",
     "__pycache__/evaluador.cpython-312.pyc.124429907097072",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos-20260907125114.json",
@@ -229,11 +232,9 @@
     "00_curso_estadistica_inferencial/04_variables_aleatorias/04_variables_aleatorias.md",
     "00_curso_estadistica_inferencial/03_probabilidad/03_probabilidad.md",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio/02_analisis_combinatorio.md",
-    "00_curso_estadistica_inferencial/00_contenido/00_contenido_curso.md",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos.md",
     "mi_entorno/local-tk/usr/share/doc/tk8.6/README.md",
-    "curso.md",
-    "curso c.md"
+    "curso.md"
   ]
 }

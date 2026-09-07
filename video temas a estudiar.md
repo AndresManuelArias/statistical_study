@@ -69,3 +69,37 @@ https://youtu.be/3vtS2qc4t6o?si=gxelJcbGp8VTNJ3D
 
 
 temas a estudiar para la evaluacion estadistica, logica y graficas
+
+logica, permutacion, graficos
+al final estudiar lo de graficas
+
+
+
+
+promt para agregar los temas de los curso
+
+analisa los temas de los siguientes videos
+
+4- https://youtu.be/1nIX6IH43_Q?si=hmhGMK1puG2MrD-_
+
+5- https://youtu.be/HJAors8090A?si=9N162W9zEafmZAlH
+
+6- https://youtu.be/xjdowwI35C0?si=sw0F7G-Xiax_rHHS
+
+7- https://youtu.be/AeUt0AzQ9Es?si=i6eazJIWAJSNg3uy
+
+8- https://youtu.be/JO7NsN4ZJp4?si=0y-QXGCwec_IgVrQ
+
+9- https://youtu.be/l-k3H8ePNDs?si=yWGQt8XqOmhaCVap
+
+10- https://youtu.be/5ovNShM6GAk?si=bGZpBYq-klRJHI6Q
+
+11- https://youtu.be/c-P4-AGjFE8?si=_AUl06gEowf20wt-
+
+12- https://youtu.be/_2g4naWTsYg?si=Rtwp_WhZqGIHmfbG
+
+13- https://youtu.be/U6U5aaL12tE?si=sya01R-NKqXi3H-U
+
+mira los temas que se ven en cada uno esto con el fin de poder saber que estudiar.
+
+muestra el resultado en smardown para obsidian
