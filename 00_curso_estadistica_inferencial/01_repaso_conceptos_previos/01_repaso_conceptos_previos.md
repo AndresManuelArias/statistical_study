@@ -7,6 +7,7 @@ tags:
   - teoria-de-conjuntos
   - conceptos-previos
 ---
+
 # 🔢 Repaso de conceptos previos
 
 ## 🎬 Datos del video
@@ -23,23 +24,27 @@ El video introduce la **teoría de conjuntos**, base fundamental de la probabili
 > [!info] Idea principal
 > Un conjunto es una colección bien definida de elementos. Está bien definido cuando se puede determinar con precisión si un elemento pertenece o no a él.
 
----
+## 🧮 Explicación del tema: teoría de conjuntos
 
-# 🧮 Explicación del tema: Teoría de Conjuntos
-
-La teoría de conjuntos es la **gramática de las matemáticas** y, sobre todo, el **cimientos de la probabilidad**. Cada experimento aleatorio define un **espacio muestral** (conjunto de todos los resultados posibles), y cada suceso del que calculamos probabilidades no es más que un **subconjunto** de ese espacio.
+La teoría de conjuntos es la **gramática de las matemáticas** y, sobre todo, el **cimiento de la probabilidad**. Cada experimento aleatorio define un **espacio muestral** (conjunto de todos los resultados posibles), y cada suceso del que calculamos probabilidades no es más que un **subconjunto** de ese espacio.
 
 ## Definición y notación
 
 Un **conjunto** es una colección de objetos llamados **elementos**. Se nombran con **letras mayúsculas** ($A$, $B$, $\Omega$) y sus elementos con minúsculas.
 
-**Dos formas de definir un conjunto:**
+### Dos formas de definir un conjunto
 
-1. **Por extensión** — se enlistan todos los elementos:
-   $$A = \{1, 2, 3, 4\}$$
+1. **Por extensión:** se enlistan todos los elementos:
 
-2. **Por comprensión** — se indica la propiedad que cumplen:
-   $$A = \{x \mid x \in \mathbb{N},\ x \leq 4\}$$
+      $$
+      A = \{1, 2, 3, 4\}
+      $$
+
+2. **Por comprensión:** se indica la propiedad que cumplen:
+
+      $$
+      A = \{x \mid x \in \mathbb{N},\ x \leq 4\}
+      $$
    Se lee "el conjunto de todos los $x$ **tal que** ($\mid$) $x$ pertenece a los naturales **y** $x$ es menor o igual a 4".
 
 **Reglas:** los elementos **no se repiten** y el **orden es irrelevante** (por eso $\{1,2,3\} = \{3,1,2\}$).
@@ -157,9 +162,33 @@ A^c (no licenciados)           = 33300  |Ω|-|A| = 33300
 > - Las **probabilidades** se obtienen dividiendo el tamaño del conjunto entre el universo: $P(\text{divorciado}) = 20708/45000 \approx 0.46$.
 > - Cualquier suceso de un experimento se puede modelar como un **subconjunto** de $\Omega$ → la teoría de conjuntos es la base de la probabilidad.
 
+## 🎬 Segundo video: subconjuntos
+
+Resumen del video **"Subconjuntos | Estadística Inferencial"**, de José María Hernández Rivera.
+
+### 1. Relación de contención
+
+- **Definición:** se da cuando un conjunto incluye o contiene a otro ([00:11](https://youtu.be/TSWTgmQIu7s?t=11)).
+- **Notación:** se representa con el símbolo $\subseteq$ ([00:21](https://youtu.be/TSWTgmQIu7s?t=21)). Se lee: *"el conjunto $A$ está contenido en el conjunto $B$"* ($A \subseteq B$) ([00:45](https://youtu.be/TSWTgmQIu7s?t=45)).
+
+#### Propiedades de la contención:
+
+1. **Reflexividad:** todo conjunto está contenido en sí mismo ($A \subseteq A$) ([00:22](https://youtu.be/TSWTgmQIu7s?t=22)).
+2. **Transitividad:** si $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$ ([02:34](https://youtu.be/TSWTgmQIu7s?t=154)).
+3. **Antisimetría:** si $A \subseteq B$ y $B \subseteq A$, entonces ambos conjuntos son iguales ($A = B$) ([03:48](https://youtu.be/TSWTgmQIu7s?t=228)).
+
 ---
 
-# ✅ Evaluación
+### 2. Subconjuntos
+
+* **Definición:** un conjunto $A$ es subconjunto de $B$ si y solo si **cada elemento que pertenece a $A$ también pertenece a $B$** ([04:30](https://youtu.be/TSWTgmQIu7s?t=270)).
+* **No subconjunto:** un conjunto no es subconjunto de otro si existe **al menos un elemento** del primer conjunto que no pertenece al segundo ([05:00](https://youtu.be/TSWTgmQIu7s?t=300)). Se denota con el símbolo de contención tachado ([05:28](https://youtu.be/TSWTgmQIu7s?t=328)).
+
+---
+
+**Video completo:** [Subconjuntos | Estadística Inferencial](https://www.youtube.com/watch?v=TSWTgmQIu7s)
+
+## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
 
