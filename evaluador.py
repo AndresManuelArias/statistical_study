@@ -1,3 +1,5 @@
+import base64
+import io
 import json
 import re
 from datetime import datetime
@@ -6,12 +8,141 @@ from tkinter import filedialog, messagebox
 import tkinter as tk
 from tkinter import ttk
 
+try:
+    import matplotlib
+    matplotlib.use("Agg")
+    from matplotlib import mathtext
+    from matplotlib.font_manager import FontProperties
+    _MATH_OK = True
+except Exception:
+    _MATH_OK = False
+
 BASE_DIR = Path(__file__).resolve().parent
 SCHEMA_PATH = BASE_DIR / "shema_evaluation.schema.json"
 
 RE_PREGUNTA = re.compile(r"^###\s+Pregunta\s+(\d+)\s*$", re.MULTILINE)
 RE_OPCION = re.compile(r"^([a-h])\)\s+(.*)$")
 RE_RESPUESTA = re.compile(r"^>\s*\*\*([a-h])\)\s*(.*?)\*\*\s*$", re.MULTILINE)
+
+RE_MATH = re.compile(
+    r"(\$\$.+?\$\$|\$(?!\$)(?:\\.|[^$\n])+?\$(?!\$))",
+    re.DOTALL,
+)
+
+_LATEX_UNICODE = [
+    # Símbolos de conjuntos y lógica
+    (r"\mathbb{N}", "\u2115"),
+    (r"\Omega", "\u03a9"),
+    (r"\emptyset", "\u2205"),
+    (r"\varnothing", "\u2205"),
+    (r"\cup", "\u222a"),
+    (r"\cap", "\u2229"),
+    (r"\in", "\u2208"),
+    (r"\notin", "\u2209"),
+    (r"\subseteq", "\u2286"),
+    (r"\subset", "\u2282"),
+    (r"\nsubseteq", "\u2288"),
+    (r"\leq", "\u2264"),
+    (r"\geq", "\u2265"),
+    (r"\neq", "\u2260"),
+    (r"\mid", "|"),
+    (r"\{", "{"),
+    (r"\}", "}"),
+    (r"\ ", " "),
+    # Puntuación y operadores
+    (r"\ldots", "\u2026"),
+    (r"\dots", "\u2026"),
+    (r"\cdots", "\u22ef"),
+    (r"\cdot", "\u00b7"),
+    (r"\times", "\u00d7"),
+    (r"\div", "\u00f7"),
+    (r"\pm", "\u00b1"),
+    (r"\to", "\u2192"),
+    (r"\rightarrow", "\u2192"),
+    (r"\leftarrow", "\u2190"),
+    (r"\Rightarrow", "\u21d2"),
+    (r"\leftrightarrow", "\u2194"),
+    (r"\approx", "\u2248"),
+    (r"\infty", "\u221e"),
+    (r"\in", "\u2208"),
+    (r"\sum", "\u2211"),
+    (r"\prod", "\u220f"),
+    (r"\forall", "\u2200"),
+    (r"\exists", "\u2203"),
+    (r"\neg", "\u00ac"),
+    (r"\wedge", "\u2227"),
+    (r"\vee", "\u2228"),
+    (r"\oplus", "\u2295"),
+    (r"\otimes", "\u2297"),
+    (r"\subset", "\u2282"),
+    (r"\supset", "\u2283"),
+    (r"\bot", "\u22a5"),
+    (r"\top", "\u22a4"),
+    # Letras griegas
+    (r"\pi", "\u03c0"),
+    (r"\alpha", "\u03b1"),
+    (r"\beta", "\u03b2"),
+    (r"\gamma", "\u03b3"),
+    (r"\delta", "\u03b4"),
+    (r"\sigma", "\u03c3"),
+    (r"\mu", "\u03bc"),
+    (r"\lambda", "\u03bb"),
+    (r"\theta", "\u03b8"),
+    (r"\omega", "\u03c9"),
+    (r"\phi", "\u03c6"),
+    (r"\psi", "\u03c8"),
+    (r"\eta", "\u03b7"),
+    (r"\epsilon", "\u03b5"),
+    (r"\rho", "\u03c1"),
+    (r"\tau", "\u03c4"),
+    (r"\kappa", "\u03ba"),
+    (r"\nu", "\u03bd"),
+    (r"\chi", "\u03c7"),
+    (r"\zeta", "\u03b6"),
+    (r"\xi", "\u03be"),
+    (r"\Delta", "\u0394"),
+    (r"\Sigma", "\u03a3"),
+]
+
+
+def latex_a_unicode(texto):
+    """Traduce secuencias LaTeX simples a caracteres Unicode legibles.
+    Se usa en las opciones (los radiobutton no admiten imágenes embebidas)."""
+    for latex, uni in _LATEX_UNICODE:
+        texto = texto.replace(latex, uni)
+    texto = re.sub(r"\\frac\{([^}]+)\}\{([^}]+)\}", r"\1/\2", texto)
+    return texto.replace("$", "").strip()
+
+
+def render_math_png(tex, fontsize=14, dpi=180):
+    """Renderiza una expresión LaTeX a bytes de una imagen PNG en memoria.
+    Devuelve None si matplotlib no está disponible o si la expresión falla."""
+    if not _MATH_OK:
+        return None
+    try:
+        prop = FontProperties(size=fontsize)
+        buf = io.BytesIO()
+        mathtext.math_to_image(tex, buf, prop=prop, dpi=dpi, format="png")
+        buf.seek(0)
+        return buf.getvalue()
+    except Exception:
+        return None
+
+_math_cache = {}
+
+
+def math_photoimage(tex, fontsize=14, dpi=180):
+    """Devuelve un tk.PhotoImage a partir del LaTeX, con caché. None si no."""
+    clave = (tex, fontsize, dpi)
+    if clave not in _math_cache:
+        _math_cache[clave] = render_math_png(tex, fontsize, dpi)
+    png = _math_cache[clave]
+    if png is None:
+        return None
+    try:
+        return tk.PhotoImage(data=base64.b64encode(png))
+    except Exception:
+        return None
 
 
 def cargar_schema():
@@ -161,9 +292,9 @@ class SelectorFrame(ttk.Frame):
 
     def refrescar_colores(self):
         for i in range(len(self.app.temas)):
-            nota = self.app.nota_tema(i)
-            if nota is not None:
-                color = "#c8e6c9" if nota >= 8 else "#ffcdd2"
+            pct = self.app.porcentaje_contestado_tema(i)
+            if pct is not None:
+                color = "#c8e6c9" if pct >= 80 else "#ffcdd2"
                 self.lista.itemconfigure(i, background=color)
             else:
                 self.lista.itemconfigure(i, background=self.lista.cget("background"))
@@ -174,10 +305,13 @@ class SelectorFrame(ttk.Frame):
             return
         _, ruta, _ = self.app.temas[sel[0]]
         n = len(parsear_preguntas(ruta))
+        pct = self.app.porcentaje_contestado_tema(sel[0])
         nota = self.app.nota_tema(sel[0])
         texto = f"{n} preguntas encontradas"
+        if pct is not None:
+            texto += f"  |  Contestadas: {pct}%"
         if nota is not None:
-            texto += f"  |  Nota guardada: {nota}/10"
+            texto += f"  |  Nota: {nota}/10"
         self.info.config(text=texto)
 
     def iniciar(self):
@@ -215,6 +349,8 @@ class QuizFrame(ttk.Frame):
         self.frame_opciones = ttk.Frame(self)
         self.frame_opciones.pack(fill="x", pady=5)
 
+        self._math_imgs = []
+
         self.footer = ttk.Frame(self)
         self.footer.pack(fill="x", side="bottom", pady=(10, 0))
         self.btn_ant = ttk.Button(
@@ -243,10 +379,10 @@ class QuizFrame(ttk.Frame):
         self.var.set(p["respuesta_usuario"] or "")
         for opcion in p["opciones"]:
             rb = ttk.Radiobutton(
-                self.frame_opciones, text=opcion, value=opcion,
+                self.frame_opciones, text=latex_a_unicode(opcion), value=opcion,
                 variable=self.var, command=self.guardar_respuesta
             )
-            rb.pack(anchor="w", pady=2)
+            rb.pack(anchor="w", pady=2, fill="x")
         self.btn_ant.config(state="normal" if self.app.indice > 0 else "disabled")
         ultimo = self.app.indice == total - 1
         self.btn_sig.config(state="disabled" if ultimo else "normal")
@@ -254,6 +390,7 @@ class QuizFrame(ttk.Frame):
     def render_enunciado(self, texto):
         self.txt_enunciado.configure(state="normal")
         self.txt_enunciado.delete("1.0", "end")
+        self._math_imgs = []
         partes = texto.split("```")
         for i, parte in enumerate(partes):
             if i % 2 == 1:
@@ -264,8 +401,39 @@ class QuizFrame(ttk.Frame):
                     "end", "\n".join(lineas).strip("\n") + "\n", "codigo"
                 )
             elif parte.strip():
-                self.txt_enunciado.insert("end", parte.strip("\n") + "\n")
+                self._insertar_tex(parte.strip("\n") + "\n")
         self.txt_enunciado.configure(state="disabled")
+
+    def _insertar_tex(self, texto):
+        """Inserta texto en el enunciado, renderizando $...$ y $$...$$ como
+        imágenes matemáticas embebidas; si no se puede, traduce a Unicode."""
+        if not _MATH_OK:
+            self.txt_enunciado.insert("end", latex_a_unicode(texto))
+            return
+        for seg in RE_MATH.split(texto):
+            if not seg:
+                continue
+            if seg.startswith("$$") and seg.endswith("$$"):
+                tex = seg[2:-2]
+                img = math_photoimage(tex, fontsize=16, dpi=200)
+                if img is not None:
+                    self._math_imgs.append(img)
+                    self.txt_enunciado.insert("end", "\n")
+                    self.txt_enunciado.image_create(
+                        "end", image=img, pady=4
+                    )
+                    self.txt_enunciado.insert("end", "\n")
+                    continue
+            elif seg.startswith("$") and seg.endswith("$") and len(seg) > 2:
+                tex = seg[1:-1]
+                img = math_photoimage(tex, fontsize=14, dpi=180)
+                if img is not None:
+                    self._math_imgs.append(img)
+                    self.txt_enunciado.insert("end", " ")
+                    self.txt_enunciado.image_create("end", image=img, pady=2)
+                    self.txt_enunciado.insert("end", " ")
+                    continue
+            self.txt_enunciado.insert("end", latex_a_unicode(seg))
 
     def guardar_respuesta(self):
         self.app.preguntas[self.app.indice]["respuesta_usuario"] = (
@@ -347,11 +515,11 @@ class ResultadoFrame(ttk.Frame):
             ok = p["es_correcta"]
             tag = "ok" if ok else "mal"
             estado = "Correcta" if ok else "Incorrecta"
-            usuario = p["respuesta_usuario"] or "(sin responder)"
+            usuario = latex_a_unicode(p["respuesta_usuario"] or "(sin responder)")
             self.tabla.insert(
                 "", "end", tags=(tag,),
                 values=(p["id_pregunta"], estado, usuario,
-                        p["respuesta_correcta"])
+                        latex_a_unicode(p["respuesta_correcta"]))
             )
 
     def guardar_json(self):
@@ -421,6 +589,35 @@ class App(tk.Tk):
     def mostrar_selector(self):
         self.frames[SelectorFrame].refrescar_colores()
         self.mostrar_frame(SelectorFrame)
+
+    def _resultado_tema(self, indice):
+        """Devuelve el diccionario del JSON de evaluación más reciente del
+        tema, o None si no existe evaluación guardada."""
+        _, ruta, nombre_json = self.temas[indice]
+        archivos = sorted(ruta.parent.glob(f"{nombre_json}-*.json"), reverse=True)
+        if not archivos:
+            return None
+        try:
+            with open(archivos[0], encoding="utf-8") as f:
+                return json.load(f)
+        except (OSError, json.JSONDecodeError, KeyError):
+            return None
+
+    def porcentaje_contestado_tema(self, indice):
+        """Porcentaje (0-100) de preguntas CONTESTADAS (respondidas, no
+        necesariamente correctas) en la evaluación más reciente del tema.
+        Devuelve None si no hay evaluación guardada."""
+        datos = self._resultado_tema(indice)
+        if datos is None:
+            return None
+        preguntas = datos.get("preguntas") or []
+        total = (len(preguntas)
+                 if preguntas
+                 else datos["resultado_final"]["total_preguntas"])
+        if total == 0:
+            return 0.0
+        contestadas = sum(1 for p in preguntas if p.get("respuesta_usuario"))
+        return round(contestadas * 100 / total, 1)
 
     def nota_tema(self, indice):
         """Lee la nota de la evaluación más reciente del tema (JSON dentro
