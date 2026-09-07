@@ -11,14 +11,10 @@
             "id": "e7d2116ff8714530",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00_curso_estadistica_inferencial/03_probabilidad.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "03_probabilidad"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -99,7 +95,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00_curso_estadistica_inferencial/03_probabilidad.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +113,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00_curso_estadistica_inferencial/03_probabilidad.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +155,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_curso_estadistica_inferencial/03_probabilidad.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,18 +183,28 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "__pycache__/evaluador.cpython-312.pyc.129486104919008",
+    "00_curso_estadistica_inferencial/03_probabilidad.md",
+    "00_curso_estadistica_inferencial/07_prueba_hipotesis/07_prueba_hipotesis.md",
+    "00_curso_estadistica_inferencial/06_muestreo/06_muestreo.md",
+    "00_curso_estadistica_inferencial/05_distribuciones_muestrales/05_distribuciones_muestrales.md",
+    "00_curso_estadistica_inferencial/04_variables_aleatorias/04_variables_aleatorias.md",
+    "00_curso_estadistica_inferencial/03_probabilidad/03_probabilidad.md",
+    "00_curso_estadistica_inferencial/02_analisis_combinatorio/02_analisis_combinatorio.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos-20260907114641.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/repaso.ipynb",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
+    "00_curso_estadistica_inferencial/00_contenido/00_contenido_curso.md",
+    "00_curso_estadistica_inferencial/07_prueba_hipotesis",
+    "00_curso_estadistica_inferencial/06_muestreo",
+    "00_curso_estadistica_inferencial/05_distribuciones_muestrales",
+    "00_curso_estadistica_inferencial/04_variables_aleatorias",
+    "00_curso_estadistica_inferencial/03_probabilidad",
+    "00_curso_estadistica_inferencial/02_analisis_combinatorio",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos",
+    "00_curso_estadistica_inferencial/00_contenido",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos.md",
-    "00_curso_estadistica_inferencial/00_curso_estadistica_inferencial-20260907114641.json",
-    "mi_entorno/local-tk/usr/bin/wish8.6",
-    "mi_entorno/local-tk/usr/bin/tclsh8.6",
-    "mi_entorno/local-tk/usr/bin",
-    "mi_entorno/local-tk/usr/share/tcltk/tcl8.6/word.tcl",
-    "mi_entorno/local-tk/usr/share/tcltk/tcl8.6/tm.tcl",
-    "mi_entorno/local-tk/usr/share/tcltk/tcl8.6/tclIndex",
-    "mi_entorno/local-tk/usr/share/tcltk/tcl8.6/tclAppInit.c",
-    "mi_entorno/local-tk/usr/share/tcltk/tcl8.6/tcl8/platform/shell-1.1.4.tm",
-    "mi_entorno/local-tk/usr/share/tcltk/tk8.6/ttk/xpTheme.tcl",
     "mi_entorno/local-tk/usr/share/tcltk/tk8.6/images/tai-ku.gif",
     "mi_entorno/local-tk/usr/share/tcltk/tk8.6/images/pwrdLogo75.gif",
     "mi_entorno/local-tk/usr/share/tcltk/tk8.6/images/pwrdLogo200.gif",
@@ -222,18 +225,9 @@
     "video temas a estudiar.md",
     "consulta_datos_practica.md",
     "mi_entorno/lib/python3.12/site-packages/idna-3.19.dist-info/licenses/LICENSE.md",
-    "00_curso_estadistica_inferencial/03_probabilidad.md",
     "04_pruebas_estadisticas/no_parametricas.md",
     "04_pruebas_estadisticas/chi_cuadrado_prueba.md",
     "04_pruebas_estadisticas/anova.md",
-    "04_pruebas_estadisticas/t_student.md",
-    "03_teorema_bayes/formula_referencia.md",
-    "03_teorema_bayes/ejercicios.md",
-    "03_teorema_bayes/teoria.md",
-    "02_minimos_cuadrados/ejercicios.md",
-    "02_minimos_cuadrados/tablas_calculo.md",
-    "02_minimos_cuadrados/teoria.md",
-    "01_chi_cuadrado/tabla_chi_cuadrado.md",
-    "01_chi_cuadrado/ejercicios.md"
+    "04_pruebas_estadisticas/t_student.md"
   ]
 }

@@ -22,23 +22,64 @@ def cargar_schema():
         return None
 
 
+def _elegir_md_con_preguntas(mds):
+    """Devuelve el primer .md que contenga preguntas; si ninguno las tiene,
+    devuelve el primero de la lista (o None si está vacía)."""
+    for m in mds:
+        if RE_PREGUNTA.search(m.read_text(encoding="utf-8")):
+            return m
+    return mds[0] if mds else None
+
+
+CARPETAS_EXCLUIDAS = {
+    "mi_entorno", "__pycache__", "ejercicios_practicos",
+}
+
+
+def _es_carpeta_tema(carpeta):
+    """True si la carpeta puede contener temas (no es oculta ni de sistema)."""
+    if carpeta.name.startswith("."):
+        return False
+    return carpeta.name not in CARPETAS_EXCLUIDAS
+
+
 def descubrir_temas():
-    """Busca, en cada carpeta, el primer archivo .md que contenga preguntas
-    (tenga al menos un bloque '### Pregunta N'). Si ninguno las tiene,
-    usa el primer .md de la carpeta (comportamiento original)."""
+    """Descubre los temas disponibles.
+
+    - Una carpeta SIN subcarpetas se trata como un tema (usa su primer .md).
+    - Una carpeta CON subcarpetas se trata como un agrupador (curso):
+      cada subcarpeta que contenga al menos un .md es un tema.
+
+    Devuelve una lista de tuplas:
+        (nombre_mostrar, ruta_md, nombre_json)
+    donde nombre_json es la clave corta de tema (sin separadores) usada para
+    nombrar los archivos de evaluación JSON dentro de la carpeta del tema.
+    """
     temas = []
     for carpeta in sorted(BASE_DIR.iterdir()):
-        if carpeta.is_dir():
+        if not carpeta.is_dir() or not _es_carpeta_tema(carpeta):
+            continue
+        subcarpetas = [p for p in sorted(carpeta.iterdir())
+                       if p.is_dir() and _es_carpeta_tema(p)]
+        if subcarpetas:
+            # Agrupador (curso): cada subcarpeta es un tema
+            for sub in subcarpetas:
+                mds = sorted(sub.glob("*.md"))
+                if not mds:
+                    continue
+                elegido = _elegir_md_con_preguntas(mds)
+                temas.append((
+                    f"{carpeta.name}/{sub.name}",
+                    elegido,
+                    sub.name,
+                ))
+        else:
+            # Tema plano: la carpeta misma
             mds = sorted(carpeta.glob("*.md"))
-            elegido = None
-            for m in mds:
-                if RE_PREGUNTA.search(m.read_text(encoding="utf-8")):
-                    elegido = m
-                    break
-            if elegido is None:
-                elegido = mds[0] if mds else None
-            if elegido is not None:
-                temas.append((carpeta.name, elegido))
+            if not mds:
+                continue
+            elegido = _elegir_md_con_preguntas(mds)
+            temas.append((carpeta.name, elegido, carpeta.name))
     return temas
 
 
@@ -104,12 +145,12 @@ class SelectorFrame(ttk.Frame):
             self, text="Evaluación de Opción Múltiple",
             font=("", 16, "bold")
         ).pack(pady=(0, 5))
-        ttk.Label(self, text="Curso C", font=("", 11)).pack(pady=(0, 15))
+        ttk.Label(self, text="Evaluación por temas", font=("", 11)).pack(pady=(0, 15))
         ttk.Label(self, text="Selecciona un tema:").pack(anchor="w")
         self.lista = tk.Listbox(self, height=18, activestyle="dotbox")
         self.lista.pack(fill="both", expand=True, pady=5)
         self.lista.bind("<Double-Button-1>", lambda e: self.iniciar())
-        for nombre, _ in app.temas:
+        for nombre, _, _ in app.temas:
             self.lista.insert("end", nombre)
         self.refrescar_colores()
         self.btn = ttk.Button(self, text="Iniciar evaluación", command=self.iniciar)
@@ -131,9 +172,13 @@ class SelectorFrame(ttk.Frame):
         sel = self.lista.curselection()
         if not sel:
             return
-        _, ruta = self.app.temas[sel[0]]
+        _, ruta, _ = self.app.temas[sel[0]]
         n = len(parsear_preguntas(ruta))
-        self.info.config(text=f"{n} preguntas encontradas")
+        nota = self.app.nota_tema(sel[0])
+        texto = f"{n} preguntas encontradas"
+        if nota is not None:
+            texto += f"  |  Nota guardada: {nota}/10"
+        self.info.config(text=texto)
 
     def iniciar(self):
         sel = self.lista.curselection()
@@ -378,10 +423,12 @@ class App(tk.Tk):
         self.mostrar_frame(SelectorFrame)
 
     def nota_tema(self, indice):
-        nombre, ruta = self.temas[indice]
-        if nombre in self._notas_temas:
-            return self._notas_temas[nombre]
-        archivos = sorted(ruta.parent.glob(f"{nombre}-*.json"), reverse=True)
+        """Lee la nota de la evaluación más reciente del tema (JSON dentro
+        de su carpeta). La clave de control es nombre_json."""
+        _, ruta, nombre_json = self.temas[indice]
+        if nombre_json in self._notas_temas:
+            return self._notas_temas[nombre_json]
+        archivos = sorted(ruta.parent.glob(f"{nombre_json}-*.json"), reverse=True)
         if not archivos:
             return None
         try:
@@ -397,7 +444,7 @@ class App(tk.Tk):
         return self.nota_tema(indice) is not None
 
     def iniciar_quiz(self, indice_tema):
-        nombre, ruta = self.temas[indice_tema]
+        nombre, ruta, nombre_json = self.temas[indice_tema]
         preguntas = parsear_preguntas(ruta)
         if not preguntas:
             messagebox.showerror(
@@ -406,7 +453,7 @@ class App(tk.Tk):
             return
         self.preguntas = preguntas
         self.indice = 0
-        self.tema_actual = nombre
+        self.tema_actual = nombre_json
         self.carpeta_actual = ruta.parent
         self.resultado_final = None
         self.frames[QuizFrame].cargar_pregunta()
