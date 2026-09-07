@@ -190,6 +190,9 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "00_curso_estadistica_inferencial/repaso.ipynb",
+    "__pycache__/evaluador.cpython-312.pyc",
+    "__pycache__",
     "curso c.md",
     "shema_evaluation.schema.json",
     "evaluador.py",
@@ -199,8 +202,6 @@
     "mi_entorno/lib/python3.12/site-packages/ipykernel-7.3.0.dist-info/licenses",
     "mi_entorno/lib/python3.12/site-packages/ipykernel-7.3.0.dist-info/WHEEL",
     "mi_entorno/lib/python3.12/site-packages/ipykernel-7.3.0.dist-info/REQUESTED",
-    "mi_entorno/lib/python3.12/site-packages/ipykernel-7.3.0.dist-info/RECORD",
-    "mi_entorno/lib/python3.12/site-packages/ipykernel-7.3.0.dist-info/METADATA",
     "mi_entorno/lib/python3.12/site-packages/ipykernel/resources/logo-svg.svg",
     "mi_entorno/lib/python3.12/site-packages/ipykernel/resources/logo-64x64.png",
     "mi_entorno/lib/python3.12/site-packages/ipykernel/resources/logo-32x32.png",
@@ -230,7 +231,6 @@
     "01_chi_cuadrado/tabla_chi_cuadrado.md",
     "01_chi_cuadrado/ejercicios.md",
     "01_chi_cuadrado/teoria.md",
-    "00_curso_estadistica_inferencial/07_prueba_hipotesis.md",
-    "00_curso_estadistica_inferencial/06_muestreo.md"
+    "00_curso_estadistica_inferencial/07_prueba_hipotesis.md"
   ]
 }
