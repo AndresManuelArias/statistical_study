@@ -517,6 +517,361 @@ P(B) = |B|/|Ω| = 2987/45000 = 0.0664
 * Resolución de problemas con **dos conjuntos** (ej. uso de medios de transporte) aplicando la fórmula de cardinalidad por despeje ().
 * Resolución de problemas avanzados con **tres conjuntos** (ej. estudiantes de idiomas: inglés, francés, ruso) analizando las regiones de manera inversa: **comenzando siempre por la intersección central de los tres conjuntos** hacia las regiones exclusivas ().
 
+---
+
+## 🧮 Explicación del tema: conjuntos especiales, operaciones, cardinalidad y conjunto potencia
+
+Se desarrollan aquí los temas 4 al 13 del temario, todos con aplicación directa al dataset de matrimonios.
+
+## Conjunto vacío y conjunto universal (tema 4)
+
+- **Conjunto vacío ($\emptyset$):** el conjunto que **no contiene ningún elemento**. Se denota `{}` o `$\emptyset$`.
+  - Es **subconjunto de cualquier conjunto**: $\emptyset \subseteq A$ para todo $A$.
+  - Es **único**: no hay dos conjuntos vacíos distintos.
+  - Su cardinalidad es cero: $n(\emptyset) = 0$.
+- **Conjunto universal ($\Omega$ o $U$):** el conjunto que contiene **todos los elementos posibles del contexto**.
+  - No existe un único universal abstracto: depende del **dominio** (en el curso, $\Omega$ = los 45,000 matrimonios).
+  - Todo conjunto del contexto es subconjunto del universal: $A \subseteq \Omega$.
+
+> [!tip] Relación con la probabilidad
+> - $P(\emptyset) = 0$: el suceso imposible tiene probabilidad cero.
+> - $P(\Omega) = 1$: el suceso seguro tiene probabilidad uno.
+
+## El complemento y sus propiedades (tema 5)
+
+El **complemento** de $A$ es el conjunto de elementos del universal que **no** están en $A$:
+
+$$
+A^c = \{x \in \Omega \mid x \notin A\}
+$$
+
+**Propiedades:**
+
+1. **Complemento del vacío:** $\emptyset^c = \Omega$.
+2. **Doble complemento:** $(A^c)^c = A$.
+3. **Complemento del universal:** $\Omega^c = \emptyset$.
+4. **Unión con su complemento:** $A \cup A^c = \Omega$ (todo el universo).
+5. **Intersección con su complemento:** $A \cap A^c = \emptyset$ (disjuntos).
+
+> [!tip] Relación con la probabilidad
+> $P(A^c) = 1 - P(A)$: la probabilidad de **no** ocurra $A$.
+
+## Intersección de conjuntos (tema 6)
+
+$$
+A \cap B = \{x \mid x \in A \land x \in B\}
+$$
+
+Son los elementos que pertenecen **simultáneamente** a ambos.
+
+**Casos:**
+- Intersección **no vacía**: $A \cap B \neq \emptyset$ (comparten elementos).
+- **Conjuntos iguales:** $A \cap A = A$ (idempotencia).
+- **Conjunto y su subconjunto:** si $B \subseteq A$, entonces $A \cap B = B$.
+- **Conjuntos disjuntos:** $A \cap B = \emptyset$ (no comparten nada).
+
+**Propiedades:** $A \cap \emptyset = \emptyset$, $A \cap \Omega = A$.
+
+## Unión de conjuntos (tema 7)
+
+$$
+A \cup B = \{x \mid x \in A \lor x \in B\}
+$$
+
+Son los elementos de $A$, de $B$, o de ambos (los repetidos **no se duplican**).
+
+**Casos:**
+- Con intersección **no vacía**: los elementos comunes aparecen una sola vez.
+- **Conjuntos iguales:** $A \cup A = A$ (idempotencia).
+- **Conjunto y su subconjunto:** si $B \subseteq A$, entonces $A \cup B = A$.
+- **Disjuntos:** $A \cup B$ reúne todos los elementos sin repetir.
+
+**Propiedades:** $A \cup \emptyset = A$, $A \cup \Omega = \Omega$.
+
+## Diferencia de conjuntos (tema 8)
+
+$$
+A - B = \{x \mid x \in A \land x \notin B\}
+$$
+
+"Quitarle" a $A$ los elementos que comparte con $B$.
+
+**Casos:**
+- Con intersección **no vacía**: se eliminan solo los comunes.
+- **Conjuntos iguales:** $A - A = \emptyset$.
+- **Conjunto y su subconjunto:** si $B \subseteq A$, entonces $A - B$ deja solo los elementos de $A$ que no están en $B$.
+- **Disjuntos:** $A - B = A$ (no hay nada que quitar).
+
+## Jerarquía de operaciones (temas 9 y 10)
+
+Se opera **de adentro hacia afuera**, empezando por los **paréntesis**:
+
+1. Primero los paréntesis (y los complementos internos).
+2. Luego uniones e intersecciones que quedan.
+3. Al final los complementos externos.
+
+> [!example] Ejemplo
+> $(A \cup B)^c$: primero se calcula $A \cup B$ y después se toma su complemento. No es lo mismo que $A^c \cup B^c$.
+
+## Cardinalidad de un conjunto (tema 11)
+
+La **cardinalidad** es el número de elementos del conjunto. Se denota $n(A)$, $|A|$ o $\#A$.
+
+**Fórmulas de cardinalidad para uniones:**
+
+- **Caso 1 (disjuntos):** si $A \cap B = \emptyset$, entonces
+  $$
+  n(A \cup B) = n(A) + n(B)
+  $$
+- **Caso 2 (con intersección):** en general,
+  $$
+  n(A \cup B) = n(A) + n(B) - n(A \cap B)
+  $$
+  Restamos la intersección para **no contar dos veces** los elementos comunes.
+
+> [!tip] Relación con la probabilidad
+> Para sucesos disjuntos: $P(A \cup B) = P(A) + P(B)$. Con intersección: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
+
+## Conjunto potencia (tema 12)
+
+El **conjunto potencia** de $A$, denotado $\mathcal{P}(A)$, está formado por **todos los subconjuntos posibles** de $A$ (incluyendo el vacío y el propio $A$).
+
+**Cardinalidad:**
+
+$$
+n(\mathcal{P}(A)) = 2^{n(A)}
+$$
+
+> [!example] Ejemplo
+> Si $A = \{a, b, c\}$ ($n = 3$), sus subconjuntos son:
+> $\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}$ → $2^3 = 8$.
+> Para el vacío: $\mathcal{P}(\emptyset) = \{\emptyset\}$ → $2^0 = 1$ subconjunto.
+
+> [!tip] Relación con el curso
+> El conjunto potencia es la base del **análisis combinatorio** (tema 02): el número de subconjuntos de $n$ elementos es $2^n$.
+
+---
+
+## Aplicaciones: encuestas y diagramas de Venn (tema 13)
+
+Los problemas de aplicación traducen un enunciado a **operaciones de conjuntos** y se resuelven despejando la cardinalidad de cada región del **diagrama de Venn-Euler**.
+
+### Regla de oro con tres conjuntos
+
+Cuando hay tres conjuntos, **se comienza siempre por la intersección central** (la región común a los tres) y desde ahí se van restando las regiones hacia afuera, hasta llegar a las zonas exclusivas de cada conjunto.
+
+> [!example] Ejemplo con el dataset (tres conjuntos)
+> Con $A$ = bachelors, $T$ = terapia prematrimonial y $D$ = divorciados:
+> - Intersección triple $A \cap T \cap D$ = 894.
+> - La zona de $A$ exclusiva (bachelors, sin terapia y sin divorcio) se obtiene restando de $|A|$ las intersecciones dobles y **sumando de nuevo** la triple (porque se restó dos veces):
+>   $$|A| - |A \cap T| - |A \cap D| + |A \cap T \cap D| = 11700 - 2987 - 4501 + 894 = 5106$$
+> Este proceso se repite para cada conjunto hasta completar todas las regiones del diagrama.
+
+### Caso de dos conjuntos
+
+Con solo dos conjuntos basta la fórmula de cardinalidad y despejar la incógnita:
+
+$$
+n(A \cup B) = n(A) + n(B) - n(A \cap B)
+$$
+
+> [!example] Ejemplo
+> Si en una encuesta de 100 personas, 60 usan bicicleta ($|B|=60$), 50 usan bus ($|U|=50$) y 20 usan ambos, entonces usan al menos uno:
+> $$n(B \cup U) = 60 + 50 - 20 = 90$$
+
+---
+
+## 🐍 Ejemplo en Python: diagrama de Venn de tres conjuntos sobre el dataset
+
+Reproducimos el análisis de regiones del diagrama de Venn de $A$ (bachelors), $T$ (terapia) y $D$ (divorciados), comenzando por la intersección central.
+
+```python
+import csv
+from pathlib import Path
+
+RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
+
+def cargar():
+    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
+    with open(RUTA, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+def conjunto_ids(filas, predicado):
+    # Devuelve un SET de marriage_id que cumplen la condición
+    return {f["marriage_id"] for f in filas if predicado(f)}
+
+filas = cargar()
+A = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")   # bachelors
+T = conjunto_ids(filas, lambda f: f["premarital_counseling"] == "1")     # terapia
+D = conjunto_ids(filas, lambda f: f["divorced"] == "1")                  # divorciados
+
+# ---------- Región central: intersección triple (A ∩ T ∩ D) ----------
+central = A & T & D
+print(f"A ∩ T ∩ D (central)                    = {len(central)}")
+
+# ---------- Intersecciones dobles (incluyen la central) ----------
+AT = A & T
+AD = A & D
+TD = T & D
+print(f"A ∩ T (incluye central)                = {len(AT)}")
+print(f"A ∩ D (incluye central)                = {len(AD)}")
+print(f"T ∩ D (incluye central)                = {len(TD)}")
+
+# ---------- Regiones exclusivas: partir de la central y restar hacia afuera ----------
+solo_A = len(A) - len(AT) - len(AD) + len(central)
+solo_T = len(T) - len(AT) - len(TD) + len(central)
+solo_D = len(D) - len(AD) - len(TD) + len(central)
+print(f"
+solo A (bachelors únicamente)           = {solo_A}")
+print(f"solo T (terapia únicamente)             = {solo_T}")
+print(f"solo D (divorciados únicamente)         = {solo_D}")
+
+# ---------- Regiones dobles EXCLUSIVAS (sin la central) ----------
+print(f"
+A∩T sin central                         = {len(AT)-len(central)}")
+print(f"A∩D sin central                         = {len(AD)-len(central)}")
+print(f"T∩D sin central                         = {len(TD)-len(central)}")
+
+# ---------- Total de la unión y zona fuera de todo ----------
+union = A | T | D
+print(f"
+|A ∪ T ∪ D|                             = {len(union)}")
+print(f"Fuera de los tres (Ω - (A∪T∪D))         = {45000 - len(union)}")
+
+# ---------- Verificación: la suma de las 8 regiones debe ser 45000 ----------
+regiones = [solo_A, solo_T, solo_D,
+            len(AT)-len(central), len(AD)-len(central), len(TD)-len(central),
+            len(central), 45000 - len(union)]
+print(f"Suma de las 8 regiones                  = {sum(regiones)}  (¿= 45000?)")
+```
+
+**Salida real del script (verificada con el dataset):**
+
+```
+A ∩ T ∩ D (central)                    = 894
+A ∩ T (incluye central)                = 2987
+A ∩ D (incluye central)                = 4501
+T ∩ D (incluye central)                = 4080
+
+solo A (bachelors únicamente)           = 5106
+solo T (terapia únicamente)             = 4799
+solo D (divorciados únicamente)         = 13021
+
+A∩T sin central                         = 2093
+A∩D sin central                         = 3607
+T∩D sin central                         = 3186
+
+|A ∪ T ∪ D|                             = 32706
+Fuera de los tres (Ω - (A∪T∪D))         = 12294
+
+Suma de las 8 regiones                  = 45000  (¿= 45000?)
+```
+
+> [!note] Lectura estadística
+> - Empezar por la **intersección central** (894) permite restar las regiones dobles sin contar de más la triple.
+> - La región más grande es `solo D` (13,021): la mayoría de los divorciados no son bachelors ni hicieron terapia.
+> - La suma de las 8 regiones del diagrama (3 exclusivas + 3 dobles + central + exterior) reconstruye el universo completo: 45,000.
+
+---
+
+## 🐍 Ejemplo en Python: operaciones avanzadas y conjunto potencia sobre el dataset
+
+Aplicamos las operaciones del temario a los datos reales de matrimonios (45,000 registros). Definimos:
+- $\Omega$ = todos los matrimonios (45,000)
+- $A$ = nivel educativo `bachelors` (11,700)
+- $T$ = hizo terapia prematrimonial (10,972)
+- $D$ = se divorció (20,708)
+
+```python
+import csv
+from pathlib import Path
+
+RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
+
+def cargar():
+    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
+    with open(RUTA, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+def conjunto_ids(filas, predicado):
+    # Devuelve un SET de marriage_id que cumplen la condición
+    return {f["marriage_id"] for f in filas if predicado(f)}
+
+filas = cargar()
+
+# ---------- Definición de conjuntos ----------
+universo   = {f["marriage_id"] for f in filas}                    # Ω : todos
+A_licen    = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")
+T_terapia  = conjunto_ids(filas, lambda f: f["premarital_counseling"] == "1")
+D_divorcio = conjunto_ids(filas, lambda f: f["divorced"] == "1")
+
+print(f"|Ω| (universo)             = {len(universo)}")
+print(f"|A| (bachelors)            = {len(A_licen)}")
+print(f"|T| (terapia)              = {len(T_terapia)}")
+print(f"|D| (divorciados)          = {len(D_divorcio)}")
+
+# ---------- Cardinalidad de la unión: n(A∪B) = n(A) + n(B) - n(A∩B) ----------
+inter = A_licen & T_terapia
+union = A_licen | T_terapia
+print(f"
+|A ∩ T| = {len(inter)}")
+print(f"|A ∪ T| = {len(union)}")
+print(f"Fórmula: |A|+|T|-|A∩T| = {len(A_licen)}+{len(T_terapia)}-{len(inter)} "
+      f"= {len(A_licen)+len(T_terapia)-len(inter)}")
+
+# ---------- Complemento de la unión: (A ∪ T)^c = Ω - (A ∪ T) ----------
+comp = universo - union
+print(f"
+(A ∪ T)^c = {len(comp)}  (|Ω| - |A∪T| = {len(universo)-len(union)})")
+print(f"Propiedad (A∪T)^c ∩ (A∪T) = ∅ → {comp & union == set()}")
+
+# ---------- Doble complemento: (A^c)^c = A ----------
+doble = (universo - (universo - A_licen))
+print(f"(A^c)^c = A  →  {doble == A_licen}  ({len(doble)})")
+
+# ---------- Disjuntos / partición ----------
+print(f"
+Casados ∩ Divorciados = ∅ → "
+      f"{(universo - D_divorcio) & D_divorcio == set()}")
+
+# ---------- Conjunto potencia: 2^n con n = 5 categorías educativas ----------
+categorias = set(f["education_level"] for f in filas)
+n_cat = len(categorias)
+print(f"
+|education_level| = {n_cat} categorías → |P(A)| = 2^{n_cat} = {2**n_cat}")
+print(f"Categorías: {sorted(categorias)}")
+```
+
+**Salida real del script (verificada con el dataset):**
+
+```
+|Ω| (universo)             = 45000
+|A| (bachelors)            = 11700
+|T| (terapia)              = 10972
+|D| (divorciados)          = 20708
+
+|A ∩ T| = 2987
+|A ∪ T| = 19685
+Fórmula: |A|+|T|-|A∩T| = 11700+10972-2987 = 19685
+
+(A ∪ T)^c = 25315  (|Ω| - |A∪T| = 25315)
+Propiedad (A∪T)^c ∩ (A∪T) = ∅ → True
+
+(A^c)^c = A  →  True  (11700)
+
+Casados ∩ Divorciados = ∅ → True
+
+|education_level| = 5 categorías → |P(A)| = 2^5 = 32
+Categorías: ['bachelors', 'graduate', 'high_school', 'less_than_hs', 'some_college']
+```
+
+> [!note] Lectura estadística
+> - La fórmula de cardinalidad **evita contar dos veces** a los 2,987 matrimonios que son `bachelors` y además hicieron terapia.
+> - $(A \cup T)^c$ agrupa los 25,315 matrimonios que **no** son bachelors **ni** hicieron terapia.
+> - El **conjunto potencia** de las 5 categorías educativas tiene $2^5 = 32$ subconjuntos: cada subconjunto corresponde a un posible grupo de niveles que podemos seleccionar para un análisis.
+
+---
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
@@ -739,6 +1094,229 @@ c) $P(B \mid A) = \frac{|B|}{|\Omega|}$
 d) $P(B \mid A) = \frac{|A|}{|\Omega|}$
 
 > **b) $P(B \mid A) = \frac{|B|}{|A|}$**
+
+---
+
+
+### Pregunta 18
+
+El **conjunto vacío** se caracteriza por:
+
+a) Contener un elemento llamado "vacío"
+b) Contener exactamente 10 elementos
+c) No contener **ningún elemento** y ser subconjunto de cualquier conjunto
+d) Ser igual al conjunto universal
+
+> **c) No contener ningún elemento y ser subconjunto de cualquier conjunto**
+
+---
+
+### Pregunta 19
+
+El **complemento del conjunto vacío** es:
+
+a) El propio vacío
+b) El **conjunto universal** ($\emptyset^c = \Omega$)
+c) No existe
+d) Un conjunto con un elemento
+
+> **b) El conjunto universal ($\emptyset^c = \Omega$)**
+
+---
+
+### Pregunta 20
+
+La propiedad del **doble complemento** establece que:
+
+a) $(A^c)^c = A$
+b) $A^c = \Omega$
+c) $A^c = \emptyset$
+d) $(A^c)^c = \emptyset$
+
+> **a) $(A^c)^c = A$**
+
+---
+
+### Pregunta 21
+
+El **complemento del conjunto universal** es:
+
+a) El propio universal
+b) $\Omega$
+c) El **conjunto vacío** ($\Omega^c = \emptyset$)
+d) $A$
+
+> **c) El conjunto vacío ($\Omega^c = \emptyset$)**
+
+---
+
+### Pregunta 22
+
+La fórmula general de la **cardinalidad de la unión** de dos conjuntos es:
+
+a) $n(A \cup B) = n(A) + n(B)$
+b) $n(A \cup B) = n(A) + n(B) - n(A \cap B)$
+c) $n(A \cup B) = n(A) \cdot n(B)$
+d) $n(A \cup B) = n(A) - n(B)$
+
+> **b) $n(A \cup B) = n(A) + n(B) - n(A \cap B)$**
+
+---
+
+### Pregunta 23
+
+Si $A$ y $B$ son **disjuntos**, la cardinalidad de su unión es:
+
+a) $n(A \cup B) = n(A) + n(B)$
+b) $n(A \cup B) = n(A) + n(B) - n(A \cap B)$ (con $n(A\cap B)>0$)
+c) $n(A \cup B) = 0$
+d) $n(A \cup B) = n(A) \cdot n(B)$
+
+> **a) $n(A \cup B) = n(A) + n(B)$**
+
+---
+
+### Pregunta 24
+
+En el dataset, $|A|$ (bachelors) = 11700, $|T|$ (terapia) = 10972 y $|A \cap T|$ = 2987. La cardinalidad de $A \cup T$ es:
+
+a) 11700 + 10972 = 22672
+b) 22672 - 2987 = **19685**
+c) 2987
+d) 45000
+
+> **b) 22672 - 2987 = 19685**
+
+---
+
+### Pregunta 25
+
+El **conjunto potencia** $\mathcal{P}(A)$ es:
+
+a) El conjunto de los elementos más grandes de $A$
+b) El conjunto formado por **todos los subconjuntos posibles** de $A$
+c) El conjunto de los elementos repetidos de $A$
+d) El complemento de $A$
+
+> **b) El conjunto formado por todos los subconjuntos posibles de A**
+
+---
+
+### Pregunta 26
+
+Si $n(A) = 5$, entonces $n(\mathcal{P}(A))$ es:
+
+a) 5
+b) 10
+c) 25
+d) **32** (porque $2^5 = 32$)
+
+> **d) 32 (porque $2^5 = 32$)**
+
+---
+
+### Pregunta 27
+
+El conjunto potencia del **conjunto vacío** ($\mathcal{P}(\emptyset)$) tiene:
+
+a) 0 elementos
+b) **1 elemento** (el subconjunto vacío: $2^0 = 1$)
+c) 2 elementos
+d) 4 elementos
+
+> **b) 1 elemento (el subconjunto vacío: $2^0 = 1$)**
+
+---
+
+### Pregunta 28
+
+En el dataset de matrimonios, la operación $(A \cup T)^c$ (complemento de la unión de bachelors y terapia) tiene cardinalidad:
+
+a) 19685
+b) 45000
+c) 2987
+d) **25315** (porque $45000 - 19685 = 25315$)
+
+> **d) 25315 (porque $45000 - 19685 = 25315$)**
+
+---
+
+### Pregunta 29
+
+En la **jerarquía de operaciones** entre conjuntos:
+
+a) Se opera de afuera hacia adentro
+b) Se opera de **adentro hacia afuera**, empezando por los paréntesis
+c) El orden no importa
+d) Primero se calcula el complemento de todo
+
+> **b) Se opera de adentro hacia afuera, empezando por los paréntesis**
+
+---
+
+### Pregunta 30
+
+Si $B \subseteq A$, entonces la intersección y la unión verifican:
+
+a) $A \cap B = A$ y $A \cup B = B$
+b) $A \cap B = B$ y $A \cup B = A$
+c) $A \cap B = \emptyset$ y $A \cup B = \Omega$
+d) $A \cap B = \Omega$ y $A \cup B = \emptyset$
+
+> **b) $A \cap B = B$ y $A \cup B = A$**
+
+---
+
+### Pregunta 31
+
+La **diferencia** de un conjunto consigo mismo ($A - A$) es:
+
+a) $A$
+b) $\Omega$
+c) El **conjunto vacío**
+d) $A^c$
+
+> **c) El conjunto vacío**
+
+---
+
+
+### Pregunta 32
+
+Al resolver un problema de **tres conjuntos** con un diagrama de Venn, se recomienda comenzar por:
+
+a) La región exclusiva del primer conjunto
+b) La **intersección central de los tres conjuntos**
+c) La zona fuera de todos los conjuntos
+d) La unión de los tres conjuntos
+
+> **b) La intersección central de los tres conjuntos**
+
+---
+
+### Pregunta 33
+
+En el diagrama de Venn del dataset con $A$ = bachelors, $T$ = terapia y $D$ = divorciados, la región **exclusiva** $A$ (solo bachelors, sin terapia ni divorcio) es:
+
+a) 2987
+b) 894
+c) **5106** (pues $11700 - 2987 - 4501 + 894 = 5106$)
+d) 4501
+
+> **c) 5106 (pues $11700 - 2987 - 4501 + 894 = 5106$)**
+
+---
+
+### Pregunta 34
+
+En el diagrama de Venn del dataset, la suma de las **8 regiones** (3 exclusivas + 3 dobles + central + exterior) es:
+
+a) 20708
+b) 24292
+c) 32706
+d) **45000** (reconstruye el universo completo)
+
+> **d) 45000 (reconstruye el universo completo)**
 
 ---
 

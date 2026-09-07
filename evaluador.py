@@ -102,6 +102,7 @@ _LATEX_UNICODE = [
     (r"\xi", "\u03be"),
     (r"\Delta", "\u0394"),
     (r"\Sigma", "\u03a3"),
+    (r"\mathcal{P}", "\U0001d4ab"),
     # Modificadores de espaciado y operadores sin símbolo propio
     (r"\,", " "),
     (r"\;", " "),
