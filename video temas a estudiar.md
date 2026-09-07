@@ -62,3 +62,7 @@ Aquí tienes el análisis y la lista de temas principales que se abordan en los 
 
 
 
+**#otros videos**
+
+teorema de bayes
+https://youtu.be/3vtS2qc4t6o?si=gxelJcbGp8VTNJ3D 

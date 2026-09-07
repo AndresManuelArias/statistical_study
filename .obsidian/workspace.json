@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "consulta_datos_practica.md",
+                "file": "00_curso_estadistica_inferencial/00_contenido_curso.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "consulta_datos_practica"
+              "title": "00_contenido_curso"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "consulta_datos_practica.md",
+                "file": "00_curso_estadistica_inferencial/00_contenido_curso.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "consulta_datos_practica.md",
+                "file": "00_curso_estadistica_inferencial/00_contenido_curso.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "consulta_datos_practica.md",
+                "file": "00_curso_estadistica_inferencial/00_contenido_curso.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,6 +190,10 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "video temas a estudiar.md",
+    "consulta_datos_practica.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos.md",
+    "00_curso_estadistica_inferencial/00_contenido_curso.md",
     "Python.gitignore",
     "ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv",
     "ejercicios_practicos/datos_matrimonio/data_dictionary.csv",
@@ -200,14 +204,9 @@
     "mi_entorno/lib/python3.12/site-packages/kagglehub-1.0.2.dist-info/REQUESTED",
     "mi_entorno/lib/python3.12/site-packages/kagglehub-1.0.2.dist-info/RECORD",
     "mi_entorno/lib/python3.12/site-packages/kagglehub-1.0.2.dist-info/METADATA",
-    "mi_entorno/lib/python3.12/site-packages/kagglehub-1.0.2.dist-info/INSTALLER",
     "mi_entorno/lib/python3.12/site-packages/idna-3.19.dist-info/licenses/LICENSE.md",
-    "video temas a estudiar.md",
-    "consulta_datos_practica.md",
-    "00_curso_estadistica_inferencial/00_contenido_curso.md",
     "00_curso_estadistica_inferencial/03_probabilidad.md",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos.md",
     "04_pruebas_estadisticas/no_parametricas.md",
     "04_pruebas_estadisticas/chi_cuadrado_prueba.md",
     "04_pruebas_estadisticas/anova.md",
