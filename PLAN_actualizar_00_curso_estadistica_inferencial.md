@@ -147,9 +147,11 @@ d) ...
 
 ## 6. Criterios de "listo"
 
-- [ ] Tema 08 creado con 9 secciones + ejemplo Python verificado + ≥ 10 preguntas.
-- [ ] Tema 04 completo con las distribuciones faltantes y preguntas nuevas.
-- [ ] Tema 06 con Cluster Sampling verificado.
-- [ ] `00_contenido_curso.md` actualizado.
-- [ ] `parsear_preguntas` da 0 LaTeX restante en todos los temas.
-- [ ] Evaluador descubre todos los temas y guarda JSON por tema.
+> ✅ **Actualizado 2026-09-07:** Fases A (tema 08), B (distribuciones) y C (conglomerados) implementadas y verificadas. Pendiente solo **evaluar** los temas con `./ejecutar.sh`.
+
+- [x] Tema 08 creado con 9 secciones + ejemplo Python verificado + 14 preguntas.
+- [x] Tema 04 completo con las distribuciones faltantes y preguntas nuevas (22 total).
+- [x] Tema 06 con Cluster Sampling verificado (conglomerados en el ejemplo).
+- [x] `00_contenido_curso.md` actualizado.
+- [x] `parsear_preguntas` da 0 LaTeX restante en todos los temas (178 preguntas).
+- [x] Evaluador descubre 13 carpetas (9 curso + 4 avanzadas) y guarda JSON por tema.

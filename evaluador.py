@@ -103,6 +103,10 @@ _LATEX_UNICODE = [
     (r"\Delta", "\u0394"),
     (r"\Sigma", "\u03a3"),
     (r"\mathcal{P}", "\U0001d4ab"),
+    (r"\mathbb{N}", "\u2115"),
+    (r"\mathbb{Z}", "\u2124"),
+    (r"\mathbb{Q}", "\u211a"),
+    (r"\mathbb{R}", "\u211d"),
     # Modificadores de espaciado y operadores sin símbolo propio
     (r"\,", " "),
     (r"\;", " "),

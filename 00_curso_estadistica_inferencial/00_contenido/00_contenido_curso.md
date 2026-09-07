@@ -25,12 +25,13 @@ Este curso cubre los fundamentos de la **Estadística Inferencial**, partiendo d
 | # | Tema | Archivo de Anotaciones | Estado |
 |---|------|------------------------|--------|
 | 1 | Repaso de conceptos previos (álgebra, conjuntos, funciones) | [[01_repaso_conceptos_previos]] | ✅ **Evaluado: 8.0/10** |
-| 2 | Análisis combinatorio (permutaciones y combinaciones) | [[02_analisis_combinatorio]] | ⏳ Por estudiar |
-| 3 | Probabilidad (simple, geométrica, axiomática, frecuentista) | [[03_probabilidad]] | 🔧 Ejercicio por definir |
-| 4 | Variables aleatorias y distribuciones de probabilidad | [[04_variables_aleatorias]] | 🔧 Ejercicio por definir |
-| 5 | Distribuciones muestrales, ley de los grandes números, TLC | [[05_distribuciones_muestrales]] | 🔧 Ejercicio por definir |
-| 6 | Población, muestras y técnicas de muestreo | [[06_muestreo]] | ✅ Aplicable al dataset |
-| 7 | Prueba de hipótesis (significancia, valor $p$, potencia, errores) | [[07_prueba_hipotesis]] | ✅ Aplicable al dataset |
+| 2 | Análisis combinatorio (permutaciones y combinaciones) | [[02_analisis_combinatorio]] | ✅ Listo (sin evaluar) |
+| 3 | Probabilidad (simple, geométrica, axiomática, frecuentista, condicional) | [[03_probabilidad]] | ✅ Listo (sin evaluar) |
+| 4 | Variables aleatorias y distribuciones de probabilidad (incl. Geométrica, Binom. Negativa, t, F, Ji²) | [[04_variables_aleatorias]] | ✅ Listo (sin evaluar) |
+| 5 | Distribuciones muestrales, ley de los grandes números, TLC | [[05_distribuciones_muestrales]] | ✅ Listo (sin evaluar) |
+| 6 | Población, muestras y técnicas de muestreo (incl. conglomerados) | [[06_muestreo]] | ✅ Listo (sin evaluar) |
+| 7 | Prueba de hipótesis (significancia, valor $p$, potencia, errores) | [[07_prueba_hipotesis]] | ✅ Listo (sin evaluar) |
+| 8 | Relaciones y funciones (Carroll, producto cartesiano, dominio/rango, funciones, biyectiva, finitos/infinitos) | [[08_relaciones_funciones]] | ✅ **Nuevo** (sin evaluar) |
 
 ---
 
@@ -77,11 +78,14 @@ control de evaluaciones (JSON) dentro de la carpeta de cada tema.
 ├── 04_variables_aleatorias/
 ├── 05_distribuciones_muestrales/
 ├── 06_muestreo/
-└── 07_prueba_hipotesis/
+├── 07_prueba_hipotesis/
+└── 08_relaciones_funciones/
 ```
 
 > 💡 Para evaluar un tema: ejecuta `./ejecutar.sh` y selecciona la carpeta del curso.
 > El tema aparecerá en verde si su nota guardada es ≥ 8.0 y en rojo si es menor.
+
+> 📊 Consulta el avance detallado en [[PROGRESO_APRENDIZAJE|Progreso de aprendizaje]] y el plan en [[PLAN_actualizar_00_curso_estadistica_inferencial|Plan de actualización]].
 
 ---
 

@@ -190,6 +190,9 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "PROGRESO_APRENDIZAJE.md",
+    "00_curso_estadistica_inferencial/08_relaciones_funciones/08_relaciones_funciones.md",
+    "00_curso_estadistica_inferencial/08_relaciones_funciones",
     "PLAN_actualizar_00_curso_estadistica_inferencial.md",
     "mi_entorno/bin/yt-dlp",
     "mi_entorno/lib/python3.12/site-packages/yt_dlp/__pycache__/webvtt.cpython-312.pyc",
@@ -200,7 +203,6 @@
     "mi_entorno/lib/python3.12/site-packages/yt_dlp/utils/__pycache__/_utils.cpython-312.pyc",
     "mi_entorno/lib/python3.12/site-packages/yt_dlp/utils/__pycache__/_legacy.cpython-312.pyc",
     "mi_entorno/lib/python3.12/site-packages/yt_dlp/utils/__pycache__/_jsruntime.cpython-312.pyc",
-    "mi_entorno/lib/python3.12/site-packages/yt_dlp/utils/__pycache__/_deprecated.cpython-312.pyc",
     "video temas a estudiar.md",
     "consulta_datos_practica.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
@@ -233,8 +235,6 @@
     "00_curso_estadistica_inferencial/04_variables_aleatorias/04_variables_aleatorias.md",
     "00_curso_estadistica_inferencial/03_probabilidad/03_probabilidad.md",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio/02_analisis_combinatorio.md",
-    "00_curso_estadistica_inferencial/02_analisis_combinatorio.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos.md",
-    "mi_entorno/local-tk/usr/share/doc/tk8.6/README.md"
+    "00_curso_estadistica_inferencial/02_analisis_combinatorio.md"
   ]
 }

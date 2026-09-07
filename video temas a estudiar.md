@@ -210,13 +210,13 @@ Resumen de cobertura de los 69 videos de la playlist:
 |-----------------|--------|---------|--------|
 | 1 | Presentación del curso | `00_contenido` | ✅ |
 | 2-13 | Teoría de conjuntos | `01_repaso_conceptos_previos` | ✅ (ampliado con temas 4-13) |
-| **14-22** | Carroll, producto cartesiano, relaciones y **funciones** | **nuevo tema 08** | ⏳ |
+| **14-22** | Carroll, producto cartesiano, relaciones y **funciones** | **08_relaciones_funciones** | ✅ creado 2026-09-07 |
 | 23-25, 32-37 | Probabilidad (clásica, geométrica, frecuentista, axiomática, condicional, independientes, excluyentes) | `03_probabilidad` | ✅ |
 | 26-31 | Análisis combinatorio | `02_analisis_combinatorio` | ✅ |
 | 38-40 | Variables aleatorias y tipos de distribuciones | `04_variables_aleatorias` | ✅ |
-| **41-52** | Distribuciones (Bernoulli, Binomial, Poisson, Geométrica, Binomial Negativa, Normal, t, F, Ji²) | `04_variables_aleatorias` | ⏳ parcial |
+| **41-52** | Distribuciones (Bernoulli, Binomial, Poisson, Geométrica, Binomial Negativa, Normal, t, F, Ji²) | `04_variables_aleatorias` | ✅ completado |
 | 53, 55-57 | Muestreo (tipos, MAS, estratificado) | `06_muestreo` | ✅ |
-| **58** | Cluster Random Sampling | `06_muestreo` | ⏳ |
+| **58** | Cluster Random Sampling | `06_muestreo` | ✅ agregado |
 | 54, 59-61 | Distribuciones muestrales, LGN, TLC | `05_distribuciones_muestrales` | ✅ |
 | 62-69 | Prueba de hipótesis | `07_prueba_hipotesis` | ✅ |
 

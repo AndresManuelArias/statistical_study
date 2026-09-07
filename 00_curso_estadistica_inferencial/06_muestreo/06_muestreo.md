@@ -156,6 +156,19 @@ resumen("Estratificado", est)
 # 4. Muestreo de conveniencia: solo registros con years_married > 20
 conv = [f for f in filas if float(f["years_married"]) > 20][:n]
 resumen("Conveniencia (sesgado)", conv)
+
+# 5. Muestreo por conglomerados: clusters = education_level
+from collections import defaultdict
+clusters = defaultdict(list)
+for f in filas:
+    clusters[f["education_level"]].append(f)
+
+clusters_sel = random.sample(sorted(clusters.keys()), 2)
+print(f"\nConglomerados elegidos: {clusters_sel}")
+muestra_cl = []
+for c in clusters_sel:
+    muestra_cl += random.sample(clusters[c], n // 2)   # 2 etapas: cluster + submuestra
+resumen("Conglomerados", muestra_cl)
 ```
 
 **Salida real del script (verificada con el dataset):**
@@ -168,12 +181,16 @@ Aleatorio simple     : p̂ = 0.4650 (error 0.0048) | x̄ = 10.46 (error 0.24)
 Sistemático          : p̂ = 0.4400 (error 0.0202) | x̄ = 10.44 (error 0.26)
 Estratificado        : p̂ = 0.4600 (error 0.0002) | x̄ = 11.45 (error 0.75)
 Conveniencia (sesgado): p̂ = 0.0900 (error 0.3702) | x̄ = 27.38 (error 16.68)
+
+Conglomerados elegidos: ['some_college', 'high_school']
+Conglomerados         : p̂ = 0.5050 (error 0.0448) | x̄ = 9.92 (error 0.78)
 ```
 
 > [!note] Lectura estadística
 > - Los métodos **probabilísticos** (aleatorio simple, sistemático, estratificado) estiman $p$ y $\mu$ con errores **pequeños**.
 > - El **muestreo de conveniencia** (con `years_married > 20`) produce un **sesgo enorme**: la media estimada (27.38) está a 16.7 años de la real. El sesgo **no se corrige** aumentando $n$.
 > - El **estratificado** controla directamente la proporción del estrato, por eso su error en $p̂$ es casi cero.
+> - El **conglomerado** (por `education_level`) da un error mayor que el aleatorio simple porque los clusters elegidos (de mayor tasa de divorcio) no representan igual a la población: 0.5050 frente a 0.4602.
 
 ---
 

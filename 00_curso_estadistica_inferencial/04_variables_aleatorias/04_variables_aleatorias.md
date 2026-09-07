@@ -101,6 +101,103 @@ $$
 \sigma = \sqrt{Var(X)}
 $$
 
+## Momentos de las variables aleatorias (video 43)
+
+Los **momentos** resumen la forma de una distribución. El momento de orden $k$ alrededor del origen es:
+
+$$
+\mu_k' = E[X^k]
+$$
+
+El **momento central** de orden $k$ (alrededor de la media $\mu$) es:
+
+$$
+\mu_k = E[(X - \mu)^k]
+$$
+
+**Los dos primeros momentos son los más usados:**
+- Primer momento: $\mu_1' = E[X] = \mu$ → la **media**.
+- Segundo momento central: $\mu_2 = E[(X-\mu)^2] = Var[X]$ → la **varianza**.
+
+Con momentos de orden mayor se miden:
+- **Asimetría** ($\mu_3 / \sigma^3$): si es 0, la distribución es simétrica.
+- **Curtosis** ($\mu_4 / \sigma^4 - 3$): qué tan "puntiaguda" es (colas).
+
+> [!example] Con el dataset
+> Para `n_children` ya calculamos: $E[X] = 1.405$ y $E[X^2] = 3.374$, de modo que
+> $Var[X] = E[X^2] - E[X]^2 = 3.374 - 1.405^2 = 1.400$.
+
+---
+
+## Distribuciones discretas adicionales
+
+### Distribución geométrica (video 46)
+
+Modela el **número de ensayos hasta el primer éxito** en intentos independientes con probabilidad $p$ de éxito:
+
+$$
+P(X = k) = (1-p)^{k-1} \cdot p, \quad k = 1, 2, 3, \ldots
+$$
+
+$$
+E[X] = \frac{1}{p}, \quad Var[X] = \frac{1-p}{p^2}
+$$
+
+> [!example] Con el dataset
+> Si "éxito" = divorcio ($p = 0.4602$):
+> - $P(X=1) = (0.5398)^0 \cdot 0.4602 = 0.4602$
+> - $P(X=2) = 0.5398 \cdot 0.4602 = 0.2484$
+> - $E[X] = 1/0.4602 = 2.17$ matrimonios en promedio hasta el primer divorcio.
+
+### Distribución binomial negativa (video 47)
+
+Generaliza la geométrica: cuenta los ensayos hasta obtener **$r$ éxitos**:
+
+$$
+P(X = k) = \binom{k-1}{r-1} p^r (1-p)^{k-r}, \quad k = r, r+1, \ldots
+$$
+
+$$
+E[X] = \frac{r}{p}
+$$
+
+> [!example] Con el dataset
+> Con $p = 0.4602$ y $r = 2$ (esperar a que haya **2 divorcios**):
+> - $P(X=3) = \binom{2}{1} \cdot 0.4602^2 \cdot 0.5398^1 = 0.2286$
+> - $E[X] = 2/0.4602 = 4.35$ matrimonios en promedio hasta el segundo divorcio.
+>
+> Cuando $r = 1$ se reduce a la **geométrica**.
+
+---
+
+## Distribuciones continuas adicionales
+
+### Distribución t de Student (video 50)
+
+Se usa para inferir sobre la **media** cuando la desviación estándar poblacional $\sigma$ es desconocida y se estima con $s$ (común con muestras pequeñas). Su parámetro son los **grados de libertad** $\nu = n - 1$.
+
+Tiene colas **más pesadas** que la normal; conforme $\nu$ crece, se aproxima a la normal estándar.
+
+> Aplicación en el curso: comparar `years_married` entre divorciados y no divorciados (material avanzado).
+
+### Distribución F (video 51)
+
+Es la **razón de dos varianzas** independientes:
+
+$$
+F = \frac{s_1^2}{s_2^2}
+$$
+
+Parámetros: grados de libertad del numerador ($\nu_1$) y del denominador ($\nu_2$). Es la base del **ANOVA** para comparar la variabilidad entre grupos con la variabilidad dentro de los grupos.
+
+### Distribución Ji Cuadrada ($\chi^2$, video 52)
+
+Es la distribución de la **suma de $k$ normales estándar al cuadrado**; su parámetro son los grados de libertad ($k$). Siempre toma valores $\ge 0$ y es asimétrica a la derecha.
+
+Se usa para **frecuencias y tablas de contingencia** (prueba de independencia) — aplicada en el material avanzado de chi-cuadrado con `education_level` × `divorced`.
+
+---
+
 ## Distribución normal (continua)
 
 La distribución más importante de la estadística. Se define por su media $\mu$ y desviación estándar $\sigma$:
@@ -189,6 +286,23 @@ p_div = div / N
 print(f"\n=== Binomial: X = divorcios en una muestra ===")
 print(f"p = P(divorcio) = {p_div:.4f}")
 print(f"Si tomamos n=10 matrimonios, E[X] = np = {10*p_div:.2f}")
+
+# ---- Distribución geométrica: X = n.º de ensayos hasta el 1er divorcio ----
+q = 1 - p_div
+print("\n=== Geométrica (éxito = divorcio) ===")
+print(f"P(X=1) = q^0*p = {q**0*p_div:.4f}")
+print(f"P(X=2) = q^1*p = {q**1*p_div:.4f}")
+print(f"P(X=5) = q^4*p = {q**4*p_div:.4f}")
+print(f"E[X] = 1/p = {1/p_div:.4f}")
+
+# ---- Distribución binomial negativa: hasta r=2 éxitos ----
+from math import comb
+r = 2
+print("\n=== Binomial negativa (r=2, hasta el 2º divorcio) ===")
+for k in [3, 4, 5]:
+    prob = comb(k-1, r-1) * p_div**r * q**(k-r)
+    print(f"P(X={k}) = C({k-1},{r-1})*p^2*q^{k-r} = {prob:.4f}")
+print(f"E[X] = r/p = {r/p_div:.4f}")
 ```
 
 **Salida real del script (verificada con el dataset):**
@@ -215,12 +329,25 @@ Z para years_married = 10.7: z = (10.7 - 10.70)/7.82 = 0.00
 === Binomial: X = divorcios en una muestra ===
 p = P(divorcio) = 0.4602
 Si tomamos n=10 matrimonios, E[X] = np = 4.60
+
+=== Geométrica (éxito = divorcio) ===
+P(X=1) = q^0*p = 0.4602
+P(X=2) = q^1*p = 0.2484
+P(X=5) = q^4*p = 0.0391
+E[X] = 1/p = 2.1731
+
+=== Binomial negativa (r=2, hasta el 2º divorcio) ===
+P(X=3) = C(2,1)*p^2*q^1 = 0.2286
+P(X=4) = C(3,1)*p^2*q^2 = 0.1851
+P(X=5) = C(4,1)*p^2*q^3 = 0.1332
+E[X] = r/p = 4.3461
 ```
 
 > [!note] Lectura estadística
 > - `n_children` es **discreta**: se describe con $P(X=k)$ y su esperanza se calcula como suma ponderada.
 > - `years_married` es **continua**: se resume con media y desviación estándar; el % de datos en $\mu \pm 1\sigma$ (69.4%) es cercano al 68% teórico de la normal, señal de que la distribución es **aproximadamente normal**.
 > - La **estandarización** convierte cualquier valor en un puntaje $Z$ comparable (por ejemplo, para una tabla normal).
+> - La **geométrica** y la **binomial negativa** modelan cuántos matrimonios inspeccionar (hasta el 1er o el 2º divorcio); la t, F y Ji cuadrada aparecen como estadísticos de prueba en la inferencia.
 
 ---
 
@@ -409,6 +536,111 @@ d) Un conteo de eventos raros
 > **b) Un experimento con dos resultados (éxito con probabilidad p y fracaso con 1-p)**
 
 ---
+
+### Pregunta 15
+
+El **primer momento** alrededor del origen ($\mu_1' = E[X]$) es:
+
+a) La varianza
+b) La **media**
+c) La desviación estándar
+d) La asimetría
+
+> **b) La media**
+
+---
+
+### Pregunta 16
+
+La varianza es el **segundo momento central**:
+
+a) $E[X]$
+b) $E[X^2]$
+c) $E[(X - \mu)^2]$
+d) $E[X^2] - \mu$  (solo si $\mu = 0$)
+
+> **c) $E[(X - \mu)^2]$**
+
+---
+
+### Pregunta 17
+
+La fórmula de la **distribución geométrica** es:
+
+a) $P(X=k) = \binom{k-1}{r-1} p^r (1-p)^{k-r}$
+b) $P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}$
+c) $P(X=k) = (1-p)^{k-1} \cdot p$
+d) $P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$
+
+> **c) $P(X=k) = (1-p)^{k-1} \cdot p$**
+
+---
+
+### Pregunta 18
+
+Con $p = P(\text{divorcio}) = 0.4602$, la esperanza de la geométrica $E[X] = 1/p$ es:
+
+a) 0.46 matrimonios
+b) 2.00 matrimonios
+c) **2.17 matrimonios**
+d) 4.60 matrimonios
+
+> **c) 2.17 matrimonios**
+
+---
+
+### Pregunta 19
+
+La distribución **binomial negativa** modela:
+
+a) El número de éxitos en $n$ ensayos fijos
+b) El **número de ensayos hasta obtener $r$ éxitos**
+c) El tiempo entre eventos raros
+d) La suma de muchas variables independientes
+
+> **b) El número de ensayos hasta obtener r éxitos**
+
+---
+
+### Pregunta 20
+
+La distribución **t de Student** se usa principalmente para:
+
+a) Comparar varianzas
+b) Inferir sobre la **media** cuando $\sigma$ es desconocida (gl = $n-1$)
+c) Contar éxitos en ensayos
+d) Analizar tablas de contingencia
+
+> **b) Inferir sobre la media cuando $\sigma$ es desconocida (gl = n-1)**
+
+---
+
+### Pregunta 21
+
+La distribución **F** es la base del **ANOVA** porque es:
+
+a) Una binomial con parámetros grandes
+b) Una **razón de varianzas** ($s_1^2 / s_2^2$)
+c) Una normal estándar al cuadrado
+d) Una Poisson con media grande
+
+> **b) Una razón de varianzas ($s_1^2 / s_2^2$)**
+
+---
+
+### Pregunta 22
+
+La distribución **Ji Cuadrada** ($\chi^2$) se caracteriza por:
+
+a) Tener media cero
+b) Ser simétrica
+c) Tener **parámetro de grados de libertad** y usarse en tablas de contingencia
+d) Aceptar valores negativos
+
+> **c) Tener parámetro de grados de libertad y usarse en tablas de contingencia**
+
+---
+
 
 ## ❓ Dudas pendientes
 
