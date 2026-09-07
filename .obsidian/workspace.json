@@ -190,6 +190,7 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "__pycache__/evaluador.cpython-312.pyc.140459755059072",
     "video temas a estudiar.md",
     "consulta_datos_practica.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/01_repaso_conceptos_previos.md",
@@ -234,7 +235,6 @@
     "00_curso_estadistica_inferencial/02_analisis_combinatorio/02_analisis_combinatorio.md",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos.md",
-    "mi_entorno/local-tk/usr/share/doc/tk8.6/README.md",
-    "curso.md"
+    "mi_entorno/local-tk/usr/share/doc/tk8.6/README.md"
   ]
 }

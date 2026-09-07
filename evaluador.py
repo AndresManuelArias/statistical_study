@@ -102,7 +102,59 @@ _LATEX_UNICODE = [
     (r"\xi", "\u03be"),
     (r"\Delta", "\u0394"),
     (r"\Sigma", "\u03a3"),
+    # Modificadores de espaciado y operadores sin símbolo propio
+    (r"\,", " "),
+    (r"\;", " "),
+    (r"\!", ""),
+    (r"\quad", "  "),
+    (r"\max", "max"),
+    (r"\min", "min"),
+    (r"\lim", "lim"),
+    (r"\log", "log"),
+    (r"\ln", "ln"),
+    (r"\sin", "sen"),
+    (r"\cos", "cos"),
+    (r"\tan", "tan"),
 ]
+
+
+def _buscar_cierre_llave(texto, inicio):
+    """Devuelve el índice del '}' que cierra la '{' en 'inicio'
+    (maneja llaves anidadas). Devuelve -1 si no hay cierre."""
+    nivel = 0
+    for i in range(inicio, len(texto)):
+        if texto[i] == "{":
+            nivel += 1
+        elif texto[i] == "}":
+            nivel -= 1
+            if nivel == 0:
+                return i
+    return -1
+
+
+def _frac_a_unicode(texto):
+    """Convierte \frac{numerador}{denominador} a (numerador)/(denominador),
+    soportando llaves anidadas (p. ej. \text{...} dentro del numerador)."""
+    resultado = []
+    i = 0
+    n = len(texto)
+    while i < n:
+        m = re.match(r"\\frac\s*\{", texto[i:])
+        if m:
+            a1 = i + m.end() - 1          # '{' del numerador
+            a2 = _buscar_cierre_llave(texto, a1)
+            if a2 != -1 and a2 + 1 < n and texto[a2 + 1] == "{":
+                b1 = a2 + 1               # '{' del denominador
+                b2 = _buscar_cierre_llave(texto, b1)
+                if b2 != -1:
+                    num = texto[a1 + 1:a2]
+                    den = texto[b1 + 1:b2]
+                    resultado.append(f"({num})/({den})")
+                    i = b2 + 1
+                    continue
+        resultado.append(texto[i])
+        i += 1
+    return "".join(resultado)
 
 
 def latex_a_unicode(texto):
@@ -110,14 +162,18 @@ def latex_a_unicode(texto):
     Se usa en las opciones y en el enunciado (texto plano, sin imágenes)."""
     for latex, uni in _LATEX_UNICODE:
         texto = texto.replace(latex, uni)
-    texto = re.sub(r"\\frac\{([^}]+)\}\{([^}]+)\}", r"\1/\2", texto)
-    texto = re.sub(r"\\sqrt\{([^}]+)\}", r"√(\1)", texto)
+    texto = _frac_a_unicode(texto)
+    texto = re.sub(r"\\sqrt\[?[^\]]*\]?\{([^}]+)\}", r"√(\1)", texto)
     texto = re.sub(r"\\text\{([^}]*)\}", r"\1", texto)
     texto = re.sub(r"\\binom\{([^}]+)\}\{([^}]+)\}", r"C(\1,\2)", texto)
+    texto = re.sub(r"\\bar\{([^}]+)\}", lambda m: m.group(1) + "\u0304", texto)
+    texto = re.sub(r"\\hat\{([^}]+)\}", lambda m: m.group(1) + "\u0302", texto)
+    texto = re.sub(r"\\overline\{([^}]+)\}", lambda m: m.group(1) + "\u0304", texto)
     texto = re.sub(r"\\(?:left|right|displaystyle|limits|large|small)", "",
                    texto)
     texto = re.sub(r"([_^])\{([^{}]*)\}", r"\1\2", texto)
-    return texto.replace("$", "").strip()
+    texto = texto.replace("$", "").replace("**", "")
+    return texto.strip()
 
 
 def render_math_png(tex, fontsize=14, dpi=180):
