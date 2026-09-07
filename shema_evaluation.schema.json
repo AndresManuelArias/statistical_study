@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SistemaEvaluacion",
+  "type": "object",
+  "properties": {
+    "evaluacion_id": { "type": "string" },
+    "titulo": { "type": "string" },
+    "usuario": {
+      "type": "object",
+      "properties": {
+        "nombre": { "type": "string" },
+        "id_usuario": { "type": "string" }
+      },
+      "required": ["nombre"]
+    },
+    "preguntas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id_pregunta": { "type": "integer" },
+          "enunciado": { "type": "string" },
+          "opciones": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 2
+          },
+          "respuesta_correcta": { "type": "string" },
+          "respuesta_usuario": { 
+            "type": ["string", "null"] 
+          },
+          "es_correcta": { 
+            "type": ["boolean", "null"] 
+          }
+        },
+        "required": ["id_pregunta", "enunciado", "opciones", "respuesta_correcta"]
+      }
+    },
+    "resultado_final": {
+      "type": "object",
+      "properties": {
+        "calificacion": { "type": "number" },
+        "total_correctas": { "type": "integer" },
+        "total_preguntas": { "type": "integer" }
+      }
+    }
+  },
+  "required": ["evaluacion_id", "preguntas"]
+}
