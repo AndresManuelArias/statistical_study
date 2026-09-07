@@ -107,10 +107,16 @@ _LATEX_UNICODE = [
 
 def latex_a_unicode(texto):
     """Traduce secuencias LaTeX simples a caracteres Unicode legibles.
-    Se usa en las opciones (los radiobutton no admiten imágenes embebidas)."""
+    Se usa en las opciones y en el enunciado (texto plano, sin imágenes)."""
     for latex, uni in _LATEX_UNICODE:
         texto = texto.replace(latex, uni)
     texto = re.sub(r"\\frac\{([^}]+)\}\{([^}]+)\}", r"\1/\2", texto)
+    texto = re.sub(r"\\sqrt\{([^}]+)\}", r"√(\1)", texto)
+    texto = re.sub(r"\\text\{([^}]*)\}", r"\1", texto)
+    texto = re.sub(r"\\binom\{([^}]+)\}\{([^}]+)\}", r"C(\1,\2)", texto)
+    texto = re.sub(r"\\(?:left|right|displaystyle|limits|large|small)", "",
+                   texto)
+    texto = re.sub(r"([_^])\{([^{}]*)\}", r"\1\2", texto)
     return texto.replace("$", "").strip()
 
 
@@ -405,35 +411,9 @@ class QuizFrame(ttk.Frame):
         self.txt_enunciado.configure(state="disabled")
 
     def _insertar_tex(self, texto):
-        """Inserta texto en el enunciado, renderizando $...$ y $$...$$ como
-        imágenes matemáticas embebidas; si no se puede, traduce a Unicode."""
-        if not _MATH_OK:
-            self.txt_enunciado.insert("end", latex_a_unicode(texto))
-            return
-        for seg in RE_MATH.split(texto):
-            if not seg:
-                continue
-            if seg.startswith("$$") and seg.endswith("$$"):
-                tex = seg[2:-2]
-                img = math_photoimage(tex, fontsize=16, dpi=200)
-                if img is not None:
-                    self._math_imgs.append(img)
-                    self.txt_enunciado.insert("end", "\n")
-                    self.txt_enunciado.image_create(
-                        "end", image=img, pady=4
-                    )
-                    self.txt_enunciado.insert("end", "\n")
-                    continue
-            elif seg.startswith("$") and seg.endswith("$") and len(seg) > 2:
-                tex = seg[1:-1]
-                img = math_photoimage(tex, fontsize=14, dpi=180)
-                if img is not None:
-                    self._math_imgs.append(img)
-                    self.txt_enunciado.insert("end", " ")
-                    self.txt_enunciado.image_create("end", image=img, pady=2)
-                    self.txt_enunciado.insert("end", " ")
-                    continue
-            self.txt_enunciado.insert("end", latex_a_unicode(seg))
+        """Inserta texto en el enunciado, traduciendo $...$ y $$...$$ a
+        caracteres Unicode legibles (sin depender de imágenes o matplotlib)."""
+        self.txt_enunciado.insert("end", latex_a_unicode(texto))
 
     def guardar_respuesta(self):
         self.app.preguntas[self.app.indice]["respuesta_usuario"] = (
