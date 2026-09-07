@@ -183,6 +183,7 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "__pycache__/evaluador.cpython-312.pyc.140488010726368",
     "__pycache__/evaluador.cpython-312.pyc.129486104919008",
     "00_curso_estadistica_inferencial/03_probabilidad.md",
     "00_curso_estadistica_inferencial/07_prueba_hipotesis/07_prueba_hipotesis.md",
@@ -202,7 +203,6 @@
     "00_curso_estadistica_inferencial/03_probabilidad",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos",
-    "00_curso_estadistica_inferencial/00_contenido",
     "00_curso_estadistica_inferencial/02_analisis_combinatorio.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos.md",
     "mi_entorno/local-tk/usr/share/tcltk/tk8.6/images/tai-ku.gif",

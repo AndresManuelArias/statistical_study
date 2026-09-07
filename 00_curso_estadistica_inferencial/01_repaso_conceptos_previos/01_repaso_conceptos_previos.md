@@ -188,6 +188,145 @@ Resumen del video **"Subconjuntos | Estadística Inferencial"**, de José María
 
 **Video completo:** [Subconjuntos | Estadística Inferencial](https://www.youtube.com/watch?v=TSWTgmQIu7s)
 
+---
+
+## 🧮 Explicación del tema: Subconjuntos y contención
+
+Un **subconjunto** es la idea de "estar dentro de" aplicada a conjuntos. Es el concepto que permite pasar de lo general a lo particular: del espacio muestral al suceso, y del suceso al sub-suceso.
+
+### Definición formal
+
+$A$ es **subconjunto** de $B$ (se escribe $A \subseteq B$) si y solo si **cada elemento de $A$ también pertenece a $B$**:
+
+$$
+A \subseteq B \iff (\forall x)(x \in A \Rightarrow x \in B)
+$$
+
+### Tipos de contención
+
+| Relación | Símbolo | Significado |
+|----------|---------|-------------|
+| **Subconjunto** | $A \subseteq B$ | Todo elemento de $A$ está en $B$ (pueden ser iguales) |
+| **Subconjunto propio** | $A \subset B$ | $A \subseteq B$ **y** $A \neq B$ ($B$ tiene al menos un elemento extra) |
+| **No subconjunto** | $A \nsubseteq B$ | Existe **al menos un** $x \in A$ tal que $x \notin B$ |
+
+### Propiedades de la contención
+
+1. **Reflexividad:** todo conjunto está contenido en sí mismo: $A \subseteq A$.
+2. **Transitividad:** si $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$.
+3. **Antisimetría:** si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$.
+4. **Conjunto vacío:** $\emptyset \subseteq A$ para cualquier conjunto $A$.
+5. **Universo:** $A \subseteq \Omega$ siempre.
+
+> [!tip] Relación con la probabilidad
+> - Si $A \subseteq B$, entonces $P(A) \leq P(B)$: un subconjunto no puede ser más probable que el conjunto que lo contiene.
+> - Si $A \subseteq B$ y queremos $P(A \mid B)$ (probabilidad de $A$ **dado** $B$):
+>   $$P(A \mid B) = \frac{|A|}{|B|} = \frac{P(A)}{P(B)}$$
+>   porque $A \cap B = A$ cuando $A \subseteq B$.
+> - Los sucesos de un experimento forman una **jerarquía de subconjuntos** dentro de $\Omega$.
+
+### Contención en el dataset de matrimonios (lectura)
+
+En el ejemplo siguiente definimos:
+- $\Omega$ = todos los matrimonios (45,000)
+- $A$ = matrimonios con nivel educativo `bachelors` (11,700)
+- $B$ = matrimonios `bachelors` **que además** hicieron terapia prematrimonial (2,987)
+
+Como $B$ exige cumplir la condición de $A$ **más** una condición extra, necesariamente $B \subseteq A \subseteq \Omega$.
+
+---
+
+# 🐍 Ejemplo en Python: Subconjuntos sobre el dataset de matrimonios
+
+```python
+import csv
+from pathlib import Path
+
+RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
+
+def cargar():
+    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
+    with open(RUTA, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+def conjunto_ids(filas, predicado):
+    # Devuelve un SET de marriage_id que cumplen la condición
+    return {f["marriage_id"] for f in filas if predicado(f)}
+
+filas = cargar()
+
+# ---------- Definición de conjuntos ----------
+universo = {f["marriage_id"] for f in filas}                    # Ω : todos
+casados = conjunto_ids(filas, lambda f: f["divorced"] == "0")
+divorciados = conjunto_ids(filas, lambda f: f["divorced"] == "1")
+
+# A: nivel educativo bachelors
+A_licenciados = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")
+
+# B: bachelors Y con terapia prematrimonial  →  B es subconjunto de A
+B_licen_terapia = conjunto_ids(
+    filas,
+    lambda f: f["education_level"] == "bachelors"
+              and f["premarital_counseling"] == "1",
+)
+
+print(f"|Ω| (universo)             = {len(universo)}")
+print(f"|A| (bachelors)            = {len(A_licenciados)}")
+print(f"|B| (bachelors + terapia)  = {len(B_licen_terapia)}")
+
+# ---------- Verificación de subconjuntos (issubset / issuperset) ----------
+print(f"\nB ⊆ A  →  {B_licen_terapia.issubset(A_licenciados)}")
+print(f"A ⊆ Ω  →  {A_licenciados.issubset(universo)}")
+print(f"Ω ⊇ A  →  {universo.issuperset(A_licenciados)}")
+
+# ---------- Propiedades de la contención ----------
+print(f"\nReflexiva:  A ⊆ A          →  {A_licenciados.issubset(A_licenciados)}")
+print(f"Antisimetría: A⊆B y B⊆A ⟹ A==B →  {A_licenciados == A_licenciados}")
+
+transitiva = (B_licen_terapia.issubset(A_licenciados)
+              and A_licenciados.issubset(universo)
+              and B_licen_terapia.issubset(universo))
+print(f"Transitiva: B⊆A, A⊆Ω ⟹ B⊆Ω  →  {transitiva}")
+
+# ---------- No subconjunto ----------
+print(f"\n¿casados ⊆ divorciados?    →  {casados.issubset(divorciados)}")
+print(f"¿∅ ⊆ A?                    →  {set().issubset(A_licenciados)}")
+
+# ---------- Probabilidad condicional desde subconjuntos ----------
+# Como B ⊆ A, la probabilidad de B dado A es |B| / |A|
+p = len(B_licen_terapia) / len(A_licenciados)
+print(f"\nP(B|A) = |B|/|A| = {len(B_licen_terapia)}/{len(A_licenciados)} = {p:.4f}")
+print(f"P(B) = |B|/|Ω| = {len(B_licen_terapia)}/{len(universo)} = {len(B_licen_terapia)/len(universo):.4f}")
+```
+
+**Salida real del script (verificada con el dataset):**
+
+```
+|Ω| (universo)             = 45000
+|A| (bachelors)            = 11700
+|B| (bachelors + terapia)  = 2987
+
+B ⊆ A  →  True
+A ⊆ Ω  →  True
+Ω ⊇ A  →  True
+
+Reflexiva:  A ⊆ A          →  True
+Antisimetría: A⊆B y B⊆A ⟹ A==B →  True
+Transitiva: B⊆A, A⊆Ω ⟹ B⊆Ω  →  True
+
+¿casados ⊆ divorciados?    →  False
+¿∅ ⊆ A?                    →  True
+
+P(B|A) = |B|/|A| = 2987/11700 = 0.2553
+P(B) = |B|/|Ω| = 2987/45000 = 0.0664
+```
+
+> [!note] Lectura estadística
+> - **P(B|A) = 0.2553** → de los matrimonios con `bachelors`, el 25.53% también hicieron terapia prematrimonial.
+> - **P(B) = 0.0664** → en todo el universo, solo el 6.64% de los matrimonios cumplen ambas condiciones.
+> - Al ser $B \subseteq A$, se cumple $P(B) \leq P(A)$ y la probabilidad condicional se reduce a un cociente de cardinalidades.
+> - `casados ⊆ divorciados → False` confirma que son **disjuntos** (ninguno contiene al otro), coherente con ser una partición.
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
@@ -321,6 +460,98 @@ d) Ordenando sus elementos de mayor a menor
 > **b) Indicando una propiedad o regla que cumplen todos sus elementos**
 
 ---
+
+### Pregunta 11
+
+¿Cuál es la **definición formal** de que $A$ sea subconjunto de $B$ ($A \subseteq B$)?
+
+a) Que $A$ y $B$ tengan exactamente los mismos elementos
+b) Que cada elemento de $A$ también pertenezca a $B$
+c) Que cada elemento de $B$ también pertenezca a $A$
+d) Que $A$ tenga más elementos que $B$
+
+> **b) Que cada elemento de $A$ también pertenezca a $B$**
+
+---
+
+### Pregunta 12
+
+La propiedad **reflexiva** de la contención establece que:
+
+a) Si $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$
+b) Todo conjunto está contenido en sí mismo: $A \subseteq A$
+c) Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$
+d) El conjunto vacío pertenece a todo conjunto
+
+> **b) Todo conjunto está contenido en sí mismo: $A \subseteq A$**
+
+---
+
+### Pregunta 13
+
+La propiedad **transitiva** de la contención establece que:
+
+a) $A \subseteq A$ para todo conjunto $A$
+b) Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$
+c) Si $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$
+d) $\emptyset \subseteq A$ para cualquier conjunto $A$
+
+> **c) Si $A \subseteq B$ y $B \subseteq C$, entonces $A \subseteq C$**
+
+---
+
+### Pregunta 14
+
+La propiedad **antisimétrica** de la contención establece que:
+
+a) Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$
+b) Todo conjunto está contenido en sí mismo
+c) $\emptyset \subseteq A$
+d) $A \subseteq \Omega$
+
+> **a) Si $A \subseteq B$ y $B \subseteq A$, entonces $A = B$**
+
+---
+
+### Pregunta 15
+
+¿Cuándo se dice que $A$ **no es subconjunto** de $B$ ($A \nsubseteq B$)?
+
+a) Cuando $A$ y $B$ son exactamente iguales
+b) Cuando $A$ tiene menos elementos que $B$
+c) Cuando existe al menos un elemento de $A$ que no pertenece a $B$
+d) Cuando $B$ está contenido en $A$
+
+> **c) Cuando existe al menos un elemento de $A$ que no pertenece a $B$**
+
+---
+
+### Pregunta 16
+
+En el ejemplo del dataset de matrimonios, $B$ = matrimonios `bachelors` con terapia prematrimonial y $A$ = matrimonios `bachelors`. Se cumple que:
+
+a) $A \subseteq B$
+b) $B \subseteq A$
+c) $A \cap B = \emptyset$
+d) $B = \Omega$
+
+> **b) $B \subseteq A$**
+
+---
+
+### Pregunta 17
+
+Si $B \subseteq A$, la probabilidad condicional $P(B \mid A)$ se calcula como:
+
+a) $P(B \mid A) = \frac{|A|}{|B|}$
+b) $P(B \mid A) = \frac{|B|}{|A|}$
+c) $P(B \mid A) = \frac{|B|}{|\Omega|}$
+d) $P(B \mid A) = \frac{|A|}{|\Omega|}$
+
+> **b) $P(B \mid A) = \frac{|B|}{|A|}$**
+
+---
+
 
 ## ❓ Dudas pendientes
 
