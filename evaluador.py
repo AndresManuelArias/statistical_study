@@ -298,9 +298,9 @@ class SelectorFrame(ttk.Frame):
 
     def refrescar_colores(self):
         for i in range(len(self.app.temas)):
-            pct = self.app.porcentaje_contestado_tema(i)
-            if pct is not None:
-                color = "#c8e6c9" if pct >= 80 else "#ffcdd2"
+            calificacion = self.app.calificacion_tema(i)
+            if calificacion is not None:
+                color = "#c8e6c9" if calificacion >= 80 else "#ffcdd2"
                 self.lista.itemconfigure(i, background=color)
             else:
                 self.lista.itemconfigure(i, background=self.lista.cget("background"))
@@ -313,10 +313,13 @@ class SelectorFrame(ttk.Frame):
         n = len(parsear_preguntas(ruta))
         pct = self.app.porcentaje_contestado_tema(sel[0])
         nota = self.app.nota_tema(sel[0])
+        calificacion = self.app.calificacion_tema(sel[0])
         texto = f"{n} preguntas encontradas"
         if pct is not None:
             texto += f"  |  Contestadas: {pct}%"
-        if nota is not None:
+        if calificacion is not None:
+            texto += f"  |  Calificación: {calificacion}/100"
+        elif nota is not None:
             texto += f"  |  Nota: {nota}/10"
         self.info.config(text=texto)
 
@@ -615,6 +618,17 @@ class App(tk.Tk):
             correctas = datos["resultado_final"]["total_correctas"]
             return round(correctas * 10 / total, 1) if total else 0.0
         except (OSError, json.JSONDecodeError, KeyError):
+            return None
+
+    def calificacion_tema(self, indice):
+        """Calificación (0-100) de la evaluación más reciente del tema.
+        Devuelve None si no hay evaluación guardada o falta el campo."""
+        datos = self._resultado_tema(indice)
+        if datos is None:
+            return None
+        try:
+            return datos["resultado_final"]["calificacion"]
+        except (KeyError, TypeError):
             return None
 
     def tema_evaluado(self, indice):
