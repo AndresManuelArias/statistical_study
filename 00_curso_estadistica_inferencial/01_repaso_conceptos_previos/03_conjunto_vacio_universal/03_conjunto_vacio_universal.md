@@ -18,6 +18,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=1nIX6IH43_Q)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1nIX6IH43_Q?si=pdTJ7F29-cDkIqUa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se estudian dos conjuntos especiales: el **conjunto vacío** (el que no contiene ningún elemento) y el **conjunto universal** (el que contiene todos los elementos del contexto). Ambos son fundamentales para la probabilidad: el primero corresponde al suceso imposible y el segundo al suceso seguro.
