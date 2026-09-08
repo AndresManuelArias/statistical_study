@@ -242,42 +242,42 @@ def _es_carpeta_tema(carpeta):
 
 
 def descubrir_temas():
-    """Descubre los temas disponibles.
+    """Descubre los temas disponibles recorriendo el árbol de carpetas.
 
-    - Una carpeta SIN subcarpetas se trata como un tema (usa su primer .md).
-    - Una carpeta CON subcarpetas se trata como un agrupador (curso):
-      cada subcarpeta que contenga al menos un .md es un tema.
+    - Una carpeta SIN subcarpetas se trata como un tema (usa el primer .md
+      que contenga preguntas).
+    - Una carpeta CON subcarpetas se trata como un agrupador (curso): cada
+      subcarpeta se recorre con las mismas reglas (anidamiento arbitrario).
 
     Devuelve una lista de tuplas:
         (nombre_mostrar, ruta_md, nombre_json)
-    donde nombre_json es la clave corta de tema (sin separadores) usada para
-    nombrar los archivos de evaluación JSON dentro de la carpeta del tema.
+    donde nombre_json es el nombre de la carpeta que contiene el .md, usado
+    como clave corta de tema para nombrar los archivos de evaluación JSON
+    dentro de la misma carpeta del tema.
     """
-    temas = []
-    for carpeta in sorted(BASE_DIR.iterdir()):
-        if not carpeta.is_dir() or not _es_carpeta_tema(carpeta):
-            continue
+
+    def recorrer(carpeta, prefijo=""):
+        temas = []
         subcarpetas = [p for p in sorted(carpeta.iterdir())
                        if p.is_dir() and _es_carpeta_tema(p)]
         if subcarpetas:
-            # Agrupador (curso): cada subcarpeta es un tema
+            # Agrupador (curso): cada subcarpeta es un tema (o agrupador)
             for sub in subcarpetas:
-                mds = sorted(sub.glob("*.md"))
-                if not mds:
-                    continue
-                elegido = _elegir_md_con_preguntas(mds)
-                temas.append((
-                    f"{carpeta.name}/{sub.name}",
-                    elegido,
-                    sub.name,
-                ))
+                temas.extend(recorrer(sub, f"{prefijo}{carpeta.name}/"))
         else:
             # Tema plano: la carpeta misma
             mds = sorted(carpeta.glob("*.md"))
             if not mds:
-                continue
+                return temas
             elegido = _elegir_md_con_preguntas(mds)
-            temas.append((carpeta.name, elegido, carpeta.name))
+            temas.append((f"{prefijo}{carpeta.name}", elegido, carpeta.name))
+        return temas
+
+    temas = []
+    for carpeta in sorted(BASE_DIR.iterdir()):
+        if not carpeta.is_dir() or not _es_carpeta_tema(carpeta):
+            continue
+        temas.extend(recorrer(carpeta))
     return temas
 
 
