@@ -611,11 +611,131 @@ $$
 
 "Quitarle" a $A$ los elementos que comparte con $B$.
 
-**Casos:**
+### Relación con la intersección y el complemento
+
+Quitar los elementos de $B$ es equivalente a intersecar $A$ con el **complemento** de $B$:
+
+$$
+A - B = A \cap B^c
+$$
+
+> [!tip] Idea clave
+> La diferencia no es otra cosa que "$A$ y **no** $B$". Por eso, en probabilidad, $P(A - B) = P(A \cap B^c)$ es la probabilidad de que ocurra $A$ **sin** que ocurra $B$.
+
+### Casos
+
 - Con intersección **no vacía**: se eliminan solo los comunes.
 - **Conjuntos iguales:** $A - A = \emptyset$.
 - **Conjunto y su subconjunto:** si $B \subseteq A$, entonces $A - B$ deja solo los elementos de $A$ que no están en $B$.
 - **Disjuntos:** $A - B = A$ (no hay nada que quitar).
+
+### La diferencia NO es conmutativa
+
+En general **$A - B \neq B - A$**:
+
+- $A - B$: lo que está en $A$ pero no en $B$.
+- $B - A$: lo que está en $B$ pero no en $A$.
+
+> [!example] Ejemplo numérico
+> Con $A = \{1, 2, 3, 4\}$ y $B = \{3, 4, 5\}$:
+> - $A - B = \{1, 2\}$
+> - $B - A = \{5\}$
+> - Son conjuntos distintos (de hecho disjuntos).
+
+> [!example] Ejemplo: conjuntos iguales y subconjunto
+> Con $A = \{1, 2, 3\}$ y $B = \{1, 2\}$ (donde $B \subseteq A$):
+> - $A - B = \{3\}$ → queda solo lo que $A$ tiene "de más".
+> - $A - A = \emptyset$ y $B - A = \emptyset$ (no hay nada que quitar de $B$).
+
+### Diferencia en el dataset de matrimonios (lectura)
+
+Definimos $A$ = bachelors (11,700) y $T$ = terapia prematrimonial (10,972), con $|A \cap T| = 2{,}987$:
+
+- **$|A - T| = 11{,}700 - 2{,}987 = 8{,}713$** → bachelors que **no** hicieron terapia.
+- **$|T - A| = 10{,}972 - 2{,}987 = 7{,}985$** → matrimonios con terapia que **no** son bachelors.
+- **Verificación:** $|A - T| + |A \cap T| = 8{,}713 + 2{,}987 = 11{,}700 = |A|$. Cada elemento de $A$ está en $A - T$ **o** en $A \cap T$, nunca en ambos (partición de $A$).
+
+> [!tip] Relación con suceso "y no"
+> $|A - T| = 8{,}713$ se lee en probabilidad como: de los 45,000 matrimonios, hay 8,713 que son `bachelors` **y no** hicieron terapia. Si dividimos por $|\Omega|$ obtenemos $P(A - T) = P(A \cap T^c) = 8{,}713 / 45{,}000 \approx 0.19$.
+
+---
+
+## 🐍 Ejemplo en Python: diferencia de conjuntos sobre el dataset
+
+Comprobamos las propiedades de la diferencia y los cardinales usando los datos reales de matrimonios.
+
+```python
+import csv
+from pathlib import Path
+
+RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
+
+def cargar():
+    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
+    with open(RUTA, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+def conjunto_ids(filas, predicado):
+    # Devuelve un SET de marriage_id que cumplen la condición
+    return {f["marriage_id"] for f in filas if predicado(f)}
+
+filas = cargar()
+A = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")   # bachelors
+T = conjunto_ids(filas, lambda f: f["premarital_counseling"] == "1")     # terapia
+D = conjunto_ids(filas, lambda f: f["divorced"] == "1")                  # divorciados
+
+print(f"|A| = {len(A)}   |T| = {len(T)}   |D| = {len(D)}")
+
+# ---------- Diferencia: quitar lo compartido ----------
+print(f"\n|A - T| (bachelors sin terapia)   = {len(A - T)}")
+print(f"|A - A| (conjunto consigo mismo)   = {len(A - A)}")
+
+# ---------- No conmutativa ----------
+print(f"\n|A - T| = {len(A - T)}   |T - A| = {len(T - A)}")
+print(f"¿A - T == T - A?   →  {(A - T) == (T - A)}")
+
+# ---------- Equivalencia con A ∩ B^c ----------
+comp_T = {f["marriage_id"] for f in filas} - T      # Ω - T (no hicieron terapia)
+print(f"\n¿A - T == A ∩ T^c?     →  {(A - T) == (A & comp_T)}")
+
+# ---------- Partición de A ----------
+print(f"\n|(A - T) ∪ (A ∩ T)|  = {len((A - T) | (A & T))}  (debe ser |A| = {len(A)})")
+print(f"¿(A - T) ∩ (A ∩ T) = ∅?  →  {(A - T) & (A & T) == set()}")
+
+# ---------- Diferencia con universo y disjuntos ----------
+Omega = {f["marriage_id"] for f in filas}
+print(f"\n|Ø| (A - A)          = {len(A - A)}")
+print(f"|A - Ω|             = {len(A - Omega)}  (disjuntos e intersección: nada que quitar)")
+print(f"|Ω - D|             = {len(Omega - D)}  (= |casados|)")
+```
+
+**Salida real del script (verificada con el dataset):**
+
+```
+|A| = 11700   |T| = 10972   |D| = 20708
+
+|A - T| (bachelors sin terapia)   = 8713
+|A - A| (conjunto consigo mismo)   = 0
+
+|A - T| = 8713   |T - A| = 7985
+¿A - T == T - A?   →  False
+
+¿A - T == A ∩ T^c?     →  True
+
+|(A - T) ∪ (A ∩ T)|  = 11700  (debe ser |A| = 11700)
+¿(A - T) ∩ (A ∩ T) = ∅?  →  True
+
+|A - A|          = 0
+|A - Ω|          = 0  (disjuntos e intersección: nada que quitar)
+|Ω - D|          = 24292  (= |casados|)
+```
+
+> [!note] Lectura estadística
+> - **$|A - T| = 8{,}713$**: los matrimonios `bachelors` que no hicieron terapia son la mayoría de los bachelors ($8{,}713$ de $11{,}700$, un $74\%$).
+> - La diferencia **no es conmutativa**: $|A - T| = 8{,}713 \neq 7{,}985 = |T - A|$.
+> - La identidad $A - T = A \cap T^c$ se cumple exactamente sobre los datos reales, validando que "quitar" y "negar" son lo mismo.
+> - $A - T$ y $A \cap T$ forman una **partición** de $A$: suman $|A|$ y no comparten elementos.
+> - En probabilidad: $P(A - T) = 8{,}713 / 45{,}000 \approx 0.19$ es la probabilidad de que un matrimonio sea `bachelors` y no haya hecho terapia.
 
 ## Jerarquía de operaciones (temas 9 y 10)
 
@@ -1332,6 +1452,45 @@ c) 32706
 d) **45000** (reconstruye el universo completo)
 
 > **d) 45000 (reconstruye el universo completo)**
+
+---
+
+### Pregunta 35
+
+La **diferencia** $A - B$ es equivalente a la siguiente operación con el complemento:
+
+a) $A \cup B^c$
+b) $A \cap B^c$
+c) $A^c \cap B$
+d) $A \cup B$
+
+> **b) $A \cap B^c$**
+
+---
+
+### Pregunta 36
+
+En el dataset de matrimonios, $A$ = bachelors (11,700) y $T$ = terapia prematrimonial (10,972), con $|A \cap T| = 2{,}987$. La cardinalidad de $A - T$ (bachelors **que no** hicieron terapia) es:
+
+a) 7985
+b) 2987
+c) **8713** (pues $11700 - 2987 = 8713$)
+d) 10972
+
+> **c) 8713 (pues $11700 - 2987 = 8713$)**
+
+---
+
+### Pregunta 37
+
+Si $A$ y $B$ son **disjuntos** ($A \cap B = \emptyset$), entonces la diferencia $A - B$ es:
+
+a) $\emptyset$
+b) $B$
+c) $\Omega$
+d) **$A$** (al no compartir elementos, no hay nada que quitar)
+
+> **d) $A$ (al no compartir elementos, no hay nada que quitar)**
 
 ---
 
