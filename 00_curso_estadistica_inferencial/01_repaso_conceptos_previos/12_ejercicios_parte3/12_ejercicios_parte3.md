@@ -17,6 +17,10 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=U6U5aaL12tE)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U6U5aaL12tE?si=O44gPE2f2xTgf6hD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ## 📋 Resumen
 
 Se resuelven **problemas de aplicación práctica** (encuestas y diagramas de Venn): traducir enunciados de texto a operaciones de conjuntos, resolver casos de **dos conjuntos** con la fórmula de cardinalidad por despeje, y casos avanzados de **tres conjuntos** comenzando por la intersección central.
