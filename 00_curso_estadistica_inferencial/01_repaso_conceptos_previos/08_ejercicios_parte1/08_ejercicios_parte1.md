@@ -17,6 +17,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=l-k3H8ePNDs)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l-k3H8ePNDs?si=8J5GgtyIziPNFGGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se resuelven ejercicios de operaciones con conjuntos usando la **jerarquía de operaciones** (de adentro hacia afuera) y la **resolución gráfica** con diagramas de Venn-Euler: complemento de una unión, complemento de una diferencia, intersecciones complejas e intersecciones de uniones múltiples.
@@ -116,7 +118,7 @@ b) $\{1, 3, 4\}$
 c) $\{1, 2, 4\}$
 d) $\{4\}$
 
-> **b) $\{1, 3, 4\}$**
+> **c) $\{1, 2, 4\}$**
 
 ---
 
@@ -155,7 +157,7 @@ b) $\{2\}$
 c) $\{1, 2, 3, 4\}$
 d) $\{1, 2\}$
 
-> **d) $\{1, 2\}$**
+> **a) $\{1, 2, 3\}$**
 
 ---
 
