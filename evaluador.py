@@ -49,6 +49,7 @@ _LATEX_UNICODE = [
     (r"\{", "{"),
     (r"\}", "}"),
     (r"\ ", " "),
+    (r"{,}", ","),
     # Puntuación y operadores
     (r"\ldots", "\u2026"),
     (r"\dots", "\u2026"),
@@ -71,7 +72,9 @@ _LATEX_UNICODE = [
     (r"\exists", "\u2203"),
     (r"\neg", "\u00ac"),
     (r"\wedge", "\u2227"),
+    (r"\land", "\u2227"),
     (r"\vee", "\u2228"),
+    (r"\lor", "\u2228"),
     (r"\oplus", "\u2295"),
     (r"\otimes", "\u2297"),
     (r"\subset", "\u2282"),

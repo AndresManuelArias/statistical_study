@@ -78,7 +78,7 @@ Con muestreo estratificado proporcional y $n = 100$, se asignan:
 
 Total: $40 + 30 + 20 + 10 = 100$ ✓
 
-**Con muestreo sistemático**, con $N = 2{,}000$ y $n = 100$:
+**Con muestreo sistemático**, con $N = 2,000$ y $n = 100$:
 
 $$k = \frac{2000}{100} = 20$$
 

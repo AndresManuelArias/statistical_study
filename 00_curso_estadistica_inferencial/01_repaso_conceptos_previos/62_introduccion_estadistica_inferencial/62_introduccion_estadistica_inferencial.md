@@ -76,7 +76,7 @@ Procedimiento para decidir si hay evidencia suficiente para rechazar una afirmac
 
 ## 💡 Ejemplo numérico
 
-Un auditor quiere estimar el monto promedio de facturas con errores en una empresa. De una muestra de $n = 81$ facturas con errores, obtiene $\bar{X} = \$2{,}350$ y conoce que $\sigma = \$630$.
+Un auditor quiere estimar el monto promedio de facturas con errores en una empresa. De una muestra de $n = 81$ facturas con errores, obtiene $\bar{X} = \$2,350$ y conoce que $\sigma = \$630$.
 
 **Intervalo de confianza del 95%:**
 

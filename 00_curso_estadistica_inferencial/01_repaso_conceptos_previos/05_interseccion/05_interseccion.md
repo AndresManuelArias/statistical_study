@@ -17,6 +17,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=xjdowwI35C0)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xjdowwI35C0?si=gZEpcxmxbvOrTnCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se introduce la **intersección** de conjuntos: los elementos que pertenecen a **ambos** conjuntos simultáneamente. Se estudian sus casos particulares, los **conjuntos disjuntos** y sus propiedades básicas.

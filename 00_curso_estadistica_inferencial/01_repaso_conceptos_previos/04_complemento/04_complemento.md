@@ -161,7 +161,7 @@ d) 0
 
 ### Pregunta 9
 
-En un gimnasio, $A$ = socios inscritos en yoga (11,700), $T$ = socios que usan la piscina (10,972) y $|A \cup T| = 19{,}685$. La operación $(A \cup T)^c$ (socios que **no** están ni en yoga ni en piscina) tiene cardinalidad:
+En un gimnasio, $A$ = socios inscritos en yoga (11,700), $T$ = socios que usan la piscina (10,972) y $|A \cup T| = 19,685$. La operación $(A \cup T)^c$ (socios que **no** están ni en yoga ni en piscina) tiene cardinalidad:
 
 a) 19685
 b) 45000

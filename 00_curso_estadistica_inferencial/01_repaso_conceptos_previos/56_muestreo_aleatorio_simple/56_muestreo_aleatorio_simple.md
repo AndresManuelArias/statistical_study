@@ -84,7 +84,7 @@ $$P = \frac{n}{N} = \frac{5}{30} = \frac{1}{6} \approx 0.1667$$
 
 **Número de muestras posibles:**
 
-$$\binom{30}{5} = \frac{30!}{5! \cdot 25!} = 142{,}506$$
+$$\binom{30}{5} = \frac{30!}{5! \cdot 25!} = 142,506$$
 
 Todos los estudiantes tienen exactamente la misma probabilidad de ser seleccionados.
 

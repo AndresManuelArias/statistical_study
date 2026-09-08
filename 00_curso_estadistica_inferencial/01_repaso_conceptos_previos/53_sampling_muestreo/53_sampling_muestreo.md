@@ -76,7 +76,7 @@ Algunos censos exitosos muestran la complejidad del trabajo a gran escala:
 
 ## 💡 Ejemplo numérico
 
-Una universidad tiene $N = 5{,}000$ estudiantes. Se toma una muestra aleatoria de $n = 250$ y se obtiene una edad promedio de $\bar{X} = 21.3$ años. La media poblacional real es $\mu = 21.5$ años.
+Una universidad tiene $N = 5,000$ estudiantes. Se toma una muestra aleatoria de $n = 250$ y se obtiene una edad promedio de $\bar{X} = 21.3$ años. La media poblacional real es $\mu = 21.5$ años.
 
 $$\text{Sesgo} = 21.3 - 21.5 = -0.2 \text{ años}$$
 

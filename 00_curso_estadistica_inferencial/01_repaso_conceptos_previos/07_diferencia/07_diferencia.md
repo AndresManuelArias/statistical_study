@@ -17,6 +17,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=JO7NsN4ZJp4)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JO7NsN4ZJp4?si=SEqqIkul_KJGKNQK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se introduce la **diferencia** de conjuntos ($A - B$): los elementos que pertenecen a $A$ pero no a $B$. Equivale a "quitarle" a $A$ los elementos que comparte con $B$, y se estudian sus casos prácticos (con intersección, conjuntos iguales, subconjuntos y disjuntos).
@@ -67,14 +69,14 @@ En general **$A - B \neq B - A$**:
 
 ### Diferencia en un gimnasio (lectura)
 
-Definimos $A$ = socios inscritos en yoga (11,700) y $T$ = socios que usan la piscina (10,972), con $|A \cap T| = 2{,}987$:
+Definimos $A$ = socios inscritos en yoga (11,700) y $T$ = socios que usan la piscina (10,972), con $|A \cap T| = 2,987$:
 
-- **$|A - T| = 11{,}700 - 2{,}987 = 8{,}713$** → socios de yoga que **no** usan la piscina.
-- **$|T - A| = 10{,}972 - 2{,}987 = 7{,}985$** → socios de piscina que **no** están en yoga.
-- **Verificación:** $|A - T| + |A \cap T| = 8{,}713 + 2{,}987 = 11{,}700 = |A|$. Cada elemento de $A$ está en $A - T$ **o** en $A \cap T$, nunca en ambos (partición de $A$).
+- **$|A - T| = 11,700 - 2,987 = 8,713$** → socios de yoga que **no** usan la piscina.
+- **$|T - A| = 10,972 - 2,987 = 7,985$** → socios de piscina que **no** están en yoga.
+- **Verificación:** $|A - T| + |A \cap T| = 8,713 + 2,987 = 11,700 = |A|$. Cada elemento de $A$ está en $A - T$ **o** en $A \cap T$, nunca en ambos (partición de $A$).
 
 > [!tip] Relación con suceso "y no"
-> $|A - T| = 8{,}713$ se lee en probabilidad como: de los 45,000 socios del gimnasio, hay 8,713 que están en yoga **y no** usan la piscina. Si dividimos por $|\Omega|$ obtenemos $P(A - T) = P(A \cap T^c) = 8{,}713 / 45{,}000 \approx 0.19$.
+> $|A - T| = 8,713$ se lee en probabilidad como: de los 45,000 socios del gimnasio, hay 8,713 que están en yoga **y no** usan la piscina. Si dividimos por $|\Omega|$ obtenemos $P(A - T) = P(A \cap T^c) = 8,713 / 45,000 \approx 0.19$.
 
 ---
 
@@ -123,7 +125,7 @@ d) $A \cup B$
 
 ### Pregunta 4
 
-En un gimnasio, $A$ = socios inscritos en yoga (11,700) y $T$ = socios que usan la piscina (10,972), con $|A \cap T| = 2{,}987$. La cardinalidad de $A - T$ (socios de yoga **que no** usan la piscina) es:
+En un gimnasio, $A$ = socios inscritos en yoga (11,700) y $T$ = socios que usan la piscina (10,972), con $|A \cap T| = 2,987$. La cardinalidad de $A - T$ (socios de yoga **que no** usan la piscina) es:
 
 a) 7985
 b) 2987

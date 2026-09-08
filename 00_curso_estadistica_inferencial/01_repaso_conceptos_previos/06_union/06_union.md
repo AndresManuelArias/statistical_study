@@ -17,6 +17,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=AeUt0AzQ9Es)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AeUt0AzQ9Es?si=-Xfcz5ymH9x66-0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se introduce la **unión** de conjuntos: los elementos que pertenecen a $A$, a $B$, o a **ambos simultáneamente**, sin duplicar los repetidos. Se estudian sus casos, propiedades y su relación con la probabilidad.
@@ -47,7 +49,7 @@ Un elemento pertenece a la unión si cumple **al menos una** de las dos condicio
   - Ejemplo: si $B$ = socios de yoga que usan la piscina ($B \subseteq A$), entonces $A \cup B = A$ (los socios de yoga ya estaban incluidos).
 - **Unión de conjuntos disjuntos:** si $A \cap B = \emptyset$, la unión junta todo sin reducir:
   - Ejemplo: $A = \{1, 2\}$, $B = \{3, 4\}$ → $A \cup B = \{1, 2, 3, 4\}$ y $n(A \cup B) = n(A) + n(B) = 2 + 2 = 4$.
-  - Ejemplo: los clientes de entrega a domicilio (20,708) y los de recogida en tienda (24,292) son disjuntos → $n(A \cup B) = 20{,}708 + 24{,}292 = 45{,}000 = |\Omega|$.
+  - Ejemplo: los clientes de entrega a domicilio (20,708) y los de recogida en tienda (24,292) son disjuntos → $n(A \cup B) = 20,708 + 24,292 = 45,000 = |\Omega|$.
 
 ## Propiedades de la unión
 
