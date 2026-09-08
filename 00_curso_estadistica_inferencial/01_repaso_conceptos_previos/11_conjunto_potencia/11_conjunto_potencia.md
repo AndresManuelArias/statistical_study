@@ -17,6 +17,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=_2g4naWTsYg)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_2g4naWTsYg?si=GZYnZT9Dqz9Lks8n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se introduce el **conjunto potencia** $\mathcal{P}(A)$: el conjunto de **todos los subconjuntos posibles** de $A$. Se estudia su cardinalidad $n(\mathcal{P}(A)) = 2^{n(A)}$ con ejemplos para conjuntos de 2 y 3 elementos, y el caso especial del vacío.
