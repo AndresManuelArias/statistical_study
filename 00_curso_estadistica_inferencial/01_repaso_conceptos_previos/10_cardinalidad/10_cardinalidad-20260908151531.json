@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "10_cardinalidad-20260908151531",
+  "titulo": "Evaluación 10_cardinalidad",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "La fórmula general de la cardinalidad de la unión de dos conjuntos es:",
+      "opciones": [
+        "a) $n(A \\cup B) = n(A) + n(B)$",
+        "b) $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$",
+        "c) $n(A \\cup B) = n(A) \\cdot n(B)$",
+        "d) $n(A \\cup B) = n(A) - n(B)$"
+      ],
+      "respuesta_correcta": "b) $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$",
+      "respuesta_usuario": "b) $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Si $A$ y $B$ son disjuntos, la cardinalidad de su unión es:",
+      "opciones": [
+        "a) $n(A \\cup B) = n(A) + n(B)$",
+        "b) $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$ (con $n(A\\cap B)>0$)",
+        "c) $n(A \\cup B) = 0$",
+        "d) $n(A \\cup B) = n(A) \\cdot n(B)$"
+      ],
+      "respuesta_correcta": "a) $n(A \\cup B) = n(A) + n(B)$",
+      "respuesta_usuario": "a) $n(A \\cup B) = n(A) + n(B)$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "En un gimnasio, $|A|$ (inscritos en yoga) = 11700, $|T|$ (usan la piscina) = 10972 y $|A \\cap T| = 2987$. La cardinalidad de $A \\cup T$ es:",
+      "opciones": [
+        "a) 11700 + 10972 = 22672",
+        "b) 22672 - 2987 = **19685**",
+        "c) 2987",
+        "d) 45000"
+      ],
+      "respuesta_correcta": "b) 22672 - 2987 = **19685**",
+      "respuesta_usuario": "b) 22672 - 2987 = **19685**",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "La cardinalidad de un conjunto es:",
+      "opciones": [
+        "a) El nombre del conjunto",
+        "b) El número de elementos que pertenecen al conjunto",
+        "c) La suma de sus elementos",
+        "d) El conjunto de sus subconjuntos"
+      ],
+      "respuesta_correcta": "b) El número de elementos que pertenecen al conjunto",
+      "respuesta_usuario": "b) El número de elementos que pertenecen al conjunto",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Las notaciones válidas para la cardinalidad de $A$ son:",
+      "opciones": [
+        "a) $n(A)$, $|A|$ y $\\#A$",
+        "b) $A$, $A^c$ y $\\Omega$",
+        "c) $\\in A$, $\\subseteq A$ y $\\cup A$",
+        "d) $2^A$, $\\mathcal{P}(A)$ y $A$"
+      ],
+      "respuesta_correcta": "a) $n(A)$, $|A|$ y $\\#A$",
+      "respuesta_usuario": "a) $n(A)$, $|A|$ y $\\#A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Dos conjuntos son similares cuando:",
+      "opciones": [
+        "a) Tienen exactamente los mismos elementos",
+        "b) Tienen la **misma cardinalidad** pero elementos diferentes",
+        "c) Uno es subconjunto del otro",
+        "d) Su intersección es vacía"
+      ],
+      "respuesta_correcta": "b) Tienen la **misma cardinalidad** pero elementos diferentes",
+      "respuesta_usuario": "a) Tienen exactamente los mismos elementos",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Si $n(A) = 3$ y $n(B) = 4$ con $n(A \\cap B) = 1$, entonces $n(A \\cup B)$ es:",
+      "opciones": [
+        "a) 7",
+        "b) 6",
+        "c) 12",
+        "d) 3"
+      ],
+      "respuesta_correcta": "b) 6",
+      "respuesta_usuario": "b) 6",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Por qué en el caso general se resta $n(A \\cap B)$?",
+      "opciones": [
+        "a) Para que el resultado sea más pequeño",
+        "b) Para **no contar dos veces** los elementos comunes",
+        "c) Porque la resta es obligatoria en toda unión",
+        "d) Para eliminar los elementos de $B$"
+      ],
+      "respuesta_correcta": "b) Para **no contar dos veces** los elementos comunes",
+      "respuesta_usuario": "b) Para **no contar dos veces** los elementos comunes",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si $A \\cap B = \\emptyset$, $n(A) = 5$ y $n(B) = 7$, entonces $n(A \\cup B)$ es:",
+      "opciones": [
+        "a) 35",
+        "b) 12",
+        "c) 2",
+        "d) 0"
+      ],
+      "respuesta_correcta": "b) 12",
+      "respuesta_usuario": "b) 12",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $n(A \\cup B) = 20$, $n(A) = 12$ y $n(A \\cap B) = 3$, entonces $n(B)$ es:",
+      "opciones": [
+        "a) 11",
+        "b) 8",
+        "c) 15",
+        "d) 5"
+      ],
+      "respuesta_correcta": "a) 11",
+      "respuesta_usuario": "a) 11",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 90.0,
+    "total_correctas": 9,
+    "total_preguntas": 10
+  }
+}

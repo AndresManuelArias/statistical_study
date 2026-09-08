@@ -17,6 +17,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=5ovNShM6GAk)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c-P4-AGjFE8?si=5LaSml4ZAGWDEKpm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se introduce la **cardinalidad** de un conjunto (número de elementos) con sus notaciones y el concepto de **conjuntos similares**. Se presentan las dos fórmulas de cardinalidad para la unión: el caso de conjuntos disjuntos y el caso general con intersección (para evitar contar dos veces).
