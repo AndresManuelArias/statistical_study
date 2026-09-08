@@ -400,22 +400,37 @@ P(B) = |B|/|Ω| = 2987/45000 = 0.0664
 ### 7. Unión de conjuntos
 
 * **URL del video:** [Unión de conjuntos | Estadística Inferencial](http://www.youtube.com/watch?v=AeUt0AzQ9Es)
-* **Temas principales:**
+* **Temas principales:*
 * **Unión ($A \cup B$):**
-* Definición: Elementos que pertenecen a $A$, a $B$, o a ambos simultáneamente ().
-* Por comprensión: $A \cup B = \{x \mid x \in A \lor x \in B\}$ ().
-
+* **Definición:** Elementos que pertenecen a $A$, a $B$, o a **ambos simultáneamente** (los elementos repetidos solo se cuentan una vez).
+  - **Ejemplo:** $A = \{1, 2, 3\}$, $B = \{3, 4, 5\}$ → $A \cup B = \{1, 2, 3, 4, 5\}$. El $3$ está en ambos pero **no se duplica**.
+* **Por comprensión:** $A \cup B = \{x \mid x \in A \lor x \in B\}$.
+  - Un elemento pertenece a la unión si cumple **al menos una** de las dos condiciones ($\lor$ = "o" inclusivo).
+* **Con el dataset:** $A$ = bachelors (11,700), $T$ = terapia (10,972) y $|A \cap T| = 2{,}987$:
+  $$|A \cup T| = 11{,}700 + 10{,}972 - 2{,}987 = 19{,}685$$
 
 * **Casos y ejemplos:**
-* Unión con intersección distinta del vacío (los elementos repetidos no se duplican) ().
-* Unión de conjuntos iguales ().
-* Unión de un conjunto y su subconjunto ().
-* Unión de conjuntos disjuntos ().
+* **Unión con intersección distinta del vacío (los repetidos no se duplican):**
+  - Ejemplo: $A = \{a, b, c\}$, $B = \{c, d\}$ → $A \cup B = \{a, b, c, d\}$ (el $c$ común aparece una sola vez).
+  - Dataset: los 2,987 matrimonios bachelors **y** con terapia se cuentan una sola vez en $A \cup T$.
+* **Unión de conjuntos iguales (idempotencia):** $A \cup A = A$.
+  - Ejemplo: $\{2, 4, 6\} \cup \{2, 4, 6\} = \{2, 4, 6\}$.
+* **Unión de un conjunto y su subconjunto:** si $B \subseteq A$, entonces $A \cup B = A$.
+  - Ejemplo: $A = \{1, 2, 3, 4\}$, $B = \{2, 4\}$ → $A \cup B = \{1, 2, 3, 4\} = A$ (no aporta elementos nuevos).
+  - Dataset: si $B$ = bachelors con terapia ($B \subseteq A$), entonces $A \cup B = A$ (los bachelors ya estaban incluidos).
+* **Unión de conjuntos disjuntos:** si $A \cap B = \emptyset$, la unión junta todo sin reducir:
+  - Ejemplo: $A = \{1, 2\}$, $B = \{3, 4\}$ → $A \cup B = \{1, 2, 3, 4\}$ y $n(A \cup B) = n(A) + n(B) = 2 + 2 = 4$.
+  - Dataset: divorciados (20,708) y casados (24,292) son disjuntos → $n(D \cup D^c) = 20{,}708 + 24{,}292 = 45{,}000 = |\Omega|$.
 
+* **Propiedades de la unión:**
+* **Identidad con el vacío:** $A \cup \emptyset = A$ (no se agrega nada).
+* **Identidad con el universo:** $A \cup \Omega = \Omega$ (el universo ya lo contiene todo).
+* **Idempotencia:** $A \cup A = A$.
+* **Complemento:** $A \cup A^c = \Omega$ (todo matrimonio o es divorciado o no lo es, sin excepciones).
 
-* **Propiedades de la unión:** Identidad con el vacío, con el universo y la idempotencia ($A \cup A = A$) ().
-
-
+> [!tip] Relación con la probabilidad
+> Si $A$ y $B$ son **disjuntos**: $P(A \cup B) = P(A) + P(B)$.
+> Si **no** lo son: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (se resta el suceso compartido para no contarlo dos veces).
 
 ---
 
