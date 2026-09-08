@@ -93,3 +93,15 @@ exportar librerias
 ```sh
 pip freeze > requirements.txt
 ```
+
+ver ip
+```sh
+hostname -I
+```
+
+arrancar programa web
+```sh
+mkdocs serve -a 0.0.0.0:8000
+
+```
+

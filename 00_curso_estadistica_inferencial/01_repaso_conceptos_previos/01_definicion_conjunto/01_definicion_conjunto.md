@@ -44,9 +44,7 @@ Un **conjunto** es una colección de objetos llamados **elementos**. Se nombran 
 
 2. **Por comprensión:** se indica la propiedad que cumplen:
 
-      $$
-      A = \{x \mid x \in \mathbb{N},\ x \leq 4\}
-      $$
+      $$ A = \{x \mid x \in \mathbb{N},\ x \leq 4\} $$
    Se lee "el conjunto de todos los $x$ **tal que** ($\mid$) $x$ pertenece a los naturales **y** $x$ es menor o igual a 4".
 
 **Reglas:** los elementos **no se repiten** y el **orden es irrelevante** (por eso $\{1,2,3\} = \{3,1,2\}$).

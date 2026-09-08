@@ -5,7 +5,11 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - nl2br  # <- Esto convierte cada salto de línea simple en un <br> web
+  - obsidian_callouts  # <-- Añade esta línea
+  - admonition         # Requerido para dar soporte visual de cajas
+  - pymdownx.details   # Permite que sean desplegables si usas [-]
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/quiz.js
