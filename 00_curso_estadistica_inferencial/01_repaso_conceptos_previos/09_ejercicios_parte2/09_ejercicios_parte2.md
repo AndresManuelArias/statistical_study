@@ -17,6 +17,8 @@ tags:
 - **Enlace:** [Ver video](http://www.youtube.com/watch?v=5ovNShM6GAk)
 - **Playlist:** [Curso completo](https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5ovNShM6GAk?si=yd7P7_33BFCFHqMT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 
 Se resuelven ejercicios de forma **analítica por extensión**: a partir de conjuntos definidos con elementos (números o letras) dentro de un universo dado, se calculan paso a paso uniones, diferencias con su complemento, e intersecciones compuestas, validando además subconjuntos.
@@ -68,6 +70,8 @@ d) $\{1, 2\}$
 
 ### Pregunta 2
 
+
+$\Omega = \{1, 2, 3, 4, 5\}$, $A = \{1, 2, 3\}$ y $B = \{3, 4\}$
 Con los mismos conjuntos, la diferencia $A - B$ es:
 
 a) $\{3\}$
@@ -81,7 +85,7 @@ d) $\{1, 2, 3, 4\}$
 
 ### Pregunta 3
 
-Con los mismos conjuntos, el complemento de la diferencia $(A - B)^c$ es:
+Con los mismos conjuntos $\Omega = \{1, 2, 3, 4, 5\}$, $A = \{1, 2, 3\}$ y $B = \{3, 4\}$, el complemento de la diferencia $(A - B)^c$ es:
 
 a) $\{1, 2\}$
 b) $\{3, 4, 5\}$
@@ -94,7 +98,7 @@ d) $\emptyset$
 
 ### Pregunta 4
 
-Con los mismos conjuntos, la intersección compuesta $(A \cup B) \cap A$ es:
+Con los mismos conjuntos $\Omega = \{1, 2, 3, 4, 5\}$, $A = \{1, 2, 3\}$ y $B = \{3, 4\}$, la intersección compuesta $(A \cup B) \cap A$ es:
 
 a) $A$ = $\{1, 2, 3\}$
 b) $B$ = $\{3, 4\}$
@@ -107,7 +111,7 @@ d) $\{1, 2, 3, 4\}$
 
 ### Pregunta 5
 
-Con los mismos conjuntos, ¿cuál afirmación es **verdadera**?
+Con los mismos conjuntos $\Omega = \{1, 2, 3, 4, 5\}$, $A = \{1, 2, 3\}$ y $B = \{3, 4\}$, ¿cuál afirmación es **verdadera**?
 
 a) $\{3\} \nsubseteq A$
 b) $\{3\} \subseteq A$ y $\{3\} \subseteq B$
@@ -120,7 +124,7 @@ d) $B \subseteq A$
 
 ### Pregunta 6
 
-Con los mismos conjuntos, $(A - B) \cap B$ es:
+Con los mismos conjuntos $\Omega = \{1, 2, 3, 4, 5\}$, $A = \{1, 2, 3\}$ y $B = \{3, 4\}$, $(A - B) \cap B$ es:
 
 a) $\{1, 2\}$
 b) $\{3\}$
@@ -133,7 +137,7 @@ d) $\{4\}$
 
 ### Pregunta 7
 
-Con los mismos conjuntos, $A \cap B^c$ es:
+Con los mismos conjuntos $\Omega = \{1, 2, 3, 4, 5\}$, $A = \{1, 2, 3\}$ y $B = \{3, 4\}$, $A \cap B^c$ es:
 
 a) $\{1, 2\}$ (elementos de $A$ que no están en $B$)
 b) $\{3, 4\}$

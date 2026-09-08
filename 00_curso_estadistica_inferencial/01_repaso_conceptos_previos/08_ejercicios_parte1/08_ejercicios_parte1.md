@@ -92,7 +92,7 @@ b) No, nunca
 c) Solo si $A = B$
 d) Solo si $A \cap B = \emptyset$
 
-> **b) No, nunca**
+> **c) Solo si $A = B$**
 
 ---
 

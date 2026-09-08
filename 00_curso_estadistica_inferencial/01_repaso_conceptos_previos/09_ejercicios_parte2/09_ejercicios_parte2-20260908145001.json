@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "09_ejercicios_parte2-20260908145001",
+  "titulo": "Evaluación 09_ejercicios_parte2",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "Con $\\Omega = \\{1, 2, 3, 4, 5\\}$, $A = \\{1, 2, 3\\}$ y $B = \\{3, 4\\}$, la unión $A \\cup B$ es:",
+      "opciones": [
+        "a) $\\{1, 2, 3, 4\\}$",
+        "b) $\\{1, 2, 3, 4, 5\\}$",
+        "c) $\\{3\\}$",
+        "d) $\\{1, 2\\}$"
+      ],
+      "respuesta_correcta": "a) $\\{1, 2, 3, 4\\}$",
+      "respuesta_usuario": "a) $\\{1, 2, 3, 4\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Con los mismos conjuntos, la diferencia $A - B$ es:",
+      "opciones": [
+        "a) $\\{3\\}$",
+        "b) $\\{1, 2\\}$",
+        "c) $\\{4\\}$",
+        "d) $\\{1, 2, 3, 4\\}$"
+      ],
+      "respuesta_correcta": "b) $\\{1, 2\\}$",
+      "respuesta_usuario": "b) $\\{1, 2\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Con los mismos conjuntos, el complemento de la diferencia $(A - B)^c$ es:",
+      "opciones": [
+        "a) $\\{1, 2\\}$",
+        "b) $\\{3, 4, 5\\}$",
+        "c) $\\{1, 2, 3, 4, 5\\}$",
+        "d) $\\emptyset$"
+      ],
+      "respuesta_correcta": "b) $\\{3, 4, 5\\}$",
+      "respuesta_usuario": "b) $\\{3, 4, 5\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Con los mismos conjuntos, la intersección compuesta $(A \\cup B) \\cap A$ es:",
+      "opciones": [
+        "a) $A$ = $\\{1, 2, 3\\}$",
+        "b) $B$ = $\\{3, 4\\}$",
+        "c) $\\emptyset$",
+        "d) $\\{1, 2, 3, 4\\}$"
+      ],
+      "respuesta_correcta": "a) $A$ = $\\{1, 2, 3\\}$",
+      "respuesta_usuario": "a) $A$ = $\\{1, 2, 3\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Con los mismos conjuntos, ¿cuál afirmación es verdadera?",
+      "opciones": [
+        "a) $\\{3\\} \\nsubseteq A$",
+        "b) $\\{3\\} \\subseteq A$ y $\\{3\\} \\subseteq B$",
+        "c) $A \\subseteq B$",
+        "d) $B \\subseteq A$"
+      ],
+      "respuesta_correcta": "b) $\\{3\\} \\subseteq A$ y $\\{3\\} \\subseteq B$",
+      "respuesta_usuario": "b) $\\{3\\} \\subseteq A$ y $\\{3\\} \\subseteq B$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Con los mismos conjuntos, $(A - B) \\cap B$ es:",
+      "opciones": [
+        "a) $\\{1, 2\\}$",
+        "b) $\\{3\\}$",
+        "c) $\\emptyset$ (los elementos de $A - B$ no están en $B$)",
+        "d) $\\{4\\}$"
+      ],
+      "respuesta_correcta": "c) $\\emptyset$ (los elementos de $A - B$ no están en $B$)",
+      "respuesta_usuario": "c) $\\emptyset$ (los elementos de $A - B$ no están en $B$)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Con los mismos conjuntos, $A \\cap B^c$ es:",
+      "opciones": [
+        "a) $\\{1, 2\\}$ (elementos de $A$ que no están en $B$)",
+        "b) $\\{3, 4\\}$",
+        "c) $\\{3\\}$",
+        "d) $\\{1, 2, 3\\}$"
+      ],
+      "respuesta_correcta": "a) $\\{1, 2\\}$ (elementos de $A$ que no están en $B$)",
+      "respuesta_usuario": "a) $\\{1, 2\\}$ (elementos de $A$ que no están en $B$)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "La resolución analítica por extensión consiste en:",
+      "opciones": [
+        "a) Operar símbolos abstractos sin numerar",
+        "b) Enumerar los elementos de cada conjunto y aplicar las operaciones paso a paso",
+        "c) Usar solo diagramas de Venn",
+        "d) Memorizar las fórmulas sin aplicarlas"
+      ],
+      "respuesta_correcta": "b) Enumerar los elementos de cada conjunto y aplicar las operaciones paso a paso",
+      "respuesta_usuario": "b) Enumerar los elementos de cada conjunto y aplicar las operaciones paso a paso",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Con $\\Omega = \\{a, b, c, d\\}$, $X = \\{a, b\\}$ y $Y = \\{b, c\\}$, el resultado de $X \\cup Y$ es:",
+      "opciones": [
+        "a) $\\{a, b, c\\}$",
+        "b) $\\{b\\}$",
+        "c) $\\{a, b, c, d\\}$",
+        "d) $\\{a, c\\}$"
+      ],
+      "respuesta_correcta": "a) $\\{a, b, c\\}$",
+      "respuesta_usuario": "a) $\\{a, b, c\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Con $X = \\{a, b\\}$ y $Y = \\{b, c\\}$, el resultado de $X \\cap Y$ es:",
+      "opciones": [
+        "a) $\\{a, b, c\\}$",
+        "b) $\\{b\\}$",
+        "c) $\\emptyset$",
+        "d) $\\{a, c\\}$"
+      ],
+      "respuesta_correcta": "b) $\\{b\\}$",
+      "respuesta_usuario": "b) $\\{b\\}$",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 100.0,
+    "total_correctas": 10,
+    "total_preguntas": 10
+  }
+}
