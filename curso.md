@@ -85,3 +85,11 @@ Ya existe `ejecutar.sh` en la raíz de `etapa-2` (con tkinter copiado a `mi_ento
 ```sh
 ./ejecutar.sh
 ```
+
+
+
+exportar librerias
+
+```sh
+pip freeze > requirements.txt
+```
