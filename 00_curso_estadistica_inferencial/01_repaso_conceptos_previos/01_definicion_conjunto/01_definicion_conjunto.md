@@ -67,73 +67,6 @@ Cada operación se desarrolla en su propio tema (05 a 07 del temario del curso).
 
 ---
 
-## 💡 Ejemplo en Python: conjuntos sobre el dataset de matrimonios
-
-Aplicamos la teoría de conjuntos a los datos reales de matrimonios (`marriage_longevity_master.csv`, 45,000 registros). Usamos conjuntos de identificadores de matrimonios que cumplen una propiedad, tal como definiríamos sucesos en probabilidad.
-
-```python
-import csv
-from pathlib import Path
-
-RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
-
-def cargar():
-    """Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)."""
-    with open(RUTA, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-def conjunto_ids(filas, predicado):
-    """Devuelve un SET de marriage_id que cumplen la condición.
-    El set elimina duplicados (propiedad de los conjuntos)."""
-    return {f["marriage_id"] for f in filas if predicado(f)}
-
-filas = cargar()
-
-# Definimos conjuntos (sucesos) sobre el espacio muestral de matrimonios
-universo = {f["marriage_id"] for f in filas}          # Ω : todos los matrimonios
-
-casados = conjunto_ids(filas, lambda f: f["divorced"] == "0")       # sigue casado
-divorciados = conjunto_ids(filas, lambda f: f["divorced"] == "1")   # se divorció
-licenciados = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")
-terapia = conjunto_ids(filas, lambda f: f["premarital_counseling"] == "1")
-
-print(f"|Ω| (universo)                 = {len(universo)}")
-print(f"|casados|                      = {len(casados)}")
-print(f"|divorciados|                  = {len(divorciados)}")
-
-# Pertenencia: primer matrimonio, ¿es bachelors?
-ejemplo_id = next(iter(divorciados))
-print(f"\nPertenencia: ¿{ejemplo_id} ∈ licenciados? "
-      f"{ejemplo_id in licenciados}")
-print(f"Pertenencia: ¿{ejemplo_id} ∈ divorciados? "
-      f"{ejemplo_id in divorciados}")
-
-# Sets no repiten elementos: misma propiedad da el mismo cardinal
-print(f"\n|licenciados| con set = {len(licenciados)}")
-```
-
-**Salida esperada (concepto):**
-
-```
-|Ω| (universo)                 = 45000
-|casados|                      = 24292
-|divorciados|                  = 20708
-
-Pertenencia: ¿... ∈ licenciados? False
-Pertenencia: ¿... ∈ divorciados? True
-
-|licenciados| con set = 11700
-```
-
-> [!note] Sobre la pertenencia
-> La línea que verifica si un `marriage_id` pertenece a un conjunto usa un ID de ejemplo (el primer elemento del conjunto de divorciados), por lo que su valor exacto varía entre ejecuciones. Lo importante es que con `in` podemos comprobar si **cualquier** matrimonio dado cumple (∈) o no (∉) una propiedad.
-
-> [!note] Lectura estadística
-> - Las **probabilidades** se obtienen dividiendo el tamaño del conjunto entre el universo: $P(\text{divorciado}) = 20708/45000 \approx 0.46$.
-> - Cualquier suceso de un experimento se puede modelar como un **subconjunto** de $\Omega$ → la teoría de conjuntos es la base de la probabilidad.
-
----
-
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
@@ -244,15 +177,14 @@ d) "pertenece a"
 
 ### Pregunta 9
 
-En el dataset de matrimonios, el **universo** $\Omega$ es:
+En una fiscalía hay 45,000 expedientes registrados. En ese contexto, el **universo** $\Omega$ es:
 
-a) El conjunto de matrimonios divorciados
-b) El conjunto de matrimonios casados
-c) Todos los matrimonios (45,000 registros)
-d) Los matrimonios con nivel bachelors
+a) El conjunto de expedientes archivados
+b) El conjunto de expedientes en trámite
+c) Todos los expedientes (45,000 registros)
+d) Los expedientes con más de 10 páginas
 
-> **c) Todos los matrimonios (45,000 registros)**
-
+> **c) Todos los expedientes (45,000 registros)**
 ---
 
 ### Pregunta 10

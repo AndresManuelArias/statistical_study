@@ -51,50 +51,6 @@ donde $n(A)$ es la cardinalidad del conjunto original.
 
 ---
 
-## 💡 Ejemplo en Python: conjunto potencia sobre el dataset
-
-Aunque el dataset tiene 45,000 matrimonios (imposible de enumerar a mano), la regla $2^n$ se ilustra con conjuntos pequeños:
-
-```python
-# Conjunto potencia por comprensión con n pequeñas
-def potencia_por_cardinalidad(n):
-    # Número de subconjuntos posibles de un conjunto con n elementos
-    return 2 ** n
-
-for n in [0, 1, 2, 3, 4, 5]:
-    print(f"n(A) = {n}  →  n(P(A)) = 2^{n} = {potencia_por_cardinalidad(n)}")
-
-# Ilustración explícita con n = 3
-A = {"a", "b", "c"}
-print(f"\nConjunto A = {A} tiene n(A) = {len(A)}")
-print(f"Tiene {2 ** len(A)} subconjuntos posibles (2^{len(A)})")
-
-# En el dataset: si un suceso tuviera 5 elementos base...
-print(f"\nUn suceso con 5 elementos base tiene {2**5} subconjuntos posibles")
-```
-
-**Salida real del script (verificada):**
-
-```
-n(A) = 0  →  n(P(A)) = 2^0 = 1
-n(A) = 1  →  n(P(A)) = 2^1 = 2
-n(A) = 2  →  n(P(A)) = 2^2 = 4
-n(A) = 3  →  n(P(A)) = 2^3 = 8
-n(A) = 4  →  n(P(A)) = 2^4 = 16
-n(A) = 5  →  n(P(A)) = 2^5 = 32
-
-Conjunto A = {'c', 'a', 'b'} tiene n(A) = 3
-Tiene 8 subconjuntos posibles (2^3)
-
-Un suceso con 5 elementos base tiene 32 subconjuntos posibles
-```
-
-> [!note] Lectura estadística
-> - Con solo 3 elementos ya hay 8 sucesos posibles: cada combinación de elementos define un subconjunto distinto.
-> - La regla $2^n$ crece exponencialmente: por eso la combinatoria (tema 02) es la herramienta para contar resultados sin enumerarlos.
-
----
-
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.

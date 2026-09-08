@@ -59,58 +59,6 @@ Restamos la intersección para **no contar dos veces** los elementos comunes.
 
 ---
 
-## 💡 Ejemplo en Python: cardinalidad sobre el dataset
-
-```python
-import csv
-from pathlib import Path
-
-RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
-
-def cargar():
-    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
-    with open(RUTA, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-def conjunto_ids(filas, predicado):
-    # Devuelve un SET de marriage_id que cumplen la condición
-    return {f["marriage_id"] for f in filas if predicado(f)}
-
-filas = cargar()
-A = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")   # bachelors
-T = conjunto_ids(filas, lambda f: f["premarital_counseling"] == "1")     # terapia
-
-print(f"n(A) = {len(A)}   n(T) = {len(T)}   n(A ∩ T) = {len(A & T)}")
-
-# Caso con intersección (fórmula general)
-n_union = len(A) + len(T) - len(A & T)
-print(f"n(A ∪ T) = n(A) + n(T) - n(A ∩ T) = {n_union}")
-print(f"Verificación directa |A ∪ T| = {len(A | T)}")
-
-# Caso disjuntos: n(D ∪ D^c) = n(D) + n(D^c)
-D = conjunto_ids(filas, lambda f: f["divorced"] == "1")
-Dc = {f["marriage_id"] for f in filas} - D
-print(f"\nn(D) + n(D^c) = {len(D)} + {len(Dc)} = {len(D) + len(Dc)}  "
-      f"(= n(Ω) = {len(D | Dc)})")
-```
-
-**Salida real del script (verificada con el dataset):**
-
-```
-n(A) = 11700   n(T) = 10972   n(A ∩ T) = 2987
-
-n(A ∪ T) = n(A) + n(T) - n(A ∩ T) = 19685
-Verificación directa |A ∪ T| = 19685
-
-n(D) + n(D^c) = 20708 + 24292 = 45000  (= n(Ω) = 45000)
-```
-
-> [!note] Lectura estadística
-> - La fórmula general coincide exactamente con el cálculo directo del conjunto: $n(A \cup T) = 19{,}685$.
-> - Para disjuntos basta sumar: $n(D) + n(D^c) = 45{,}000 = n(\Omega)$, porque el suceso y su complemento particionan el universo.
-
----
-
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
@@ -143,7 +91,7 @@ d) $n(A \cup B) = n(A) \cdot n(B)$
 
 ### Pregunta 3
 
-En el dataset, $|A|$ (bachelors) = 11700, $|T|$ (terapia) = 10972 y $|A \cap T|$ = 2987. La cardinalidad de $A \cup T$ es:
+En un gimnasio, $|A|$ (inscritos en yoga) = 11700, $|T|$ (usan la piscina) = 10972 y $|A \cap T| = 2987$. La cardinalidad de $A \cup T$ es:
 
 a) 11700 + 10972 = 22672
 b) 22672 - 2987 = **19685**
@@ -151,7 +99,6 @@ c) 2987
 d) 45000
 
 > **b) 22672 - 2987 = 19685**
-
 ---
 
 ### Pregunta 4

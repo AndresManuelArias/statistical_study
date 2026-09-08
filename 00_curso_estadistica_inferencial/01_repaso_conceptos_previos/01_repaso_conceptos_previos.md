@@ -13,7 +13,7 @@ tags:
 
 ## 📂 Índice de temas
 
-Este repaso de **teoría de conjuntos** (base de la probabilidad y la estadística inferencial) está organizado en 12 temas. Cada uno tiene su carpeta con contenido, ejemplos en Python sobre el **dataset de matrimonios** (45,000 registros) y **10 preguntas** de opción múltiple que se responden en `evaluador.py`.
+Este repaso de **teoría de conjuntos** (base de la probabilidad y la estadística inferencial) está organizado en 12 temas. Cada uno tiene su carpeta con contenido con explicaciones, ejemplos numéricos y **10 preguntas** de opción múltiple que se responden en `evaluador.py`.
 
 ### 1. Conceptos básicos
 

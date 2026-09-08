@@ -75,106 +75,6 @@ $$
 
 ---
 
-## 💡 Ejemplo en Python: subconjuntos sobre el dataset de matrimonios
-
-Definimos:
-- $\Omega$ = todos los matrimonios (45,000)
-- $A$ = matrimonios con nivel educativo `bachelors` (11,700)
-- $B$ = matrimonios `bachelors` **que además** hicieron terapia prematrimonial (2,987)
-
-Como $B$ exige cumplir la condición de $A$ **más** una condición extra, necesariamente $B \subseteq A \subseteq \Omega$.
-
-```python
-import csv
-from pathlib import Path
-
-RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
-
-def cargar():
-    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
-    with open(RUTA, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-def conjunto_ids(filas, predicado):
-    # Devuelve un SET de marriage_id que cumplen la condición
-    return {f["marriage_id"] for f in filas if predicado(f)}
-
-filas = cargar()
-
-# ---------- Definición de conjuntos ----------
-universo = {f["marriage_id"] for f in filas}                    # Ω : todos
-casados = conjunto_ids(filas, lambda f: f["divorced"] == "0")
-divorciados = conjunto_ids(filas, lambda f: f["divorced"] == "1")
-
-# A: nivel educativo bachelors
-A_licenciados = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")
-
-# B: bachelors Y con terapia prematrimonial  →  B es subconjunto de A
-B_licen_terapia = conjunto_ids(
-    filas,
-    lambda f: f["education_level"] == "bachelors"
-              and f["premarital_counseling"] == "1",
-)
-
-print(f"|Ω| (universo)             = {len(universo)}")
-print(f"|A| (bachelors)            = {len(A_licenciados)}")
-print(f"|B| (bachelors + terapia)  = {len(B_licen_terapia)}")
-
-# ---------- Verificación de subconjuntos (issubset / issuperset) ----------
-print(f"\nB ⊆ A  →  {B_licen_terapia.issubset(A_licenciados)}")
-print(f"A ⊆ Ω  →  {A_licenciados.issubset(universo)}")
-print(f"Ω ⊇ A  →  {universo.issuperset(A_licenciados)}")
-
-# ---------- Propiedades de la contención ----------
-print(f"\nReflexiva:  A ⊆ A          →  {A_licenciados.issubset(A_licenciados)}")
-print(f"Antisimetría: A⊆B y B⊆A ⟹ A==B →  {A_licenciados == A_licenciados}")
-
-transitiva = (B_licen_terapia.issubset(A_licenciados)
-              and A_licenciados.issubset(universo)
-              and B_licen_terapia.issubset(universo))
-print(f"Transitiva: B⊆A, A⊆Ω ⟹ B⊆Ω  →  {transitiva}")
-
-# ---------- No subconjunto ----------
-print(f"\n¿casados ⊆ divorciados?    →  {casados.issubset(divorciados)}")
-print(f"¿∅ ⊆ A?                    →  {set().issubset(A_licenciados)}")
-
-# ---------- Probabilidad condicional desde subconjuntos ----------
-# Como B ⊆ A, la probabilidad de B dado A es |B| / |A|
-p = len(B_licen_terapia) / len(A_licenciados)
-print(f"\nP(B|A) = |B|/|A| = {len(B_licen_terapia)}/{len(A_licenciados)} = {p:.4f}")
-print(f"P(B) = |B|/|Ω| = {len(B_licen_terapia)}/{len(universo)} = {len(B_licen_terapia)/len(universo):.4f}")
-```
-
-**Salida real del script (verificada con el dataset):**
-
-```
-|Ω| (universo)             = 45000
-|A| (bachelors)            = 11700
-|B| (bachelors + terapia)  = 2987
-
-B ⊆ A  →  True
-A ⊆ Ω  →  True
-Ω ⊇ A  →  True
-
-Reflexiva:  A ⊆ A          →  True
-Antisimetría: A⊆B y B⊆A ⟹ A==B →  True
-Transitiva: B⊆A, A⊆Ω ⟹ B⊆Ω  →  True
-
-¿casados ⊆ divorciados?    →  False
-¿∅ ⊆ A?                    →  True
-
-P(B|A) = |B|/|A| = 2987/11700 = 0.2553
-P(B) = |B|/|Ω| = 2987/45000 = 0.0664
-```
-
-> [!note] Lectura estadística
-> - **P(B|A) = 0.2553** → de los matrimonios con `bachelors`, el 25.53% también hicieron terapia prematrimonial.
-> - **P(B) = 0.0664** → en todo el universo, solo el 6.64% de los matrimonios cumplen ambas condiciones.
-> - Al ser $B \subseteq A$, se cumple $P(B) \leq P(A)$ y la probabilidad condicional se reduce a un cociente de cardinalidades.
-> - `casados ⊆ divorciados → False` confirma que son **disjuntos** (ninguno contiene al otro), coherente con ser una partición.
-
----
-
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
@@ -246,7 +146,7 @@ d) Cuando $B$ está contenido en $A$
 
 ### Pregunta 6
 
-En el ejemplo del dataset de matrimonios, $B$ = matrimonios `bachelors` con terapia prematrimonial y $A$ = matrimonios `bachelors`. Se cumple que:
+En una cafetería, $A$ = clientes que compran un café y $B$ = clientes que compran un café **y además** pagan con tarjeta. Se cumple que:
 
 a) $A \subseteq B$
 b) $B \subseteq A$
@@ -254,7 +154,6 @@ c) $A \cap B = \emptyset$
 d) $B = \Omega$
 
 > **b) $B \subseteq A$**
-
 ---
 
 ### Pregunta 7

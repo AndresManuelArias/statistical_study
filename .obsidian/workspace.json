@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/03_conjunto_vacio_universal/03_conjunto_vacio_universal.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/04_complemento/04_complemento.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03_conjunto_vacio_universal"
+              "title": "04_complemento"
             }
           }
         ]
@@ -188,8 +188,11 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "34325c597adc51bf",
+  "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/04_complemento/04_complemento-20260908105130.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/03_conjunto_vacio_universal/03_conjunto_vacio_universal.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/03_conjunto_vacio_universal/03_conjunto_vacio_universal-20260908103801.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/03_conjunto_vacio_universal/03_conjunto_vacio_universal-20260908102436.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/02_subconjuntos/02_subconjuntos.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/02_subconjuntos/02_subconjuntos-20260908100814.json",
@@ -216,7 +219,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/32_probabilidad_geometrica/32_probabilidad_geometrica.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/64_pruebas_parametricas_no_parametricas/64_pruebas_parametricas_no_parametricas.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/47_distribucion_binomial_negativa/47_distribucion_binomial_negativa.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/39_distribuciones_de_probabilidad/39_distribuciones_de_probabilidad.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/69_zonas_rechazo_toma_decision",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/68_aplicacion_prueba_estadistica",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/67_hipotesis_nula_alternativa",
@@ -224,8 +226,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/65_muestras_independientes_dependientes",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/64_pruebas_parametricas_no_parametricas",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/63_prueba_de_hipotesis",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/62_introduccion_estadistica_inferencial",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/61_distribucion_muestral_parte2",
     "mi_entorno/lib/python3.12/site-packages/material/templates/assets/images/favicon.png",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/mkdocs/img/grid.png",

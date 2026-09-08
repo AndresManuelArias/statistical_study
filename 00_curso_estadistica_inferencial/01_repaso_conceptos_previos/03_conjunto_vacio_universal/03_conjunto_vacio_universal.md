@@ -36,7 +36,7 @@ Se estudian dos conjuntos especiales: el **conjunto vacío** (el que no contiene
 ## Conjunto universal ($\Omega$ o $U$)
 
 - **Definición:** el conjunto que contiene **todos los elementos posibles del contexto**.
-- No existe un único universal abstracto: depende del **dominio** (en el curso, $\Omega$ = los 45,000 matrimonios).
+- No existe un único universal abstracto: depende del **dominio** (por ejemplo, $\Omega$ = los 45,000 clientes registrados de una tienda).
 - Todo conjunto del contexto es subconjunto del universal: $A \subseteq \Omega$.
 
 **Ejemplos prácticos:** conjuntos de letras del abecedario, números naturales y animales.
@@ -44,61 +44,6 @@ Se estudian dos conjuntos especiales: el **conjunto vacío** (el que no contiene
 > [!tip] Relación con la probabilidad
 > - $P(\emptyset) = 0$: el suceso imposible tiene probabilidad cero.
 > - $P(\Omega) = 1$: el suceso seguro tiene probabilidad uno.
-
----
-
-## 💡 Ejemplo en Python: vacío y universal sobre el dataset
-
-```python
-import csv
-from pathlib import Path
-
-RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
-
-def cargar():
-    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
-    with open(RUTA, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-filas = cargar()
-
-# Conjunto universal: todos los matrimonios
-universo = {f["marriage_id"] for f in filas}
-casados = {f["marriage_id"] for f in filas if f["divorced"] == "0"}
-divorciados = {f["marriage_id"] for f in filas if f["divorced"] == "1"}
-
-# El conjunto vacío en Python
-vacio = set()
-print(f"|Ω| (universo)          = {len(universo)}")
-print(f"|∅| (vacío)             = {len(vacio)}")
-print(f"∅ ⊆ casados            = {vacio.issubset(casados)}")
-
-# Intersección vacía: casados ∩ divorciados
-inter = casados & divorciados
-print(f"casados ∩ divorciados   = {len(inter)}  → ¿es ∅? {inter == set()}")
-
-# Universal como contexto: todo matrimonio está en Ω
-print(f"A ⊆ Ω (casados)         = {casados.issubset(universo)}")
-print(f"A ⊆ Ω (divorciados)     = {divorciados.issubset(universo)}")
-```
-
-**Salida real del script (verificada con el dataset):**
-
-```
-|Ω| (universo)          = 45000
-|∅| (vacío)             = 0
-∅ ⊆ casados            = True
-
-casados ∩ divorciados   = 0  → ¿es ∅? True
-
-A ⊆ Ω (casados)         = True
-A ⊆ Ω (divorciados)     = True
-```
-
-> [!note] Lectura estadística
-> - `casados ∩ divorciados = ∅` con cardinalidad 0: ningún matrimonio es casado y divorciado a la vez → son **mutuamente excluyentes**.
-> - $\emptyset$ como suceso imposible: $P(\emptyset) = 0$.
-> - $\Omega$ como suceso seguro: todo matrimonio del CSV pertenece a $\Omega$, por lo que $P(\Omega) = 1$.
 
 ---
 
@@ -186,20 +131,19 @@ d) $\emptyset = \Omega$ siempre
 
 ### Pregunta 7
 
-En el dataset de matrimonios, el conjunto de los que **siguen casados** ∩ el de los **divorciados** es:
+En un hospital, el conjunto de pacientes **internados en planta** ∩ el de los **dados de alta** es:
 
-a) El conjunto de los casados
-b) El conjunto de los divorciados
+a) El conjunto de los internados
+b) El conjunto de los dados de alta
 c) El conjunto vacío (son mutuamente excluyentes)
 d) El universo completo
 
 > **c) El conjunto vacío (son mutuamente excluyentes)**
-
 ---
 
 ### Pregunta 8
 
-En una base de datos de matrimonios, definimos $D$ como el conjunto de matrimonios divorciados y $C$ como el conjunto de los que siguen casados. Si $|D| = 20708$, $|C| = 24292$ y $|D \cap C| = 0$, entonces el universo $|\Omega|$ es:
+En un hospital, definimos $I$ = pacientes internados en planta y $A$ = pacientes dados de alta. Si $|I| = 20708$, $|A| = 24292$ y $|I \cap A| = 0$, entonces el universo $|\Omega|$ (total de pacientes registrados) es:
 
 a) 20708
 b) 24292
@@ -207,7 +151,6 @@ c) 45000
 d) 0
 
 > **c) 45000**
-
 ---
 
 ### Pregunta 9

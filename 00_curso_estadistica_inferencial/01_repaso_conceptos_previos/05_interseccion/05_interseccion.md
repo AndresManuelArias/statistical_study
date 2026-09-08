@@ -51,61 +51,6 @@ $$
 
 ---
 
-## 💡 Ejemplo en Python: intersección sobre el dataset
-
-```python
-import csv
-from pathlib import Path
-
-RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
-
-def cargar():
-    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
-    with open(RUTA, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-def conjunto_ids(filas, predicado):
-    # Devuelve un SET de marriage_id que cumplen la condición
-    return {f["marriage_id"] for f in filas if predicado(f)}
-
-filas = cargar()
-
-casados = conjunto_ids(filas, lambda f: f["divorced"] == "0")
-divorciados = conjunto_ids(filas, lambda f: f["divorced"] == "1")
-licenciados = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")
-terapia = conjunto_ids(filas, lambda f: f["premarital_counseling"] == "1")
-
-# Intersección no vacía
-inter = licenciados & terapia
-print(f"|A| (bachelors)          = {len(licenciados)}")
-print(f"|T| (terapia)            = {len(terapia)}")
-
-print(f"|A ∩ T| = {len(inter)}  → ¿no vacía? {inter != set()}")
-
-# Disjuntos: casados ∩ divorciados = ∅
-disj = casados & divorciados
-print(f"\ncasados ∩ divorciados = {len(disj)}  → ¿disjuntos? {disj == set()}")
-print(f"¿P(A ∩ B) = 0 para disjuntos? {len(disj) == 0}")
-```
-
-**Salida real del script (verificada con el dataset):**
-
-```
-|A| (bachelors)          = 11700
-|T| (terapia)            = 10972
-|A ∩ T| = 2987  → ¿no vacía? True
-
-casados ∩ divorciados = 0  → ¿disjuntos? True
-¿P(A ∩ B) = 0 para disjuntos? True
-```
-
-> [!note] Lectura estadística
-> - $|A \cap T| = 2{,}987$ matrimonios son bachelors **y** hicieron terapia: la intersección cuenta el cumplimiento simultáneo de dos condiciones.
-> - `casados ∩ divorciados = ∅` confirma que son **mutuamente excluyentes** (no pueden ocurrir a la vez).
-> - En probabilidad, $P(A \cap T) = 2987/45000 \approx 0.066$ es la probabilidad conjunta.
-
----
-
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
@@ -203,15 +148,14 @@ d) $A \cap B = \{x \mid x \in B,\ x \notin A\}$
 
 ### Pregunta 8
 
-En el dataset, $A$ = bachelors (11,700) y $T$ = terapia (10,972). Si $|A \cap T| = 2987$, entonces:
+En un gimnasio, $A$ = socios inscritos en yoga (11,700) y $T$ = socios que usan la piscina (10,972). Si $|A \cap T| = 2987$, entonces:
 
-a) 2987 matrimonios son bachelors **y** hicieron terapia
-b) 2987 matrimonios son bachelors o hicieron terapia
-c) 2987 matrimonios no son bachelors
-d) 2987 matrimonios son divorciados
+a) 2987 socios están en yoga **y** usan la piscina
+b) 2987 socios están en yoga o usan la piscina
+c) 2987 socios no están en yoga
+d) 2987 socios están dados de baja
 
-> **a) 2987 matrimonios son bachelors y hicieron terapia**
-
+> **a) 2987 socios están en yoga y usan la piscina**
 ---
 
 ### Pregunta 9

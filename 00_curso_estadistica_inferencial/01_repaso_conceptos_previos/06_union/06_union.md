@@ -39,89 +39,26 @@ Un elemento pertenece a la unión si cumple **al menos una** de las dos condicio
 
 - **Unión con intersección distinta del vacío (los repetidos no se duplican):**
   - Ejemplo: $A = \{a, b, c\}$, $B = \{c, d\}$ → $A \cup B = \{a, b, c, d\}$ (el $c$ común aparece una sola vez).
-  - Dataset: los 2,987 matrimonios bachelors **y** con terapia se cuentan una sola vez en $A \cup T$.
+  - Ejemplo: en un gimnasio, los 2,987 socios de yoga **que además** usan la piscina se cuentan una sola vez en $A \cup T$.
 - **Unión de conjuntos iguales (idempotencia):** $A \cup A = A$.
   - Ejemplo: $\{2, 4, 6\} \cup \{2, 4, 6\} = \{2, 4, 6\}$.
 - **Unión de un conjunto y su subconjunto:** si $B \subseteq A$, entonces $A \cup B = A$.
   - Ejemplo: $A = \{1, 2, 3, 4\}$, $B = \{2, 4\}$ → $A \cup B = \{1, 2, 3, 4\} = A$ (no aporta elementos nuevos).
-  - Dataset: si $B$ = bachelors con terapia ($B \subseteq A$), entonces $A \cup B = A$ (los bachelors ya estaban incluidos).
+  - Ejemplo: si $B$ = socios de yoga que usan la piscina ($B \subseteq A$), entonces $A \cup B = A$ (los socios de yoga ya estaban incluidos).
 - **Unión de conjuntos disjuntos:** si $A \cap B = \emptyset$, la unión junta todo sin reducir:
   - Ejemplo: $A = \{1, 2\}$, $B = \{3, 4\}$ → $A \cup B = \{1, 2, 3, 4\}$ y $n(A \cup B) = n(A) + n(B) = 2 + 2 = 4$.
-  - Dataset: divorciados (20,708) y casados (24,292) son disjuntos → $n(D \cup D^c) = 20{,}708 + 24{,}292 = 45{,}000 = |\Omega|$.
+  - Ejemplo: los clientes de entrega a domicilio (20,708) y los de recogida en tienda (24,292) son disjuntos → $n(A \cup B) = 20{,}708 + 24{,}292 = 45{,}000 = |\Omega|$.
 
 ## Propiedades de la unión
 
 - **Identidad con el vacío:** $A \cup \emptyset = A$ (no se agrega nada).
 - **Identidad con el universo:** $A \cup \Omega = \Omega$ (el universo ya lo contiene todo).
 - **Idempotencia:** $A \cup A = A$.
-- **Complemento:** $A \cup A^c = \Omega$ (todo matrimonio o es divorciado o no lo es, sin excepciones).
+- **Complemento:** $A \cup A^c = \Omega$ (todo elemento del contexto o está en $A$ o no lo está, sin excepciones).
 
 > [!tip] Relación con la probabilidad
 > Si $A$ y $B$ son **disjuntos**: $P(A \cup B) = P(A) + P(B)$.
 > Si **no** lo son: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (se resta el suceso compartido para no contarlo dos veces).
-
----
-
-## 💡 Ejemplo en Python: unión sobre el dataset
-
-```python
-import csv
-from pathlib import Path
-
-RUTA = Path("ejercicios_practicos/datos_matrimonio/marriage_longevity_master.csv")
-
-def cargar():
-    # Lee el CSV y devuelve una lista de diccionarios (uno por matrimonio)
-    with open(RUTA, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-def conjunto_ids(filas, predicado):
-    # Devuelve un SET de marriage_id que cumplen la condición
-    return {f["marriage_id"] for f in filas if predicado(f)}
-
-filas = cargar()
-
-licenciados = conjunto_ids(filas, lambda f: f["education_level"] == "bachelors")
-terapia = conjunto_ids(filas, lambda f: f["premarital_counseling"] == "1")
-divorciados = conjunto_ids(filas, lambda f: f["divorced"] == "1")
-
-# Unión con intersección no vacía
-union = licenciados | terapia
-inter = licenciados & terapia
-print(f"|A| (bachelors)          = {len(licenciados)}")
-print(f"|T| (terapia)            = {len(terapia)}")
-print(f"|A ∩ T|                  = {len(inter)}")
-print(f"|A ∪ T|                  = {len(union)}")
-print(f"Fórmula: |A|+|T|-|A∩T| = {len(licenciados)}+{len(terapia)}-{len(inter)} "
-      f"= {len(licenciados)+len(terapia)-len(inter)}")
-
-# Unión de disjuntos: sin restar intersección
-print(f"\n|divorciados|            = {len(divorciados)}")
-comp_div = {f["marriage_id"] for f in filas} - divorciados
-print(f"|D ∪ D^c| = {len(divorciados | comp_div)}  (= |Ω|)")
-
-# Idempotencia
-print(f"A ∪ A = A                → {licenciados | licenciados == licenciados}")
-```
-
-**Salida real del script (verificada con el dataset):**
-
-```
-|A| (bachelors)          = 11700
-|T| (terapia)            = 10972
-|A ∩ T|                  = 2987
-|A ∪ T|                  = 19685
-Fórmula: |A|+|T|-|A∩T| = 11700+10972-2987 = 19685
-
-|divorciados|            = 20708
-|D ∪ D^c| = 45000  (= |Ω|)
-
-A ∪ A = A                → True
-```
-
-> [!note] Lectura estadística
-> - $|A \cup T| = 19{,}685$: los matrimonios que son bachelors, hicieron terapia, o ambas cosas. El solapamiento ($2{,}987$) se resta para **no contarlo dos veces**.
-> - $D \cup D^c = \Omega$: el suceso y su complemento cubren todo el universo sin excepción.
 
 ---
 
@@ -222,7 +159,7 @@ d) $\Omega$
 
 ### Pregunta 8
 
-En el dataset, $|A|$ (bachelors) = 11700, $|T|$ (terapia) = 10972 y $|A \cap T|$ = 2987. La cardinalidad de $A \cup T$ es:
+En un gimnasio, $|A|$ (inscritos en yoga) = 11700, $|T|$ (usan la piscina) = 10972 y $|A \cap T| = 2987$. La cardinalidad de $A \cup T$ es:
 
 a) 11700 + 10972 = 22672
 b) 22672 - 2987 = **19685**
@@ -230,7 +167,6 @@ c) 2987
 d) 45000
 
 > **b) 22672 - 2987 = 19685**
-
 ---
 
 ### Pregunta 9
