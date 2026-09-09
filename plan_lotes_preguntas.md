@@ -5,10 +5,10 @@
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 61
-- **Sin preguntas (pendientes):** 8
-- **Total de preguntas actuales:** 610
-- **Meta:** 10 preguntas por carpeta → 80 preguntas nuevas al terminar los lotes pendientes.
+- **Con preguntas:** 69
+- **Sin preguntas (pendientes):** 0
+- **Total de preguntas actuales:** 690
+- **Meta:** 10 preguntas por carpeta → 0 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -83,14 +83,14 @@
 | 59 | `59_distribucion_muestral_parte1` | 10 | — | ✅ Hecho |
 | 60 | `60_teorema_limite_central` | 10 | — | ✅ Hecho |
 | 61 | `61_distribucion_muestral_parte2` | 10 | — | ✅ Hecho |
-| 62 | `62_introduccion_estadistica_inferencial` | 0 | L8 | ⏳ Pendiente |
-| 63 | `63_prueba_de_hipotesis` | 0 | L8 | ⏳ Pendiente |
-| 64 | `64_pruebas_parametricas_no_parametricas` | 0 | L8 | ⏳ Pendiente |
-| 65 | `65_muestras_independientes_dependientes` | 0 | L8 | ⏳ Pendiente |
-| 66 | `66_requisitos_pruebas_estadisticas` | 0 | L8 | ⏳ Pendiente |
-| 67 | `67_hipotesis_nula_alternativa` | 0 | L8 | ⏳ Pendiente |
-| 68 | `68_aplicacion_prueba_estadistica` | 0 | L8 | ⏳ Pendiente |
-| 69 | `69_zonas_rechazo_toma_decision` | 0 | L8 | ⏳ Pendiente |
+| 62 | `62_introduccion_estadistica_inferencial` | 10 | — | ✅ Hecho |
+| 63 | `63_prueba_de_hipotesis` | 10 | — | ✅ Hecho |
+| 64 | `64_pruebas_parametricas_no_parametricas` | 10 | — | ✅ Hecho |
+| 65 | `65_muestras_independientes_dependientes` | 10 | — | ✅ Hecho |
+| 66 | `66_requisitos_pruebas_estadisticas` | 10 | — | ✅ Hecho |
+| 67 | `67_hipotesis_nula_alternativa` | 10 | — | ✅ Hecho |
+| 68 | `68_aplicacion_prueba_estadistica` | 10 | — | ✅ Hecho |
+| 69 | `69_zonas_rechazo_toma_decision` | 10 | — | ✅ Hecho |
 
 ---
 
@@ -193,20 +193,20 @@
 
 **Total de preguntas generadas:** 30
 
-### Lote 8: Inferencia y pruebas de hipótesis (62-69) ⏳ PENDIENTE
+### Lote 8: Inferencia y pruebas de hipótesis (62-69) ✔ COMPLETADO
 
 **Carpetas (8):**
 
-- [ ] `62_introduccion_estadistica_inferencial` (0/10 preguntas)
-- [ ] `63_prueba_de_hipotesis` (0/10 preguntas)
-- [ ] `64_pruebas_parametricas_no_parametricas` (0/10 preguntas)
-- [ ] `65_muestras_independientes_dependientes` (0/10 preguntas)
-- [ ] `66_requisitos_pruebas_estadisticas` (0/10 preguntas)
-- [ ] `67_hipotesis_nula_alternativa` (0/10 preguntas)
-- [ ] `68_aplicacion_prueba_estadistica` (0/10 preguntas)
-- [ ] `69_zonas_rechazo_toma_decision` (0/10 preguntas)
+- [x] `62_introduccion_estadistica_inferencial` (10/10 preguntas)
+- [x] `63_prueba_de_hipotesis` (10/10 preguntas)
+- [x] `64_pruebas_parametricas_no_parametricas` (10/10 preguntas)
+- [x] `65_muestras_independientes_dependientes` (10/10 preguntas)
+- [x] `66_requisitos_pruebas_estadisticas` (10/10 preguntas)
+- [x] `67_hipotesis_nula_alternativa` (10/10 preguntas)
+- [x] `68_aplicacion_prueba_estadistica` (10/10 preguntas)
+- [x] `69_zonas_rechazo_toma_decision` (10/10 preguntas)
 
-**Total de preguntas a generar:** 80 (restantes en este lote)
+**Total de preguntas generadas:** 80
 
 ---
 

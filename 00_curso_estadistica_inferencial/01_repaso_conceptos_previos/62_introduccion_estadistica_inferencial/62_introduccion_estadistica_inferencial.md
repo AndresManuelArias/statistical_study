@@ -94,3 +94,137 @@ Un hospital quiere saber si el tiempo promedio de espera en emergencias ha dismi
 
 > [!tip] Relación con el curso
 > La estadística inferencial es el objetivo final del curso: todos los conceptos previos (muestreo, distribuciones, probabilidad) convergen para permitirnos hacer inferencia válida y cuantificar la incertidumbre en nuestras conclusiones.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué permite hacer la estadística inferencial a partir de una muestra?
+
+a) Describir únicamente los datos observados en la muestra
+b) Generalizar resultados de una muestra a la población completa
+c) Calcular solo medidas de tendencia central
+d) Representar los datos mediante gráficos
+
+> **b) Generalizar resultados de una muestra a la población completa**
+
+---
+
+### Pregunta 2
+
+¿Qué es un estimador puntual?
+
+a) Un rango de valores que contiene al parámetro poblacional con cierta probabilidad
+b) Un solo valor numérico que estima un parámetro poblacional
+c) Una prueba estadística para rechazar o no una hipótesis
+d) Una tabla de frecuencias con los datos de la muestra
+
+> **b) Un solo valor numérico que estima un parámetro poblacional**
+
+---
+
+### Pregunta 3
+
+En la fórmula del intervalo de confianza para la media, $\bar{X} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$, ¿qué representa $\frac{\sigma}{\sqrt{n}}$?
+
+a) El error estándar de la proporción muestral
+b) El margen de error del intervalo
+c) La desviación estándar poblacional dividida entre la raíz cuadrada del tamaño de muestra
+d) El nivel de confianza expresado en decimales
+
+> **c) La desviación estándar poblacional dividida entre la raíz cuadrada del tamaño de muestra**
+
+---
+
+### Pregunta 4
+
+Si se construye un intervalo de confianza al 95%, ¿qué significa ese nivel de confianza?
+
+a) Que hay un 95% de probabilidad de que la media muestral sea correcta
+b) Que el 95% de los datos de la muestra están dentro del intervalo
+c) Que al repetir el procedimiento muchas veces, aproximadamente el 95% de los intervalos construidos contendrán el parámetro poblacional real
+d) Que solo el 5% de los datos son válidos para el análisis
+
+> **c) Que al repetir el procedimiento muchas veces, aproximadamente el 95% de los intervalos construidos contendrán el parámetro poblacional real**
+
+---
+
+### Pregunta 5
+
+¿Cuál es la diferencia fundamental entre la estadística descriptiva y la inferencial?
+
+a) La descriptiva usa muestras grandes y la inferencial usa muestras pequeñas
+b) La descriptiva resumir y describe datos observados; la inferencial hace conclusiones sobre la población
+c) La descriptiva se aplica solo en ciencias naturales y la inferencial solo en ciencias sociales
+d) No existe diferencia, ambas hacen lo mismo con diferentes fórmulas
+
+> **b) La descriptiva resumir y describe datos observados; la inferencial hace conclusiones sobre la población**
+
+---
+
+### Pregunta 6
+
+Una empresa toma una muestra de $n = 100$ clientes y obtiene una proporción de satisfacción de $\hat{p} = 0.78$. Si el error estándar es 0.042, ¿cuál es el margen de error aproximado al 95% de confianza ($z = 1.96$)?
+
+a) 0.042
+b) 0.082
+c) 0.78
+d) 0.196
+
+> **b) 0.082**
+
+---
+
+### Pregunta 7
+
+¿Qué representa el p-valor en una prueba de hipótesis?
+
+a) La probabilidad de que la hipótesis nula sea verdadera
+b) La probabilidad de observar un resultado tan extremo como el obtenido, asumiendo que $H_0$ es verdadera
+c) La probabilidad de que la alternativa $H_1$ sea correcta
+d) El porcentaje de acierto del estimador puntual
+
+> **b) La probabilidad de observar un resultado tan extremo como el obtenido, asumiendo que $H_0$ es verdadera**
+
+---
+
+### Pregunta 8
+
+¿Cuál es el estimador puntual más común para la media poblacional $\mu$?
+
+a) La mediana muestral
+b) La moda muestral
+c) El promedio muestral $\bar{x}$
+d) El rango muestral
+
+> **c) El promedio muestral $\bar{x}$**
+
+---
+
+### Pregunta 9
+
+¿Cuáles son los tres pilares principales de la estadística inferencial?
+
+a) Regresión, correlación y análisis de varianza
+b) Estimación puntual, estimación por intervalos y pruebas de hipótesis
+c) Muestreo aleatorio, muestreo estratificado y muestreo por conglomerados
+d) Probabilidad, combinatoria y distribuciones de probabilidad
+
+> **b) Estimación puntual, estimación por intervalos y pruebas de hipótesis**
+
+---
+
+### Pregunta 10
+
+Un hospital quiere saber si el tiempo promedio de espera ha disminuido respecto a la media histórica de 45 minutos. Toma una muestra de 64 pacientes y obtiene $\bar{x} = 41$ minutos con $\sigma = 16$ minutos. ¿Qué tipo de procedimiento inferencial es más adecuado?
+
+a) Estimación puntual únicamente, comparando 41 con 45
+b) Una prueba de hipótesis para determinar si la reducción es estadísticamente significativa
+c) Un intervalo de confianza sin realizar ninguna comparación
+d) Un análisis descriptivo con gráficos de barras
+
+> **b) Una prueba de hipótesis para determinar si la reducción es estadísticamente significativa**

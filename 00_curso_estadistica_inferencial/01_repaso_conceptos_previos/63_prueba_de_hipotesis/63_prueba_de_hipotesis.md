@@ -102,3 +102,137 @@ Si la prueba rechaza $H_0$, se detiene la línea y se recalibran las llenadoras 
 
 > [!tip] Relación con el curso
 > La prueba de hipótesis es el corazón de la estadística inferencial: convierte la estimación de parámetros en una **decisión** con riesgo cuantificable. Los temas 64 a 69 desarrollan cada componente del procedimiento que aquí se presenta de manera general.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuál es el objetivo principal de una prueba de hipótesis?
+
+a) Estimar el valor exacto del parámetro poblacional con precisión perfecta
+b) Decidir si la evidencia muestral contradice una afirmación sobre un parámetro poblacional
+c) Demostrar matemáticamente que la hipótesis nula es verdadera
+d) Eliminar toda posibilidad de error al tomar una decisión estadística
+
+> **b) Decidir si la evidencia muestral contradice una afirmación sobre un parámetro poblacional**
+
+---
+
+### Pregunta 2
+
+¿Qué representa la hipótesis nula ($H_0$) en una prueba de hipótesis?
+
+a) La conclusión final del investigador después de analizar los datos
+b) La afirmación alternativa que se busca comprobar con la muestra
+c) Una suposición inicial que asume que el parámetro iguala un valor propuesto
+d) Un intervalo de confianza construido al nivel $1 - \alpha$
+
+> **c) Una suposición inicial que asume que el parámetro iguala un valor propuesto**
+
+---
+
+### Pregunta 3
+
+En el ejemplo de la compañía de transporte, el estadístico de prueba fue $z = 3.00$. ¿Qué significa este valor?
+
+a) La media muestral es 3 veces superior a la media poblacional
+b) La media muestral está 3 desviaciones estándar alejada de lo esperado bajo $H_0$
+c) El 3 % de la población no cumple con el tiempo de entrega
+d) La probabilidad de que $H_0$ sea verdadera es del 3 %
+
+> **b) La media muestral está 3 desviaciones estándar alejada de lo esperado bajo $H_0$**
+
+---
+
+### Pregunta 4
+
+¿Qué indica un valor de p-valor $= 0.0027$ cuando se compara con un nivel de significancia $\alpha = 0.05$?
+
+a) Se rechaza $H_0$ porque $0.0027 \leq 0.05$
+b) No se rechaza $H_0$ porque $0.0027 < 0.05$
+c) Se rechaza $H_0$ porque $0.0027 > 0.05$
+d) El resultado es inconcluso y se requiere una muestra más grande
+
+> **a) Se rechaza $H_0$ porque $0.0027 \leq 0.05$**
+
+---
+
+### Pregunta 5
+
+¿Qué significa el nivel de significancia $\alpha = 0.05$?
+
+a) Hay un 5 % de probabilidad de que los datos sean correctos
+b) Se acepta $H_0$ con un 95 % de certeza absoluta
+c) El 5 % de las veces se rechazará $H_0$ cuando en realidad es verdadera
+d) La media muestral difiere en un 5 % de la media poblacional
+
+> **c) El 5 % de las veces se rechazará $H_0$ cuando en realidad es verdadera**
+
+---
+
+### Pregunta 6
+
+¿Qué probabilidad representa el p-valor en una prueba de hipótesis?
+
+a) La probabilidad de que $H_0$ sea verdadera dado lo observado en la muestra
+b) La probabilidad de obtener datos como los observados (o más extremos) suponiendo que $H_0$ es cierta
+c) La probabilidad de que el investigador cometa un error al formular las hipótesis
+d) La probabilidad de que la muestra sea representativa de la población
+
+> **b) La probabilidad de obtener datos como los observados (o más extremos) suponiendo que $H_0$ es cierta**
+
+---
+
+### Pregunta 7
+
+¿Qué significa cuando una prueba de hipótesis no rechaza $H_0$?
+
+a) Se ha demostrado que $H_0$ es verdadera
+b) La muestra es demasiado pequeña para cualquier análisis
+c) No hay evidencia suficiente para rechazar $H_0$
+d) Se debe rechazar $H_1$ con total seguridad
+
+> **c) No hay evidencia suficiente para rechazar $H_0$**
+
+---
+
+### Pregunta 8
+
+En el ejemplo de la embotelladora, si se rechaza $H_0$: el llenado promedio es $500$ ml, ¿cuál es la conclusión práctica correcta?
+
+a) Las botellas contienen exactamente $500$ ml en promedio
+b) La embotelladora debe cerrar definitivamente por fraude
+c) La media de llenado se desvió de $500$ ml y la máquina podría necesitar recalibración
+d) No se requiere ninguna acción porque los datos son normales
+
+> **c) La media de llenado se desvió de $500$ ml y la máquina podría necesitar recalibración**
+
+---
+
+### Pregunta 9
+
+¿Cuáles son los cinco pasos del método de prueba de hipótesis presentados en el apunte?
+
+a) Observar, medir, calcular, comparar, concluir
+b) Plantear $H_0$ y $H_1$, elegir el estadístico, fijar $\alpha$, calcular el estadístico, decidir
+c) Recoger la muestra, calcular la media, calcular la varianza, graficar, interpretar
+d) Estimar el parámetro, construir un intervalo, calcular la varianza, comparar, rechazar
+
+> **b) Plantear $H_0$ y $H_1$, elegir el estadístico, fijar $\alpha$, calcular el estadístico, decidir**
+
+---
+
+### Pregunta 10
+
+¿Por qué se dice que la prueba de hipótesis es una lógica de "reducción al absurdo"?
+
+a) Porque asume que $H_0$ es verdadera y evalúa si los datos son demasiado improbables bajo esa suposición
+b) Porque busca encontrar la hipótesis más absurda entre todas las posibles
+c) Porque descarta automáticamente toda hipótesis alternativa $H_1$
+d) Porque demuestra que la población completa se comporta de forma aleatoria
+
+> **a) Porque asume que $H_0$ es verdadera y evalúa si los datos son demasiado improbables bajo esa suposición**

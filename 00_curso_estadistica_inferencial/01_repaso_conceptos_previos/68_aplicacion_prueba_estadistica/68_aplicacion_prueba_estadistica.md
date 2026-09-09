@@ -111,4 +111,108 @@ Hay evidencia estadísticamente significativa de que el tiempo medio de entrega 
 **Tiempo de entrega de una app de comida.** El gerente sospecha que la promesa de "máximo 25 minutos" no se cumple, así que mide una muestra de 16 pedidos. Aplicando los 7 pasos obtiene $t = 2.50$, que supera el valor crítico $1.753$; decide rediseñar la logística (nuevos repartidores en horas pico) porque los datos demostraron el retraso. Si el estadístico hubiera estado por debajo de $1.753$, no habría evidencia para cambiar nada.
 
 > [!tip] Relación con el curso
-> Este tema integra lo aprendido: plantear hipótesis (67), cumplir requisitos (66) y elegir entre paramétrica y no paramétrica (64). El paso de comparar con el valor crítico y decidir se desarrolla a fondo en el tema 69 con las zonas de rechazo.
+> Este tema integra lo aprendido: plantear hipótesis (67), cumplir requisitos (66) y elegir entre paramétrica y no paramétrica (64). El paso de comparar con el valor crítico y decidir se desarrolla a fondo en el tema 9 con las zonas de rechazo.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+¿Cuál es el primer paso al aplicar una prueba estadística?
+a) Calcular el estadístico de prueba
+b) Fijar el nivel de significancia
+c) Plantear las hipótesis nula y alternativa
+d) Determinar el valor crítico
+> **c) Plantear las hipótesis nula y alternativa**
+
+---
+
+### Pregunta 2
+En el ejemplo de la app de reparto, el estadístico calculado fue $t = 2.50$ y el valor crítico fue $t_{crít} = 1.753$. Dado que $2.50 > 1.753$, se concluye que:
+a) No se rechaza $H_0$ porque el estadístico es positivo
+b) Se rechaza $H_0$ porque el estadístico cae en la región de rechazo
+c) No se puede decidir sin conocer el p-valor
+d) Se acepta $H_0$ porque la diferencia es pequeña
+> **b) Se rechaza $H_0$ porque el estadístico cae en la región de rechazo**
+
+---
+
+### Pregunta 3
+Si el p-valor de una prueba es $0.03$ y el nivel de significancia es $\alpha = 0.05$, ¿cuál es la decisión correcta?
+a) No se rechaza $H_0$ porque $0.03 > 0.05$
+b) Se rechaza $H_0$ porque $0.03 < 0.05$
+c) Se rechaza $H_0$ porque $0.03 > 0.05$
+d) No se puede decidir sin el valor crítico
+> **b) Se rechaza $H_0$ porque $0.03 < 0.05$**
+
+---
+
+### Pregunta 4
+¿Por qué se utiliza la distribución $t$ en lugar de la $z$ cuando $\sigma$ es desconocida?
+a) Porque la distribución $t$ siempre produce valores críticos menores
+b) Porque el estadístico $t$ se ajusta mejor al tamaño de muestra pequeño cuando se estima $\sigma$ con $s$
+c) Porque la distribución $z$ no existe para muestras menores a 30
+d) Porque el p-valor solo se calcula con la distribución $t$
+> **b) Porque el estadístico $t$ se ajusta mejor al tamaño de muestra pequeño cuando se estima $\sigma$ con $s$**
+
+---
+
+### Pregunta 5
+Una fábrica afirma que sus cilindros tienen un diámetro promedio de 5.0 cm. Un inspector sospecha que el diámetro es menor. Con una muestra de $n = 25$, $\bar{x} = 4.85$ y $s = 0.30$, ¿cuál es el estadístico $t$ calculado?
+a) $t = \frac{4.85 - 5.00}{0.30/\sqrt{25}} = -2.50$
+b) $t = \frac{4.85 - 5.00}{0.30/25} = -12.50$
+c) $t = \frac{5.00 - 4.85}{0.30/\sqrt{25}} = 2.50$
+d) $t = \frac{4.85 - 5.00}{\sqrt{0.30/25}} = -4.33$
+> **a) $t = \frac{4.85 - 5.00}{0.30/\sqrt{25}} = -2.50$**
+
+---
+
+### Pregunta 6
+En una prueba bilateral con $\alpha = 0.05$ se obtiene un estadístico que cae justo en el valor crítico. La decisión correcta es:
+a) Rechazar $H_0$ porque el estadístico es igual al valor crítico
+b) No rechazar $H_0$ porque no supera al valor crítico
+c) Repetir la prueba con una muestra mayor
+d) Cambiar el nivel de significancia a $\alpha = 0.01$
+> **a) Rechazar $H_0$ porque el estadístico es igual al valor crítico**
+
+---
+
+### Pregunta 7
+¿Cuál es el orden correcto de los pasos para aplicar una prueba de hipótesis?
+a) Fijar $\alpha$ → Calcular estadístico → Plantear $H_0$ y $H_1$ → Comparar con valor crítico
+b) Plantear $H_0$ y $H_1$ → Fijar $\alpha$ → Elegir estadístico → Calcular → Determinar valor crítico → Comparar → Concluir
+c) Elegir estadístico → Calcular → Fijar $\alpha$ → Plantear hipótesis → Decidir
+d) Plantear $H_0$ y $H_1$ → Calcular estadístico → Fijar $\alpha$ → Comparar con valor crítico
+> **b) Plantear $H_0$ y $H_1$ → Fijar $\alpha$ → Elegir estadístico → Calcular → Determinar valor crítico → Comparar → Concluir**
+
+---
+
+### Pregunta 8
+Un investigador prueba si un curso nuevo mejora el rendimiento. Obtiene $p = 0.12$ con $\alpha = 0.05$. La conclusión correcta es:
+a) El curso mejora el rendimiento porque el p-valor es bajo
+b) No hay evidencia suficiente para afirmar que el curso mejora el rendimiento
+c) El curso no tiene ningún efecto en el rendimiento
+d) Se rechaza $H_0$ porque $0.12 < 0.05$
+> **b) No hay evidencia suficiente para afirmar que el curso mejora el rendimiento**
+
+---
+
+### Pregunta 9
+¿Qué requisito NO es necesario verificar antes de aplicar una prueba paramétrica para una media?
+a) Que la muestra sea independiente
+b) Que los datos provengan de una población normal o que $n \geq 30$
+c) Que la variable sea categórica nominal
+d) Que se conozca la desviación estándar muestral o poblacional
+> **c) Que la variable sea categórica nominal**
+
+---
+
+### Pregunta 10
+Una empresa afirma que el tiempo máximo de espera es 10 minutos. Se sospecha que la espera es mayor. Con $\alpha = 0.05$ y una prueba unilateral derecha, se obtiene $t_{calc} = 1.20$ mientras que $t_{crít} = 1.711$. ¿Qué se concluye?
+a) Se rechaza $H_0$ porque $t_{calc}$ es positivo
+b) No se rechaza $H_0$ porque $1.20 < 1.711$; no hay evidencia suficiente de que la espera supere los 10 minutos
+c) Se rechaza $H_0$ porque el valor crítico es mayor que 1
+d) Se acepta $H_0$ porque el tiempo de espera es exactamente 10 minutos
+> **b) No se rechaza $H_0$ porque $1.20 < 1.711$; no hay evidencia suficiente de que la espera supere los 10 minutos**

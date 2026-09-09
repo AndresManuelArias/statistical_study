@@ -116,3 +116,137 @@ $$t = \frac{0.38}{0.084/\sqrt{5}} = \frac{0.38}{0.0376} \approx 10.11$$
 
 > [!tip] Relación con el curso
 > Distinguir entre muestras independientes y dependientes es un requisito previo (tema 66) para elegir el estadístico y los grados de libertad correctos. Un error de diseño invalida la prueba de hipótesis aunque la aritmética sea correcta.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+Un investigador mide la presión arterial del **mismo grupo** de 30 pacientes antes y después de un tratamiento farmacológico. ¿Qué tipo de muestras corresponden a este diseño?
+
+a) Muestras independientes, porque se obtienen dos mediciones por sujeto
+b) Muestras dependientes (pareadas), porque se comparan mediciones del mismo grupo
+c) Muestras independientes, porque hay dos momentos de medición
+d) No se puede determinar sin conocer la desviación estándar
+
+> **b) Muestras dependientes (pareadas), porque se comparan mediciones del mismo grupo**
+
+---
+
+### Pregunta 2
+
+En una fábrica se comparan los tiempos promedio de dos líneas de producción completamente distintas, cada una operada por un equipo diferente de obreros. Las muestras son:
+
+a) Dependientes, porque ambas líneas pertenecen a la misma fábrica
+b) Dependientes, porque se miden en el mismo período de tiempo
+c) Independientes, porque los grupos están formados por sujetos distintos
+d) Independientes, porque se usan instrumentos de medición diferentes
+
+> **c) Independientes, porque los grupos están formados por sujetos distintos**
+
+---
+
+### Pregunta 3
+
+En el ejemplo numérico del archivo, se comparan baterías antes y después con 5 dispositivos. ¿Cuántos grados de libertad tiene la prueba?
+
+a) 5
+b) 8
+c) 10
+d) 4
+
+> **d) 4**
+
+---
+
+### Pregunta 4
+
+¿Cuál es la **ventaja central** del diseño pareado sobre el diseño con muestras independientes?
+
+a) Requiere menos supuestos sobre la distribución de los datos
+b) Controla la variabilidad entre sujetos, aumentando la potencia de la prueba
+c) Permite trabajar con poblaciones infinitas
+d) No necesita calcular la media de las diferencias
+
+> **b) Controla la variabilidad entre sujetos, aumentando la potencia de la prueba**
+
+---
+
+### Pregunta 5
+
+En una t de dos muestras independientes, el estadístico de prueba utiliza $s_p$ (desviación combinada). ¿Cómo se calculan los grados de libertad asociados?
+
+a) $gl = n - 1$
+b) $gl = n_1 + n_2$
+c) $gl = n_1 + n_2 - 2$
+d) $gl = \max(n_1, n_2) - 1$
+
+> **c) $gl = n_1 + n_2 - 2$**
+
+---
+
+### Pregunta 6
+
+En el ejemplo numérico del archivo, el tiempo de carga de las baterías se mide antes y después de una optimización de software. La diferencia media fue $\bar{d} = 0.38$ y $t \approx 10.11$. ¿Qué se concluye?
+
+a) La optimización no tiene efecto significativo sobre la duración
+b) La optimización **sí** aumenta significativamente la duración de la batería
+c) El resultado es significativo solo con un nivel de confianza del 99%
+d) No se puede concluir nada porque $n$ es demasiado pequeño
+
+> **b) La optimización **sí** aumenta significativamente la duración de la batería**
+
+---
+
+### Pregunta 7
+
+¿Cuál es la expresión correcta del estadístico $t$ para una prueba con muestras dependientes (pareadas)?
+
+a) $t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$
+b) $t = \frac{\bar{d}}{s_d / \sqrt{n}}$
+c) $t = \frac{\bar{d}}{s_d \cdot \sqrt{n}}$
+d) $t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{s_1^2 + s_2^2}}$
+
+> **b) $t = \frac{\bar{d}}{s_d / \sqrt{n}}$**
+
+---
+
+### Pregunta 8
+
+¿En cuál de los siguientes casos se trata de **muestras independientes**?
+
+a) Se evalúa la lectura de los mismos alumnos con dos métodos distintos
+b) Se comparan pares de gemelos, uno asignado a cada dieta
+c) Se miden 40 pacientes con medicamento A y 35 pacientes distintos con medicamento B
+d) Se comparan dos mediciones del mismo instrumento en el mismo sujeto
+
+> **c) Se miden 40 pacientes con medicamento A y 35 pacientes distintos con medicamento B**
+
+---
+
+### Pregunta 9
+
+¿Cuál de las siguientes es una **precaución** importante al usar un diseño pareado?
+
+a) Se debe usar siempre que se quiera maximizar el tamaño de muestra
+b) No se debe parear artificialmente grupos que son independientes; el pareo debe responder al diseño experimental
+c) El número efectivo de observaciones es el doble del número de pares
+d) Siempre se debe usar una prueba unilateral en diseños pareados
+
+> **b) No se debe parear artificialmente grupos que son independientes; el pareo debe responder al diseño experimental**
+
+---
+
+### Pregunta 10
+
+Una empresa quiere saber si el turno nocturno produce menos piezas buenas que el matutino. Para esto, **grupos distintos de operarios** trabajan en cada turno. ¿Qué prueba corresponde usar?
+
+a) t pareada, porque ambos turnos pertenecen a la misma empresa
+b) t de dos muestras independientes con $gl = n_1 + n_2 - 2$
+c) t pareada con $gl = n - 1$
+d) No se requiere prueba de hipótesis; basta comparar las medias
+
+> **b) t de dos muestras independientes con $gl = n_1 + n_2 - 2$**

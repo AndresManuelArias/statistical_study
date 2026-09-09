@@ -28,7 +28,7 @@ Sobre la distribución del estadístico bajo $H_0$ se define un umbral llamado *
 
 El área de la zona de rechazo equivale a $\alpha$ (la probabilidad de error tipo I):
 
-$$\alpha = P(\text{rechazar } H_0 \mid H_0 \text{ verdadera})$$
+$$\alpha = P(rechazar  H_0 \mid H_0  verdadera)$$
 
 ### Pruebas unilaterales y bilaterales
 La forma de la zona de rechazo depende de $H_1$:
@@ -113,7 +113,7 @@ $$z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}} = \frac{103.5 - 100}{15/\sqrt{100}
 ### Paso 6: Decidir
 Como $z_{calc} = 2.33 > z_{crít} = 1.645$, el estadístico cae en la **zona de rechazo**.
 
-$$2.33 > 1.645 \quad \Rightarrow \quad \text{se rechaza } H_0$$
+$$2.33 > 1.645 \quad \Rightarrow \quad se rechaza  H_0$$
 
 Comprobación con p-valor: $p = P(Z > 2.33) = 0.0099$. Como $0.0099 \leq 0.05$, también se rechaza.
 
@@ -125,3 +125,137 @@ Hay evidencia estadísticamente significativa de que el peso medio de la caja **
 
 > [!tip] Relación con el curso
 > Las zonas de rechazo cerramos el bucle de la aplicación (tema 68): el valor crítico es el umbral fijado por $\alpha$ (tema 67), y saber si el estadístico cae o no en la zona de rechazo es la decisión final de toda la estadística inferencial.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué representa el área de la zona de rechazo en la distribución del estadístico bajo $H_0$?
+
+a) La probabilidad de cometer error tipo II ($\beta$)
+b) El nivel de significancia $\alpha$, probabilidad de rechazar $H_0$ cuando es verdadera
+c) La probabilidad de que $H_0$ sea verdadera dado el dato observado
+d) El poder de la prueba, es decir $1 - \beta$
+
+> **b) El nivel de significancia $\alpha$, probabilidad de rechazar $H_0$ cuando es verdadera**
+
+---
+
+### Pregunta 2
+
+En una prueba bilateral con $\alpha = 0,05$ y distribución normal estándar, ¿cuáles son los valores críticos?
+
+a) $z = \pm 1,645$
+b) $z = \pm 1,96$
+c) $z = \pm 2,33$
+d) $z = \pm 2,576$
+
+> **b) $z = \pm 1,96$**
+
+---
+
+### Pregunta 3
+
+Un test bilateral con $\alpha = 0,05$ arroja un estadístico $z_{calc} = 2,3$. ¿Cuál es la decisión?
+
+a) No se rechaza $H_0$ porque $2,3 < 2,576$
+b) No se rechaza $H_0$ porque el p-valor no se conoce
+c) Se rechaza $H_0$ porque $|2,3| > 1,96$
+d) Se rechaza $H_0$ porque $2,3 > 1,645$
+
+> **c) Se rechaza $H_0$ porque $|2,3| > 1,96$**
+
+---
+
+### Pregunta 4
+
+Si no se rechaza $H_0$, ¿qué afirmación es correcta?
+
+a) Se ha demostrado que $H_0$ es verdadera
+b) No hay evidencia suficiente para rechazar $H_0$, pero eso no prueba que sea verdadera
+c) La hipótesis alternativa $H_1$ es falsa
+d) El nivel de significancia $\alpha$ debe reducirse
+
+> **b) No hay evidencia suficiente para rechazar $H_0$, pero eso no prueba que sea verdadera**
+
+---
+
+### Pregunta 5
+
+¿Qué es el p-valor en una prueba de hipótesis?
+
+a) La probabilidad de que $H_0$ sea verdadera
+b) La probabilidad de cometer error tipo I multiplicada por el tamaño de muestra
+c) La probabilidad de obtener un estadístico al menos tan extremo como el observado, asumiendo $H_0$ verdadera
+d) La diferencia entre $\alpha$ y el estadístico calculado
+
+> **c) La probabilidad de obtener un estadístico al menos tan extremo como el observado, asumiendo $H_0$ verdadera**
+
+---
+
+### Pregunta 6
+
+En una prueba unilateral izquierda con $\alpha = 0,01$, el valor crítico es $z_{crit} = -2,33$. Si $z_{calc} = -2,1$, ¿cuál es la decisión?
+
+a) Se rechaza $H_0$ porque $-2,1$ es negativo
+b) No se rechaza $H_0$ porque $-2,1 > -2,33$, es decir no cae en la zona de rechazo
+c) No se rechaza $H_0$ porque el valor absoluto $|-2,1| < |-2,33|$ siempre implica no rechazo
+d) Se rechaza $H_0$ porque $-2,1$ está dentro del intervalo de confianza
+
+> **b) No se rechaza $H_0$ porque $-2,1 > -2,33$, es decir no cae en la zona de rechazo**
+
+---
+
+### Pregunta 7
+
+Se realiza una prueba bilateral con $\alpha = 0,05$ (valor crítico $z_{\alpha/2} = 1,96$). El estadístico calculado es $z_{calc} = 1,9$. ¿Se rechaza $H_0$?
+
+a) Sí, porque $1,9 > 1,645$
+b) No, porque $|1,9| < 1,96$ y el estadístico no cae en la zona de rechazo
+c) Sí, porque $1,9$ es mayor que 0
+d) No, porque el valor crítico para bilateral es siempre 2,576
+
+> **b) No, porque $|1,9| < 1,96$ y el estadístico no cae en la zona de rechazo**
+
+---
+
+### Pregunta 8
+
+Se obtiene un p-valor de $0,04$ y se trabaja con $\alpha = 0,01$. ¿Cuál es la conclusión?
+
+a) Se rechaza $H_0$ porque $0,04 < 0,05$
+b) No se rechaza $H_0$ porque $0,04 > 0,01$
+c) Se rechaza $H_0$ porque cualquier p-valor menor a 0,05 implica rechazo siempre
+d) No se rechaza $H_0$ porque el p-valor debe ser mayor a $\alpha/2$
+
+> **b) No se rechaza $H_0$ porque $0,04 > 0,01$**
+
+---
+
+### Pregunta 9
+
+La fórmula $P(rechazar  H_0 \mid H_0  verdadera)$ define:
+
+a) La probabilidad de error tipo II ($\beta$)
+b) El poder de la prueba ($1 - \beta$)
+c) La probabilidad de error tipo I ($\alpha$)
+d) El p-valor de la prueba
+
+> **c) La probabilidad de error tipo I ($\alpha$)**
+
+---
+
+### Pregunta 10
+
+En el ejemplo de la refresquera que llena botellas de 500 ml, se sospecha que la máquina llena **más** de lo debido. Si se plantea $H_1: \mu > 500$, ¿qué tipo de prueba se realiza y cuál es la condición para rechazar $H_0$ con $\alpha = 0,05$?
+
+a) Bilateral; rechazar si $|z_{calc}| > 1,96$
+b) Unilateral izquierda; rechazar si $z_{calc} < -1,645$
+c) Unilateral derecha; rechazar si $z_{calc} > 1,645$
+d) Unilateral derecha; rechazar si $z_{calc} < 1,645$
+
+> **c) Unilateral derecha; rechazar si $z_{calc} > 1,645$**

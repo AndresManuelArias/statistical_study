@@ -23,7 +23,7 @@ Toda prueba estadística válida exige ciertos requisitos: muestreo aleatorio, i
 ### 1. Muestreo aleatorio
 La muestra debe obtenerse de manera que cada elemento de la población tenga una probabilidad conocida (y preferentemente igual) de ser elegido.
 
-$$P(\text{elegir un elemento}) = \frac{1}{N} \quad \text{(muestreo aleatorio simple)}$$
+$$P(elegir un elemento) = \frac{1}{N} \quad (muestreo aleatorio simple)$$
 
 Un muestreo sesgado (autoselección, muestras de conveniencia) produce estimaciones que no representan a la población, por muy grande que sea la muestra.
 
@@ -49,7 +49,7 @@ Reglas prácticas:
 ### 4. Homocedasticidad (igualdad de varianzas)
 Al comparar dos o más grupos, se asume que las varianzas poblacionales son iguales:
 
-$$\sigma_1^2 = \sigma_2^2 \quad \text{(o } \sigma_1^2 = \sigma_2^2 = \cdots = \sigma_k^2 \text{ en ANOVA)}$$
+$$\sigma_1^2 = \sigma_2^2 \quad (o  \sigma_1^2 = \sigma_2^2 = \cdots = \sigma_k^2  en ANOVA)$$
 
 Se verifica con las pruebas de Levene, Bartlett o con el criterio de la razón de varianzas $s^2_1/s^2_2$. Si no se cumple, se usa la **t de Welch** (que no asume varianzas iguales) u otra variante robusta.
 
@@ -110,3 +110,137 @@ Si las varianzas fueran muy dispares (violación de homocedasticidad), deberíam
 
 > [!tip] Relación con el curso
 > Los requisitos de este tema son el puente entre la elección de prueba (tema 64) y el diseño independiente/pareado (tema 65). Verificarlos es condición previa obligatoria antes de aplicar el procedimiento completo del tema 68.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+Un investigador clasifica a los pacientes según su grupo sanguíneo (A, B, AB, O). ¿A qué escala de medición corresponde esta variable?
+
+a) De razón
+b) Ordinal
+c) Nominal
+d) De intervalo
+
+> **c) Nominal**
+
+---
+
+### Pregunta 2
+
+¿Qué consecuencia tiene usar una prueba paramétrica cuando los datos no cumplen el supuesto de normalidad y el tamaño de muestra es pequeño?
+
+a) Se reduce la potencia de la prueba pero los resultados siguen siendo válidos.
+b) La distribución del estadístico de prueba ya no es la correcta y la inferencia pierde validez.
+c) Se comete un error tipo II con certeza absoluta.
+d) El valor p siempre será mayor que $\alpha$, por lo que nunca se rechaza $H_0$.
+
+> **b) La distribución del estadístico de prueba ya no es la correcta y la inferencia pierde validez.**
+
+---
+
+### Pregunta 3
+
+En el ejemplo del gimnasio del archivo, la razón de varianzas fue $F = 0,80$. ¿Qué supuesto se validó con este resultado?
+
+a) Normalidad de las poblaciones
+b) Independencia de las observaciones
+c) Homocedasticidad (igualdad de varianzas)
+d) Muestreo aleatorio
+
+> **c) Homocedasticidad (igualdad de varianzas)**
+
+---
+
+### Pregunta 4
+
+¿Qué prueba se recomienda usar cuando el supuesto de homocedasticidad no se cumple al comparar dos grupos?
+
+a) La $t$ clásica con varianza combinada
+b) La $t$ de Welch, que no asume varianzas iguales
+c) El ANOVA de un factor con corrección de Greenhouse–Geisser
+d) El test de Shapiro–Wilk
+
+> **b) La $t$ de Welch, que no asume varianzas iguales**
+
+---
+
+### Pregunta 5
+
+Un equipo de investigación mide la satisfacción de clientes en una escala de 1 a 5 estrellas (1 = muy insatisfecho, 5 = muy satisfecho). Si se desean comparar dos grupos con esta variable, ¿qué tipo de prueba es más apropiado?
+
+a) Prueba $t$ de muestras independientes
+b) ANOVA de un factor
+c) Prueba no paramétrica como Mann–Whitney o Wilcoxon
+d) Prueba $z$ para proporciones
+
+> **c) Prueba no paramétrica como Mann–Whitney o Wilcoxon**
+
+---
+
+### Pregunta 6
+
+¿Qué supuesto se viola cuando las mediciones se repiten en los mismos sujetos sin modelar esa dependencia?
+
+a) Normalidad
+b) Homocedasticidad
+c) Independencia de las observaciones
+d) Escala de medición adecuada
+
+> **c) Independencia de las observaciones**
+
+---
+
+### Pregunta 7
+
+Según el Teorema del Límite Central, ¿qué condición suele bastar para que la media muestral se distribuya aproximadamente normal aunque la población no lo sea?
+
+a) Que la población tenga forma de campana.
+b) Que $n \geq 30$, independientemente de la forma de la población.
+c) Que la varianza poblacional sea desconocida.
+d) Que se use muestreo sin reemplazo.
+
+> **b) Que $n \geq 30$, independientemente de la forma de la población.**
+
+---
+
+### Pregunta 8
+
+Un investigador registra el nivel socioeconómico de los encuestados como bajo, medio y alto. ¿Qué tipo de prueba estadística NO sería apropiada para esta variable?
+
+a) Prueba de Wilcoxon
+b) Prueba de signos
+c) Prueba $t$ de muestras independientes
+d) Prueba de Mann–Whitney
+
+> **c) Prueba $t$ de muestras independientes**
+
+---
+
+### Pregunta 9
+
+¿Cuál de las siguientes afirmaciones es correcta respecto a las escalas de medición?
+
+a) Los datos ordinales pueden promediarse directamente y tratarse como intervalo.
+b) La escala de intervalo tiene un cero absoluto que indica ausencia total de la propiedad.
+c) Solo las escalas de intervalo y razón admiten operaciones aritméticas como la suma y la resta.
+d) Los datos nominales pueden ordenarse jerárquicamente sin perder información.
+
+> **c) Solo las escalas de intervalo y razón admiten operaciones aritméticas como la suma y la resta.**
+
+---
+
+### Pregunta 10
+
+En el ejemplo de la fábrica de refrescos del archivo, si las botellas se hubieran tomado solo al inicio del turno (sin cubrir todo el día), ¿qué supuesto se estaría violando?
+
+a) Normalidad del llenado
+b) Homocedasticidad
+c) Muestreo aleatorio
+d) Escala de medición adecuada
+
+> **c) Muestreo aleatorio**
