@@ -91,3 +91,137 @@ En una escuela, se puede seleccionar al azar 4 de 20 salones de clases y aplicar
 
 > [!tip] Relación con el curso
 > El muestreo por conglomerados es una alternativa práctica al muestreo aleatorio simple cuando la población es dispersa geográficamente, aunque requiere una muestra más grande para alcanzar la misma precisión.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué característica fundamental distingue a los conglomerados de los estratos en el muestreo?
+
+a) Los conglomerados son homogéneos internamente y los estratos son heterogéneos
+b) Los conglomerados son heterogéneos internamente y los estratos son homogéneos
+c) En conglomerados se muestrea cada grupo, en estratos solo algunos
+d) En estratos se seleccionan grupos completos, en conglomerados se muestrea dentro
+
+> **b) Los conglomerados son heterogéneos internamente y los estratos son homogéneos**
+
+---
+
+### Pregunta 2
+
+En el muestreo por conglomerados, ¿qué se selecciona al azar?
+
+a) Todos los conglomerados de la población
+b) Algunos elementos de cada conglomerado
+c) Algunos conglomerados de la población
+d) Una sola muestra de toda la población sin agrupar
+
+> **c) Algunos conglomerados de la población**
+
+---
+
+### Pregunta 3
+
+¿Cuándo es más adecuado usar muestreo por conglomerados?
+
+a) Cuando se conoce exactamente el tamaño de la población
+b) Cuando la población es homogénea y fácil de listar
+c) Cuando la población está dispersa geográficamente o no hay lista completa
+d) Cuando se requiere la mayor precisión posible con muestra pequeña
+
+> **c) Cuando la población está dispersa geográficamente o no hay lista completa**
+
+---
+
+### Pregunta 4
+
+En el ejemplo numérico del archivo, ¿cuál es la media ponderada calculada?
+
+a) $1,270.30
+b) $1,350.00
+c) $1,200.50
+d) $1,280.00
+
+> **a) $1,270.30**
+
+---
+
+### Pregunta 5
+
+¿Qué es un conglomerado de una etapa?
+
+a) Se seleccionan conglomerados y luego una submuestra dentro de cada uno
+b) Se seleccionan todos los conglomerados y se muestrea un solo elemento de cada uno
+c) Se miden todos los elementos de los conglomerados seleccionados
+d) Se dividen los conglomerados en subgrupos antes de medir
+
+> **c) Se miden todos los elementos de los conglomerados seleccionados**
+
+---
+
+### Pregunta 6
+
+¿Qué representa $M_i$ en la fórmula del estimador de la media por conglomerados?
+
+a) La media del conglomerado $i$
+b) El número total de conglomerados
+c) El tamaño del conglomerado $i$
+d) El promedio de los tamaños de todos los conglomerados
+
+> **c) El tamaño del conglomerado $i$**
+
+---
+
+### Pregunta 7
+
+¿Por qué la precisión del muestreo por conglomerados suele ser menor que la del muestreo aleatorio simple?
+
+a) Porque los conglomerados son homogéneos
+b) Porque se seleccionan pocos elementos por conglomerado
+c) Porque los conglomerados son heterogéneos internamente como la población
+d) Porque se muestrea el 100% de cada conglomerado
+
+> **c) Porque los conglomerados son heterogéneos internamente como la población**
+
+---
+
+### Pregunta 8
+
+En el ejemplo de la vida real del archivo, ¿qué representan las colonias de una ciudad?
+
+a) Estratos de la población
+b) Conglomerados de la población
+c) Elementos de la muestra
+d) Variables de estudio
+
+> **b) Conglomerados de la población**
+
+---
+
+### Pregunta 9
+
+¿Cuál es la diferencia principal entre conglomerados de una etapa y de dos etapas?
+
+a) En una etapa se usan más conglomerados que en dos etapas
+b) En dos etapas se muestrea el 100% de cada conglomerado seleccionado
+c) En una etapa se miden todos los elementos, en dos etapas se toma una submuestra interna
+d) En dos etapas los conglomerados deben ser más pequeños
+
+> **c) En una etapa se miden todos los elementos, en dos etapas se toma una submuestra interna**
+
+---
+
+### Pregunta 10
+
+En el procedimiento del muestreo por conglomerados, ¿cuál es el paso inicial?
+
+a) Seleccionar $m$ conglomerados al azar
+b) Medir todos los elementos de los conglomerados elegidos
+c) Dividir la población en $M$ conglomerados
+d) Calcular la media de cada conglomerado
+
+> **c) Dividir la población en $M$ conglomerados**

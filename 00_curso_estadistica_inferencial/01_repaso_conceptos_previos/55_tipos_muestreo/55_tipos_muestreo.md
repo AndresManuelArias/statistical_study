@@ -94,3 +94,119 @@ Un investigador estudia el nivel de satisfacción de pacientes en un hospital y 
 
 > [!tip] Relación con el curso
 > Conocer los tipos de muestreo es esencial para elegir el método adecuado y que las inferencias estadísticas sean válidas. Un mal método de muestreo puede invalidar cualquier conclusión.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuál de los siguientes es un método de muestreo probabilístico?
+
+a) Conveniencia
+b) Cuota
+c) Sistemático
+d) Juicio
+
+> **c) Sistemático**
+
+### Pregunta 2
+
+En el muestreo estratificado proporcional, si una empresa tiene 2,000 empleados con 600 en Producción (proporción 0.30) y se extrae una muestra de $n = 100$, ¿cuántos empleados se asignan a Producción?
+
+a) 40
+b) 20
+c) 30
+d) 10
+
+> **c) 30**
+
+### Pregunta 3
+
+¿Cuál es la principal ventaja del muestreo sobre muestreo probabilístico frente al no probabilístico?
+
+a) Es más rápido y barato de implementar
+b) Permite cuantificar el error de muestreo
+c) No requiere conocer la población
+d) Siempre produce muestras más pequeñas
+
+> **b) Permite cuantificar el error de muestreo**
+
+### Pregunta 4
+
+En el muestreo sistemático con $N = 2000$ y $n = 100$, ¿cuál es el paso de selección $k$?
+
+a) 10
+b) 50
+c) 20
+d) 200
+
+> **c) 20**
+
+### Pregunta 5
+
+¿Qué método de muestreo es más adecuado cuando se estudia una población oculta o de difícil acceso, como pacientes con una enfermedad rara?
+
+a) Aleatorio simple
+b) Sistemático
+c) Conveniencia
+d) Bola de nieve
+
+> **d) Bola de nieve**
+
+### Pregunta 6
+
+¿Cuál de las siguientes afirmaciones es verdadera sobre el muestreo de conveniencia?
+
+a) Es un método probabilístico
+b) Tiene bajo sesgo porque se elige al azar
+c) No permite generalizar los resultados a la población
+d) Requiere conocer los estratos de la población
+
+> **c) No permite generalizar los resultados a la población**
+
+### Pregunta 7
+
+¿Cuál es la desventaja principal del muestreo aleatorio simple?
+
+a) Alto sesgo en la selección
+b) Requiere una lista completa de la población
+c) No puede aplicarse a poblaciones grandes
+d) Es demasiado costoso siempre
+
+> **b) Requiere una lista completa de la población**
+
+### Pregunta 8
+
+¿Qué método de muestreo es adecuado cuando la población se divide en grupos homogéneos dentro pero heterogéneos entre sí, y se quiere asegurar representación de cada grupo?
+
+a) Conglomerados
+b) Conveniencia
+c) Estratificado
+d) Bola de nieve
+
+> **c) Estratificado**
+
+### Pregunta 9
+
+¿Cuál es el riesgo principal del muestreo sistemático aplicado a una lista ordenada?
+
+a) Que no se pueda calcular el paso $k$
+b) Que se introduzca sesgo si la lista tiene un patrón periódico
+c) Que requiera conocimiento previo de los estratos
+d) Que sea imposible de implementar
+
+> **b) Que se introduzca sesgo si la lista tiene un patrón periódico**
+
+### Pregunta 10
+
+En el ejemplo del hospital, si un investigador encuesta solo a los pacientes que se encuentran en la sala de espera, ¿qué método está utilizando?
+
+a) Estratificado
+b) Sistemático
+c) Juicio
+d) Conveniencia
+
+> **d) Conveniencia**

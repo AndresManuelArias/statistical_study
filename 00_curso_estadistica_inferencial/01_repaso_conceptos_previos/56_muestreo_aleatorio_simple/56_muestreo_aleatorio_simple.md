@@ -94,3 +94,137 @@ Una universidad tiene un directorio de 2,500 estudiantes activos. El administrad
 
 > [!tip] Relación con el curso
 > El muestreo aleatorio simple es la base de todos los métodos de muestreo probabilístico. Las fórmulas de distribuciones muestrales asumen que la muestra fue obtenida mediante este método.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+En un muestreo aleatorio simple de tamaño $n$ de una población de tamaño $N$, ¿cuál es la probabilidad de que un elemento específico sea seleccionado?
+
+a) $\frac{N}{n}$
+b) $\frac{n}{N}$
+c) $\frac{1}{N}$
+d) $\frac{1}{n}$
+
+> **b) $\frac{n}{N}$**
+
+---
+
+### Pregunta 2
+
+Para una población de $N = 40$ y una muestra de $n = 10$, ¿cuál es la probabilidad de que un elemento específico sea seleccionado?
+
+a) 0.10
+b) 0.40
+c) 0.25
+d) 0.025
+
+> **c) 0.25**
+
+---
+
+### Pregunta 3
+
+En un muestreo aleatorio simple sin reemplazo, ¿cuál es la probabilidad de que el mismo elemento sea seleccionado dos veces?
+
+a) $\frac{1}{N}$
+b) $\frac{1}{n}$
+c) 0
+d) 1
+
+> **c) 0**
+
+---
+
+### Pregunta 4
+
+El número de muestras posibles de tamaño $n$ que se pueden formar de una población de tamaño $N$ se calcula con:
+
+a) $N^n$
+b) $n^N$
+c) $\binom{N}{n}$
+d) $\binom{n}{N}$
+
+> **c) $\binom{N}{n}$**
+
+---
+
+### Pregunta 5
+
+Para una población de $N = 40$ y una muestra de $n = 10$, ¿cuántas muestras diferentes son posibles?
+
+a) 400
+b) 847,660,528
+c) 10,000
+d) 1,000,000
+
+> **b) 847,660,528**
+
+---
+
+### Pregunta 6
+
+La fracción de muestreo se define como:
+
+a) $\frac{n}{N}$
+b) $\frac{N}{n}$
+c) $n \times N$
+d) $n + N$
+
+> **a) $\frac{n}{N}$**
+
+---
+
+### Pregunta 7
+
+Para una población de $N = 40$ y una muestra de $n = 10$, ¿cuál es la fracción de muestreo?
+
+a) 0.25
+b) 0.40
+c) 0.10
+d) 0.025
+
+> **a) 0.25**
+
+---
+
+### Pregunta 8
+
+¿Cuál de los siguientes NO es un método utilizado para realizar un muestreo aleatorio simple?
+
+a) Tablas de números aleatorios
+b) Generadores de números aleatorios por computadora
+c) Método de la urna
+d) Muestreo por conveniencia
+
+> **d) Muestreo por conveniencia**
+
+---
+
+### Pregunta 9
+
+¿Cuál es una limitación del muestreo aleatorio simple?
+
+a) Requiere una lista completa de la población
+b) Siempre se realiza con reemplazo
+c) Produce muestras sesgadas
+d) Requiere información previa sobre la población
+
+> **a) Requiere una lista completa de la población**
+
+---
+
+### Pregunta 10
+
+En una población de $N = 2,500$ estudiantes, se selecciona una muestra de $n = 125$. ¿Cuál es la probabilidad de que un estudiante específico sea seleccionado?
+
+a) 0.05
+b) 0.125
+c) 0.025
+d) 0.5
+
+> **a) 0.05**

@@ -5,10 +5,10 @@
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 52
-- **Sin preguntas (pendientes):** 17
-- **Total de preguntas actuales:** 520
-- **Meta:** 10 preguntas por carpeta → 170 preguntas nuevas al terminar los lotes pendientes.
+- **Con preguntas:** 58
+- **Sin preguntas (pendientes):** 11
+- **Total de preguntas actuales:** 580
+- **Meta:** 10 preguntas por carpeta → 110 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -74,12 +74,12 @@
 | 50 | `50_distribucion_t_student` | 10 | — | ✅ Hecho |
 | 51 | `51_distribucion_f` | 10 | — | ✅ Hecho |
 | 52 | `52_distribucion_ji_cuadrada` | 10 | — | ✅ Hecho |
-| 53 | `53_sampling_muestreo` | 0 | L6 | ⏳ Pendiente |
-| 54 | `54_tamano_muestra_ley_grandes_numeros` | 0 | L6 | ⏳ Pendiente |
-| 55 | `55_tipos_muestreo` | 0 | L6 | ⏳ Pendiente |
-| 56 | `56_muestreo_aleatorio_simple` | 0 | L6 | ⏳ Pendiente |
-| 57 | `57_muestreo_aleatorio_estratificado` | 0 | L6 | ⏳ Pendiente |
-| 58 | `58_muestreo_conglomerados` | 0 | L6 | ⏳ Pendiente |
+| 53 | `53_sampling_muestreo` | 10 | — | ✅ Hecho |
+| 54 | `54_tamano_muestra_ley_grandes_numeros` | 10 | — | ✅ Hecho |
+| 55 | `55_tipos_muestreo` | 10 | — | ✅ Hecho |
+| 56 | `56_muestreo_aleatorio_simple` | 10 | — | ✅ Hecho |
+| 57 | `57_muestreo_aleatorio_estratificado` | 10 | — | ✅ Hecho |
+| 58 | `58_muestreo_conglomerados` | 10 | — | ✅ Hecho |
 | 59 | `59_distribucion_muestral_parte1` | 0 | L7 | ⏳ Pendiente |
 | 60 | `60_teorema_limite_central` | 0 | L7 | ⏳ Pendiente |
 | 61 | `61_distribucion_muestral_parte2` | 0 | L7 | ⏳ Pendiente |
@@ -170,18 +170,18 @@
 
 **Total de preguntas generadas:** 80
 
-### Lote 6: Muestreo (53-58) ⏳ PENDIENTE
+### Lote 6: Muestreo (53-58) ✔ COMPLETADO
 
 **Carpetas (6):**
 
-- [ ] `53_sampling_muestreo` (0/10 preguntas)
-- [ ] `54_tamano_muestra_ley_grandes_numeros` (0/10 preguntas)
-- [ ] `55_tipos_muestreo` (0/10 preguntas)
-- [ ] `56_muestreo_aleatorio_simple` (0/10 preguntas)
-- [ ] `57_muestreo_aleatorio_estratificado` (0/10 preguntas)
-- [ ] `58_muestreo_conglomerados` (0/10 preguntas)
+- [x] `53_sampling_muestreo` (10/10 preguntas)
+- [x] `54_tamano_muestra_ley_grandes_numeros` (10/10 preguntas)
+- [x] `55_tipos_muestreo` (10/10 preguntas)
+- [x] `56_muestreo_aleatorio_simple` (10/10 preguntas)
+- [x] `57_muestreo_aleatorio_estratificado` (10/10 preguntas)
+- [x] `58_muestreo_conglomerados` (10/10 preguntas)
 
-**Total de preguntas a generar:** 60 (restantes en este lote)
+**Total de preguntas generadas:** 60
 
 ### Lote 7: Distribuciones muestrales y TLC (59-61) ⏳ PENDIENTE
 

@@ -88,3 +88,137 @@ Una cadena de cafeterías quiere conocer la satisfacción de sus clientes. En lu
 
 > [!tip] Relación con el curso
 > El muestreo es la base de la estadística inferencial: a partir de una muestra, se hace inferencia sobre parámetros poblacionales como la media $\mu$ o la proporción $p$. Sin un muestreo correcto, no hay inferencia válida.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué es el muestreo en el contexto de la estadística inferencial?
+
+a) Medir todos los elementos de un grupo de interés
+b) Seleccionar un subconjunto representativo de una población para hacer inferencias
+c) Calcular la media de una población completa
+d) Eliminar los valores atípicos de un conjunto de datos
+
+> **b) Seleccionar un subconjunto representativo de una población para hacer inferencias**
+
+---
+
+### Pregunta 2
+
+¿Cuál de las siguientes razones NO justifica el uso de un muestreo en lugar de un censo?
+
+a) El censo tiene un costo excesivamente elevado
+b) La población es demasiado grande para ser encuestada en un plazo razonable
+c) El muestreo siempre produce resultados más precisos que un censo
+d) El proceso de medición destruye el producto estudiado
+
+> **c) El muestreo siempre produce resultados más precisos que un censo**
+
+---
+
+### Pregunta 3
+
+En el ejemplo del video, los 200 estudiantes elegidos al azar de una universidad representan:
+
+a) La población total de la universidad
+b) El parámetro poblacional
+c) Una muestra de la población
+d) El censo completo
+
+> **c) Una muestra de la población**
+
+---
+
+### Pregunta 4
+
+Un censo completo de una población de 100 millones de personas puede costar cientos de veces más que una muestra de 1,000 individuos. Esta afirmación ilustra principalmente la razón de:
+
+a) Imposibilidad física de acceder a la población
+b) Destrucción del producto durante la prueba
+c) Costo elevado del censo
+d) Tiempo excesivo del censo
+
+> **c) Costo elevado del censo**
+
+---
+
+### Pregunta 5
+
+Una cadena de cafeterías con 2,000,000 de clientes mensuales selecciona 800 clientes al azar para encuestar su satisfacción. En este caso, la población y la muestra son, respectivamente:
+
+a) 800 clientes encuestados y los 2,000,000 de clientes mensuales
+b) 2,000,000 de clientes mensuales y los 800 clientes encuestados
+c) Los clientes satisfechos y los clientes insatisfechos
+d) La cafetería y los clientes
+
+> **b) 2,000,000 de clientes mensuales y los 800 clientes encuestados**
+
+---
+
+### Pregunta 6
+
+En notación estadística, ¿qué representa la letra $\mu$?
+
+a) El tamaño de la muestra
+b) La media muestral
+c) La proporción muestral
+d) La media poblacional
+
+> **d) La media poblacional**
+
+---
+
+### Pregunta 7
+
+En el ejemplo numérico del archivo, una universidad con $N = 5,000$ estudiantes toma una muestra de $n = 250$. El tamaño de la muestra con respecto a la población es:
+
+a) El 50%
+b) El 25%
+c) El 5%
+d) El 10%
+
+> **c) El 5%**
+
+---
+
+### Pregunta 8
+
+Una muestra de una universidad arroja una edad promedio de $\bar{X} = 21.3$ años, mientras que la media poblacional real es $\mu = 21.5$ años. ¿Qué implica este resultado?
+
+a) La muestra está perfectamente sesgada
+b) El sesgo es de 0.2 años, lo que indica que la muestra subestimó ligeramente la edad promedio poblacional
+c) El parámetro es igual al estadístico, por lo que no hay error
+d) El censo habría dado un resultado idéntico
+
+> **b) El sesgo es de 0.2 años, lo que indica que la muestra subestimó ligeramente la edad promedio poblacional**
+
+---
+
+### Pregunta 9
+
+¿Cuál de los siguientes es un tipo de sesgo en el muestreo?
+
+a) Sesgo de selección
+b) Sesgo de varianza
+c) Sesgo de estimación
+d) Sesgo de precisión
+
+> **a) Sesgo de selección**
+
+---
+
+### Pregunta 10
+
+Una cadena de restaurantes quiere saber qué platos son los más populares entre sus clientes. Tiene 5,000 clientes al mes y decide encuestar a 200 de ellos seleccionados al azar. ¿Qué concepto se aplica en este caso?
+
+a) Censo, porque se encuestó a un grupo representativo
+b) Muestreo, porque se seleccionó un subconjunto de la población para hacer inferencias sobre ella
+c) Muestreo destructivo, porque la encuesta modifica la opinión de los clientes
+d) Sesgo de no respuesta, porque los clientes que no responden pueden tener opiniones diferentes
+
+> **b) Muestreo, porque se seleccionó un subconjunto de la población para hacer inferencias sobre ella**

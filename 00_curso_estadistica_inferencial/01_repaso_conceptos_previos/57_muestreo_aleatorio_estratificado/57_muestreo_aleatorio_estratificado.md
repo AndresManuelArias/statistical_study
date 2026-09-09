@@ -88,3 +88,137 @@ Una cadena de tiendas de ropa divide sus clientes en estratos por rango de edad 
 
 > [!tip] Relación con el curso
 > El muestreo estratificado es una extensión del aleatorio simple que reduce el error estándar de las estimaciones, lo que permite inferencias más precisas con el mismo tamaño de muestra.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué característica deben cumplir los estratos en el muestreo aleatorio estratificado?
+
+a) Ser homogéneos entre sí y heterogéneos por dentro
+b) Ser heterogéneos entre sí y homogéneos por dentro
+c) Tener siempre el mismo tamaño
+d) Contener exactamente el mismo número de individuos
+
+> **b) Ser heterogéneos entre sí y homogéneos por dentro**
+
+---
+
+### Pregunta 2
+
+En una población de 1000 individuos dividida en 3 estratos ($N_1 = 500$, $N_2 = 300$, $N_3 = 200$), se extrae una muestra estratificada de tamaño $n = 100$ con asignación proporcional. ¿Cuántos individuos se seleccionan del estrato 2?
+
+a) 20
+b) 30
+c) 50
+d) 40
+
+> **b) 30**
+
+---
+
+### Pregunta 3
+
+La fórmula de asignación proporcional para calcular el tamaño de muestra en el estrato $h$ es:
+
+a) $n_h = N \cdot \frac{n}{N_h}$
+b) $n_h = n \cdot \frac{N_h}{N}$
+c) $n_h = \frac{N_h}{n} \cdot N$
+d) $n_h = \frac{N}{N_h} \cdot n$
+
+> **b) $n_h = n \cdot \frac{N_h}{N}$**
+
+---
+
+### Pregunta 4
+
+¿Cuál es una razón válida para usar muestreo estratificado en lugar de muestreo aleatorio simple?
+
+a) Cuando la población es muy pequeña
+b) Cuando se desconocen los tamaños de los estratos
+c) Cuando se quiere garantizar representación de subgrupos minoritarios
+d) Cuando la población es completamente homogénea
+
+> **c) Cuando se quiere garantizar representación de subgrupos minoritarios**
+
+---
+
+### Pregunta 5
+
+El estimador de la media poblacional en muestreo estratificado es $\bar{X}_{\text{est}} = \sum_{h=1}^{L} W_h \cdot \bar{X}_h$. ¿Qué representa $W_h$?
+
+a) La media muestral del estrato $h$
+b) La varianza muestral del estrato $h$
+c) El peso del estrato, definido como $N_h / N$
+d) El tamaño de muestra del estrato $h$
+
+> **c) El peso del estrato, definido como $N_h / N$**
+
+---
+
+### Pregunta 6
+
+Una población de 500 personas se divide en 2 estratos: $N_1 = 300$ y $N_2 = 200$. Se extrae una muestra de $n = 50$ con asignación proporcional. ¿Cuántas personas se seleccionan del estrato 1?
+
+a) 30
+b) 25
+c) 35
+d) 20
+
+> **a) 30**
+
+---
+
+### Pregunta 7
+
+¿Cuándo el error estándar del estimador estratificado es menor que el del muestreo aleatorio simple?
+
+a) Cuando los estratos son grandes
+b) Cuando cada estrato es más homogéneo que la población completa
+c) Cuando el tamaño de muestra es muy pequeño
+d) Cuando se utiliza asignación uniforme en lugar de proporcional
+
+> **b) Cuando cada estrato es más homogéneo que la población completa**
+
+---
+
+### Pregunta 8
+
+En la escuela con $N = 400$ estudiantes, los grados tienen los siguientes pesos: $W_1 = 0.30$, $W_2 = 0.25$, $W_3 = 0.25$, $W_4 = 0.20$. Si se extrae una muestra de $n = 80$ con asignación proporcional, ¿cuántos estudiantes se seleccionan del grado 4?
+
+a) 20
+b) 15
+c) 18
+d) 16
+
+> **d) 16**
+
+---
+
+### Pregunta 9
+
+¿En qué se diferencia el muestreo aleatorio estratificado del muestreo aleatorio simple?
+
+a) En el simple se subdivide primero la población y luego se muestrea cada subgrupo
+b) En el estratificado la muestra se selecciona de toda la población de una vez
+c) En el estratificado primero se subdivide la población y luego se muestrea cada subgrupo por separado
+d) En el simple se garantiza representación de todos los subgrupos automáticamente
+
+> **c) En el estratificado primero se subdivide la población y luego se muestrea cada subgrupo por separado**
+
+---
+
+### Pregunta 10
+
+¿Qué propiedad tiene el estimador $\bar{X}_{\text{est}} = \sum_{h=1}^{L} W_h \cdot \bar{X}_h$ del muestreo estratificado?
+
+a) Es sesgado cuando los tamaños de estrato son desiguales
+b) Es insesgado, es decir, $E(\bar{X}_{\text{est}}) = \mu$
+c) Solo es válido cuando todos los estratos tienen la misma varianza
+d) Siempre tiene error estándar cero
+
+> **b) Es insesgado, es decir, $E(\bar{X}_{\text{est}}) = \mu$**
