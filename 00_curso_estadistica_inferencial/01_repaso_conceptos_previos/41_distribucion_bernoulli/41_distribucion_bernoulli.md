@@ -89,3 +89,137 @@ Con $V(X) = 0.92 \times 0.08 = 0.0736$:
 
 > [!tip] Relación con el curso
 > La distribución Bernoulli es la piedra angular de la inferencia para datos binarios. Muchas pruebas estadísticas (prueba de proporciones, regresión logística) se construyen sobre ensayos Bernoulli repetidos.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué modela la distribución de Bernoulli?
+
+a) Varios ensayos independientes con más de dos resultados posibles
+b) Un único ensayo con exactamente dos resultados posibles: éxito o fracaso
+c) Una variable continua con distribución simétrica
+d) La suma de éxitos en múltiples ensayos independientes
+
+> **b) Un único ensayo con exactamente dos resultados posibles: éxito o fracaso**
+
+---
+
+### Pregunta 2
+
+En $X \sim \text{Bernoulli}(p)$, ¿qué representa el parámetro $p$?
+
+a) La probabilidad de que el ensayo resulte en fracaso
+b) La varianza de la distribución
+c) La probabilidad de que el ensayo resulte en éxito
+d) El número esperado de fracasos
+
+> **c) La probabilidad de que el ensayo resulte en éxito**
+
+---
+
+### Pregunta 3
+
+¿Cuál es el conjunto de valores posibles que puede tomar $X$ cuando tiene distribución Bernoulli?
+
+a) $X \in \{1, 2\}$
+b) $X \in \{0, 1\}$
+c) $X \in \{0, 1, 2\}$
+d) $X \in \mathbb{R}$
+
+> **b) $X \in \{0, 1\}$**
+
+---
+
+### Pregunta 4
+
+Si $X \sim \text{Bernoulli}(0.3)$, ¿cuál es $P(X = 0)$?
+
+a) 0.3
+b) 0.7
+c) 0.21
+d) 0.5
+
+> **b) 0.7**
+
+---
+
+### Pregunta 5
+
+Si $X \sim \text{Bernoulli}(0.3)$, ¿cuál es la esperanza $E(X)$?
+
+a) 0.7
+b) 0.21
+c) 0.3
+d) 0.5
+
+> **c) 0.3**
+
+---
+
+### Pregunta 6
+
+Si $X \sim \text{Bernoulli}(0.3)$, ¿cuál es la varianza $V(X)$?
+
+a) 0.3
+b) 0.7
+c) 0.21
+d) 0.49
+
+> **c) 0.21**
+
+---
+
+### Pregunta 7
+
+La distribución Bernoulli es un caso especial de la distribución Binomial con:
+
+a) $n = 0$
+b) $n = 1$
+c) $n = 2$
+d) $p = 0$
+
+> **b) $n = 1$**
+
+---
+
+### Pregunta 8
+
+¿Para qué valor de $p$ la varianza de una distribución Bernoulli alcanza su valor máximo?
+
+a) $p = 0$
+b) $p = 0.25$
+c) $p = 0.5$
+d) $p = 1$
+
+> **c) $p = 0.5$**
+
+---
+
+### Pregunta 9
+
+¿Cuál es la fórmula compacta de la función de masa de probabilidad de $X \sim \text{Bernoulli}(p)$?
+
+a) $f(x) = p + (1-p)$ para todo $x \in \{0, 1\}$
+b) $f(x) = p^x \cdot (1-p)^{1-x}$, con $x \in \{0, 1\}$
+c) $f(x) = p^x \cdot (1-p)^x$, con $x \in \{0, 1\}$
+d) $f(x) = p^x + (1-p)^{1-x}$, con $x \in \{0, 1\}$
+
+> **b) $f(x) = p^x \cdot (1-p)^{1-x}$, con $x \in \{0, 1\}$**
+
+---
+
+### Pregunta 10
+
+Si $X \sim \text{Bernoulli}(0.3)$, ¿cuál es la desviación estándar $\sigma$?
+
+a) 0.21
+b) 0.3
+c) $\sqrt{0.21} \approx 0.4583$
+d) 0.7
+
+> **c) $\sqrt{0.21} \approx 0.4583$**

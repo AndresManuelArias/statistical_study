@@ -94,3 +94,137 @@ Cada tipo de pregunta se modela con la distribución más adecuada, facilitando 
 
 > [!tip] Relación con el curso
 > Conocer el catálogo de distribuciones permite seleccionar el modelo correcto para cada problema de inferencia: pruebas de hipótesis, intervalos de confianza y regresión todos dependen de distribuciones específicas.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuál de las siguientes distribuciones es una distribución **continua**?
+
+a) Binomial
+b) Poisson
+c) t de Student
+d) Geométrica
+
+> **c) t de Student**
+
+---
+
+### Pregunta 2
+
+La distribución de Poisson se utiliza para modelar:
+
+a) El número de éxitos en un número fijo de ensayos independientes.
+b) La cantidad de ensayos necesarios hasta obtener el primer éxito.
+c) La cantidad de eventos raros que ocurren en un intervalo de tiempo o espacio.
+d) El peso promedio de una población.
+
+> **c) La cantidad de eventos raros que ocurren en un intervalo de tiempo o espacio.**
+
+---
+
+### Pregunta 3
+
+En la distribución binomial con parámetros $n=5$ y $p=0.3$, ¿qué representa la variable aleatoria?
+
+a) El número de ensayos hasta el primer éxito.
+b) La proporción de éxitos en la población.
+c) El número de éxitos en 5 ensayos Bernoulli independientes con probabilidad 0.3 cada uno.
+d) La diferencia entre dos varianzas muestrales.
+
+> **c) El número de éxitos en 5 ensayos Bernoulli independientes con probabilidad 0.3 cada uno.**
+
+---
+
+### Pregunta 4
+
+¿Qué distribución se usa como modelo para el número de ensayos necesarios hasta alcanzar el **primer** éxito?
+
+a) Binomial negativa
+b) Geométrica
+c) Bernoulli
+d) Poisson
+
+> **b) Geométrica**
+
+---
+
+### Pregunta 5
+
+La distribución normal se caracteriza por ser:
+
+a) Discreta, definida solo para valores enteros no negativos.
+b) Asimétrica con colas pesadas.
+c) Simétrica en forma de campana de Gauss, parametrizada por media $\mu$ y varianza $\sigma^2$.
+d) Definida solo para valores positivos con un parámetro de escala.
+
+> **c) Simétrica en forma de campana de Gauss, parametrizada por media $\mu$ y varianza $\sigma^2$.**
+
+---
+
+### Pregunta 6
+
+¿Cuál de las siguientes afirmaciones es **correcta** sobre la distribución t de Student?
+
+a) Se utiliza cuando la varianza poblacional es conocida con precisión.
+b) Tiene colas más pesadas que la distribución normal y se usa con muestras pequeñas.
+c) Solo toma valores positivos.
+d) Es una distribución discreta.
+
+> **b) Tiene colas más pesadas que la distribución normal y se usa con muestras pequeñas.**
+
+---
+
+### Pregunta 7
+
+La distribución de Bernoulli se define como un único ensayo con dos resultados posibles. Si $p=0.4$, entonces:
+
+a) $P(X=0)=0.6$ y $P(X=1)=0.4$
+b) $P(X=0)=0.4$ y $P(X=1)=0.6$
+c) $P(X=0)=0.5$ y $P(X=1)=0.5$
+d) $P(X=0)=0.1$ y $P(X=1)=0.9$
+
+> **a) $P(X=0)=0.6$ y $P(X=1)=0.4$**
+
+---
+
+### Pregunta 8
+
+La distribución $\chi^2$ (chi-cuadrado) con $k$ grados de libertad se define como:
+
+a) La razón de dos varianzas muestrales independientes.
+b) La suma de $k$ cuadrados de variables normales estándar independientes.
+c) El número de eventos en un intervalo con tasa constante $\lambda$.
+d) El número de ensayos hasta el $r$-ésimo éxito.
+
+> **b) La suma de $k$ cuadrados de variables normales estándar independientes.**
+
+---
+
+### Pregunta 9
+
+¿Qué función asigna probabilidades directas a cada valor posible en una distribución discreta?
+
+a) La función de densidad de probabilidad (PDF).
+b) La función de distribución acumulada.
+c) La función de masa de probabilidad (PMF).
+d) La función de verosimilitud.
+
+> **c) La función de masa de probabilidad (PMF).**
+
+---
+
+### Pregunta 10
+
+¿Cuál distribución se emplea en ANOVA para comparar varianzas mediante la razón de dos varianzas muestrales?
+
+a) t de Student
+b) Normal
+c) F de Fisher
+d) Binomial negativa
+
+> **c) F de Fisher**

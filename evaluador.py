@@ -32,6 +32,7 @@ RE_MATH = re.compile(
 _LATEX_UNICODE = [
     # Orden importante: \infty antes de \in, y símbolos de cardinalidad
     (r"\infty", "\u221e"),
+    (r"\sim", "~"),
     (r"\aleph", "\u2135"),
     (r"\mathfrak{c}", "c"),
     (r"\circ", "\u00b0"),

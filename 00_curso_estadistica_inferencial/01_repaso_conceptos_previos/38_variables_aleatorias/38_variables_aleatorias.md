@@ -92,3 +92,137 @@ Una empresa de logística registra el número de paquetes entregados por hora. L
 
 > [!tip] Relación con el curso
 > Las variables aleatorias son el objeto de estudio central de la inferencia estadística. Todas las distribuciones y pruebas de hipótesis se construyen sobre ellas.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué asigna una variable aleatoria $X$ a cada resultado $\omega$ del espacio muestral $\Omega$?
+
+a) Una distribución de probabilidad
+b) Un conjunto de intervalos
+c) Un número real $X(\omega)$
+d) Una función de densidad
+
+> **c) Un número real $X(\omega)$**
+
+---
+
+### Pregunta 2
+
+Una variable aleatoria es **discreta** cuando sus posibles valores forman:
+
+a) Un conjunto continuo sin saltos
+b) Un intervalo cerrado $[a, b]$
+c) Un conjunto finito o infinito numerable
+d) Cualquier subconjunto de los números reales
+
+> **c) Un conjunto finito o infinito numerable**
+
+---
+
+### Pregunta 3
+
+¿Cuál de las siguientes variables es **continua**?
+
+a) Número de defectos en una muestra de 50 piezas
+b) Resultado de lanzar un dado
+c) Tiempo de espera de un cliente en una cola
+d) Número de clientes que llegan en una hora
+
+> **c) Tiempo de espera de un cliente en una cola**
+
+---
+
+### Pregunta 4
+
+En el ejemplo numérico del archivo, se inspeccionan 4 componentes con $p = 0.25$ de defecto. ¿Cuál es $f(0) = P(X = 0)$?
+
+a) $0.4219$
+b) $0.2500$
+c) $0.3164$
+d) $0.2109$
+
+> **c) $0.3164$**
+
+---
+
+### Pregunta 5
+
+Para una variable discreta, la función de masa de probabilidad satisface $\sum_{i} f(x_i) = 1$. ¿Qué propiedad análoga cumple la función de densidad de una variable continua?
+
+a) $f(x) = 1$ para todo $x$
+b) $\int_{-\infty}^{\infty} f(x) \, dx = 1$
+c) $\int_{0}^{1} f(x) \, dx = 1$
+d) $f(x) \leq 1$ para todo $x$
+
+> **b) $\int_{-\infty}^{\infty} f(x) \, dx = 1$**
+
+---
+
+### Pregunta 6
+
+En el ejemplo numérico, ¿cuál es la probabilidad de que haya **al menos 2** componentes defectuosos, es decir $P(X \geq 2)$?
+
+a) $0.2617$
+b) $0.4219$
+c) $0.2109$
+d) $0.0508$
+
+> **a) $0.2617$**
+
+---
+
+### Pregunta 7
+
+Para una variable continua, ¿cuál es la probabilidad de que $X$ tome un valor puntual exacto $c$?
+
+a) $f(c)$
+b) $F(c)$
+c) $1 - F(c)$
+d) $0$
+
+> **d) $0$**
+
+---
+
+### Pregunta 8
+
+El número de llamadas telefónicas que recibe un call center en una hora es una variable discreta porque:
+
+a) Las llamadas pueden medirse con precisión infinita
+b) Sus posibles valores son conteos: 0, 1, 2, 3, ...
+c) Su función de densidad es continua
+d) Solo puede tomar valores positivos
+
+> **b) Sus posibles valores son conteos: 0, 1, 2, 3, ...**
+
+---
+
+### Pregunta 9
+
+En el ejemplo del archivo, el peso de los paquetes que entrega una empresa de logística se modela como variable continua porque:
+
+a) El peso solo toma valores enteros
+b) El peso es un conteo finito de elementos
+c) El peso puede tomar cualquier valor en un intervalo, incluyendo decimales
+d) El peso se expresa como función de masa
+
+> **c) El peso puede tomar cualquier valor en un intervalo, incluyendo decimales**
+
+---
+
+### Pregunta 10
+
+La función de distribución acumulada (CDF) se define como $F(x) = P(X \leq x)$. Si $X$ es discreta con $f(1) = 0.3$, $f(2) = 0.5$ y $f(3) = 0.2$, ¿cuál es $F(2)$?
+
+a) $0.8$
+b) $0.5$
+c) $0.2$
+d) $1.0$
+
+> **a) $0.8$**

@@ -23,7 +23,7 @@ La distribución binomial modela el número de éxitos en $n$ ensayos Bernoulli 
 ### Definición
 Una variable aleatoria $X$ tiene distribución **Binomial** con parámetros $n$ y $p$ si:
 
-$$X \sim \text{Binomial}(n, p)$$
+$$X \sim Binomial(n, p)$$
 
 representa el número de éxitos en $n$ ensayos idénticos e independientes, cada uno con probabilidad $p$ de éxito.
 
@@ -56,9 +56,9 @@ $$V(X) = np(1-p)$$
 $$\sigma = \sqrt{np(1-p)}$$
 
 ### Relación con otras distribuciones
-- Bernoulli: $\text{Binomial}(1, p) = \text{Bernoulli}(p)$
-- Cuando $n$ es grande y $p$ es pequeño, $\text{Binomial}(n, p) \approx \text{Poisson}(\lambda = np)$
-- Cuando $n$ es grande, $\text{Binomial}(n, p) \approx N(np, np(1-p))$ (aproximación normal)
+- Bernoulli: $Binomial(1, p) = \text{Bernoulli}(p)$
+- Cuando $n$ es grande y $p$ es pequeño, $Binomial(n, p) \approx \text{Poisson}(\lambda = np)$
+- Cuando $n$ es grande, $Binomial(n, p) \approx N(np, np(1-p))$ (aproximación normal)
 
 ## 💡 Ejemplo numérico
 Se inspeccionan $n = 10$ componentes electrónicos, cada uno con probabilidad $p = 0.5$ de estar defectuoso. $X$ = número de defectuosos.
@@ -96,3 +96,143 @@ Un resultado de $X = 6$ estaría a $\frac{6 - 3}{1.679} \approx 1.79$ desviacion
 
 > [!tip] Relación con el curso
 > La distribución binomial es fundamental para pruebas de hipótesis sobre proporciones, intervalos de confianza para proporciones poblacionales y el diseño de muestras en investigación estadística.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuántos parámetros definen una distribución Binomial?
+
+a) Uno solo
+b) Dos: n y p
+c) Tres: n, p y q
+d) Cuatro: n, p, q y k
+
+> **b) Dos: n y p**
+
+---
+
+### Pregunta 2
+
+¿Cuál de las siguientes NO es una condición para modelar un experimento con distribución Binomial?
+
+a) Ensayos fijos
+b) Dos resultados posibles en cada ensayo
+c) Resultados ordenados en el tiempo
+d) Independencia entre ensayos
+
+> **c) Resultados ordenados en el tiempo**
+
+---
+
+### Pregunta 3
+
+Una distribución Bernoulli es un caso especial de la distribución Binomial con:
+
+a) $n = 1$ y $p = 0,5$
+b) $n = 1$ y cualquier valor de $p \in [0, 1]$
+c) $n = 2$ y $p = 1$
+d) Cualquier $n$ y $p = 0,5$
+
+> **b) $n = 1$ y cualquier valor de $p \in [0, 1]$**
+
+---
+
+### Pregunta 4
+
+Si $X \sim Binomial(n = 10, p = 0,2)$, ¿cuál es la esperanza $E(X)$?
+
+a) 1
+b) 2
+c) 5
+d) 8
+
+> **b) 2**
+
+---
+
+### Pregunta 5
+
+Se lanza una moneda justa ($p = 0,5$) 4 veces. ¿Cuál es la probabilidad de obtener exactamente 2 caras?
+
+$$P(X = 2) = \binom{4}{2} (0,5)^2 (0,5)^2 = 6 \times 0,0625$$
+
+a) 0,0625
+b) 0,25
+c) 0,375
+d) 0,5
+
+> **c) 0,375**
+
+---
+
+### Pregunta 6
+
+Si $X \sim Binomial(n = 8, p = 0,5)$, ¿cuál es la varianza $V(X)$?
+
+$$V(X) = np(1-p) = 8 \times 0,5 \times 0,5$$
+
+a) 1
+b) 2
+c) $\sqrt{2}$
+d) 4
+
+> **b) 2**
+
+---
+
+### Pregunta 7
+
+¿Cuándo se puede aproximar la distribución Binomial mediante la distribución de Poisson?
+
+a) Cuando $n$ es grande y $p$ es pequeño
+b) Cuando $n$ es grande y $p$ es cercano a 0,5
+c) Cuando $p$ es grande y $n$ es pequeño
+d) Cuando $n = 1$
+
+> **a) Cuando $n$ es grande y $p$ es pequeño**
+
+---
+
+### Pregunta 8
+
+Un examen tiene 5 preguntas de opción múltiple, cada una con 4 alternativas. Un estudiante responde al azar. Si $X$ es el número de respuestas correctas, $X \sim Binomial(5, 0,25)$. ¿Cuál es la varianza?
+
+$$V(X) = 5 \times 0,25 \times 0,75$$
+
+a) 0,9375
+b) 1,25
+c) 1,875
+d) 3,75
+
+> **a) 0,9375**
+
+---
+
+### Pregunta 9
+
+Si $E(X) = 5$ y $V(X) = 2,5$ para una variable binomial, ¿cuáles son los valores de $n$ y $p$?
+
+a) $n = 25$, $p = 0,2$
+b) $n = 5$, $p = 1$
+c) $n = 10$, $p = 0,5$
+d) $n = 20$, $p = 0,25$
+
+> **c) $n = 10$, $p = 0,5$**
+
+---
+
+### Pregunta 10
+
+Si $X \sim Binomial(n = 6, p = 0,5)$ y $P(X \leq 3) = 0,6562$, ¿cuál es $P(X > 3)$?
+
+a) 0,6562
+b) 0,5
+c) 0,3438
+d) 0,125
+
+> **c) 0,3438**

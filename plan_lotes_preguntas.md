@@ -5,10 +5,10 @@
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 37
-- **Sin preguntas (pendientes):** 32
-- **Total de preguntas actuales:** 370
-- **Meta:** 10 preguntas por carpeta → 320 preguntas nuevas al terminar los lotes pendientes.
+- **Con preguntas:** 44
+- **Sin preguntas (pendientes):** 25
+- **Total de preguntas actuales:** 440
+- **Meta:** 10 preguntas por carpeta → 250 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -59,13 +59,13 @@
 | 35 | `35_probabilidad_condicional` | 10 | — | ✅ Hecho |
 | 36 | `36_eventos_independientes` | 10 | — | ✅ Hecho |
 | 37 | `37_eventos_excluyentes_mutuamente_excluyentes` | 10 | — | ✅ Hecho |
-| 38 | `38_variables_aleatorias` | 0 | L4 | ⏳ Pendiente |
-| 39 | `39_distribuciones_de_probabilidad` | 0 | L4 | ⏳ Pendiente |
-| 40 | `40_tipos_distribuciones_probabilidad` | 0 | L4 | ⏳ Pendiente |
-| 41 | `41_distribucion_bernoulli` | 0 | L4 | ⏳ Pendiente |
-| 42 | `42_distribucion_binomial` | 0 | L4 | ⏳ Pendiente |
-| 43 | `43_momentos_variables_aleatorias` | 0 | L4 | ⏳ Pendiente |
-| 44 | `44_distribucion_binomial_parte2` | 0 | L4 | ⏳ Pendiente |
+| 38 | `38_variables_aleatorias` | 10 | — | ✅ Hecho |
+| 39 | `39_distribuciones_de_probabilidad` | 10 | — | ✅ Hecho |
+| 40 | `40_tipos_distribuciones_probabilidad` | 10 | — | ✅ Hecho |
+| 41 | `41_distribucion_bernoulli` | 10 | — | ✅ Hecho |
+| 42 | `42_distribucion_binomial` | 10 | — | ✅ Hecho |
+| 43 | `43_momentos_variables_aleatorias` | 10 | — | ✅ Hecho |
+| 44 | `44_distribucion_binomial_parte2` | 10 | — | ✅ Hecho |
 | 45 | `45_distribucion_poisson` | 0 | L5 | ⏳ Pendiente |
 | 46 | `46_distribucion_geometrica` | 0 | L5 | ⏳ Pendiente |
 | 47 | `47_distribucion_binomial_negativa` | 0 | L5 | ⏳ Pendiente |
@@ -141,19 +141,19 @@
 
 **Total de preguntas generadas:** 80
 
-### Lote 4: Variables aleatorias y distribuciones I (38-44) ⏳ PENDIENTE
+### Lote 4: Variables aleatorias y distribuciones I (38-44) ✔ COMPLETADO
 
 **Carpetas (7):**
 
-- [ ] `38_variables_aleatorias` (0/10 preguntas)
-- [ ] `39_distribuciones_de_probabilidad` (0/10 preguntas)
-- [ ] `40_tipos_distribuciones_probabilidad` (0/10 preguntas)
-- [ ] `41_distribucion_bernoulli` (0/10 preguntas)
-- [ ] `42_distribucion_binomial` (0/10 preguntas)
-- [ ] `43_momentos_variables_aleatorias` (0/10 preguntas)
-- [ ] `44_distribucion_binomial_parte2` (0/10 preguntas)
+- [x] `38_variables_aleatorias` (10/10 preguntas)
+- [x] `39_distribuciones_de_probabilidad` (10/10 preguntas)
+- [x] `40_tipos_distribuciones_probabilidad` (10/10 preguntas)
+- [x] `41_distribucion_bernoulli` (10/10 preguntas)
+- [x] `42_distribucion_binomial` (10/10 preguntas)
+- [x] `43_momentos_variables_aleatorias` (10/10 preguntas)
+- [x] `44_distribucion_binomial_parte2` (10/10 preguntas)
 
-**Total de preguntas a generar:** 70 (restantes en este lote)
+**Total de preguntas generadas:** 70
 
 ### Lote 5: Distribuciones II (45-52) ⏳ PENDIENTE
 

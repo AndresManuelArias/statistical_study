@@ -110,3 +110,108 @@ Hay aproximadamente un **34% de probabilidad** de que haya 2 o menos devolucione
 
 > [!tip] Relación con el curso
 > Las probabilidades acumuladas de la binomial son esenciales para construir intervalos de confianza y realizar pruebas de hipótesis sobre proporciones poblacionales, uno de los pilares de la estadística inferencial.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+¿Cuál es la probabilidad de obtener al menos un éxito en un experimento binomial con parámetros $n$ y $p$?
+a) $P(X \geq 1) = 1 - P(X = 0)$
+b) $P(X \geq 1) = P(X = 1)$
+c) $P(X \geq 1) = 1 - P(X = 1)$
+d) $P(X \geq 1) = P(X = 0)$
+
+> **a) $P(X \geq 1) = 1 - P(X = 0)$**
+
+---
+### Pregunta 2
+Si $X \sim B(n=3, p=0.1)$, ¿cuál es $P(X \geq 1)$?
+a) 0,729
+b) 0,271
+c) 0,1
+d) 0,9
+
+> **b) 0,271**
+
+---
+### Pregunta 3
+Para $X \sim B(n=4, p=0.5)$, ¿cuál es $P(X=2)$?
+a) 0,25
+b) 0,375
+c) 0,5
+d) 0,625
+
+> **b) 0,375**
+
+---
+### Pregunta 4
+¿Bajo cuáles condiciones se puede aproximar la distribución binomial por una normal?
+a) Cuando $n$ es pequeño y $p$ es cercano a 0,5
+b) Cuando $n \geq 30$ y tanto $np$ como $n(1-p)$ son mayores que 5
+c) Cuando $p$ es cercano a 1 y $n$ es grande
+d) Cuando la varianza es menor que la media
+
+> **b) Cuando $n \geq 30$ y tanto $np$ como $n(1-p)$ son mayores que 5**
+
+---
+### Pregunta 5
+Para $X \sim B(n=10, p=0.4)$, ¿cuáles son la media y la varianza?
+a) Media = 4, Varianza = 2,4
+b) Media = 4, Varianza = 4
+c) Media = 6, Varianza = 2,4
+d) Media = 2,4, Varianza = 4
+
+> **a) Media = 4, Varianza = 2,4**
+
+---
+### Pregunta 6
+¿Cómo se calcula $P(X \geq k)$ usando la distribución acumulada?
+a) $P(X \geq k) = P(X \leq k)$
+b) $P(X \geq k) = 1 - P(X \leq k)$
+c) $P(X \geq k) = 1 - P(X \leq k-1)$
+d) $P(X \geq k) = P(X = k)$
+
+> **c) $P(X \geq k) = 1 - P(X \leq k-1)$**
+
+---
+### Pregunta 7
+Si $X \sim B(n=5, p=0.2)$, ¿cuál es $P(X \leq 1)$?
+a) 0,328
+b) 0,737
+c) 0,410
+d) 0,205
+
+> **b) 0,737**
+
+---
+### Pregunta 8
+En control de calidad, si la probabilidad de un artículo defectuoso es 0,1, en una muestra de 3 artículos, ¿cuál es la probabilidad de que haya exactamente 1 defectuoso?
+a) 0,271
+b) 0,001
+c) 0,243
+d) 0,729
+
+> **c) 0,243**
+
+---
+### Pregunta 9
+En una distribución binomial, si se aumenta el número de ensayos $n$ manteniendo $p$ constante, ¿qué ocurre con la distribución?
+a) Se vuelve más sesgada hacia la izquierda
+b) Se vuelve más simétrica y se aproxima a una normal
+c) La varianza disminuye
+d) La media disminuye
+
+> **b) Se vuelve más simétrica y se aproxima a una normal**
+
+---
+### Pregunta 10
+Para $X \sim B(n=6, p=0.3)$, ¿cuál es $P(X \geq 2)$?
+a) 0,420
+b) 0,580
+c) 0,302
+d) 0,118
+
+> **b) 0,580**
