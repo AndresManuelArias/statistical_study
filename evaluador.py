@@ -30,6 +30,11 @@ RE_MATH = re.compile(
 )
 
 _LATEX_UNICODE = [
+    # Orden importante: \infty antes de \in, y símbolos de cardinalidad
+    (r"\infty", "\u221e"),
+    (r"\aleph", "\u2135"),
+    (r"\mathfrak{c}", "c"),
+    (r"\circ", "\u00b0"),
     # Símbolos de conjuntos y lógica
     (r"\mathbb{N}", "\u2115"),
     (r"\Omega", "\u03a9"),

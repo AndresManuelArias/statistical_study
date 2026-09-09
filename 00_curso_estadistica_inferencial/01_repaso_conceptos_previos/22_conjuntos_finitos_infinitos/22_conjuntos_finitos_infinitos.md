@@ -94,3 +94,135 @@ En control de inventario, la colección de artículos en un almacén es finita (
 
 > [!tip] Relación con el curso
 > Distinguir conjuntos finitos, numerables y no numerables determina si se usa probabilidad discreta o continua, y afecta la elección de modelos en inferencia estadística.
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué define un conjunto como finito?
+
+a) No tiene elementos
+b) Tiene un número finito de elementos
+c) Tiene cardinalidad $\aleph_0$
+d) Se puede poner en biyección con $\mathbb{R}$
+
+> **b) Tiene un número finito de elementos**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la cardinalidad del conjunto de los números naturales $\mathbb{N}$?
+
+a) $\mathfrak{c}$
+b) $\aleph_0$
+c) $0$
+d) $\infty$
+
+> **b) $\aleph_0$**
+
+---
+
+### Pregunta 3
+
+¿Cuál de los siguientes conjuntos es numerable?
+
+a) $[0,1]$
+b) $(0,1)$
+c) $\mathbb{Q}$
+d) $\mathbb{R}$
+
+> **c) $\mathbb{Q}$**
+
+---
+
+### Pregunta 4
+
+¿Qué relación existe entre la cardinalidad de los reales $\mathbb{R}$ y la de los naturales $\mathbb{N}$?
+
+a) $|\mathbb{R}| = |\mathbb{N}|$
+b) $|\mathbb{R}| < |\mathbb{N}|$
+c) $|\mathbb{R}| > |\mathbb{N}|$
+d) No se pueden comparar
+
+> **c) $|\mathbb{R}| > |\mathbb{N}|$**
+
+---
+
+### Pregunta 5
+
+¿Qué representa la notación $\mathfrak{c}$?
+
+a) La cardinalidad del conjunto vacío
+b) La cardinalidad del continuo, igual a $|[0,1]|$ y $|\mathbb{R}|$
+c) La cardinalidad de los números racionales
+d) La cardinalidad de los números enteros
+
+> **b) La cardinalidad del continuo, igual a $|[0,1]|$ y $|\mathbb{R}|$**
+
+---
+
+### Pregunta 6
+
+¿Cómo se clasifica el conjunto de los días de la semana?
+
+a) Infinito numerable
+b) Infinito no numerable
+c) Finito
+d) No es un conjunto
+
+> **c) Finito**
+
+---
+
+### Pregunta 7
+
+¿El producto cartesiano $\mathbb{N} \times \mathbb{N}$ es numerable o no numerable?
+
+a) No numerable, porque tiene dos dimensiones
+b) Numerable, porque se puede recorrer en diagonal
+c) Finito, porque es un producto de dos conjuntos
+d) No numerable, porque tiene cardinalidad $\mathfrak{c}$
+
+> **b) Numerable, porque se puede recorrer en diagonal**
+
+---
+
+### Pregunta 8
+
+¿El conjunto potencia de los naturales $\mathcal{P}(\mathbb{N})$ es numerable o no numerable?
+
+a) Numerable, porque los subconjuntos se pueden listar
+b) Numerable, porque $\mathbb{N}$ es numerable
+c) No numerable, tiene cardinalidad $\mathfrak{c}$
+d) Finito, porque $\mathbb{N}$ tiene un número limitado de subconjuntos
+
+> **c) No numerable, tiene cardinalidad $\mathfrak{c}$**
+
+---
+
+### Pregunta 9
+
+¿Qué sucede con la unión de dos conjuntos numerables?
+
+a) Siempre es no numerable
+b) Puede ser finita, numerable o no numerable
+c) Es numerable
+d) Solo es numerable si los conjuntos son iguales
+
+> **c) Es numerable**
+
+---
+
+### Pregunta 10
+
+¿Qué cardinalidad tiene el conjunto vacío $\varnothing$?
+
+a) $\aleph_0$
+b) $\mathfrak{c}$
+c) $\infty$
+d) $0$
+
+> **d) $0$**

@@ -103,3 +103,119 @@ En una **cafetería**, el espacio muestral de una orden puede ser: espresso, ame
 
 > [!tip] Relación con el curso
 > Definir correctamente el espacio muestral y los eventos es fundamental para calcular probabilidades, ya que todas las fórmulas de la Estadística Inferencial se construyen sobre estos conjuntos.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué es el espacio muestral $\Omega$ de un experimento aleatorio?
+
+a) Es el conjunto de resultados favorables al evento que nos interesa.
+b) Es el conjunto que contiene todos los resultados posibles del experimento.
+c) Es la probabilidad de que ocurra cada resultado.
+d) Es un subconjunto del evento.
+
+> **b) Es el conjunto que contiene todos los resultados posibles del experimento.**
+
+### Pregunta 2
+
+Un evento $A$ se define como:
+
+a) El conjunto de todos los resultados posibles del experimento.
+b) Un número que indica la frecuencia de un resultado.
+c) Un subconjunto del espacio muestral, es decir, $A \subseteq \Omega$.
+d) La unión de todos los eventos simples del espacio muestral.
+
+> **c) Un subconjunto del espacio muestral, es decir, $A \subseteq \Omega$.**
+
+### Pregunta 3
+
+Si se lanza un dado de 6 caras, ¿cuál es el espacio muestral $\Omega$?
+
+a) $\Omega = \{1, 2, 3, 4, 5\}$
+b) $\Omega = \{1, 2, 3, 4, 5, 6, 7\}$
+c) $\Omega = \{1, 2, 3, 4, 5, 6\}$
+d) $\Omega = \{0, 1, 2, 3, 4, 5, 6\}$
+
+> **c) $\Omega = \{1, 2, 3, 4, 5, 6\}$**
+
+### Pregunta 4
+
+Al lanzar dos dados de 6 caras, ¿cuál es la cardinalidad del espacio muestral?
+
+a) 12
+b) 18
+c) 24
+d) 36
+
+> **d) 36**
+
+### Pregunta 5
+
+Sea $\Omega = \{1, 2, 3, 4, 5, 6\}$ el espacio muestral de un dado. ¿Qué tipo de evento es $B = \{1, 3, 5\}$?
+
+a) Evento imposible.
+b) Evento seguro.
+c) Evento simple.
+d) Evento compuesto.
+
+> **d) Evento compuesto.**
+
+### Pregunta 6
+
+¿Qué representa el evento imposible $\varnothing$?
+
+a) El evento que contiene todos los resultados de $\Omega$.
+b) El evento que contiene un solo resultado posible.
+c) El evento que no contiene ningún resultado, es decir, $\varnothing$.
+d) El evento que contiene exactamente la mitad de los resultados.
+
+> **c) El evento que no contiene ningún resultado, es decir, $\varnothing$.**
+
+### Pregunta 7
+
+Sean $\Omega = \{1, 2, 3, 4, 5, 6\}$ y $A = \{2, 4, 6\}$ (salir par). ¿Cuál es el complemento $A^c$?
+
+a) $\{1, 2, 3, 4, 5, 6\}$
+b) $\{1, 3, 5\}$
+c) $\{2, 4\}$
+d) $\varnothing$
+
+> **b) $\{1, 3, 5\}$**
+
+### Pregunta 8
+
+Si se lanza un dado y definimos $A$ = "salir un número par" y $B$ = "salir un número mayor que 4", ¿cuál es $A \cap B$?
+
+a) $\{4, 5, 6\}$
+b) $\{5, 6\}$
+c) $\{6\}$
+d) $\{2, 4, 5, 6\}$
+
+> **c) $\{6\}$**
+
+### Pregunta 9
+
+En una cafeteria, el espacio muestral de bebidas es $\Omega = \{\text{espresso}, \text{americano}, \text{capuchino}, \text{latte}, \text{te verde}, \text{te negro}\}$. Si $C$ = "bebida con leche" = $\{\text{capuchino}, \text{te negro}\}$, entonces $C^c$ es:
+
+a) $\{\text{espresso}, \text{americano}, \text{capuchino}, \text{latte}\}$
+b) $\{\text{espresso}, \text{americano}, \text{latte}, \text{te verde}, \text{te negro}\}$
+c) $\{\text{espresso}, \text{americano}, \text{latte}, \text{te verde}\}$
+d) $\{\text{espresso}, \text{americano}, \text{capuchino}, \text{latte}, \text{te verde}\}$
+
+> **c) $\{\text{espresso}, \text{americano}, \text{latte}, \text{te verde}\}$**
+
+### Pregunta 10
+
+¿Cuál de las siguientes propiedades es correcta para cualquier evento $A$ dentro de $\Omega$?
+
+a) $A \cup A^c = \varnothing$
+b) $A \cap A^c = \Omega$
+c) $A \cup A^c = \Omega$
+d) $A \cap A^c = A$
+
+> **c) $A \cup A^c = \Omega$**

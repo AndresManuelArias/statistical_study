@@ -112,3 +112,137 @@ Por eso, en la práctica se usan **logaritmos de factoriales** o **aproximacione
 $$n! \approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$$
 
 Esta aproximación es muy precisa para valores grandes de $n$.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué caracteriza a las variaciones sin repetición?
+
+a) El orden importa y se permiten repeticiones
+b) El orden no importa y no se permiten repeticiones
+c) El orden importa y no se permiten repeticiones
+d) El orden no importa y se permiten repeticiones
+
+> **c) El orden importa y no se permiten repeticiones**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la fórmula para $V(n,r)$?
+
+a) $n^r$
+b) $\frac{n!}{(n-r)!}$
+c) $\frac{n!}{r!}$
+d) $n \times r$
+
+> **b) $\frac{n!}{(n-r)!}$**
+
+---
+
+### Pregunta 3
+
+¿Cuál es el valor de $V(5,2)$?
+
+a) 10
+b) 25
+c) 20
+d) 120
+
+> **c) 20**
+
+---
+
+### Pregunta 4
+
+¿Cuántas permutaciones hay de 3 libros distintos?
+
+a) 3
+b) 6
+c) 9
+d) 27
+
+> **b) 6**
+
+---
+
+### Pregunta 5
+
+Si $r = n$ en una variación sin repetición, ¿qué tipo de ordenación resulta?
+
+a) Variación con repetición
+b) Combinación
+c) Permutación
+d) Variación sin repetición con redundancia
+
+> **c) Permutación**
+
+---
+
+### Pregunta 6
+
+¿Cuál es el valor de $V(10,3)$?
+
+a) 30
+b) 720
+c) 210
+d) 1000
+
+> **b) 720**
+
+---
+
+### Pregunta 7
+
+En $V(n,r)$, ¿por qué la segunda posición tiene $n-1$ opciones?
+
+a) Porque se eliminó un elemento en la primera posición
+b) Porque siempre hay una opción menos
+c) Porque el orden no importa
+d) Porque los elementos se repiten
+
+> **a) Porque se eliminó un elemento en la primera posición**
+
+---
+
+### Pregunta 8
+
+En un podio de 3 lugares entre 8 corredores, ¿cuántas formas hay de asignar los puestos?
+
+a) 56
+b) 336
+c) 512
+d) 24
+
+> **b) 336**
+
+---
+
+### Pregunta 9
+
+Según el ejemplo del archivo, ¿cuántas formas hay de formar un podio de 1°, 2° y 3° lugar entre 7 personas?
+
+a) 21
+b) 35
+c) 210
+d) 5040
+
+> **c) 210**
+
+---
+
+### Pregunta 10
+
+¿Cuál es la diferencia principal entre $VR(n,r)$ y $V(n,r)$?
+
+a) $VR(n,r)$ permite repetición, $V(n,r)$ no
+b) $VR(n,r)$ no importa el orden, $V(n,r)$ sí
+c) $VR(n,r)$ siempre tiene más resultados que $V(n,r)$
+d) $VR(n,r)$ usa factoriales, $V(n,r)$ no
+
+> **a) $VR(n,r)$ permite repetición, $V(n,r)$ no**

@@ -104,3 +104,117 @@ Si lanzamos un dado equilibrado 1000 veces y contamos cuántas veces sale el 3, 
 - **Desigualdad de Boole:** $P(A \cup B) \le P(A) + P(B)$.
 - **Inclusión-exclusión para 3 eventos:**
 $$P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)$$
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+¿Cuál es la fórmula correcta de la probabilidad clásica para un espacio equiprobable?
+a) $P(A) = \frac{\text{casos posibles}}{\text{casos favorables}}$
+b) $P(A) = \text{casos favorables} \times \text{casos posibles}$
+c) $P(A) = \frac{\text{casos favorables}}{\text{casos posibles}}$
+d) $P(A) = \text{casos favorables} + \text{casos posibles}$
+
+> **c) $P(A) = \frac{\text{casos favorables}}{\text{casos posibles}}$**
+
+---
+
+### Pregunta 2
+¿Qué condición debe cumplir el espacio muestral para que sea válido aplicar la definición clásica de probabilidad?
+a) Debe contener al menos 10 resultados posibles
+b) Todos los resultados individuales deben tener la misma probabilidad de ocurrir
+c) Los resultados deben ser mutuamente excluyentes
+d) El número total de resultados debe ser par
+
+> **b) Todos los resultados individuales deben tener la misma probabilidad de ocurrir**
+
+---
+
+### Pregunta 3
+Se lanza un dado de 6 caras equilibrado. ¿Cuál es la probabilidad de que salga un 3?
+a) 1/3
+b) 1/2
+c) 1/6
+d) 3/6
+
+> **c) 1/6**
+
+---
+
+### Pregunta 4
+Se lanza un dado equilibrado. ¿Cuál es la probabilidad de que salga un número par?
+a) 1/6
+b) 1/3
+c) 1/2
+d) 2/3
+
+> **c) 1/2**
+
+---
+
+### Pregunta 5
+Se lanza una moneda equilibrada. ¿Cuál es la probabilidad de que salga cara?
+a) 1/4
+b) 1/3
+c) 1/2
+d) 2/3
+
+> **c) 1/2**
+
+---
+
+### Pregunta 6
+En una caja hay 8 bolas rojas, 5 azules y 7 verdes. Si se elige una bola al azar, ¿cuál es la probabilidad de que sea roja?
+a) 8/20 = 2/5
+b) 8/15
+c) 8/7
+d) 5/20 = 1/4
+
+> **a) 8/20 = 2/5**
+
+---
+
+### Pregunta 7
+De una baraja francesa de 52 cartas, ¿cuál es la probabilidad de sacar un as?
+a) 1/52
+b) 1/13
+c) 1/4
+d) 13/52
+
+> **b) 1/13**
+
+---
+
+### Pregunta 8
+¿Cuál es la probabilidad del evento seguro $\Omega$?
+a) 0
+b) 1/2
+c) 1
+d) Depende del experimento
+
+> **c) 1**
+
+---
+
+### Pregunta 9
+Si $P(A) = 0,35$, ¿cuál es la probabilidad del complemento $A^c$?
+a) 0,35
+b) 0,65
+c) 0,50
+d) 1,35
+
+> **b) 0,65**
+
+---
+
+### Pregunta 10
+De una baraja francesa, ¿cuál es la probabilidad de sacar el as de corazones?
+a) 1/13
+b) 1/4
+c) 1/52
+d) 4/52
+
+> **c) 1/52**

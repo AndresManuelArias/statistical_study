@@ -5,10 +5,10 @@
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 29
-- **Sin preguntas (pendientes):** 40
-- **Total de preguntas actuales:** 290
-- **Meta:** 10 preguntas por carpeta → 400 preguntas nuevas al terminar los lotes pendientes.
+- **Con preguntas:** 37
+- **Sin preguntas (pendientes):** 32
+- **Total de preguntas actuales:** 370
+- **Meta:** 10 preguntas por carpeta → 320 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -43,14 +43,14 @@
 | 19 | `19_tipos_funciones` | 10 | — | ✅ Hecho |
 | 20 | `20_variable_dependiente_independiente` | 10 | — | ✅ Hecho |
 | 21 | `21_funcion_biyectiva` | 10 | — | ✅ Hecho |
-| 22 | `22_conjuntos_finitos_infinitos` | 0 | L2 | ⏳ Pendiente |
-| 23 | `23_experimentos_aleatorios_deterministas` | 0 | L2 | ⏳ Pendiente |
-| 24 | `24_espacio_muestral_eventos` | 0 | L2 | ⏳ Pendiente |
-| 25 | `25_probabilidad_clasica` | 0 | L2 | ⏳ Pendiente |
-| 26 | `26_ordenaciones_con_repeticion` | 0 | L2 | ⏳ Pendiente |
-| 27 | `27_ordenaciones_sin_repeticion` | 0 | L2 | ⏳ Pendiente |
-| 28 | `28_muestras_sin_orden_con_reemplazo` | 0 | L2 | ⏳ Pendiente |
-| 29 | `29_analisis_combinatorio` | 0 | L2 | ⏳ Pendiente |
+| 22 | `22_conjuntos_finitos_infinitos` | 10 | — | ✅ Hecho |
+| 23 | `23_experimentos_aleatorios_deterministas` | 10 | — | ✅ Hecho |
+| 24 | `24_espacio_muestral_eventos` | 10 | — | ✅ Hecho |
+| 25 | `25_probabilidad_clasica` | 10 | — | ✅ Hecho |
+| 26 | `26_ordenaciones_con_repeticion` | 10 | — | ✅ Hecho |
+| 27 | `27_ordenaciones_sin_repeticion` | 10 | — | ✅ Hecho |
+| 28 | `28_muestras_sin_orden_con_reemplazo` | 10 | — | ✅ Hecho |
+| 29 | `29_analisis_combinatorio` | 10 | — | ✅ Hecho |
 | 30 | `30_combinaciones` | 10 | — | ✅ Hecho |
 | 31 | `31_ejercicios_analisis_combinatorio` | 10 | — | ✅ Hecho |
 | 32 | `32_probabilidad_geometrica` | 10 | — | ✅ Hecho |
@@ -111,20 +111,20 @@
 
 **Total de preguntas generadas:** 80
 
-### Lote 2: Conjuntos y probabilidad básica (22-29) ⏳ PENDIENTE
+### Lote 2: Conjuntos y probabilidad básica (22-29) ✔ COMPLETADO
 
 **Carpetas (8):**
 
-- [ ] `22_conjuntos_finitos_infinitos` (0/10 preguntas)
-- [ ] `23_experimentos_aleatorios_deterministas` (0/10 preguntas)
-- [ ] `24_espacio_muestral_eventos` (0/10 preguntas)
-- [ ] `25_probabilidad_clasica` (0/10 preguntas)
-- [ ] `26_ordenaciones_con_repeticion` (0/10 preguntas)
-- [ ] `27_ordenaciones_sin_repeticion` (0/10 preguntas)
-- [ ] `28_muestras_sin_orden_con_reemplazo` (0/10 preguntas)
-- [ ] `29_analisis_combinatorio` (0/10 preguntas)
+- [x] `22_conjuntos_finitos_infinitos` (10/10 preguntas)
+- [x] `23_experimentos_aleatorios_deterministas` (10/10 preguntas)
+- [x] `24_espacio_muestral_eventos` (10/10 preguntas)
+- [x] `25_probabilidad_clasica` (10/10 preguntas)
+- [x] `26_ordenaciones_con_repeticion` (10/10 preguntas)
+- [x] `27_ordenaciones_sin_repeticion` (10/10 preguntas)
+- [x] `28_muestras_sin_orden_con_reemplazo` (10/10 preguntas)
+- [x] `29_analisis_combinatorio` (10/10 preguntas)
 
-**Total de preguntas a generar:** 80 (restantes en este lote)
+**Total de preguntas generadas:** 80
 
 ### Lote 3: Combinatoria y probabilidad avanzada (30-37) ✔ COMPLETADO
 

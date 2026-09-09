@@ -107,5 +107,139 @@ Comparado con **sin repetición** $C(5,3) = 10$, la repetición aumenta signific
                   |
                   NO ─── C(n,r) = n!/(r!(n-r)!)
                   
-     SÍ ──────── NO ─── V(n,r) = n!/(n-r)!
+      SÍ ──────── NO ─── V(n,r) = n!/(n-r)!
 ```
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué caracteriza a una combinación con repetición?
+
+a) El orden importa y los elementos se pueden repetir.
+b) El orden importa y los elementos no se pueden repetir.
+c) El orden no importa y los elementos no se pueden repetir.
+d) El orden no importa y los elementos se pueden repetir.
+
+> **d) El orden no importa y los elementos se pueden repetir.**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la fórmula correcta para $CR(n,r)$?
+
+a) $\binom{n}{r} = \frac{n!}{r!(n-r)!}$
+b) $n^r$
+c) $\binom{n+r-1}{r} = \frac{(n+r-1)!}{r!(n-1)!}$
+d) $\frac{n!}{(n-r)!}$
+
+> **c) $\binom{n+r-1}{r} = \frac{(n+r-1)!}{r!(n-1)!}$**
+
+---
+
+### Pregunta 3
+
+Un estudiante elige 6 dulces de una tienda que ofrece 4 tipos diferentes. Puede tomar varios dulces del mismo tipo y solo le importa cuántos elige de cada uno. ¿Cuántas opciones tiene?
+
+a) $\binom{10}{6} = 210$
+b) $4^6 = 4096$
+c) $\binom{9}{6} = 84$
+d) $\binom{9}{3} = 84$ y $\binom{9}{6} = 84$ son ambas expresiones válidas del mismo resultado
+
+> **d) $\binom{9}{6} = 84$ y $\binom{9}{3} = 84$ son ambas expresiones válidas del mismo resultado**
+
+---
+
+### Pregunta 4
+
+En una lotería, un jugador elige 3 boletos de entre 5 tipos posibles, con repetición y sin importar el orden. ¿Cuántas combinaciones con repetición hay?
+
+a) $\binom{5}{3} = 10$
+b) $5^3 = 125$
+c) $\binom{7}{3} = 35$
+d) $\binom{7}{2} = 21$
+
+> **c) $\binom{7}{3} = 35$**
+
+---
+
+### Pregunta 5
+
+Unas frutas con 6 tipos diferentes se quieren elegir 4, con repetición y sin importar el orden. ¿Cuántas opciones hay?
+
+a) $6^4 = 1296$
+b) $\binom{9}{4} = 126$
+c) $\binom{10}{4} = 210$
+d) $\binom{6}{4} = 15$
+
+> **b) $\binom{9}{4} = 126$**
+
+---
+
+### Pregunta 6
+
+¿Cuántos elementos totales (bolas y separadores) se usan en el modelo de reparto para calcular $CR(n,r)$?
+
+a) $n + r - 1$
+b) $n + r + 1$
+c) $n \times r$
+d) $2n + r$
+
+> **a) $n + r - 1$**
+
+---
+
+### Pregunta 7
+
+Se quieren pintar 4 paredes con 3 colores posibles, pudiendo repetir colores. El orden de las paredes no se considera relevante para el cómputo. ¿Cuántas opciones hay?
+
+a) $3^4 = 81$
+b) $\binom{6}{4} = 15$
+c) $\binom{7}{4} = 35$
+d) $\binom{6}{2} = 15$ y $\binom{6}{4} = 15$ son equivalentes
+
+> **d) $\binom{6}{2} = 15$ y $\binom{6}{4} = 15$ son equivalentes**
+
+---
+
+### Pregunta 8
+
+Una panadería ofrece 7 tipos de pastel. Un cliente quiere comprar 4 pastelerías, pudiendo repetir tipos y sin importar el orden. ¿Cuántas combinaciones con repetición existen?
+
+a) $7^4 = 2401$
+b) $\binom{11}{4} = 330$
+c) $\binom{10}{4} = 210$
+d) $\binom{7}{4} = 35$
+
+> **c) $\binom{10}{4} = 210$**
+
+---
+
+### Pregunta 9
+
+Un coleccionista quiere elegir 2 stickers de 4 tipos diferentes, sin importar el orden y permitiendo repeticiones. ¿Cuántas opciones tiene?
+
+a) $\binom{5}{2} = 10$
+b) $4^2 = 16$
+c) $\binom{4}{2} = 6$
+d) $\binom{6}{2} = 15$
+
+> **a) $\binom{5}{2} = 10$**
+
+---
+
+### Pregunta 10
+
+Un lanzador de béisbol tiene 6 tipos de lanzamientos y debe elegir 3 para una secuencia, pudiendo repetir tipos. El orden de los lanzamientos no se tiene en cuenta. ¿Cuántas combinaciones con repetición hay?
+
+a) $6^3 = 216$
+b) $\binom{8}{3} = 56$
+c) $\binom{6}{3} = 20$
+d) $\binom{9}{3} = 84$
+
+> **b) $\binom{8}{3} = 56$**

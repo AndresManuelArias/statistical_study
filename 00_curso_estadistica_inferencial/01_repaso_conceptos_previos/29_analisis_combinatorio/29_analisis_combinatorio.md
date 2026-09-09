@@ -103,3 +103,137 @@ $$C(4,2) = \frac{4!}{2!\,2!} = 6$$
 
 > [!tip] Relación con el curso
 > El análisis combinatorio es la herramienta que permite contar resultados favorables en un espacio muestral, lo cual es esencial para calcular probabilidades mediante la definición clásica $P(A) = |A|/|\Omega|$.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+Un restaurante ofrece 4 entradas, 5 platos de fondo, 3 postres y 6 bebidas. Si un cliente elige exactamente 1 de cada categoría, ¿cuántas combinaciones de menú completo son posibles?
+
+a) 30
+b) 18
+c) 360
+d) 480
+
+> **c) 360**
+
+---
+
+### Pregunta 2
+
+De un grupo de 8 personas se debe elegir un comité de 3 miembros sin considerar un orden específico. ¿Cuántos comités diferentes se pueden formar?
+
+a) 336
+b) 56
+c) 512
+d) 64
+
+> **b) 56**
+
+---
+
+### Pregunta 3
+
+Se desea crear una clave de 6 caracteres usando letras del alfabeto (26) y dígitos (10). Si se permite la repetición de caracteres, ¿cuántas claves distintas son posibles?
+
+a) 1.121.600
+b) 2.176.782.336
+c) 36
+d) 1.823.776.000
+
+> **b) 2.176.782.336**
+
+---
+
+### Pregunta 4
+
+¿De cuántas formas se pueden ordenar las letras de la palabra "LOGARITMO", que tiene 7 letras todas distintas?
+
+a) 120
+b) 5.040
+c) 2.520
+d) 7.200
+
+> **b) 5.040**
+
+---
+
+### Pregunta 5
+
+De un grupo de 12 personas se deben designar un presidente, un secretario y un tesorero. ¿Cuántas formas hay de asignar estos 3 cargos si una persona no puede ocupar más de uno?
+
+a) 220
+b) 1.728
+c) 1.320
+d) 60
+
+> **c) 1.320**
+
+---
+
+### Pregunta 6
+
+Se tienen 15 estudiantes y 3 grupos de trabajo distintos (A, B y C). Si cada estudiante puede ser asignado a cualquier grupo, ¿de cuántas maneras se pueden distribuir los estudiantes?
+
+a) 45
+b) 1.434.890.720
+c) 5.062.5
+d) 30
+
+> **b) 1.434.890.720**
+
+---
+
+### Pregunta 7
+
+De un grupo de 10 personas se debe formar un comité de 4 miembros sin considerar el orden. ¿Cuántos comités diferentes se pueden formar?
+
+a) 210
+b) 5.040
+c) 40
+d) 3.628.800
+
+> **a) 210**
+
+---
+
+### Pregunta 8
+
+¿De cuántas maneras se pueden ordenar 6 libros diferentes en una estantería?
+
+a) 36
+b) 720
+c) 30
+d) 1.200
+
+> **b) 720**
+
+---
+
+### Pregunta 9
+
+Una heladería ofrece 5 sabores de helado. Si puedes elegir 3 bolas permitiendo repeticiones de sabor y sin importar el orden en que se colocan en el cono, ¿cuántas combinaciones son posibles?
+
+a) 10
+b) 125
+c) 60
+d) 35
+
+> **d) 35**
+
+---
+
+### Pregunta 10
+
+Un par de placas de automóvil está compuesto por 3 letras (de 26 opciones cada una) seguidas de 4 dígitos (de 10 opciones cada uno). ¿Cuántas placas diferentes son posibles si se permite repetición de letras y dígitos?
+
+a) 17.576
+b) 260.000
+c) 17.576.000
+d) 78.520.000
+
+> **c) 17.576.000**

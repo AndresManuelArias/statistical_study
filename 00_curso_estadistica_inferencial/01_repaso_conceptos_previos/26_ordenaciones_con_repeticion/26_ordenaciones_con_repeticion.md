@@ -93,3 +93,137 @@ Solo hay **1** caso favorable de **216** posibles.
 ### Caso especial: $VR(n,2) = n^2$
 Si solo elegimos 2 elementos con repetición, el número total es $n^2$. Ejemplo: elegir un plato principal (3 opciones) y una bebida (4 opciones) de un menú, con repetición (se puede pedir el mismo plato dos veces en un día):
 $$3^2 \times 4^2 = 9 \times 16 = 144 \text{ combinaciones en dos días}$$
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuáles son las dos condiciones que definen una variación con repetición?
+
+a) El orden importa y los elementos NO se pueden repetir.
+b) El orden importa y los elementos SÍ pueden repetirse.
+c) El orden NO importa y los elementos se pueden repetir.
+d) El orden NO importa y los elementos NO se pueden repetir.
+
+> **b) El orden importa y los elementos SÍ pueden repetirse.**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la fórmula para calcular el número de ordenaciones con repetición de $r$ elementos elegidos de $n$ tipos?
+
+a) $VR(n,r) = \frac{n!}{r!}$
+b) $VR(n,r) = \frac{n!}{(n-r)!}$
+c) $VR(n,r) = n^r$
+d) $VR(n,r) = r^n$
+
+> **c) $VR(n,r) = n^r$**
+
+---
+
+### Pregunta 3
+
+Un candado electrónico tiene 4 ruedas, cada una con los dígitos del 0 al 9. ¿Cuántos códigos diferentes se pueden formar?
+
+a) 1000
+b) 40
+c) 10000
+d) 4000
+
+> **c) 10000**
+
+---
+
+### Pregunta 4
+
+¿Cuántas contraseñas de 3 letras (usando el alfabeto de 26 letras, con repetición permitida) se pueden crear?
+
+a) 78
+b) 15600
+c) 17576
+d) 2600
+
+> **c) 17576**
+
+---
+
+### Pregunta 5
+
+Se lanzan dos dados de 6 caras. ¿Cuántos resultados diferentes son posibles en total?
+
+a) 12
+b) 36
+c) 64
+d) 30
+
+> **b) 36**
+
+---
+
+### Pregunta 6
+
+¿Qué principio justifica que $VR(n,r) = n \times n \times \cdots \times n$ ($r$ veces)?
+
+a) Principio de inclusión-exclusión.
+b) Principio multiplicativo.
+c) Principio del palomar.
+d) Principio deBayes.
+
+> **b) Principio multiplicativo.**
+
+---
+
+### Pregunta 7
+
+Si lanzamos una moneda 4 veces, ¿cuántos resultados diferentes tiene el espacio muestral?
+
+a) 8
+b) 16
+c) 32
+d) 64
+
+> **b) 16**
+
+---
+
+### Pregunta 8
+
+¿En cuál de estos casos se aplica una variación con repetición?
+
+a) Formar un comité de 3 personas de un grupo de 10.
+b) Elegir el orden de finish de 5 caballos en una carrera sin empates.
+c) Generar un PIN de 4 dígitos con los números del 0 al 9.
+d) Seleccionar 3 libros de una estantería de 8.
+
+> **c) Generar un PIN de 4 dígitos con los números del 0 al 9.**
+
+---
+
+### Pregunta 9
+
+Un restaurante ofrece 4 platos principales. Si un cliente elige 3 veces un plato (puede repetir), ¿cuántas secuencias de elección son posibles?
+
+a) 12
+b) 64
+c) 24
+d) 48
+
+> **b) 64**
+
+---
+
+### Pregunta 10
+
+¿Cuántas combinaciones tiene un candado de 3 ruedas numéricas (dígitos 0-9)?
+
+a) 30
+b) 100
+c) 1000
+d) 10000
+
+> **c) 1000**

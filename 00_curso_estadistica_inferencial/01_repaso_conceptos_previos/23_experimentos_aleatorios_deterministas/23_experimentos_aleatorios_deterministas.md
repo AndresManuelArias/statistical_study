@@ -88,3 +88,137 @@ Para determinar si un experimento es determinista o aleatorio, pregúntate:
 
 ### Proceso de medición como ejemplo
 Un proceso de **medición** siempre tiene un componente aleatorio debido a errores instrumentales. Aunque midamos una cantidad fija (como la longitud de una mesa), cada medición producirá un valor ligeramente diferente. Esto convierte una medición en un experimento aleatorio, y la variabilidad se estudia con la teoría de la probabilidad.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué caracteriza a un experimento determinista?
+
+a) Sus resultados nunca se pueden predecir.
+b) Produce siempre el mismo resultado bajo las mismas condiciones.
+c) Requiere un marco probabilístico para estudiarse.
+d) Tiene al menos dos resultados posibles.
+
+> **b) Produce siempre el mismo resultado bajo las mismas condiciones.**
+
+---
+
+### Pregunta 2
+
+¿Por qué se clasifica el lanzamiento de un dado de 6 caras como experimento aleatorio?
+
+a) Porque el dado siempre cae en la misma cara.
+b) Porque el resultado se puede calcular con una fórmula exacta.
+c) Porque, aun conociendo las condiciones iniciales, no se puede predecir qué número saldrá.
+d) Porque solo se puede lanzar una vez.
+
+> **c) Porque, aun conociendo las condiciones iniciales, no se puede predecir qué número saldrá.**
+
+---
+
+### Pregunta 3
+
+Calcular el área de un rectángulo de base $b$ y altura $h$ mediante $A = b \times h$ es un ejemplo de:
+
+a) Experimento aleatorio porque $A$ varía en cada medición.
+b) Experimento determinista porque el resultado siempre es el mismo para valores fijos de $b$ y $h$.
+c) Espacio muestral discreto.
+d) Evento impredecible.
+
+> **b) Experimento determinista porque el resultado siempre es el mismo para valores fijos de $b$ y $h$.**
+
+---
+
+### Pregunta 4
+
+Seleccionar una persona al azar de una ciudad es un experimento aleatorio porque:
+
+a) La persona siempre tiene la misma edad.
+b) No se puede repetir el experimento.
+c) El resultado (la identidad o la edad de la persona seleccionada) no se puede predecir con certeza antes de realizar la selección.
+d) La ciudad tiene solo un habitante.
+
+> **c) El resultado (la identidad o la edad de la persona seleccionada) no se puede predecir con certeza antes de realizar la selección.**
+
+---
+
+### Pregunta 5
+
+¿Cuántos resultados contiene el espacio muestral del experimento de lanzar una moneda y después un dado de 6 caras?
+
+a) 6
+b) 8
+c) 10
+d) 12
+
+> **d) 12**
+
+---
+
+### Pregunta 6
+
+Un proceso de medición convierte en aleatorio el resultado porque:
+
+a) El instrumento siempre arroja el mismo valor.
+b) No se puede repetir la medición.
+c) Los errores instrumentales hacen que cada medición produzca un valor ligeramente diferente.
+d) La cantidad medida es siempre cero.
+
+> **c) Los errores instrumentales hacen que cada medición produzca un valor ligeramente diferente.**
+
+---
+
+### Pregunta 7
+
+¿Qué tipo de experimento es hervir agua a presión atmosférica estándar?
+
+a) Aleatorio, porque el punto de ebullición varía sin razón.
+b) Determinista, porque el agua siempre hierve a $100\,^{°}\text{C}$ bajo esas condiciones.
+c) Aleatorio, porque no se puede repetir.
+d) Indeterminado, porque no hay condiciones controladas.
+
+> **b) Determinista, porque el agua siempre hierve a $100\,^{°}\text{C}$ bajo esas condiciones.**
+
+---
+
+### Pregunta 8
+
+La Estadística Inferencial y la Teoría de la Probabilidad se ocupan principalmente de:
+
+a) Experimentos deterministas, porque sus resultados son predecibles.
+b) Experimentos aleatorios, porque requieren cuantificar la incertidumbre.
+c) Espacios muestrales vacíos.
+d) Funciones deterministas sin variabilidad.
+
+> **b) Experimentos aleatorios, porque requieren cuantificar la incertidumbre.**
+
+---
+
+### Pregunta 9
+
+Si lanzamos un dado 600 veces y la cara 4 aparece 150 veces, ¿qué se puede inferir?
+
+a) El dado es perfecto, ya que todos los resultados son igualmente probables.
+b) No se puede sacar ninguna conclusión con solo los datos.
+c) Podría indicar que el dado está sesgado, ya que la frecuencia observada difiere de la esperada ($\approx 100$).
+d) El dado es determinista porque se conoce la frecuencia de cada cara.
+
+> **c) Podría indicar que el dado está sesgado, ya que la frecuencia observada difiere de la esperada ($\approx 100$).**
+
+---
+
+### Pregunta 10
+
+Cuando un cajero de supermercado pesa una fruta, el peso registrado es una variable aleatoria porque:
+
+a) La báscula siempre marca exactamente el mismo peso.
+b) El peso varía de una pieza a otra por factores no controlables como humedad y tamaño.
+c) La fruta siempre tiene exactamente 200 gramos.
+d) No se puede repetir el proceso de pesaje.
+
+> **b) El peso varía de una pieza a otra por factores no controlables como humedad y tamaño.**
