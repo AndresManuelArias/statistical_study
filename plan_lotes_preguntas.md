@@ -96,7 +96,22 @@
 
 ## Detalle de lotes
 
-### Lote 1: Conjuntos y probabilidad básica (22-29)
+### Lote 1: Funciones y relaciones (13, 15-21) ✔ COMPLETADO
+
+**Carpetas (8):**
+
+- [x] `13_ejercicios_parte3` (10/10 preguntas)
+- [x] `15_producto_conjuntos` (10/10 preguntas)
+- [x] `16_relaciones` (10/10 preguntas)
+- [x] `17_dominio_codominio_rango` (10/10 preguntas)
+- [x] `18_funciones` (10/10 preguntas)
+- [x] `19_tipos_funciones` (10/10 preguntas)
+- [x] `20_variable_dependiente_independiente` (10/10 preguntas)
+- [x] `21_funcion_biyectiva` (10/10 preguntas)
+
+**Total de preguntas generadas:** 80
+
+### Lote 2: Conjuntos y probabilidad básica (22-29) ⏳ PENDIENTE
 
 **Carpetas (8):**
 
@@ -109,9 +124,24 @@
 - [ ] `28_muestras_sin_orden_con_reemplazo` (0/10 preguntas)
 - [ ] `29_analisis_combinatorio` (0/10 preguntas)
 
-**Total de preguntas a generar en este lote:** 80
+**Total de preguntas a generar:** 80 (restantes en este lote)
 
-### Lote 2: Variables aleatorias y distribuciones I (38-44)
+### Lote 3: Combinatoria y probabilidad avanzada (30-37) ✔ COMPLETADO
+
+**Carpetas (8):**
+
+- [x] `30_combinaciones` (10/10 preguntas)
+- [x] `31_ejercicios_analisis_combinatorio` (10/10 preguntas)
+- [x] `32_probabilidad_geometrica` (10/10 preguntas)
+- [x] `33_probabilidad_frecuentista` (10/10 preguntas)
+- [x] `34_probabilidad_axiomatica` (10/10 preguntas)
+- [x] `35_probabilidad_condicional` (10/10 preguntas)
+- [x] `36_eventos_independientes` (10/10 preguntas)
+- [x] `37_eventos_excluyentes_mutuamente_excluyentes` (10/10 preguntas)
+
+**Total de preguntas generadas:** 80
+
+### Lote 4: Variables aleatorias y distribuciones I (38-44) ⏳ PENDIENTE
 
 **Carpetas (7):**
 
@@ -123,9 +153,9 @@
 - [ ] `43_momentos_variables_aleatorias` (0/10 preguntas)
 - [ ] `44_distribucion_binomial_parte2` (0/10 preguntas)
 
-**Total de preguntas a generar en este lote:** 70
+**Total de preguntas a generar:** 70 (restantes en este lote)
 
-### Lote 3: Distribuciones II (45-52)
+### Lote 5: Distribuciones II (45-52) ⏳ PENDIENTE
 
 **Carpetas (8):**
 
@@ -138,9 +168,9 @@
 - [ ] `51_distribucion_f` (0/10 preguntas)
 - [ ] `52_distribucion_ji_cuadrada` (0/10 preguntas)
 
-**Total de preguntas a generar en este lote:** 80
+**Total de preguntas a generar:** 80 (restantes en este lote)
 
-### Lote 4: Muestreo (53-58)
+### Lote 6: Muestreo (53-58) ⏳ PENDIENTE
 
 **Carpetas (6):**
 
@@ -151,9 +181,9 @@
 - [ ] `57_muestreo_aleatorio_estratificado` (0/10 preguntas)
 - [ ] `58_muestreo_conglomerados` (0/10 preguntas)
 
-**Total de preguntas a generar en este lote:** 60
+**Total de preguntas a generar:** 60 (restantes en este lote)
 
-### Lote 5: Distribuciones muestrales y TLC (59-61)
+### Lote 7: Distribuciones muestrales y TLC (59-61) ⏳ PENDIENTE
 
 **Carpetas (3):**
 
@@ -161,9 +191,9 @@
 - [ ] `60_teorema_limite_central` (0/10 preguntas)
 - [ ] `61_distribucion_muestral_parte2` (0/10 preguntas)
 
-**Total de preguntas a generar en este lote:** 30
+**Total de preguntas a generar:** 30 (restantes en este lote)
 
-### Lote 6: Inferencia y pruebas de hipótesis (62-69)
+### Lote 8: Inferencia y pruebas de hipótesis (62-69) ⏳ PENDIENTE
 
 **Carpetas (8):**
 
@@ -176,7 +206,7 @@
 - [ ] `68_aplicacion_prueba_estadistica` (0/10 preguntas)
 - [ ] `69_zonas_rechazo_toma_decision` (0/10 preguntas)
 
-**Total de preguntas a generar en este lote:** 80
+**Total de preguntas a generar:** 80 (restantes en este lote)
 
 ---
 
