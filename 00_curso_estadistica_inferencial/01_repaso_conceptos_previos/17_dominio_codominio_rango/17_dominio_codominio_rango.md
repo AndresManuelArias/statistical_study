@@ -90,3 +90,137 @@ En una tienda, la función que convierte cantidad de unidades compradas en preci
 
 > [!tip] Relación con el curso
 > Distinguir dominio, codominio y rango es esencial al trabajar con funciones de densidad de probabilidad y funciones de regresión, donde se debe identificar claramente qué valores puede tomar cada variable.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué representa el dominio de una función $f: A \to B$?
+
+a) El conjunto $B$ de valores de salida declarados.
+b) El conjunto de valores de salida que la función realmente alcanza.
+c) El conjunto de valores de entrada $x$ para los que $f$ está definida.
+d) El conjunto de todos los números reales.
+
+> **c) El conjunto de valores de entrada $x$ para los que $f$ está definida.**
+
+---
+
+### Pregunta 2
+
+Dada la función $f(x) = x^2$ evaluada en $x = -3, -2, -1, 0, 1, 2, 3$ con codominio $\mathbb{Z}$, ¿cuál es el rango?
+
+a) $\{-3, -2, -1, 0, 1, 2, 3\}$
+b) $\{0, 1, 2, 3, 4, 9\}$
+c) $\{0, 1, 4, 9\}$
+d) $\{1, 4, 9\}$
+
+> **c) $\{0, 1, 4, 9\}$**
+
+---
+
+### Pregunta 3
+
+¿Cuándo una función se dice sobreyectiva?
+
+a) Cuando el dominio es igual al codominio.
+b) Cuando el rango coincide con el codominio.
+c) Cuando cada valor del dominio se repite al menos dos veces.
+d) Cuando el dominio es un subconjunto del rango.
+
+> **b) Cuando el rango coincide con el codominio.**
+
+---
+
+### Pregunta 4
+
+En la función $g(x) = \sqrt{x}$, ¿por qué el dominio se restringe a $x \geq 0$?
+
+a) Porque la función siempre debe dar resultados positivos.
+b) Porque los radicandos de raíces de índice par deben ser $\geq 0$.
+c) Porque el codominio solo contiene números enteros.
+d) Porque no existen números negativos en los reales.
+
+> **b) Porque los radicandos de raíces de índice par deben ser $\geq 0$.**
+
+---
+
+### Pregunta 5
+
+En una fábrica que convierte kilos de material ($x$) en piezas terminadas mediante $f(x) = 2x$, con codominio los enteros $\mathbb{Z}$, ¿por qué la función es sobreyectiva?
+
+a) Porque todo entero par tiene un preimagen entero.
+b) Porque el dominio y el codominio son iguales.
+c) Porque el rango coincide con el codominio.
+d) Porque el rango es un subconjunto propio del codominio.
+
+> **c) Porque el rango coincide con el codominio.**
+
+---
+
+### Pregunta 6
+
+Si el codominio de una función es $\mathbb{R}$ y el rango es $\{0, 1, 4, 9\}$, ¿qué se puede afirmar?
+
+a) La función es sobreyectiva.
+b) El rango es igual al codominio.
+c) La función no es sobreyectiva porque existen valores en $\mathbb{R}$ que no están en el rango.
+d) El dominio es un subconjunto del rango.
+
+> **c) La función no es sobreyectiva porque existen valores en $\mathbb{R}$ que no están en el rango.**
+
+---
+
+### Pregunta 7
+
+En una tienda, la función que asigna unidades compradas a precio total tiene codominio los precios del catálogo. Si un producto no cuesta 50 €, ¿qué relación tiene ese valor con los conjuntos de la función?
+
+a) Está en el dominio pero no en el codominio.
+b) Está en el codominio pero no en el rango.
+c) Está tanto en el dominio como en el rango.
+d) No está en ninguno de los tres conjuntos.
+
+> **b) Está en el codominio pero no en el rango.**
+
+---
+
+### Pregunta 8
+
+¿Qué relación siempre se cumple entre el rango y el codominio de cualquier función?
+
+a) El rango es igual al codominio.
+b) El rango es un subconjunto del codominio.
+c) El codominio es un subconjunto del rango.
+d) No existe relación general entre ambos.
+
+> **b) El rango es un subconjunto del codominio.**
+
+---
+
+### Pregunta 9
+
+En la función $h(x) = 2x$ con dominio $\mathbb{R}$, ¿por qué el rango es también $\mathbb{R}$?
+
+a) Porque la función eleva al cuadrado cada entrada.
+b) Porque para cualquier $y$ real existe $x = y/2$ tal que $h(x) = y$.
+c) Porque el codominio está restringido a los enteros.
+d) Porque el dominio solo contiene valores positivos.
+
+> **b) Porque para cualquier $y$ real existe $x = y/2$ tal que $h(x) = y$.**
+
+---
+
+### Pregunta 10
+
+Un gimnasio registra la cantidad de visitas semanales de cada socio y la asigna a un puntaje de fidelidad definido por $f(x) = x + 5$, con codominio $\mathbb{Z}$. Si el dominio es $\{0, 1, 2, 3, 4\}$, ¿cuál es el rango?
+
+a) $\{0, 1, 2, 3, 4\}$
+b) $\{5, 6, 7, 8, 9\}$
+c) $\{1, 2, 3, 4, 5\}$
+d) $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$
+
+> **b) $\{5, 6, 7, 8, 9\}$**

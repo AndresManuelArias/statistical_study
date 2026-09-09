@@ -107,3 +107,137 @@ En el control de calidad de una fábrica, la función que asigna a cada lote de 
 
 > [!tip] Relación con el curso
 > Reconocer si una función es inyectiva o sobreyectiva es útil para saber si una transformación de datos es reversible y para interpretar biyecciones en la estandarización de variables.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué condición caracteriza a una función inyectiva?
+
+a) Todo elemento del codominio es imagen de al menos un elemento del dominio
+b) Si $f(a) = f(b)$ entonces $a = b$
+c) El rango coincide exactamente con el codominio
+d) La función asigna el mismo valor a todo elemento del dominio
+
+> **b) Si $f(a) = f(b)$ entonces $a = b$**
+
+---
+
+### Pregunta 2
+
+Para la función $f(x) = 2x$ con dominio $\{1, 2, 3\}$ y codominio $\{2, 4, 6\}$, ¿cuál es el rango?
+
+a) $\{1, 2, 3\}$
+b) $\{2, 4, 6\}$
+c) $\{2, 4\}$
+d) $\{1, 2, 3, 4, 6\}$
+
+> **b) $\{2, 4, 6\}$**
+
+---
+
+### Pregunta 3
+
+¿Qué tipo de función asigna el mismo valor a todo elemento del dominio?
+
+a) Función identidad
+b) Función inyectiva
+c) Función constante
+d) Función sobreyectiva
+
+> **c) Función constante**
+
+---
+
+### Pregunta 4
+
+Para la función $g(x) = x^2$ con dominio $\{-2, 0, 2\}$ y codominio $\{0, 4\}$, ¿es inyectiva?
+
+a) Sí, porque todos los valores calculados son distintos
+b) Sí, porque el dominio tiene más elementos que el codominio
+c) No, porque $-2$ y $2$ comparten la misma imagen
+d) No, porque el codominio tiene solo dos elementos
+
+> **c) No, porque $-2$ y $2$ comparten la misma imagen**
+
+---
+
+### Pregunta 5
+
+¿Qué función es siempre biyectiva?
+
+a) La función constante
+b) La función identidad
+c) La función sobreyectiva
+d) Una función estrictamente decreciente
+
+> **b) La función identidad**
+
+---
+
+### Pregunta 6
+
+Una función es estrictamente decreciente cuando se cumple que:
+
+a) $x_1 < x_2$ implica $f(x_1) < f(x_2)$
+b) $x_1 < x_2$ implica $f(x_1) > f(x_2)$
+c) $x_1 < x_2$ implica $f(x_1) \leq f(x_2)$
+d) $x_1 < x_2$ implica $f(x_1) \geq f(x_2)$
+
+> **b) $x_1 < x_2$ implica $f(x_1) > f(x_2)$**
+
+---
+
+### Pregunta 7
+
+Considere $h(x) = 3x$ con dominio $\{0, 1, 2\}$ y codominio $\{0, 3, 6\}$. ¿Es esta función biyectiva?
+
+a) No, porque no es sobreyectiva
+b) No, porque no es inyectiva
+c) Sí, porque es inyectiva y sobreyectiva
+d) No, porque el dominio y el codominio no tienen la misma cantidad de elementos
+
+> **c) Sí, porque es inyectiva y sobreyectiva**
+
+---
+
+### Pregunta 8
+
+Una función biyectiva establece una correspondencia entre dominio y codominio de tipo:
+
+a) Muchos a uno
+b) Uno a muchos
+c) Uno a uno
+d) Todos a un mismo valor
+
+> **c) Uno a uno**
+
+---
+
+### Pregunta 9
+
+¿Cuál es la condición que define a una función sobreyectiva?
+
+a) Si $f(a) = f(b)$ entonces $a = b$
+b) $\text{Rango}(f) = \text{Codominio}(f)$
+c) $f(x) = x$ para todo $x$ del dominio
+d) Si $x_1 < x_2$ entonces $f(x_1) \leq f(x_2)$
+
+> **b) $\text{Rango}(f) = \text{Codominio}(f)$**
+
+---
+
+### Pregunta 10
+
+En una tienda en línea, la función que asigna a cada producto su categoría puede ser no inyectiva porque:
+
+a) Cada producto pertenece a una sola categoría
+b) La categoría de un producto es siempre única
+c) Dos productos distintos pueden pertenecer a la misma categoría
+d) Todos los productos comparten la misma categoría
+
+> **c) Dos productos distintos pueden pertenecer a la misma categoría**

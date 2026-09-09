@@ -94,3 +94,137 @@ En una máquina que convierte grados Celsius a Fahrenheit con $F = \frac{9}{5}C 
 
 > [!tip] Relación con el curso
 > La función biyectiva garantiza la reversibilidad de transformaciones, fundamental cuando se estandarizan variables o se transforman datos para aplicar pruebas estadísticas.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué combinación de propiedades debe cumplir una función $f: A \to B$ para ser biyectiva?
+
+a) Solo ser inyectiva
+b) Solo ser sobreyectiva
+c) Ser creciente y continua
+d) Ser inyectiva y sobreyectiva a la vez
+
+> **d) Ser inyectiva y sobreyectiva a la vez**
+
+---
+
+### Pregunta 2
+
+¿Qué significa que una función sea inyectiva?
+
+a) Cada elemento del codominio tiene preimagen en el dominio
+b) Para todo $x$ en el dominio existe un solo valor de $f(x)$
+c) El dominio y el codominio tienen la misma cantidad de elementos
+d) Si $a_1 \neq a_2$ entonces $f(a_1) \neq f(a_2)$
+
+> **d) Si $a_1 \neq a_2$ entonces $f(a_1) \neq f(a_2)$**
+
+---
+
+### Pregunta 3
+
+En la verificación gráfica de biyectividad mediante el test de línea horizontal, ¿qué se requiere?
+
+a) Toda horizontal corta en a lo sumo un punto
+b) Toda horizontal corta en al menos un punto
+c) Toda horizontal corta en exactamente dos puntos
+d) Toda horizontal corta en exactamente un punto
+
+> **d) Toda horizontal corta en exactamente un punto**
+
+---
+
+### Pregunta 4
+
+¿Cuál es el tercer paso para hallar la función inversa de $f$?
+
+a) Escribir $y = f(x)$
+b) Reescribir como $y = f^{-1}(x)$ y verificar
+c) Intercambiar $x$ e $y$ en la expresión final
+d) Despejar $x$ en función de $y$
+
+> **c) Intercambiar $x$ e $y$ en la expresión final**
+
+---
+
+### Pregunta 5
+
+Sea $f(x) = 3x + 1$ con dominio y codominio $\mathbb{R}$. Al graficar esta función, ¿qué se observa respecto a las líneas horizontales?
+
+a) Toda línea horizontal corta en exactamente un punto, confirmando biyectividad
+b) Algunas horizontales no cortan la gráfica, por lo que no es sobreyectiva
+c) Algunas horizontales cortan en dos puntos, por lo que no es inyectiva
+d) La función no es gráfica en $\mathbb{R}$ porque es discreta
+
+> **a) Toda línea horizontal corta en exactamente un punto, confirmando biyectividad**
+
+---
+
+### Pregunta 6
+
+Si existe una biyección entre dos conjuntos finitos $A$ y $B$, ¿qué se puede afirmar?
+
+a) $|A| > |B|$
+b) $|A| < |B|$
+c) $|A| = |B|$
+d) No se puede determinar sin conocer los elementos
+
+> **c) $|A| = |B|$**
+
+---
+
+### Pregunta 7
+
+La función $g(x) = x^2$ con dominio y codominio $\mathbb{R}$ no es biyectiva. ¿Cuál es la razón correcta?
+
+a) Es inyectiva pero no sobreyectiva
+b) Es sobreyectiva pero no inyectiva
+c) Solo tiene preimagen para valores negativos de $y$
+d) No es inyectiva (por ejemplo $g(2) = g(-2) = 4$) ni sobreyectiva (no hay $x$ tal que $x^2 = -1$)
+
+> **d) No es inyectiva (por ejemplo $g(2) = g(-2) = 4$) ni sobreyectiva (no hay $x$ tal que $x^2 = -1$)**
+
+---
+
+### Pregunta 8
+
+Si una función biyectiva convierte grados Celsius a Fahrenheit con $F = \frac{9}{5}C + 32$, ¿cuál es la expresión de la función inversa?
+
+a) $C = \frac{5}{9}(F + 32)$
+b) $C = \frac{9}{5}(F - 32)$
+c) $C = \frac{5}{9}(F - 32)$
+d) $C = \frac{5F + 32}{9}$
+
+> **c) $C = \frac{5}{9}(F - 32)$**
+
+---
+
+### Pregunta 9
+
+Usando la fórmula $F = \frac{9}{5}C + 32$, ¿cuántos grados Fahrenheit equivalen a $37$ °C?
+
+a) 88,6 °F
+b) 96,8 °F
+c) 98,6 °F
+d) 101,2 °F
+
+> **c) 98,6 °F**
+
+---
+
+### Pregunta 10
+
+Si $f: A \to B$ es biyectiva y se define su inversa $f^{-1}: B \to A$, ¿cuál es la propiedad fundamental que cumple la inversa?
+
+a) $f^{-1}(f(x)) = x$ para todo $x$ en $A$ y $f(f^{-1}(y)) = y$ para todo $y$ en $B$
+b) $f^{-1}(f(x)) = f(x)$ para todo $x$ en $A$
+c) $f^{-1}(x) = \frac{1}{f(x)}$ para todo $x$ en $A$
+d) $f^{-1}(x) = -f(x)$ para todo $x$ en $A$
+
+> **a) $f^{-1}(f(x)) = x$ para todo $x$ en $A$ y $f(f^{-1}(y)) = y$ para todo $y$ en $B$**

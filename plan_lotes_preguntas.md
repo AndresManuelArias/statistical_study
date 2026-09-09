@@ -1,14 +1,14 @@
 # 📋 Plan de construcción de preguntas
 
-> Documento generado automáticamente con el estado real de las carpetas del curso.
+> Documento generado automáticamente con el estado real de las carpetas.
 
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 13
-- **Sin preguntas (pendientes):** 56
-- **Total de preguntas actuales:** 130
-- **Meta:** 10 preguntas por carpeta → 560 preguntas nuevas al terminar todos los lotes.
+- **Con preguntas:** 21
+- **Sin preguntas (pendientes):** 48
+- **Total de preguntas actuales:** 210
+- **Meta:** 10 preguntas por carpeta → 480 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -34,15 +34,15 @@
 | 10 | `10_cardinalidad` | 10 | — | ✅ Hecho |
 | 11 | `11_conjunto_potencia` | 10 | — | ✅ Hecho |
 | 12 | `12_ejercicios_parte3` | 10 | — | ✅ Hecho |
-| 13 | `13_ejercicios_parte3` | 0 | L1 | ⏳ Pendiente |
+| 13 | `13_ejercicios_parte3` | 10 | — | ✅ Hecho |
 | 14 | `14_carroll_diagrams` | 10 | — | ✅ Hecho |
-| 15 | `15_producto_conjuntos` | 0 | L1 | ⏳ Pendiente |
-| 16 | `16_relaciones` | 0 | L1 | ⏳ Pendiente |
-| 17 | `17_dominio_codominio_rango` | 0 | L1 | ⏳ Pendiente |
-| 18 | `18_funciones` | 0 | L1 | ⏳ Pendiente |
-| 19 | `19_tipos_funciones` | 0 | L1 | ⏳ Pendiente |
-| 20 | `20_variable_dependiente_independiente` | 0 | L1 | ⏳ Pendiente |
-| 21 | `21_funcion_biyectiva` | 0 | L1 | ⏳ Pendiente |
+| 15 | `15_producto_conjuntos` | 10 | — | ✅ Hecho |
+| 16 | `16_relaciones` | 10 | — | ✅ Hecho |
+| 17 | `17_dominio_codominio_rango` | 10 | — | ✅ Hecho |
+| 18 | `18_funciones` | 10 | — | ✅ Hecho |
+| 19 | `19_tipos_funciones` | 10 | — | ✅ Hecho |
+| 20 | `20_variable_dependiente_independiente` | 10 | — | ✅ Hecho |
+| 21 | `21_funcion_biyectiva` | 10 | — | ✅ Hecho |
 | 22 | `22_conjuntos_finitos_infinitos` | 0 | L2 | ⏳ Pendiente |
 | 23 | `23_experimentos_aleatorios_deterministas` | 0 | L2 | ⏳ Pendiente |
 | 24 | `24_espacio_muestral_eventos` | 0 | L2 | ⏳ Pendiente |
@@ -96,22 +96,7 @@
 
 ## Detalle de lotes
 
-### Lote 1: Funciones y relaciones (13, 15-21)
-
-**Carpetas (8):**
-
-- [ ] `13_ejercicios_parte3` (0/10 preguntas)
-- [ ] `15_producto_conjuntos` (0/10 preguntas)
-- [ ] `16_relaciones` (0/10 preguntas)
-- [ ] `17_dominio_codominio_rango` (0/10 preguntas)
-- [ ] `18_funciones` (0/10 preguntas)
-- [ ] `19_tipos_funciones` (0/10 preguntas)
-- [ ] `20_variable_dependiente_independiente` (0/10 preguntas)
-- [ ] `21_funcion_biyectiva` (0/10 preguntas)
-
-**Total de preguntas a generar en este lote:** 80
-
-### Lote 2: Conjuntos y probabilidad básica (22-29)
+### Lote 1: Conjuntos y probabilidad básica (22-29)
 
 **Carpetas (8):**
 
@@ -126,7 +111,7 @@
 
 **Total de preguntas a generar en este lote:** 80
 
-### Lote 3: Combinatoria y probabilidad avanzada (30-37)
+### Lote 2: Combinatoria y probabilidad avanzada (30-37)
 
 **Carpetas (8):**
 
@@ -141,7 +126,7 @@
 
 **Total de preguntas a generar en este lote:** 80
 
-### Lote 4: Variables aleatorias y distribuciones I (38-44)
+### Lote 3: Variables aleatorias y distribuciones I (38-44)
 
 **Carpetas (7):**
 
@@ -155,7 +140,7 @@
 
 **Total de preguntas a generar en este lote:** 70
 
-### Lote 5: Distribuciones II (45-52)
+### Lote 4: Distribuciones II (45-52)
 
 **Carpetas (8):**
 
@@ -170,7 +155,7 @@
 
 **Total de preguntas a generar en este lote:** 80
 
-### Lote 6: Muestreo (53-58)
+### Lote 5: Muestreo (53-58)
 
 **Carpetas (6):**
 
@@ -183,7 +168,7 @@
 
 **Total de preguntas a generar en este lote:** 60
 
-### Lote 7: Distribuciones muestrales y TLC (59-61)
+### Lote 6: Distribuciones muestrales y TLC (59-61)
 
 **Carpetas (3):**
 
@@ -193,7 +178,7 @@
 
 **Total de preguntas a generar en este lote:** 30
 
-### Lote 8: Inferencia y pruebas de hipótesis (62-69)
+### Lote 7: Inferencia y pruebas de hipótesis (62-69)
 
 **Carpetas (8):**
 
@@ -215,5 +200,5 @@
 1. **Formato evaluador**: sección `## ✅ Evaluación` al final del `.md`, con `### Pregunta N`, opciones `a)–d)` en líneas separadas y respuesta como `> **x) texto**`.
 2. **10 preguntas** por carpeta, 4 opciones cada una.
 3. **Sin ejemplos de matrimonio** ni código Python de datasets.
-4. **LaTeX compatible con el evaluador**: usar solo comandos del mapa Unicode (`\cup`, `\cap`, `\Omega`, `\emptyset`, `\subseteq`, `\chi`, `\frac`, etc.) y **nunca** el separador de miles `{,}` (escribir `19,685` en su lugar).
+4. **LaTeX compatible con el evaluador**: usar solo comandos del mapa Unicode (`\cup`, `\cap`, `\Omega`, `\emptyset`, `\subseteq`, `\chi`, `\frac`, etc.) y **nunca** el separador de miles `{,}` (escribir `19,685` en su lugar). Tampoco matrices `pmatrix` (usar `[[1, 0], [0, 1]]`).
 5. Las preguntas deben estar **basadas en el contenido del video** de esa carpeta (explicación, ejemplo numérico y ejemplo de vida real ya redactados).

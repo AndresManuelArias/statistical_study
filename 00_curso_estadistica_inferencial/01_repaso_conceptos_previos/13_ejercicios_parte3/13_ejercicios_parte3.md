@@ -88,3 +88,137 @@ En un festival de música, de 500 asistentes: 200 escucharon rock, 180 escucharo
 
 > [!tip] Relación con el curso
 > Dominar las operaciones con tres conjuntos es esencial para calcular probabilidades de eventos compuestos y para la regla de inclusión-exclusión, base de conteo en probabilidad.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué representa la expresión $n(A \cup B \cup C)$ en el principio de inclusión-exclusión para tres conjuntos?
+
+a) La suma directa de los tres tamaños de conjunto sin ajustes
+b) El número de elementos que están en exactamente dos de los tres conjuntos
+c) El número de elementos que están en al menos uno de los tres conjuntos
+d) El número de elementos que no están en ninguno de los tres conjuntos
+
+> **c) El número de elementos que están en al menos uno de los tres conjuntos**
+
+---
+
+### Pregunta 2
+
+En un diagrama de Venn con tres conjuntos $A$, $B$ y $C$, ¿cuántas regiones disjoint se forman en total?
+
+a) 5
+b) 7
+c) 8
+d) 9
+
+> **b) 7**
+
+---
+
+### Pregunta 3
+
+En una tienda de ropa con 150 clientes, 80 compraron camisas ($C$), 60 pantalones ($P$) y 50 chaquetas ($J$). Con $n(C \cap P) = 25$, $n(C \cap J) = 20$, $n(P \cap J) = 15$ y $n(C \cap P \cap J) = 8$, ¿cuántos clientes no compraron nada?
+
+a) 8
+b) 20
+c) 12
+d) 15
+
+> **c) 12**
+
+---
+
+### Pregunta 4
+
+En el ejercicio de tienda de ropa, ¿cuántos clientes compraron camisas y chaquetas pero NO pantalones?
+
+a) 20
+b) 25
+c) 8
+d) 12
+
+> **d) 12**
+
+---
+
+### Pregunta 5
+
+En una encuesta a 200 personas sobre uso de apps, los datos son: $n(A) = 90$, $n(B) = 70$, $n(C) = 80$, $n(A \cap B) = 30$, $n(A \cap C) = 25$, $n(B \cap C) = 20$, $n(A \cap B \cap C) = 10$. ¿Cuántas personas usan exactamente dos apps?
+
+a) 45
+b) 55
+c) 35
+d) 65
+
+> **a) 45**
+
+---
+
+### Pregunta 6
+
+Si $n(A \cup B \cup C) = 175$ y el universo tiene $n(U) = 200$ personas, ¿cuántas personas no pertenecen a ninguno de los tres conjuntos?
+
+a) 25
+b) 35
+c) 175
+d) 200
+
+> **a) 25**
+
+---
+
+### Pregunta 7
+
+¿Cuál es la fórmula correcta para calcular los elementos en $A$ pero no en $B$ ni en $C$, es decir, solo $A$?
+
+a) $n(A) - n(A \cap B) - n(A \cap C) + n(A \cap B \cap C)$
+b) $n(A) - n(A \cap B) - n(A \cap C) - n(A \cap B \cap C)$
+c) $n(A) + n(A \cap B) + n(A \cap C) - n(A \cap B \cap C)$
+d) $n(A) - n(A \cap B \cap C)$
+
+> **a) $n(A) - n(A \cap B) - n(A \cap C) + n(A \cap B \cap C)$**
+
+---
+
+### Pregunta 8
+
+Un hospital registra 500 pacientes: 200 con diabetes ($D$), 180 con hipertensión ($H$) y 150 con obesidad ($O$). Si $n(D \cap H) = 90$, $n(D \cap O) = 70$, $n(H \cap O) = 60$ y $n(D \cap H \cap O) = 40$, ¿cuántos pacientes tienen al menos una de las tres condiciones?
+
+a) 350
+b) 500
+c) 550
+d) 300
+
+> **a) 350**
+
+---
+
+### Pregunta 9
+
+En una encuesta a 200 personas, $n(A) = 90$, $n(B) = 70$, $n(C) = 80$, $n(A \cap B) = 30$, $n(A \cap C) = 25$, $n(B \cap C) = 20$ y $n(A \cap B \cap C) = 10$. ¿Cuántas personas usan solo la app $C$?
+
+a) 80
+b) 55
+c) 45
+d) 35
+
+> **d) 35**
+
+---
+
+### Pregunta 10
+
+Una clase de 120 estudiantes estudia tres idiomas: inglés ($I$), francés ($F$) y alemán ($A$). Se sabe que $n(I) = 50$, $n(F) = 40$, $n(A) = 30$, $n(I \cap F) = 15$, $n(I \cap A) = 10$, $n(F \cap A) = 8$ y $n(I \cap F \cap A) = 5$. Si 18 estudiantes no estudian ningún idioma, ¿cuántos estudian francés y alemán pero no inglés?
+
+a) 5
+b) 3
+c) 8
+d) 13
+
+> **b) 3**

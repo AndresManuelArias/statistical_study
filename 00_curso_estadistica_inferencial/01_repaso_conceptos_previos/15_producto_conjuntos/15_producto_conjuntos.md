@@ -97,3 +97,137 @@ Un repartidor de una plataforma puede combinar 4 rutas posibles con 3 vehículos
 
 > [!tip] Relación con el curso
 > El producto cartesiano es la base del **diagrama de árbol** y del **principio de multiplicación**, esenciales para contar los resultados de experimentos y calcular probabilidades en inferencia estadística.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué describe formalmente el producto cartesiano $A \times B$?
+
+a) El conjunto de todos los subconjuntos de $A$ y $B$ formados por unión
+b) El conjunto de todos los pares ordenados $(a, b)$ donde $a \in A$ y $b \in B$
+c) El conjunto de todos los elementos que están tanto en $A$ como en $B$
+d) El conjunto de todas las permutaciones posibles de los elementos de $A$ y $B$
+
+> **b) El conjunto de todos los pares ordenados $(a, b)$ donde $a \in A$ y $b \in B$**
+
+---
+
+### Pregunta 2
+
+Si $A = \{m, n\}$ y $B = \{1, 2\}$, ¿cuál de los siguientes pares ordenados pertenece a $A \times B$?
+
+a) $(2, n)$
+b) $(1, 2)$
+c) $(n, m)$
+d) $(m, 1)$
+
+> **d) $(m, 1)$**
+
+---
+
+### Pregunta 3
+
+Dados $A = \{1, 2, 3\}$ y $B = \{x, y\}$, ¿cuántos elementos tiene $A \times B$?
+
+a) 5
+b) 2
+c) 6
+d) 8
+
+> **c) 6**
+
+---
+
+### Pregunta 4
+
+Con $A = \{1, 2, 3\}$ y $B = \{x, y\}$, ¿cuál de los siguientes pares pertenece a $B \times A$?
+
+a) $(3, y)$
+b) $(1, x)$
+c) $(y, 3)$
+d) $(x, 2)$
+
+> **d) $(x, 2)$**
+
+---
+
+### Pregunta 5
+
+¿Qué resultado se obtiene al calcular $A \times \varnothing$?
+
+a) $\{(\varnothing, \varnothing)\}$
+b) $\varnothing$
+c) $\{\varnothing\}$
+d) $A$
+
+> **b) $\varnothing$**
+
+---
+
+### Pregunta 6
+
+Dado un producto de tres conjuntos $C \times D \times E$ con $|C| = 2$, $|D| = 1$ y $|E| = 2$, ¿cuántas tripletas ordenadas contiene el producto?
+
+a) 4
+b) 5
+c) 2
+d) 3
+
+> **a) 4**
+
+---
+
+### Pregunta 7
+
+Un sistema de logística ofrece 4 rutas de reparto, 3 tipos de vehículo y 2 franjas horarias. Usando el principio de multiplicación, ¿cuántas combinaciones totales de ruta, vehículo y franja horaria puede generar el sistema?
+
+a) 9
+b) 14
+c) 12
+d) 24
+
+> **d) 24**
+
+---
+
+### Pregunta 8
+
+Para dos conjuntos no vacíos $A$ y $B$ con $A \neq B$, ¿cuál es la relación correcta entre $A \times B$ y $B \times A$?
+
+a) Son conjuntos distintos, aunque ambos tengan la misma cantidad de elementos
+b) Son siempre el mismo conjunto
+c) $B \times A$ siempre tiene más elementos que $A \times B$
+d) $A \times B$ siempre tiene más elementos que $B \times A$
+
+> **a) Son conjuntos distintos, aunque ambos tengan la misma cantidad de elementos**
+
+---
+
+### Pregunta 9
+
+Si un conjunto $A$ tiene 5 elementos y un conjunto $B$ tiene 7 elementos, ¿cuántos pares ordenados contiene $A \times B$?
+
+a) 12
+b) 30
+c) 35
+d) 49
+
+> **c) 35**
+
+---
+
+### Pregunta 10
+
+Si $A = \{1, 2, 3\}$ y $B = \{x, y\}$, ¿cuántos elementos tiene $B \times A$?
+
+a) 3
+b) 6
+c) 5
+d) 9
+
+> **b) 6**

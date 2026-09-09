@@ -95,3 +95,123 @@ En una app de delivery, la relación "$R$: el restaurante $a$ está disponible p
 
 > [!tip] Relación con el curso
 > Las relaciones binarias son la base de las funciones y del concepto de correspondencia entre variables, clave para entender la relación entre dos variables en inferencia estadística.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué es una relación binaria $R$ entre los conjuntos $A$ y $B$?
+
+a) Una función que asigna cada elemento de $A$ a un solo elemento de $B$
+b) Un subconjunto del producto cartesiano $A \times B$
+c) El conjunto de todos los elementos de $A$ que no tienen imagen en $B$
+d) Una matriz cuadrada de dimensión $|A| \times |B|$
+
+> **b) Un subconjunto del producto cartesiano $A \times B$**
+
+### Pregunta 2
+
+Si $A = \{3, 7\}$ y $B = \{2, 8\}$, ¿pertenecen los pares $(3, 8)$ y $(7, 2)$ al producto cartesiano $A \times B$?
+
+a) Ninguno pertenece
+b) Solo $(7, 2)$ pertenece
+c) Solo $(3, 8)$ pertenece
+d) Ambos pertenecen
+
+> **d) Ambos pertenecen**
+
+### Pregunta 3
+
+Sean $A = \{1, 2, 3\}$ y $B = \{4, 5\}$ con la relación $R = \{(1,4), (1,5), (2,4)\}$. ¿Cuál es el dominio de $R$?
+
+a) $\{4, 5\}$
+b) $\{1, 2, 3\}$
+c) $\{1, 2\}$
+d) $\{3, 4, 5\}$
+
+> **c) $\{1, 2\}$**
+
+### Pregunta 4
+
+En una tienda en línea, la relación "$a$ envía al distrito $b$" vincula las zonas de despacho $A = \{X, Y, Z\}$ con los distritos $B = \{d_1, d_2, d_3\}$. Si el rango de la relación es $\{d_1, d_3\}$, ¿qué significa?
+
+a) Ningún distrito recibe pedidos
+b) Solo los distritos $d_1$ y $d_3$ reciben al menos un envío
+c) Todos los distritos reciben pedidos
+d) Solo la zona $Y$ realiza envíos
+
+> **b) Solo los distritos $d_1$ y $d_3$ reciben al menos un envío**
+
+### Pregunta 5
+
+¿Cuál es la dimensión de la matriz de una relación $R$ entre $A = \{p, q, r\}$ y $B = \{s, t\}$?
+
+a) $2 \times 3$
+b) $3 \times 3$
+c) $3 \times 2$
+d) $2 \times 2$
+
+> **c) $3 \times 2$**
+
+### Pregunta 6
+
+La matriz de la relación $R$ entre $A = \{a, b, c\}$ y $B = \{x, y\}$ es:
+
+M = [[1, 0], [0, 1], [1, 1]]  (filas: a, b, c; columnas: x, y)
+
+¿Cuántos pares contiene $R$?
+
+a) 4
+b) 3
+c) 6
+d) 2
+
+> **a) 4**
+
+### Pregunta 7
+
+Si el elemento $c \in A$ tiene dos flechas salientes en el diagrama sagital (una hacia $x$ y otra hacia $y$), ¿qué puede afirmarse?
+
+a) La relación es necesariamente una función
+b) La relación no puede ser una función
+c) La relación no tiene dominio
+d) La relación está vacía
+
+> **b) La relación no puede ser una función**
+
+### Pregunta 8
+
+Si $A = \{u, v\}$ y $B = \{m, n, p\}$, ¿cuántos pares forman el producto cartesiano $A \times B$?
+
+a) 5
+b) 3
+c) 6
+d) 9
+
+> **c) 6**
+
+### Pregunta 9
+
+En un gimnasio, la relación "$a$ ofrece el servicio $b$" relaciona los paquetes $A = \{Básico, Premium\}$ con los servicios $B = \{Spa, Yoga, Box\}$, con $R = \{(Básico, Spa), (Premium, Yoga), (Premium, Box)\}$. ¿Es $R$ una función?
+
+a) No, porque el elemento $Básico$ tiene dos flechas salientes
+b) No, porque el servicio $Spa$ recibe solo una flecha
+c) Sí, porque cada paquete tiene al menos una salida
+d) No, porque $Premium$ tiene dos flechas salientes
+
+> **d) No, porque $Premium$ tiene dos flechas salientes**
+
+### Pregunta 10
+
+Para $A = \{1, 2\}$, $B = \{3, 4\}$ y $R = \{(1,3), (2,3), (2,4)\}$, ¿cuál es la matriz de la relación?
+
+a) [[1, 1], [1, 0]]
+b) [[1, 0], [1, 1]]
+c) [[0, 1], [1, 1]]
+d) [[1, 0], [0, 1]]
+
+> **b) [[1, 0], [1, 1]]**

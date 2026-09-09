@@ -89,3 +89,137 @@ Una máquina expendedora asigna a cada código de producto ($x$) un único preci
 
 > [!tip] Relación con el curso
 > Las funciones son la base del modelado estadístico: la variable de respuesta es una función de las variables predictoras. Saber si una relación es realmente función evita ambigüedades en regresión.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué define una función $f: A \to B$?
+
+a) Una regla que asigna a algunos elementos de $A$ uno o más elementos de $B$
+b) Una regla de correspondencia que asigna a cada elemento de $A$ exactamente un elemento de $B$
+c) Una relación donde cada elemento de $B$ proviene de al menos un elemento de $A$
+d) Un conjunto de pares ordenados donde la segunda componente puede repetirse
+
+> **b) Una regla de correspondencia que asigna a cada elemento de $A$ exactamente un elemento de $B$**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la condición clave que debe cumplir una relación para ser función?
+
+a) Que el codominio contenga más elementos que el dominio
+b) Que cada $x$ del dominio tenga al menos una imagen en el codominio
+c) Que cada $x$ del dominio tenga un único $y$ en el codominio
+d) Que cada $y$ del codominio provenga de exactamente un $x$
+
+> **c) Que cada $x$ del dominio tenga un único $y$ en el codominio**
+
+---
+
+### Pregunta 3
+
+Si $f(x) = 3x - 2$, ¿cuál es el valor de $f(5)$?
+
+a) 10
+b) 12
+c) 13
+d) 15
+
+> **c) 13**
+
+---
+
+### Pregunta 4
+
+Según la prueba de la línea vertical, ¿cuándo una curva representa la gráfica de una función?
+
+a) Cuando toda línea horizontal la toca en exactamente un punto
+b) Cuando existe al menos una línea vertical que la toca en dos puntos
+c) Cuando toda línea vertical la toca en a lo sumo un punto
+d) Cuando toda línea vertical la toca en exactamente dos puntos
+
+> **c) Cuando toda línea vertical la toca en a lo sumo un punto**
+
+---
+
+### Pregunta 5
+
+La relación $\{(2,1), (2,4), (3,5)\}$ es función del conjunto $\{2,3\}$ en $\{1,4,5\}$.
+
+a) Verdadero
+b) Falso, porque el $y=5$ tiene una sola imagen
+c) Verdadero, porque todos los $x$ tienen imagen
+d) Falso, porque el $x=2$ tiene dos imágenes distintas
+
+> **d) Falso, porque el $x=2$ tiene dos imágenes distintas**
+
+---
+
+### Pregunta 6
+
+La relación $\{(1,3), (4,3), (7,6)\}$ ¿es función?
+
+a) No, porque los valores $x=1$ y $x=4$ comparten la misma imagen $y=3$
+b) Sí, porque cada $x$ tiene un único $y$, aunque dos $x$ distintos compartan imagen
+c) No, porque el $y=6$ solo aparece una vez
+d) No, porque el dominio tiene más elementos que el codominio
+
+> **b) Sí, porque cada $x$ tiene un único $y$, aunque dos $x$ distintos compartan imagen**
+
+---
+
+### Pregunta 7
+
+En la notación $f: A \to B$, ¿qué representa $f(x)$?
+
+a) El conjunto $A$ llamado codominio
+b) El único elemento de $B$ que le corresponde al elemento $x$ de $A$
+c) El conjunto de todos los elementos de $A$
+d) La cantidad de elementos de $B$
+
+> **b) El único elemento de $B$ que le corresponde al elemento $x$ de $A$**
+
+---
+
+### Pregunta 8
+
+Para la función $f(x) = x^2$ con dominio $x \in \{1,2,3\}$, ¿cuál es el valor de $f(3)$?
+
+a) 3
+b) 6
+c) 9
+d) 27
+
+> **c) 9**
+
+---
+
+### Pregunta 9
+
+En un diagrama sagital de una función $f: A \to B$, ¿qué debe cumplir cada elemento de $A$?
+
+a) Tener exactamente una flecha entrante desde $B$
+b) Tener al menos una flecha saliente hacia $B$
+c) Tener exactamente una flecha saliente hacia $B$
+d) No tener ninguna flecha si no está en el dominio
+
+> **c) Tener exactamente una flecha saliente hacia $B$**
+
+---
+
+### Pregunta 10
+
+En una tienda en línea, cada código de producto ($x$) tiene un precio fijo ($y$). Se compra tres veces el código $x_0$ y siempre se paga el mismo monto. ¿Por qué esta relación es función?
+
+a) Porque el precio $y$ es único para todo el catálogo
+b) Porque el mismo código $x_0$ siempre produce el mismo precio $y$, sin importar cuántas veces se compre
+c) Porque los clientes pueden pagar con distintos métodos de pago
+d) Porque el monto total varía según la cantidad de unidades
+
+> **b) Porque el mismo código $x_0$ siempre produce el mismo precio $y$, sin importar cuántas veces se compre**
