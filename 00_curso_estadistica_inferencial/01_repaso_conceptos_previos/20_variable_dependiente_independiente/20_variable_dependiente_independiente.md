@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Variable+dependiente+e+independiente+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1C03X8BImek?si=T5g9QrWnz8oPEPLR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 Se definen la variable independiente (la que se controla o elige) y la dependiente (la que se mide o resulta). Se usa la notación $y = f(x)$ y se analizan ejemplos en experimentos y en regresión lineal.
 
@@ -87,9 +89,50 @@ Al pasar de 3 a 5 horas de estudio, la calificación esperada sube de 29 a 45, u
 
 La progresión confirma la dependencia lineal: cada hora suma 8 puntos, y con $x = 0$ se obtiene el valor base $y = 5$.
 
+**📊 Gráfico — Relación entre horas de estudio y calificación:**
+
+```chart
+type: line
+labels: [0, 1, 2, 3, 4, 5]
+series:
+  - title: "Calificación = 5 + 8x"
+    data: [5, 13, 21, 29, 37, 45]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> **Interpretación:**
+> - **Eje horizontal (X):** Horas de estudio (variable **independiente**)
+> - **Eje vertical (Y):** Calificación final (variable **dependiente**)
+> - La línea sube constantemente porque a más horas, mayor calificación
+> - Pendiente = 8 significa que cada hora adicional suma 8 puntos a la calificación
+
 ## 🌍 Ejemplo de la vida real
 
 En un horno de panadería, el tiempo de horneado ($x$, independiente) se elige y se mide la humedad del pan ($y$, dependiente). Al cambiar el tiempo, cambia la humedad resultante, lo que permite al panadero ajustar la receta según la relación observada. En un gráfico, el tiempo va en el eje horizontal y la humedad en el eje vertical.
+
+**📊 Gráfico — Relación entre tiempo de horneado y humedad del pan:**
+
+```chart
+type: line
+labels: [5, 10, 15, 20, 25, 30]
+series:
+  - title: "Humedad = 95 - 1.5x"
+    data: [87.5, 80, 72.5, 65, 57.5, 50]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> **Interpretación:**
+> - **Eje horizontal (X):** Tiempo de horneado en minutos (variable **independiente**)
+> - **Eje vertical (Y):** Humedad del pan en % (variable **dependiente**)
+> - La línea baja porque más tiempo de horneado reduce la humedad
+> - Pendiente = -1.5 significa que cada minuto adicional reduce la humedad en 1.5%
+> - El panadero usa esta relación para obtener la humedad deseada ajustando el tiempo
 
 > [!tip] Relación con el curso
 > Identificar la variable dependiente e independiente es el primer paso para construir modelos de regresión y para plantear correctamente las hipótesis en pruebas estadísticas.

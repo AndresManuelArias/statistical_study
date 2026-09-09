@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/20_variable_dependiente_independiente/20_variable_dependiente_independiente.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "19_tipos_funciones"
+              "title": "20_variable_dependiente_independiente"
             }
           }
         ]
@@ -83,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "edd47304399d913c",
@@ -190,6 +191,7 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones-20260909102827.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones-20260909100500.json",
@@ -211,7 +213,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams-20260908170622.json",
     "plan_lotes_preguntas.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia-20260908160230.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/10_cardinalidad/10_cardinalidad.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/09_ejercicios_parte2/09_ejercicios_parte2.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/08_ejercicios_parte1/08_ejercicios_parte1.md",
