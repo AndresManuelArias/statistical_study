@@ -102,3 +102,137 @@ Como $Z > 1.96$, hay evidencia de que la campaña aumentó la tasa de conversió
 
 > [!tip] Relación con el curso
 > La distribución muestral de la proporción es el fundamento para intervalos de confianza y pruebas de hipótesis sobre proporciones, complementando la distribución de la media.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué representa la proporción muestral $\hat{p}$?
+
+a) La proporción desconocida de toda la población
+b) La fracción de éxitos observada en una muestra
+c) La desviación estándar de la proporción poblacional
+d) El complemento de la proporción poblacional
+
+> **b) La fracción de éxitos observada en una muestra**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la esperanza matemática de la proporción muestral $\hat{p}$?
+
+a) $p^2$
+b) $p/n$
+c) $p$
+d) $\sqrt{p}$
+
+> **c) $p$**
+
+---
+
+### Pregunta 3
+
+¿Cuál es la fórmula correcta del error estándar de la proporción muestral?
+
+a) $\sigma_{\hat{p}} = \frac{p(1-p)}{n}$
+b) $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$
+c) $\sigma_{\hat{p}} = \frac{\sqrt{p}}{n}$
+d) $\sigma_{\hat{p}} = p \times \frac{1-p}{\sqrt{n}}$
+
+> **b) $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$**
+
+---
+
+### Pregunta 4
+
+Si $p = 0.5$ y $n = 100$, ¿cuál es el error estándar de $\hat{p}$?
+
+a) 0.005
+b) 0.5
+c) 0.05
+d) 0.025
+
+> **c) 0.05**
+
+---
+
+### Pregunta 5
+
+Si $p = 0.2$ y $n = 50$, ¿cuál es el error estándar de $\hat{p}$?
+
+a) 0.057
+b) 0.032
+c) 0.040
+d) 0.028
+
+> **a) 0.057**
+
+---
+
+### Pregunta 6
+
+De una muestra de $n = 120$ personas, 30 aprueban una política. ¿Cuál es el valor de $\hat{p}$?
+
+a) 0.30
+b) 0.25
+c) 0.20
+d) 0.40
+
+> **b) 0.25**
+
+---
+
+### Pregunta 7
+
+¿Cuáles son las condiciones para que la distribución de $\hat{p}$ sea aproximadamente normal?
+
+a) $n \geq 30$ y desviación estándar poblacional conocida
+b) $np \geq 10$ y $n(1-p) \geq 10$
+c) $p \geq 0.5$ y $n \geq 50$
+d) $n \geq 100$ y $p \leq 0.3$
+
+> **b) $np \geq 10$ y $n(1-p) \geq 10$**
+
+---
+
+### Pregunta 8
+
+¿Qué ventaja tiene el error estándar de la proporción sobre el de la media?
+
+a) No requiere conocer la desviación estándar poblacional
+b) Siempre es menor que el error estándar de la media
+c) No depende del tamaño de muestra
+d) Es un cálculo exacto, nunca es una aproximación
+
+> **a) No requiere conocer la desviación estándar poblacional**
+
+---
+
+### Pregunta 9
+
+En una tienda en línea con $p = 0.40$ y $n = 250$, se observa $\hat{p} = 0.45$. Si el error estándar es 0.0310, ¿cuál es el valor del estadístico Z?
+
+a) 1.25
+b) 2.10
+c) 1.61
+d) 1.96
+
+> **c) 1.61**
+
+---
+
+### Pregunta 10
+
+Una página web con tasa histórica $p = 0.12$ obtiene $\hat{p} = 0.152$ en una muestra de $n = 500$, con un error estándar de 0.0145. Calculando $Z \approx 2.21$, y usando un nivel de significancia de 0.05, ¿qué se concluye?
+
+a) No hay evidencia suficiente para afirmar un cambio en la tasa
+b) La tasa de conversión disminuyó significativamente
+c) Hay evidencia de que la tasa de conversión aumentó
+d) El tamaño de muestra es insuficiente para concluir algo
+
+> **c) Hay evidencia de que la tasa de conversión aumentó**

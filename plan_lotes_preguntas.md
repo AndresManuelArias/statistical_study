@@ -5,10 +5,10 @@
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 58
-- **Sin preguntas (pendientes):** 11
-- **Total de preguntas actuales:** 580
-- **Meta:** 10 preguntas por carpeta → 110 preguntas nuevas al terminar los lotes pendientes.
+- **Con preguntas:** 61
+- **Sin preguntas (pendientes):** 8
+- **Total de preguntas actuales:** 610
+- **Meta:** 10 preguntas por carpeta → 80 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -80,9 +80,9 @@
 | 56 | `56_muestreo_aleatorio_simple` | 10 | — | ✅ Hecho |
 | 57 | `57_muestreo_aleatorio_estratificado` | 10 | — | ✅ Hecho |
 | 58 | `58_muestreo_conglomerados` | 10 | — | ✅ Hecho |
-| 59 | `59_distribucion_muestral_parte1` | 0 | L7 | ⏳ Pendiente |
-| 60 | `60_teorema_limite_central` | 0 | L7 | ⏳ Pendiente |
-| 61 | `61_distribucion_muestral_parte2` | 0 | L7 | ⏳ Pendiente |
+| 59 | `59_distribucion_muestral_parte1` | 10 | — | ✅ Hecho |
+| 60 | `60_teorema_limite_central` | 10 | — | ✅ Hecho |
+| 61 | `61_distribucion_muestral_parte2` | 10 | — | ✅ Hecho |
 | 62 | `62_introduccion_estadistica_inferencial` | 0 | L8 | ⏳ Pendiente |
 | 63 | `63_prueba_de_hipotesis` | 0 | L8 | ⏳ Pendiente |
 | 64 | `64_pruebas_parametricas_no_parametricas` | 0 | L8 | ⏳ Pendiente |
@@ -183,15 +183,15 @@
 
 **Total de preguntas generadas:** 60
 
-### Lote 7: Distribuciones muestrales y TLC (59-61) ⏳ PENDIENTE
+### Lote 7: Distribuciones muestrales y TLC (59-61) ✔ COMPLETADO
 
 **Carpetas (3):**
 
-- [ ] `59_distribucion_muestral_parte1` (0/10 preguntas)
-- [ ] `60_teorema_limite_central` (0/10 preguntas)
-- [ ] `61_distribucion_muestral_parte2` (0/10 preguntas)
+- [x] `59_distribucion_muestral_parte1` (10/10 preguntas)
+- [x] `60_teorema_limite_central` (10/10 preguntas)
+- [x] `61_distribucion_muestral_parte2` (10/10 preguntas)
 
-**Total de preguntas a generar:** 30 (restantes en este lote)
+**Total de preguntas generadas:** 30
 
 ### Lote 8: Inferencia y pruebas de hipótesis (62-69) ⏳ PENDIENTE
 

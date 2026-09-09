@@ -88,3 +88,119 @@ Un fabricante de refrescos sabe que el contenido de sus botellas sigue una distr
 
 > [!tip] Relación con el curso
 > El Teorema del Límite Central es el pilar más importante de la estadística inferencial: sin él, no podríamos usar distribuciones normales para hacer inferencias sobre medias poblacionales a partir de muestras.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuál es el enunciado central del Teorema del Límite Central?
+
+a) La media muestral siempre tiene la misma distribución que la población
+b) La distribución muestral de la media se aproxima a una normal cuando n es grande, sin importar la forma poblacional
+c) La distribución muestral de la media es exactamente normal solo si la población es normal
+d) La desviación estándar de la población se reduce a la mitad al duplicar el tamaño de muestra
+
+> **b) La distribución muestral de la media se aproxima a una normal cuando n es grande, sin importar la forma poblacional**
+
+### Pregunta 2
+
+¿Cuál es la regla práctica para considerar que n es "suficientemente grande" en la mayoría de las situaciones?
+
+a) $n \geq 10$
+b) $n \geq 30$
+c) $n \geq 100$
+d) $n \geq 5$
+
+> **b) n >= 30**
+
+### Pregunta 3
+
+Si la población original ya tiene distribución normal, ¿qué ocurre con el Teorema del Límite Central?
+
+a) No se puede aplicar porque el teorema requiere poblaciones no normales
+b) Se necesita un tamaño de muestra mínimo de 50 para que funcione
+c) La distribución muestral de la media es exactamente normal para cualquier n
+d) Solo funciona si n es mayor que 30
+
+> **c) La distribución muestral de la media es exactamente normal para cualquier n**
+
+### Pregunta 4
+
+Una población tiene $\mu = 45$ minutos y $\sigma = 15$ minutos. Se extrae una muestra de $n = 49$. ¿Cuál es el error estándar de la media muestral?
+
+a) 15 minutos
+b) 2.143 minutos
+c) 0.214 minutos
+d) 7.5 minutos
+
+> **b) 2.143 minutos**
+
+### Pregunta 5
+
+Si se duplica el tamaño de muestra de una población con $\sigma = 10$, el error estándar:
+
+a) Se reduce a la mitad
+b) Se reduce a $\sigma / \sqrt{2} \approx 0.707 \sigma$
+c) No cambia
+d) Se duplica
+
+> **b) Se reduce a sigma / sqrt(2) approx 0.707 sigma**
+
+### Pregunta 6
+
+¿Cuál es la única condición matemática necesaria para que el Teorema del Límite Central sea aplicable?
+
+a) Que la población sea simétrica
+b) Que la varianza poblacional exista y sea finita
+c) Que la media poblacional sea cero
+d) Que la desviación estándar sea mayor que 1
+
+> **b) Que la varianza poblacional exista y sea finita**
+
+### Pregunta 7
+
+Una población de pesos de frutas es extremadamente sesgada a la izquierda con $\mu = 120$ g y $\sigma = 20$ g. Se toman muestras de $n = 50$. La distribución de $\bar{X}$ será aproximadamente:
+
+a) Sesgada a la izquierda, como la población
+b) Uniforme
+c) Normal con media 120 y error estándar $20 / \sqrt{50}$
+d) Normal con media 120 y error estándar 20
+
+> **c) Normal con media 120 y error estándar 20 / sqrt(50)**
+
+### Pregunta 8
+
+Un fabricante de refrescos mide muestras de $n = 64$ botellas con $\mu = 330$ ml y $\sigma = 8$ ml. Si $\bar{X} = 332$ ml, ¿cuál es el valor del estadístico Z?
+
+a) 1.00
+b) 2.00
+c) 0.25
+d) 16.00
+
+> **b) 2.00**
+
+### Pregunta 9
+
+¿Por qué el Teorema del Límite Central es fundamental para la inferencia estadística?
+
+a) Porque permite calcular la media poblacional exacta sin muestras
+b) Porque garantiza que siempre se necesita una población normal
+c) Porque permite usar distribuciones normales para hacer inferencias sobre medias poblacionales a partir de muestras
+d) Porque elimina la necesidad de recolectar datos
+
+> **c) Porque permite usar distribuciones normales para hacer inferencias sobre medias poblacionales a partir de muestras**
+
+### Pregunta 10
+
+Para la proporción muestral $\hat{p}$, el Teorema del Límite Central es aplicable cuando:
+
+a) $n > 5$ y $p = 0.5$
+b) $np \geq 10$ y $n(1-p) \geq 10$
+c) $n \geq 30$ sin importar el valor de $p$
+d) Siempre, sin restricciones sobre $n$ o $p$
+
+> **b) np >= 10 y n(1-p) >= 10**

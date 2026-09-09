@@ -90,3 +90,137 @@ Si $\bar{X} < 484$ horas (2 errores estándar debajo del centro), se investiga l
 
 > [!tip] Relación con el curso
 > La distribución muestral es el puente entre la estadística descriptiva (lo que observamos en la muestra) y la inferencial (conclusiones sobre la población). Sin ella no podríamos estimar parámetros ni hacer pruebas de hipótesis.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué es la distribución muestral de la media?
+
+a) La distribución de los valores de una muestra
+b) La distribución de todas las posibles medias muestrales de tamaño n
+c) La distribución de la población original
+d) La distribución de las desviaciones estándar muestrales
+
+> **b) La distribución de todas las posibles medias muestrales de tamaño n**
+
+---
+
+### Pregunta 2
+
+¿Qué símbolo representa la media poblacional?
+
+a) $\bar{X}$
+b) $s$
+c) $\mu$
+d) $\sigma$
+
+> **c) $\mu$**
+
+---
+
+### Pregunta 3
+
+La esperanza de la distribución muestral de la media es:
+
+a) $\sigma/\sqrt{n}$
+b) $\mu$
+c) $\sigma$
+d) $n$
+
+> **b) $\mu$**
+
+---
+
+### Pregunta 4
+
+Si una población tiene $\mu=50$ y $\sigma=10$, ¿cuál es el error estándar de la media para $n=25$?
+
+a) 0,4
+b) 1
+c) 2
+d) 5
+
+> **c) 2**
+
+---
+
+### Pregunta 5
+
+Para una población con $\mu=100$ y $\sigma=20$, si se toma una muestra de $n=16$, el error estándar es:
+
+a) 1,25
+b) 5
+c) 8
+d) 20
+
+> **b) 5**
+
+---
+
+### Pregunta 6
+
+Si la desviación estándar poblacional es $\sigma=15$ y el tamaño de la muestra es $n=36$, el error estándar de la media es:
+
+a) 0,417
+b) 2,5
+c) 6
+d) 15
+
+> **b) 2,5**
+
+---
+
+### Pregunta 7
+
+¿Qué ocurre con el error estándar de la media cuando aumenta el tamaño de la muestra $n$?
+
+a) Aumenta
+b) Disminuye
+c) Se mantiene igual
+d) Depende de la media poblacional
+
+> **b) Disminuye**
+
+---
+
+### Pregunta 8
+
+Si la población es normal, la distribución muestral de la media se distribuye como:
+
+a) Normal con media $\mu$ y desviación $\sigma$
+b) Normal con media $\mu$ y desviación $\sigma/\sqrt{n}$
+c) Uniforme entre 0 y n
+d) Normal con media $\sigma$ y desviación $\mu$
+
+> **b) Normal con media $\mu$ y desviación $\sigma/\sqrt{n}$**
+
+---
+
+### Pregunta 9
+
+En el ejemplo del archivo, con $\mu=70$, $\sigma=12$, $n=36$, si se obtiene $\bar{X}=65$, ¿cuántos errores estándar está del centro?
+
+a) 2
+b) 2,5
+c) 3
+d) 5
+
+> **b) 2,5**
+
+---
+
+### Pregunta 10
+
+¿Por qué es importante la distribución muestral de la media?
+
+a) Permite conocer el valor exacto de $\mu$
+b) Permite cuantificar la incertidumbre al estimar $\mu$ con una muestra
+c) Es la distribución de los datos originales
+d) Solo se usa en poblaciones normales
+
+> **b) Permite cuantificar la incertidumbre al estimar $\mu$ con una muestra**
