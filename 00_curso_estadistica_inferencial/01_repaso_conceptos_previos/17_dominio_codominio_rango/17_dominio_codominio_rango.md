@@ -14,6 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera (video en inglés)
 - **Enlace:** https://www.youtube.com/results?search_query=Domain+Codomain+and+Range+Inferential+Statistics
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gWV8lS6MQDg?si=pdO72DduhAfa3sF_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 📋 Resumen
 Se distinguen los tres conjuntos que intervienen en una función: dominio (valores de entrada), codominio (conjunto de salida definido) y rango (valores que realmente se alcanzan). Se analizan sus diferencias con ejemplos numéricos y gráficos.

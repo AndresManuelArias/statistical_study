@@ -15,6 +15,7 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Relations+Inferential+Statistics
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aP02DNAAQHY?si=BgQMBlkgKpl3JIcC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 Una relación binaria es un subconjunto del producto cartesiano que vincula elementos de dos conjuntos. Se estudian su dominio, su rango, y su representación mediante diagramas sagitales y matrices.
 

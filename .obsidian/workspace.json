@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "16_relaciones"
+              "title": "17_dominio_codominio_rango"
             }
           }
         ]
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "edd47304399d913c",
@@ -191,28 +190,28 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/13_ejercicios_parte3/13_ejercicios_parte3.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones-20260909084701.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones-20260909084102.json",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos-20260909082249.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos-20260909082042.json",
     "__pycache__/evaluador.cpython-312.pyc.135870841886256",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams-20260909080205.json",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/13_ejercicios_parte3/13_ejercicios_parte3.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/12_ejercicios_parte3/12_ejercicios_parte3.md",
     "README.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/README.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams-20260908170622.json",
     "plan_lotes_preguntas.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia-20260908160230.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia-20260908155835.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/10_cardinalidad/10_cardinalidad.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/10_cardinalidad/10_cardinalidad-20260908151531.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/09_ejercicios_parte2/09_ejercicios_parte2.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/09_ejercicios_parte2/09_ejercicios_parte2-20260908145001.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/08_ejercicios_parte1/08_ejercicios_parte1.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/07_diferencia/07_diferencia.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/06_union/06_union.md",

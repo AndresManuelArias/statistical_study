@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Producto+de+conjuntos+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sECAR7-_RXs?si=rxhV65uqsH_TQyqC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 El producto cartesiano combina todos los elementos de dos conjuntos en pares ordenados. Se estudia su definición, la representación de los pares, la propiedad de que el orden sí importa, y el cálculo de su cardinalidad como producto de las cardinalidades de los conjuntos originales.
 
