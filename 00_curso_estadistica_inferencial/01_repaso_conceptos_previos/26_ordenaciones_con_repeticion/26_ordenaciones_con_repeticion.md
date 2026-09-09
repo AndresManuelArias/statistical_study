@@ -14,6 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Ordenaciones+con+repeticion+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AzNc3zF2RcM?si=PbDGzVH0swBOQ0gi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 📋 Resumen
 Las ordenaciones con repetición (variaciones con repetición) se usan cuando seleccionamos $r$ elementos de $n$ tipos, el **orden importa** y los elementos **pueden repetirse**. La fórmula es $VR(n,r) = n^r$.
