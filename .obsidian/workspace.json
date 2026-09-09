@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "17_dominio_codominio_rango"
+              "title": "19_tipos_funciones"
             }
           }
         ]
@@ -190,11 +190,15 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones-20260909102827.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones-20260909100500.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango-20260909094842.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/13_ejercicios_parte3/13_ejercicios_parte3.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones-20260909084701.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones-20260909084102.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos-20260909082249.json",
@@ -208,9 +212,7 @@
     "plan_lotes_preguntas.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia-20260908160230.json",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia-20260908155835.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/10_cardinalidad/10_cardinalidad.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/10_cardinalidad/10_cardinalidad-20260908151531.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/09_ejercicios_parte2/09_ejercicios_parte2.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/08_ejercicios_parte1/08_ejercicios_parte1.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/07_diferencia/07_diferencia.md",
@@ -224,8 +226,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/61_distribucion_muestral_parte2/61_distribucion_muestral_parte2.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/60_teorema_limite_central/60_teorema_limite_central.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/68_aplicacion_prueba_estadistica/68_aplicacion_prueba_estadistica.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/59_distribucion_muestral_parte1/59_distribucion_muestral_parte1.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/67_hipotesis_nula_alternativa/67_hipotesis_nula_alternativa.md",
     "mi_entorno/lib/python3.12/site-packages/material/templates/assets/images/favicon.png",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/mkdocs/img/grid.png",

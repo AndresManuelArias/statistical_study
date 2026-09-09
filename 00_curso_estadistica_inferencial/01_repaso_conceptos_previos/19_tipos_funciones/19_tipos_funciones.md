@@ -15,6 +15,9 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Tipos+de+funciones+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HOnTwNhII_k?si=nhqTKdWDfQQ1FjPl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ## 📋 Resumen
 Se clasifican las funciones según su comportamiento: inyectivas, sobreyectivas, biyectivas, constantes, de identidad, crecientes y decrecientes. Cada tipo se caracteriza por su dominio, codominio y la relación entre entradas y salidas.
 
@@ -28,6 +31,21 @@ $$f(a) = f(b) \implies a = b$$
 
 Dos elementos distintos tienen siempre imágenes distintas. La misma salida nunca proviene de dos entradas diferentes.
 
+**📊 Visualización — $f(x) = 2x$ (inyectiva):**
+
+```chart
+type: scatter
+labels: [1, 2, 3]
+series:
+  - title: "Puntos de f(x) = 2x"
+    data: [2, 4, 6]
+width: 90%
+labelColors: false
+beginAtZero: true
+```
+
+> Cada valor de entrada (1, 2, 3) tiene una única imagen (2, 4, 6). No hay dos entradas que compartan la misma salida.
+
 ### Función sobreyectiva
 
 El rango coincide con el codominio:
@@ -36,9 +54,41 @@ $$\text{Rango}(f) = \text{Codominio}(f)$$
 
 Todo elemento del codominio es alcanzado por algún elemento del dominio.
 
+**📊 Visualización — $f(x) = \sin(x)$ con codominio $[-1, 1]$ (sobreyectiva):**
+
+```chart
+type: line
+labels: [0, 1, 2, 3, 4, 5, 6]
+series:
+  - title: "f(x) = sin(x)"
+    data: [0, 0.84, 0.91, 0.14, -0.76, -0.96, -0.28]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> La onda cubre todos los valores del rango $[-1, 1]$. Cada punto en el codominio es alcanzado por al menos un punto del dominio. Note que múltiples valores de X comparten el mismo Y, pero todos los valores posibles del codominio son alcanzados.
+
 ### Función biyectiva
 
 Es simultáneamente **inyectiva y sobreyectiva**. Establece una correspondencia uno a uno entre dominio y codominio, y es la única que garantiza función inversa.
+
+**📊 Visualización — $f(x) = 2x$ (biyectiva):**
+
+```chart
+type: line
+labels: [1, 2, 3]
+series:
+  - title: "f(x) = 2x (biyectiva)"
+    data: [2, 4, 6]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> Cada elemento del dominio se asocia con exactamente un elemento del codominio, y viceversa. Existe una correspondencia perfecta (relación uno a uno).
 
 ### Función constante
 
@@ -48,6 +98,22 @@ $$f(x) = c \quad \text{para todo } x$$
 
 Su gráfica es una recta horizontal.
 
+**📊 Visualización — $f(x) = 3$ (constante):**
+
+```chart
+type: line
+labels: [-2, -1, 0, 1, 2, 3]
+series:
+  - title: "f(x) = 3"
+    data: [3, 3, 3, 3, 3, 3]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> Independientemente del valor de entrada, la salida siempre es la misma (en este caso 3). La gráfica es una línea horizontal.
+
 ### Función identidad
 
 A cada elemento le hace corresponder sí mismo:
@@ -56,12 +122,46 @@ $$I(x) = x$$
 
 Es siempre biyectiva y su gráfica es la bisectriz del primer y tercer cuadrante.
 
+**📊 Visualización — $f(x) = x$ (identidad):**
+
+```chart
+type: line
+labels: [-2, -1, 0, 1, 2]
+series:
+  - title: "f(x) = x"
+    data: [-2, -1, 0, 1, 2]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> Cada entrada es igual a su salida. La gráfica es la diagonal del cuadrante, donde $y = x$. Es siempre biyectiva porque es inyectiva y sobreyectiva.
+
 ### Funciones crecientes y decrecientes
 
 - **Creciente**: si $x_1 < x_2$ entonces $f(x_1) \leq f(x_2)$.
 - **Estrictamente creciente**: $x_1 < x_2 \implies f(x_1) < f(x_2)$.
 - **Decreciente**: si $x_1 < x_2$ entonces $f(x_1) \geq f(x_2)$.
 - **Estrictamente decreciente**: $x_1 < x_2 \implies f(x_1) > f(x_2)$.
+
+**📊 Visualización — Comparación de creciente y decreciente:**
+
+```chart
+type: line
+labels: [0, 1, 2, 3, 4]
+series:
+  - title: "f(x) = x (creciente)"
+    data: [0, 1, 2, 3, 4]
+  - title: "g(x) = -x + 4 (decreciente)"
+    data: [4, 3, 2, 1, 0]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> La función $f(x) = x$ es **estrictamente creciente** (sube conforme avanza X). La función $g(x) = -x + 4$ es **estrictamente decreciente** (baja conforme avanza X).
 
 ### Tabla resumen
 
@@ -89,6 +189,22 @@ $$f(1)=2,\quad f(2)=4,\quad f(3)=6$$
 
 **Paso 4 — Conclusión:** Es inyectiva y sobreyectiva, luego es **biyectiva**. Además es estrictamente creciente, porque si $x_1 < x_2$ entonces $2x_1 < 2x_2$.
 
+**📊 Gráfico:**
+
+```chart
+type: line
+labels: [1, 2, 3]
+series:
+  - title: "f(x) = 2x (biyectiva)"
+    data: [2, 4, 6]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> Observa cómo cada punto del dominio mapea a un único punto del codominio sin repeticiones, y todos los valores del codominio son alcanzados. La línea sube continuamente (creciente).
+
 ## 💡 Segundo ejemplo: función no inyectiva
 
 **Problema:** Clasificar $g(x) = x^2$ con dominio $\{-2,0,2\}$ y codominio $\{0,4\}$.
@@ -100,6 +216,22 @@ $$f(1)=2,\quad f(2)=4,\quad f(3)=6$$
 **Paso 3 — ¿Sobreyectiva?** Sí: el rango $\{0,4\}$ coincide con el codominio.
 
 **Conclusión:** Es sobreyectiva pero no inyectiva, así que tampoco es biyectiva.
+
+**📊 Gráfico:**
+
+```chart
+type: line
+labels: [-2, -1, 0, 1, 2]
+series:
+  - title: "g(x) = x² (no inyectiva)"
+    data: [4, 1, 0, 1, 4]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> Observa la forma de parábola: dos valores distintos del dominio ($-2$ y $2$) comparten la misma imagen ($4$). Esto viola la condición de inyectividad. Sin embargo, el rango $\{0, 1, 4\}$ coincide con el codominio, por lo que es sobreyectiva.
 
 ## 🌍 Ejemplo de la vida real
 

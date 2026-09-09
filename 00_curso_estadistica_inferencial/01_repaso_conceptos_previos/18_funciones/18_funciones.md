@@ -14,6 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera (video en inglés)
 - **Enlace:** https://www.youtube.com/results?search_query=Functions+Inferential+Statistics
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pnERuP_JQRQ?si=QimSz32vX85Y3qBQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 📋 Resumen
 Se define formalmente qué es una función: una regla de correspondencia que asigna a cada elemento del dominio uno y solo un elemento del codominio. Se introduce la notación $f(x)$ y la prueba de la línea vertical.
