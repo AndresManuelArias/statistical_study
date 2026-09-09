@@ -6,7 +6,23 @@ tags:
   - estadistica-inferencial
   - conjuntos-o-probabilidad
 ---
-
+```chart
+type: bar
+labels: [32]
+series:
+  - title: 322
+    data: []
+  - title: 232
+    data: [33]
+tension: 0.2
+width: 80%
+labelColors: false
+fill: true
+beginAtZero: true
+bestFit: false
+bestFitTitle: undefined
+bestFitNumber: 0
+```
 # 📘 Dominio, codominio y rango
 
 ## 🎬 Datos del video
@@ -48,6 +64,8 @@ Por ejemplo, en $g(x) = \sqrt{x}$ solo tiene sentido $x \geq 0$.
 
 ### Notación funcional
 
+
+
 Si $f(x) = y$, entonces:
 
 - $x \in$ dominio
@@ -76,6 +94,27 @@ $$\text{Codominio} = \mathbb{Z}$$
 $$\text{Rango} = \{0, 1, 4, 9\}$$
 
 **Conclusión:** El rango $\{0,1,4,9\}$ es un subconjunto propio del codominio $\mathbb{Z}$; la función no es sobreyectiva, porque, por ejemplo, $5 \in \mathbb{Z}$ pero $5 \notin \text{Rango}(f)$.
+
+### 📊 Visualización de $f(x) = x^2$
+
+```chart
+type: line
+labels: [-3, -2, -1, 0, 1, 2, 3]
+series:
+  - title: "f(x) = x²"
+    data: [9, 4, 1, 0, 1, 4, 9]
+tension: 0.4
+width: 100%
+labelColors: false
+fill: false
+beginAtZero: true
+bestFit: false
+```
+
+> **Interpretación del gráfico:**
+> - **Eje horizontal (X):** Dominio = $\{-3, -2, -1, 0, 1, 2, 3\}$
+> - **Eje vertical (Y):** Rango = $\{0, 1, 4, 9\}$ (solo los valores alcanzados)
+> - La parábola muestra que puntos diferentes del dominio pueden mapear al mismo valor del rango (ej: $f(-2) = f(2) = 4$)
 
 ## 💡 Segundo ejemplo: comparar dominio y codominio
 
