@@ -5,10 +5,10 @@
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 21
-- **Sin preguntas (pendientes):** 48
-- **Total de preguntas actuales:** 210
-- **Meta:** 10 preguntas por carpeta → 480 preguntas nuevas al terminar los lotes pendientes.
+- **Con preguntas:** 29
+- **Sin preguntas (pendientes):** 40
+- **Total de preguntas actuales:** 290
+- **Meta:** 10 preguntas por carpeta → 400 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -51,14 +51,14 @@
 | 27 | `27_ordenaciones_sin_repeticion` | 0 | L2 | ⏳ Pendiente |
 | 28 | `28_muestras_sin_orden_con_reemplazo` | 0 | L2 | ⏳ Pendiente |
 | 29 | `29_analisis_combinatorio` | 0 | L2 | ⏳ Pendiente |
-| 30 | `30_combinaciones` | 0 | L3 | ⏳ Pendiente |
-| 31 | `31_ejercicios_analisis_combinatorio` | 0 | L3 | ⏳ Pendiente |
-| 32 | `32_probabilidad_geometrica` | 0 | L3 | ⏳ Pendiente |
-| 33 | `33_probabilidad_frecuentista` | 0 | L3 | ⏳ Pendiente |
-| 34 | `34_probabilidad_axiomatica` | 0 | L3 | ⏳ Pendiente |
-| 35 | `35_probabilidad_condicional` | 0 | L3 | ⏳ Pendiente |
-| 36 | `36_eventos_independientes` | 0 | L3 | ⏳ Pendiente |
-| 37 | `37_eventos_excluyentes_mutuamente_excluyentes` | 0 | L3 | ⏳ Pendiente |
+| 30 | `30_combinaciones` | 10 | — | ✅ Hecho |
+| 31 | `31_ejercicios_analisis_combinatorio` | 10 | — | ✅ Hecho |
+| 32 | `32_probabilidad_geometrica` | 10 | — | ✅ Hecho |
+| 33 | `33_probabilidad_frecuentista` | 10 | — | ✅ Hecho |
+| 34 | `34_probabilidad_axiomatica` | 10 | — | ✅ Hecho |
+| 35 | `35_probabilidad_condicional` | 10 | — | ✅ Hecho |
+| 36 | `36_eventos_independientes` | 10 | — | ✅ Hecho |
+| 37 | `37_eventos_excluyentes_mutuamente_excluyentes` | 10 | — | ✅ Hecho |
 | 38 | `38_variables_aleatorias` | 0 | L4 | ⏳ Pendiente |
 | 39 | `39_distribuciones_de_probabilidad` | 0 | L4 | ⏳ Pendiente |
 | 40 | `40_tipos_distribuciones_probabilidad` | 0 | L4 | ⏳ Pendiente |
@@ -111,22 +111,7 @@
 
 **Total de preguntas a generar en este lote:** 80
 
-### Lote 2: Combinatoria y probabilidad avanzada (30-37)
-
-**Carpetas (8):**
-
-- [ ] `30_combinaciones` (0/10 preguntas)
-- [ ] `31_ejercicios_analisis_combinatorio` (0/10 preguntas)
-- [ ] `32_probabilidad_geometrica` (0/10 preguntas)
-- [ ] `33_probabilidad_frecuentista` (0/10 preguntas)
-- [ ] `34_probabilidad_axiomatica` (0/10 preguntas)
-- [ ] `35_probabilidad_condicional` (0/10 preguntas)
-- [ ] `36_eventos_independientes` (0/10 preguntas)
-- [ ] `37_eventos_excluyentes_mutuamente_excluyentes` (0/10 preguntas)
-
-**Total de preguntas a generar en este lote:** 80
-
-### Lote 3: Variables aleatorias y distribuciones I (38-44)
+### Lote 2: Variables aleatorias y distribuciones I (38-44)
 
 **Carpetas (7):**
 
@@ -140,7 +125,7 @@
 
 **Total de preguntas a generar en este lote:** 70
 
-### Lote 4: Distribuciones II (45-52)
+### Lote 3: Distribuciones II (45-52)
 
 **Carpetas (8):**
 
@@ -155,7 +140,7 @@
 
 **Total de preguntas a generar en este lote:** 80
 
-### Lote 5: Muestreo (53-58)
+### Lote 4: Muestreo (53-58)
 
 **Carpetas (6):**
 
@@ -168,7 +153,7 @@
 
 **Total de preguntas a generar en este lote:** 60
 
-### Lote 6: Distribuciones muestrales y TLC (59-61)
+### Lote 5: Distribuciones muestrales y TLC (59-61)
 
 **Carpetas (3):**
 
@@ -178,7 +163,7 @@
 
 **Total de preguntas a generar en este lote:** 30
 
-### Lote 7: Inferencia y pruebas de hipótesis (62-69)
+### Lote 6: Inferencia y pruebas de hipótesis (62-69)
 
 **Carpetas (8):**
 

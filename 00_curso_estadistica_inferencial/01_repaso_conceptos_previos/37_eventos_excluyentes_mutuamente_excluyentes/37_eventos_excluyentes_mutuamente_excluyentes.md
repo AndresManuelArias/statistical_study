@@ -92,3 +92,137 @@ No hay riesgo de contar doble porque un residuo no puede ser plástico y vidrio 
 
 > [!tip] Relación con el curso
 > Identificar eventos como disjuntos simplifica cálculos y es esencial al construir distribuciones de probabilidad, donde cada resultado tiene una probabilidad única sin solapes.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué significa que dos eventos $A$ y $B$ sean mutuamente excluyentes?
+
+a) $P(A \cup B) = P(A) \times P(B)$
+b) $A \cap B = \emptyset$
+c) $P(A|B) = P(B|A)$
+d) $A \cup B = \Omega$
+
+> **b) $A \cap B = \emptyset$**
+
+---
+
+### Pregunta 2
+
+Si $A$ y $B$ son mutuamente excluyentes, ¿cuál es la expresión correcta para $P(A \cup B)$?
+
+a) $P(A) + P(B) - P(A \cap B)$
+b) $P(A) \times P(B)$
+c) $P(A) + P(B)$
+d) $1 - P(A) \cdot P(B)$
+
+> **c) $P(A) + P(B)$**
+
+---
+
+### Pregunta 3
+
+Se lanza un dado equilibrado de 6 caras. Si $A$ = "sale un número par" y $B$ = "sale un número impar", ¿cuál es $P(A \cup B)$?
+
+a) $\frac{5}{6}$
+b) $1$
+c) $\frac{3}{6}$
+d) $\frac{6}{6} + \frac{6}{6}$
+
+> **b) $1$**
+
+---
+
+### Pregunta 4
+
+Dos eventos $A$ y $B$ son mutuamente excluyentes con $P(A) = 0,3$ y $P(B) = 0,2$. ¿Cuál es $P(A \cup B)$?
+
+a) $0,06$
+b) $0,5$
+c) $0,25$
+d) $0,6$
+
+> **b) $0,5$**
+
+---
+
+### Pregunta 5
+
+En un diagrama de Venn, ¿cómo se representan dos eventos que son mutuamente excluyentes?
+
+a) Dos círculos completamente superpuestos
+b) Un solo círculo dentro de otro
+c) Dos círculos separados sin zona de solape
+d) Dos círculos con una intersección parcial
+
+> **c) Dos círculos separados sin zona de solape**
+
+---
+
+### Pregunta 6
+
+¿Qué condición adicional a la exclusión mutua debe cumplirse para que la suma de probabilidades de eventos disjuntos sea igual a 1?
+
+a) Los eventos deben ser independientes
+b) Los eventos deben ser exhaustivos, es decir $A_1 \cup A_2 \cup \cdots \cup A_n = \Omega$
+c) Todos los eventos deben tener la misma probabilidad
+d) Los eventos deben tener exactamente dos resultados cada uno
+
+> **b) Los eventos deben ser exhaustivos, es decir $A_1 \cup A_2 \cup \cdots \cup A_n = \Omega$**
+
+---
+
+### Pregunta 7
+
+Si $P(A) > 0$ y $P(B) > 0$, y $A$ y $B$ son mutuamente excluyentes, ¿qué se puede concluir sobre su independencia?
+
+a) Son independientes porque no tienen resultados en común
+b) Son independientes porque $P(A \cap B) = 0$
+c) Nunca son independientes
+d) Siempre son independientes
+
+> **c) Nunca son independientes**
+
+---
+
+### Pregunta 8
+
+Dos eventos $A$ y $B$ **no** son disjuntos y se sabe que $P(A) = 0,6$, $P(B) = 0,4$ y $P(A \cap B) = 0,2$. ¿Cuál es $P(A \cup B)$?
+
+a) $1,0$
+b) $0,8$
+c) $0,24$
+d) $0,2$
+
+> **b) $0,8$**
+
+---
+
+### Pregunta 9
+
+En la planta de reciclaje del ejemplo, los residuos se clasifican en plástico (45%), papel (30%) y vidrio (25%). ¿Cuál es la probabilidad de recibir plástico o vidrio?
+
+a) $0,45 \times 0,25 = 0,1125$
+b) $1 - (0,45 + 0,25) = 0,30$
+c) $0,45 + 0,25 = 0,70$
+d) $0,45 + 0,30 + 0,25 = 1,00$
+
+> **c) $0,45 + 0,25 = 0,70$**
+
+---
+
+### Pregunta 10
+
+Se lanzan dos dados equilibrados. Evento $A$: la suma es par. Evento $B$: la suma es 7. Si $P(A) = \frac{18}{36} = 0,5$ y $P(B) = \frac{6}{36} \approx 0,1667$, ¿son mutuamente excluyentes?
+
+a) Sí, porque $A$ y $B$ describen características distintas de la suma
+b) No, porque la suma 7 es impar, por lo que $A \cap B = \emptyset$; pero en realidad ambos pueden ocurrir: un resultado con suma 7 es siempre impar, así que efectivamente $A \cap B = \emptyset$
+c) Sí, porque la suma 7 siempre es impar, por lo que $A \cap B = \emptyset$
+d) No, porque existen resultados donde la suma es par y 7 a la vez
+
+> **c) Sí, porque la suma 7 siempre es impar, por lo que $A \cap B = \emptyset$**

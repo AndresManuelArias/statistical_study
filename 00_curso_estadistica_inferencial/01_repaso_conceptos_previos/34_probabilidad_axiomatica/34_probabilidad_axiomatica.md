@@ -95,3 +95,127 @@ $P(\text{sin defecto}) = 1 - P(\text{defecto}) = 1 - 0.08 = 0.92$ (complemento)
 
 > [!tip] Relación con el curso
 > Los axiomas de Kolmogórov son los cimientos de toda la inferencia estadística. Cada prueba de hipótesis, intervalo de confianza y modelo probabilístico se construye sobre estas reglas básicas.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+¿Cuál es el enunciado del primer axioma de Kolmogórov (no negatividad)?
+
+a) P(A) ≥ 0 para todo evento A
+b) P(A) > 0 para todo evento A distinto de ∅
+c) P(A) = 1 para todo evento A
+d) 0 < P(A) < 1 para todo evento A
+
+> **a) P(A) ≥ 0 para todo evento A**
+
+---
+
+### Pregunta 2
+¿Qué establece el axioma de normalización?
+
+a) P(A) + P(A^c) = 1
+b) P(∅) = 0
+c) P(Ω) = 1
+d) P(A ∪ B) = P(A) + P(B)
+
+> **c) P(Ω) = 1**
+
+---
+
+### Pregunta 3
+Si A y B son eventos disjuntos con P(A) = 0,4 y P(B) = 0,3, ¿cuál es P(A ∪ B)?
+
+a) 0,7
+b) 0,12
+c) 0,1
+d) 0,82
+
+> **a) 0,7**
+
+---
+
+### Pregunta 4
+Si P(A) = 0,35, ¿cuál es P(A^c)?
+
+a) 0,65
+b) 0,35
+c) 1,35
+d) 0
+
+> **a) 0,65**
+
+---
+
+### Pregunta 5
+¿Qué condición deben cumplir dos eventos para poder aplicar la aditividad directa del axioma 3 (sin usar la fórmula de la unión general)?
+
+a) Que P(A) ≠ P(B)
+b) Que A ⊆ B
+c) Que A ∩ B = ∅
+d) Que A ∪ B = Ω
+
+> **c) Que A ∩ B = ∅**
+
+---
+
+### Pregunta 6
+¿Cuál es la probabilidad del evento vacío según los axiomas?
+
+a) 1
+b) 0
+c) No está definida
+d) Depende del experimento
+
+> **b) 0**
+
+---
+
+### Pregunta 7
+Si P(A) = 0,6 y P(A ∩ B) = 0,2, ¿cuál es la probabilidad mínima que puede tener P(A ∪ B)?
+
+a) 0,4
+b) 0,6
+c) 0,8
+d) 1,0
+
+> **b) 0,6**
+
+---
+
+### Pregunta 8
+Si $A \subseteq B$ y P(A) = 0,3, ¿cuál de las siguientes afirmaciones es siempre verdadera?
+
+a) P(B) = 0,3
+b) P(B) ≥ 0,3
+c) P(B) ≤ 0,3
+d) P(B) = 1 - 0,3
+
+> **b) P(B) ≥ 0,3**
+
+---
+
+### Pregunta 9
+¿Qué componente de la terna de Kolmogórov representa la colección cerrada bajo complementos y uniones numerables?
+
+a) Ω
+b) P
+c) F
+d) A
+
+> **c) F**
+
+---
+
+### Pregunta 10
+Un auditor clasifica piezas como "sin defecto" (P = 0,92) o "con defecto" (P = 0,08). ¿Qué propiedad se usa para calcular P(sin defecto) a partir de P(con defecto)?
+
+a) Axioma 1 (no negatividad)
+b) Axioma 2 (normalización)
+c) Complemento: P(sin defecto) = 1 - P(defecto)
+d) Monotonía
+
+> **c) Complemento: P(sin defecto) = 1 - P(defecto)**

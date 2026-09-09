@@ -94,3 +94,137 @@ Más de 4 mil formas de elegir el once inicial.
 
 > [!tip] Relación con el curso
 > Las combinaciones se usan constantemente en probabilidad para contar muestras posibles sin orden, como en el muestreo sin reposición, un pilar de la inferencia estadística.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué representa una combinación $C(n,r)$?
+
+a) El número de formas de ordenar los $n$ elementos del conjunto
+b) El número de formas de elegir $r$ elementos de $n$ elementos distintos donde el orden NO importa y no hay repetición
+c) El número de formas de elegir $r$ elementos de $n$ elementos distintos donde el orden sí importa
+d) El número de formas de elegir $r$ elementos permitiendo repetir cada elemento varias veces
+
+> **b) El número de formas de elegir $r$ elementos de $n$ elementos distintos donde el orden NO importa y no hay repetición**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la fórmula correcta de una combinación $C(n,r)$?
+
+a) $C(n,r) = \frac{n!}{r!\,(n-r)!}$
+b) $C(n,r) = \frac{n!}{r!}$
+c) $C(n,r) = \frac{n!}{(n-r)!}$
+d) $C(n,r) = \frac{r!}{n!\,(n-r)!}$
+
+> **a) $C(n,r) = \frac{n!}{r!\,(n-r)!}$**
+
+---
+
+### Pregunta 3
+
+Calcular $\binom{4}{2}$.
+
+a) 4
+b) 6
+c) 8
+d) 12
+
+> **b) 6**
+
+---
+
+### Pregunta 4
+
+Calcular $\binom{5}{3}$.
+
+a) 10
+b) 15
+c) 20
+d) 25
+
+> **a) 10**
+
+---
+
+### Pregunta 5
+
+¿Cuál de las siguientes combinaciones es igual a $\binom{10}{3}$?
+
+a) $\binom{10}{2}$
+b) $\binom{3}{10}$
+c) $\binom{10}{7}$
+d) $\binom{7}{10}$
+
+> **c) $\binom{10}{7}$**
+
+---
+
+### Pregunta 6
+
+¿Cómo se relaciona una combinación con la variación $V(n,r)$?
+
+a) $C(n,r) = V(n,r) \times r!$
+b) $C(n,r) = \frac{V(n,r)}{r!}$
+c) $C(n,r)$ y $V(n,r)$ siempre son iguales
+d) $C(n,r) = n! - V(n,r)$
+
+> **b) $C(n,r) = \frac{V(n,r)}{r!}$**
+
+---
+
+### Pregunta 7
+
+¿Cuánto vale la combinación $\binom{n}{1}$?
+
+a) 0
+b) 1
+c) $n$
+d) $n!$
+
+> **c) $n$**
+
+---
+
+### Pregunta 8
+
+Se quieren elegir 3 de 10 estudiantes para formar un comité. ¿Cuántas combinaciones posibles hay?
+
+a) 720
+b) 30
+c) 60
+d) 120
+
+> **d) 120**
+
+---
+
+### Pregunta 9
+
+En una lotería un jugador marca 6 números de un total de 45. ¿Cuántas combinaciones posibles hay?
+
+a) 8,145,060
+b) 5,864,443,200
+c) 720
+d) 45
+
+> **a) 8,145,060**
+
+---
+
+### Pregunta 10
+
+Un director de fútbol elige 11 jugadores de una plantilla de 16. ¿Cuántos equipos iniciales distintos puede formar?
+
+a) 524,160
+b) 4,368
+c) 120
+d) 16
+
+> **b) 4,368**

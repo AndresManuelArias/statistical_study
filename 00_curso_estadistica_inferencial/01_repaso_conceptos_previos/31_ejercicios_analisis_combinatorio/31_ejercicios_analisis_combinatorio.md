@@ -120,3 +120,135 @@ En una **tienda de juguetes**, un niño quiere comprar **6 juguetes** de entre 4
 
 > [!tip] Relación con el curso
 > Elegir la técnica combinatoria correcta es el paso previo para calcular probabilidades. En inferencia estadística, contar correctamente los casos favorables y posibles es fundamental para estimaciones y pruebas de hipótesis.
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuántas contraseñas de 4 caracteres se pueden crear con 26 letras (sin distinción mayúsculas/minúsculas) si las letras pueden repetirse?
+
+a) $26 \times 25 \times 24 \times 23$
+b) $26^4 = 456\,976$
+c) $26 \times 4 = 104$
+d) $4^{26}$
+
+> **b) $26^4 = 456\,976$**
+
+---
+
+### Pregunta 2
+
+De 8 personas, ¿cuántas comisiones de 3 se pueden formar si el orden de selección no importa?
+
+a) $P(8,3) = 336$
+b) $C(8,3) = 56$
+c) $8^3 = 512$
+d) $8 \times 3 = 24$
+
+> **b) $C(8,3) = 56$**
+
+---
+
+### Pregunta 3
+
+Calcule $5!$:
+
+a) $125$
+b) $60$
+c) $120$
+d) $25$
+
+> **c) $120$**
+
+---
+
+### Pregunta 4
+
+De 10 colores disponibles, ¿de cuántas formas se pueden pintar 3 franjas en una bandera si no se permite repetir colores y el orden importa?
+
+a) $C(10,3) = 120$
+b) $10^3 = 1000$
+c) $P(10,3) = 720$
+d) $10 \times 3 = 30$
+
+> **c) $P(10,3) = 720$**
+
+---
+
+### Pregunta 5
+
+¿Cuántas formas hay de elegir 4 libros de entre 7 disponibles, sin importar el orden?
+
+a) $P(7,4) = 840$
+b) $7^4 = 2\,401$
+c) $\binom{7}{4} = 35$
+d) $7 \times 4 = 28$
+
+> **c) $\binom{7}{4} = 35$**
+
+---
+
+### Pregunta 6
+
+Un menú ofrece 4 entradas, 5 platos principales y 3 postres. ¿Cuántos menús completos (un ítem de cada categoría) se pueden armar?
+
+a) $4 + 5 + 3 = 12$
+b) $C(12,3) = 220$
+c) $P(12,3) = 1\,320$
+d) $4 \times 5 \times 3 = 60$
+
+> **d) $4 \times 5 \times 3 = 60$**
+
+---
+
+### Pregunta 7
+
+¿Cuántas palabras de 5 letras se pueden formar con las letras A, B, C, D y E usando cada letra exactamente una vez?
+
+a) $5^5 = 3\,125$
+b) $C(5,5) = 1$
+c) $5! = 120$
+d) $P(5,2) = 20$
+
+> **c) $5! = 120$**
+
+---
+
+### Pregunta 8
+
+En una mesa redonda con 6 asientos, ¿cuántas formas hay de sentar 6 personas si dos disposiciones que difieren solo por una rotación se consideran iguales?
+
+a) $6! = 720$
+b) $5! = 120$
+c) $C(6,6) = 1$
+d) $6 \times 5 = 30$
+
+> **b) $5! = 120$**
+
+---
+
+### Pregunta 9
+
+Se tienen 3 tipos de bebidas y un cliente puede llevar cuántas quiera de cada una (incluyendo cero) hasta completar un paquete de 4. ¿Cuántas formas hay de elegir el paquete?
+
+a) $3^4 = 81$
+b) $P(3,4)$ no está definido
+c) $\binom{6}{4} = 15$
+d) $\binom{3+4-1}{4} = \binom{6}{4} = 15$
+
+> **d) $\binom{3+4-1}{4} = \binom{6}{4} = 15$**
+
+---
+
+### Pregunta 10
+
+De un grupo de 6 personas, se quiere elegir un presidente y un secretario (la persona no puede ocupar ambos cargos). ¿Cuántas formas hay?
+
+a) $C(6,2) = 15$
+b) $6^2 = 36$
+c) $P(6,2) = 30$
+d) $6 \times 2 = 12$
+
+> **c) $P(6,2) = 30$**

@@ -91,3 +91,137 @@ Incluso con una prueba positiva, la probabilidad real de enfermedad es solo ~51.
 
 > [!tip] Relación con el curso
 > La probabilidad condicional es esencial en inferencia para construir modelos predictivos, entender la regresión y aplicar el Teorema de Bayes en actualización de estimaciones.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuál es la fórmula correcta de la probabilidad condicional $P(A|B)$?
+
+a) $P(A \cap B) \cdot P(B)$
+b) $\frac{P(A \cap B)}{P(B)}$
+c) $\frac{P(A)}{P(B)}$
+d) $P(A \cup B) - P(B)$
+
+> **b) $\frac{P(A \cap B)}{P(B)}$**
+
+---
+
+### Pregunta 2
+
+Si $P(A \cap B) = 0.2$ y $P(B) = 0.5$, ¿cuál es $P(A|B)$?
+
+a) 0.10
+b) 0.25
+c) 0.40
+d) 1.00
+
+> **c) 0.40**
+
+---
+
+### Pregunta 3
+
+Según la regla del producto, ¿cuál de las siguientes expresiones es igual a $P(A \cap B)$?
+
+a) $P(A|B) \cdot P(A)$
+b) $P(B|A) \cdot P(A)$
+c) $P(A) + P(B)$
+d) $P(A|B) + P(B|A)$
+
+> **b) $P(B|A) \cdot P(A)$**
+
+---
+
+### Pregunta 4
+
+Al condicionar por un evento $B$ con $P(B) > 0$, ¿qué ocurre con el espacio muestral?
+
+a) Se mantiene intacto y no cambia
+b) Se reduce al evento $B$
+c) Se amplía para incluir eventos adicionales
+d) Se convierte en el evento complementario de $B$
+
+> **b) Se reduce al evento $B$**
+
+---
+
+### Pregunta 5
+
+Si $P(B) = 0$, ¿qué sucede con la probabilidad condicional $P(A|B)$?
+
+a) Vale 0
+b) Vale $P(A)$
+c) No está definida
+d) Vale 1
+
+> **c) No está definida**
+
+---
+
+### Pregunta 6
+
+En un dado de seis caras, sean $A = \{2\}$ y $B = \{1, 2, 3\}$. ¿Cuál es $P(A|B)$?
+
+a) $\frac{1}{6}$
+b) $\frac{1}{3}$
+c) $\frac{1}{2}$
+d) $\frac{2}{3}$
+
+> **b) $\frac{1}{3}$**
+
+---
+
+### Pregunta 7
+
+Una fábrica recibe piezas de dos proveedores: el Proveedor 1 ($60\%$ de las piezas, $5\%$ defectuosas) y el Proveedor 2 ($40\%$ de las piezas, $3\%$ defectuosas). ¿Cuál es la probabilidad total de defecto $P(D)$?
+
+a) 0.080
+b) 0.042
+c) 0.040
+d) 0.035
+
+> **b) 0.042**
+
+---
+
+### Pregunta 8
+
+¿Para qué sirve el Teorema de Bayes?
+
+a) Para calcular la intersección de dos eventos independientes
+b) Para invertir el condicionamiento: obtener $P(B|A)$ a partir de $P(A|B)$
+c) Para determinar si dos eventos son mutuamente excluyentes
+d) Para calcular la unión de múltiples eventos
+
+> **b) Para invertir el condicionamiento: obtener $P(B|A)$ a partir de $P(A|B)$**
+
+---
+
+### Pregunta 9
+
+Si $P(A \cap B) = \frac{3}{8}$ y $P(B) = \frac{1}{2}$, ¿cuál es $P(A|B)$?
+
+a) $\frac{3}{16}$
+b) $\frac{3}{4}$
+c) $\frac{1}{4}$
+d) $\frac{1}{8}$
+
+> **b) $\frac{3}{4}$**
+
+---
+
+### Pregunta 10
+
+En el ejemplo de prueba diagnóstica del material, la probabilidad de enfermedad dado un resultado positivo es solo ~51.35% a pesar de que la sensibilidad es 95%. ¿Cuál es la razón principal?
+
+a) La sensibilidad de la prueba es demasiado baja
+b) La baja prevalencia de la enfermedad en la población
+c) La especificidad de la prueba es del 100%
+d) La fórmula de probabilidad condicional no se aplica en medicina
+
+> **b) La baja prevalencia de la enfermedad en la población**

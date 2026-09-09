@@ -101,3 +101,137 @@ La probabilidad de que una variable uniforme $U(a,b)$ caiga en un intervalo $[c,
 $$P(c \le X \le d) = \frac{d - c}{b - a}$$
 
 Esto es idéntico al cálculo geométrico de longitud favorable entre longitud total.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué tipo de espacio muestral requiere la probabilidad geométrica?
+
+a) Un conjunto finito y discreto de resultados
+b) Un intervalo continuo o una región del espacio con medida (longitud, área o volumen)
+c) Un conjunto numerable e infinito
+d) Una tabla de frecuencias absolutas
+
+> **b) Un intervalo continuo o una región del espacio con medida (longitud, área o volumen)**
+
+---
+
+### Pregunta 2
+
+¿Cómo se calcula la probabilidad geométrica cuando el espacio muestral es un área?
+
+a) Se cuenta el número de resultados favorables entre el total de resultados posibles
+b) Se divide la longitud favorable entre la longitud total
+c) Se divide el área favorable entre el área total del espacio muestral
+d) Se multiplica la probabilidad de cada punto por el número de puntos
+
+> **c) Se divide el área favorable entre el área total del espacio muestral**
+
+---
+
+### Pregunta 3
+
+Un rectángulo mide $6 \text{ cm} \times 10 \text{ cm}$ y contiene un cuadrado favorable de $6 \text{ cm} \times 6 \text{ cm}$. ¿Cuál es la probabilidad geométrica de caer en el cuadrado?
+
+a) $0,6$
+b) $0,36$
+c) $0,67$
+d) $0,5$
+
+> **a) $0,6$**
+
+---
+
+### Pregunta 4
+
+Si un autobús pasa cada 20 minutos y llegas al paradero en un momento al azar, ¿cuál es la probabilidad de esperar menos de 5 minutos?
+
+a) $0,10$
+b) $0,33$
+c) $0,25$
+d) $0,20$
+
+> **c) $0,25$**
+
+---
+
+### Pregunta 5
+
+¿Qué propiedad es válida para cualquier evento $A$ en probabilidad geométrica?
+
+a) $P(A) = 1$ siempre
+b) $0 \leq P(A) \leq 1$
+c) $P(A) > 0$ siempre
+d) $P(A) = 0,5$ en promedio
+
+> **b) $0 \leq P(A) \leq 1$**
+
+---
+
+### Pregunta 6
+
+Un dardo se lanza al azar en un círculo de radio $10$ cm que contiene un anillo interno de radio $4$ cm. El área del anillo (región entre el círculo grande y el pequeño) es $\pi(10)^2 - \pi(4)^2 = 84\pi$. ¿Cuál es la probabilidad de que el dardo caiga en el anillo?
+
+a) $0,16$
+b) $0,20$
+c) $0,84$
+d) $0,40$
+
+> **c) $0,84$**
+
+---
+
+### Pregunta 7
+
+Si se elige un punto al azar en un intervalo $[0, 8]$ y se define el evento $A = \{X \geq 3\}$, la probabilidad geométrica $P(A)$ es:
+
+a) $\frac{5}{8} = 0,625$
+b) $\frac{3}{8} = 0,375$
+c) $\frac{1}{2} = 0,5$
+d) $\frac{8}{3} \approx 2,67$
+
+> **a) $\frac{5}{8} = 0,625$**
+
+---
+
+### Pregunta 8
+
+Un semáforo tiene un ciclo total de 120 segundos distribuidos en: 50 s en rojo, 30 s en amarillo y 40 s en verde. Si llegas al cruce en un instante al azar, ¿cuál es la probabilidad de que el semáforo esté en verde o amarillo?
+
+a) $\frac{2}{3} \approx 0,667$
+b) $\frac{1}{3} \approx 0,333$
+c) $\frac{7}{12} \approx 0,583$
+d) $\frac{1}{2} = 0,5$
+
+> **c) $\frac{7}{12} \approx 0,583$**
+
+---
+
+### Pregunta 9
+
+Una cuerda mide 15 cm y se corta en un punto al azar. ¿Cuál es la probabilidad de que el fragmento más largo mida más de 10 cm?
+
+a) $\frac{2}{3} \approx 0,667$
+b) $\frac{1}{3} \approx 0,333$
+c) $\frac{3}{5} = 0,6$
+d) $\frac{1}{2} = 0,5$
+
+> **a) $\frac{2}{3} \approx 0,667$**
+
+---
+
+### Pregunta 10
+
+¿Cuál es la diferencia fundamental entre la probabilidad clásica (equiprobable) y la probabilidad geométrica?
+
+a) La clásica usa áreas, mientras que la geométrica usa conteos
+b) La clásica requiere que todos los resultados sean equally likely y se usa un cociente de conteos; la geométrica trabaja con medidas continuas (longitud, área, volumen)
+c) La geométrica solo sirve para circunferencias y círculos
+d) No hay diferencia; son exactamente lo mismo
+
+> **b) La clásica requiere que todos los resultados sean equally likely y se usa un cociente de conteos; la geométrica trabaja con medidas continuas (longitud, área, volumen)**

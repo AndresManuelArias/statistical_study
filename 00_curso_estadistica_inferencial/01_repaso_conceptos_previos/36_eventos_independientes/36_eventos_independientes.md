@@ -88,3 +88,137 @@ Es decir, ~4.94% de probabilidad de que al menos uno falle.
 
 > [!tip] Relación con el curso
 > La independencia es clave para construir modelos estadísticos como la distribución binomial (ensayos Bernoulli independientes) y para simplificar cálculos en pruebas de hipótesis.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuál es la condición matemática que define que dos eventos $A$ y $B$ son independientes?
+
+a) $P(A \cup B) = P(A) + P(B)$
+b) $P(A \cap B) = P(A) \cdot P(B)$
+c) $P(A \cap B) = P(A) + P(B)$
+d) $P(A \cap B) = 0$
+
+> **b) $P(A \cap B) = P(A) \cdot P(B)$**
+
+---
+
+### Pregunta 2
+
+Si dos eventos $A$ y $B$ son independientes y $P(B) > 0$, ¿qué se puede afirmar?
+
+a) $P(A|B) = P(B)$
+b) $P(A|B) = 0$
+c) $P(A|B) = P(A)$
+d) $P(A|B) = 1$
+
+> **c) $P(A|B) = P(A)$**
+
+---
+
+### Pregunta 3
+
+Se lanzan dos monedas equilibradas. Sea $A$ = "la primera moneda sale cara" y $B$ = "la segunda moneda sale cara". ¿Cuál es $P(A \cap B)$?
+
+a) $\frac{1}{2}$
+b) $\frac{1}{3}$
+c) $\frac{1}{4}$
+d) $\frac{1}{6}$
+
+> **c) $\frac{1}{4}$**
+
+---
+
+### Pregunta 4
+
+Dos eventos disjuntos (mutuamente excluyentes) con $P(A) > 0$ y $P(B) > 0$ ¿pueden ser independientes?
+
+a) Sí, siempre son independientes.
+b) Sí, solo si $P(A) = P(B)$.
+c) No, nunca pueden ser independientes.
+d) No, solo si $P(A \cup B) = 1$.
+
+> **c) No, nunca pueden ser independientes.**
+
+---
+
+### Pregunta 5
+
+Dos eventos $A$ y $B$ son independientes con $P(A) = 0,5$ y $P(B) = 0,2$. ¿Cuál es $P(A \cap B)$?
+
+a) $0,7$
+b) $0,25$
+c) $0,1$
+d) $0,05$
+
+> **c) $0,1$**
+
+---
+
+### Pregunta 6
+
+¿Cuál de las siguientes afirmaciones describe correctamente la diferencia entre eventos independientes y eventos disjuntos?
+
+a) Independientes: no pueden ocurrir a la vez; Disjuntos: la ocurrencia de uno no afecta al otro.
+b) Independientes: $P(A \cap B) = 0$; Disjuntos: $P(A \cap B) = P(A) \cdot P(B)$.
+c) Independientes: la ocurrencia de uno no afecta la probabilidad del otro; Disjuntos: no pueden ocurrir simultáneamente.
+d) Independientes y disjuntos son conceptos equivalentes.
+
+> **c) Independientes: la ocurrencia de uno no afecta la probabilidad del otro; Disjuntos: no pueden ocurrir simultáneamente.**
+
+---
+
+### Pregunta 7
+
+En una fábrica, el componente A tiene probabilidad de falla $P(A) = 0,02$ y el componente B tiene $P(B) = 0,03$. Si las fallas son independientes, ¿cuál es la probabilidad de que ambos fallen simultáneamente?
+
+a) $0,05$
+b) $0,006$
+c) $0,0006$
+d) $0,0003$
+
+> **c) $0,0006$**
+
+---
+
+### Pregunta 8
+
+¿Cuántos métodos equivalentes para verificar la independencia de dos eventos se describen en el apunte?
+
+a) 2
+b) 3
+c) 4
+d) 5
+
+> **b) 3**
+
+---
+
+### Pregunta 9
+
+Para tres eventos $A$, $B$, $C$, la independencia múltiple requiere que se verifiquen todas las condiciones de pares y además:
+
+a) $P(A \cap B \cap C) = P(A) + P(B) + P(C)$
+b) $P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C)$
+c) $P(A \cap B \cap C) = 0$
+d) $P(A \cap B \cap C) = \max(P(A), P(B), P(C))$
+
+> **b) $P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C)$**
+
+---
+
+### Pregunta 10
+
+En el ejemplo del apunte con dos dados, $A$ = "sale 4 en el dado 1" y $B$ = "sale un número par en el dado 2". ¿Cuál es el valor de $P(A \cap B)$?
+
+a) $\frac{1}{6}$
+b) $\frac{1}{8}$
+c) $\frac{1}{12}$
+d) $\frac{1}{36}$
+
+> **c) $\frac{1}{12}$**

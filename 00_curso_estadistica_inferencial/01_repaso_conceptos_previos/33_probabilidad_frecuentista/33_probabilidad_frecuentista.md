@@ -92,3 +92,127 @@ Si la tasa del mes anterior fue 0.020, la mejora es significativa y justifica in
 
 > [!tip] Relación con el curso
 > La probabilidad frecuentista es el puente entre datos observados y teoría estadística. En inferencia, usamos muestras para estimar probabilidades poblacionales, asumiendo que las frecuencias muestrales se aproximan a las verdaderas proporciones.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué mide la frecuencia relativa en la probabilidad frecuentista?
+a) La probabilidad teórica exacta de un evento en un solo experimento
+b) La proporción de veces que un evento ocurre en n repeticiones de un experimento
+c) La diferencia entre el valor observado y el valor esperado
+d) El número total de resultados posibles en un experimento aleatorio
+
+> **b) La proporción de veces que un evento ocurre en n repeticiones de un experimento**
+
+---
+
+### Pregunta 2
+
+Si lanzamos un dado 600 veces y observamos 306 resultados pares, ¿cuál es la frecuencia relativa?
+a) 0.4900
+b) 0.5083
+c) 0.5100
+d) 0.5200
+
+> **c) 0.5100**
+
+---
+
+### Pregunta 3
+
+Según la interpretación frecuentista, ¿qué representa la probabilidad de un evento A?
+a) El número de veces que A ocurre dividido por el número total de eventos posibles
+b) El límite al que converge la frecuencia relativa cuando el número de repeticiones tiende a infinito
+c) La frecuencia relativa observada en un experimento único
+d) La suma de todas las frecuencias absolutas de los eventos complementarios
+
+> **b) El límite al que converge la frecuencia relativa cuando el número de repeticiones tiende a infinito**
+
+---
+
+### Pregunta 4
+
+¿Qué establece la Ley Fuerte de los Grandes Números?
+a) Que la frecuencia relativa siempre será exactamente igual a la probabilidad teórica
+b) Que con suficientes repeticiones, la frecuencia relativa converge a la probabilidad con probabilidad 1
+c) Que la desviación estándar de la frecuencia relativa crece con el número de muestras
+d) Que solo se pueden calcular probabilidades para eventos con un número finito de resultados
+
+> **b) Que con suficientes repeticiones, la frecuencia relativa converge a la probabilidad con probabilidad 1**
+
+---
+
+### Pregunta 5
+
+Una fábrica inspecciona 10.000 piezas y encuentra 150 defectuosas. ¿Cuál es la frecuencia relativa de defectos?
+a) 0.0015
+b) 0.015
+c) 0.15
+d) 1.5
+
+> **b) 0.015**
+
+---
+
+### Pregunta 6
+
+Según la fórmula de convergencia empírica, ¿cómo se comporta el error de la frecuencia relativa cuando se incrementa el número de ensayos?
+a) Disminuye proporcionalmente a $1/n$
+b) Permanece constante sin importar el tamaño de la muestra
+c) Crece a medida que se realizan más repeticiones
+d) Se reduce como $1/\sqrt{n}$
+
+> **d) Se reduce como $1/\sqrt{n}$**
+
+---
+
+### Pregunta 7
+
+La interpretación frecuentista de la probabilidad tiene varias restricciones importantes. ¿Cuál de las siguientes NO es una limitación reconocida?
+a) No puede asignar probabilidades a eventos que ocurren una sola vez
+b) Requiere un número infinito de repeticiones para una definición precisa
+c) No permite usar frecuencias observadas como estimadores de probabilidades poblacionales
+d) No ofrece fundamento para creencias subjetivas previas a la observación
+
+> **c) No permite usar frecuencias observadas como estimadores de probabilidades poblacionales**
+
+---
+
+### Pregunta 8
+
+Si una moneda se lanza 1000 veces y se observan 517 caras, ¿cuál es la frecuencia relativa?
+a) 0.517
+b) 0.483
+c) 0.500
+d) 0.571
+
+> **a) 0.517**
+
+---
+
+### Pregunta 9
+
+En la perspectiva frecuentista, ¿qué caracteriza fundamentalmente la probabilidad?
+a) Es una cualidad inherente a cada evento individual
+b) Es un comportamiento estable que emerge de la repetición
+c) Es una medida de incertidumbre subjetiva del observador
+d) Es la cantidad de resultados favorables entre todos los posibles en un solo experimento
+
+> **b) Es un comportamiento estable que emerge de la repetición**
+
+---
+
+### Pregunta 10
+
+Si la desviación típica de la frecuencia relativa es $\sigma_{f_n} \approx \sqrt{\frac{p(1-p)}{n}}$, al duplicar el número de ensayos ($n$), ¿qué ocurre con la desviación típica?
+a) Se reduce aproximadamente a la mitad
+b) Se reduce en un factor de $\sqrt{2}$
+c) Permanece igual
+d) Se duplica
+
+> **b) Se reduce en un factor de $\sqrt{2}$**
