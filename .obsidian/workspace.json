@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/20_variable_dependiente_independiente/20_variable_dependiente_independiente.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/24_espacio_muestral_eventos/24_espacio_muestral_eventos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20_variable_dependiente_independiente"
+              "title": "24_espacio_muestral_eventos"
             }
           }
         ]
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "edd47304399d913c",
@@ -191,6 +190,15 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/23_experimentos_aleatorios_deterministas/23_experimentos_aleatorios_deterministas.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/23_experimentos_aleatorios_deterministas/23_experimentos_aleatorios_deterministas-20260909115202.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/22_conjuntos_finitos_infinitos/22_conjuntos_finitos_infinitos.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/21_funcion_biyectiva/21_funcion_biyectiva.md",
+    "__pycache__/evaluador.cpython-312.pyc.130685641918512",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/22_conjuntos_finitos_infinitos/22_conjuntos_finitos_infinitos-20260909113513.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/21_funcion_biyectiva/21_funcion_biyectiva-20260909111206.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/20_variable_dependiente_independiente/20_variable_dependiente_independiente.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/20_variable_dependiente_independiente/20_variable_dependiente_independiente-20260909105935.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones-20260909102827.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones.md",
@@ -203,14 +211,9 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/13_ejercicios_parte3/13_ejercicios_parte3.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones-20260909084701.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones-20260909084102.json",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos-20260909082249.json",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos-20260909082042.json",
-    "__pycache__/evaluador.cpython-312.pyc.135870841886256",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams-20260909080205.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/12_ejercicios_parte3/12_ejercicios_parte3.md",
     "README.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/README.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams-20260908170622.json",
     "plan_lotes_preguntas.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/11_conjunto_potencia/11_conjunto_potencia.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/10_cardinalidad/10_cardinalidad.md",
@@ -223,10 +226,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/03_conjunto_vacio_universal/03_conjunto_vacio_universal.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/02_subconjuntos/02_subconjuntos.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/62_introduccion_estadistica_inferencial/62_introduccion_estadistica_inferencial.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/69_zonas_rechazo_toma_decision/69_zonas_rechazo_toma_decision.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/61_distribucion_muestral_parte2/61_distribucion_muestral_parte2.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/60_teorema_limite_central/60_teorema_limite_central.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/68_aplicacion_prueba_estadistica/68_aplicacion_prueba_estadistica.md",
     "mi_entorno/lib/python3.12/site-packages/material/templates/assets/images/favicon.png",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/mkdocs/img/grid.png",

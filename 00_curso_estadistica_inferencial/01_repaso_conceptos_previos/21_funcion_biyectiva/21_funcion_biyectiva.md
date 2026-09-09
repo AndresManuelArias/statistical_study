@@ -15,6 +15,9 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Funci%C3%B3n+biyectiva+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JL0eWS1cUYQ?si=mip9iyR2T8htkd1j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 Una función biyectiva combina ser inyectiva y sobreyectiva, estableciendo una correspondencia uno a uno entre dominio y codominio. Esta propiedad garantiza la existencia de una función inversa, útil para "deshacer" transformaciones.
 

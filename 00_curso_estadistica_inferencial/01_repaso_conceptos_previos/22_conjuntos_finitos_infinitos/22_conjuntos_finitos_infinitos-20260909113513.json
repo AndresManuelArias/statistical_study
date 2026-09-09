@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "22_conjuntos_finitos_infinitos-20260909113513",
+  "titulo": "Evaluación 22_conjuntos_finitos_infinitos",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué define un conjunto como finito?",
+      "opciones": [
+        "a) No tiene elementos",
+        "b) Tiene un número finito de elementos",
+        "c) Tiene cardinalidad $\\aleph_0$",
+        "d) Se puede poner en biyección con $\\mathbb{R}$"
+      ],
+      "respuesta_correcta": "b) Tiene un número finito de elementos",
+      "respuesta_usuario": "b) Tiene un número finito de elementos",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es la cardinalidad del conjunto de los números naturales $\\mathbb{N}$?",
+      "opciones": [
+        "a) $\\mathfrak{c}$",
+        "b) $\\aleph_0$",
+        "c) $0$",
+        "d) $\\infty$"
+      ],
+      "respuesta_correcta": "b) $\\aleph_0$",
+      "respuesta_usuario": "b) $\\aleph_0$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Cuál de los siguientes conjuntos es numerable?",
+      "opciones": [
+        "a) $[0,1]$",
+        "b) $(0,1)$",
+        "c) $\\mathbb{Q}$",
+        "d) $\\mathbb{R}$"
+      ],
+      "respuesta_correcta": "c) $\\mathbb{Q}$",
+      "respuesta_usuario": "c) $\\mathbb{Q}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "¿Qué relación existe entre la cardinalidad de los reales $\\mathbb{R}$ y la de los naturales $\\mathbb{N}$?",
+      "opciones": [
+        "a) $|\\mathbb{R}| = |\\mathbb{N}|$",
+        "b) $|\\mathbb{R}| < |\\mathbb{N}|$",
+        "c) $|\\mathbb{R}| > |\\mathbb{N}|$",
+        "d) No se pueden comparar"
+      ],
+      "respuesta_correcta": "c) $|\\mathbb{R}| > |\\mathbb{N}|$",
+      "respuesta_usuario": "c) $|\\mathbb{R}| > |\\mathbb{N}|$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué representa la notación $\\mathfrak{c}$?",
+      "opciones": [
+        "a) La cardinalidad del conjunto vacío",
+        "b) La cardinalidad del continuo, igual a $|[0,1]|$ y $|\\mathbb{R}|$",
+        "c) La cardinalidad de los números racionales",
+        "d) La cardinalidad de los números enteros"
+      ],
+      "respuesta_correcta": "b) La cardinalidad del continuo, igual a $|[0,1]|$ y $|\\mathbb{R}|$",
+      "respuesta_usuario": "b) La cardinalidad del continuo, igual a $|[0,1]|$ y $|\\mathbb{R}|$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Cómo se clasifica el conjunto de los días de la semana?",
+      "opciones": [
+        "a) Infinito numerable",
+        "b) Infinito no numerable",
+        "c) Finito",
+        "d) No es un conjunto"
+      ],
+      "respuesta_correcta": "c) Finito",
+      "respuesta_usuario": "c) Finito",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿El producto cartesiano $\\mathbb{N} \\times \\mathbb{N}$ es numerable o no numerable?",
+      "opciones": [
+        "a) No numerable, porque tiene dos dimensiones",
+        "b) Numerable, porque se puede recorrer en diagonal",
+        "c) Finito, porque es un producto de dos conjuntos",
+        "d) No numerable, porque tiene cardinalidad $\\mathfrak{c}$"
+      ],
+      "respuesta_correcta": "b) Numerable, porque se puede recorrer en diagonal",
+      "respuesta_usuario": "b) Numerable, porque se puede recorrer en diagonal",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿El conjunto potencia de los naturales $\\mathcal{P}(\\mathbb{N})$ es numerable o no numerable?",
+      "opciones": [
+        "a) Numerable, porque los subconjuntos se pueden listar",
+        "b) Numerable, porque $\\mathbb{N}$ es numerable",
+        "c) No numerable, tiene cardinalidad $\\mathfrak{c}$",
+        "d) Finito, porque $\\mathbb{N}$ tiene un número limitado de subconjuntos"
+      ],
+      "respuesta_correcta": "c) No numerable, tiene cardinalidad $\\mathfrak{c}$",
+      "respuesta_usuario": "c) No numerable, tiene cardinalidad $\\mathfrak{c}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Qué sucede con la unión de dos conjuntos numerables?",
+      "opciones": [
+        "a) Siempre es no numerable",
+        "b) Puede ser finita, numerable o no numerable",
+        "c) Es numerable",
+        "d) Solo es numerable si los conjuntos son iguales"
+      ],
+      "respuesta_correcta": "c) Es numerable",
+      "respuesta_usuario": "c) Es numerable",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "¿Qué cardinalidad tiene el conjunto vacío $\\varnothing$?",
+      "opciones": [
+        "a) $\\aleph_0$",
+        "b) $\\mathfrak{c}$",
+        "c) $\\infty$",
+        "d) $0$"
+      ],
+      "respuesta_correcta": "d) $0$",
+      "respuesta_usuario": "d) $0$",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 100.0,
+    "total_correctas": 10,
+    "total_preguntas": 10
+  }
+}

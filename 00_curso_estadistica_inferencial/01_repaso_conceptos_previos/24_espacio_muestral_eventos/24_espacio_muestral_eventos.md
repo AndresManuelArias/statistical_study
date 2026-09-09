@@ -15,6 +15,9 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Espacio+muestral+y+eventos+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/55iT3Huv7Es?si=HybVm-kiHXB21FLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 El espacio muestral $\Omega$ es el conjunto de todos los resultados posibles de un experimento aleatorio. Los eventos son subconjuntos de $\Omega$ y se clasifican en simples, compuestos, imposibles y ciertos.
 

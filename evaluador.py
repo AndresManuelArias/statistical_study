@@ -33,8 +33,9 @@ _LATEX_UNICODE = [
     # Orden importante: \infty antes de \in, y símbolos de cardinalidad
     (r"\infty", "\u221e"),
     (r"\sim", "~"),
-    (r"\aleph", "\u2135"),
-    (r"\mathfrak{c}", "c"),
+    (r"\aleph_0", "alef cero"),
+    (r"\aleph", "alef"),
+    (r"\mathfrak{c}", "c (continuo)"),
     (r"\circ", "\u00b0"),
     # Símbolos de conjuntos y lógica
     (r"\mathbb{N}", "\u2115"),

@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Conjuntos+finitos+e+infinitos+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JqIAzcs0VJ0?si=8jl3KtjcSfqXeHDD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 Se distinguen los conjuntos finitos, los infinitos numerables y los infinitos no numerables mediante su cardinalidad. Se introduce la comparación de infinitos: hay infinitos "más grandes" que otros, lo que impacta en el tratamiento de espacios muestrales.
 
