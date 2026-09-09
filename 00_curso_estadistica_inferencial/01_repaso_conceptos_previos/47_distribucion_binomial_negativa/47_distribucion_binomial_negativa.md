@@ -100,3 +100,137 @@ El gerente debe planificar al menos 25 visitas para alcanzar la meta, pero con u
 
 > [!tip] Relación con el curso
 > La binomial negativa se utiliza en la inferencia para modelar muestras hasta un número fijo de éxitos, y aparece en pruebas de hipótesis sobre proporciones cuando el número de éxitos se fija de antemano.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Cuál es la función de masa de probabilidad de una distribución binomial negativa con parámetros $r$ y $p$?
+
+a) $P(X=k)=\binom{k}{r} p^r (1-p)^k$
+b) $P(X=k)=\binom{k-1}{r-1} p^r (1-p)^{k-r}$
+c) $P(X=k)=\binom{k}{r-1} p^{r-1} (1-p)^{k-r}$
+d) $P(X=k)=\binom{k-1}{r} p^{r+1} (1-p)^{k-r-1}$
+
+> **b) $P(X=k)=\binom{k-1}{r-1} p^r (1-p)^{k-r}$**
+
+---
+
+### Pregunta 2
+
+Si $X$ representa el número total de ensayos para obtener el $r$-ésimo éxito, ¿cuál es el valor mínimo que puede tomar $X$?
+
+a) 0
+b) 1
+c) $r - 1$
+d) $r$
+
+> **d) $r$**
+
+---
+
+### Pregunta 3
+
+¿Qué distribución se obtiene como caso particular de la binomial negativa cuando $r=1$?
+
+a) Distribución de Bernoulli
+b) Distribución de Poisson
+c) Distribución geométrica
+d) Distribución binomial
+
+> **c) Distribución geométrica**
+
+---
+
+### Pregunta 4
+
+Si $X \sim BN(r=3,  p=0,5)$, ¿cuál es el número esperado de ensayos necesarios para obtener el tercer éxito?
+
+a) 3
+b) 4,5
+c) 6
+d) 9
+
+> **c) 6**
+
+---
+
+### Pregunta 5
+
+¿Cuál es la varianza de una distribución geométrica con $p=0,5$?
+
+a) 0,5
+b) 1
+c) 2
+d) 4
+
+> **b) 1**
+
+---
+
+### Pregunta 6
+
+En una distribución binomial negativa con $r=2$ y $p=0,5$, ¿cuál es la probabilidad de que se necesiten exactamente 3 ensayos para obtener el segundo éxito?
+
+a) 0,125
+b) 0,25
+c) 0,375
+d) 0,5
+
+> **b) 0,25**
+
+---
+
+### Pregunta 7
+
+Una tienda necesita vender $r=5$ electrodomésticos premium y la probabilidad de concretar la venta en cada visita es $p=0,20$. ¿Cuántas visitas se esperan en promedio para alcanzar la meta?
+
+a) 5
+b) 10
+c) 20
+d) 25
+
+> **d) 25**
+
+---
+
+### Pregunta 8
+
+¿Cuál es la notación correcta para indicar que una variable aleatoria $X$ sigue una distribución binomial negativa con parámetros $r$ y $p$?
+
+a) $X \sim \text{B}(r, p)$
+b) $X \sim \text{Geo}(r, p)$
+c) $X \sim BN(r, p)$
+d) $X \sim \text{NB}(p, r)$
+
+> **c) $X \sim BN(r, p)$**
+
+---
+
+### Pregunta 9
+
+En una distribución binomial negativa con $r=2$ y $p=0,5$, ¿cuál es la varianza?
+
+a) 2
+b) 3
+c) 4
+d) 6
+
+> **c) 4**
+
+---
+
+### Pregunta 10
+
+Un equipo de captación de clientes contacta personas hasta que $r=4$ acepten una prueba gratuita. Si la probabilidad de aceptación en cada contacto es $p=0,20$, ¿cuántos contactos se esperan hacer en promedio?
+
+a) 4
+b) 10
+c) 16
+d) 20
+
+> **d) 20**

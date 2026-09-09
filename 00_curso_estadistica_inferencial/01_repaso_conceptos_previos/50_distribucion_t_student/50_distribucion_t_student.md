@@ -105,3 +105,137 @@ Como $|t| = 2.50 > 1.711$, se **rechaza** $H_0$: hay evidencia de que las bater�
 
 > [!tip] Relación con el curso
 > La distribución $t$ de Student es fundamental para la inferencia sobre medias con $\sigma$ desconocida: intervalos de confianza y pruebas $t$ se usan frecuentemente en la práctica científica e industrial.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿En cuál de las siguientes situaciones corresponde usar la distribución $t$ de Student en lugar de la distribución normal?
+
+a) Cuando la muestra es grande y $\sigma$ es conocida
+b) Cuando la muestra es pequeña y $\sigma$ es desconocida
+c) Cuando la muestra es pequeña y $\sigma$ es conocida
+d) Cuando la muestra es grande y $\sigma$ es desconocida
+
+> **b) Cuando la muestra es pequeña y $\sigma$ es desconocida**
+
+---
+
+### Pregunta 2
+
+Para una muestra de tamaño $n = 25$, ¿cuántos grados de libertad tiene la distribución $t$ asociada?
+
+a) 25
+b) 26
+c) 24
+d) 30
+
+> **c) 24**
+
+---
+
+### Pregunta 3
+
+¿Qué característica distingue las colas de la distribución $t$ respecto a la distribución normal estándar?
+
+a) Son más ligeras
+b) Son iguales
+c) Son más pesadas
+d) No tienen colas
+
+> **c) Son más pesadas**
+
+---
+
+### Pregunta 4
+
+¿Cuál es la media de la distribución $t$ de Student con $\nu > 1$ grados de libertad?
+
+a) $\nu / (\nu - 2)$
+b) 1
+c) $\nu$
+d) 0
+
+> **d) 0**
+
+---
+
+### Pregunta 5
+
+¿Qué sucede con la distribución $t$ de Student cuando los grados de libertad $\nu$ tienden a infinito?
+
+a) Se vuelve asimétrica
+b) Se aproxima a la distribución normal estándar
+c) La varianza tiende a cero
+d) Las colas se vuelven más pesadas
+
+> **b) Se aproxima a la distribución normal estándar**
+
+---
+
+### Pregunta 6
+
+¿Cuál es la fórmula de la varianza de la distribución $t$ con $\nu > 2$ grados de libertad?
+
+a) $\nu / (\nu - 2)$
+b) $(\nu - 2) / \nu$
+c) $1 / \nu$
+d) $\nu$
+
+> **a) $\nu / (\nu - 2)$**
+
+---
+
+### Pregunta 7
+
+En el ejemplo de baterías, el fabricante afirma una duración promedio de 500 horas. Con $n = 25$, $\bar{x} = 485$, $s = 30$ y $\alpha = 0.05$ unilateral, se obtiene $t = -2.50$ con valor crítico $t_{0.05, 24} = 1.711$. ¿Cuál es la conclusión?
+
+a) No se rechaza $H_0$ porque $t > -1.711$
+b) Se rechaza $H_0$ porque $|t| = 2.50 > 1.711$
+c) No se rechaza $H_0$ porque $|t| < 2.131$
+d) Se rechaza $H_0$ porque $t = -2.50$ es negativo
+
+> **b) Se rechaza $H_0$ porque $|t| = 2.50 > 1.711$**
+
+---
+
+### Pregunta 8
+
+¿Cómo se comporta la distribución $t$ de Student respecto a la simetría?
+
+a) Es asimétrica hacia la derecha
+b) Es asimétrica hacia la izquierda
+c) Es simétrica alrededor de 0
+d) No tiene simetría definida
+
+> **c) Es simétrica alrededor de 0**
+
+---
+
+### Pregunta 9
+
+En el ejemplo numérico del archivo ($n = 16$, $\bar{x} = 250$ ms, $s = 40$ ms, $\mu_0 = 240$ ms), se calcula $t = 1.00$ con valor crítico bilateral $t_{0.025, 15} = 2.131$. ¿Por qué el valor crítico de $t$ es mayor que el valor crítico de $z = 1.960$?
+
+a) Porque la media es diferente
+b) Porque las colas de $t$ son más pesadas
+c) Porque la varianza poblacional es conocida
+d) Porque la muestra es grande
+
+> **b) Porque las colas de $t$ son más pesadas**
+
+---
+
+### Pregunta 10
+
+¿Cuál de las siguientes afirmaciones sobre la curtosis de la distribución $t$ de Student es correcta?
+
+a) Es igual a 3, igual que la normal
+b) Es menor que 3
+c) Es mayor que 3
+d) No se puede determinar
+
+> **c) Es mayor que 3**

@@ -127,3 +127,137 @@ Como $1.67 < 7.815$, **no se rechaza** $H_0$: los datos son consistentes con la 
 
 > [!tip] Relación con el curso
 > La distribución ji cuadrada es esencial para pruebas de hipótesis no paramétricas (bondad de ajuste e independencia) y para construir intervalos de confianza sobre la varianza poblacional.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué se entiende por distribución $\chi^2$ con $k$ grados de libertad?
+
+a) La suma de $k$ variables normales independientes al cuadrado
+b) El producto de $k$ variables uniformes independientes
+c) La suma de $k$ variables exponenciales independientes al cuadrado
+d) El promedio de $k$ variables normales independientes al cuadrado
+
+> **a) La suma de $k$ variables normales independientes al cuadrado**
+
+---
+
+### Pregunta 2
+
+¿Cuál es el rango de valores posibles de una variable con distribución $\chi^2$?
+
+a) $(-\infty, +\infty)$
+b) $(-k, k)$
+c) $[0, \infty)$
+d) $[0, k]$
+
+> **c) $[0, \infty)$**
+
+---
+
+### Pregunta 3
+
+Si $X \sim \chi^2(5)$, ¿cuál es su varianza?
+
+a) 5
+b) 10
+c) 25
+d) 2.5
+
+> **b) 10**
+
+---
+
+### Pregunta 4
+
+Se toma una muestra de tamaño $n = 10$. Para construir un intervalo de confianza para $\sigma^2$ se usa el estadístico $\frac{(n-1)s^2}{\sigma^2}$. ¿Cuántos grados de libertad tiene?
+
+a) 10
+b) 5
+c) 9
+d) 8
+
+> **c) 9**
+
+---
+
+### Pregunta 5
+
+La prueba $\chi^2$ de bondad de ajuste calcula el estadístico:
+
+a) $\chi^2 = \sum (O_i - E_i)^2$
+b) $\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$
+c) $\chi^2 = \sum \frac{O_i - E_i}{E_i}$
+d) $\chi^2 = \frac{(\sum O_i)^2}{\sum E_i}$
+
+> **b) $\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$**
+
+---
+
+### Pregunta 6
+
+¿Qué afirmación es correcta sobre la forma de la distribución $\chi^2$?
+
+a) Siempre es simétrica e independiente de $k$
+b) Es asimétrica a la derecha y se vuelve más simétrica al crecer $k$
+c) Es asimétrica a la izquierda y se vuelve más simétrica al crecer $k$
+d) Solo es simétrica cuando $k = 1$
+
+> **b) Es asimétrica a la derecha y se vuelve más simétrica al crecer $k$**
+
+---
+
+### Pregunta 7
+
+Para una prueba de independencia en una tabla de contingencia de $3 \times 4$ (3 filas, 4 columnas), ¿cuántos grados de libertad tiene el estadístico $\chi^2$?
+
+a) 12
+b) 7
+c) 6
+d) 9
+
+> **c) 6**
+
+---
+
+### Pregunta 8
+
+Si $X_1 \sim \chi^2(3)$ y $X_2 \sim \chi^2(4)$ son independientes, ¿qué distribución sigue $X_1 + X_2$?
+
+a) $\chi^2(7)$
+b) $\chi^2(12)$
+c) $\chi^2(1)$
+d) $\chi^2(3.5)$
+
+> **a) $\chi^2(7)$**
+
+---
+
+### Pregunta 9
+
+El intervalo de confianza al 95% para $\sigma^2$ se construye como:
+
+a) $\left[\frac{(n-1)s^2}{\chi^2_{1-\alpha/2}}, \;\; \frac{(n-1)s^2}{\chi^2_{\alpha/2}}\right]$
+b) $\left[\frac{(n-1)s^2}{\chi^2_{\alpha/2}}, \;\; \frac{(n-1)s^2}{\chi^2_{1-\alpha/2}}\right]$
+c) $\left[(n-1)s^2 \cdot \chi^2_{\alpha/2}, \;\; (n-1)s^2 \cdot \chi^2_{1-\alpha/2}\right]$
+d) $\left[\frac{s^2}{(n-1)\chi^2_{\alpha/2}}, \;\; \frac{s^2}{(n-1)\chi^2_{1-\alpha/2}}\right]$
+
+> **b) $\left[\frac{(n-1)s^2}{\chi^2_{\alpha/2}}, \;\; \frac{(n-1)s^2}{\chi^2_{1-\alpha/2}}\right]$**
+
+---
+
+### Pregunta 10
+
+En el ejemplo de las bombillas, el estadístico calculado fue $\chi^2 = 1.67$ con valor crítico 7.815 al nivel 5%. La conclusión fue no rechazar $H_0$. ¿Qué significado tiene?
+
+a) Se comprobó que la distribución propuesta por el fabricante es correcta
+b) Los datos son inconsistentes con la distribución propuesta
+c) No hay evidencia suficiente para rechazar que los datos sigan la distribución propuesta
+d) La varianza muestral no difiere de la poblacional
+
+> **c) No hay evidencia suficiente para rechazar que los datos sigan la distribución propuesta**

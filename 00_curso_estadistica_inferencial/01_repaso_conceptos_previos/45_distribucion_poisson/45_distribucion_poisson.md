@@ -110,3 +110,137 @@ Hay aproximadamente un **11.2% de probabilidad** de que pasen 12 o más autos. S
 
 > [!tip] Relación con el curso
 > La distribución de Poisson es la base para pruebas de hipótesis sobre tasas de ocurrencia y para construir intervalos de confianza para la media en problemas de conteo, aplicándose directamente en la inferencia estadística.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+¿Qué parámetro define completamente la distribución de Poisson?
+
+a) $n$ y $p$
+b) $\lambda$, la tasa promedio de eventos
+c) $\mu$ y $\sigma$
+d) $k$ y $n$
+
+> **b) $\lambda$, la tasa promedio de eventos**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la fórmula de la función de masa de Poisson para $P(X = k)$?
+
+a) $P(X = k) = \frac{e^{-\lambda} \cdot k!}{\lambda^k}$
+b) $P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$
+c) $P(X = k) = \frac{e^{\lambda} \cdot \lambda^k}{k!}$
+d) $P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{(k+1)!}$
+
+> **b) $P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$**
+
+---
+
+### Pregunta 3
+
+Si $X \sim \text{Poisson}(2)$, ¿cuál es $P(X = 0)$?
+
+a) 0,0498
+b) 0,1353
+c) 0,3679
+d) 0,2707
+
+> **b) 0,1353**
+
+---
+
+### Pregunta 4
+
+¿Qué característica distingue a la distribución de Poisson de otras distribuciones discretas?
+
+a) Su media siempre es mayor que su varianza
+b) Su media es igual a su varianza
+c) Solo admite valores negativos
+d) Su media es el doble de su varianza
+
+> **b) Su media es igual a su varianza**
+
+---
+
+### Pregunta 5
+
+Si $X \sim \text{Poisson}(3)$, ¿cuál es $P(X \leq 1)$?
+
+a) 0,0498
+b) 0,1494
+c) 0,1991
+d) 0,2240
+
+> **c) 0,1991**
+
+---
+
+### Pregunta 6
+
+¿Cuándo se usa la distribución de Poisson como aproximación de la binomial?
+
+a) Cuando $n$ es pequeño y $p$ es grande
+b) Cuando $n \to \infty$, $p \to 0$ y $np = \lambda$ permanece constante
+c) Cuando $n = p = \lambda$
+d) Cuando $p$ tiende a 1 y $n$ tiende a 0
+
+> **b) Cuando $n \to \infty$, $p \to 0$ y $np = \lambda$ permanece constante**
+
+---
+
+### Pregunta 7
+
+Si $X \sim \text{Poisson}(4)$, ¿cuál es la varianza de $X$?
+
+a) 2
+b) $\sqrt{4}$
+c) 4
+d) 8
+
+> **c) 4**
+
+---
+
+### Pregunta 8
+
+Si $X \sim \text{Poisson}(1)$, ¿cuál es $P(X = 1)$?
+
+a) 0,1353
+b) 0,2707
+c) 0,3679
+d) 0,1839
+
+> **c) 0,3679**
+
+---
+
+### Pregunta 9
+
+Para calcular $P(X \geq 5)$ con una distribución de Poisson, ¿qué fórmula se utiliza?
+
+a) $P(X \geq 5) = P(X = 5)$
+b) $P(X \geq 5) = 1 - P(X \leq 5)$
+c) $P(X \geq 5) = 1 - P(X \leq 4)$
+d) $P(X \geq 5) = P(X = 0) + P(X = 1)$
+
+> **c) $P(X \geq 5) = 1 - P(X \leq 4)$**
+
+---
+
+### Pregunta 10
+
+Si $X \sim \text{Poisson}(4)$, ¿cuál es $P(X = 2)$?
+
+a) 0,1465
+b) 0,0733
+c) 0,2931
+d) 0,0902
+
+> **a) 0,1465**

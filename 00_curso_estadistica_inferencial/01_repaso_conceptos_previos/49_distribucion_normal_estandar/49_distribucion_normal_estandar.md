@@ -123,3 +123,137 @@ Si el tiempo máximo aceptable es ~17 minutos, se cumple el objetivo del 95%.
 
 > [!tip] Relación con el curso
 > La normal estándar es la herramienta central para construir intervalos de confianza y realizar pruebas de hipótesis $z$, que son los primeros métodos inferenciales que se aprenden en el curso.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+Si $X \sim N(100, 100)$, ¿cuál es el valor del estadístico z para $X = 120$?
+
+a) z = 1
+b) z = 2
+c) z = 20
+d) z = 0,5
+
+> **b) z = 2**
+
+---
+
+### Pregunta 2
+
+¿Cuál es la media de la distribución normal estándar $Z \sim N(0, 1)$?
+
+a) 1
+b) $\sigma$
+c) 0
+d) $\mu$
+
+> **c) 0**
+
+---
+
+### Pregunta 3
+
+¿Cuál es el valor de $P(Z \leq 0)$ en una distribución normal estándar?
+
+a) 0
+b) 0,5
+c) 1
+d) 0,25
+
+> **b) 0,5**
+
+---
+
+### Pregunta 4
+
+Si $X \sim N(50, 25)$, es decir, $\mu = 50$ y $\sigma = 5$, ¿cuál es el valor z para $X = 45$?
+
+a) z = 5
+b) z = 1
+c) z = -5
+d) z = -1
+
+> **d) z = -1**
+
+---
+
+### Pregunta 5
+
+¿Cuál es la varianza de la distribución normal estándar $Z \sim N(0, 1)$?
+
+a) 1
+b) 0
+c) $\sigma$
+d) $\sigma^2$
+
+> **a) 1**
+
+---
+
+### Pregunta 6
+
+Si $Z$ sigue una distribución normal estándar, ¿cuál es la notación correcta?
+
+a) $Z \sim N(1, 0)$
+b) $Z \sim N(0, 1)$
+c) $Z \sim N(0, 0)$
+d) $Z \sim N(1, 1)$
+
+> **b) $Z \sim N(0, 1)$**
+
+---
+
+### Pregunta 7
+
+Por la simetría de la distribución normal estándar, $P(Z \leq -2)$ es igual a:
+
+a) $1 + P(Z \leq 2)$
+b) $P(Z \leq 2)$
+c) $P(Z \geq 2)$
+d) $0,5 + P(Z \leq 2)$
+
+> **c) $P(Z \geq 2)$**
+
+---
+
+### Pregunta 8
+
+Si $X \sim N(80, 25)$, es decir, $\mu = 80$ y $\sigma = 5$, y $X = 80$, ¿cuál es el valor de z?
+
+a) 0
+b) 1
+c) 5
+d) 80
+
+> **a) 0**
+
+---
+
+### Pregunta 9
+
+¿Cuál es el valor total del área bajo la curva de densidad de la distribución normal estándar?
+
+a) 0
+b) 0,5
+c) 1
+d) 2
+
+> **c) 1**
+
+---
+
+### Pregunta 10
+
+Si $X \sim N(200, 400)$, es decir, $\mu = 200$ y $\sigma = 20$, y se estandariza $X = 240$, se obtiene $z = 2$. Sabiendo que $P(Z \leq 2) \approx 0,9772$, ¿qué se puede afirmar?
+
+a) $P(X \leq 240) \approx 0,0228$
+b) $P(X \leq 240) \approx 0,9772$
+c) $P(X > 240) \approx 0,9772$
+d) $P(X = 240) = 0,9772$
+
+> **b) $P(X \leq 240) \approx 0,9772$**

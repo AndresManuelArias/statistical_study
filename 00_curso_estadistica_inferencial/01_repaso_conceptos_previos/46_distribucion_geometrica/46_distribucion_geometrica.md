@@ -111,3 +111,137 @@ Esto indica que, aunque en promedio revisa 10 unidades, hay bastante variabilida
 
 > [!tip] Relación con el curso
 > La distribución geométrica se usa en la inferencia para estimar probabilidades de éxito $p$ a partir del número de ensayos observados hasta el primer éxito, y es el punto de partida de la distribución binomial negativa.
+
+---
+
+## ✅ Evaluación
+
+A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py`.
+
+### Pregunta 1
+
+En la distribución geométrica, ¿qué representa la variable aleatoria $X$?
+
+a) El número de éxitos en $n$ ensayos independientes
+b) El número de ensayos necesarios para obtener el primer éxito
+c) El número de fracasos antes del tercer éxito
+d) La probabilidad de éxito en cada ensayo
+
+> **b) El número de ensayos necesarios para obtener el primer éxito**
+
+---
+
+### Pregunta 2
+
+Si $p = 0.5$, ¿cuál es $P(X = 3)$?
+
+a) 0.25
+b) 0.5
+c) 0.125
+d) 0.0625
+
+> **c) 0.125**
+
+---
+
+### Pregunta 3
+
+Se lanza un dado justo ($p = 1/6$) repetidamente. ¿Cuál es la probabilidad de obtener el primer 6 en el cuarto intento?
+
+a) $(1/6)^4 \approx 0.0008$
+b) $(5/6)^3 \times (1/6) \approx 0.0965$
+c) $(5/6)^4 \times (1/6) \approx 0.0804$
+d) $(4/6)^3 \times (2/6) \approx 0.2963$
+
+> **b) $(5/6)^3 \times (1/6) \approx 0.0965$**
+
+---
+
+### Pregunta 4
+
+Si la probabilidad de éxito es $p = 0.2$, ¿cuál es el número esperado de ensayos?
+
+a) 0.2
+b) 2
+c) 5
+d) 4
+
+> **c) 5**
+
+---
+
+### Pregunta 5
+
+¿Qué significa la propiedad de "sin memoria" de la distribución geométrica?
+
+a) La probabilidad de éxito cambia tras cada ensayo
+b) Si ya se han fallado $s$ veces, la distribución de ensayos restantes es la misma que empezar de cero
+c) El número esperado de ensayos siempre es igual a $1/p$
+d) La varianza es siempre igual a la media
+
+> **b) Si ya se han fallado $s$ veces, la distribución de ensayos restantes es la misma que empezar de cero**
+
+---
+
+### Pregunta 6
+
+¿Cuál es la varianza de $X$ cuando $p = 0.5$?
+
+a) 0.5
+b) 1
+c) 2
+d) 4
+
+> **c) 2**
+
+---
+
+### Pregunta 7
+
+¿Cuál es la probabilidad de obtener el éxito en el primer intento, es decir, $P(X = 1)$?
+
+a) $(1-p)^2$
+b) $p^2$
+c) $p$
+d) $1-p$
+
+> **c) $p$**
+
+---
+
+### Pregunta 8
+
+Si se define $Y$ como el número de fracasos antes del primer éxito, ¿cuál es la relación entre $Y$ y la variable $X$ (número de ensayos hasta el primer éxito)?
+
+a) $Y = X + 1$
+b) $Y = X$
+c) $Y = X - 1$
+d) $Y = 2X$
+
+> **c) $Y = X - 1$**
+
+---
+
+### Pregunta 9
+
+Si $p = 0.25$, ¿cuál es la probabilidad de necesitar más de 5 intentos, es decir, $P(X > 5)$?
+
+a) 0.7627
+b) 0.2373
+c) 0.1001
+d) 0.3125
+
+> **b) 0.2373**
+
+---
+
+### Pregunta 10
+
+Si $X$ es el número de ensayos hasta el primer éxito con $p = 0.4$, ¿cuál es la desviación estándar $\sigma$?
+
+a) 1.58
+b) 2.5
+c) 1.25
+d) 6.25
+
+> **a) 1.58**

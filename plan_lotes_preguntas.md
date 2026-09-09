@@ -5,10 +5,10 @@
 ## Resumen
 
 - **Total de carpetas (temas):** 69
-- **Con preguntas:** 44
-- **Sin preguntas (pendientes):** 25
-- **Total de preguntas actuales:** 440
-- **Meta:** 10 preguntas por carpeta → 250 preguntas nuevas al terminar los lotes pendientes.
+- **Con preguntas:** 52
+- **Sin preguntas (pendientes):** 17
+- **Total de preguntas actuales:** 520
+- **Meta:** 10 preguntas por carpeta → 170 preguntas nuevas al terminar los lotes pendientes.
 
 ### Leyenda
 
@@ -66,14 +66,14 @@
 | 42 | `42_distribucion_binomial` | 10 | — | ✅ Hecho |
 | 43 | `43_momentos_variables_aleatorias` | 10 | — | ✅ Hecho |
 | 44 | `44_distribucion_binomial_parte2` | 10 | — | ✅ Hecho |
-| 45 | `45_distribucion_poisson` | 0 | L5 | ⏳ Pendiente |
-| 46 | `46_distribucion_geometrica` | 0 | L5 | ⏳ Pendiente |
-| 47 | `47_distribucion_binomial_negativa` | 0 | L5 | ⏳ Pendiente |
-| 48 | `48_distribucion_normal` | 0 | L5 | ⏳ Pendiente |
-| 49 | `49_distribucion_normal_estandar` | 0 | L5 | ⏳ Pendiente |
-| 50 | `50_distribucion_t_student` | 0 | L5 | ⏳ Pendiente |
-| 51 | `51_distribucion_f` | 0 | L5 | ⏳ Pendiente |
-| 52 | `52_distribucion_ji_cuadrada` | 0 | L5 | ⏳ Pendiente |
+| 45 | `45_distribucion_poisson` | 10 | — | ✅ Hecho |
+| 46 | `46_distribucion_geometrica` | 10 | — | ✅ Hecho |
+| 47 | `47_distribucion_binomial_negativa` | 10 | — | ✅ Hecho |
+| 48 | `48_distribucion_normal` | 10 | — | ✅ Hecho |
+| 49 | `49_distribucion_normal_estandar` | 10 | — | ✅ Hecho |
+| 50 | `50_distribucion_t_student` | 10 | — | ✅ Hecho |
+| 51 | `51_distribucion_f` | 10 | — | ✅ Hecho |
+| 52 | `52_distribucion_ji_cuadrada` | 10 | — | ✅ Hecho |
 | 53 | `53_sampling_muestreo` | 0 | L6 | ⏳ Pendiente |
 | 54 | `54_tamano_muestra_ley_grandes_numeros` | 0 | L6 | ⏳ Pendiente |
 | 55 | `55_tipos_muestreo` | 0 | L6 | ⏳ Pendiente |
@@ -155,20 +155,20 @@
 
 **Total de preguntas generadas:** 70
 
-### Lote 5: Distribuciones II (45-52) ⏳ PENDIENTE
+### Lote 5: Distribuciones II (45-52) ✔ COMPLETADO
 
 **Carpetas (8):**
 
-- [ ] `45_distribucion_poisson` (0/10 preguntas)
-- [ ] `46_distribucion_geometrica` (0/10 preguntas)
-- [ ] `47_distribucion_binomial_negativa` (0/10 preguntas)
-- [ ] `48_distribucion_normal` (0/10 preguntas)
-- [ ] `49_distribucion_normal_estandar` (0/10 preguntas)
-- [ ] `50_distribucion_t_student` (0/10 preguntas)
-- [ ] `51_distribucion_f` (0/10 preguntas)
-- [ ] `52_distribucion_ji_cuadrada` (0/10 preguntas)
+- [x] `45_distribucion_poisson` (10/10 preguntas)
+- [x] `46_distribucion_geometrica` (10/10 preguntas)
+- [x] `47_distribucion_binomial_negativa` (10/10 preguntas)
+- [x] `48_distribucion_normal` (10/10 preguntas)
+- [x] `49_distribucion_normal_estandar` (10/10 preguntas)
+- [x] `50_distribucion_t_student` (10/10 preguntas)
+- [x] `51_distribucion_f` (10/10 preguntas)
+- [x] `52_distribucion_ji_cuadrada` (10/10 preguntas)
 
-**Total de preguntas a generar:** 80 (restantes en este lote)
+**Total de preguntas generadas:** 80
 
 ### Lote 6: Muestreo (53-58) ⏳ PENDIENTE
 
