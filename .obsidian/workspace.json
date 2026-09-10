@@ -188,13 +188,13 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "34325c597adc51bf",
+  "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "obsidian_charts_mkdocs.py",
+    "00_curso_estadistica_inferencial/javascripts/charts.js",
+    "00_curso_estadistica_inferencial/javascripts/chart.umd.min.js",
     "__pycache__/obsidian_charts_mkdocs.cpython-312.pyc",
     "mi_entorno/lib/python3.12/site-packages/etapa2_root.pth",
-    "00_curso_estadistica_inferencial/javascripts/chart.umd.min.js",
-    "00_curso_estadistica_inferencial/javascripts/charts.js",
-    "obsidian_charts_mkdocs.py",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/27_ordenaciones_sin_repeticion/27_ordenaciones_sin_repeticion.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/26_ordenaciones_con_repeticion/26_ordenaciones_con_repeticion-20260909161701.json",
