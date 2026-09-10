@@ -20,3 +20,4 @@ extra_javascript:
   - javascripts/quiz.js
   - javascripts/chart.umd.min.js   # Chart.js (copia local, sin CDN)
   - javascripts/charts.js          # Renderiza los bloques ```chart
+  - javascripts/evaluador_web.js   # Evaluador (examen + descarga JSON)
