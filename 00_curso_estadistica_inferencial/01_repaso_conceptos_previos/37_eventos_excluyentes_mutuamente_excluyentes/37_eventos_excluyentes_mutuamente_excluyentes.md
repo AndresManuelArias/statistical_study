@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Eventos+Excluyentes+y+Mutuamente+Excluyentes+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rYY_1gkkXic?si=5fzIHkUvA2idntQW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 Dos eventos son mutuamente excluyentes (o disjuntos) cuando **no pueden ocurrir simultáneamente**: su intersección es vacía. Esto permite simplificar la probabilidad de la unión usando simplemente la suma de probabilidades individuales.
 

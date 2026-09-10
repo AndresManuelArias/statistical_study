@@ -14,6 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Probabilidad+Geometrica+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rXawT-JR1Rk?si=J69hHb_w4GHOd1RQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 📋 Resumen
 La probabilidad geométrica se aplica cuando los resultados de un experimento aleatorio son **valores continuos** (longitudes, áreas, volúmenes o tiempos). La probabilidad se calcula como la medida del evento favorable dividida entre la medida del espacio muestral total.

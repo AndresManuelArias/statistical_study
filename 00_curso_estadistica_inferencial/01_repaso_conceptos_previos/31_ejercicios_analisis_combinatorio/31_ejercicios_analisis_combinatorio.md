@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Ejercicios+de+Analisis+Combinatorio+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IKA2vZmRzG0?si=upLjIlWE0cAallA7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 En este archivo resolvemos varios ejercicios donde se debe elegir la técnica combinatoria adecuada: principio multiplicativo, variaciones con/sin repetición, combinaciones y combinaciones con repetición. La clave es preguntarse: **¿importa el orden?** y **¿hay repetición?**
 

@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Probabilidad+Axiomática+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1QY-sYl2G6M?si=JwQ9ywaQIkP54j2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 Andréi Kolmogórov formalizó la teoría de la probabilidad en 1933 mediante tres axiomas que toda función de probabilidad debe cumplir. Este enfoque permite construir la probabilidad desde bases lógicas sólidas, sin depender de interpretaciones frecuentistas o subjetivas.
 

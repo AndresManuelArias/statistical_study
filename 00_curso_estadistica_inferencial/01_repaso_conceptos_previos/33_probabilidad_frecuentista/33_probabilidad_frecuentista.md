@@ -14,6 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Probabilidad+Frecuentista+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dfWOnwrPPI0?si=D8FX0ydhHY-_DkC1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 📋 Resumen
 La probabilidad frecuentista define la probabilidad de un evento como el valor al que converge la frecuencia relativa de ese evento cuando se repite un experimento un número muy grande de veces. Es la interpretación más intuitiva y la base de mucha estadística práctica.

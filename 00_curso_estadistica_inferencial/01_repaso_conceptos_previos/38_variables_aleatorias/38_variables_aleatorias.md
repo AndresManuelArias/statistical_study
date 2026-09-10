@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Variables+Aleatorias+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UsNNc97DXDA?si=2AfI8QSF48u4V8ww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 Una variable aleatoria es una función que asigna un número real a cada resultado del espacio muestral. Puede ser **discreta** (valores contables) o **continua** (valores en un intervalo). Es el puente entre resultados experimentales y análisis matemático.
 

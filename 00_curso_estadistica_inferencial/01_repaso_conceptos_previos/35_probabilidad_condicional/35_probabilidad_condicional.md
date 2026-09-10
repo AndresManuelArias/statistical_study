@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Probabilidad+Condicional+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QVZaHKvM4Wo?si=ZSQ_sRhcst3qrxSq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 La probabilidad condicional mide la probabilidad de que ocurra un evento **dado** que ya se sabe que otro evento ha ocurrido. Es una herramienta fundamental para actualizar creencias con nueva información y es la base del Teorema de Bayes.
 
