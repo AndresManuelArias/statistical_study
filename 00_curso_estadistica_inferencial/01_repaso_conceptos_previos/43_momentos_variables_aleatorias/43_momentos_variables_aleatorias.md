@@ -15,6 +15,9 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Momentos+de+las+Variables+Aleatorias+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-QMa947Teoo?si=em6hF9kQotihCRtx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Resumen
 Los momentos de una variable aleatoría son valores que describen características fundamentales de su distribución. Los momentos alrededor del origen y los centrados permiten obtener la media, la varianza, la asimetría y la curtosis, siendo herramientas esenciales para la inferencia estadística.
 

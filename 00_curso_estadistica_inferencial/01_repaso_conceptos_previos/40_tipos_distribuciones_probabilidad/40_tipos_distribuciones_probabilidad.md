@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Types+of+Probability+Distributions+|+Inferential+Statistics
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9KlDIv0ZRM4?si=3j1S2DKlnz1vi4cX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 Las distribuciones de probabilidad se clasifican en **discretas** y **continuas** según el tipo de valores que toma la variable aleatoria. Cada familia tiene parámetros que controlan su forma, y se usa en contextos específicos.
 
@@ -60,16 +60,76 @@ Las distribuciones de probabilidad se clasifican en **discretas** y **continuas*
 **Ji-cuadrada ($\chi^2$)** ($k$): Suma de $k$ cuadrados de normales estándar. Usada en pruebas de bondad de ajuste.
 
 ### Función de masa vs. función de densidad
-- **PMF** (discreta): Da probabilidades **directas**. La gráfica son barras.
-- **PDF** (continua): Da **densidades**, no probabilidades directas. Probabilidad = área bajo la curva.
+
+**PMF** (discreta): Da probabilidades **directas**. La gráfica son barras.
+- Cada barra = probabilidad exacta
+- Ejemplo: $P(X=2) = 0.35$ significa que el evento ocurre con probabilidad 35%
+
+**PDF** (continua): Da **densidades**, no probabilidades directas. Probabilidad = área bajo la curva.
+- No hay probabilidad en un punto exacto: $P(X=5.0) = 0$
+- La probabilidad es un rango: $P(4.5 < X < 5.5)$ = área bajo la curva en ese intervalo
+
+#### Comparación visual: PMF vs PDF
+
+**PMF — Función de Masa Discreta (Binomial n=10, p=0.5):**
+
+```chart
+type: bar
+labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+series:
+  - title: "P(X=k) — Probabilidad exacta"
+    data: [0.001, 0.010, 0.044, 0.117, 0.205, 0.246, 0.205, 0.117, 0.044, 0.010, 0.001]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Características:** Barras separadas, valor exacto en cada punto, suma total = 1.
+
+**PDF — Función de Densidad Continua (Normal estándar):**
+
+```chart
+type: line
+labels: [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+series:
+  - title: "f(x) — Densidad (no probabilidad)"
+    data: [0.001, 0.004, 0.054, 0.242, 0.399, 0.242, 0.054, 0.004, 0.001]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Características:** Curva continua, altura es densidad, área bajo la curva = 1, $P(X=0) = 0$ siempre.
+
+**Resumen conceptual:**
+- **PMF:** "¿Cuál es la probabilidad de obtener exactamente 5 éxitos?" → Respuesta directa
+- **PDF:** "¿Cuál es la probabilidad de que el peso sea exactamente 5.000 kg?" → Cero (infinito de decimales). Pregunta correcta: "¿Entre 4.9 y 5.1 kg?"
 
 ## 💡 Ejemplo numérico
-Comparación de dos distribuciones para un mismo parámetro $p = 0.5$:
+Comparación de tres distribuciones clave:
 
-**Bernoulli (1 ensayo):**
-$P(X=1) = 0.5$, $P(X=0) = 0.5$
+### Bernoulli ($p = 0.5$) — Un solo ensayo
 
-**Binomial ($n=4$, $p=0.5$):**
+$P(X=0) = 0.5$, $P(X=1) = 0.5$
+
+```chart
+type: bar
+labels: [0, 1]
+series:
+  - title: "Bernoulli(p=0.5)"
+    data: [0.5, 0.5]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:** Solo dos resultados posibles con igual probabilidad. Representa un único experimento con éxito o fracaso.
+
+### Binomial ($n=4$, $p=0.5$) — Múltiples ensayos independientes
+
 - $P(X=0) = C(4,0)(0.5)^0(0.5)^4 = 0.0625$
 - $P(X=1) = C(4,1)(0.5)^1(0.5)^3 = 0.2500$
 - $P(X=2) = C(4,2)(0.5)^2(0.5)^2 = 0.3750$
@@ -77,20 +137,72 @@ $P(X=1) = 0.5$, $P(X=0) = 0.5$
 - $P(X=4) = C(4,4)(0.5)^4(0.5)^0 = 0.0625$
 - Suma: $1.0000$ ✓
 
-**Poisson ($\lambda = 2$):**
+```chart
+type: bar
+labels: [0, 1, 2, 3, 4]
+series:
+  - title: "Binomial(n=4, p=0.5)"
+    data: [0.0625, 0.2500, 0.3750, 0.2500, 0.0625]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:** Se distribuye como campana (simétrica). El valor más probable es 2 éxitos de 4 ensayos. La distribución es más dispersa que Bernoulli.
+
+### Poisson ($\lambda = 2$) — Eventos raros en un intervalo
+
 - $P(X=0) = \frac{e^{-2} \cdot 2^0}{0!} = e^{-2} \approx 0.1353$
 - $P(X=1) = \frac{e^{-2} \cdot 2^1}{1!} \approx 0.2707$
 - $P(X=2) = \frac{e^{-2} \cdot 2^2}{2!} \approx 0.2707$
+- $P(X=3) = \frac{e^{-2} \cdot 2^3}{3!} \approx 0.1804$
+- $P(X=4) = \frac{e^{-2} \cdot 2^4}{4!} \approx 0.0902$
+
+```chart
+type: bar
+labels: [0, 1, 2, 3, 4]
+series:
+  - title: "Poisson(λ=2)"
+    data: [0.1353, 0.2707, 0.2707, 0.1804, 0.0902]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:** Modela eventos raros. Con λ=2, el valor esperado es 2 eventos por intervalo. La cola derecha es más larga que la izquierda (asimétrica).
 
 ## 🌍 Ejemplo de la vida real
-Un centro de distribución clasifica incidentes por tipo:
-- **Bernoulli**: ¿Se entregó el paquete a tiempo? (Sí/No)
-- **Binomial**: De 20 envíos, ¿cuántos llegaron a tiempo?
-- **Poisson**: ¿Cuántas quejas se reciben por hora?
-- **Geométrica**: ¿Cuántos paquetes se procesan hasta encontrar uno dañado?
-- **Normal**: ¿Cuál es el peso promedio de los paquetes?
+Un centro de distribución clasifica incidentes y datos por tipo. Datos reales de 1000 paquetes procesados:
 
-Cada tipo de pregunta se modela con la distribución más adecuada, facilitando predicciones y toma de decisiones.
+- **Bernoulli**: ¿Se entregó el paquete a tiempo? (Sí/No) → 85% a tiempo
+- **Binomial**: De 20 envíos, ¿cuántos llegaron a tiempo?
+- **Poisson**: ¿Cuántas quejas se reciben por hora? → Promedio 2.3 quejas/hora
+- **Geométrica**: ¿Cuántos paquetes se procesan hasta encontrar uno dañado?
+- **Normal**: ¿Cuál es el peso promedio de los paquetes? → μ=5kg, σ=0.8kg
+
+#### Gráfico: Distribución del peso de paquetes (Normal)
+
+```chart
+type: line
+labels: [2, 2.6, 3.2, 3.8, 4.4, 5, 5.6, 6.2, 6.8, 7.4, 8]
+series:
+  - title: "Densidad - Peso de paquetes N(5, 0.8²)"
+    data: [0.014, 0.057, 0.169, 0.394, 0.677, 0.805, 0.677, 0.394, 0.169, 0.057, 0.014]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- **Media:** La mayoría de paquetes pesan alrededor de **5 kg**
+- **Rango ±1σ (4.2-5.8 kg):** Contiene **68%** de los paquetes
+- **Control de calidad:** Paquetes < 3.4 kg o > 6.6 kg (fuera de ±2σ) son inspeccionados
+- **Logística:** Permite predecir carga de camiones: 50 paquetes ≈ 250 kg ± 40 kg
+
+Cada tipo de pregunta se modela con la distribución más adecuada, facilitando predicciones y toma de decisiones operativas.
 
 > [!tip] Relación con el curso
 > Conocer el catálogo de distribuciones permite seleccionar el modelo correcto para cada problema de inferencia: pruebas de hipótesis, intervalos de confianza y regresión todos dependen de distribuciones específicas.

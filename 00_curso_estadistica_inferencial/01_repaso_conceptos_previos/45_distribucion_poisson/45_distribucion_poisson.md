@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Distribución+Poisson+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kgpmW5J-EBQ?si=nvRCv_msgMrtdvBZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Resumen
 La distribución de Poisson modela el número de eventos que ocurren en un intervalo de tiempo o espacio, cuando estos eventos suceden de forma independiente y a una tasa constante. Es fundamental para modelar fenómenos de "eventos raros" en la vida real.
 

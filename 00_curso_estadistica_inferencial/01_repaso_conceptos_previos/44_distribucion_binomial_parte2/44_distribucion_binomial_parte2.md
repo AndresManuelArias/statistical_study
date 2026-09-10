@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Distribución+Binomial+(parte+2)+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z7PxOKhuEBE?si=sDNugbyHW9ovtDL9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Resumen
 En esta segunda parte profundizamos en el cálculo de probabilidades acumuladas de la distribución binomial, el uso de tablas y calculadora, y revisamos las fórmulas de esperanza y varianza con ejercicios resueltos. Se menciona brevemente la aproximación normal para valores grandes de $n$.
 
@@ -44,6 +46,22 @@ $$P(X \leq k) = \sum_{i=0}^{k} \binom{n}{i} p^i (1-p)^{n-i}$$
 
 $$P(X \geq k) = \sum_{i=k}^{n} \binom{n}{i} p^i (1-p)^{n-i} = 1 - P(X \leq k-1)$$
 
+#### Visualización: Probabilidades individuales vs acumuladas
+
+```chart
+type: bar
+labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+series:
+  - title: "P(X = k) — Probabilidades individuales"
+    data: [0.0060, 0.0403, 0.1209, 0.2150, 0.2508, 0.2007, 0.1115, 0.0425, 0.0106, 0.0016, 0.0001]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:** En B(10, 0.4), la probabilidad más alta está en k=4 (25.08%). La región sombreada hasta k=3 representa $P(X \leq 3) = 0.3823$ (38.23%).
+
 ### Uso de tablas y calculadora
 
 Las tablas de la distribución binomial dan valores de $P(X \leq k)$ para distintos valores de $n$, $p$ y $k$. Para hallar $P(X \geq k)$ se usa la complementación:
@@ -51,6 +69,44 @@ Las tablas de la distribución binomial dan valores de $P(X \leq k)$ para distin
 $$P(X \geq k) = 1 - P(X \leq k - 1)$$
 
 En calculadoras científicas se puede usar la función binomial acumulada (binompdf o binomcdf).
+
+#### Tabla: Probabilidades individuales y acumuladas para B(10, 0.4)
+
+| k | P(X = k) | P(X ≤ k) | P(X ≥ k) |
+|---|----------|----------|----------|
+| 0 | 0.0060 | 0.0060 | 1.0000 |
+| 1 | 0.0403 | 0.0463 | 0.9940 |
+| 2 | 0.1209 | 0.1672 | 0.9537 |
+| 3 | 0.2150 | **0.3823** | 0.8328 |
+| 4 | 0.2508 | 0.6331 | 0.6177 |
+| 5 | 0.2007 | 0.8338 | 0.3669 |
+| 6 | 0.1115 | 0.9452 | 0.1662 |
+| 7 | 0.0425 | 0.9877 | **0.0548** |
+
+**Ejemplo de lectura:**
+- $P(X = 3) = 0.2150$ → Probabilidad exacta de 3 éxitos
+- $P(X \leq 3) = 0.3823$ → Probabilidad de 3 o menos (suma las primeras 4 filas)
+- $P(X \geq 7) = 0.0548$ → Probabilidad de 7 o más (complemento de $P(X \leq 6)$)
+
+#### Gráfico: Probabilidades acumuladas crecientes
+
+```chart
+type: line
+labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+series:
+  - title: "P(X ≤ k) — Función acumulada"
+    data: [0.0060, 0.0463, 0.1672, 0.3823, 0.6331, 0.8338, 0.9452, 0.9877, 0.9983, 0.9999, 1.0000]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- La línea comienza en 0.0060 (solo P(X=0))
+- En k=3 llega a 0.3823 (región sombreada en el gráfico anterior)
+- En k=6 supera 0.94 (94% de probabilidad)
+- Termina en 1.0 (certeza: algún valor debe ocurrir)
 
 ### Aproximación normal
 
@@ -63,6 +119,27 @@ Se aplica el **ajuste de continuidad** restando o sumando 0.5:
 $$P(X = k) \approx P(k - 0.5 < Y < k + 0.5)$$
 
 donde $Y \sim N(np, \, np(1-p))$.
+
+#### Comparación: Binomial vs Aproximación Normal
+
+Para $n=40, p=0.5$: Media = 20, Varianza = 10
+
+```chart
+type: line
+labels: [5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35]
+series:
+  - title: "Aproximación Normal N(20, 10)"
+    data: [0.001, 0.004, 0.017, 0.061, 0.176, 0.415, 0.765, 1.081, 1.206, 1.081, 0.765, 0.415, 0.176, 0.061, 0.017, 0.004]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- Con n grande, la binomial discreta se parece cada vez más a una curva normal continua
+- Permite cálculos más fáciles usando tablas de la distribución normal
+- La condición $np > 5$ y $n(1-p) > 5$ asegura que la curva sea suficientemente suave
 
 ## Ejemplo numérico
 
@@ -107,6 +184,26 @@ Como $n = 40$ es grande y $np = 3.2$, $n(1-p) = 36.8$, se puede aproximar con no
 $$P(X \leq 2) \approx P\!\left(Z \leq \frac{2.5 - 3.2}{\sqrt{2.944}}\right) = P(Z \leq -0.41) \approx 0.3409$$
 
 Hay aproximadamente un **34% de probabilidad** de que haya 2 o menos devoluciones en un día dado.
+
+#### Gráfico: Distribución de devoluciones diarias B(40, 0.08)
+
+```chart
+type: bar
+labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+series:
+  - title: "Probabilidad P(X = k) — Devoluciones"
+    data: [0.0415, 0.1369, 0.2277, 0.2277, 0.1706, 0.1050, 0.0549, 0.0242, 0.0092, 0.0030, 0.0009]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación práctica:**
+- **Valor esperado:** 3.2 devoluciones/día (pico en k=2 y k=3)
+- **P(X ≤ 2) = 0.3409:** Solo 34% de probabilidad de ≤2 devoluciones → Necesita prepararse para más
+- **P(X ≤ 5) ≈ 0.91:** El 91% de los días habrá ≤5 devoluciones
+- **Decisión:** El gerente debe planificar personal para manejar 4-5 devoluciones típicamente
 
 > [!tip] Relación con el curso
 > Las probabilidades acumuladas de la binomial son esenciales para construir intervalos de confianza y realizar pruebas de hipótesis sobre proporciones poblacionales, uno de los pilares de la estadística inferencial.
