@@ -14,7 +14,8 @@
  *     visibilidad del contenido de la página.
  *   - Sin feedback hasta "Finalizar": calificación, tabla de resultados y
  *     descarga del JSON (mismo esquema que evaluador.py).
- *   - guarda la última nota en localStorage (clave etapa2.evaluacion.{tema}).
+ *   - guarda la última nota y todo el historial en IndexedDB (BD
+ *     "etapa2_evaluador", tabla "evaluaciones").
  *
  * NO modifica los archivos .md. Convive con quiz.js (feedback inline).
  */
@@ -41,25 +42,59 @@
     return ultima.replace(/\.html$/, "") || "tema";
   }
 
-  function localStorageKey() {
-    return "etapa2.evaluacion." + nombreTema();
+  var DB_NAME = "etapa2_evaluador";
+  var DB_VERSION = 1;
+  var STORE = "evaluaciones";
+
+  function abrirBD() {
+    return new Promise(function (resolve, reject) {
+      if (!window.indexedDB) {
+        reject(new Error("indexedDB no disponible"));
+        return;
+      }
+      var req = window.indexedDB.open(DB_NAME, DB_VERSION);
+      req.onupgradeneeded = function (e) {
+        var db = e.target.result;
+        if (!db.objectStoreNames.contains(STORE)) {
+          var st = db.createObjectStore(STORE, { keyPath: "id" });
+          st.createIndex("tema", "tema", { unique: false });
+        }
+      };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { reject(req.error); };
+    });
   }
 
-  function leerEstadoGuardado() {
-    try {
-      var raw = window.localStorage.getItem(localStorageKey());
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) {
-      return null;
-    }
+  function transaccion(modo, fncion) {
+    return abrirBD().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(STORE, modo);
+        var store = tx.objectStore(STORE);
+        var req = fncion(store);
+        req.onsuccess = function () { resolve(req.result); };
+        req.onerror = function () { reject(req.error); };
+        tx.oncomplete = function () { db.close(); };
+        tx.onerror = function () { reject(tx.error); };
+      });
+    });
   }
 
-  function guardarEstadoGuardado(datos) {
-    try {
-      window.localStorage.setItem(localStorageKey(), JSON.stringify(datos));
-    } catch (e) {
-      /* almacenamiento no disponible: no es crítico */
-    }
+  /** Guarda un resultado de evaluación en IndexedDB. */
+  function guardarResultado(datos) {
+    return transaccion("readwrite", function (store) {
+      return store.put(datos);
+    });
+  }
+
+  /** Devuelve el historial de evaluaciones de un tema (orden reciente). */
+  function listarHistorial(tema) {
+    return transaccion("readonly", function (store) {
+      return store.index("tema").getAll(tema);
+    }).then(function (registros) {
+      return (registros || []).sort(function (a, b) {
+        return String(b.id).localeCompare(String(a.id));
+      });
+    });
   }
 
   function limpiarEnunciado(texto) {
@@ -196,6 +231,8 @@
     "display:flex;align-items:center;gap:12px}" +
     "#evaluador-panel .ev-titulo{font-weight:bold;font-size:15px;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
     "#evaluador-panel .ev-cerrar{background:transparent;color:#fff;border:none;font-size:20px;cursor:pointer;line-height:1}" +
+    "#evaluador-panel .ev-historial-btn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);" +
+    "border-radius:14px;padding:4px 12px;font-size:12px;cursor:pointer;font-family:inherit}" +
     "#evaluador-panel .ev-progress{height:5px;background:#cfe0fb}" +
     "#evaluador-panel .ev-progressbar{height:100%;width:0%;background:#ffffff;transition:width .25s}" +
     "#evaluador-cuerpo{padding:16px 22px;overflow-y:auto}" +
@@ -226,7 +263,21 @@
     "#evaluador-modal .ev-buttons button{border:none;border-radius:18px;padding:8px 16px;" +
     "cursor:pointer;font-size:14px;font-family:inherit}" +
     "#evaluador-modal .ev-primario{background:#1a73e8;color:#fff}" +
-    "#evaluador-modal .ev-secundario{background:#e8eef7;color:#1a73e8}";
+    "#evaluador-modal .ev-secundario{background:#e8eef7;color:#1a73e8}" +
+    "#evaluador-historial-overlay{position:fixed;z-index:9600;inset:0;background:rgba(0,0,0,.45);" +
+    "display:flex;align-items:center;justify-content:center;font-family:inherit}" +
+    "#evaluador-historial{background:#fff;color:#1c2733;border-radius:12px;width:min(94vw,600px);" +
+    "max-height:80vh;overflow:auto;padding:18px 22px;box-shadow:0 12px 40px rgba(0,0,0,.35)}" +
+    "#evaluador-historial h2{margin-top:0;font-size:18px}" +
+    "#evaluador-historial .ev-h-item{border:1px solid #e3e8f0;border-radius:8px;padding:8px 12px;" +
+    "margin:8px 0;display:flex;justify-content:space-between;align-items:center;gap:10px}" +
+    "#evaluador-historial .ev-h-datos{display:flex;flex-direction:column}" +
+    "#evaluador-historial .ev-h-fecha{font-size:12px;color:#6b7686}" +
+    "#evaluador-historial .ev-h-nota{font-weight:bold;color:#1a73e8;font-size:16px;white-space:nowrap}" +
+    "#evaluador-historial .ev-h-calif{font-size:12px;color:#6b7686}" +
+    "#evaluador-historial .ev-h-vacio{color:#6b7686;font-style:italic}" +
+    "#evaluador-historial .ev-h-cerrar{background:#1a73e8;color:#fff;border:none;border-radius:16px;" +
+    "padding:8px 16px;cursor:pointer;font-size:13px;font-family:inherit}";
 
   /* ------------------------------------------------------------------ */
   /* Modo examen (panel autónomo)                                        */
@@ -325,7 +376,13 @@
     cerrar.textContent = "\u2715";
     cerrar.title = "Cerrar examen";
     cerrar.addEventListener("click", function () { salirExamen(); });
+    var btnHistorial = document.createElement("button");
+    btnHistorial.type = "button";
+    btnHistorial.className = "ev-historial-btn";
+    btnHistorial.textContent = "Historial";
+    btnHistorial.addEventListener("click", mostrarHistorial);
     cab.appendChild(titulo);
+    cab.appendChild(btnHistorial);
     cab.appendChild(cerrar);
 
     var progress = document.createElement("div");
@@ -384,6 +441,10 @@
     var fondo = document.getElementById("evaluador-fondo");
     if (fondo && fondo.parentNode) fondo.parentNode.removeChild(fondo);
     panel = null;
+    // el modal de resultados (mostrarResultados) cuelga del body y debe
+    // eliminarse también al salir, o bloquearía los clics del resto
+    var res = document.getElementById("evaluador-overlay");
+    if (res && res.parentNode) res.parentNode.removeChild(res);
     if (estado) estado.activo = false;
     if (fab) fab.style.display = "";
     if (callback) callback();
@@ -411,15 +472,123 @@
       ? Math.round((correctas * 100 / total) * 100) / 100 : 0;
     var nota = total ? Math.round((correctas * 10 / total) * 10) / 10 : 0;
 
-    guardarEstadoGuardado({
+    var id = nombreTema() + "-" + (new Date()
+      .toISOString().replace(/[-T:.Z]/g, "").slice(0, 14));
+    guardarResultado({
+      id: id,
+      tema: nombreTema(),
       fecha: new Date().toISOString(),
       calificacion: calificacion,
       nota: nota,
       total_correctas: correctas,
-      total_preguntas: total
+      total_preguntas: total,
+      preguntas: estado.preguntas.map(function (p) {
+        return {
+          id_pregunta: p.id_pregunta,
+          enunciado: p.enunciado,
+          opciones: p.opciones.map(function (o) { return o.texto; }),
+          respuesta_correcta: p.respuesta_correcta.texto,
+          respuesta_usuario: p.respuesta_usuario || null,
+          es_correcta: p.es_correcta
+        };
+      })
+    }).then(actualizarNotaFAB).catch(function () {
+      /* si no se pudo guardar en IndexedDB, solo se muestra el resultado */
     });
 
     mostrarResultados(total, correctas, calificacion);
+  }
+
+  function formatoFecha(iso) {
+    try {
+      var d = new Date(iso);
+      return d.toLocaleDateString("es-ES", {
+        day: "2-digit", month: "short", year: "numeric"
+      }) + " " + d.toLocaleTimeString("es-ES", {
+        hour: "2-digit", minute: "2-digit"
+      });
+    } catch (e) {
+      return iso || "";
+    }
+  }
+
+  /** Lista el historial de notas del tema en un overlay. */
+  function mostrarHistorial() {
+    listarHistorial(nombreTema()).then(function (registros) {
+      var overlay = document.createElement("div");
+      overlay.id = "evaluador-historial-overlay";
+
+      var caja = document.createElement("div");
+      caja.id = "evaluador-historial";
+
+      var h2 = document.createElement("h2");
+      h2.textContent = "Historial de notas \u2014 " + nombreTema();
+      caja.appendChild(h2);
+
+      if (!registros.length) {
+        var vacio = document.createElement("p");
+        vacio.className = "ev-h-vacio";
+        vacio.textContent =
+          "A\u00fan no hay evaluaciones guardadas para este tema.";
+        caja.appendChild(vacio);
+      } else {
+        registros.forEach(function (r) {
+          var item = document.createElement("div");
+          item.className = "ev-h-item";
+
+          var datos = document.createElement("div");
+          datos.className = "ev-h-datos";
+          var fecha = document.createElement("span");
+          fecha.className = "ev-h-fecha";
+          fecha.textContent = formatoFecha(r.fecha);
+          var calif = document.createElement("span");
+          calif.className = "ev-h-calif";
+          calif.textContent = r.calificacion + "/100 \u00b7 " +
+            r.total_correctas + " de " + r.total_preguntas + " correctas";
+          datos.appendChild(fecha);
+          datos.appendChild(calif);
+
+          var nota = document.createElement("span");
+          nota.className = "ev-h-nota";
+          nota.textContent = r.nota + "/10";
+          nota.style.color = r.nota >= 7 ? "#0a7d2c"
+            : r.nota >= 5 ? "#b26a00" : "#c62828";
+
+          item.appendChild(datos);
+          item.appendChild(nota);
+          caja.appendChild(item);
+        });
+      }
+
+      var cerrar = document.createElement("button");
+      cerrar.type = "button";
+      cerrar.className = "ev-h-cerrar";
+      cerrar.textContent = "Cerrar";
+      cerrar.addEventListener("click", function () {
+        if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      });
+      caja.appendChild(cerrar);
+
+      overlay.appendChild(caja);
+      document.body.appendChild(overlay);
+    }).catch(function (e) {
+      if (window.console && console.error) console.error("ev-historial:", e);
+    });
+  }
+
+  /** Actualiza (o crea) la nota de la última evaluación en el botón flotante. */
+  function actualizarNotaFAB() {
+    listarHistorial(nombreTema()).then(function (registros) {
+      if (!fab || !registros.length) return;
+      var ultimo = registros[0];
+      var nota = fab.querySelector(".ev-nota");
+      if (!nota) {
+        nota = document.createElement("span");
+        nota.className = "ev-nota";
+        fab.appendChild(nota);
+      }
+      nota.textContent = "Ultima: " + ultimo.nota + "/10";
+    }).catch(function () {});
   }
 
   function mostrarResultados(total, correctas, calificacion) {
@@ -553,18 +722,11 @@
     fab.id = "evaluador-fab";
     fab.type = "button";
     fab.textContent = "Iniciar evaluaci\u00f3n";
-
-    var guardado = leerEstadoGuardado();
-    if (guardado) {
-      var nota = document.createElement("span");
-      nota.className = "ev-nota";
-      nota.textContent = "Ultima: " + guardado.nota + "/10";
-      fab.appendChild(nota);
-    }
     fab.addEventListener("click", function () {
       iniciarExamen();
     });
     document.body.appendChild(fab);
+    actualizarNotaFAB();
   }
 
   function init() {
@@ -596,6 +758,9 @@
     init: init,
     iniciarExamen: iniciarExamen,
     salirExamen: salirExamen,
-    estado: function () { return estado; }
+    estado: function () { return estado; },
+    listarHistorial: listarHistorial,
+    guardarResultado: guardarResultado,
+    mostrarHistorial: mostrarHistorial
   };
 })();

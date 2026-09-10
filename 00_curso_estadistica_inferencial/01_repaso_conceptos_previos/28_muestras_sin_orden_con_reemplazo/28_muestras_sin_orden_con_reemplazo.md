@@ -14,6 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Muestras+sin+orden+y+con+remplazo+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F0VGijB4ylU?si=0yrdgqE5JOpZztDy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 📋 Resumen
 Las combinaciones con repetición $CR(n,r)$ se usan cuando seleccionamos $r$ elementos de $n$ tipos **sin importar el orden** y **con repetición** (se pueden elegir elementos iguales). Es útil en problemas de reparto.
