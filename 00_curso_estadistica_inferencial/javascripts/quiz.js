@@ -117,8 +117,12 @@
       opciones.forEach(function (o) {
         o.classList.remove("quiz-selected");
         o.style.color = "";
+        var radio = o.querySelector(".quiz-radio");
+        if (radio) radio.textContent = "\u25CB"; // ○
       });
       opt.classList.add("quiz-selected");
+      var radio = opt.querySelector(".quiz-radio");
+      if (radio) radio.textContent = "\u25CF"; // ●
     }
 
     opciones.forEach(function (opt) {

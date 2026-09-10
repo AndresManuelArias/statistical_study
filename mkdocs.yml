@@ -14,6 +14,9 @@ markdown_extensions:
           class: mkdocs-chart
           format: !!python/name:obsidian_charts_mkdocs.fence_chart
 
+extra_css:
+  - stylesheets/quiz.css       # Quizzes interactivos (quiz.js)
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

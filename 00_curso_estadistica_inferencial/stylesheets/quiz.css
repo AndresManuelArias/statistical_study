@@ -1,0 +1,66 @@
+/* Estilos del quiz inline (quiz.js).
+   Convierten las opciones del Markdown en tarjetas clicables con
+   radio visible y estado seleccionado. */
+
+.quiz-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  margin: 7px 0;
+  border: 1px solid #d4dbe6;
+  border-radius: 8px;
+  background: #f7f9fc;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.quiz-option:hover {
+  background: #eef3fb;
+  border-color: #1a73e8;
+}
+
+.quiz-option.quiz-selected {
+  background: #e3edfc;
+  border-color: #1a73e8;
+}
+
+.quiz-radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 1;
+  color: #7a8699;
+}
+
+.quiz-option.quiz-selected .quiz-radio {
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+.quiz-check-btn {
+  margin-top: 8px;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 16px;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.quiz-check-btn:hover {
+  background: #1663c4;
+}
+
+.quiz-result {
+  font-weight: bold;
+  margin-top: 8px;
+}
