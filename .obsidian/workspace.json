@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/26_ordenaciones_con_repeticion/26_ordenaciones_con_repeticion.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/27_ordenaciones_sin_repeticion/27_ordenaciones_sin_repeticion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "26_ordenaciones_con_repeticion"
+              "title": "27_ordenaciones_sin_repeticion"
             }
           }
         ]
@@ -190,6 +190,7 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/26_ordenaciones_con_repeticion/26_ordenaciones_con_repeticion.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/26_ordenaciones_con_repeticion/26_ordenaciones_con_repeticion-20260909161701.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/25_probabilidad_clasica/25_probabilidad_clasica.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/25_probabilidad_clasica/25_probabilidad_clasica-20260909155137.json",
@@ -209,7 +210,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones-20260909100500.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/17_dominio_codominio_rango/17_dominio_codominio_rango-20260909094842.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/16_relaciones/16_relaciones.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/15_producto_conjuntos/15_producto_conjuntos.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/14_carroll_diagrams/14_carroll_diagrams.md",

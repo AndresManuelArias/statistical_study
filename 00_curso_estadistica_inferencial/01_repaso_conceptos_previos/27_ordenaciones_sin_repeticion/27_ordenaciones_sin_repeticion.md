@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Ordenaciones+sin+repeticion+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S1YXEJjCwc0?si=nrxSB_fm7K_D8eCD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 Las ordenaciones sin repetición cuentan el número de formas de colocar $r$ elementos de $n$ disponibles, donde **el orden importa** y **no se repiten**. Se subdividen en variaciones $V(n,r)$ cuando $r < n$ y permutaciones $P(n) = n!$ cuando $r = n$.
 
