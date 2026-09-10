@@ -54,6 +54,40 @@ Una curva es la gráfica de una función si y solo si **toda** línea vertical i
 - Si una línea vertical toca la gráfica en dos puntos → ese $x$ tiene dos imágenes → no es función.
 - Si cada línea vertical la toca en uno o cero puntos → sí puede ser función.
 
+**📊 Visualización — Prueba de la línea vertical (función válida $f(x) = 2x + 1$):**
+
+```chart
+type: line
+labels: [-2, -1, 0, 1, 2, 3]
+series:
+  - title: "f(x) = 2x + 1"
+    data: [-3, -1, 1, 3, 5, 7]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> Cada línea vertical interseca la recta en exactamente un punto. Es una función.
+
+**📊 Visualización — Contraejemplo (no es función: $x^2 + y^2 = 1$ - circunferencia):**
+
+```chart
+type: scatter
+labels: [-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1]
+series:
+  - title: "Rama superior"
+    data: [0, 0.6, 0.8, 0.92, 0.98, 1, 0.98, 0.92, 0.8, 0.6, 0]
+  - title: "Rama inferior"
+    data: [0, -0.6, -0.8, -0.92, -0.98, -1, -0.98, -0.92, -0.8, -0.6, 0]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> Para algunos valores de $x$ (ej: $x=0$), hay dos valores de $y$ (1 y -1). Algunas líneas verticales cortan la circunferencia en dos puntos. **No es función.**
+
 ### Función como relación especial
 
 Una función es un tipo particular de **relación** en la que, además, cada primera componente está relacionada con exactamente una segunda componente. En el diagrama sagital, cada elemento de $A$ tiene exactamente una flecha saliente.
@@ -74,15 +108,61 @@ $$f(1) = 1^2 = 1,\quad f(2) = 2^2 = 4,\quad f(3) = 3^2 = 9$$
 
 **Paso 3 — Conclusión:** A cada $x$ corresponde un único $y$. Sí es función. Su gráfica es una parábola y toda línea vertical la corta en un solo punto.
 
+**📊 Visualización — Gráfica de $f(x) = x^2$:**
+
+```chart
+type: line
+labels: [-3, -2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5, 3]
+series:
+  - title: "f(x) = x²"
+    data: [9, 6.25, 4, 2.25, 1, 0.25, 0, 0.25, 1, 2.25, 4, 6.25, 9]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+> La parábola abre hacia arriba. Cada línea vertical toca la curva en exactamente un punto. Para el dominio $\{1,2,3\}$, obtenemos los puntos $(1,1)$, $(2,4)$ y $(3,9)$. Claramente es función.
+
 **Problema 2:** Determinar si la relación $\{(1,2), (1,5), (2,3)\}$ es función.
 
 En el par $(1,2)$ y $(1,5)$, el mismo $x=1$ tiene dos imágenes ($2$ y $5$). **No es función.**
+
+**📊 Visualización — Diagrama de dispersión (NO es función):**
+
+```chart
+type: scatter
+labels: [1, 1, 2]
+series:
+  - title: "Puntos: (1,2), (1,5), (2,3)"
+    data: [2, 5, 3]
+width: 90%
+labelColors: false
+beginAtZero: true
+```
+
+> Observe que para $x=1$ hay dos puntos diferentes: $(1,2)$ y $(1,5)$. Viola la condición de unicidad. Si trazamos una línea vertical en $x=1$, toca dos puntos.
 
 **Problema 3:** Determinar si la relación $\{(1,2), (3,2), (5,4)\}$ es función.
 
 **Paso 1:** El valor $x=1$ tiene imagen $2$; $x=3$ tiene imagen $2$; $x=5$ tiene imagen $4$.
 
 **Paso 2 — Conclusión:** Dos $x$ distintos pueden compartir el mismo $y$ (aquí $1$ y $3$ comparten $2$) y eso **no** rompe la definición. Cada $x$ tiene una sola imagen: **sí es función**.
+
+**📊 Visualización — Diagrama de dispersión (SÍ es función):**
+
+```chart
+type: scatter
+labels: [1, 3, 5]
+series:
+  - title: "Puntos: (1,2), (3,2), (5,4)"
+    data: [2, 2, 4]
+width: 90%
+labelColors: false
+beginAtZero: true
+```
+
+> Aunque $(1,2)$ y $(3,2)$ comparten la imagen $y=2$, cada $x$ tiene un único $y$. Si trazamos líneas verticales en $x=1$, $x=3$ y $x=5$, cada una toca exactamente un punto. **Sí es función**.
 
 ## 🌍 Ejemplo de la vida real
 

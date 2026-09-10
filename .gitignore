@@ -225,3 +225,8 @@ __marimo__/
 /mi_entorno
 
 .txt
+
+# Evaluaciones guardadas (archivos con patrón carpeta-YYYYMMDDHHMMSS.json)
+# Estos archivos se generan cada vez que se completa una evaluación
+# Patrón: *-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].json
+00_curso_estadistica_inferencial/**/*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].json

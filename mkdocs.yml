@@ -8,8 +8,15 @@ markdown_extensions:
   - obsidian_callouts  # <-- Añade esta línea
   - admonition         # Requerido para dar soporte visual de cajas
   - pymdownx.details   # Permite que sean desplegables si usas [-]
+  - pymdownx.superfences:
+      custom_fences:
+        - name: chart
+          class: mkdocs-chart
+          format: !!python/name:obsidian_charts_mkdocs.fence_chart
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/quiz.js
+  - javascripts/chart.umd.min.js   # Chart.js (copia local, sin CDN)
+  - javascripts/charts.js          # Renderiza los bloques ```chart
