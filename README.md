@@ -78,7 +78,28 @@ Para ver tu IP en Linux:
 hostname -I
 ```
 
+## Mantenimiento
+
+### Limpiar Evaluaciones Guardadas
+
+Cada vez que se responde una evaluación, `evaluador.py` guarda un archivo JSON con el patrón `carpeta-YYYYMMDDHHMMSS.json` dentro de la carpeta del tema (por ejemplo: `20_variable_dependiente_independiente-20260909105935.json`).
+
+Para **ver** las evaluaciones guardadas (vista previa, no borra nada):
+
+```bash
+find 00_curso_estadistica_inferencial -name "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].json" -print
+```
+
+Para **eliminar** todas las evaluaciones guardadas del curso:
+
+```bash
+find 00_curso_estadistica_inferencial -name "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9].json" -delete
+```
+
+> El patrón `*-14 dígitos.json` solo coincide con las evaluaciones guardadas; no afecta a otros JSON del proyecto (como `shema_evaluation.schema.json` o los `package.json`).
+
 ## Estructura del Proyecto
+
 
 ```
 etapa-2/
