@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "11_conjunto_potencia-20260908160230",
+  "titulo": "Evaluación 11_conjunto_potencia",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "El conjunto potencia $\\mathcal{P}(A)$ es:",
+      "opciones": [
+        "a) El conjunto de los elementos más grandes de $A$",
+        "b) El conjunto formado por **todos los subconjuntos posibles** de $A$",
+        "c) El conjunto de los elementos repetidos de $A$",
+        "d) El complemento de $A$"
+      ],
+      "respuesta_correcta": "b) El conjunto formado por **todos los subconjuntos posibles** de $A$",
+      "respuesta_usuario": "b) El conjunto formado por **todos los subconjuntos posibles** de $A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Si $n(A) = 5$, entonces $n(\\mathcal{P}(A))$ es:",
+      "opciones": [
+        "a) 5",
+        "b) 10",
+        "c) 25",
+        "d) **32** (porque $2^5 = 32$)"
+      ],
+      "respuesta_correcta": "d) **32** (porque $2^5 = 32$)",
+      "respuesta_usuario": "d) **32** (porque $2^5 = 32$)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "El conjunto potencia del conjunto vacío ($\\mathcal{P}(\\emptyset)$) tiene:",
+      "opciones": [
+        "a) 0 elementos",
+        "b) **1 elemento** (el subconjunto vacío: $2^0 = 1$)",
+        "c) 2 elementos",
+        "d) 4 elementos"
+      ],
+      "respuesta_correcta": "b) **1 elemento** (el subconjunto vacío: $2^0 = 1$)",
+      "respuesta_usuario": "b) **1 elemento** (el subconjunto vacío: $2^0 = 1$)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "La fórmula de la cardinalidad del conjunto potencia es:",
+      "opciones": [
+        "a) $n(\\mathcal{P}(A)) = n(A)$",
+        "b) $n(\\mathcal{P}(A)) = 2^{n(A)}$",
+        "c) $n(\\mathcal{P}(A)) = n(A)^2$",
+        "d) $n(\\mathcal{P}(A)) = n!$"
+      ],
+      "respuesta_correcta": "b) $n(\\mathcal{P}(A)) = 2^{n(A)}$",
+      "respuesta_usuario": "b) $n(\\mathcal{P}(A)) = 2^{n(A)}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Si $A = \\{a, b\\}$, entonces $\\mathcal{P}(A)$ es:",
+      "opciones": [
+        "a) $\\{a, b\\}$",
+        "b) $\\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$",
+        "c) $\\{\\emptyset, \\{a\\}, \\{b\\}\\}$",
+        "d) $\\{\\{a\\}, \\{b\\}\\}$"
+      ],
+      "respuesta_correcta": "b) $\\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$",
+      "respuesta_usuario": "b) $\\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "El conjunto potencia de $A$ siempre incluye:",
+      "opciones": [
+        "a) Solo los subconjuntos de un elemento",
+        "b) El **conjunto vacío** $\\emptyset$ y el **propio conjunto** $A$",
+        "c) Solo los elementos de $A$",
+        "d) El complemento de $A$"
+      ],
+      "respuesta_correcta": "b) El **conjunto vacío** $\\emptyset$ y el **propio conjunto** $A$",
+      "respuesta_usuario": "b) El **conjunto vacío** $\\emptyset$ y el **propio conjunto** $A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Si $n(A) = 3$, el número de subconjuntos de $A$ es:",
+      "opciones": [
+        "a) 3",
+        "b) 6",
+        "c) 8",
+        "d) 9"
+      ],
+      "respuesta_correcta": "c) 8",
+      "respuesta_usuario": "c) 8",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Cuántos subconjuntos tiene un conjunto de 1 elemento?",
+      "opciones": [
+        "a) 1",
+        "b) 2 ($\\emptyset$ y el propio elemento)",
+        "c) 4",
+        "d) 0"
+      ],
+      "respuesta_correcta": "b) 2 ($\\emptyset$ y el propio elemento)",
+      "respuesta_usuario": "b) 2 ($\\emptyset$ y el propio elemento)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "El conjunto potencia de $A = \\{x, y, z\\}$ (2 elementos en la lista) tiene:",
+      "opciones": [
+        "a) 3 elementos",
+        "b) 4 elementos",
+        "c) 8 elementos",
+        "d) 2 elementos"
+      ],
+      "respuesta_correcta": "b) 4 elementos",
+      "respuesta_usuario": "b) 4 elementos",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "La regla del conjunto potencia se conecta con el análisis combinatorio porque:",
+      "opciones": [
+        "a) Cuenta las permutaciones de los elementos",
+        "b) Cuenta el número de subconjuntos posibles de $n$ elementos como $2^n$",
+        "c) Cuenta solo los subconjuntos de tamaño 2",
+        "d) No tiene relación"
+      ],
+      "respuesta_correcta": "b) Cuenta el número de subconjuntos posibles de $n$ elementos como $2^n$",
+      "respuesta_usuario": "b) Cuenta el número de subconjuntos posibles de $n$ elementos como $2^n$",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 100.0,
+    "total_correctas": 10,
+    "total_preguntas": 10
+  }
+}

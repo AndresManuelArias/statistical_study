@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "14_carroll_diagrams-20260908170622",
+  "titulo": "Evaluación 14_carroll_diagrams",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿En honor a quién reciben su nombre los diagramas de Carroll?",
+      "opciones": [
+        "a) A un personaje de Alicia en el país de las maravillas",
+        "b) Al matemático y lógico británico Lewis Carroll",
+        "c) A un estadístico llamado Carroll",
+        "d) A un autor de novelas de misterio"
+      ],
+      "respuesta_correcta": "b) Al matemático y lógico británico Lewis Carroll",
+      "respuesta_usuario": "b) Al matemático y lógico británico Lewis Carroll",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Con qué otros nombres se conocen los diagramas de Carroll?",
+      "opciones": [
+        "a) Tablas de frecuencias o histogramas",
+        "b) Tablas de contingencia o de doble entrada",
+        "c) Diagramas de Venn-Euler",
+        "d) Tablas de distribución normal"
+      ],
+      "respuesta_correcta": "b) Tablas de contingencia o de doble entrada",
+      "respuesta_usuario": "c) Diagramas de Venn-Euler",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Cuándo resultan especialmente útiles frente a los diagramas de Venn-Euler?",
+      "opciones": [
+        "a) Cuando se manejan exactamente dos conjuntos",
+        "b) Cuando se manejan más de tres conjuntos, porque evitan la dificultad de interpretación visual",
+        "c) Nunca, el diagrama de Venn siempre es mejor",
+        "d) Solo cuando no hay conjuntos que clasificar"
+      ],
+      "respuesta_correcta": "b) Cuando se manejan más de tres conjuntos, porque evitan la dificultad de interpretación visual",
+      "respuesta_usuario": "b) Cuando se manejan más de tres conjuntos, porque evitan la dificultad de interpretación visual",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "En un diagrama de Carroll de 2×2, ¿qué representan las columnas?",
+      "opciones": [
+        "a) La presencia o ausencia de un atributo",
+        "b) El total de la fila",
+        "c) La intersección de tres conjuntos",
+        "d) Solo los elementos que cumplen ambas condiciones"
+      ],
+      "respuesta_correcta": "a) La presencia o ausencia de un atributo",
+      "respuesta_usuario": "b) El total de la fila",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "En la tabla 2×2 con atributo X (columnas) y atributo Y (filas), la celda $c$ representa:",
+      "opciones": [
+        "a) Elementos con X y Y",
+        "b) Elementos con Y pero sin X",
+        "c) Elementos con X pero sin Y",
+        "d) Elementos sin X y sin Y"
+      ],
+      "respuesta_correcta": "c) Elementos con X pero sin Y",
+      "respuesta_usuario": "a) Elementos con X y Y",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "La suma de las cuatro celdas internas ($a + b + c + d$) de un diagrama de Carroll representa:",
+      "opciones": [
+        "a) La celda con mayor valor",
+        "b) El total de elementos clasificados (gran total)",
+        "c) La diferencia entre los totales de fila",
+        "d) El total de la última columna solamente"
+      ],
+      "respuesta_correcta": "b) El total de elementos clasificados (gran total)",
+      "respuesta_usuario": "b) El total de elementos clasificados (gran total)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "En el ejemplo de la cafetería (60 bebidas), la celda de bebidas calientes sin leche es:",
+      "opciones": [
+        "a) 22",
+        "b) 13",
+        "c) 8",
+        "d) 17"
+      ],
+      "respuesta_correcta": "b) 13",
+      "respuesta_usuario": "b) 13",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Con los mismos datos de la cafetería, el total de bebidas frías se calcula como:",
+      "opciones": [
+        "a) $8 + 17 = 25$",
+        "b) $22 + 13 = 35$",
+        "c) $22 + 8 = 30$",
+        "d) $13 + 17 = 30$"
+      ],
+      "respuesta_correcta": "a) $8 + 17 = 25$",
+      "respuesta_usuario": "a) $8 + 17 = 25$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si el total de la columna \"Con leche\" es 30 y la celda \"calientes con leche\" es 22, el número de bebidas frías con leche es:",
+      "opciones": [
+        "a) 8 (30 − 22)",
+        "b) 13",
+        "c) 17",
+        "d) 35"
+      ],
+      "respuesta_correcta": "a) 8 (30 − 22)",
+      "respuesta_usuario": "a) 8 (30 − 22)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En estadística, las tablas con la misma estructura que un diagrama de Carroll (conteos observados) se usan principalmente para:",
+      "opciones": [
+        "a) La prueba de independencia chi-cuadrado ($\\chi^2$), comparando conteos observados con esperados",
+        "b) Calcular solo medias aritméticas",
+        "c) Dibujar diagramas de Venn más complejos",
+        "d) Reemplazar las distribuciones de probabilidad"
+      ],
+      "respuesta_correcta": "a) La prueba de independencia chi-cuadrado ($\\chi^2$), comparando conteos observados con esperados",
+      "respuesta_usuario": "a) La prueba de independencia chi-cuadrado ($\\chi^2$), comparando conteos observados con esperados",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 70.0,
+    "total_correctas": 7,
+    "total_preguntas": 10
+  }
+}

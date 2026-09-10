@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "03_conjunto_vacio_universal-20260908102436",
+  "titulo": "Evaluación 03_conjunto_vacio_universal",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "El conjunto vacío se caracteriza por:",
+      "opciones": [
+        "a) Contener un elemento llamado \"vacío\"",
+        "b) Contener exactamente 10 elementos",
+        "c) No contener **ningún elemento** y ser subconjunto de cualquier conjunto",
+        "d) Ser igual al conjunto universal"
+      ],
+      "respuesta_correcta": "c) No contener **ningún elemento** y ser subconjunto de cualquier conjunto",
+      "respuesta_usuario": "c) No contener **ningún elemento** y ser subconjunto de cualquier conjunto",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Un conjunto universal ($U$ o $\\Omega$) se define como:",
+      "opciones": [
+        "a) El conjunto con más elementos del contexto",
+        "b) El conjunto que contiene **todos los elementos posibles del contexto**",
+        "c) El conjunto de los números naturales",
+        "d) El conjunto que no tiene elementos"
+      ],
+      "respuesta_correcta": "b) El conjunto que contiene **todos los elementos posibles del contexto**",
+      "respuesta_usuario": "b) El conjunto que contiene **todos los elementos posibles del contexto**",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "La cardinalidad del conjunto vacío es:",
+      "opciones": [
+        "a) 1",
+        "b) 0",
+        "c) No está definida",
+        "d) Infinita"
+      ],
+      "respuesta_correcta": "b) 0",
+      "respuesta_usuario": "c) No está definida",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "La probabilidad del suceso imposible ($P(\\emptyset)$) es:",
+      "opciones": [
+        "a) 0",
+        "b) 1",
+        "c) 0.5",
+        "d) Depende del experimento"
+      ],
+      "respuesta_correcta": "a) 0",
+      "respuesta_usuario": "a) 0",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "La probabilidad del suceso seguro ($P(\\Omega)$) es:",
+      "opciones": [
+        "a) 0",
+        "b) 1",
+        "c) 0.5",
+        "d) Depende del experimento"
+      ],
+      "respuesta_correcta": "b) 1",
+      "respuesta_usuario": "b) 1",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Cuál de las siguientes afirmaciones es verdadera?",
+      "opciones": [
+        "a) $\\emptyset \\subseteq A$ para cualquier conjunto $A$",
+        "b) $A \\subseteq \\emptyset$ para cualquier conjunto $A$",
+        "c) $\\emptyset \\in A$ para cualquier conjunto $A$",
+        "d) $\\emptyset = \\Omega$ siempre"
+      ],
+      "respuesta_correcta": "a) $\\emptyset \\subseteq A$ para cualquier conjunto $A$",
+      "respuesta_usuario": "a) $\\emptyset \\subseteq A$ para cualquier conjunto $A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "En el dataset de matrimonios, el conjunto de los que siguen casados ∩ el de los divorciados es:",
+      "opciones": [
+        "a) El conjunto de los casados",
+        "b) El conjunto de los divorciados",
+        "c) El conjunto vacío (son mutuamente excluyentes)",
+        "d) El universo completo"
+      ],
+      "respuesta_correcta": "c) El conjunto vacío (son mutuamente excluyentes)",
+      "respuesta_usuario": "d) El universo completo",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "En una base de datos de matrimonios, definimos $D$ como el conjunto de matrimonios divorciados y $C$ como el conjunto de los que siguen casados. Si $|D| = 20708$, $|C| = 24292$ y $|D \\cap C| = 0$, entonces el universo $|\\Omega|$ es:",
+      "opciones": [
+        "a) 20708",
+        "b) 24292",
+        "c) 45000",
+        "d) 0"
+      ],
+      "respuesta_correcta": "c) 45000",
+      "respuesta_usuario": "c) 45000",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Por qué no existe un único conjunto universal en abstracto?",
+      "opciones": [
+        "a) Porque el universal siempre es el vacío",
+        "b) Porque depende del **contexto o dominio** de trabajo",
+        "c) Porque todo conjunto es universal",
+        "d) Porque el universal no existe"
+      ],
+      "respuesta_correcta": "b) Porque depende del **contexto o dominio** de trabajo",
+      "respuesta_usuario": "d) Porque el universal no existe",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $A \\subseteq \\Omega$, entonces la cardinalidad de $A$ cumple:",
+      "opciones": [
+        "a) $|A| > |\\Omega|$",
+        "b) $|A| = 0$ siempre",
+        "c) $|A| \\leq |\\Omega|$",
+        "d) $|A| = |\\Omega|$ siempre"
+      ],
+      "respuesta_correcta": "c) $|A| \\leq |\\Omega|$",
+      "respuesta_usuario": "c) $|A| \\leq |\\Omega|$",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 70.0,
+    "total_correctas": 7,
+    "total_preguntas": 10
+  }
+}

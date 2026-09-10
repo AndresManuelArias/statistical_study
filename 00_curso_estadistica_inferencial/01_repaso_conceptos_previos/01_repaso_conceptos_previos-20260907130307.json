@@ -1,0 +1,235 @@
+{
+  "evaluacion_id": "01_repaso_conceptos_previos-20260907130307",
+  "titulo": "Evaluación 01_repaso_conceptos_previos",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué condición debe cumplir una colección de objetos para ser considerada un conjunto?",
+      "opciones": [
+        "a) Que sus elementos estén ordenados de menor a mayor",
+        "b) Que esté bien definida, es decir, que se pueda determinar con precisión si un elemento pertenece o no a ella",
+        "c) Que contenga al menos diez elementos",
+        "d) Que sus elementos sean todos números"
+      ],
+      "respuesta_correcta": "b) Que esté bien definida, es decir, que se pueda determinar con precisión si un elemento pertenece o no a ella",
+      "respuesta_usuario": "b) Que esté bien definida, es decir, que se pueda determinar con precisión si un elemento pertenece o no a ella",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Se tiene el conjunto $A = \\{x \\mid x \\in \\mathbb{N},\\ x \\leq 4\\}$. ¿Cuál es su representación por extensión?",
+      "opciones": [
+        "a) $A = \\{5, 6, 7, \\ldots\\}$",
+        "b) $A = \\{0, 1, 2, 3, 4\\}$",
+        "c) $A = \\{1, 2, 3, 4\\}$",
+        "d) $A = \\{4, 3, 2, 1\\}$"
+      ],
+      "respuesta_correcta": "c) $A = \\{1, 2, 3, 4\\}$",
+      "respuesta_usuario": "a) $A = \\{5, 6, 7, \\ldots\\}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Considera el conjunto $A = \\{1, 2, 3\\}$. ¿Cuál de los siguientes enunciados es correcto?",
+      "opciones": [
+        "a) $4 \\in A$",
+        "b) $2 \\notin A$",
+        "c) $3 \\in A$",
+        "d) $5 \\in A$"
+      ],
+      "respuesta_correcta": "c) $3 \\in A$",
+      "respuesta_usuario": "d) $5 \\in A$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Dados $A = \\{1, 2, 3\\}$ y $B = \\{3, 4, 5\\}$, la intersección $A \\cap B$ es:",
+      "opciones": [
+        "a) $\\{1, 2, 3, 4, 5\\}$",
+        "b) $\\{3\\}$",
+        "c) $\\{1, 2\\}$",
+        "d) $\\emptyset$"
+      ],
+      "respuesta_correcta": "b) $\\{3\\}$",
+      "respuesta_usuario": "c) $\\{1, 2\\}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Con los mismos conjuntos $A = \\{1, 2, 3\\}$ y $B = \\{3, 4, 5\\}$, la unión $A \\cup B$ es:",
+      "opciones": [
+        "a) $\\{1, 2, 3, 4, 5\\}$",
+        "b) $\\{3\\}$",
+        "c) $\\{1, 2\\}$",
+        "d) $\\emptyset$"
+      ],
+      "respuesta_correcta": "a) $\\{1, 2, 3, 4, 5\\}$",
+      "respuesta_usuario": "a) $\\{1, 2, 3, 4, 5\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si dos conjuntos $A$ y $B$ son mutuamente excluyentes (no comparten elementos), se cumple que:",
+      "opciones": [
+        "a) $A \\cup B = \\emptyset$",
+        "b) $A \\cap B = \\emptyset$",
+        "c) $A \\subseteq B$",
+        "d) $A = B$"
+      ],
+      "respuesta_correcta": "b) $A \\cap B = \\emptyset$",
+      "respuesta_usuario": "c) $A \\subseteq B$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "En una base de datos de matrimonios, definimos $D$ como el conjunto de matrimonios divorciados y $C$ como el conjunto de los que siguen casados. Si $|D| = 20708$, $|C| = 24292$ y $|D \\cap C| = 0$, entonces el universo $|\\Omega|$ es:",
+      "opciones": [
+        "a) 20708",
+        "b) 24292",
+        "c) 45000",
+        "d) 0"
+      ],
+      "respuesta_correcta": "c) 45000",
+      "respuesta_usuario": "a) 20708",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "La diferencia $A - B$ (elementos de $A$ que no están en $B$) para $A = \\{1, 2, 3, 4\\}$ y $B = \\{3, 4, 5\\}$ es:",
+      "opciones": [
+        "a) $\\{1, 2\\}$",
+        "b) $\\{3, 4\\}$",
+        "c) $\\{5\\}$",
+        "d) $\\{1, 2, 3, 4, 5\\}$"
+      ],
+      "respuesta_correcta": "a) $\\{1, 2\\}$",
+      "respuesta_usuario": "d) $\\{1, 2, 3, 4, 5\\}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si $\\Omega = \\{1, 2, 3, 4, 5\\}$ y $A = \\{1, 2\\}$, entonces el complemento $A^c$ es:",
+      "opciones": [
+        "a) $\\{1, 2\\}$",
+        "b) $\\{3, 4, 5\\}$",
+        "c) $\\{1, 2, 3, 4, 5\\}$",
+        "d) $\\emptyset$"
+      ],
+      "respuesta_correcta": "b) $\\{3, 4, 5\\}$",
+      "respuesta_usuario": "b) $\\{3, 4, 5\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Un conjunto por comprensión se define:",
+      "opciones": [
+        "a) Enlistando uno a uno todos sus elementos entre llaves",
+        "b) Indicando una propiedad o regla que cumplen todos sus elementos",
+        "c) Contando cuántos elementos tiene",
+        "d) Ordenando sus elementos de mayor a menor"
+      ],
+      "respuesta_correcta": "b) Indicando una propiedad o regla que cumplen todos sus elementos",
+      "respuesta_usuario": "c) Contando cuántos elementos tiene",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 11,
+      "enunciado": "¿Cuál es la definición formal de que $A$ sea subconjunto de $B$ ($A \\subseteq B$)?",
+      "opciones": [
+        "a) Que $A$ y $B$ tengan exactamente los mismos elementos",
+        "b) Que cada elemento de $A$ también pertenezca a $B$",
+        "c) Que cada elemento de $B$ también pertenezca a $A$",
+        "d) Que $A$ tenga más elementos que $B$"
+      ],
+      "respuesta_correcta": "b) Que cada elemento de $A$ también pertenezca a $B$",
+      "respuesta_usuario": "d) Que $A$ tenga más elementos que $B$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 12,
+      "enunciado": "La propiedad reflexiva de la contención establece que:",
+      "opciones": [
+        "a) Si $A \\subseteq B$ y $B \\subseteq C$, entonces $A \\subseteq C$",
+        "b) Todo conjunto está contenido en sí mismo: $A \\subseteq A$",
+        "c) Si $A \\subseteq B$ y $B \\subseteq A$, entonces $A = B$",
+        "d) El conjunto vacío pertenece a todo conjunto"
+      ],
+      "respuesta_correcta": "b) Todo conjunto está contenido en sí mismo: $A \\subseteq A$",
+      "respuesta_usuario": "d) El conjunto vacío pertenece a todo conjunto",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 13,
+      "enunciado": "La propiedad transitiva de la contención establece que:",
+      "opciones": [
+        "a) $A \\subseteq A$ para todo conjunto $A$",
+        "b) Si $A \\subseteq B$ y $B \\subseteq A$, entonces $A = B$",
+        "c) Si $A \\subseteq B$ y $B \\subseteq C$, entonces $A \\subseteq C$",
+        "d) $\\emptyset \\subseteq A$ para cualquier conjunto $A$"
+      ],
+      "respuesta_correcta": "c) Si $A \\subseteq B$ y $B \\subseteq C$, entonces $A \\subseteq C$",
+      "respuesta_usuario": "c) Si $A \\subseteq B$ y $B \\subseteq C$, entonces $A \\subseteq C$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 14,
+      "enunciado": "La propiedad antisimétrica de la contención establece que:",
+      "opciones": [
+        "a) Si $A \\subseteq B$ y $B \\subseteq A$, entonces $A = B$",
+        "b) Todo conjunto está contenido en sí mismo",
+        "c) $\\emptyset \\subseteq A$",
+        "d) $A \\subseteq \\Omega$"
+      ],
+      "respuesta_correcta": "a) Si $A \\subseteq B$ y $B \\subseteq A$, entonces $A = B$",
+      "respuesta_usuario": "b) Todo conjunto está contenido en sí mismo",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 15,
+      "enunciado": "¿Cuándo se dice que $A$ no es subconjunto de $B$ ($A \\nsubseteq B$)?",
+      "opciones": [
+        "a) Cuando $A$ y $B$ son exactamente iguales",
+        "b) Cuando $A$ tiene menos elementos que $B$",
+        "c) Cuando existe al menos un elemento de $A$ que no pertenece a $B$",
+        "d) Cuando $B$ está contenido en $A$"
+      ],
+      "respuesta_correcta": "c) Cuando existe al menos un elemento de $A$ que no pertenece a $B$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 16,
+      "enunciado": "En el ejemplo del dataset de matrimonios, $B$ = matrimonios `bachelors` con terapia prematrimonial y $A$ = matrimonios `bachelors`. Se cumple que:",
+      "opciones": [
+        "a) $A \\subseteq B$",
+        "b) $B \\subseteq A$",
+        "c) $A \\cap B = \\emptyset$",
+        "d) $B = \\Omega$"
+      ],
+      "respuesta_correcta": "b) $B \\subseteq A$",
+      "respuesta_usuario": "c) $A \\cap B = \\emptyset$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 17,
+      "enunciado": "Si $B \\subseteq A$, la probabilidad condicional $P(B \\mid A)$ se calcula como:",
+      "opciones": [
+        "a) $P(B \\mid A) = \\frac{|A|}{|B|}$",
+        "b) $P(B \\mid A) = \\frac{|B|}{|A|}$",
+        "c) $P(B \\mid A) = \\frac{|B|}{|\\Omega|}$",
+        "d) $P(B \\mid A) = \\frac{|A|}{|\\Omega|}$"
+      ],
+      "respuesta_correcta": "b) $P(B \\mid A) = \\frac{|B|}{|A|}$",
+      "respuesta_usuario": "d) $P(B \\mid A) = \\frac{|A|}{|\\Omega|}$",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 23.53,
+    "total_correctas": 4,
+    "total_preguntas": 17
+  }
+}

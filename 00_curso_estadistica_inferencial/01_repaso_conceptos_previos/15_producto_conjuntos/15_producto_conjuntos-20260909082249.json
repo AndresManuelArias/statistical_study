@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "15_producto_conjuntos-20260909082249",
+  "titulo": "Evaluación 15_producto_conjuntos",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué describe formalmente el producto cartesiano $A \\times B$?",
+      "opciones": [
+        "a) El conjunto de todos los subconjuntos de $A$ y $B$ formados por unión",
+        "b) El conjunto de todos los pares ordenados $(a, b)$ donde $a \\in A$ y $b \\in B$",
+        "c) El conjunto de todos los elementos que están tanto en $A$ como en $B$",
+        "d) El conjunto de todas las permutaciones posibles de los elementos de $A$ y $B$"
+      ],
+      "respuesta_correcta": "b) El conjunto de todos los pares ordenados $(a, b)$ donde $a \\in A$ y $b \\in B$",
+      "respuesta_usuario": "b) El conjunto de todos los pares ordenados $(a, b)$ donde $a \\in A$ y $b \\in B$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Si $A = \\{m, n\\}$ y $B = \\{1, 2\\}$, ¿cuál de los siguientes pares ordenados pertenece a $A \\times B$?",
+      "opciones": [
+        "a) $(2, n)$",
+        "b) $(1, 2)$",
+        "c) $(n, m)$",
+        "d) $(m, 1)$"
+      ],
+      "respuesta_correcta": "d) $(m, 1)$",
+      "respuesta_usuario": "a) $(2, n)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Dados $A = \\{1, 2, 3\\}$ y $B = \\{x, y\\}$, ¿cuántos elementos tiene $A \\times B$?",
+      "opciones": [
+        "a) 5",
+        "b) 2",
+        "c) 6",
+        "d) 8"
+      ],
+      "respuesta_correcta": "c) 6",
+      "respuesta_usuario": "c) 6",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Con $A = \\{1, 2, 3\\}$ y $B = \\{x, y\\}$, ¿cuál de los siguientes pares pertenece a $B \\times A$?",
+      "opciones": [
+        "a) $(3, y)$",
+        "b) $(1, x)$",
+        "c) $(y, 3)$",
+        "d) $(x, 2)$"
+      ],
+      "respuesta_correcta": "d) $(x, 2)$",
+      "respuesta_usuario": "b) $(1, x)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué resultado se obtiene al calcular $A \\times \\varnothing$?",
+      "opciones": [
+        "a) $\\{(\\varnothing, \\varnothing)\\}$",
+        "b) $\\varnothing$",
+        "c) $\\{\\varnothing\\}$",
+        "d) $A$"
+      ],
+      "respuesta_correcta": "b) $\\varnothing$",
+      "respuesta_usuario": "b) $\\varnothing$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Dado un producto de tres conjuntos $C \\times D \\times E$ con $|C| = 2$, $|D| = 1$ y $|E| = 2$, ¿cuántas tripletas ordenadas contiene el producto?",
+      "opciones": [
+        "a) 4",
+        "b) 5",
+        "c) 2",
+        "d) 3"
+      ],
+      "respuesta_correcta": "a) 4",
+      "respuesta_usuario": "a) 4",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Un sistema de logística ofrece 4 rutas de reparto, 3 tipos de vehículo y 2 franjas horarias. Usando el principio de multiplicación, ¿cuántas combinaciones totales de ruta, vehículo y franja horaria puede generar el sistema?",
+      "opciones": [
+        "a) 9",
+        "b) 14",
+        "c) 12",
+        "d) 24"
+      ],
+      "respuesta_correcta": "d) 24",
+      "respuesta_usuario": "d) 24",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Para dos conjuntos no vacíos $A$ y $B$ con $A \\neq B$, ¿cuál es la relación correcta entre $A \\times B$ y $B \\times A$?",
+      "opciones": [
+        "a) Son conjuntos distintos, aunque ambos tengan la misma cantidad de elementos",
+        "b) Son siempre el mismo conjunto",
+        "c) $B \\times A$ siempre tiene más elementos que $A \\times B$",
+        "d) $A \\times B$ siempre tiene más elementos que $B \\times A$"
+      ],
+      "respuesta_correcta": "a) Son conjuntos distintos, aunque ambos tengan la misma cantidad de elementos",
+      "respuesta_usuario": "a) Son conjuntos distintos, aunque ambos tengan la misma cantidad de elementos",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si un conjunto $A$ tiene 5 elementos y un conjunto $B$ tiene 7 elementos, ¿cuántos pares ordenados contiene $A \\times B$?",
+      "opciones": [
+        "a) 12",
+        "b) 30",
+        "c) 35",
+        "d) 49"
+      ],
+      "respuesta_correcta": "c) 35",
+      "respuesta_usuario": "c) 35",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $A = \\{1, 2, 3\\}$ y $B = \\{x, y\\}$, ¿cuántos elementos tiene $B \\times A$?",
+      "opciones": [
+        "a) 3",
+        "b) 6",
+        "c) 5",
+        "d) 9"
+      ],
+      "respuesta_correcta": "b) 6",
+      "respuesta_usuario": "b) 6",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 80.0,
+    "total_correctas": 8,
+    "total_preguntas": 10
+  }
+}

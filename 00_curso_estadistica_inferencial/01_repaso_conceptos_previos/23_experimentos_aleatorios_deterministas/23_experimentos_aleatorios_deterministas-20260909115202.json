@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "23_experimentos_aleatorios_deterministas-20260909115202",
+  "titulo": "Evaluación 23_experimentos_aleatorios_deterministas",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué caracteriza a un experimento determinista?",
+      "opciones": [
+        "a) Sus resultados nunca se pueden predecir.",
+        "b) Produce siempre el mismo resultado bajo las mismas condiciones.",
+        "c) Requiere un marco probabilístico para estudiarse.",
+        "d) Tiene al menos dos resultados posibles."
+      ],
+      "respuesta_correcta": "b) Produce siempre el mismo resultado bajo las mismas condiciones.",
+      "respuesta_usuario": "b) Produce siempre el mismo resultado bajo las mismas condiciones.",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Por qué se clasifica el lanzamiento de un dado de 6 caras como experimento aleatorio?",
+      "opciones": [
+        "a) Porque el dado siempre cae en la misma cara.",
+        "b) Porque el resultado se puede calcular con una fórmula exacta.",
+        "c) Porque, aun conociendo las condiciones iniciales, no se puede predecir qué número saldrá.",
+        "d) Porque solo se puede lanzar una vez."
+      ],
+      "respuesta_correcta": "c) Porque, aun conociendo las condiciones iniciales, no se puede predecir qué número saldrá.",
+      "respuesta_usuario": "c) Porque, aun conociendo las condiciones iniciales, no se puede predecir qué número saldrá.",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Calcular el área de un rectángulo de base $b$ y altura $h$ mediante $A = b \\times h$ es un ejemplo de:",
+      "opciones": [
+        "a) Experimento aleatorio porque $A$ varía en cada medición.",
+        "b) Experimento determinista porque el resultado siempre es el mismo para valores fijos de $b$ y $h$.",
+        "c) Espacio muestral discreto.",
+        "d) Evento impredecible."
+      ],
+      "respuesta_correcta": "b) Experimento determinista porque el resultado siempre es el mismo para valores fijos de $b$ y $h$.",
+      "respuesta_usuario": "b) Experimento determinista porque el resultado siempre es el mismo para valores fijos de $b$ y $h$.",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Seleccionar una persona al azar de una ciudad es un experimento aleatorio porque:",
+      "opciones": [
+        "a) La persona siempre tiene la misma edad.",
+        "b) No se puede repetir el experimento.",
+        "c) El resultado (la identidad o la edad de la persona seleccionada) no se puede predecir con certeza antes de realizar la selección.",
+        "d) La ciudad tiene solo un habitante."
+      ],
+      "respuesta_correcta": "c) El resultado (la identidad o la edad de la persona seleccionada) no se puede predecir con certeza antes de realizar la selección.",
+      "respuesta_usuario": "c) El resultado (la identidad o la edad de la persona seleccionada) no se puede predecir con certeza antes de realizar la selección.",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Cuántos resultados contiene el espacio muestral del experimento de lanzar una moneda y después un dado de 6 caras?",
+      "opciones": [
+        "a) 6",
+        "b) 8",
+        "c) 10",
+        "d) 12"
+      ],
+      "respuesta_correcta": "d) 12",
+      "respuesta_usuario": "d) 12",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Un proceso de medición convierte en aleatorio el resultado porque:",
+      "opciones": [
+        "a) El instrumento siempre arroja el mismo valor.",
+        "b) No se puede repetir la medición.",
+        "c) Los errores instrumentales hacen que cada medición produzca un valor ligeramente diferente.",
+        "d) La cantidad medida es siempre cero."
+      ],
+      "respuesta_correcta": "c) Los errores instrumentales hacen que cada medición produzca un valor ligeramente diferente.",
+      "respuesta_usuario": "b) No se puede repetir la medición.",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Qué tipo de experimento es hervir agua a presión atmosférica estándar?",
+      "opciones": [
+        "a) Aleatorio, porque el punto de ebullición varía sin razón.",
+        "b) Determinista, porque el agua siempre hierve a $100\\,^{°}\\text{C}$ bajo esas condiciones.",
+        "c) Aleatorio, porque no se puede repetir.",
+        "d) Indeterminado, porque no hay condiciones controladas."
+      ],
+      "respuesta_correcta": "b) Determinista, porque el agua siempre hierve a $100\\,^{°}\\text{C}$ bajo esas condiciones.",
+      "respuesta_usuario": "b) Determinista, porque el agua siempre hierve a $100\\,^{°}\\text{C}$ bajo esas condiciones.",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "La Estadística Inferencial y la Teoría de la Probabilidad se ocupan principalmente de:",
+      "opciones": [
+        "a) Experimentos deterministas, porque sus resultados son predecibles.",
+        "b) Experimentos aleatorios, porque requieren cuantificar la incertidumbre.",
+        "c) Espacios muestrales vacíos.",
+        "d) Funciones deterministas sin variabilidad."
+      ],
+      "respuesta_correcta": "b) Experimentos aleatorios, porque requieren cuantificar la incertidumbre.",
+      "respuesta_usuario": "b) Experimentos aleatorios, porque requieren cuantificar la incertidumbre.",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si lanzamos un dado 600 veces y la cara 4 aparece 150 veces, ¿qué se puede inferir?",
+      "opciones": [
+        "a) El dado es perfecto, ya que todos los resultados son igualmente probables.",
+        "b) No se puede sacar ninguna conclusión con solo los datos.",
+        "c) Podría indicar que el dado está sesgado, ya que la frecuencia observada difiere de la esperada ($\\approx 100$).",
+        "d) El dado es determinista porque se conoce la frecuencia de cada cara."
+      ],
+      "respuesta_correcta": "c) Podría indicar que el dado está sesgado, ya que la frecuencia observada difiere de la esperada ($\\approx 100$).",
+      "respuesta_usuario": "b) No se puede sacar ninguna conclusión con solo los datos.",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Cuando un cajero de supermercado pesa una fruta, el peso registrado es una variable aleatoria porque:",
+      "opciones": [
+        "a) La báscula siempre marca exactamente el mismo peso.",
+        "b) El peso varía de una pieza a otra por factores no controlables como humedad y tamaño.",
+        "c) La fruta siempre tiene exactamente 200 gramos.",
+        "d) No se puede repetir el proceso de pesaje."
+      ],
+      "respuesta_correcta": "b) El peso varía de una pieza a otra por factores no controlables como humedad y tamaño.",
+      "respuesta_usuario": "b) El peso varía de una pieza a otra por factores no controlables como humedad y tamaño.",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 80.0,
+    "total_correctas": 8,
+    "total_preguntas": 10
+  }
+}

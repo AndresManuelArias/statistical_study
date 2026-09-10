@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "05_interseccion-20260908112616",
+  "titulo": "Evaluación 05_interseccion",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "Dados $A = \\{1, 2, 3\\}$ y $B = \\{3, 4, 5\\}$, la intersección $A \\cap B$ es:",
+      "opciones": [
+        "a) $\\{1, 2, 3, 4, 5\\}$",
+        "b) $\\{3\\}$",
+        "c) $\\{1, 2\\}$",
+        "d) $\\emptyset$"
+      ],
+      "respuesta_correcta": "b) $\\{3\\}$",
+      "respuesta_usuario": "b) $\\{3\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Si dos conjuntos $A$ y $B$ son mutuamente excluyentes (no comparten elementos), se cumple que:",
+      "opciones": [
+        "a) $A \\cup B = \\emptyset$",
+        "b) $A \\cap B = \\emptyset$",
+        "c) $A \\subseteq B$",
+        "d) $A = B$"
+      ],
+      "respuesta_correcta": "b) $A \\cap B = \\emptyset$",
+      "respuesta_usuario": "b) $A \\cap B = \\emptyset$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "La intersección de un conjunto consigo mismo ($A \\cap A$) es:",
+      "opciones": [
+        "a) $\\emptyset$",
+        "b) $A$",
+        "c) $\\Omega$",
+        "d) $A^c$"
+      ],
+      "respuesta_correcta": "b) $A$",
+      "respuesta_usuario": "b) $A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si $B \\subseteq A$, entonces la intersección $A \\cap B$ es:",
+      "opciones": [
+        "a) $A$",
+        "b) $B$",
+        "c) $\\emptyset$",
+        "d) $\\Omega$"
+      ],
+      "respuesta_correcta": "b) $B$",
+      "respuesta_usuario": "b) $B$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "La intersección de un conjunto con el vacío ($A \\cap \\emptyset$) es:",
+      "opciones": [
+        "a) $A$",
+        "b) $\\emptyset$",
+        "c) $\\Omega$",
+        "d) $A^c$"
+      ],
+      "respuesta_correcta": "b) $\\emptyset$",
+      "respuesta_usuario": "b) $\\emptyset$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "La intersección de un conjunto con el universo ($A \\cap \\Omega$) es:",
+      "opciones": [
+        "a) $A$",
+        "b) $\\Omega$",
+        "c) $\\emptyset$",
+        "d) $A^c$"
+      ],
+      "respuesta_correcta": "a) $A$",
+      "respuesta_usuario": "a) $A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Por comprensión, la intersección se define como:",
+      "opciones": [
+        "a) $A \\cap B = \\{x \\mid x \\in A \\lor x \\in B\\}$",
+        "b) $A \\cap B = \\{x \\mid x \\in A \\land x \\in B\\}$",
+        "c) $A \\cap B = \\{x \\mid x \\notin A\\}$",
+        "d) $A \\cap B = \\{x \\mid x \\in B,\\ x \\notin A\\}$"
+      ],
+      "respuesta_correcta": "b) $A \\cap B = \\{x \\mid x \\in A \\land x \\in B\\}$",
+      "respuesta_usuario": "b) $A \\cap B = \\{x \\mid x \\in A \\land x \\in B\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "En un gimnasio, $A$ = socios inscritos en yoga (11,700) y $T$ = socios que usan la piscina (10,972). Si $|A \\cap T| = 2987$, entonces:",
+      "opciones": [
+        "a) 2987 socios están en yoga **y** usan la piscina",
+        "b) 2987 socios están en yoga o usan la piscina",
+        "c) 2987 socios no están en yoga",
+        "d) 2987 socios están dados de baja"
+      ],
+      "respuesta_correcta": "a) 2987 socios están en yoga **y** usan la piscina",
+      "respuesta_usuario": "a) 2987 socios están en yoga **y** usan la piscina",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Dos conjuntos son disjuntos cuando:",
+      "opciones": [
+        "a) Su unión es el universo",
+        "b) Su intersección es vacía ($A \\cap B = \\emptyset$)",
+        "c) Uno es subconjunto del otro",
+        "d) Tienen la misma cardinalidad"
+      ],
+      "respuesta_correcta": "b) Su intersección es vacía ($A \\cap B = \\emptyset$)",
+      "respuesta_usuario": "b) Su intersección es vacía ($A \\cap B = \\emptyset$)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $A \\cap B = \\emptyset$, la probabilidad $P(A \\cap B)$ es:",
+      "opciones": [
+        "a) 1",
+        "b) 0.5",
+        "c) 0",
+        "d) $P(A)$"
+      ],
+      "respuesta_correcta": "c) 0",
+      "respuesta_usuario": "c) 0",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 100.0,
+    "total_correctas": 10,
+    "total_preguntas": 10
+  }
+}

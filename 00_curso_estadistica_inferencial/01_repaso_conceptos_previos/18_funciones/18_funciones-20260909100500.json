@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "18_funciones-20260909100500",
+  "titulo": "Evaluación 18_funciones",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué define una función $f: A \\to B$?",
+      "opciones": [
+        "a) Una regla que asigna a algunos elementos de $A$ uno o más elementos de $B$",
+        "b) Una regla de correspondencia que asigna a cada elemento de $A$ exactamente un elemento de $B$",
+        "c) Una relación donde cada elemento de $B$ proviene de al menos un elemento de $A$",
+        "d) Un conjunto de pares ordenados donde la segunda componente puede repetirse"
+      ],
+      "respuesta_correcta": "b) Una regla de correspondencia que asigna a cada elemento de $A$ exactamente un elemento de $B$",
+      "respuesta_usuario": "b) Una regla de correspondencia que asigna a cada elemento de $A$ exactamente un elemento de $B$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es la condición clave que debe cumplir una relación para ser función?",
+      "opciones": [
+        "a) Que el codominio contenga más elementos que el dominio",
+        "b) Que cada $x$ del dominio tenga al menos una imagen en el codominio",
+        "c) Que cada $x$ del dominio tenga un único $y$ en el codominio",
+        "d) Que cada $y$ del codominio provenga de exactamente un $x$"
+      ],
+      "respuesta_correcta": "c) Que cada $x$ del dominio tenga un único $y$ en el codominio",
+      "respuesta_usuario": "c) Que cada $x$ del dominio tenga un único $y$ en el codominio",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Si $f(x) = 3x - 2$, ¿cuál es el valor de $f(5)$?",
+      "opciones": [
+        "a) 10",
+        "b) 12",
+        "c) 13",
+        "d) 15"
+      ],
+      "respuesta_correcta": "c) 13",
+      "respuesta_usuario": "c) 13",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Según la prueba de la línea vertical, ¿cuándo una curva representa la gráfica de una función?",
+      "opciones": [
+        "a) Cuando toda línea horizontal la toca en exactamente un punto",
+        "b) Cuando existe al menos una línea vertical que la toca en dos puntos",
+        "c) Cuando toda línea vertical la toca en a lo sumo un punto",
+        "d) Cuando toda línea vertical la toca en exactamente dos puntos"
+      ],
+      "respuesta_correcta": "c) Cuando toda línea vertical la toca en a lo sumo un punto",
+      "respuesta_usuario": "a) Cuando toda línea horizontal la toca en exactamente un punto",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "La relación $\\{(2,1), (2,4), (3,5)\\}$ es función del conjunto $\\{2,3\\}$ en $\\{1,4,5\\}$.",
+      "opciones": [
+        "a) Verdadero",
+        "b) Falso, porque el $y=5$ tiene una sola imagen",
+        "c) Verdadero, porque todos los $x$ tienen imagen",
+        "d) Falso, porque el $x=2$ tiene dos imágenes distintas"
+      ],
+      "respuesta_correcta": "d) Falso, porque el $x=2$ tiene dos imágenes distintas",
+      "respuesta_usuario": "d) Falso, porque el $x=2$ tiene dos imágenes distintas",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "La relación $\\{(1,3), (4,3), (7,6)\\}$ ¿es función?",
+      "opciones": [
+        "a) No, porque los valores $x=1$ y $x=4$ comparten la misma imagen $y=3$",
+        "b) Sí, porque cada $x$ tiene un único $y$, aunque dos $x$ distintos compartan imagen",
+        "c) No, porque el $y=6$ solo aparece una vez",
+        "d) No, porque el dominio tiene más elementos que el codominio"
+      ],
+      "respuesta_correcta": "b) Sí, porque cada $x$ tiene un único $y$, aunque dos $x$ distintos compartan imagen",
+      "respuesta_usuario": "a) No, porque los valores $x=1$ y $x=4$ comparten la misma imagen $y=3$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "En la notación $f: A \\to B$, ¿qué representa $f(x)$?",
+      "opciones": [
+        "a) El conjunto $A$ llamado codominio",
+        "b) El único elemento de $B$ que le corresponde al elemento $x$ de $A$",
+        "c) El conjunto de todos los elementos de $A$",
+        "d) La cantidad de elementos de $B$"
+      ],
+      "respuesta_correcta": "b) El único elemento de $B$ que le corresponde al elemento $x$ de $A$",
+      "respuesta_usuario": "b) El único elemento de $B$ que le corresponde al elemento $x$ de $A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Para la función $f(x) = x^2$ con dominio $x \\in \\{1,2,3\\}$, ¿cuál es el valor de $f(3)$?",
+      "opciones": [
+        "a) 3",
+        "b) 6",
+        "c) 9",
+        "d) 27"
+      ],
+      "respuesta_correcta": "c) 9",
+      "respuesta_usuario": "c) 9",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En un diagrama sagital de una función $f: A \\to B$, ¿qué debe cumplir cada elemento de $A$?",
+      "opciones": [
+        "a) Tener exactamente una flecha entrante desde $B$",
+        "b) Tener al menos una flecha saliente hacia $B$",
+        "c) Tener exactamente una flecha saliente hacia $B$",
+        "d) No tener ninguna flecha si no está en el dominio"
+      ],
+      "respuesta_correcta": "c) Tener exactamente una flecha saliente hacia $B$",
+      "respuesta_usuario": "c) Tener exactamente una flecha saliente hacia $B$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En una tienda en línea, cada código de producto ($x$) tiene un precio fijo ($y$). Se compra tres veces el código $x_0$ y siempre se paga el mismo monto. ¿Por qué esta relación es función?",
+      "opciones": [
+        "a) Porque el precio $y$ es único para todo el catálogo",
+        "b) Porque el mismo código $x_0$ siempre produce el mismo precio $y$, sin importar cuántas veces se compre",
+        "c) Porque los clientes pueden pagar con distintos métodos de pago",
+        "d) Porque el monto total varía según la cantidad de unidades"
+      ],
+      "respuesta_correcta": "b) Porque el mismo código $x_0$ siempre produce el mismo precio $y$, sin importar cuántas veces se compre",
+      "respuesta_usuario": "b) Porque el mismo código $x_0$ siempre produce el mismo precio $y$, sin importar cuántas veces se compre",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 80.0,
+    "total_correctas": 8,
+    "total_preguntas": 10
+  }
+}

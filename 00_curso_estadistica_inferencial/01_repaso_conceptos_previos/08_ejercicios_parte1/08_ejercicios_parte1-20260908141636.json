@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "08_ejercicios_parte1-20260908141636",
+  "titulo": "Evaluación 08_ejercicios_parte1",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "En la jerarquía de operaciones entre conjuntos:",
+      "opciones": [
+        "a) Se opera de afuera hacia adentro",
+        "b) Se opera de **adentro hacia afuera**, empezando por los paréntesis",
+        "c) El orden no importa",
+        "d) Primero se calcula el complemento de todo"
+      ],
+      "respuesta_correcta": "b) Se opera de **adentro hacia afuera**, empezando por los paréntesis",
+      "respuesta_usuario": "b) Se opera de **adentro hacia afuera**, empezando por los paréntesis",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Para resolver $(A \\cup B)^c$, el orden correcto es:",
+      "opciones": [
+        "a) Primero el complemento, luego la unión",
+        "b) Primero la unión $A \\cup B$ y después su complemento",
+        "c) Primero $A^c$ y luego $B^c$",
+        "d) Cualquier orden da el mismo resultado"
+      ],
+      "respuesta_correcta": "b) Primero la unión $A \\cup B$ y después su complemento",
+      "respuesta_usuario": "b) Primero la unión $A \\cup B$ y después su complemento",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿$(A \\cup B)^c$ es igual a $A^c \\cup B^c$?",
+      "opciones": [
+        "a) Sí, siempre",
+        "b) No, nunca",
+        "c) Solo si $A = B$",
+        "d) Solo si $A \\cap B = \\emptyset$"
+      ],
+      "respuesta_correcta": "b) No, nunca",
+      "respuesta_usuario": "c) Solo si $A = B$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Con $A = \\{1, 2, 3\\}$, $B = \\{3, 4\\}$ y $\\Omega = \\{1, 2, 3, 4, 5\\}$, el resultado de $(A \\cup B)^c$ es:",
+      "opciones": [
+        "a) $\\{3\\}$",
+        "b) $\\{1, 2, 3, 4\\}$",
+        "c) $\\{5\\}$",
+        "d) $\\emptyset$"
+      ],
+      "respuesta_correcta": "c) $\\{5\\}$",
+      "respuesta_usuario": "c) $\\{5\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Con $B = \\{2, 3\\}$ y $A = \\{1, 2\\}$, el conjunto $(B - A)^c$ (dentro de un universo $\\Omega = \\{1, 2, 3, 4\\}$) es:",
+      "opciones": [
+        "a) $\\{2\\}$",
+        "b) $\\{1, 3, 4\\}$",
+        "c) $\\{1, 2, 4\\}$",
+        "d) $\\{4\\}$"
+      ],
+      "respuesta_correcta": "c) $\\{1, 2, 4\\}$",
+      "respuesta_usuario": "c) $\\{1, 2, 4\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si la intersección interna de una operación compleja es vacía (por ejemplo $A \\cap B = \\emptyset$), entonces $(A \\cap B) \\cup C$ se simplifica a:",
+      "opciones": [
+        "a) $\\emptyset$",
+        "b) $A$",
+        "c) $B$",
+        "d) **$C$** (pues $\\emptyset \\cup C = C$)"
+      ],
+      "respuesta_correcta": "d) **$C$** (pues $\\emptyset \\cup C = C$)",
+      "respuesta_usuario": "d) **$C$** (pues $\\emptyset \\cup C = C$)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Para resolver $(A \\cup B) \\cap (A \\cup C)$ se debe:",
+      "opciones": [
+        "a) Intersecar $B$ con $C$ directamente",
+        "b) Resolver **cada paréntesis (unión)** y luego intersecar los resultados",
+        "c) Tomar solo $A$",
+        "d) Unir todo sin paréntesis"
+      ],
+      "respuesta_correcta": "b) Resolver **cada paréntesis (unión)** y luego intersecar los resultados",
+      "respuesta_usuario": "b) Resolver **cada paréntesis (unión)** y luego intersecar los resultados",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Con $A = \\{1, 2\\}$, $B = \\{2, 3\\}$ y $C = \\{3, 4\\}$, el resultado de $(A \\cup B) \\cap (A \\cup C)$ es:",
+      "opciones": [
+        "a) $\\{1, 2, 3\\}$",
+        "b) $\\{2\\}$",
+        "c) $\\{1, 2, 3, 4\\}$",
+        "d) $\\{1, 2\\}$"
+      ],
+      "respuesta_correcta": "a) $\\{1, 2, 3\\}$",
+      "respuesta_usuario": "a) $\\{1, 2, 3\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "El complemento de la diferencia $(B - A)^c$ es equivalente a:",
+      "opciones": [
+        "a) $B^c \\cup A$",
+        "b) $B \\cap A^c$",
+        "c) $A \\cap B$",
+        "d) $\\Omega - B$"
+      ],
+      "respuesta_correcta": "a) $B^c \\cup A$",
+      "respuesta_usuario": "b) $B \\cap A^c$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En el diagrama de Venn, la región de $(A \\cup B)^c$ se sombrea:",
+      "opciones": [
+        "a) Dentro de $A$ y $B$",
+        "b) Dentro de $A$ pero fuera de $B$",
+        "c) **Fuera** de $A$ y $B$ (solo en el rectángulo del universo)",
+        "d) Fuera del universo"
+      ],
+      "respuesta_correcta": "c) **Fuera** de $A$ y $B$ (solo en el rectángulo del universo)",
+      "respuesta_usuario": "c) **Fuera** de $A$ y $B$ (solo en el rectángulo del universo)",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 80.0,
+    "total_correctas": 8,
+    "total_preguntas": 10
+  }
+}

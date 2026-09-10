@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "01_definicion_conjunto-20260908094532",
+  "titulo": "Evaluación 01_definicion_conjunto",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué condición debe cumplir una colección de objetos para ser considerada un conjunto?",
+      "opciones": [
+        "a) Que sus elementos estén ordenados de menor a mayor",
+        "b) Que esté bien definida, es decir, que se pueda determinar con precisión si un elemento pertenece o no a ella",
+        "c) Que contenga al menos diez elementos",
+        "d) Que sus elementos sean todos números"
+      ],
+      "respuesta_correcta": "b) Que esté bien definida, es decir, que se pueda determinar con precisión si un elemento pertenece o no a ella",
+      "respuesta_usuario": "b) Que esté bien definida, es decir, que se pueda determinar con precisión si un elemento pertenece o no a ella",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Se tiene el conjunto $A = \\{x \\mid x \\in \\mathbb{N},\\ x \\leq 4\\}$. ¿Cuál es su representación por extensión?",
+      "opciones": [
+        "a) $A = \\{5, 6, 7, \\ldots\\}$",
+        "b) $A = \\{0, 1, 2, 3, 4\\}$",
+        "c) $A = \\{1, 2, 3, 4\\}$",
+        "d) $A = \\{4, 3, 2, 1\\}$"
+      ],
+      "respuesta_correcta": "c) $A = \\{1, 2, 3, 4\\}$",
+      "respuesta_usuario": "c) $A = \\{1, 2, 3, 4\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Se define un conjunto por extensión cuando:",
+      "opciones": [
+        "a) Se indica una propiedad que cumplen todos sus elementos",
+        "b) Se enlistan uno a uno todos sus elementos entre llaves",
+        "c) Se cuenta cuántos elementos tiene",
+        "d) Se dibuja su diagrama de Venn"
+      ],
+      "respuesta_correcta": "b) Se enlistan uno a uno todos sus elementos entre llaves",
+      "respuesta_usuario": "a) Se indica una propiedad que cumplen todos sus elementos",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Un conjunto por comprensión se define:",
+      "opciones": [
+        "a) Enlistando uno a uno todos sus elementos entre llaves",
+        "b) Indicando una propiedad o regla que cumplen todos sus elementos",
+        "c) Contando cuántos elementos tiene",
+        "d) Ordenando sus elementos de mayor a menor"
+      ],
+      "respuesta_correcta": "b) Indicando una propiedad o regla que cumplen todos sus elementos",
+      "respuesta_usuario": "b) Indicando una propiedad o regla que cumplen todos sus elementos",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Considera el conjunto $A = \\{1, 2, 3\\}$. ¿Cuál de los siguientes enunciados es correcto?",
+      "opciones": [
+        "a) $4 \\in A$",
+        "b) $2 \\notin A$",
+        "c) $3 \\in A$",
+        "d) $5 \\in A$"
+      ],
+      "respuesta_correcta": "c) $3 \\in A$",
+      "respuesta_usuario": "c) $3 \\in A$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "En la notación $7 \\notin A$, el símbolo $\\notin$ significa:",
+      "opciones": [
+        "a) Que 7 pertenece a A",
+        "b) Que 7 **no** pertenece a A",
+        "c) Que A está contenido en 7",
+        "d) Que A tiene 7 elementos"
+      ],
+      "respuesta_correcta": "b) Que 7 **no** pertenece a A",
+      "respuesta_usuario": "b) Que 7 **no** pertenece a A",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "En un conjunto, los elementos no se repiten y:",
+      "opciones": [
+        "a) El orden es irrelevante: $\\{1,2,3\\} = \\{3,1,2\\}$",
+        "b) El orden es fundamental para identificarlo",
+        "c) Debe haber al menos dos elementos",
+        "d) Solo pueden ser números"
+      ],
+      "respuesta_correcta": "a) El orden es irrelevante: $\\{1,2,3\\} = \\{3,1,2\\}$",
+      "respuesta_usuario": "a) El orden es irrelevante: $\\{1,2,3\\} = \\{3,1,2\\}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "El símbolo $\\mid$ en $A = \\{x \\mid x \\in \\mathbb{N},\\ x \\leq 4\\}$ se lee:",
+      "opciones": [
+        "a) \"tal que\"",
+        "b) \"y\"",
+        "c) \"o\"",
+        "d) \"pertenece a\""
+      ],
+      "respuesta_correcta": "a) \"tal que\"",
+      "respuesta_usuario": "a) \"tal que\"",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En el dataset de matrimonios, el universo $\\Omega$ es:",
+      "opciones": [
+        "a) El conjunto de matrimonios divorciados",
+        "b) El conjunto de matrimonios casados",
+        "c) Todos los matrimonios (45,000 registros)",
+        "d) Los matrimonios con nivel bachelors"
+      ],
+      "respuesta_correcta": "c) Todos los matrimonios (45,000 registros)",
+      "respuesta_usuario": "c) Todos los matrimonios (45,000 registros)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "¿Qué permite decir que un conjunto está bien definido?",
+      "opciones": [
+        "a) Que tenga muchos elementos",
+        "b) Que se pueda determinar con precisión si un elemento pertenece o no a él",
+        "c) Que sus elementos sean números enteros",
+        "d) Que esté ordenado alfabéticamente"
+      ],
+      "respuesta_correcta": "b) Que se pueda determinar con precisión si un elemento pertenece o no a él",
+      "respuesta_usuario": "b) Que se pueda determinar con precisión si un elemento pertenece o no a él",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 90.0,
+    "total_correctas": 9,
+    "total_preguntas": 10
+  }
+}
