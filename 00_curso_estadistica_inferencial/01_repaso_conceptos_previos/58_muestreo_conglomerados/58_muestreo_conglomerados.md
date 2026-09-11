@@ -50,6 +50,26 @@ $$\sigma_{\bar{X}_{\text{cong}}} = \sqrt{\frac{\sigma^2}{m \cdot \bar{M}} \cdot 
 
 donde $\bar{M}$ es el tamaño promedio de los conglomerados y $\sigma^2$ es la varianza entre conglomerados.
 
+#### Gráfico: Viviendas por conglomerado seleccionado (ciudad con 50 manzanas)
+
+```chart
+type: bar
+labels: ["Manzana 12", "Manzana 27", "Manzana 35", "Manzana 41", "Manzana 48"]
+series:
+  - title: "Viviendas en el conglomerado (M_i)"
+    data: [22, 18, 20, 19, 21]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- De las $M = 50$ manzanas se seleccionan al azar $m = 5$; se encuesta a **todas** las viviendas de las manzanas elegidas: $100$ viviendas en total.
+- La estimación de la media usa una **media ponderada** que da más peso a los conglomerados más grandes:
+
+$$\bar{X}_{\text{cong}} = \frac{22(1200) + 18(1450) + 20(1100) + 19(1350) + 21(1280)}{100} = \$1{,}270.30$$
+
 ### Cuándo usar conglomerados
 
 - Cuando la población está dispersa geográficamente.

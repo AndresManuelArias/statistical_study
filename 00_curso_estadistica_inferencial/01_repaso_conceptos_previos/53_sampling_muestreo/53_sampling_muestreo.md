@@ -43,6 +43,25 @@ Un censo completo busca medir TODOS los elementos de la población. En la práct
 | Parámetro | Valor numérico que describe la población | $\mu$ = media poblacional |
 | Estadístico | Valor numérico que describe la muestra | $\bar{X}$ = media muestral |
 
+#### Gráfico: Población vs. muestra (ejemplo de la universidad)
+
+```chart
+type: bar
+labels: ["Población (N = 5,000)", "Muestra (n = 250)"]
+series:
+  - title: "Individuos"
+    data: [5000, 250]
+width: 90%
+labelColors: true
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- La **población** ($N = 5{,}000$) es el conjunto completo que nos interesa conocer.
+- La **muestra** ($n = 250$) es un subconjunto representativo: en lugar de censar a los 5,000, se estudian 250 y se **infiere** el valor de $\mu$ poblacional.
+- Con $n = 250$ de $N = 5{,}000$ se estudia solo el 5% de la población, suficiente para estimar la edad promedio $\mu = 21.5$ años con un sesgo de solo $-0.2$ años.
+
 ### Notación clave
 
 - $N$ = tamaño de la población

@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Distribución+t+de+Student+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xGycHa7l6Ig?si=GFT7C5OVGBcuE5KZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Resumen
 La distribución $t$ de Student se utiliza cuando se trabaja con muestras pequeñas y la desviación estándar poblacional $\sigma$ es desconocida. Tiene colas más pesadas que la normal y depende de los grados de libertad, convergiendo a la normal estándar cuando $n$ crece.
 
@@ -72,6 +74,31 @@ La varianza es mayor que 1, lo que refleja las colas más pesadas.
 | Curtosis | 3 | $> 3$ |
 | Varianza | 1 | $\nu/(\nu-2)$ |
 | Convergencia | — | $\nu \to \infty \Rightarrow t \to N(0,1)$ |
+
+#### Gráfico: Comparación entre la normal y $t$ según los grados de libertad
+
+```chart
+type: line
+labels: [-5.00, -4.75, -4.50, -4.25, -4.00, -3.75, -3.50, -3.25, -3.00, -2.75, -2.50, -2.25, -2.00, -1.75, -1.50, -1.25, -1.00, -0.75, -0.50, -0.25, 0.00, 0.25, 0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00, 3.25, 3.50, 3.75, 4.00, 4.25, 4.50, 4.75, 5.00]
+series:
+  - title: "N(0,1)"
+    data: [0.0001, 0.0002, 0.0003, 0.0004, 0.0005, 0.0008, 0.0012, 0.0019, 0.0044, 0.0091, 0.0175, 0.0317, 0.0540, 0.0863, 0.1295, 0.1826, 0.2420, 0.3011, 0.3521, 0.3867, 0.3989, 0.3867, 0.3521, 0.3011, 0.2420, 0.1826, 0.1295, 0.0863, 0.0540, 0.0317, 0.0175, 0.0091, 0.0044, 0.0019, 0.0012, 0.0008, 0.0005, 0.0004, 0.0003, 0.0002, 0.0001]
+  - title: "t(1) — colas muy pesadas"
+    data: [0.0122, 0.0135, 0.0150, 0.0167, 0.0187, 0.0211, 0.0240, 0.0275, 0.0318, 0.0372, 0.0439, 0.0525, 0.0637, 0.0784, 0.0979, 0.1242, 0.1592, 0.2037, 0.2546, 0.2996, 0.3183, 0.2996, 0.2546, 0.2037, 0.1592, 0.1242, 0.0979, 0.0784, 0.0637, 0.0525, 0.0439, 0.0372, 0.0318, 0.0275, 0.0240, 0.0211, 0.0187, 0.0167, 0.0150, 0.0135, 0.0122]
+  - title: "t(5) — colas intermedias"
+    data: [0.0018, 0.0023, 0.0029, 0.0039, 0.0051, 0.0069, 0.0092, 0.0126, 0.0173, 0.0239, 0.0333, 0.0466, 0.0651, 0.0905, 0.1245, 0.1679, 0.2197, 0.2757, 0.3279, 0.3657, 0.3796, 0.3657, 0.3279, 0.2757, 0.2197, 0.1679, 0.1245, 0.0905, 0.0651, 0.0466, 0.0333, 0.0239, 0.0173, 0.0126, 0.0092, 0.0069, 0.0051, 0.0039, 0.0029, 0.0023, 0.0018]
+  - title: "t(30) — casi la normal"
+    data: [0.0000, 0.0001, 0.0001, 0.0003, 0.0005, 0.0010, 0.0020, 0.0037, 0.0068, 0.0121, 0.0211, 0.0353, 0.0569, 0.0877, 0.1290, 0.1801, 0.2380, 0.2966, 0.3479, 0.3831, 0.3956, 0.3831, 0.3479, 0.2966, 0.2380, 0.1801, 0.1290, 0.0877, 0.0569, 0.0353, 0.0211, 0.0121, 0.0068, 0.0037, 0.0020, 0.0010, 0.0005, 0.0003, 0.0001, 0.0001, 0.0000]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- Con $\nu = 1$, la $t$ tiene **colas mucho más pesadas** y un pico menor que la normal.
+- A medida que $\nu$ crece ($t(5)$, $t(30)$), las curvas se **acercan a la $N(0,1)$**.
+- Como las colas son más pesadas, el valor crítico $t_{\alpha, \nu}$ es mayor que $z_\alpha$, lo que hace más difícil rechazar $H_0$ con muestras pequeñas.
 
 ## Ejemplo numérico
 

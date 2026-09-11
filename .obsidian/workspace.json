@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/48_distribucion_normal/48_distribucion_normal.md",
+                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/52_distribucion_ji_cuadrada/52_distribucion_ji_cuadrada.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "48_distribucion_normal"
+              "title": "52_distribucion_ji_cuadrada"
             }
           }
         ]
@@ -190,27 +190,32 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/48_distribucion_normal/48_distribucion_normal-20260910164939.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/51_distribucion_f/51_distribucion_f.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/51_distribucion_f/51_distribucion_f-20260911090711.json",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__/test_wavfile.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__/test_paths.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__/test_netcdf.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__/test_mmio.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__/test_idl.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__/test_fortran.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__/__init__.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/tests/__pycache__",
+    "mi_entorno/lib/python3.12/site-packages/scipy/io/matlab/tests/__pycache__/test_streams.cpython-312.pyc",
+    "mi_entorno/lib/python3.12/site-packages/scipy/ndimage/tests/dots.png",
+    "mi_entorno/lib/python3.12/site-packages/scipy/fft/_duccfft/LICENSE.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/50_distribucion_t_student/50_distribucion_t_student.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/49_distribucion_normal_estandar/49_distribucion_normal_estandar.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/48_distribucion_normal/48_distribucion_normal.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/47_distribucion_binomial_negativa/47_distribucion_binomial_negativa.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/47_distribucion_binomial_negativa/47_distribucion_binomial_negativa-20260910163826.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/46_distribucion_geometrica/46_distribucion_geometrica.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/46_distribucion_geometrica/46_distribucion_geometrica-20260910162128.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/45_distribucion_poisson/45_distribucion_poisson.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/45_distribucion_poisson/45_distribucion_poisson-20260910155910.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/44_distribucion_binomial_parte2/44_distribucion_binomial_parte2.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/44_distribucion_binomial_parte2/44_distribucion_binomial_parte2-20260910154253.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/43_momentos_variables_aleatorias/43_momentos_variables_aleatorias.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/43_momentos_variables_aleatorias/43_momentos_variables_aleatorias-20260910152812.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/42_distribucion_binomial/42_distribucion_binomial.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/42_distribucion_binomial/42_distribucion_binomial-20260910151126.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/41_distribucion_bernoulli/41_distribucion_bernoulli.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/41_distribucion_bernoulli/41_distribucion_bernoulli-20260910145352.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/40_tipos_distribuciones_probabilidad/40_tipos_distribuciones_probabilidad.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/40_tipos_distribuciones_probabilidad/40_tipos_distribuciones_probabilidad-20260910144251.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/39_distribuciones_de_probabilidad/39_distribuciones_de_probabilidad.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/39_distribuciones_de_probabilidad/39_distribuciones_de_probabilidad-20260910141523.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/38_variables_aleatorias/38_variables_aleatorias.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/38_variables_aleatorias/38_variables_aleatorias-20260910120410.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/37_eventos_excluyentes_mutuamente_excluyentes/37_eventos_excluyentes_mutuamente_excluyentes.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/36_eventos_independientes/36_eventos_independientes.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/35_probabilidad_condicional/35_probabilidad_condicional.md",
@@ -222,10 +227,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/29_analisis_combinatorio/29_analisis_combinatorio.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/28_muestras_sin_orden_con_reemplazo/28_muestras_sin_orden_con_reemplazo.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/27_ordenaciones_sin_repeticion/27_ordenaciones_sin_repeticion.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/18_funciones/18_funciones.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/19_tipos_funciones/19_tipos_funciones.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/26_ordenaciones_con_repeticion/26_ordenaciones_con_repeticion.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/25_probabilidad_clasica/25_probabilidad_clasica.md",
     "mi_entorno/lib/python3.12/site-packages/material/templates/assets/images/favicon.png",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/mkdocs/img/grid.png",
@@ -234,7 +235,6 @@
     "mi_entorno/lib/python3.12/site-packages/matplotlib/mpl-data/sample_data/Minduka_Present_Blue_Pack.png",
     "mi_entorno/lib/python3.12/site-packages/matplotlib/mpl-data/images/zoom_to_rect_large.png",
     "mi_entorno/lib/python3.12/site-packages/matplotlib/mpl-data/images/zoom_to_rect.svg",
-    "mi_entorno/lib/python3.12/site-packages/matplotlib/mpl-data/images/zoom_to_rect.png",
-    "mi_entorno/lib/python3.12/site-packages/matplotlib/mpl-data/images/zoom_to_rect-symbolic.svg"
+    "mi_entorno/lib/python3.12/site-packages/matplotlib/mpl-data/images/zoom_to_rect.png"
   ]
 }

@@ -54,6 +54,25 @@ La diferencia es relevante cuando $n$ es una fracción significativa de $N$ (má
 
 $$FCP = \sqrt{\frac{N - n}{N - 1}}$$
 
+#### Gráfico: Selección de n = 5 de una población de N = 30
+
+```chart
+type: bar
+labels: ["No seleccionados (N − n = 25)", "Seleccionados (n = 5)"]
+series:
+  - title: "Estudiantes"
+    data: [25, 5]
+width: 90%
+labelColors: true
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- Cada estudiante tiene probabilidad $P = n/N = 5/30 = 1/6 \approx 0.1667$ de ser seleccionado.
+- El número de muestras posibles es $\binom{30}{5} = 142{,}506$, todas igualmente probables.
+- Sin reemplazo, los 5 números generados (7, 23, 12, 3, 18) son **distintos**: un individuo no puede aparecer dos veces.
+
 ### Procedimiento paso a paso
 
 1. Numerar a todos los individuos de la población de $1$ a $N$.

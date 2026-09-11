@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Distribución+F+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CU2qUnaluOE?si=Np76jyhBhzxQlpg_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Resumen
 La distribución $F$ surge como cociente de dos varianzas muestrales independientes. Se utiliza principalmente en la prueba ANOVA para comparar medias de varios grupos y para comparar la variabilidad de dos poblaciones. Solo toma valores positivos y depende de dos grados de libertad.
 
@@ -69,6 +71,29 @@ La tabla $F$ da valores $F_{\alpha, \nu_1, \nu_2}$ tales que:
 $$P(F > F_{\alpha, \nu_1, \nu_2}) = \alpha$$
 
 Para prueba bilateral, se usa $\alpha/2$ en cada cola.
+
+#### Gráfico: Densidad de $F$ para distintos grados de libertad
+
+```chart
+type: line
+labels: [0.00, 0.25, 0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00, 3.25, 3.50, 3.75, 4.00, 4.25, 4.50, 4.75, 5.00]
+series:
+  - title: "F(3,10)"
+    data: [0.0000, 0.6950, 0.6340, 0.5150, 0.4041, 0.3138, 0.2434, 0.1894, 0.1482, 0.1167, 0.0925, 0.0739, 0.0594, 0.0481, 0.0392, 0.0321, 0.0265, 0.0219, 0.0183, 0.0153, 0.0129]
+  - title: "F(5,15)"
+    data: [0.0000, 0.5254, 0.7082, 0.6527, 0.5270, 0.4017, 0.2981, 0.2188, 0.1600, 0.1172, 0.0862, 0.0638, 0.0475, 0.0356, 0.0269, 0.0204, 0.0156, 0.0121, 0.0094, 0.0073, 0.0058]
+  - title: "F(10,20)"
+    data: [0.0000, 0.2088, 0.6879, 0.8337, 0.7144, 0.5250, 0.3582, 0.2357, 0.1527, 0.0985, 0.0637, 0.0415, 0.0272, 0.0180, 0.0121, 0.0082, 0.0056, 0.0039, 0.0027, 0.0019, 0.0013]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- $F$ solo toma **valores positivos** ($F \in (0, \infty)$) y es **asimétrica a la derecha**.
+- Con más grados de libertad en ambos originales (numerador y denominador), la curva se concentra alrededor de 1 y su cola derecha se hace menos pesada.
+- El área a la derecha de $F_{\alpha, \nu_1, \nu_2}$ es $\alpha$; esa es la cola que se usa para rechazar $H_0$ en comparación de varianzas y en ANOVA.
 
 ## Ejemplo numérico
 

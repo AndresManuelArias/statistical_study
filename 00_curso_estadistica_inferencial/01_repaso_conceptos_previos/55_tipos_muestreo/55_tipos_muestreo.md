@@ -43,6 +43,21 @@ La selección depende del criterio del investigador, no de la probabilidad. No p
 | Cuota | Se llenan cuotas predefinidas | Control de grupos | Sesgo en selección |
 | Juicio | El investigador elige según su criterio | Experiencia aplicada | Subjetividad |
 
+#### Gráfico: Empleados por departamento (ejemplo de la empresa de 2,000)
+
+```chart
+type: doughnut
+labels: ["Ventas (800)", "Producción (600)", "Administración (400)", "Logística (200)"]
+series:
+  - title: "Empleados por departamento"
+    data: [800, 600, 400, 200]
+width: 75%
+```
+
+**Interpretación:**
+- Con **estratificación proporcional** y $n = 100$, la muestra replica las proporciones de la población: 40 de Ventas, 30 de Producción, 20 de Administración y 10 de Logística.
+- Así ningún departamento queda sin representación, a diferencia del muestreo aleatorio simple.
+
 ### Sistemático a detalle
 
 En el muestreo sistemático se calcula el paso de selección:

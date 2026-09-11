@@ -51,6 +51,25 @@ Esto significa que la probabilidad de que $\bar{X}$ se desvíe de $\mu$ por más
 | 1,000 | $10 / \sqrt{1000} = 0.316$ | 37% menos |
 | 10,000 | $10 / \sqrt{10000} = 0.1$ | 68% menos |
 
+#### Gráfico: Reducción del error estándar al crecer $n$ ($\sigma = 10$)
+
+```chart
+type: bar
+labels: ["25", "100", "400", "1,000", "10,000"]
+series:
+  - title: "Error estándar σ/√n"
+    data: [2.000, 1.000, 0.500, 0.316, 0.100]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- El error estándar **disminuye con $n$**, pero cada vez más lentamente (la relación es $1/\sqrt{n}$, no lineal).
+- Para **duplicar** la precisión (reducir el error a la mitad) hay que **cuadruplicar** $n$: de 25 → 100 → 400.
+- De $n = 1{,}000$ a $n = 10{,}000$ solo se gana un poco más de precisión (0.316 → 0.1): son los **rendimientos decrecientes** del muestreo.
+
 Hay rendimientos decrecientes: duplicar la precisión requiere cuadruplicar la muestra.
 
 ### Regla de cuatro

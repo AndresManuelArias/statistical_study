@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Distribución+Normal+Estándar
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xGycHa7l6Ig?si=8cbHfnkhHlj2BehU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Resumen
 La distribución normal estándar es una distribución normal especial con media 0 y varianza 1. Mediante la transformación $z$, cualquier variable normal se puede estandarizar, permitiendo el uso de tablas Z para calcular probabilidades y percentiles de forma universal.
 
@@ -74,6 +76,26 @@ Algunos percentiles comunes:
 | $z_{0.975}$ | 1.960 |
 | $z_{0.99}$ | 2.326 |
 | $z_{0.995}$ | 2.576 |
+
+#### Gráfico: Densidad de la normal estándar $Z \sim N(0, 1)$
+
+```chart
+type: line
+labels: [-4.00, -3.75, -3.50, -3.25, -3.00, -2.75, -2.50, -2.25, -2.00, -1.75, -1.50, -1.25, -1.00, -0.75, -0.50, -0.25, 0.00, 0.25, 0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00, 3.25, 3.50, 3.75, 4.00]
+series:
+  - title: "Densidad φ(z) de la normal estándar"
+    data: [0.0001, 0.0004, 0.0009, 0.0020, 0.0044, 0.0091, 0.0175, 0.0317, 0.0540, 0.0863, 0.1295, 0.1826, 0.2420, 0.3011, 0.3521, 0.3867, 0.3989, 0.3867, 0.3521, 0.3011, 0.2420, 0.1826, 0.1295, 0.0863, 0.0540, 0.0317, 0.0175, 0.0091, 0.0044, 0.0020, 0.0009, 0.0004, 0.0001]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- La curva es **simétrica** alrededor de $z = 0$: $E(Z) = 0$ y la mediana es 0.
+- El **máximo** de la densidad es $\phi(0) = 1/\sqrt{2\pi} \approx 0.399$.
+- Las **colas** se aproximan asintóticamente al eje horizontal cuando $z \to \pm\infty$.
+- El **área total** bajo la curva es 1 (100% de la probabilidad); la tabla Z acumula ese área hasta cada valor $z$.
 
 ## Ejemplo numérico
 

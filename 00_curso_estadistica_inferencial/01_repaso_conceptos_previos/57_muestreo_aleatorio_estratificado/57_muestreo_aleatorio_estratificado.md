@@ -51,6 +51,26 @@ $$\sigma_{\bar{X}_{\text{est}}} = \sqrt{\sum_{h=1}^{L} W_h^2 \cdot \frac{\sigma_
 
 Si cada estrato es más homogéneo que la población completa, este error es menor que el del muestreo aleatorio simple.
 
+#### Gráfico: Asignación proporcional por grado (escuela de $N = 400$, $n = 80$)
+
+```chart
+type: bar
+labels: ["1°", "2°", "3°", "4°"]
+series:
+  - title: "Estudiantes del estrato (N_h)"
+    data: [120, 100, 100, 80]
+  - title: "Asignados a la muestra (n_h = n·N_h/N)"
+    data: [24, 20, 20, 16]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- Cada barra azul (muestra) conserva la **misma proporción** de su barra de población (24/120 = 20/100 = 20/100 = 16/80 = 0.20).
+- La media estratificada $\bar{X}_{\text{est}} = 0.30(8.5) + 0.25(10.2) + 0.25(12.8) + 0.20(14.5) = 11.20$ horas pondera cada grado por su tamaño, no por igual.
+
 ### Cuándo usar estratificación
 
 - Cuando la población es heterogénea pero el interior de cada estrato es homogéneo.
