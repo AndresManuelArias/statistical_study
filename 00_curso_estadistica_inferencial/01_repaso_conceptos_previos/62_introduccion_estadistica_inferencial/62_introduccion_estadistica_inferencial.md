@@ -64,7 +64,7 @@ Procedimiento para decidir si hay evidencia suficiente para rechazar una afirmac
 
 ```chart
 type: bar
-labels: ["Límite inferior\n($\\bar{x} - 1.96\\,\\sigma/\\sqrt{n}$)", "Estimación puntual\n($\\bar{x} = 2350$)", "Límite superior\n($\\bar{x} + 1.96\\,\\sigma/\\sqrt{n}$)"]
+labels: ["Límite inferior\n($2,212.80)", "Estimación puntual\n($2,350.00)", "Límite superior\n($2,487.20)"]
 series:
   - title: "Monto promedio estimado ($)"
     data: [2212.80, 2350.00, 2487.20]

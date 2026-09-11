@@ -73,7 +73,7 @@ beginAtZero: true
 **Interpretación:**
 - La curva está centrada en $E(\hat{p}) = p = 0.40$: $\hat{p}$ es un estimador **insesgado** de $p$.
 - El error estándar es $\sigma_{\hat{p}} = \sqrt{0.40 \times 0.60 / 250} \approx 0.0310$; las proporciones muestrales varían en promedio 0.031 alrededor de 0.40.
-- $\hat{p} = 0.45$ está a $z = (0.45-0.40)/0.031 \approx 1.61$ desviaciones; `$P(\hat{p} > 0.45) \approx 5.37\%$` (área a la derecha de la línea).
+- $\hat{p} = 0.45$ está a $z = (0.45-0.40)/0.031 \approx 1.61$ desviaciones; $P(\hat{p} > 0.45) \approx 5.37\%$ (área a la derecha de la línea).
 
 ### Comparación: media vs. proporción
 
