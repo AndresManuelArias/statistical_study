@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Muestreo+Aleatorio+Simple+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BQrhD8hvtfo?si=bIbCe5krtnT9vanf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 
 El muestreo aleatorio simple es el método fundamental del muestreo probabilístico: cada elemento de la población tiene exactamente la misma probabilidad de ser seleccionado. Se puede realizar con tablas de números aleatorios o con generadores computacionales, y puede ser con o sin reemplazo.

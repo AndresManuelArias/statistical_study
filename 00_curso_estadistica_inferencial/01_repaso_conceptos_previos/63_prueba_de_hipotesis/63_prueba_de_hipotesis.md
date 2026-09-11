@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Hypothesis+Testing+|+Inferential+Statistics
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UKksepblNi0?si=IER93MrozozZca_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 La prueba de hipótesis es el procedimiento de la estadística inferencial que permite decidir si la información de una muestra contradice o respalda una afirmación sobre un parámetro poblacional. Es el "juicio" estadístico: se plantea una conjetura, se recogen datos y se concluye si hay evidencia suficiente en su contra. Este video presenta la idea general como la aplicación del método científico al análisis de datos.
 

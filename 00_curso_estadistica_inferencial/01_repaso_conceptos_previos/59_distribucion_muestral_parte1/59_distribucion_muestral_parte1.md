@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Distribucion+Muestral+parte+1+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wSXx7f3NJrA?si=1ztztp95nZAqqBB3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 
 La distribución muestral de la media es la distribución de probabilidad de todas las medias muestrales posibles de tamaño $n$ extraídas de una población. Sus propiedades fundamentales son que su esperanza es la media poblacional y su desviación estándar es el error estándar $\sigma / \sqrt{n}$.

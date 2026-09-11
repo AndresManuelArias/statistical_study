@@ -15,6 +15,10 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Sample+Size+Law+of+Large+Numbers+Inferential+Statistics
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8jPV5RzIX7Y?si=y2_B8IRqK3GMNOPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ## 📋 Resumen
 
 El tamaño de la muestra determina la precisión de las estimaciones estadísticas. La Ley de los Grandes Números establece que la media muestral converge a la media poblacional cuando el tamaño de la muestra crece, lo que fundamenta el uso del muestreo en inferencia estadística.

@@ -132,6 +132,37 @@
       };
     }
 
+    if (["pie", "doughnut", "polarArea"].indexOf(type) !== -1) {
+      var popts = config.options.plugins;
+      if (cfg.legend !== false) {
+        popts.legend.labels = popts.legend.labels || {};
+        popts.legend.labels.usePointStyle = true;
+        popts.legend.labels.generateLabels = function (chart) {
+          var d0 = chart.data.datasets[0] || {};
+          var bg = Array.isArray(d0.backgroundColor) ? d0.backgroundColor : [];
+          return (chart.data.labels || []).map(function (label, i) {
+            var c = bg[i] || "#999999";
+            return { text: String(label), fillStyle: c, strokeStyle: c,
+                     lineWidth: 0, hidden: false, index: i,
+                     datasetIndex: 0, pointStyle: "circle" };
+          });
+        };
+      }
+      popts.tooltip = popts.tooltip || {};
+      popts.tooltip.callbacks = popts.tooltip.callbacks || {};
+      popts.tooltip.callbacks.label = function (ctx) {
+        var data = ctx.dataset.data || [];
+        var total = 0, k;
+        for (k = 0; k < data.length; k++) {
+          if (typeof data[k] === "number") total += data[k];
+        }
+        var num = (typeof ctx.parsed === "number") ? ctx.parsed : 0;
+        var pct = total ? (100 * num / total) : 0;
+        var lbl = (ctx.chart.data.labels || [])[ctx.dataIndex] || "";
+        return lbl + ": " + num + " (" + pct.toFixed(1) + "%)";
+      };
+    }
+
     if (window.Chart) {
       new window.Chart(canvas, config);
     }

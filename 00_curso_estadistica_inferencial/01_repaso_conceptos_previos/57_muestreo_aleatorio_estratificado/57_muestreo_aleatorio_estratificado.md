@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Muestreo+Aleatorio+Estratificado+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lmetZi38VA8?si=kgQncvUg17wQKijv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 
 El muestreo estratificado divide la población en grupos homogéneos (estratos) y toma una muestra aleatoria simple dentro de cada uno. Esto garantiza representación de todos los subgrupos y generalmente produce estimaciones más precisas que el muestreo aleatorio simple.

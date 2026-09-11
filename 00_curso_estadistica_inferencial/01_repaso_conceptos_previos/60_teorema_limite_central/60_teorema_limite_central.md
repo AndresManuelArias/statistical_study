@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Teorema+del+Limite+Central+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VeCs9vw0oHU?si=G3_T5H19hX9L2TSJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 
 El Teorema del Límite Central establece que, para una población con media $\mu$ y desviación estándar $\sigma$, la distribución muestral de $\bar{X}$ se aproxima a una normal con media $\mu$ y error estándar $\sigma/\sqrt{n}$ cuando $n$ es suficientemente grande, sin importar la forma de la distribución original. La regla práctica común es $n \geq 30$.

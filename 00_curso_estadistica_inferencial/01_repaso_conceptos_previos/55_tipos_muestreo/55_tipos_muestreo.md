@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Tipos+de+Muestreo+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G3oXIzABqAA?si=xlAv9ds0z0XJmIrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 
 Existen dos grandes familias de muestreo: probabilístico (cada individuo tiene probabilidad conocida de ser seleccionado) y no probabilístico (la selección depende del criterio del investigador). Se presentan los principales métodos de cada familia y sus ventajas y desventajas.
@@ -52,6 +52,7 @@ series:
   - title: "Empleados por departamento"
     data: [800, 600, 400, 200]
 width: 75%
+labelColors: true
 ```
 
 **Interpretación:**

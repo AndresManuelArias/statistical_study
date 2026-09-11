@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Que+es+la+Estadistica+Inferencial+Estadistica+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TnRroJ6uCzA?si=d0y_T6dBkntu6Hva" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 
 La estadística inferencial es la rama de la estadística que permite hacer conclusiones sobre una población a partir de información de una muestra. Sus dos grandes pilares son la estimación (puntual y por intervalos) y las pruebas de hipótesis. Se presenta su diferencia con la estadística descriptiva.
