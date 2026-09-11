@@ -58,6 +58,27 @@ $$\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$$
 
 **4. Si la población NO es normal, se necesita $n$ grande** (Teorema del Límite Central, próximo tema).
 
+#### Gráfico: Población vs. distribución muestral de $\bar{X}$ ($\mu = 70$, $\sigma = 12$, $n = 36$)
+
+```chart
+type: line
+labels: [30.0, 32.5, 35.0, 37.5, 40.0, 42.5, 45.0, 47.5, 50.0, 52.5, 55.0, 57.5, 60.0, 62.5, 65.0, 67.5, 70.0, 72.5, 75.0, 77.5, 80.0, 82.5, 85.0, 87.5, 90.0, 92.5, 95.0, 97.5, 100.0, 102.5, 105.0, 107.5, 110.0]
+series:
+  - title: "Población X ~ N(70, 12)"
+    data: [0.0001, 0.0003, 0.0005, 0.0008, 0.0015, 0.0024, 0.0038, 0.0057, 0.0083, 0.0115, 0.0152, 0.0193, 0.0235, 0.0273, 0.0305, 0.0325, 0.0332, 0.0325, 0.0305, 0.0273, 0.0235, 0.0193, 0.0152, 0.0115, 0.0083, 0.0057, 0.0038, 0.0024, 0.0015, 0.0008, 0.0005, 0.0003, 0.0001]
+  - title: "Media muestral X̄ ~ N(70, 2)"
+    data: [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0002, 0.0088, 0.0913, 0.1995, 0.0913, 0.0088, 0.0002, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- Ambas curvas están **centradas en $\mu = 70$**: $E(\bar{X}) = \mu$.
+- La distribución muestral es **mucho más angosta**: su desviación estándar es el error estándar $\sigma_{\bar{X}} = 12/\sqrt{36} = 2$.
+- Promediar reduce la variabilidad: las medias de 36 estudiantes varían solo $\pm 2$ puntos alrededor de 70, mientras que las calificaciones individuales varían $\pm 12$.
+
 ### Simulación mental de la distribución muestral
 
 Imagina que escribes todas las muestras posibles de 36 estudiantes en papeles distintos. Cada papel contiene su media $\bar{X}$. Si dibujas un histograma de todos esos promedios, obtendrás una curva en forma de campana centrada en $\mu = 70$.

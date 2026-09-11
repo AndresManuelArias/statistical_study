@@ -56,6 +56,25 @@ $$np \geq 10 \quad \text{y} \quad n(1 - p) \geq 10$$
 
 Si $p$ es desconocido, se usa $\hat{p}$ en su lugar.
 
+#### Gráfico: Distribución muestral de $\hat{p}$ ($p = 0.40$, $n = 250$)
+
+```chart
+type: line
+labels: [0.28, 0.29, 0.30, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.40, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.50, 0.51, 0.52]
+series:
+  - title: "Densidad de p̂ ~ N(0.40, 0.0310)"
+    data: [0.0072, 0.0237, 0.0708, 0.1902, 0.4607, 1.0054, 1.9774, 3.5047, 5.5977, 8.0572, 10.4512, 12.2167, 12.8691, 12.2167, 10.4512, 8.0572, 5.5977, 3.5047, 1.9774, 1.0054, 0.4607, 0.1902, 0.0708, 0.0237, 0.0072]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- La curva está centrada en $E(\hat{p}) = p = 0.40$: $\hat{p}$ es un estimador **insesgado** de $p$.
+- El error estándar es $\sigma_{\hat{p}} = \sqrt{0.40 \times 0.60 / 250} \approx 0.0310$; las proporciones muestrales varían en promedio 0.031 alrededor de 0.40.
+- $\hat{p} = 0.45$ está a $z = (0.45-0.40)/0.031 \approx 1.61$ desviaciones; `$P(\hat{p} > 0.45) \approx 5.37\%$` (área a la derecha de la línea).
+
 ### Comparación: media vs. proporción
 
 | Propiedad | Media ($\bar{X}$) | Proporción ($\hat{p}$) |

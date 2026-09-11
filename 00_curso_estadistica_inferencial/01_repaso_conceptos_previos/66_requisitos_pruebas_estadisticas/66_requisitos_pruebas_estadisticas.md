@@ -77,6 +77,25 @@ El estadístico debe respetar la escala: no se "promedia" una variable nominal n
 | Homocedasticidad | Comparación entre grupos | Error tipo I alterado |
 | Escala adecuada | Pertinencia del estadístico | Conclusión sin sentido |
 
+#### Gráfico: Verificación de homocedasticidad (gimnasio, programa A vs. B)
+
+```chart
+type: bar
+labels: ["Programa A", "Programa B"]
+series:
+  - title: "Varianza muestral (s²)"
+    data: [1.2, 1.5]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- Las varianzas muestrales son $s_A^2 = 1.2$ y $s_B^2 = 1.5$; su razón es $F = 1.2/1.5 = 0.80$.
+- Como $0.80$ está cerca de 1, no hay evidencia de que las varianzas sean dispares: se **acepta** el supuesto de homocedasticidad y puede usarse la $t$ clásica con varianza combinada $s_p^2 = 1.335$.
+- Si la razón hubiera sido muy distinta de 1 (por ejemplo $> 2$ o $< 0.5$), correspondería usar la **$t$ de Welch**.
+
 ## 💡 Ejemplo numérico
 **Problema.** Un gimnasio quiere comparar la pérdida de peso media (en kg) entre dos programas de ejercicio.
 

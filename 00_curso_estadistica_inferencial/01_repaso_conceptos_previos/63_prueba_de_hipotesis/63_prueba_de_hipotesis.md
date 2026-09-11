@@ -68,6 +68,25 @@ $$z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}$$
 
 Si $\sigma$ es desconocida, se sustituye por la desviación muestral $s$ y se usa la distribución $t$.
 
+#### Gráfico: Dónde cae el estadístico bajo $H_0$ (ejemplo de la empresa de transporte)
+
+```chart
+type: line
+labels: [-4.00, -3.75, -3.50, -3.25, -3.00, -2.75, -2.50, -2.25, -2.00, -1.75, -1.50, -1.25, -1.00, -0.75, -0.50, -0.25, 0.00, 0.25, 0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00, 3.25, 3.50, 3.75, 4.00]
+series:
+  - title: "Distribución muestral estandarizada bajo H0, N(0,1)"
+    data: [0.0001, 0.0004, 0.0009, 0.0020, 0.0044, 0.0091, 0.0175, 0.0317, 0.0540, 0.0863, 0.1295, 0.1826, 0.2420, 0.3011, 0.3521, 0.3867, 0.3989, 0.3867, 0.3521, 0.3011, 0.2420, 0.1826, 0.1295, 0.0863, 0.0540, 0.0317, 0.0175, 0.0091, 0.0044, 0.0020, 0.0009, 0.0004, 0.0001]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- Bajo $H_0: \mu = 30$, el estadístico $\bar{x}$ se distribuye $N(\mu_0, \sigma/\sqrt{n}) = N(30, 1)$; al estandarizar, la curva es $N(0,1)$.
+- El valor observado $z = 3.00$ cae en la **cola extrema derecha** de la curva (marca en $z = 3$).
+- El p-valor $= 2 \times 0.00135 = 0.0027 < 0.05$: tan solo un 0.27% de las veces una $H_0$ verdadera produciría un dato tan extremo. Hay **evidencia fuerte en contra** de $H_0$.
+
 ### ¿Qué nos dice (y qué no) la prueba?
 - Rechazar $H_0$ = la evidencia muestral es **incompatible** con $H_0$.
 - No rechazar $H_0$ = no hay evidencia suficiente en su contra (no significa "probar" que sea verdadera).

@@ -75,6 +75,27 @@ Aquí $gl = n-1$ (con $n$ = número de pares).
 
 La ventaja central de las pareadas es que **se elimina la varianza debida a las diferencias naturales entre sujetos**, dejando visible solo el efecto del tratamiento. Por eso, con los mismos datos, una prueba pareada suele ser más sensible que una independiente.
 
+#### Gráfico: Diseño pareado antes–después (tiempo de carga de baterías)
+
+```chart
+type: bar
+labels: ["Dispositivo 1", "Dispositivo 2", "Dispositivo 3", "Dispositivo 4", "Dispositivo 5"]
+series:
+  - title: "Antes (X1)"
+    data: [2.0, 1.8, 2.2, 2.1, 1.9]
+  - title: "Después (X2)"
+    data: [2.4, 2.1, 2.7, 2.5, 2.2]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- Los **mismos** 5 dispositivos se miden dos veces (antes y después): muestras dependientes/pareadas.
+- Las diferencias son $d_i = X_2 - X_1$: $0.4$, $0.3$, $0.5$, $0.4$ y $0.3$; $\bar d = 0.38$, $s_d = 0.084$.
+- Al trabajar con las diferencias se **controla la variabilidad entre dispositivos**; el estadístico $t = 0.38 / (0.084/\sqrt{5}) \approx 10.11$ supera ampliamente $t_{0.05,4} = 2.132$ y se rechaza $H_0$.
+
 ### Precauciones
 - En un diseño pareado no se debe "parear" artificialmente grupos independentes; el pareo debe responder al diseño.
 - El orden en un antes-después puede introducir efectos de aprendizaje o fatiga.

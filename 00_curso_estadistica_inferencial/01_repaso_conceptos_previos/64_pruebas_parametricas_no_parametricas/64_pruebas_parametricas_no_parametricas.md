@@ -91,6 +91,27 @@ El estadístico $\chi^2$ aparece en ambos contextos:
 | Información usada | Valores completos | Rangos/signos/frecuencias |
 | Desventaja | Se invalidan si se violan supuestos | Desperdician información cuantitativa |
 
+#### Gráfico: Frecuencias observadas vs. esperadas (ejemplo chi-cuadrado de independencia)
+
+```chart
+type: bar
+labels: ["Hombres-Cola", "Hombres-Naranja", "Mujeres-Cola", "Mujeres-Naranja"]
+series:
+  - title: "Observadas (O)"
+    data: [35, 15, 45, 5]
+  - title: "Esperadas bajo independencia (E)"
+    data: [40, 10, 40, 10]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- Bajo independencia, cada celda espera $E_{ij} = (\text{fila})(\text{columna})/\text{total}$, por ejemplo hombres-cola: $(50 \times 80)/100 = 40$.
+- Las diferencias $(O - E)^2/E$ son $25/40$, $25/10$, $25/40$ y $25/10$; su suma da $\chi^2 = 6.25$.
+- Como $6.25 > \chi^2_{0.05,1} = 3.841$, se **rechaza** la independencia: la preferencia de bebida está asociada al sexo.
+
 ## 💡 Ejemplo numérico
 **Problema (no paramétrica, chi-cuadrado de independencia).** Se quiere saber si la preferencia por una bebida (sabor cola o sabor naranja) es independiente del sexo en una muestra de $n = 100$.
 

@@ -60,6 +60,25 @@ Procedimiento para decidir si hay evidencia suficiente para rechazar una afirmac
 - $H_1$: Hipótesis alternativa (la afirmación contraria)
 - **p-valor**: Probabilidad de observar un resultado tan extremo como el obtenido, asumiendo que $H_0$ es verdadera.
 
+#### Gráfico: Intervalo de confianza del 95% para el monto promedio de facturas
+
+```chart
+type: bar
+labels: ["Límite inferior\n($\\bar{x} - 1.96\\,\\sigma/\\sqrt{n}$)", "Estimación puntual\n($\\bar{x} = 2350$)", "Límite superior\n($\\bar{x} + 1.96\\,\\sigma/\\sqrt{n}$)"]
+series:
+  - title: "Monto promedio estimado ($)"
+    data: [2212.80, 2350.00, 2487.20]
+width: 90%
+labelColors: true
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- La **estimación puntual** es $\bar{x} = \$2{,}350$; la **estimación por intervalos** comunica la incertidumbre con un rango.
+- Con $n = 81$ y $\sigma = 630$: $\pm 1.96(630/\sqrt{81}) = \pm 137.20$.
+- Con 95% de confianza, el monto promedio real de las facturas con errores está entre **$2,212.80 y $2,487.20**.
+
 ### Flujo del proceso inferencial
 
 1. Formular la pregunta de investigación

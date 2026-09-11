@@ -80,6 +80,25 @@ $$Potencia = 1 - \beta = P(rechazar  H_0 \mid H_0  falsa)$$
 
 Una buena prueba combina un $\alpha$ pequeño con una potencia alta, lograda sobre todo con un tamaño de muestra suficiente.
 
+#### Gráfico: Decisión de la prueba unilateral derecha (horno, $\alpha = 0.05$)
+
+```chart
+type: bar
+labels: ["Estadístico z calculado", "Valor crítico z = 1.645"]
+series:
+  - title: "Magnitud en desviaciones estándar"
+    data: [3.54, 1.645]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- Planteo: $H_0: \mu \leq 3$ frente a $H_1: \mu > 3$ (la **igualdad va en $H_0$**).
+- Estándar: $z = (3.4 - 3)/(0.8/\sqrt{50}) = 3.54$, que **supera** el valor crítico $z_{0.05} = 1.645$.
+- Como el estadístico cae en la zona de rechazo, se **rechaza $H_0$**: el horno tarda más de 3 minutos en calentarse. El error tipo I de esa decisión es $\alpha = 0.05$.
+
 ## 💡 Ejemplo numérico
 **Problema.** Un fabricante afirma que el tiempo medio de calentamiento de su horno es menor o igual a $3$ minutos. Se quiere verificar si realmente es mayor.
 

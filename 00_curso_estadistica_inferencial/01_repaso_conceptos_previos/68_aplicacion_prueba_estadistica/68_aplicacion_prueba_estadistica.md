@@ -64,6 +64,25 @@ Alternativa con p-valor: si $p < \alpha$ se rechaza; si $p \geq \alpha$ no se re
 ### Validación previa (tema 66)
 Antes de aplicar cualquier fórmula conviene verificar normalidad (o $n\geq30$), independencia, y para dos grupos, homocedasticidad. Sin estos requisitos la prueba carece de validez.
 
+#### Gráfico: Comparación del estadístico con el valor crítico (app de reparto)
+
+```chart
+type: bar
+labels: ["t calculado", "t crítico (gl = 15, α = 0.05)"]
+series:
+  - title: "Estadístico t"
+    data: [2.50, 1.753]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- El estadístico calculado es $t = 2.50$ con $gl = n - 1 = 15$; el valor crítico unilateral es $t_{0.05,15} = 1.753$.
+- Como $t_{\text{calc}} = 2.50 > t_{\text{crít}} = 1.753$, se **rechaza $H_0$**: hay evidencia de que el tiempo medio de entrega supera los 25 minutos.
+- En general, la regla es: si $|t_{\text{calc}}| > t_{\text{crít}}$ se rechaza $H_0$; si no, no se rechaza. (Alternativa: rechazar si $p < \alpha$.)
+
 ## 💡 Ejemplo numérico (completo)
 
 **Problema.** Una app de reparto declara que su **tiempo medio de entrega es a lo más $25$ minutos**. Un grupo de usuarios sospecha que el tiempo real es mayor. Se observa una muestra de $n = 16$ entregas con media $\bar{x} = 27.5$ y desviación muestral $s = 4.0$ minutos. Se usa $\alpha = 0.05$. Como $\sigma$ es desconocida, se utilizará la distribución $t$.

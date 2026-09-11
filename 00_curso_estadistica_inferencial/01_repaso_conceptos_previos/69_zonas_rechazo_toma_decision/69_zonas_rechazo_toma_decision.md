@@ -72,6 +72,45 @@ Es el punto que separa las dos zonas. Para $z$ bajo la normal estándar:
 
 Para $t$ se usa la tabla correspondiente con sus grados de libertad.
 
+#### Gráfico: Valores críticos de $z$ según $\alpha$ (bilateral vs. unilateral)
+
+```chart
+type: bar
+labels: ["α = 0.10", "α = 0.05", "α = 0.01"]
+series:
+  - title: "Bilateral (±z α/2)"
+    data: [1.645, 1.960, 2.576]
+  - title: "Unilateral derecha (z α)"
+    data: [1.280, 1.645, 2.330]
+width: 90%
+labelColors: false
+fill: true
+beginAtZero: true
+```
+
+**Interpretación:**
+- Para un mismo $\alpha$, el valor crítico **bilateral** (cada cola con $\alpha/2$) es **mayor** que el **unilateral** (una sola cola con $\alpha$).
+- Cuanto menor es $\alpha$ (más exigente la prueba), mayor es el valor crítico y más difícil rechazar $H_0$.
+
+#### Gráfico: Densidad $N(0,1)$ y posición de $z_{\text{crít}} = 1.645$ y $z_{\text{calc}} = 2.33$
+
+```chart
+type: line
+labels: [-4.00, -3.50, -3.00, -2.50, -2.00, -1.50, -1.00, -0.50, 0.00, 0.50, 1.00, 1.50, 2.00, 2.50, 3.00, 3.50, 4.00]
+series:
+  - title: "Densidad N(0,1) bajo H0"
+    data: [0.0001, 0.0009, 0.0044, 0.0175, 0.0540, 0.1295, 0.2420, 0.3521, 0.3989, 0.3521, 0.2420, 0.1295, 0.0540, 0.0175, 0.0044, 0.0009, 0.0001]
+width: 90%
+labelColors: false
+fill: false
+beginAtZero: true
+```
+
+**Interpretación:**
+- El valor crítico $z_{\text{crít}} = 1.645$ separa la zona de no rechazo (izquierda) de la zona de rechazo (cola derecha, área $\alpha = 0.05$).
+- El estadístico calculado $z_{\text{calc}} = 2.33$ cae **dentro de la zona de rechazo** (a la derecha de 1.645), por lo que se rechaza $H_0$.
+- Comprobación por p-valor: $p = P(Z > 2.33) = 0.0099 \leq 0.05$, mismo resultado.
+
 ### Regla de decisión
 - Método por **valor crítico**:
   - Bilateral: rechazar si $|z_{calc}| > z_{\alpha/2}$.
