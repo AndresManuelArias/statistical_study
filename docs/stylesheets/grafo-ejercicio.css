@@ -1,0 +1,138 @@
+/* ============================================================
+   grafo-ejercicio.css
+   Estilos para los ejercicios interactivos de grafos
+   (matriz de adyacencia / incidencia con Cytoscape.js)
+   ============================================================ */
+
+/* --- Contenedor principal del ejercicio --- */
+.grafo-ejercicio {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 18px 0;
+  background: #fafafa;
+}
+
+.grafo-ejercicio h3,
+.grafo-ejercicio h4 {
+  margin-top: 0;
+}
+
+/* --- Tabla de la matriz (0/1) --- */
+.ge-tabla {
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.ge-tabla th,
+.ge-tabla td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  min-width: 34px;
+  text-align: center;
+}
+
+.ge-tabla th {
+  background: #3f51b5;
+  color: #fff;
+}
+
+.ge-tabla td.ge-etiqueta {
+  background: #eceff1;
+  font-weight: bold;
+  color: #333;
+}
+
+.ge-tabla td.ge-cero {
+  background: #fff;
+  color: #b0b0b0;
+}
+
+.ge-tabla td.ge-uno {
+  background: #c8e6c9;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Celda activa (marca la arista que se está creando) */
+.ge-tabla td.ge-activa {
+  background: #ffe082 !important;
+  color: #e65100 !important;
+}
+
+/* --- Lienzo donde dibuja Cytoscape --- */
+.ge-lienzo {
+  width: 100%;
+  height: 380px;
+  border: 1px dashed #bbb;
+  border-radius: 8px;
+  background: #fff;
+  margin: 10px 0;
+  cursor: crosshair;
+}
+
+/* --- Botones del ejercicio --- */
+.ge-botones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.ge-boton {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  transition: filter 0.15s;
+}
+
+.ge-boton:hover {
+  filter: brightness(1.1);
+}
+
+.ge-boton-comprobar {
+  background: #3f51b5;
+}
+
+.ge-boton-reiniciar {
+  background: #757575;
+}
+
+.ge-boton-ayuda {
+  background: #00897b;
+}
+
+/* --- Mensaje de resultado --- */
+.ge-resultado {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: none;
+}
+
+.ge-resultado.ge-ok {
+  display: block;
+  background: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #81c784;
+}
+
+.ge-resultado.ge-error {
+  display: block;
+  background: #fdecea;
+  color: #b71c1c;
+  border: 1px solid #ef9a9a;
+}
+
+/* --- Nodos seleccionados (estado Cytoscape) --- */
+.ge-lienzo .ge-pendiente {
+  outline: 3px solid #ff9800;
+  outline-offset: 2px;
+  border-radius: 50%;
+}

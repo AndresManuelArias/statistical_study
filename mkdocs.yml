@@ -15,6 +15,7 @@ markdown_extensions:
   - pymdownx.details
   - footnotes          # <-- Nueva extensión para notas al pie
   - attr_list
+  - md_in_html
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -26,6 +27,7 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/quiz.css
+  - stylesheets/grafo-ejercicio.css
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -36,3 +38,5 @@ extra_javascript:
   - javascripts/evaluador_web.js
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
   - javascripts/mermaid.js
+  - https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js
+  - javascripts/grafo-ejercicio.js

@@ -1487,6 +1487,36 @@ flowchart TB
 - **Bases de datos:** las relaciones clave–foránea forman un grafo de dependencias.
 - **Optimización:** árbol de expansión mínima (cableado con el menor costo total).
 
+### 7.7 🧪 Ejercicios interactivos: matrices de adyacencia e incidencia
+
+> [!tip] ¿Cómo funcionan?
+> Se muestra una **matriz** (de adyacencia o de incidencia) en la tabla y debes **conectar los nodos** haciendo clic sobre ellos para que el grafo coincida con la matriz. Pulsa **Comprobar** para verificar tu respuesta. Todo ocurre en tu navegador con Cytoscape.js.
+
+---
+
+#### 🎯 Ejercicio 1 — Matriz de adyacencia (5 vértices)
+
+Conecta los nodos **A–E** de forma que la **matriz de adyacencia** de la tabla coincida con el grafo. Recuerda: un `1` en la fila i, columna j significa que existe la arista entre el vértice i y el vértice j.
+
+<div class="grafo-ejercicio" data-tipo="adyacencia" data-nodos="A,B,C,D,E" data-matriz="0,1,1,0,0|1,0,1,0,0|1,1,0,1,1|0,0,1,0,1|0,0,1,1,0"></div>
+
+---
+
+#### 🎯 Ejercicio 2 — Matriz de incidencia (4 vértices, 5 aristas)
+
+Cada fila `e1 … e5` de la tabla representa una **arista**; las columnas **A–D** son los vértices. Un `1` indica que esa arista toca a ese vértice. Conecta el grafo para que coincida con la matriz de incidencia.
+
+<div class="grafo-ejercicio" data-tipo="incidencia" data-nodos="A,B,C,D" data-matriz="1,1,0,0|1,0,1,0|0,1,1,0|0,0,1,1|1,0,0,1"></div>
+
+---
+
+#### 🎯 Ejercicio 3 — Matriz de adyacencia (4 vértices)
+
+Un segundo ejemplo, esta vez con 4 vértices. Interpreta la matriz y conecta las aristas correspondientes.
+
+<div class="grafo-ejercicio" data-tipo="adyacencia" data-nodos="A,B,C,D" data-matriz="0,1,0,1|1,0,1,1|0,1,0,1|1,1,1,0"></div>
+
+
 ## 🧬 10. Unidad 8 — Estructuras algebraicas *(avanzado)*
 
 Una **estructura algebraica** es un conjunto con una o más operaciones y reglas. Es el lenguaje con el que las matemáticas describen **patrones y simetrías**: desde los movimientos de un cubo de Rubik hasta los códigos que protegen tus datos.
