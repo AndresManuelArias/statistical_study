@@ -2178,6 +2178,133 @@ Haz **clic sobre una arista** para avanzar de ciudad en ciudad desde el origen h
 
 ---
 
+### 7.9 Flujo máximo en redes dirigidas 🚰
+
+**(Estructura de datos: red dirigida capacitada: cada arista tiene una capacidad > 0)**
+
+**El problema:** una red de tuberías (o de internet 📡: enlaces con ancho de banda). Todo empieza en un **origen `s`** y termina en un **sumidero `t`**. ¿Cuál es la mayor cantidad de flujo (agua/datos) que puede pasar de s a t **respetando la capacidad de cada tubería**?
+
+**Analogía:** el acueducto de una ciudad. El agua sale de la planta (s), viaja por tuberías con diámetro distinto y llega al tanque (t). En cada cruce (nodo), el agua que entra **debe salir** (ley de conservación). El "flujo máximo" es cuánta agua puedes bombear sin reventar ninguna tubería. 🚰
+
+**Definiciones clave:**
+
+| Concepto | Significado |
+|----------|-------------|
+| **Capacidad** c(u,v) | Cuánto puede llevar la tubería u→v (etiqueta de la arista) |
+| **Flujo** f(u,v) | Cuánto lleva realmente (0 ≤ f ≤ c) |
+| **Conservación** | En todo nodo (salvo s y t): lo que entra = lo que sale |
+| **Valor del flujo** | Total de agua que sale de s (y llega a t) |
+| **Corte (s,t)** | Partir los nodos en dos: S (contiene s) y T (contiene t). Su **capacidad** = suma de capacidades de aristas S→T |
+| **Corte mínimo** | El corte de menor capacidad |
+
+> [!tip] **Teorema de Ford-Fulkerson (1956)**
+> El **flujo máximo = capacidad del corte mínimo**. Es el resultado más famoso de teoría de redes: si puedes encontrar un "tapón" de capacidad 4, nunca podrás bombear más de 4, sin importar cómo lo intentes.
+
+**La idea del algoritmo (Ford-Fulkerson):**
+1. Empieza con flujo 0.
+2. Busca un **camino aumentante** s → t usando solo aristas con **capacidad residual** > 0.
+3. Por ese camino envía todo lo que el cuello de botella permita (la capacidad residual mínima del camino).
+4. Repite hasta que no exista camino aumentante. ¡Ahí terminaste: el flujo es máximo!
+
+**Ejemplo:** red con 5 nodos:
+
+```mermaid
+flowchart LR
+    s["s (origen)"] -->|"3"| a["a"]
+    s -->|"2"| b["b"]
+    a -->|"3"| c["c"]
+    b -->|"1"| c
+    c -->|"4"| t["t (sumidero)"]
+```
+
+**Paso a paso:**
+
+| Paso | Camino aumentante | Cuello de botella | Flujo total |
+|------|-------------------|-------------------|-------------|
+| 1 | s → a → c → t | min(3,3,4) = **3** | 3 |
+| 2 | s → b → c → t | min(2,1,1) = **1** | **4** |
+| 3 | ¿Queda algún camino s→t? No (c→t quedó saturado). | — | 🏁 máx = **4** |
+
+El corte mínimo: **S = {s, a, b}**, T = {c, t}: las aristas S→T son a→c (3) y b→c (1) → **capacidad 4**. Coincide con el flujo máximo (¡teorema de Ford-Fulkerson!).
+
+> [!warning] ¿Por qué el flujo máximo no es 5 (3+2)?
+> s puede *emitir* hasta 5, pero ambas rutas se encuentran en el **cuello de botella c→t (capacidad 4)**. Todo lo que pase por c (venga de a o de b) debe cruzar esa única tubería de salida. Por eso el máximo es 4. El arte del problema es detectar estos *tapones*.
+
+**Pseudo-código (con BFS = Edmonds-Karp, garantiza terminar rápido):**
+
+```text
+función flujo_maximo(red, s, t):
+    flujo = 0
+    mientras exista camino aumentante s→t con residual > 0 (BFS):
+        cuello = mínimo residual a lo largo del camino
+        para cada arista (u,v) del camino:
+            flujo(u,v) += cuello           # adelante
+            flujo(v,u) -= cuello           # capacidad residual invertida
+        flujo += cuello
+    devolver flujo
+```
+
+> [!tip] Las aristas residuales hacia atrás
+> Cuando envías flujo por u→v, queda **menos** capacidad adelante, pero se crea capacidad *ficticia* v→u (devolver el agua). Esto permite que algoritmos posteriores "corrijan" una mala decisión inicial. Es la clave mágica de Ford-Fulkerson.
+
+**Implementación en Python (Edmonds-Karp con BFS):**
+
+```python
+from collections import deque
+
+def flujo_maximo(grafo, s, t):
+    # grafo[u][v] = capacidad residual de u→v
+    flujo_total = 0
+    while True:
+        # 1. BFS para encontrar un camino aumentante
+        padre = {s: None}
+        cola = deque([s])
+        while cola and t not in padre:
+            u = cola.popleft()
+            for v, cap in grafo[u].items():
+                if cap > 0 and v not in padre:
+                    padre[v] = u
+                    cola.append(v)
+        if t not in padre:
+            break                          # no hay más caminos → máximo
+        # 2. cuello de botella
+        cuello = float("inf")
+        v = t
+        while padre[v] is not None:
+            u = padre[v]
+            cuello = min(cuello, grafo[u][v])
+            v = u
+        # 3. aplicar el flujo (adelante y atrás)
+        v = t
+        while padre[v] is not None:
+            u = padre[v]
+            grafo[u][v] -= cuello
+            grafo[v][u] = grafo.get(v, {}).get(u, 0) + cuello
+            v = u
+        flujo_total += cuello
+    return flujo_total
+
+# red del ejemplo: capacidades (incluye residuales 0 iniciales)
+g = {u: {} for u in "sabct"}
+for u, v, c in [("s","a",3),("s","b",2),("a","c",3),("b","c",1),("c","t",4)]:
+    g[u][v] = c
+print(flujo_maximo(g, "s", "t"))   # 4
+```
+
+**Complejidad:** cada BFS cuesta O(E), y con capacidades enteras acaba en O(V·E²). Para capacidades grandes se usa el algoritmo de preflujo (Dinic, O(V²·E)).
+
+> 🎮 **Ahora practica tú:** elige **caminos aumentantes** de s a t haciendo clic en las aristas (dirigidas). El sistema calcula el cuello de botella de tu camino y lo agrega al flujo. Cuando ya no exista camino aumentante, ¡habrás encontrado el flujo máximo!
+
+<div class="grafo-ejercicio" data-tipo="flujo" data-nodos="s,a,b,c,t" data-fuente="s" data-sumidero="t" data-aristas="s-a:3,s-b:2,a-c:3,b-c:1,c-t:4">
+
+#### Precisa los clics: caminos aumentantes
+
+Haz **clic sobre las aristas** para construir un camino desde s hasta t usando tuberías con capacidad disponible. Al llegar a t, el sistema envía el flujo máximo posible por ese camino (el cuello de botella) y lo muestra en la arista. Intenta llegar al máximo de **4** — ¡ojo con el cuello de botella c→t!
+
+</div>
+
+---
+
 ## 🧬 10. Unidad 8 — Estructuras algebraicas *(avanzado)*
 
 Una **estructura algebraica** es un conjunto con una o más operaciones y reglas. Es el lenguaje con el que las matemáticas describen **patrones y simetrías**: desde los movimientos de un cubo de Rubik hasta los códigos que protegen tus datos.

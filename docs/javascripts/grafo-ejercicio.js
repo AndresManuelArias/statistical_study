@@ -151,6 +151,7 @@
     if (tipo === "dijkstra") { crearEjercicioDijkstra(contenedor); return; }
     if (tipo === "kruskal") { crearEjercicioKruskal(contenedor); return; }
     if (tipo === "floyd") { crearEjercicioFloyd(contenedor); return; }
+    if (tipo === "flujo") { crearEjercicioFlujo(contenedor); return; }
     var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
     var matriz = parseMatriz(contenedor.getAttribute("data-matriz"));
     if (!nodos.length || !matriz.length) return;
@@ -1419,6 +1420,261 @@
       if (ult) { costo -= ult.w; actual = camino.length ? camino[camino.length - 1].v : null; }
       repintar();
       resultado.textContent = "↩️ Quité la última arista. Sigue tú.";
+      resultado.className = "ge-resultado";
+    });
+    btnAyuda.addEventListener("click", ayuda);
+    repintar();
+  }
+
+
+
+  /* ---------- ejercicio interactivo: Flujo máximo (Ford-Fulkerson) ----------
+   * El usuario elige caminos aumentantes s→t clic a clic; el sistema
+   * calcula el cuello de botella, actualiza residuales y, cuando BFS
+   * ya no encuentra camino, muestra flujo máximo + corte mínimo.
+   */
+  function crearEjercicioFlujo(contenedor) {
+    var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
+    var fuente = (contenedor.getAttribute("data-fuente") || "s").trim();
+    var sumidero = (contenedor.getAttribute("data-sumidero") || "t").trim();
+    var aristas = (contenedor.getAttribute("data-aristas") || "").split(",")
+      .map(function (s) {
+        var m = s.trim().match(/^([A-Za-z0-9]+)-([A-Za-z0-9]+):(\d+(?:\.\d+)?)$/);
+        if (!m) return null;
+        return { id: "", u: m[1], v: m[2], cap: Number(m[3]) };
+      })
+      .filter(Boolean);
+    aristas.forEach(function (a, i) { a.id = "f" + i; });
+    if (!nodos.length || !aristas.length) return;
+
+    var capRes = {};   // capacidad residual por id
+    var flujo = {};    // flujo acumulado por id
+    aristas.forEach(function (a) { capRes[a.id] = a.cap; flujo[a.id] = 0; });
+
+    var camino = [];   // aristas del camino aumentante actual
+    var actual = fuente;
+    var flujoTotal = 0;
+
+    // --- UI ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    contenedor.appendChild(titulo);
+
+    var lienzo = document.createElement("div");
+    lienzo.className = "ge-lienzo";
+    lienzo.id = "ge-flujo-" + (++marcados) + "-lienzo";
+    contenedor.appendChild(lienzo);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    var btnDeshacer = document.createElement("button");
+    btnDeshacer.type = "button";
+    btnDeshacer.className = "ge-boton ge-boton-reiniciar";
+    btnDeshacer.textContent = "↩️ Quitar última";
+    var btnAyuda = document.createElement("button");
+    btnAyuda.type = "button";
+    btnAyuda.className = "ge-boton ge-boton-ayuda";
+    btnAyuda.textContent = "💡 Ayuda";
+    cajaBotones.appendChild(btnReiniciar);
+    cajaBotones.appendChild(btnDeshacer);
+    cajaBotones.appendChild(btnAyuda);
+    contenedor.appendChild(cajaBotones);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    if (typeof cytoscape === "undefined") {
+      resultado.textContent = "⚠️ Cytoscape.js no cargó.";
+      resultado.className = "ge-resultado ge-error";
+      return;
+    }
+
+    var cy = cytoscape({
+      container: lienzo,
+      elements: {
+        nodes: nodos.map(function (nn) {
+          return { data: { id: nn, label: nn } };
+        }),
+        edges: aristas.map(function (a) {
+          return { data: { id: a.id, source: a.u, target: a.v, cap: a.cap, label: String(a.cap) } };
+        })
+      },
+      style: [
+        { selector: "node", style: {
+            "background-color": "#3f51b5", "border-color": "#283593", "border-width": 2,
+            label: "data(label)", color: "#283593", "font-size": 16,
+            "text-valign": "bottom", "text-margin-y": 8, width: 32, height: 32
+        }},
+        { selector: "node.ge-fuente", style: {
+            "background-color": "#ff9800", "border-color": "#e65100", "border-width": 4
+        }},
+        { selector: "node.ge-sumidero", style: {
+            "background-color": "#c62828", "border-color": "#8e0000", "border-width": 4
+        }},
+        { selector: "edge", style: {
+            width: 2.5, "line-color": "#9e9e9e", "curve-style": "bezier",
+            "target-arrow-shape": "triangle", "target-arrow-color": "#9e9e9e",
+            label: "data(label)", color: "#424242", "font-size": 13,
+            "text-rotation": "autorotate", "text-background-color": "#fff",
+            "text-background-opacity": 1, "text-background-padding": 2
+        }},
+        { selector: "edge.ge-mst", style: { "line-color": "#2e7d32", "target-arrow-color": "#2e7d32", width: 5 }},
+        { selector: "edge.ge-saturada", style: { "line-color": "#c62828", "target-arrow-color": "#c62828", width: 4 }},
+        { selector: "edge.ge-camino", style: { "line-color": "#ff9800", "target-arrow-color": "#ff9800", width: 5 }}
+      ],
+      layout: { name: "circle", padding: 50 },
+      wheelSensitivity: 0.2,
+      boxSelectionEnabled: false
+    });
+    contenedor._cy = cy;
+
+    function bfsAlcanzables() {
+      var seen = {};
+      seen[fuente] = true;
+      var cola = [fuente];
+      while (cola.length) {
+        var u = cola.pop();
+        aristas.forEach(function (a) {
+          if (a.u === u && capRes[a.id] > 0 && !seen[a.v]) {
+            seen[a.v] = true;
+            cola.push(a.v);
+          }
+        });
+      }
+      return seen;
+    }
+    function repintar() {
+      cy.nodes().forEach(function (n) {
+        n.removeClass("ge-fuente ge-sumidero");
+        if (n.id() === fuente) n.addClass("ge-fuente");
+        if (n.id() === sumidero) n.addClass("ge-sumidero");
+      });
+      cy.edges().removeClass("ge-mst ge-saturada ge-camino");
+      aristas.forEach(function (a) {
+        var e = cy.$("#" + a.id);
+        e.data("label", flujo[a.id] + "/" + a.cap);
+        if (flujo[a.id] > 0) e.addClass("ge-mst");
+        if (capRes[a.id] === 0) e.addClass("ge-saturada");
+      });
+      // camino actual resaltado
+      camino.forEach(function (a) { cy.$("#" + a.id).addClass("ge-camino"); });
+      titulo.innerHTML =
+        "<strong>Flujo total:</strong> " + flujoTotal +
+        " · <strong>Estás en:</strong> " + actual +
+        (camino.length ? " · <strong>Camino:</strong> " + camino.map(function (a) { return a.u + "→" + a.v; }).join(" ") : "");
+    }
+
+    function ayuda() {
+      // BFS para encontrar un camino aumentante (padres)
+      var padre = {};
+      padre[fuente] = null;
+      var cola = [fuente];
+      while (cola.length && !(sumidero in padre)) {
+        var u = cola.shift();
+        aristas.forEach(function (a) {
+          if (a.u === u && capRes[a.id] > 0 && !(a.v in padre)) {
+            padre[a.v] = a.u;
+            cola.push(a.v);
+          }
+        });
+      }
+      if (!(sumidero in padre)) {
+        var alcanz = bfsAlcanzables();
+        var corte = aristas.filter(function (a) { return alcanz[a.u] && !alcanz[a.v]; });
+        resultado.innerHTML =
+          "🏁 Ya no hay camino aumentante: el flujo es <strong>máximo</strong> (" + flujoTotal + "). " +
+          "Corte mínimo: " + corte.map(function (a) { return a.u + "→" + a.v + " (" + a.cap + ")"; }).join(", ") +
+          " = <strong>" + flujoTotal + "</strong>.";
+        resultado.className = "ge-resultado ge-ok";
+        return;
+      }
+      var r = [];
+      var v = sumidero;
+      while (padre[v] !== null) { r.unshift(padre[v] + "→" + v); v = padre[v]; }
+      resultado.innerHTML = "💡 Un camino aumentante disponible: <strong>" + r.join(" → ") + "</strong>. Haz clic en sus aristas.";
+      resultado.className = "ge-resultado ge-error";
+    }
+
+    cy.on("tap", "edge", function (ev) {
+      var e = ev.target;
+      var ar = aristas.filter(function (x) { return x.id === e.id(); })[0];
+      if (!ar) return;
+      if (camino.some(function (x) { return x.id === ar.id; })) {
+        resultado.textContent = "⚠️ Esa tubería ya está en tu camino actual.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      if (ar.u !== actual) {
+        resultado.textContent = "❌ Estás en " + actual + ". Elige una tubería que salga de " + actual + ".";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      if (capRes[ar.id] <= 0) {
+        resultado.textContent = "❌ La tubería " + ar.u + "→" + ar.v + " está saturada (0/" + ar.cap + "). Busca otra.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // ciclo: no volver a un nodo ya visitado en este camino
+      var visit = {}; visit[fuente] = true;
+      camino.forEach(function (x) { visit[x.v] = true; });
+      if (visit[ar.v]) {
+        resultado.textContent = "❌ Volverías a " + ar.v + " (ya visitado en este camino). Busca un avance nuevo.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      camino.push(ar);
+      actual = ar.v;
+      repintar();
+      if (ar.v === sumidero) {
+        // cuello de botella
+        var cuello = Infinity;
+        camino.forEach(function (a) { if (capRes[a.id] < cuello) cuello = capRes[a.id]; });
+        camino.forEach(function (a) {
+          capRes[a.id] -= cuello;
+          flujo[a.id] += cuello;
+        });
+        flujoTotal += cuello;
+        var desc = camino.map(function (a) { return a.u + "→" + a.v; }).join(" → ");
+        resultado.textContent =
+          "✅ ¡Camino completado! Mandaste " + cuello + " por " + desc +
+          " (cuello de botella). Flujo total: " + flujoTotal + ".";
+        resultado.className = "ge-resultado ge-ok";
+        camino = [];
+        actual = fuente;
+        repintar();
+        // ¿fin?
+        if (!(sumidero in bfsAlcanzables())) {
+          var alcanz = bfsAlcanzables();
+          var corte = aristas.filter(function (a) { return alcanz[a.u] && !alcanz[a.v]; });
+          resultado.innerHTML =
+            "🎉 <strong>¡Flujo máximo = " + flujoTotal + "!</strong> Ya no hay camino aumentante. " +
+            "Corte mínimo: " + corte.map(function (a) { return a.u + "→" + a.v + " (" + a.cap + ")"; }).join(", ") +
+            " = " + flujoTotal + " (¡coincide con el teorema de Ford-Fulkerson!).";
+          resultado.className = "ge-resultado ge-ok";
+        } else {
+          resultado.textContent += " Busca otro camino: desde " + fuente + ".";
+        }
+      }
+    });
+
+    btnReiniciar.addEventListener("click", function () {
+      aristas.forEach(function (a) { capRes[a.id] = a.cap; flujo[a.id] = 0; });
+      camino = []; actual = fuente; flujoTotal = 0;
+      resultado.className = "ge-resultado";
+      resultado.textContent = "";
+      repintar();
+    });
+    btnDeshacer.addEventListener("click", function () {
+      var ult = camino.pop();
+      if (ult) actual = camino.length ? camino[camino.length - 1].v : fuente;
+      else actual = fuente;
+      repintar();
+      resultado.textContent = "↩️ Quité la última tubería. Sigue tú.";
       resultado.className = "ge-resultado";
     });
     btnAyuda.addEventListener("click", ayuda);
