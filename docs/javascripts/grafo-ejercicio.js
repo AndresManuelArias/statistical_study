@@ -147,6 +147,7 @@
 
   function crearEjercicio(contenedor) {
     var tipo = contenedor.getAttribute("data-tipo") || "adyacencia";
+    if (tipo === "prim") { crearEjercicioPrim(contenedor); return; }
     var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
     var matriz = parseMatriz(contenedor.getAttribute("data-matriz"));
     if (!nodos.length || !matriz.length) return;
@@ -398,6 +399,275 @@
   }
 
   /* ---------- inicialización (compatible con Material) ---------- */
+
+
+  /* ---------- ejercicio interactivo: Algoritmo de Prim ----------
+   * El usuario hace clic en las aristas EN ORDEN, como ejecutaría Prim:
+   *   - empieza en la semilla (data-semilla)
+   *   - en cada paso debe elegir la arista de MENOR PESO que sale del
+   *     árbol actual hacia un vértice nuevo (la "frontera")
+   *   - si elige bien, el árbol crece; si no, recibe una pista.
+   * Params: data-nodos="A,B,C", data-semilla="A",
+   *         data-aristas="A-B:7,A-C:5,B-C:3"
+   */
+  function crearEjercicioPrim(contenedor) {
+    var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
+    var semilla = (contenedor.getAttribute("data-semilla") || nodos[0]).trim();
+    var aristas = (contenedor.getAttribute("data-aristas") || "").split(",")
+      .map(function (s) {
+        var m = s.trim().match(/^([A-Za-z0-9]+)-([A-Za-z0-9]+):(\d+(?:\.\d+)?)$/);
+        if (!m) return null;
+        return { u: m[1], v: m[2], w: Number(m[3]) };
+      })
+      .filter(Boolean);
+    if (!nodos.length || !aristas.length) return;
+
+    // clave canónica (orden independiente): "idx1-idx2"
+    function clave(a, b) {
+      var i = idxDe(nodos, a);
+      var j = idxDe(nodos, b);
+      return (i < j ? i + "-" + j : j + "-" + i);
+    }
+    function pesoDe(a, b) {
+      for (var k = 0; k < aristas.length; k++) {
+        if (clave(aristas[k].u, aristas[k].v) === clave(a, b)) return aristas[k].w;
+      }
+      return Infinity;
+    }
+    function aristaPorPar(a, b) {
+      for (var k = 0; k < aristas.length; k++) {
+        if (clave(aristas[k].u, aristas[k].v) === clave(a, b)) return aristas[k];
+      }
+      return null;
+    }
+
+    var enArbol = {};
+    enArbol[semilla] = true;
+    var mst = [];           // aristas elegidas
+    var costo = 0;
+
+    // --- UI ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    titulo.innerHTML = "<strong>Árbol actual:</strong> {" + semilla + "} · " +
+                       "<strong>Costo:</strong> 0 · " +
+                       "<strong>Faltan:</strong> " + (nodos.length - 1) + " aristas";
+    contenedor.appendChild(titulo);
+
+    var lienzo = document.createElement("div");
+    lienzo.className = "ge-lienzo";
+    lienzo.id = "ge-prim-" + (++marcados) + "-lienzo";
+    contenedor.appendChild(lienzo);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    var btnAyuda = document.createElement("button");
+    btnAyuda.type = "button";
+    btnAyuda.className = "ge-boton ge-boton-ayuda";
+    btnAyuda.textContent = "💡 Ayuda";
+    cajaBotones.appendChild(btnReiniciar);
+    cajaBotones.appendChild(btnAyuda);
+    contenedor.appendChild(cajaBotones);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    if (typeof cytoscape === "undefined") {
+      resultado.textContent = "⚠️ Cytoscape.js no cargó.";
+      resultado.className = "ge-resultado ge-error";
+      return;
+    }
+
+    var cy = cytoscape({
+      container: lienzo,
+      elements: {
+        nodes: nodos.map(function (n) {
+          return { data: { id: n, label: n } };
+        }),
+        edges: aristas.map(function (a) {
+          return { data: { id: clave(a.u, a.v), source: a.u, target: a.v, peso: a.w, label: String(a.w) } };
+        })
+      },
+      style: [
+        { selector: "node", style: {
+            "background-color": "#3f51b5",
+            "border-color": "#283593",
+            "border-width": 2,
+            label: "data(label)",
+            color: "#283593",
+            "font-size": 16,
+            "text-valign": "bottom",
+            "text-margin-y": 8,
+            width: 30, height: 30
+        }},
+        { selector: "node.ge-enarbol", style: {
+            "background-color": "#2e7d32",
+            "border-color": "#1b5e20",
+            "border-width": 4
+        }},
+        { selector: "node.ge-semilla", style: {
+            "background-color": "#ff9800",
+            "border-color": "#e65100",
+            "border-width": 4
+        }},
+        { selector: "edge", style: {
+            width: 2.5,
+            "line-color": "#9e9e9e",
+            "curve-style": "bezier",
+            label: "data(label)",
+            color: "#424242",
+            "font-size": 13,
+            "text-rotation": "autorotate",
+            "text-background-color": "#fff",
+            "text-background-opacity": 1,
+            "text-background-padding": 2
+        }},
+        { selector: "edge.ge-frontera", style: {
+            "line-color": "#ff9800",
+            width: 4,
+            "line-style": "dashed"
+        }},
+        { selector: "edge.ge-mst", style: {
+            "line-color": "#2e7d32",
+            width: 5
+        }},
+        { selector: "edge.ge-ciclo", style: {
+            "line-color": "#c62828",
+            width: 4,
+            "line-style": "dashed"
+        }}
+      ],
+      layout: { name: "circle", padding: 40 },
+      wheelSensitivity: 0.2,
+      userZoomingEnabled: true,
+      userPanningEnabled: true,
+      boxSelectionEnabled: false
+    });
+    contenedor._cy = cy;
+
+    function repintar() {
+      cy.nodes().removeClass("ge-enarbol ge-semilla");
+      cy.nodes().forEach(function (n) {
+        if (n.id() === semilla) n.addClass("ge-semilla");
+        else if (enArbol[n.id()]) n.addClass("ge-enarbol");
+      });
+      // aristas del MST en verde
+      cy.edges().removeClass("ge-mst ge-frontera ge-ciclo");
+      mst.forEach(function (e) {
+        cy.$("#" + clave(e.u, e.v)).addClass("ge-mst");
+      });
+      // frontera: aristas que salen del árbol a un vértice nuevo
+      aristas.forEach(function (a) {
+        var uIn = enArbol[a.u], vIn = enArbol[a.v];
+        if ((uIn && !vIn) || (!uIn && vIn)) {
+          cy.$("#" + clave(a.u, a.v)).addClass("ge-frontera");
+        }
+      });
+      // estado textual
+      var dentro = nodos.filter(function (n) { return enArbol[n]; });
+      titulo.innerHTML =
+        "<strong>Árbol actual:</strong> {" + dentro.join(", ") + "} · " +
+        "<strong>Costo:</strong> " + costo + " · " +
+        "<strong>Faltan:</strong> " + (nodos.length - dentro.length) + " aristas";
+    }
+
+    function ayuda() {
+      // la arista de menor peso que sale del árbol hacia afuera
+      var candidatas = [];
+      aristas.forEach(function (a) {
+        var uIn = enArbol[a.u], vIn = enArbol[a.v];
+        if ((uIn && !vIn) || (!uIn && vIn)) candidatas.push(a);
+      });
+      if (!candidatas.length) {
+        resultado.textContent = "🎉 Ya completaste el MST. ¡Pulsa Reiniciar para intentar de nuevo!";
+        resultado.className = "ge-resultado ge-ok";
+        return;
+      }
+      var mejor = candidatas.reduce(function (m, a) { return a.w < m.w ? a : m; });
+      resultado.innerHTML =
+        "💡 La frontera actual tiene estas aristas: " +
+        candidatas.map(function (a) { return a.u + "-" + a.v + " (" + a.w + ")"; }).join(", ") +
+        ". Prim elige la más barata: <strong>" + mejor.u + "-" + mejor.v + " (" + mejor.w + ")</strong>.";
+      resultado.className = "ge-resultado ge-error";
+    }
+
+    cy.on("tap", "edge", function (ev) {
+      var e = ev.target;
+      var a = aristaPorPar(e.data("source"), e.data("target"));
+      if (!a) return;
+      var uIn = enArbol[a.u], vIn = enArbol[a.v];
+
+      // ¿misma arista ya elegida?
+      if (mst.some(function (x) { return clave(x.u, x.v) === clave(a.u, a.v); })) {
+        resultado.textContent = "⚠️ Esa arista ya está en tu árbol. Elige otra de la frontera.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // ¿ambos vértices fuera? (crearía componente aislado, Prim no hace eso)
+      if (!uIn && !vIn) {
+        resultado.textContent = "❌ " + a.u + "-" + a.v + " no toca tu árbol: ambos extremos están afuera. Saca la arista de la frontera.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // ¿ambos dentro? (crearía ciclo)
+      if (uIn && vIn) {
+        resultado.textContent = "❌ " + a.u + "-" + a.v + " cierra un ciclo (ambos extremos ya están en el árbol). Prim nunca elige esa.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+
+      // frontera legítima: un extremo dentro y otro fuera → debe ser el mínimo
+      var candidatas = [];
+      aristas.forEach(function (x) {
+        var xU = enArbol[x.u], xV = enArbol[x.v];
+        if ((xU && !xV) || (!xU && xV)) candidatas.push(x);
+      });
+      var mejor = candidatas.reduce(function (m, x) { return x.w < m.w ? x : m; });
+
+      if (a.w === mejor.w) {
+        // ✅ correcto
+        mst.push(a);
+        costo += a.w;
+        if (!uIn) enArbol[a.u] = true;
+        if (!vIn) enArbol[a.v] = true;
+        repintar();
+        resultado.textContent = "✅ ¡Correcto! Agregaste " + a.u + "-" + a.v + " (" + a.w + "). Costo: " + costo + ".";
+        resultado.className = "ge-resultado ge-ok";
+        if (mst.length === nodos.length - 1) {
+          resultado.innerHTML =
+            "🎉 <strong>¡Completaste el MST de Prim! Costo total = " + costo + ".</strong> " +
+            "Aristas: " + mst.map(function (x) { return x.u + "-" + x.v + "(" + x.w + ")"; }).join(", ");
+          resultado.className = "ge-resultado ge-ok";
+          return;
+        }
+      } else {
+        resultado.textContent =
+          "❌ Casi. Prim no elige " + a.u + "-" + a.v + " (" + a.w + "): hoy la frontera tiene una más barata, " +
+          mejor.u + "-" + mejor.v + " (" + mejor.w + ").";
+        resultado.className = "ge-resultado ge-error";
+      }
+    });
+
+    btnReiniciar.addEventListener("click", function () {
+      mst = [];
+      costo = 0;
+      enArbol = {};
+      enArbol[semilla] = true;
+      resultado.className = "ge-resultado";
+      resultado.textContent = "";
+      repintar();
+    });
+
+    btnAyuda.addEventListener("click", ayuda);
+
+    repintar();
+  }
+
 
   function init() {
     var raiz =
