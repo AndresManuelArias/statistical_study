@@ -328,6 +328,66 @@ La notación por comprensión se lee así: "el conjunto de todos los $x$ **tal q
 > [!info] Conecta con tu curso
 > Esta misma distinción aparece en el **tema 01 de tu curso de estadística inferencial** (*Definición de conjunto*). Lo que aquí es teoría de conjuntos, allá se convierte en el lenguaje del espacio muestral y los sucesos.
 
+### Conjuntos especiales
+
+| Conjunto | Símbolo | ¿Qué es? | Ejemplo |
+|----------|---------|----------|---------|
+| **Vacío** | $\emptyset$ (o $\{\}$) | No tiene elementos | $\{x \mid x \neq x\}$ |
+| **Universal** | $\Omega$ (o $U$) | Contiene todo lo que se está considerando | Todos los estudiantes de la clase |
+| **Unitario** | $\{a\}$ | Tiene exactamente un elemento | $\{2\}$ |
+| **Finito / Infinito** | — | Con número de elementos finito o no | $\{1,2,3\}$ vs $\mathbb{N}$ |
+| **Subconjunto** | $A \subseteq B$ | Todo elemento de $A$ está en $B$ | $\{1\} \subseteq \{1,2\}$ |
+| **Subconjunto propio** | $A \subset B$ | $A \subseteq B$ pero $A \neq B$ | $\{1\} \subset \{1,2\}$ |
+| **Potencia** | $\mathcal{P}(A)$ | El conjunto de **todos** los subconjuntos de $A$ | $A=\{1,2\} \Rightarrow \mathcal{P}(A)=\{\emptyset, \{1\}, \{2\}, \{1,2\}\}$ |
+
+> [!tip] Regla estrella del conjunto potencia
+> Si $A$ tiene $n$ elementos, entonces $\mathcal{P}(A)$ tiene **$2^n$** elementos. Es la primera aparición del **exponente 2** en el conteo (volverá con fuerza en combinatoria).
+
+Los **conjuntos numéricos** también son conjuntos: $\mathbb{N}$ (naturales), $\mathbb{Z}$ (enteros), $\mathbb{Q}$ (racionales), $\mathbb{R}$ (reales) y $\mathbb{C}$ (complejos). Cada uno **contiene al anterior**:
+
+$$
+\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+$$
+
+> [!info] Para la matemática discreta
+> Se trabaja casi siempre con $\mathbb{N}$ y $\mathbb{Z}$ (lo contable), y con $\mathbb{Q}$ para razones y probabilidades. Los reales $\mathbb{R}$ se dejan para el cálculo (lo continuo).
+
+### Operaciones entre conjuntos
+
+Con $A = \{1, 2, 3\}$, $B = \{3, 4, 5\}$ y universo $\Omega = \{1, 2, 3, 4, 5, 6\}$:
+
+| Operación | Símbolo | Resultado | Ejemplo | Analogía |
+|-----------|---------|-----------|---------|----------|
+| **Unión** | $A \cup B$ | Elementos de $A$ o de $B$ (o ambos) | $\{1,2,3,4,5\}$ | El menú: eliges uno u otro |
+| **Intersección** | $A \cap B$ | Elementos comunes a ambos | $\{3\}$ | Requisitos: necesitas TODOS |
+| **Diferencia** | $A \setminus B$ | De $A$ que **no** están en $B$ | $\{1,2\}$ | Lo tuyo sin lo compartido |
+| **Complemento** | $A^c$ (o $\bar{A}$) | Del universo que **no** están en $A$ | $\{4,5,6\}$ | "Todo lo demás" (depende de $\Omega$) |
+| **Diferencia simétrica** | $A \triangle B$ | En uno u otro, pero **no en ambos** | $\{1,2,4,5\}$ | El **XOR** de la Unidad 1 aplicado a conjuntos |
+| **Producto cartesiano** | $A \times B$ | Todos los pares ordenados $(a,b)$ | $\{(1,3),(1,4),...,(3,5)\}$ (9 pares) | Coordenadas (fila, columna) |
+
+**Cardinalidad** $|A|$ = número de elementos. Para contar una unión sin contar dos veces lo repetido:
+
+$$
+|A \cup B| = |A| + |B| - |A \cap B|
+$$
+
+(Este es el **principio de inclusión-exclusión**, que retomaremos en la Unidad 5.)
+
+> [!warning] Cuidado con el complemento
+> $A^c$ **depende del universo** elegido. Si $\Omega = \{1,2,3\}$, entonces $\{1,2\}^c = \{3\}$; pero si $\Omega = \{1,2,3,4,5,6\}$, entonces $\{1,2\}^c = \{3,4,5,6\}$. Siempre pregunta: ¿cuál es el universo?
+
+**Propiedades útiles (así se simplifican expresiones):**
+
+| Propiedad | Fórmula |
+|-----------|---------|
+| De Morgan | $(A \cup B)^c = A^c \cap B^c$ y $(A \cap B)^c = A^c \cup B^c$ |
+| Distributiva | $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ |
+| Doble complemento | $(A^c)^c = A$ |
+| Con el universo y el vacío | $A \cup A^c = \Omega$ y $A \cap A^c = \emptyset$ |
+
+> [!example] Para practicar
+> Con $A = \{1,2,3\}$, $B = \{3,4,5\}$ y $\Omega = \{1,2,3,4,5,6\}$: calcula $A \triangle B$ y verifica que $(A \cup B)^c = \{6\}$. Pista: primero $A \cup B = \{1,2,3,4,5\}$, luego su complemento es lo que falta para llegar a $\Omega$.
+
 ### Métodos de demostración
 
 Demostrar una afirmación es **convencer sin dejar dudas**, con reglas, no con opiniones.
@@ -608,6 +668,11 @@ d) 2
 | $\in$, $\notin$ | Pertenece / no pertenece |
 | $\subseteq$ | Subconjunto |
 | $\cup$, $\cap$ | Unión, intersección |
+| $A \setminus B$ | Diferencia: elementos de A que no están en B |
+| $A^c$ (o $\bar{A}$) | Complemento respecto al universo |
+| $A \triangle B$ | Diferencia simétrica (en uno u otro, no en ambos) |
+| $\mathcal{P}(A)$ | Conjunto potencia (todos los subconjuntos de A) |
+| $\Omega$ | Conjunto universal |
 | $\emptyset$ | Conjunto vacío |
 | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}$ | Naturales, enteros, racionales, reales |
 | $a \mid b$ | "a divide a b" |
