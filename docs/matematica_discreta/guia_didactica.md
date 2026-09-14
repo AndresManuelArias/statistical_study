@@ -106,6 +106,90 @@ Una **proposición** es una oración que **puede ser verdadera o falsa** (aunque
 > [!warning] El clásico error
 > $p \to q$ (condicional) **no significa causa**. "Si llueve, la calle se moja" es verdadera aunque hoy no llueva (si no llueve, no prometimos nada). Solo es falsa si **llueve y NO se moja**.
 
+### Circuitos lógicos (a partir de la tabla de verdad)
+
+Cada columna de la tabla anterior se puede **construir físicamente** con puertas lógicas: el **Y** ($\land$) es una compuerta *AND*, el **O** ($\lor$) es una *OR* y la negación ($\neg$) es una *NOT*. Este circuito genera exactamente las columnas $p \land q$ y $p \lor q$:
+
+```mermaid
+flowchart LR
+    p((p)) --> Y["∧ (Y)"]
+    q((q)) --> Y
+    p --> O["∨ (O)"]
+    q --> O
+    Y --> sa["p ∧ q"]
+    O --> sb["p ∨ q"]
+    style p fill:#90caf9
+    style q fill:#90caf9
+    style Y fill:#ffcc80
+    style O fill:#ffcc80
+    style sa fill:#a5d6a7
+    style sb fill:#a5d6a7
+```
+
+**Cómo leerlo con la tabla:** si $p = V$ y $q = F$ (fila 2), la compuerta **Y** exige *ambas* entradas verdaderas, así que su salida es **F**; la compuerta **O** solo exige *una*, así que su salida es **V**. Exactamente la fila 2 de la tabla. ✅
+
+### Ejemplo 1 — Compuerta NAND: $\neg(p \land q)$
+
+La **NAND** es una compuerta **Y** (*AND*) seguida de una **negación** (*NOT*). Es famosa porque es **universal**: con puras NAND se puede construir cualquier circuito, es decir, todas las demás compuertas. Su tabla de verdad:
+
+| $p$ | $q$ | $p \land q$ | $\neg(p \land q)$ |
+| --- | --- | ----------- | ----------------- |
+| V   | V   | V           | F                 |
+| V   | F   | F           | V                 |
+| F   | V   | F           | V                 |
+| F   | F   | F           | V                 |
+
+```mermaid
+flowchart LR
+    p((p)) --> A["∧ (Y)"]
+    q((q)) --> A
+    A --> N["¬ (NO)"]
+    N --> out["¬(p ∧ q)"]
+    style p fill:#90caf9
+    style q fill:#90caf9
+    style A fill:#ffcc80
+    style N fill:#ffcc80
+    style out fill:#a5d6a7
+```
+
+**Observación:** solo falla cuando **ambas** entradas son verdaderas → es como un "Y" al revés.
+
+### Ejemplo 2 — O exclusivo (XOR): $p \oplus q$
+
+El **XOR** ("o exclusivo") es verdadero cuando **exactamente una** de las dos entradas es verdadera. Se diferencia del $\lor$ (que admite ambas): es justamente el error clásico que advierte el método de estudio. Se construye con *OR*, *AND* y *NOT*:
+
+$$
+p \oplus q \equiv (p \lor q) \land \neg(p \land q)
+$$
+
+| $p$ | $q$ | $p \oplus q$ |
+| --- | --- | ------------ |
+| V   | V   | F            |
+| V   | F   | V            |
+| F   | V   | V            |
+| F   | F   | F            |
+
+```mermaid
+flowchart LR
+    p((p)) --> O["∨ (O)"]
+    q((q)) --> O
+    p --> A["∧ (Y)"]
+    q --> A
+    A --> N["¬ (NO)"]
+    O --> R["∧ (Y)"]
+    N --> R
+    R --> out["p ⊕ q"]
+    style p fill:#90caf9
+    style q fill:#90caf9
+    style O fill:#ffcc80
+    style A fill:#ffcc80
+    style N fill:#ffcc80
+    style R fill:#ffcc80
+    style out fill:#a5d6a7
+```
+
+**Uso real:** el XOR aparece en casi toda la **criptografía** y en los **circuitos sumadores**. Al sumar dos bits: $0+0=0$, $0+1=1$, $1+0=1$, $1+1=10$ → el bit del resultado es 0 cuando hay acarreo. Es exactamente la tabla del XOR. 
+
 ### Cuantificadores
 
 - **Universal** $\forall$: "para todo". "$\forall x \in \mathbb{N},\ x \geq 0$" → todos los naturales son ≥ 0.
@@ -415,6 +499,7 @@ d) 2
 | $\text{MCD}(a,b)$ | Máximo común divisor |
 | $a \equiv b \ (\text{mod } n)$ | Congruencia módulo n (mismo residuo) |
 | $O(f(n))$ | Notación de complejidad: "del orden de" |
+| $p \oplus q$ | O exclusivo (XOR): verdadero con exactamente una entrada verdadera |
 | $\binom{n}{k}$ | Combinación: $C(n,k)$ |
 
 ---
