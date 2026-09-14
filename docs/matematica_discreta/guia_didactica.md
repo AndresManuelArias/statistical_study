@@ -1454,6 +1454,137 @@ Un **camino hamiltoniano** visita **cada vértice exactamente una vez**. Un **ci
 > - ¿Necesitas visitar todas las **ciudades** sin repetir? → es Hamilton: no prometas un algoritmo rápido, usa heurísticas (vecino más cercano, 2-opt).
 ---
 
+#### 7.4.10 El algoritmo de Dijkstra: la ruta más corta 👟
+
+**(Estructura de datos: grafo ponderado con pesos **no negativos**)**
+
+Dijkstra (1959) responde la pregunta estrella de Google Maps:
+
+> *"¿Cuál es el camino **más barato** (menor costo total) desde mi origen **s** hasta cada otro vértice?"*
+
+**Analogía:** cada vértice es una ciudad y cada arista, un vuelo con su precio. Dijkstra empieza con la maleta en la ciudad de salida (distancia 0) y va *desbloqueando* la ciudad más barata de alcanzar; al desbloquear una ciudad, revisa si los vuelos que salen de ella **mejoran** el precio de llegar a las vecinas. Ese ajuste se llama **relajamiento** de la etiqueta.
+
+**Las tres reglas del juego** (se parece a Prim, pero minimiza **distancia desde el origen**, no el costo del árbol):
+
+1. Mantén una etiqueta `d[v]` = mejor distancia conocida desde `s` (∞ al inicio, 0 en `s`).
+2. En cada paso **finaliza** el vértice no etiquetado con **menor** `d`: su distancia es *definitiva*.
+3. Al finalizar `u`, **relaja** cada arista `(u,v)`: si `d[u] + peso(u,v) < d[v]`, actualiza `d[v]` y guarda a `u` como el *padre* de `v`.
+
+> [!warning] ¿Por qué pesos no negativos?
+> Si una arista pesara **-5**, "tardar más" podría *mejorar* el precio (llegar a v y volver a u sale más barato). La regla 2 ("la menor es definitiva") dejaría de ser cierta. Por eso Dijkstra exige pesos ≥ 0.
+
+Usaremos el **mismo grafo de las 7 casas** del MST (los pesos no cambiaron):
+
+```mermaid
+flowchart LR
+    A["A"] ---|"7"| B["B"]
+    A ---|"5"| D["D"]
+    B ---|"8"| C["C"]
+    B ---|"9"| D
+    B ---|"7"| E["E"]
+    C ---|"5"| E
+    D ---|"15"| E
+    D ---|"6"| F["F"]
+    E ---|"8"| F
+    E ---|"9"| G["G"]
+    F ---|"11"| G
+```
+
+**Paso a paso desde A** (las celdas en negrita son las definitivas):
+
+| Paso | Finalizado | d[A] | d[B] | d[C] | d[D] | d[E] | d[F] | d[G] | Arista al SPT |
+|------|------------|------|------|------|------|------|------|------|---------------|
+| 0 | — | **0** | ∞ | ∞ | ∞ | ∞ | ∞ | ∞ | — |
+| 1 | A (0) · relaja A-B, A-D | 0 | 7 | ∞ | 5 | ∞ | ∞ | ∞ | — |
+| 2 | **D (5)** · relaja D-F, D-E | 0 | 7 | ∞ | **5** | 20 | 11 | ∞ | A-D |
+| 3 | **B (7)** · relaja B-C, B-E | 0 | **7** | 15 | 5 | 14 | 11 | ∞ | A-B |
+| 4 | **F (11)** · relaja F-G | 0 | 7 | 15 | 5 | 14 | **11** | 22 | D-F |
+| 5 | **E (14)** · relaja E-G (no mejora) | 0 | 7 | 15 | 5 | **14** | 11 | 22 | B-E |
+| 6 | **C (15)** · sin mejoras | 0 | 7 | **15** | 5 | 14 | 11 | 22 | B-C |
+| 7 | **G (22)** | 0 | 7 | 15 | 5 | 14 | 11 | **22** | F-G |
+
+> [!tip] La ruta a G
+> Siguiendo los padres: `G ← F ← D ← A`, o sea **A → D → F → G = 5 + 6 + 11 = 22**. La alternativa A → B → E → G daba 23, por eso Dijkstra prefiere la del sur. 🗺️
+
+El árbol de caminos más cortos (SPT) resultante:
+
+```mermaid
+flowchart LR
+    A["A (0)"] -->|"5"| D["D (5)"]
+    A -->|"7"| B["B (7)"]
+    D -->|"6"| F["F (11)"]
+    B -->|"7"| E["E (14)"]
+    B -->|"8"| C["C (15)"]
+    F -->|"11"| G["G (22)"]
+```
+
+**Pseudo-código:**
+
+```text
+función dijkstra(grafo G, origen s):
+    d[s] = 0, d[resto] = ∞
+    padre[s] = None
+    Q = cola de prioridad con todos los vértices (por d)
+    mientras Q no esté vacía:
+        u = Q.extraer_min()          # vértice con menor d → definitivo
+        para cada (v, peso) en vecinos(u):
+            si d[u] + peso < d[v]:   # relajamiento
+                d[v] = d[u] + peso
+                padre[v] = u
+                Q.reducir_clave(v, d[v])
+    devolver d, padre
+```
+
+**Implementación en Python (con heap):**
+
+```python
+import heapq
+
+def dijkstra(grafo, origen):
+    dist = {v: float("inf") for v in grafo}
+    padre = {v: None for v in grafo}
+    dist[origen] = 0
+    cola = [(0, origen)]
+    while cola:
+        d, u = heapq.heappop(cola)
+        if d > dist[u]:
+            continue              # etiqueta obsoleta, no finalizar u otra vez
+        for v, w in grafo[u]:
+            nueva = d + w
+            if nueva < dist[v]:
+                dist[v] = nueva
+                padre[v] = u
+                heapq.heappush(cola, (nueva, v))
+    return dist, padre
+
+# El mismo grafo de las 7 casas
+G = {
+    "A": [("B", 7), ("D", 5)],
+    "B": [("A", 7), ("C", 8), ("D", 9), ("E", 7)],
+    "C": [("B", 8), ("E", 5)],
+    "D": [("A", 5), ("B", 9), ("E", 15), ("F", 6)],
+    "E": [("B", 7), ("C", 5), ("D", 15), ("F", 8), ("G", 9)],
+    "F": [("D", 6), ("E", 8), ("G", 11)],
+    "G": [("E", 9), ("F", 11)],
+}
+dist, padre = dijkstra(G, "A")
+print(dist["G"])                  # 22  → ruta A → D → F → G
+```
+
+**Complejidad:** con heap, cada vértice se extrae una vez y cada relajamiento hace un push: **O((n + m) log n)**. Sin heap (buscando el mínimo a mano) sería O(n²), aceptable en grafos densos.
+
+> 🎮 **Ahora practica tú:** haz clic sobre las **aristas** en el orden en que Dijkstra las agrega a su árbol de caminos más cortos (finalizando siempre el vértice de menor distancia). Empieza con la semilla A; con 💡 Ayuda verás la pista.
+
+<div class="grafo-ejercicio" data-tipo="dijkstra" data-nodos="A,B,C,D,E,F,G" data-semilla="A" data-aristas="A-B:7,A-D:5,B-C:8,B-D:9,B-E:7,C-E:5,D-E:15,D-F:6,E-F:8,E-G:9,F-G:11">
+
+#### Precisa los clics: orden de Dijkstra
+
+Haz **clic sobre una arista** que conecte un vértice ya finalizado con el **vértice no finalizado de menor distancia**. Si aciertas, la arista se pone verde y el vértice se finaliza mostrando su distancia real desde A. ¡Termina con la ruta A→D→F→G = 22!
+
+</div>
+
+---
+
 ### 7.5 Árboles
 
 Un **árbol** es un grafo **conexo sin ciclos**. Es la estructura natural de las **jerarquías**: sistemas de archivos, DOM de una página, árboles genealógicos, y los árboles de decisión de machine learning.

@@ -148,6 +148,7 @@
   function crearEjercicio(contenedor) {
     var tipo = contenedor.getAttribute("data-tipo") || "adyacencia";
     if (tipo === "prim") { crearEjercicioPrim(contenedor); return; }
+    if (tipo === "dijkstra") { crearEjercicioDijkstra(contenedor); return; }
     var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
     var matriz = parseMatriz(contenedor.getAttribute("data-matriz"));
     if (!nodos.length || !matriz.length) return;
@@ -665,6 +666,259 @@
 
     btnAyuda.addEventListener("click", ayuda);
 
+    repintar();
+  }
+
+
+
+  /* ---------- ejercicio interactivo: Dijkstra ----------
+   * El usuario finaliza vértices haciendo clic en la arista que une el
+   * vértice ya finalizado con el SPT. Se precomputa dijkstra real.
+   */
+  function crearEjercicioDijkstra(contenedor) {
+    var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
+    var semilla = (contenedor.getAttribute("data-semilla") || nodos[0]).trim();
+    var aristas = (contenedor.getAttribute("data-aristas") || "").split(",")
+      .map(function (s) {
+        var m = s.trim().match(/^([A-Za-z0-9]+)-([A-Za-z0-9]+):(\d+(?:\.\d+)?)$/);
+        if (!m) return null;
+        return { u: m[1], v: m[2], w: Number(m[3]) };
+      })
+      .filter(Boolean);
+    if (!nodos.length || !aristas.length) return;
+
+    function idxDe(nn, x) { return nn.indexOf(x); }
+    function clave(a, b) {
+      var i = idxDe(nodos, a), j = idxDe(nodos, b);
+      return (i < j ? i + "-" + j : j + "-" + i);
+    }
+    function aristaPorPar(a, b) {
+      for (var k = 0; k < aristas.length; k++) {
+        if (clave(aristas[k].u, aristas[k].v) === clave(a, b)) return aristas[k];
+      }
+      return null;
+    }
+
+    // Dijkstra para precomputar distancias y padres
+    var dist = {}, padre = {};
+    nodos.forEach(function (n) { dist[n] = Infinity; padre[n] = null; });
+    dist[semilla] = 0;
+    var visitado = {};
+    for (var i = 0; i < nodos.length; i++) {
+      var u = null, minD = Infinity;
+      nodos.forEach(function (n) {
+        if (!visitado[n] && dist[n] < minD) { minD = dist[n]; u = n; }
+      });
+      if (u === null) break;
+      visitado[u] = true;
+      aristas.forEach(function (a) {
+        var v = null;
+        if (a.u === u && !visitado[a.v]) v = a.v;
+        if (a.v === u && !visitado[a.u]) v = a.u;
+        if (v !== null && dist[u] + a.w < dist[v]) {
+          dist[v] = dist[u] + a.w;
+          padre[v] = u;
+        }
+      });
+    }
+
+    var finalizados = {};
+    finalizados[semilla] = true;
+    var orden = [semilla];
+
+    // --- UI (igual que prim) ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    contenedor.appendChild(titulo);
+
+    var lienzo = document.createElement("div");
+    lienzo.className = "ge-lienzo";
+    lienzo.id = "ge-dijkstra-" + (++marcados) + "-lienzo";
+    contenedor.appendChild(lienzo);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    var btnAyuda = document.createElement("button");
+    btnAyuda.type = "button";
+    btnAyuda.className = "ge-boton ge-boton-ayuda";
+    btnAyuda.textContent = "💡 Ayuda";
+    cajaBotones.appendChild(btnReiniciar);
+    cajaBotones.appendChild(btnAyuda);
+    contenedor.appendChild(cajaBotones);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    if (typeof cytoscape === "undefined") {
+      resultado.textContent = "⚠️ Cytoscape.js no cargó.";
+      resultado.className = "ge-resultado ge-error";
+      return;
+    }
+
+    var cy = cytoscape({
+      container: lienzo,
+      elements: {
+        nodes: nodos.map(function (n) {
+          return { data: { id: n, label: n } };
+        }),
+        edges: aristas.map(function (a) {
+          return { data: { id: clave(a.u, a.v), source: a.u, target: a.v, peso: a.w, label: String(a.w) } };
+        })
+      },
+      style: [
+        { selector: "node", style: {
+            "background-color": "#3f51b5", "border-color": "#283593", "border-width": 2,
+            label: "data(label)", color: "#283593", "font-size": 16,
+            "text-valign": "bottom", "text-margin-y": 8, width: 30, height: 30
+        }},
+        { selector: "node.ge-finalizado", style: {
+            "background-color": "#2e7d32", "border-color": "#1b5e20", "border-width": 4
+        }},
+        { selector: "node.ge-semilla", style: {
+            "background-color": "#ff9800", "border-color": "#e65100", "border-width": 4
+        }},
+        { selector: "edge", style: {
+            width: 2.5, "line-color": "#9e9e9e", "curve-style": "bezier",
+            label: "data(label)", color: "#424242", "font-size": 13,
+            "text-rotation": "autorotate", "text-background-color": "#fff",
+            "text-background-opacity": 1, "text-background-padding": 2
+        }},
+        { selector: "edge.ge-frontera", style: {
+            "line-color": "#ff9800", width: 4, "line-style": "dashed"
+        }},
+        { selector: "edge.ge-mst", style: { "line-color": "#2e7d32", width: 5 }},
+        { selector: "edge.ge-ciclo", style: {
+            "line-color": "#c62828", width: 4, "line-style": "dashed"
+        }}
+      ],
+      layout: { name: "circle", padding: 40 },
+      wheelSensitivity: 0.2,
+      boxSelectionEnabled: false
+    });
+    contenedor._cy = cy;
+
+    function siguiente() {
+      var sig = null, minD = Infinity;
+      nodos.forEach(function (n) {
+        if (!finalizados[n] && dist[n] < minD) { minD = dist[n]; sig = n; }
+      });
+      return sig;
+    }
+
+    function repintar() {
+      cy.nodes().removeClass("ge-finalizado ge-semilla");
+      cy.nodes().forEach(function (n) {
+        if (n.id() === semilla) n.addClass("ge-semilla");
+        else if (finalizados[n.id()]) {
+          n.addClass("ge-finalizado");
+          n.data("label", n.id() + " (" + dist[n.id()] + ")");
+        }
+      });
+      cy.edges().removeClass("ge-mst ge-frontera ge-ciclo");
+      // aristas del SPT (padre -> hijo) para los finalizados
+
+      nodos.forEach(function (n) {
+        if (n !== semilla && finalizados[n] && padre[n] !== null) {
+          cy.$("#" + clave(padre[n], n)).addClass("ge-mst");
+        }
+      });
+      // frontera: aristas salientes de finalizados hacia no finalizados
+      aristas.forEach(function (a) {
+        var uIn = finalizados[a.u], vIn = finalizados[a.v];
+        if ((uIn && !vIn) || (!uIn && vIn)) {
+          cy.$("#" + clave(a.u, a.v)).addClass("ge-frontera");
+        }
+      });
+      var sig = siguiente();
+      var fin = nodos.filter(function (n) { return finalizados[n]; });
+      titulo.innerHTML =
+        "<strong>Finalizados:</strong> {" + fin.join(", ") + "} · " +
+        (sig ? "<strong>Siguiente:</strong> " + sig + " (dist " + dist[sig] + ") vía " + padre[sig] + "-" + sig
+             : "🎉 ¡todos finalizados!");
+    }
+
+    function ayuda() {
+      var sig = siguiente();
+      if (!sig) {
+        resultado.innerHTML = "🎉 ¡Completaste todos los vértices! Distancias: " +
+          nodos.map(function (n) { return n + "=" + dist[n]; }).join(", ") + ". " +
+          "Ruta a G (" + dist["G"] + "): " + (padre["G"] ? padre["G"] + " → " : "") + "G";
+        resultado.className = "ge-resultado ge-ok";
+        return;
+      }
+      resultado.innerHTML =
+        "💡 El siguiente vértice a finalizar es <strong>" + sig + " (dist " + dist[sig] + ")</strong>. " +
+        "Haz clic en la arista <strong>" + padre[sig] + "-" + sig + "</strong>.";
+      resultado.className = "ge-resultado ge-error";
+    }
+
+    cy.on("tap", "edge", function (ev) {
+      var e = ev.target;
+      var a = aristaPorPar(e.data("source"), e.data("target"));
+      if (!a) return;
+      var uIn = finalizados[a.u], vIn = finalizados[a.v];
+      var sig = siguiente();
+      if (!sig) return;
+
+      if (uIn && vIn) {
+        resultado.textContent = "⚠️ Ambos vértices ya están finalizados. Elige una arista de la frontera.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      if (!uIn && !vIn) {
+        resultado.textContent = "❌ Ninguno de los dos extremos está finalizado. Dijkstra trabaja desde la frontera.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // un extremo finalizado, otro no
+      var extNuevo = uIn ? a.v : a.u;
+      if (extNuevo !== sig) {
+        resultado.textContent =
+          "❌ Casi. Dijkstra finaliza primero el de <strong>menor</strong> distancia: " + sig +
+          " (" + dist[sig] + "), no " + extNuevo + " (" + dist[extNuevo] + ").";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // es el siguiente correcto; verificar que la arista es la del padre
+      if (a.u !== padre[sig] && a.v !== padre[sig]) {
+        resultado.textContent =
+          "❌ Sí, toca finalizar " + sig + ", pero por la arista de su padre: <strong>" +
+          padre[sig] + "-" + sig + "</strong>.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // ✅ correcto
+      if (!uIn) finalizados[a.u] = true;
+      if (!vIn) finalizados[a.v] = true;
+      orden.push(sig);
+      repintar();
+      resultado.textContent =
+        "✅ ¡Correcto! Finalizaste " + sig + " con distancia " + dist[sig] + " desde " + semilla + ".";
+      resultado.className = "ge-resultado ge-ok";
+      if (nodos.every(function (n) { return finalizados[n]; })) {
+        resultado.innerHTML =
+          "🎉 <strong>¡Completaste el SPT de Dijkstra!</strong> Distancias desde " + semilla + ": " +
+          nodos.map(function (n) { return n + "=" + dist[n]; }).join(", ") + ". " +
+          "La ruta más corta a G es <strong>A → D → F → G = " + dist["G"] + "</strong>.";
+        resultado.className = "ge-resultado ge-ok";
+      }
+    });
+
+    btnReiniciar.addEventListener("click", function () {
+      finalizados = {};
+      finalizados[semilla] = true;
+      orden = [semilla];
+      cy.nodes().forEach(function (n) { n.data("label", n.id()); });
+      resultado.className = "ge-resultado";
+      resultado.textContent = "";
+      repintar();
+    });
+    btnAyuda.addEventListener("click", ayuda);
     repintar();
   }
 
