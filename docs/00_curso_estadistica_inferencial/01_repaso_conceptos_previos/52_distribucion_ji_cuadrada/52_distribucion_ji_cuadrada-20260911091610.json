@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "52_distribucion_ji_cuadrada-20260911091610",
+  "titulo": "Evaluación 52_distribucion_ji_cuadrada",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué se entiende por distribución $\\chi^2$ con $k$ grados de libertad?",
+      "opciones": [
+        "a) La suma de $k$ variables normales independientes al cuadrado",
+        "b) El producto de $k$ variables uniformes independientes",
+        "c) La suma de $k$ variables exponenciales independientes al cuadrado",
+        "d) El promedio de $k$ variables normales independientes al cuadrado"
+      ],
+      "respuesta_correcta": "a) La suma de $k$ variables normales independientes al cuadrado",
+      "respuesta_usuario": "d) El promedio de $k$ variables normales independientes al cuadrado",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es el rango de valores posibles de una variable con distribución $\\chi^2$?",
+      "opciones": [
+        "a) $(-\\infty, +\\infty)$",
+        "b) $(-k, k)$",
+        "c) $[0, \\infty)$",
+        "d) $[0, k]$"
+      ],
+      "respuesta_correcta": "c) $[0, \\infty)$",
+      "respuesta_usuario": "a) $(-\\infty, +\\infty)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Si $X \\sim \\chi^2(5)$, ¿cuál es su varianza?",
+      "opciones": [
+        "a) 5",
+        "b) 10",
+        "c) 25",
+        "d) 2.5"
+      ],
+      "respuesta_correcta": "b) 10",
+      "respuesta_usuario": "c) 25",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Se toma una muestra de tamaño $n = 10$. Para construir un intervalo de confianza para $\\sigma^2$ se usa el estadístico $\\frac{(n-1)s^2}{\\sigma^2}$. ¿Cuántos grados de libertad tiene?",
+      "opciones": [
+        "a) 10",
+        "b) 5",
+        "c) 9",
+        "d) 8"
+      ],
+      "respuesta_correcta": "c) 9",
+      "respuesta_usuario": "d) 8",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "La prueba $\\chi^2$ de bondad de ajuste calcula el estadístico:",
+      "opciones": [
+        "a) $\\chi^2 = \\sum (O_i - E_i)^2$",
+        "b) $\\chi^2 = \\sum \\frac{(O_i - E_i)^2}{E_i}$",
+        "c) $\\chi^2 = \\sum \\frac{O_i - E_i}{E_i}$",
+        "d) $\\chi^2 = \\frac{(\\sum O_i)^2}{\\sum E_i}$"
+      ],
+      "respuesta_correcta": "b) $\\chi^2 = \\sum \\frac{(O_i - E_i)^2}{E_i}$",
+      "respuesta_usuario": "c) $\\chi^2 = \\sum \\frac{O_i - E_i}{E_i}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Qué afirmación es correcta sobre la forma de la distribución $\\chi^2$?",
+      "opciones": [
+        "a) Siempre es simétrica e independiente de $k$",
+        "b) Es asimétrica a la derecha y se vuelve más simétrica al crecer $k$",
+        "c) Es asimétrica a la izquierda y se vuelve más simétrica al crecer $k$",
+        "d) Solo es simétrica cuando $k = 1$"
+      ],
+      "respuesta_correcta": "b) Es asimétrica a la derecha y se vuelve más simétrica al crecer $k$",
+      "respuesta_usuario": "b) Es asimétrica a la derecha y se vuelve más simétrica al crecer $k$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Para una prueba de independencia en una tabla de contingencia de $3 \\times 4$ (3 filas, 4 columnas), ¿cuántos grados de libertad tiene el estadístico $\\chi^2$?",
+      "opciones": [
+        "a) 12",
+        "b) 7",
+        "c) 6",
+        "d) 9"
+      ],
+      "respuesta_correcta": "c) 6",
+      "respuesta_usuario": "b) 7",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Si $X_1 \\sim \\chi^2(3)$ y $X_2 \\sim \\chi^2(4)$ son independientes, ¿qué distribución sigue $X_1 + X_2$?",
+      "opciones": [
+        "a) $\\chi^2(7)$",
+        "b) $\\chi^2(12)$",
+        "c) $\\chi^2(1)$",
+        "d) $\\chi^2(3.5)$"
+      ],
+      "respuesta_correcta": "a) $\\chi^2(7)$",
+      "respuesta_usuario": "c) $\\chi^2(1)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "El intervalo de confianza al 95% para $\\sigma^2$ se construye como:",
+      "opciones": [
+        "a) $\\left[\\frac{(n-1)s^2}{\\chi^2_{1-\\alpha/2}}, \\;\\; \\frac{(n-1)s^2}{\\chi^2_{\\alpha/2}}\\right]$",
+        "b) $\\left[\\frac{(n-1)s^2}{\\chi^2_{\\alpha/2}}, \\;\\; \\frac{(n-1)s^2}{\\chi^2_{1-\\alpha/2}}\\right]$",
+        "c) $\\left[(n-1)s^2 \\cdot \\chi^2_{\\alpha/2}, \\;\\; (n-1)s^2 \\cdot \\chi^2_{1-\\alpha/2}\\right]$",
+        "d) $\\left[\\frac{s^2}{(n-1)\\chi^2_{\\alpha/2}}, \\;\\; \\frac{s^2}{(n-1)\\chi^2_{1-\\alpha/2}}\\right]$"
+      ],
+      "respuesta_correcta": "b) $\\left[\\frac{(n-1)s^2}{\\chi^2_{\\alpha/2}}, \\;\\; \\frac{(n-1)s^2}{\\chi^2_{1-\\alpha/2}}\\right]$",
+      "respuesta_usuario": "d) $\\left[\\frac{s^2}{(n-1)\\chi^2_{\\alpha/2}}, \\;\\; \\frac{s^2}{(n-1)\\chi^2_{1-\\alpha/2}}\\right]$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En el ejemplo de las bombillas, el estadístico calculado fue $\\chi^2 = 1.67$ con valor crítico 7.815 al nivel 5%. La conclusión fue no rechazar $H_0$. ¿Qué significado tiene?",
+      "opciones": [
+        "a) Se comprobó que la distribución propuesta por el fabricante es correcta",
+        "b) Los datos son inconsistentes con la distribución propuesta",
+        "c) No hay evidencia suficiente para rechazar que los datos sigan la distribución propuesta",
+        "d) La varianza muestral no difiere de la poblacional"
+      ],
+      "respuesta_correcta": "c) No hay evidencia suficiente para rechazar que los datos sigan la distribución propuesta",
+      "respuesta_usuario": "d) La varianza muestral no difiere de la poblacional",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 10.0,
+    "total_correctas": 1,
+    "total_preguntas": 10
+  }
+}

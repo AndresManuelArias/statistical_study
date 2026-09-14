@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "69_zonas_rechazo_toma_decision-20260911150424",
+  "titulo": "Evaluación 69_zonas_rechazo_toma_decision",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué representa el área de la zona de rechazo en la distribución del estadístico bajo $H_0$?",
+      "opciones": [
+        "a) La probabilidad de cometer error tipo II ($\\beta$)",
+        "b) El nivel de significancia $\\alpha$, probabilidad de rechazar $H_0$ cuando es verdadera",
+        "c) La probabilidad de que $H_0$ sea verdadera dado el dato observado",
+        "d) El poder de la prueba, es decir $1 - \\beta$"
+      ],
+      "respuesta_correcta": "b) El nivel de significancia $\\alpha$, probabilidad de rechazar $H_0$ cuando es verdadera",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "En una prueba bilateral con $\\alpha = 0,05$ y distribución normal estándar, ¿cuáles son los valores críticos?",
+      "opciones": [
+        "a) $z = \\pm 1,645$",
+        "b) $z = \\pm 1,96$",
+        "c) $z = \\pm 2,33$",
+        "d) $z = \\pm 2,576$"
+      ],
+      "respuesta_correcta": "b) $z = \\pm 1,96$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Un test bilateral con $\\alpha = 0,05$ arroja un estadístico $z_{calc} = 2,3$. ¿Cuál es la decisión?",
+      "opciones": [
+        "a) No se rechaza $H_0$ porque $2,3 < 2,576$",
+        "b) No se rechaza $H_0$ porque el p-valor no se conoce",
+        "c) Se rechaza $H_0$ porque $|2,3| > 1,96$",
+        "d) Se rechaza $H_0$ porque $2,3 > 1,645$"
+      ],
+      "respuesta_correcta": "c) Se rechaza $H_0$ porque $|2,3| > 1,96$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si no se rechaza $H_0$, ¿qué afirmación es correcta?",
+      "opciones": [
+        "a) Se ha demostrado que $H_0$ es verdadera",
+        "b) No hay evidencia suficiente para rechazar $H_0$, pero eso no prueba que sea verdadera",
+        "c) La hipótesis alternativa $H_1$ es falsa",
+        "d) El nivel de significancia $\\alpha$ debe reducirse"
+      ],
+      "respuesta_correcta": "b) No hay evidencia suficiente para rechazar $H_0$, pero eso no prueba que sea verdadera",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué es el p-valor en una prueba de hipótesis?",
+      "opciones": [
+        "a) La probabilidad de que $H_0$ sea verdadera",
+        "b) La probabilidad de cometer error tipo I multiplicada por el tamaño de muestra",
+        "c) La probabilidad de obtener un estadístico al menos tan extremo como el observado, asumiendo $H_0$ verdadera",
+        "d) La diferencia entre $\\alpha$ y el estadístico calculado"
+      ],
+      "respuesta_correcta": "c) La probabilidad de obtener un estadístico al menos tan extremo como el observado, asumiendo $H_0$ verdadera",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "En una prueba unilateral izquierda con $\\alpha = 0,01$, el valor crítico es $z_{crit} = -2,33$. Si $z_{calc} = -2,1$, ¿cuál es la decisión?",
+      "opciones": [
+        "a) Se rechaza $H_0$ porque $-2,1$ es negativo",
+        "b) No se rechaza $H_0$ porque $-2,1 > -2,33$, es decir no cae en la zona de rechazo",
+        "c) No se rechaza $H_0$ porque el valor absoluto $|-2,1| < |-2,33|$ siempre implica no rechazo",
+        "d) Se rechaza $H_0$ porque $-2,1$ está dentro del intervalo de confianza"
+      ],
+      "respuesta_correcta": "b) No se rechaza $H_0$ porque $-2,1 > -2,33$, es decir no cae en la zona de rechazo",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Se realiza una prueba bilateral con $\\alpha = 0,05$ (valor crítico $z_{\\alpha/2} = 1,96$). El estadístico calculado es $z_{calc} = 1,9$. ¿Se rechaza $H_0$?",
+      "opciones": [
+        "a) Sí, porque $1,9 > 1,645$",
+        "b) No, porque $|1,9| < 1,96$ y el estadístico no cae en la zona de rechazo",
+        "c) Sí, porque $1,9$ es mayor que 0",
+        "d) No, porque el valor crítico para bilateral es siempre 2,576"
+      ],
+      "respuesta_correcta": "b) No, porque $|1,9| < 1,96$ y el estadístico no cae en la zona de rechazo",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Se obtiene un p-valor de $0,04$ y se trabaja con $\\alpha = 0,01$. ¿Cuál es la conclusión?",
+      "opciones": [
+        "a) Se rechaza $H_0$ porque $0,04 < 0,05$",
+        "b) No se rechaza $H_0$ porque $0,04 > 0,01$",
+        "c) Se rechaza $H_0$ porque cualquier p-valor menor a 0,05 implica rechazo siempre",
+        "d) No se rechaza $H_0$ porque el p-valor debe ser mayor a $\\alpha/2$"
+      ],
+      "respuesta_correcta": "b) No se rechaza $H_0$ porque $0,04 > 0,01$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "La fórmula $P(rechazar  H_0 \\mid H_0  verdadera)$ define:",
+      "opciones": [
+        "a) La probabilidad de error tipo II ($\\beta$)",
+        "b) El poder de la prueba ($1 - \\beta$)",
+        "c) La probabilidad de error tipo I ($\\alpha$)",
+        "d) El p-valor de la prueba"
+      ],
+      "respuesta_correcta": "c) La probabilidad de error tipo I ($\\alpha$)",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En el ejemplo de la refresquera que llena botellas de 500 ml, se sospecha que la máquina llena más de lo debido. Si se plantea $H_1: \\mu > 500$, ¿qué tipo de prueba se realiza y cuál es la condición para rechazar $H_0$ con $\\alpha = 0,05$?",
+      "opciones": [
+        "a) Bilateral; rechazar si $|z_{calc}| > 1,96$",
+        "b) Unilateral izquierda; rechazar si $z_{calc} < -1,645$",
+        "c) Unilateral derecha; rechazar si $z_{calc} > 1,645$",
+        "d) Unilateral derecha; rechazar si $z_{calc} < 1,645$"
+      ],
+      "respuesta_correcta": "c) Unilateral derecha; rechazar si $z_{calc} > 1,645$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 0.0,
+    "total_correctas": 0,
+    "total_preguntas": 10
+  }
+}

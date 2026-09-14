@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "28_muestras_sin_orden_con_reemplazo-20260910090417",
+  "titulo": "Evaluación 28_muestras_sin_orden_con_reemplazo",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué caracteriza a una combinación con repetición?",
+      "opciones": [
+        "a) El orden importa y los elementos se pueden repetir.",
+        "b) El orden importa y los elementos no se pueden repetir.",
+        "c) El orden no importa y los elementos no se pueden repetir.",
+        "d) El orden no importa y los elementos se pueden repetir."
+      ],
+      "respuesta_correcta": "d) El orden no importa y los elementos se pueden repetir.",
+      "respuesta_usuario": "d) El orden no importa y los elementos se pueden repetir.",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es la fórmula correcta para $CR(n,r)$?",
+      "opciones": [
+        "a) $\\binom{n}{r} = \\frac{n!}{r!(n-r)!}$",
+        "b) $n^r$",
+        "c) $\\binom{n+r-1}{r} = \\frac{(n+r-1)!}{r!(n-1)!}$",
+        "d) $\\frac{n!}{(n-r)!}$"
+      ],
+      "respuesta_correcta": "c) $\\binom{n+r-1}{r} = \\frac{(n+r-1)!}{r!(n-1)!}$",
+      "respuesta_usuario": "c) $\\binom{n+r-1}{r} = \\frac{(n+r-1)!}{r!(n-1)!}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Un estudiante elige 6 dulces de una tienda que ofrece 4 tipos diferentes. Puede tomar varios dulces del mismo tipo y solo le importa cuántos elige de cada uno. ¿Cuántas opciones tiene?",
+      "opciones": [
+        "a) $\\binom{10}{6} = 210$",
+        "b) $4^6 = 4096$",
+        "c) $\\binom{9}{6} = 84$",
+        "d) $\\binom{9}{3} = 84$ y $\\binom{9}{6} = 84$ son ambas expresiones válidas del mismo resultado"
+      ],
+      "respuesta_correcta": "d) $\\binom{9}{3} = 84$ y $\\binom{9}{6} = 84$ son ambas expresiones válidas del mismo resultado",
+      "respuesta_usuario": "a) $\\binom{10}{6} = 210$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "En una lotería, un jugador elige 3 boletos de entre 5 tipos posibles, con repetición y sin importar el orden. ¿Cuántas combinaciones con repetición hay?",
+      "opciones": [
+        "a) $\\binom{5}{3} = 10$",
+        "b) $5^3 = 125$",
+        "c) $\\binom{7}{3} = 35$",
+        "d) $\\binom{7}{2} = 21$"
+      ],
+      "respuesta_correcta": "c) $\\binom{7}{3} = 35$",
+      "respuesta_usuario": "a) $\\binom{5}{3} = 10$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Unas frutas con 6 tipos diferentes se quieren elegir 4, con repetición y sin importar el orden. ¿Cuántas opciones hay?",
+      "opciones": [
+        "a) $6^4 = 1296$",
+        "b) $\\binom{9}{4} = 126$",
+        "c) $\\binom{10}{4} = 210$",
+        "d) $\\binom{6}{4} = 15$"
+      ],
+      "respuesta_correcta": "b) $\\binom{9}{4} = 126$",
+      "respuesta_usuario": "d) $\\binom{6}{4} = 15$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Cuántos elementos totales (bolas y separadores) se usan en el modelo de reparto para calcular $CR(n,r)$?",
+      "opciones": [
+        "a) $n + r - 1$",
+        "b) $n + r + 1$",
+        "c) $n \\times r$",
+        "d) $2n + r$"
+      ],
+      "respuesta_correcta": "a) $n + r - 1$",
+      "respuesta_usuario": "c) $n \\times r$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Se quieren pintar 4 paredes con 3 colores posibles, pudiendo repetir colores. El orden de las paredes no se considera relevante para el cómputo. ¿Cuántas opciones hay?",
+      "opciones": [
+        "a) $3^4 = 81$",
+        "b) $\\binom{6}{4} = 15$",
+        "c) $\\binom{7}{4} = 35$",
+        "d) $\\binom{6}{2} = 15$ y $\\binom{6}{4} = 15$ son equivalentes"
+      ],
+      "respuesta_correcta": "d) $\\binom{6}{2} = 15$ y $\\binom{6}{4} = 15$ son equivalentes",
+      "respuesta_usuario": "c) $\\binom{7}{4} = 35$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Una panadería ofrece 7 tipos de pastel. Un cliente quiere comprar 4 pastelerías, pudiendo repetir tipos y sin importar el orden. ¿Cuántas combinaciones con repetición existen?",
+      "opciones": [
+        "a) $7^4 = 2401$",
+        "b) $\\binom{11}{4} = 330$",
+        "c) $\\binom{10}{4} = 210$",
+        "d) $\\binom{7}{4} = 35$"
+      ],
+      "respuesta_correcta": "c) $\\binom{10}{4} = 210$",
+      "respuesta_usuario": "d) $\\binom{7}{4} = 35$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Un coleccionista quiere elegir 2 stickers de 4 tipos diferentes, sin importar el orden y permitiendo repeticiones. ¿Cuántas opciones tiene?",
+      "opciones": [
+        "a) $\\binom{5}{2} = 10$",
+        "b) $4^2 = 16$",
+        "c) $\\binom{4}{2} = 6$",
+        "d) $\\binom{6}{2} = 15$"
+      ],
+      "respuesta_correcta": "a) $\\binom{5}{2} = 10$",
+      "respuesta_usuario": "b) $4^2 = 16$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Un lanzador de béisbol tiene 6 tipos de lanzamientos y debe elegir 3 para una secuencia, pudiendo repetir tipos. El orden de los lanzamientos no se tiene en cuenta. ¿Cuántas combinaciones con repetición hay?",
+      "opciones": [
+        "a) $6^3 = 216$",
+        "b) $\\binom{8}{3} = 56$",
+        "c) $\\binom{6}{3} = 20$",
+        "d) $\\binom{9}{3} = 84$"
+      ],
+      "respuesta_correcta": "b) $\\binom{8}{3} = 56$",
+      "respuesta_usuario": "c) $\\binom{6}{3} = 20$",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 20.0,
+    "total_correctas": 2,
+    "total_preguntas": 10
+  }
+}

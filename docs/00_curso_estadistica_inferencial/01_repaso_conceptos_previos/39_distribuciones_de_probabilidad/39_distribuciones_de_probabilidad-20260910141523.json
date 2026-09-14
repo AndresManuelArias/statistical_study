@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "39_distribuciones_de_probabilidad-20260910141523",
+  "titulo": "Evaluación 39_distribuciones_de_probabilidad",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué describe una distribución de probabilidad?",
+      "opciones": [
+        "a) La media aritmética de una muestra",
+        "b) Una tabla, gráfico o fórmula que asigna probabilidades a cada valor posible de una variable aleatoria",
+        "c) El valor más frecuente en un conjunto de datos",
+        "d) La diferencia entre el valor máximo y el mínimo de una variable"
+      ],
+      "respuesta_correcta": "b) Una tabla, gráfico o fórmula que asigna probabilidades a cada valor posible de una variable aleatoria",
+      "respuesta_usuario": "b) Una tabla, gráfico o fórmula que asigna probabilidades a cada valor posible de una variable aleatoria",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es uno de los requisitos fundamentales para que una distribución de probabilidad discreta sea válida?",
+      "opciones": [
+        "a) Todas las probabilidades deben ser mayores o iguales a 1",
+        "b) La suma de todas las probabilidades debe ser 0",
+        "c) La suma de todas las probabilidades debe ser 1 y cada una debe ser no negativa",
+        "d) La suma de las probabilidades puede ser cualquier número positivo"
+      ],
+      "respuesta_correcta": "c) La suma de todas las probabilidades debe ser 1 y cada una debe ser no negativa",
+      "respuesta_usuario": "b) La suma de todas las probabilidades debe ser 0",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "En la tabla del ejemplo del archivo, un técnico registra la distribución del número de unidades vendidas por día:\n\n| $x$ | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| $f(x)$ | 0.10 | 0.25 | ? | 0.20 | 0.10 |\n\n¿Cuál es el valor de $f(2)$ para que la tabla sea una distribución de probabilidad válida?",
+      "opciones": [
+        "a) 0.15",
+        "b) 0.25",
+        "c) 0.35",
+        "d) 0.45"
+      ],
+      "respuesta_correcta": "c) 0.35",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Usando la distribución completa del ejemplo ($f(0)=0.10$, $f(1)=0.25$, $f(2)=0.35$, $f(3)=0.20$, $f(4)=0.10$), calcule $P(X \\leq 1)$.",
+      "opciones": [
+        "a) 0.10",
+        "b) 0.25",
+        "c) 0.35",
+        "d) 0.60"
+      ],
+      "respuesta_correcta": "c) 0.35",
+      "respuesta_usuario": "d) 0.60",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Según el ejemplo del archivo, ¿cuál es $P(X \\leq 2)$?",
+      "opciones": [
+        "a) 0.35",
+        "b) 0.60",
+        "c) 0.70",
+        "d) 0.80"
+      ],
+      "respuesta_correcta": "c) 0.70",
+      "respuesta_usuario": "b) 0.60",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Según el ejemplo del archivo, ¿cuál es la esperanza matemática $E(X)$ del número de unidades vendidas por día?",
+      "opciones": [
+        "a) 1.50",
+        "b) 1.95",
+        "c) 2.00",
+        "d) 2.50"
+      ],
+      "respuesta_correcta": "b) 1.95",
+      "respuesta_usuario": "b) 1.95",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Se propone la siguiente distribución para el número de clientes que llegan a un mostrador en una hora:\n\n| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $f(x)$ | 0.20 | 0.40 | 0.30 | 0.15 |\n\n¿Es esta una distribución de probabilidad válida?",
+      "opciones": [
+        "a) No, porque $0.40 > 0.25$",
+        "b) Sí, todas las probabilidades son no negativas y suman 1",
+        "c) No, porque la suma es mayor que 1",
+        "d) No, porque falta incluir $x=4$"
+      ],
+      "respuesta_correcta": "c) No, porque la suma es mayor que 1",
+      "respuesta_usuario": "d) No, porque falta incluir $x=4$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Si $V(X) = 1.2475$ (según el ejemplo del archivo), ¿cuál es la varianza de $Y = 2X + 3$?",
+      "opciones": [
+        "a) 1.2475",
+        "b) 2.4950",
+        "c) 4.9900",
+        "d) 7.4900"
+      ],
+      "respuesta_correcta": "c) 4.9900",
+      "respuesta_usuario": "b) 2.4950",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si $E(X) = 1.95$ (según el ejemplo del archivo), calcule $E(3X - 2)$.",
+      "opciones": [
+        "a) 3.85",
+        "b) 5.85",
+        "c) 7.85",
+        "d) 11.70"
+      ],
+      "respuesta_correcta": "a) 3.85",
+      "respuesta_usuario": "c) 7.85",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Un fabricante mide el tiempo de vida de baterías lithium-ion, una variable continua con valores en todo el rango real positivo. ¿Qué distribución de probabilidad es la más adecuada para modelar esta variable?",
+      "opciones": [
+        "a) Binomial, porque hay dos resultados posibles (funciona o no)",
+        "b) Uniforme, porque todos los tiempos son igualmente probables",
+        "c) Normal, porque el tiempo de vida es continuo y tiende a agruparse alrededor de la media",
+        "d) Poisson, porque se cuentan eventos por unidad de tiempo"
+      ],
+      "respuesta_correcta": "c) Normal, porque el tiempo de vida es continuo y tiende a agruparse alrededor de la media",
+      "respuesta_usuario": "d) Poisson, porque se cuentan eventos por unidad de tiempo",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 20.0,
+    "total_correctas": 2,
+    "total_preguntas": 10
+  }
+}

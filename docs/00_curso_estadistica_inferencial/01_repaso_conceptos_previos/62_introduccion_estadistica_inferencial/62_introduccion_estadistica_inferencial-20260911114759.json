@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "62_introduccion_estadistica_inferencial-20260911114759",
+  "titulo": "Evaluación 62_introduccion_estadistica_inferencial",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué permite hacer la estadística inferencial a partir de una muestra?",
+      "opciones": [
+        "a) Describir únicamente los datos observados en la muestra",
+        "b) Generalizar resultados de una muestra a la población completa",
+        "c) Calcular solo medidas de tendencia central",
+        "d) Representar los datos mediante gráficos"
+      ],
+      "respuesta_correcta": "b) Generalizar resultados de una muestra a la población completa",
+      "respuesta_usuario": "c) Calcular solo medidas de tendencia central",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Qué es un estimador puntual?",
+      "opciones": [
+        "a) Un rango de valores que contiene al parámetro poblacional con cierta probabilidad",
+        "b) Un solo valor numérico que estima un parámetro poblacional",
+        "c) Una prueba estadística para rechazar o no una hipótesis",
+        "d) Una tabla de frecuencias con los datos de la muestra"
+      ],
+      "respuesta_correcta": "b) Un solo valor numérico que estima un parámetro poblacional",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "En la fórmula del intervalo de confianza para la media, $\\bar{X} \\pm z_{\\alpha/2} \\cdot \\frac{\\sigma}{\\sqrt{n}}$, ¿qué representa $\\frac{\\sigma}{\\sqrt{n}}$?",
+      "opciones": [
+        "a) El error estándar de la proporción muestral",
+        "b) El margen de error del intervalo",
+        "c) La desviación estándar poblacional dividida entre la raíz cuadrada del tamaño de muestra",
+        "d) El nivel de confianza expresado en decimales"
+      ],
+      "respuesta_correcta": "c) La desviación estándar poblacional dividida entre la raíz cuadrada del tamaño de muestra",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si se construye un intervalo de confianza al 95%, ¿qué significa ese nivel de confianza?",
+      "opciones": [
+        "a) Que hay un 95% de probabilidad de que la media muestral sea correcta",
+        "b) Que el 95% de los datos de la muestra están dentro del intervalo",
+        "c) Que al repetir el procedimiento muchas veces, aproximadamente el 95% de los intervalos construidos contendrán el parámetro poblacional real",
+        "d) Que solo el 5% de los datos son válidos para el análisis"
+      ],
+      "respuesta_correcta": "c) Que al repetir el procedimiento muchas veces, aproximadamente el 95% de los intervalos construidos contendrán el parámetro poblacional real",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Cuál es la diferencia fundamental entre la estadística descriptiva y la inferencial?",
+      "opciones": [
+        "a) La descriptiva usa muestras grandes y la inferencial usa muestras pequeñas",
+        "b) La descriptiva resumir y describe datos observados; la inferencial hace conclusiones sobre la población",
+        "c) La descriptiva se aplica solo en ciencias naturales y la inferencial solo en ciencias sociales",
+        "d) No existe diferencia, ambas hacen lo mismo con diferentes fórmulas"
+      ],
+      "respuesta_correcta": "b) La descriptiva resumir y describe datos observados; la inferencial hace conclusiones sobre la población",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Una empresa toma una muestra de $n = 100$ clientes y obtiene una proporción de satisfacción de $\\hat{p} = 0.78$. Si el error estándar es 0.042, ¿cuál es el margen de error aproximado al 95% de confianza ($z = 1.96$)?",
+      "opciones": [
+        "a) 0.042",
+        "b) 0.082",
+        "c) 0.78",
+        "d) 0.196"
+      ],
+      "respuesta_correcta": "b) 0.082",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Qué representa el p-valor en una prueba de hipótesis?",
+      "opciones": [
+        "a) La probabilidad de que la hipótesis nula sea verdadera",
+        "b) La probabilidad de observar un resultado tan extremo como el obtenido, asumiendo que $H_0$ es verdadera",
+        "c) La probabilidad de que la alternativa $H_1$ sea correcta",
+        "d) El porcentaje de acierto del estimador puntual"
+      ],
+      "respuesta_correcta": "b) La probabilidad de observar un resultado tan extremo como el obtenido, asumiendo que $H_0$ es verdadera",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Cuál es el estimador puntual más común para la media poblacional $\\mu$?",
+      "opciones": [
+        "a) La mediana muestral",
+        "b) La moda muestral",
+        "c) El promedio muestral $\\bar{x}$",
+        "d) El rango muestral"
+      ],
+      "respuesta_correcta": "c) El promedio muestral $\\bar{x}$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Cuáles son los tres pilares principales de la estadística inferencial?",
+      "opciones": [
+        "a) Regresión, correlación y análisis de varianza",
+        "b) Estimación puntual, estimación por intervalos y pruebas de hipótesis",
+        "c) Muestreo aleatorio, muestreo estratificado y muestreo por conglomerados",
+        "d) Probabilidad, combinatoria y distribuciones de probabilidad"
+      ],
+      "respuesta_correcta": "b) Estimación puntual, estimación por intervalos y pruebas de hipótesis",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Un hospital quiere saber si el tiempo promedio de espera ha disminuido respecto a la media histórica de 45 minutos. Toma una muestra de 64 pacientes y obtiene $\\bar{x} = 41$ minutos con $\\sigma = 16$ minutos. ¿Qué tipo de procedimiento inferencial es más adecuado?",
+      "opciones": [
+        "a) Estimación puntual únicamente, comparando 41 con 45",
+        "b) Una prueba de hipótesis para determinar si la reducción es estadísticamente significativa",
+        "c) Un intervalo de confianza sin realizar ninguna comparación",
+        "d) Un análisis descriptivo con gráficos de barras"
+      ],
+      "respuesta_correcta": "b) Una prueba de hipótesis para determinar si la reducción es estadísticamente significativa",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 0.0,
+    "total_correctas": 0,
+    "total_preguntas": 10
+  }
+}

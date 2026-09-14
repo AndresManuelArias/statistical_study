@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "49_distribucion_normal_estandar-20260911085348",
+  "titulo": "Evaluación 49_distribucion_normal_estandar",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "Si $X \\sim N(100, 100)$, ¿cuál es el valor del estadístico z para $X = 120$?",
+      "opciones": [
+        "a) z = 1",
+        "b) z = 2",
+        "c) z = 20",
+        "d) z = 0,5"
+      ],
+      "respuesta_correcta": "b) z = 2",
+      "respuesta_usuario": "c) z = 20",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es la media de la distribución normal estándar $Z \\sim N(0, 1)$?",
+      "opciones": [
+        "a) 1",
+        "b) $\\sigma$",
+        "c) 0",
+        "d) $\\mu$"
+      ],
+      "respuesta_correcta": "c) 0",
+      "respuesta_usuario": "d) $\\mu$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Cuál es el valor de $P(Z \\leq 0)$ en una distribución normal estándar?",
+      "opciones": [
+        "a) 0",
+        "b) 0,5",
+        "c) 1",
+        "d) 0,25"
+      ],
+      "respuesta_correcta": "b) 0,5",
+      "respuesta_usuario": "b) 0,5",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si $X \\sim N(50, 25)$, es decir, $\\mu = 50$ y $\\sigma = 5$, ¿cuál es el valor z para $X = 45$?",
+      "opciones": [
+        "a) z = 5",
+        "b) z = 1",
+        "c) z = -5",
+        "d) z = -1"
+      ],
+      "respuesta_correcta": "d) z = -1",
+      "respuesta_usuario": "c) z = -5",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Cuál es la varianza de la distribución normal estándar $Z \\sim N(0, 1)$?",
+      "opciones": [
+        "a) 1",
+        "b) 0",
+        "c) $\\sigma$",
+        "d) $\\sigma^2$"
+      ],
+      "respuesta_correcta": "a) 1",
+      "respuesta_usuario": "a) 1",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si $Z$ sigue una distribución normal estándar, ¿cuál es la notación correcta?",
+      "opciones": [
+        "a) $Z \\sim N(1, 0)$",
+        "b) $Z \\sim N(0, 1)$",
+        "c) $Z \\sim N(0, 0)$",
+        "d) $Z \\sim N(1, 1)$"
+      ],
+      "respuesta_correcta": "b) $Z \\sim N(0, 1)$",
+      "respuesta_usuario": "c) $Z \\sim N(0, 0)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Por la simetría de la distribución normal estándar, $P(Z \\leq -2)$ es igual a:",
+      "opciones": [
+        "a) $1 + P(Z \\leq 2)$",
+        "b) $P(Z \\leq 2)$",
+        "c) $P(Z \\geq 2)$",
+        "d) $0,5 + P(Z \\leq 2)$"
+      ],
+      "respuesta_correcta": "c) $P(Z \\geq 2)$",
+      "respuesta_usuario": "d) $0,5 + P(Z \\leq 2)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Si $X \\sim N(80, 25)$, es decir, $\\mu = 80$ y $\\sigma = 5$, y $X = 80$, ¿cuál es el valor de z?",
+      "opciones": [
+        "a) 0",
+        "b) 1",
+        "c) 5",
+        "d) 80"
+      ],
+      "respuesta_correcta": "a) 0",
+      "respuesta_usuario": "b) 1",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Cuál es el valor total del área bajo la curva de densidad de la distribución normal estándar?",
+      "opciones": [
+        "a) 0",
+        "b) 0,5",
+        "c) 1",
+        "d) 2"
+      ],
+      "respuesta_correcta": "c) 1",
+      "respuesta_usuario": "d) 2",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $X \\sim N(200, 400)$, es decir, $\\mu = 200$ y $\\sigma = 20$, y se estandariza $X = 240$, se obtiene $z = 2$. Sabiendo que $P(Z \\leq 2) \\approx 0,9772$, ¿qué se puede afirmar?",
+      "opciones": [
+        "a) $P(X \\leq 240) \\approx 0,0228$",
+        "b) $P(X \\leq 240) \\approx 0,9772$",
+        "c) $P(X > 240) \\approx 0,9772$",
+        "d) $P(X = 240) = 0,9772$"
+      ],
+      "respuesta_correcta": "b) $P(X \\leq 240) \\approx 0,9772$",
+      "respuesta_usuario": "b) $P(X \\leq 240) \\approx 0,9772$",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 30.0,
+    "total_correctas": 3,
+    "total_preguntas": 10
+  }
+}

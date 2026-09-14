@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "46_distribucion_geometrica-20260910162128",
+  "titulo": "Evaluación 46_distribucion_geometrica",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "En la distribución geométrica, ¿qué representa la variable aleatoria $X$?",
+      "opciones": [
+        "a) El número de éxitos en $n$ ensayos independientes",
+        "b) El número de ensayos necesarios para obtener el primer éxito",
+        "c) El número de fracasos antes del tercer éxito",
+        "d) La probabilidad de éxito en cada ensayo"
+      ],
+      "respuesta_correcta": "b) El número de ensayos necesarios para obtener el primer éxito",
+      "respuesta_usuario": "d) La probabilidad de éxito en cada ensayo",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Si $p = 0.5$, ¿cuál es $P(X = 3)$?",
+      "opciones": [
+        "a) 0.25",
+        "b) 0.5",
+        "c) 0.125",
+        "d) 0.0625"
+      ],
+      "respuesta_correcta": "c) 0.125",
+      "respuesta_usuario": "c) 0.125",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Se lanza un dado justo ($p = 1/6$) repetidamente. ¿Cuál es la probabilidad de obtener el primer 6 en el cuarto intento?",
+      "opciones": [
+        "a) $(1/6)^4 \\approx 0.0008$",
+        "b) $(5/6)^3 \\times (1/6) \\approx 0.0965$",
+        "c) $(5/6)^4 \\times (1/6) \\approx 0.0804$",
+        "d) $(4/6)^3 \\times (2/6) \\approx 0.2963$"
+      ],
+      "respuesta_correcta": "b) $(5/6)^3 \\times (1/6) \\approx 0.0965$",
+      "respuesta_usuario": "b) $(5/6)^3 \\times (1/6) \\approx 0.0965$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si la probabilidad de éxito es $p = 0.2$, ¿cuál es el número esperado de ensayos?",
+      "opciones": [
+        "a) 0.2",
+        "b) 2",
+        "c) 5",
+        "d) 4"
+      ],
+      "respuesta_correcta": "c) 5",
+      "respuesta_usuario": "c) 5",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué significa la propiedad de \"sin memoria\" de la distribución geométrica?",
+      "opciones": [
+        "a) La probabilidad de éxito cambia tras cada ensayo",
+        "b) Si ya se han fallado $s$ veces, la distribución de ensayos restantes es la misma que empezar de cero",
+        "c) El número esperado de ensayos siempre es igual a $1/p$",
+        "d) La varianza es siempre igual a la media"
+      ],
+      "respuesta_correcta": "b) Si ya se han fallado $s$ veces, la distribución de ensayos restantes es la misma que empezar de cero",
+      "respuesta_usuario": "a) La probabilidad de éxito cambia tras cada ensayo",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Cuál es la varianza de $X$ cuando $p = 0.5$?",
+      "opciones": [
+        "a) 0.5",
+        "b) 1",
+        "c) 2",
+        "d) 4"
+      ],
+      "respuesta_correcta": "c) 2",
+      "respuesta_usuario": "c) 2",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Cuál es la probabilidad de obtener el éxito en el primer intento, es decir, $P(X = 1)$?",
+      "opciones": [
+        "a) $(1-p)^2$",
+        "b) $p^2$",
+        "c) $p$",
+        "d) $1-p$"
+      ],
+      "respuesta_correcta": "c) $p$",
+      "respuesta_usuario": "c) $p$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Si se define $Y$ como el número de fracasos antes del primer éxito, ¿cuál es la relación entre $Y$ y la variable $X$ (número de ensayos hasta el primer éxito)?",
+      "opciones": [
+        "a) $Y = X + 1$",
+        "b) $Y = X$",
+        "c) $Y = X - 1$",
+        "d) $Y = 2X$"
+      ],
+      "respuesta_correcta": "c) $Y = X - 1$",
+      "respuesta_usuario": "b) $Y = X$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si $p = 0.25$, ¿cuál es la probabilidad de necesitar más de 5 intentos, es decir, $P(X > 5)$?",
+      "opciones": [
+        "a) 0.7627",
+        "b) 0.2373",
+        "c) 0.1001",
+        "d) 0.3125"
+      ],
+      "respuesta_correcta": "b) 0.2373",
+      "respuesta_usuario": "a) 0.7627",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $X$ es el número de ensayos hasta el primer éxito con $p = 0.4$, ¿cuál es la desviación estándar $\\sigma$?",
+      "opciones": [
+        "a) 1.58",
+        "b) 2.5",
+        "c) 1.25",
+        "d) 6.25"
+      ],
+      "respuesta_correcta": "a) 1.58",
+      "respuesta_usuario": "c) 1.25",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 50.0,
+    "total_correctas": 5,
+    "total_preguntas": 10
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "50_distribucion_t_student-20260911085425",
+  "titulo": "Evaluación 50_distribucion_t_student",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿En cuál de las siguientes situaciones corresponde usar la distribución $t$ de Student en lugar de la distribución normal?",
+      "opciones": [
+        "a) Cuando la muestra es grande y $\\sigma$ es conocida",
+        "b) Cuando la muestra es pequeña y $\\sigma$ es desconocida",
+        "c) Cuando la muestra es pequeña y $\\sigma$ es conocida",
+        "d) Cuando la muestra es grande y $\\sigma$ es desconocida"
+      ],
+      "respuesta_correcta": "b) Cuando la muestra es pequeña y $\\sigma$ es desconocida",
+      "respuesta_usuario": "c) Cuando la muestra es pequeña y $\\sigma$ es conocida",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Para una muestra de tamaño $n = 25$, ¿cuántos grados de libertad tiene la distribución $t$ asociada?",
+      "opciones": [
+        "a) 25",
+        "b) 26",
+        "c) 24",
+        "d) 30"
+      ],
+      "respuesta_correcta": "c) 24",
+      "respuesta_usuario": "c) 24",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Qué característica distingue las colas de la distribución $t$ respecto a la distribución normal estándar?",
+      "opciones": [
+        "a) Son más ligeras",
+        "b) Son iguales",
+        "c) Son más pesadas",
+        "d) No tienen colas"
+      ],
+      "respuesta_correcta": "c) Son más pesadas",
+      "respuesta_usuario": "c) Son más pesadas",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "¿Cuál es la media de la distribución $t$ de Student con $\\nu > 1$ grados de libertad?",
+      "opciones": [
+        "a) $\\nu / (\\nu - 2)$",
+        "b) 1",
+        "c) $\\nu$",
+        "d) 0"
+      ],
+      "respuesta_correcta": "d) 0",
+      "respuesta_usuario": "b) 1",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué sucede con la distribución $t$ de Student cuando los grados de libertad $\\nu$ tienden a infinito?",
+      "opciones": [
+        "a) Se vuelve asimétrica",
+        "b) Se aproxima a la distribución normal estándar",
+        "c) La varianza tiende a cero",
+        "d) Las colas se vuelven más pesadas"
+      ],
+      "respuesta_correcta": "b) Se aproxima a la distribución normal estándar",
+      "respuesta_usuario": "c) La varianza tiende a cero",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Cuál es la fórmula de la varianza de la distribución $t$ con $\\nu > 2$ grados de libertad?",
+      "opciones": [
+        "a) $\\nu / (\\nu - 2)$",
+        "b) $(\\nu - 2) / \\nu$",
+        "c) $1 / \\nu$",
+        "d) $\\nu$"
+      ],
+      "respuesta_correcta": "a) $\\nu / (\\nu - 2)$",
+      "respuesta_usuario": "a) $\\nu / (\\nu - 2)$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "En el ejemplo de baterías, el fabricante afirma una duración promedio de 500 horas. Con $n = 25$, $\\bar{x} = 485$, $s = 30$ y $\\alpha = 0.05$ unilateral, se obtiene $t = -2.50$ con valor crítico $t_{0.05, 24} = 1.711$. ¿Cuál es la conclusión?",
+      "opciones": [
+        "a) No se rechaza $H_0$ porque $t > -1.711$",
+        "b) Se rechaza $H_0$ porque $|t| = 2.50 > 1.711$",
+        "c) No se rechaza $H_0$ porque $|t| < 2.131$",
+        "d) Se rechaza $H_0$ porque $t = -2.50$ es negativo"
+      ],
+      "respuesta_correcta": "b) Se rechaza $H_0$ porque $|t| = 2.50 > 1.711$",
+      "respuesta_usuario": "d) Se rechaza $H_0$ porque $t = -2.50$ es negativo",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Cómo se comporta la distribución $t$ de Student respecto a la simetría?",
+      "opciones": [
+        "a) Es asimétrica hacia la derecha",
+        "b) Es asimétrica hacia la izquierda",
+        "c) Es simétrica alrededor de 0",
+        "d) No tiene simetría definida"
+      ],
+      "respuesta_correcta": "c) Es simétrica alrededor de 0",
+      "respuesta_usuario": "b) Es asimétrica hacia la izquierda",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En el ejemplo numérico del archivo ($n = 16$, $\\bar{x} = 250$ ms, $s = 40$ ms, $\\mu_0 = 240$ ms), se calcula $t = 1.00$ con valor crítico bilateral $t_{0.025, 15} = 2.131$. ¿Por qué el valor crítico de $t$ es mayor que el valor crítico de $z = 1.960$?",
+      "opciones": [
+        "a) Porque la media es diferente",
+        "b) Porque las colas de $t$ son más pesadas",
+        "c) Porque la varianza poblacional es conocida",
+        "d) Porque la muestra es grande"
+      ],
+      "respuesta_correcta": "b) Porque las colas de $t$ son más pesadas",
+      "respuesta_usuario": "c) Porque la varianza poblacional es conocida",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "¿Cuál de las siguientes afirmaciones sobre la curtosis de la distribución $t$ de Student es correcta?",
+      "opciones": [
+        "a) Es igual a 3, igual que la normal",
+        "b) Es menor que 3",
+        "c) Es mayor que 3",
+        "d) No se puede determinar"
+      ],
+      "respuesta_correcta": "c) Es mayor que 3",
+      "respuesta_usuario": "d) No se puede determinar",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 30.0,
+    "total_correctas": 3,
+    "total_preguntas": 10
+  }
+}

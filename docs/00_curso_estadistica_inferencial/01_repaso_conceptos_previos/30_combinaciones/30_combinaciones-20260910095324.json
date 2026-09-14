@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "30_combinaciones-20260910095324",
+  "titulo": "Evaluación 30_combinaciones",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué representa una combinación $C(n,r)$?",
+      "opciones": [
+        "a) El número de formas de ordenar los $n$ elementos del conjunto",
+        "b) El número de formas de elegir $r$ elementos de $n$ elementos distintos donde el orden NO importa y no hay repetición",
+        "c) El número de formas de elegir $r$ elementos de $n$ elementos distintos donde el orden sí importa",
+        "d) El número de formas de elegir $r$ elementos permitiendo repetir cada elemento varias veces"
+      ],
+      "respuesta_correcta": "b) El número de formas de elegir $r$ elementos de $n$ elementos distintos donde el orden NO importa y no hay repetición",
+      "respuesta_usuario": "b) El número de formas de elegir $r$ elementos de $n$ elementos distintos donde el orden NO importa y no hay repetición",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es la fórmula correcta de una combinación $C(n,r)$?",
+      "opciones": [
+        "a) $C(n,r) = \\frac{n!}{r!\\,(n-r)!}$",
+        "b) $C(n,r) = \\frac{n!}{r!}$",
+        "c) $C(n,r) = \\frac{n!}{(n-r)!}$",
+        "d) $C(n,r) = \\frac{r!}{n!\\,(n-r)!}$"
+      ],
+      "respuesta_correcta": "a) $C(n,r) = \\frac{n!}{r!\\,(n-r)!}$",
+      "respuesta_usuario": "a) $C(n,r) = \\frac{n!}{r!\\,(n-r)!}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Calcular $\\binom{4}{2}$.",
+      "opciones": [
+        "a) 4",
+        "b) 6",
+        "c) 8",
+        "d) 12"
+      ],
+      "respuesta_correcta": "b) 6",
+      "respuesta_usuario": "d) 12",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Calcular $\\binom{5}{3}$.",
+      "opciones": [
+        "a) 10",
+        "b) 15",
+        "c) 20",
+        "d) 25"
+      ],
+      "respuesta_correcta": "a) 10",
+      "respuesta_usuario": "c) 20",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Cuál de las siguientes combinaciones es igual a $\\binom{10}{3}$?",
+      "opciones": [
+        "a) $\\binom{10}{2}$",
+        "b) $\\binom{3}{10}$",
+        "c) $\\binom{10}{7}$",
+        "d) $\\binom{7}{10}$"
+      ],
+      "respuesta_correcta": "c) $\\binom{10}{7}$",
+      "respuesta_usuario": "b) $\\binom{3}{10}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Cómo se relaciona una combinación con la variación $V(n,r)$?",
+      "opciones": [
+        "a) $C(n,r) = V(n,r) \\times r!$",
+        "b) $C(n,r) = \\frac{V(n,r)}{r!}$",
+        "c) $C(n,r)$ y $V(n,r)$ siempre son iguales",
+        "d) $C(n,r) = n! - V(n,r)$"
+      ],
+      "respuesta_correcta": "b) $C(n,r) = \\frac{V(n,r)}{r!}$",
+      "respuesta_usuario": "b) $C(n,r) = \\frac{V(n,r)}{r!}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Cuánto vale la combinación $\\binom{n}{1}$?",
+      "opciones": [
+        "a) 0",
+        "b) 1",
+        "c) $n$",
+        "d) $n!$"
+      ],
+      "respuesta_correcta": "c) $n$",
+      "respuesta_usuario": "c) $n$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Se quieren elegir 3 de 10 estudiantes para formar un comité. ¿Cuántas combinaciones posibles hay?",
+      "opciones": [
+        "a) 720",
+        "b) 30",
+        "c) 60",
+        "d) 120"
+      ],
+      "respuesta_correcta": "d) 120",
+      "respuesta_usuario": "a) 720",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En una lotería un jugador marca 6 números de un total de 45. ¿Cuántas combinaciones posibles hay?",
+      "opciones": [
+        "a) 8,145,060",
+        "b) 5,864,443,200",
+        "c) 720",
+        "d) 45"
+      ],
+      "respuesta_correcta": "a) 8,145,060",
+      "respuesta_usuario": "b) 5,864,443,200",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Un director de fútbol elige 11 jugadores de una plantilla de 16. ¿Cuántos equipos iniciales distintos puede formar?",
+      "opciones": [
+        "a) 524,160",
+        "b) 4,368",
+        "c) 120",
+        "d) 16"
+      ],
+      "respuesta_correcta": "b) 4,368",
+      "respuesta_usuario": "b) 4,368",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 50.0,
+    "total_correctas": 5,
+    "total_preguntas": 10
+  }
+}

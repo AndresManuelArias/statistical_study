@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "37_eventos_excluyentes_mutuamente_excluyentes-20260910114117",
+  "titulo": "Evaluación 37_eventos_excluyentes_mutuamente_excluyentes",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué significa que dos eventos $A$ y $B$ sean mutuamente excluyentes?",
+      "opciones": [
+        "a) $P(A \\cup B) = P(A) \\times P(B)$",
+        "b) $A \\cap B = \\emptyset$",
+        "c) $P(A|B) = P(B|A)$",
+        "d) $A \\cup B = \\Omega$"
+      ],
+      "respuesta_correcta": "b) $A \\cap B = \\emptyset$",
+      "respuesta_usuario": "b) $A \\cap B = \\emptyset$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Si $A$ y $B$ son mutuamente excluyentes, ¿cuál es la expresión correcta para $P(A \\cup B)$?",
+      "opciones": [
+        "a) $P(A) + P(B) - P(A \\cap B)$",
+        "b) $P(A) \\times P(B)$",
+        "c) $P(A) + P(B)$",
+        "d) $1 - P(A) \\cdot P(B)$"
+      ],
+      "respuesta_correcta": "c) $P(A) + P(B)$",
+      "respuesta_usuario": "a) $P(A) + P(B) - P(A \\cap B)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Se lanza un dado equilibrado de 6 caras. Si $A$ = \"sale un número par\" y $B$ = \"sale un número impar\", ¿cuál es $P(A \\cup B)$?",
+      "opciones": [
+        "a) $\\frac{5}{6}$",
+        "b) $1$",
+        "c) $\\frac{3}{6}$",
+        "d) $\\frac{6}{6} + \\frac{6}{6}$"
+      ],
+      "respuesta_correcta": "b) $1$",
+      "respuesta_usuario": "c) $\\frac{3}{6}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Dos eventos $A$ y $B$ son mutuamente excluyentes con $P(A) = 0,3$ y $P(B) = 0,2$. ¿Cuál es $P(A \\cup B)$?",
+      "opciones": [
+        "a) $0,06$",
+        "b) $0,5$",
+        "c) $0,25$",
+        "d) $0,6$"
+      ],
+      "respuesta_correcta": "b) $0,5$",
+      "respuesta_usuario": "b) $0,5$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "En un diagrama de Venn, ¿cómo se representan dos eventos que son mutuamente excluyentes?",
+      "opciones": [
+        "a) Dos círculos completamente superpuestos",
+        "b) Un solo círculo dentro de otro",
+        "c) Dos círculos separados sin zona de solape",
+        "d) Dos círculos con una intersección parcial"
+      ],
+      "respuesta_correcta": "c) Dos círculos separados sin zona de solape",
+      "respuesta_usuario": "a) Dos círculos completamente superpuestos",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Qué condición adicional a la exclusión mutua debe cumplirse para que la suma de probabilidades de eventos disjuntos sea igual a 1?",
+      "opciones": [
+        "a) Los eventos deben ser independientes",
+        "b) Los eventos deben ser exhaustivos, es decir $A_1 \\cup A_2 \\cup \\cdots \\cup A_n = \\Omega$",
+        "c) Todos los eventos deben tener la misma probabilidad",
+        "d) Los eventos deben tener exactamente dos resultados cada uno"
+      ],
+      "respuesta_correcta": "b) Los eventos deben ser exhaustivos, es decir $A_1 \\cup A_2 \\cup \\cdots \\cup A_n = \\Omega$",
+      "respuesta_usuario": "c) Todos los eventos deben tener la misma probabilidad",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Si $P(A) > 0$ y $P(B) > 0$, y $A$ y $B$ son mutuamente excluyentes, ¿qué se puede concluir sobre su independencia?",
+      "opciones": [
+        "a) Son independientes porque no tienen resultados en común",
+        "b) Son independientes porque $P(A \\cap B) = 0$",
+        "c) Nunca son independientes",
+        "d) Siempre son independientes"
+      ],
+      "respuesta_correcta": "c) Nunca son independientes",
+      "respuesta_usuario": "a) Son independientes porque no tienen resultados en común",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Dos eventos $A$ y $B$ no son disjuntos y se sabe que $P(A) = 0,6$, $P(B) = 0,4$ y $P(A \\cap B) = 0,2$. ¿Cuál es $P(A \\cup B)$?",
+      "opciones": [
+        "a) $1,0$",
+        "b) $0,8$",
+        "c) $0,24$",
+        "d) $0,2$"
+      ],
+      "respuesta_correcta": "b) $0,8$",
+      "respuesta_usuario": "d) $0,2$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En la planta de reciclaje del ejemplo, los residuos se clasifican en plástico (45%), papel (30%) y vidrio (25%). ¿Cuál es la probabilidad de recibir plástico o vidrio?",
+      "opciones": [
+        "a) $0,45 \\times 0,25 = 0,1125$",
+        "b) $1 - (0,45 + 0,25) = 0,30$",
+        "c) $0,45 + 0,25 = 0,70$",
+        "d) $0,45 + 0,30 + 0,25 = 1,00$"
+      ],
+      "respuesta_correcta": "c) $0,45 + 0,25 = 0,70$",
+      "respuesta_usuario": "b) $1 - (0,45 + 0,25) = 0,30$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Se lanzan dos dados equilibrados. Evento $A$: la suma es par. Evento $B$: la suma es 7. Si $P(A) = \\frac{18}{36} = 0,5$ y $P(B) = \\frac{6}{36} \\approx 0,1667$, ¿son mutuamente excluyentes?",
+      "opciones": [
+        "a) Sí, porque $A$ y $B$ describen características distintas de la suma",
+        "b) No, porque la suma 7 es impar, por lo que $A \\cap B = \\emptyset$; pero en realidad ambos pueden ocurrir: un resultado con suma 7 es siempre impar, así que efectivamente $A \\cap B = \\emptyset$",
+        "c) Sí, porque la suma 7 siempre es impar, por lo que $A \\cap B = \\emptyset$",
+        "d) No, porque existen resultados donde la suma es par y 7 a la vez"
+      ],
+      "respuesta_correcta": "c) Sí, porque la suma 7 siempre es impar, por lo que $A \\cap B = \\emptyset$",
+      "respuesta_usuario": "a) Sí, porque $A$ y $B$ describen características distintas de la suma",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 20.0,
+    "total_correctas": 2,
+    "total_preguntas": 10
+  }
+}

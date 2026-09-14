@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "38_variables_aleatorias-20260910120410",
+  "titulo": "Evaluación 38_variables_aleatorias",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué asigna una variable aleatoria $X$ a cada resultado $\\omega$ del espacio muestral $\\Omega$?",
+      "opciones": [
+        "a) Una distribución de probabilidad",
+        "b) Un conjunto de intervalos",
+        "c) Un número real $X(\\omega)$",
+        "d) Una función de densidad"
+      ],
+      "respuesta_correcta": "c) Un número real $X(\\omega)$",
+      "respuesta_usuario": "c) Un número real $X(\\omega)$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Una variable aleatoria es discreta cuando sus posibles valores forman:",
+      "opciones": [
+        "a) Un conjunto continuo sin saltos",
+        "b) Un intervalo cerrado $[a, b]$",
+        "c) Un conjunto finito o infinito numerable",
+        "d) Cualquier subconjunto de los números reales"
+      ],
+      "respuesta_correcta": "c) Un conjunto finito o infinito numerable",
+      "respuesta_usuario": "a) Un conjunto continuo sin saltos",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Cuál de las siguientes variables es continua?",
+      "opciones": [
+        "a) Número de defectos en una muestra de 50 piezas",
+        "b) Resultado de lanzar un dado",
+        "c) Tiempo de espera de un cliente en una cola",
+        "d) Número de clientes que llegan en una hora"
+      ],
+      "respuesta_correcta": "c) Tiempo de espera de un cliente en una cola",
+      "respuesta_usuario": "d) Número de clientes que llegan en una hora",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "En el ejemplo numérico del archivo, se inspeccionan 4 componentes con $p = 0.25$ de defecto. ¿Cuál es $f(0) = P(X = 0)$?",
+      "opciones": [
+        "a) $0.4219$",
+        "b) $0.2500$",
+        "c) $0.3164$",
+        "d) $0.2109$"
+      ],
+      "respuesta_correcta": "c) $0.3164$",
+      "respuesta_usuario": "b) $0.2500$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Para una variable discreta, la función de masa de probabilidad satisface $\\sum_{i} f(x_i) = 1$. ¿Qué propiedad análoga cumple la función de densidad de una variable continua?",
+      "opciones": [
+        "a) $f(x) = 1$ para todo $x$",
+        "b) $\\int_{-\\infty}^{\\infty} f(x) \\, dx = 1$",
+        "c) $\\int_{0}^{1} f(x) \\, dx = 1$",
+        "d) $f(x) \\leq 1$ para todo $x$"
+      ],
+      "respuesta_correcta": "b) $\\int_{-\\infty}^{\\infty} f(x) \\, dx = 1$",
+      "respuesta_usuario": "c) $\\int_{0}^{1} f(x) \\, dx = 1$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "En el ejemplo numérico, ¿cuál es la probabilidad de que haya al menos 2 componentes defectuosos, es decir $P(X \\geq 2)$?",
+      "opciones": [
+        "a) $0.2617$",
+        "b) $0.4219$",
+        "c) $0.2109$",
+        "d) $0.0508$"
+      ],
+      "respuesta_correcta": "a) $0.2617$",
+      "respuesta_usuario": "b) $0.4219$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Para una variable continua, ¿cuál es la probabilidad de que $X$ tome un valor puntual exacto $c$?",
+      "opciones": [
+        "a) $f(c)$",
+        "b) $F(c)$",
+        "c) $1 - F(c)$",
+        "d) $0$"
+      ],
+      "respuesta_correcta": "d) $0$",
+      "respuesta_usuario": "c) $1 - F(c)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "El número de llamadas telefónicas que recibe un call center en una hora es una variable discreta porque:",
+      "opciones": [
+        "a) Las llamadas pueden medirse con precisión infinita",
+        "b) Sus posibles valores son conteos: 0, 1, 2, 3, ...",
+        "c) Su función de densidad es continua",
+        "d) Solo puede tomar valores positivos"
+      ],
+      "respuesta_correcta": "b) Sus posibles valores son conteos: 0, 1, 2, 3, ...",
+      "respuesta_usuario": "d) Solo puede tomar valores positivos",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En el ejemplo del archivo, el peso de los paquetes que entrega una empresa de logística se modela como variable continua porque:",
+      "opciones": [
+        "a) El peso solo toma valores enteros",
+        "b) El peso es un conteo finito de elementos",
+        "c) El peso puede tomar cualquier valor en un intervalo, incluyendo decimales",
+        "d) El peso se expresa como función de masa"
+      ],
+      "respuesta_correcta": "c) El peso puede tomar cualquier valor en un intervalo, incluyendo decimales",
+      "respuesta_usuario": "c) El peso puede tomar cualquier valor en un intervalo, incluyendo decimales",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "La función de distribución acumulada (CDF) se define como $F(x) = P(X \\leq x)$. Si $X$ es discreta con $f(1) = 0.3$, $f(2) = 0.5$ y $f(3) = 0.2$, ¿cuál es $F(2)$?",
+      "opciones": [
+        "a) $0.8$",
+        "b) $0.5$",
+        "c) $0.2$",
+        "d) $1.0$"
+      ],
+      "respuesta_correcta": "a) $0.8$",
+      "respuesta_usuario": "d) $1.0$",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 20.0,
+    "total_correctas": 2,
+    "total_preguntas": 10
+  }
+}

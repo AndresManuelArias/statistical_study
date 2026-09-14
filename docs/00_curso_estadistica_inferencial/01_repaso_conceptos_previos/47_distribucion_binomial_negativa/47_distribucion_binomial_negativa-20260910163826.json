@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "47_distribucion_binomial_negativa-20260910163826",
+  "titulo": "Evaluación 47_distribucion_binomial_negativa",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Cuál es la función de masa de probabilidad de una distribución binomial negativa con parámetros $r$ y $p$?",
+      "opciones": [
+        "a) $P(X=k)=\\binom{k}{r} p^r (1-p)^k$",
+        "b) $P(X=k)=\\binom{k-1}{r-1} p^r (1-p)^{k-r}$",
+        "c) $P(X=k)=\\binom{k}{r-1} p^{r-1} (1-p)^{k-r}$",
+        "d) $P(X=k)=\\binom{k-1}{r} p^{r+1} (1-p)^{k-r-1}$"
+      ],
+      "respuesta_correcta": "b) $P(X=k)=\\binom{k-1}{r-1} p^r (1-p)^{k-r}$",
+      "respuesta_usuario": "b) $P(X=k)=\\binom{k-1}{r-1} p^r (1-p)^{k-r}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Si $X$ representa el número total de ensayos para obtener el $r$-ésimo éxito, ¿cuál es el valor mínimo que puede tomar $X$?",
+      "opciones": [
+        "a) 0",
+        "b) 1",
+        "c) $r - 1$",
+        "d) $r$"
+      ],
+      "respuesta_correcta": "d) $r$",
+      "respuesta_usuario": "c) $r - 1$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Qué distribución se obtiene como caso particular de la binomial negativa cuando $r=1$?",
+      "opciones": [
+        "a) Distribución de Bernoulli",
+        "b) Distribución de Poisson",
+        "c) Distribución geométrica",
+        "d) Distribución binomial"
+      ],
+      "respuesta_correcta": "c) Distribución geométrica",
+      "respuesta_usuario": "d) Distribución binomial",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si $X \\sim BN(r=3,  p=0,5)$, ¿cuál es el número esperado de ensayos necesarios para obtener el tercer éxito?",
+      "opciones": [
+        "a) 3",
+        "b) 4,5",
+        "c) 6",
+        "d) 9"
+      ],
+      "respuesta_correcta": "c) 6",
+      "respuesta_usuario": "b) 4,5",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Cuál es la varianza de una distribución geométrica con $p=0,5$?",
+      "opciones": [
+        "a) 0,5",
+        "b) 1",
+        "c) 2",
+        "d) 4"
+      ],
+      "respuesta_correcta": "b) 1",
+      "respuesta_usuario": "c) 2",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "En una distribución binomial negativa con $r=2$ y $p=0,5$, ¿cuál es la probabilidad de que se necesiten exactamente 3 ensayos para obtener el segundo éxito?",
+      "opciones": [
+        "a) 0,125",
+        "b) 0,25",
+        "c) 0,375",
+        "d) 0,5"
+      ],
+      "respuesta_correcta": "b) 0,25",
+      "respuesta_usuario": "b) 0,25",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Una tienda necesita vender $r=5$ electrodomésticos premium y la probabilidad de concretar la venta en cada visita es $p=0,20$. ¿Cuántas visitas se esperan en promedio para alcanzar la meta?",
+      "opciones": [
+        "a) 5",
+        "b) 10",
+        "c) 20",
+        "d) 25"
+      ],
+      "respuesta_correcta": "d) 25",
+      "respuesta_usuario": "c) 20",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Cuál es la notación correcta para indicar que una variable aleatoria $X$ sigue una distribución binomial negativa con parámetros $r$ y $p$?",
+      "opciones": [
+        "a) $X \\sim \\text{B}(r, p)$",
+        "b) $X \\sim \\text{Geo}(r, p)$",
+        "c) $X \\sim BN(r, p)$",
+        "d) $X \\sim \\text{NB}(p, r)$"
+      ],
+      "respuesta_correcta": "c) $X \\sim BN(r, p)$",
+      "respuesta_usuario": "b) $X \\sim \\text{Geo}(r, p)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En una distribución binomial negativa con $r=2$ y $p=0,5$, ¿cuál es la varianza?",
+      "opciones": [
+        "a) 2",
+        "b) 3",
+        "c) 4",
+        "d) 6"
+      ],
+      "respuesta_correcta": "c) 4",
+      "respuesta_usuario": "d) 6",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Un equipo de captación de clientes contacta personas hasta que $r=4$ acepten una prueba gratuita. Si la probabilidad de aceptación en cada contacto es $p=0,20$, ¿cuántos contactos se esperan hacer en promedio?",
+      "opciones": [
+        "a) 4",
+        "b) 10",
+        "c) 16",
+        "d) 20"
+      ],
+      "respuesta_correcta": "d) 20",
+      "respuesta_usuario": "a) 4",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 20.0,
+    "total_correctas": 2,
+    "total_preguntas": 10
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "66_requisitos_pruebas_estadisticas-20260911140442",
+  "titulo": "Evaluación 66_requisitos_pruebas_estadisticas",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "Un investigador clasifica a los pacientes según su grupo sanguíneo (A, B, AB, O). ¿A qué escala de medición corresponde esta variable?",
+      "opciones": [
+        "a) De razón",
+        "b) Ordinal",
+        "c) Nominal",
+        "d) De intervalo"
+      ],
+      "respuesta_correcta": "c) Nominal",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Qué consecuencia tiene usar una prueba paramétrica cuando los datos no cumplen el supuesto de normalidad y el tamaño de muestra es pequeño?",
+      "opciones": [
+        "a) Se reduce la potencia de la prueba pero los resultados siguen siendo válidos.",
+        "b) La distribución del estadístico de prueba ya no es la correcta y la inferencia pierde validez.",
+        "c) Se comete un error tipo II con certeza absoluta.",
+        "d) El valor p siempre será mayor que $\\alpha$, por lo que nunca se rechaza $H_0$."
+      ],
+      "respuesta_correcta": "b) La distribución del estadístico de prueba ya no es la correcta y la inferencia pierde validez.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "En el ejemplo del gimnasio del archivo, la razón de varianzas fue $F = 0,80$. ¿Qué supuesto se validó con este resultado?",
+      "opciones": [
+        "a) Normalidad de las poblaciones",
+        "b) Independencia de las observaciones",
+        "c) Homocedasticidad (igualdad de varianzas)",
+        "d) Muestreo aleatorio"
+      ],
+      "respuesta_correcta": "c) Homocedasticidad (igualdad de varianzas)",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "¿Qué prueba se recomienda usar cuando el supuesto de homocedasticidad no se cumple al comparar dos grupos?",
+      "opciones": [
+        "a) La $t$ clásica con varianza combinada",
+        "b) La $t$ de Welch, que no asume varianzas iguales",
+        "c) El ANOVA de un factor con corrección de Greenhouse–Geisser",
+        "d) El test de Shapiro–Wilk"
+      ],
+      "respuesta_correcta": "b) La $t$ de Welch, que no asume varianzas iguales",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Un equipo de investigación mide la satisfacción de clientes en una escala de 1 a 5 estrellas (1 = muy insatisfecho, 5 = muy satisfecho). Si se desean comparar dos grupos con esta variable, ¿qué tipo de prueba es más apropiado?",
+      "opciones": [
+        "a) Prueba $t$ de muestras independientes",
+        "b) ANOVA de un factor",
+        "c) Prueba no paramétrica como Mann–Whitney o Wilcoxon",
+        "d) Prueba $z$ para proporciones"
+      ],
+      "respuesta_correcta": "c) Prueba no paramétrica como Mann–Whitney o Wilcoxon",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Qué supuesto se viola cuando las mediciones se repiten en los mismos sujetos sin modelar esa dependencia?",
+      "opciones": [
+        "a) Normalidad",
+        "b) Homocedasticidad",
+        "c) Independencia de las observaciones",
+        "d) Escala de medición adecuada"
+      ],
+      "respuesta_correcta": "c) Independencia de las observaciones",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Según el Teorema del Límite Central, ¿qué condición suele bastar para que la media muestral se distribuya aproximadamente normal aunque la población no lo sea?",
+      "opciones": [
+        "a) Que la población tenga forma de campana.",
+        "b) Que $n \\geq 30$, independientemente de la forma de la población.",
+        "c) Que la varianza poblacional sea desconocida.",
+        "d) Que se use muestreo sin reemplazo."
+      ],
+      "respuesta_correcta": "b) Que $n \\geq 30$, independientemente de la forma de la población.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Un investigador registra el nivel socioeconómico de los encuestados como bajo, medio y alto. ¿Qué tipo de prueba estadística NO sería apropiada para esta variable?",
+      "opciones": [
+        "a) Prueba de Wilcoxon",
+        "b) Prueba de signos",
+        "c) Prueba $t$ de muestras independientes",
+        "d) Prueba de Mann–Whitney"
+      ],
+      "respuesta_correcta": "c) Prueba $t$ de muestras independientes",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Cuál de las siguientes afirmaciones es correcta respecto a las escalas de medición?",
+      "opciones": [
+        "a) Los datos ordinales pueden promediarse directamente y tratarse como intervalo.",
+        "b) La escala de intervalo tiene un cero absoluto que indica ausencia total de la propiedad.",
+        "c) Solo las escalas de intervalo y razón admiten operaciones aritméticas como la suma y la resta.",
+        "d) Los datos nominales pueden ordenarse jerárquicamente sin perder información."
+      ],
+      "respuesta_correcta": "c) Solo las escalas de intervalo y razón admiten operaciones aritméticas como la suma y la resta.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En el ejemplo de la fábrica de refrescos del archivo, si las botellas se hubieran tomado solo al inicio del turno (sin cubrir todo el día), ¿qué supuesto se estaría violando?",
+      "opciones": [
+        "a) Normalidad del llenado",
+        "b) Homocedasticidad",
+        "c) Muestreo aleatorio",
+        "d) Escala de medición adecuada"
+      ],
+      "respuesta_correcta": "c) Muestreo aleatorio",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 0.0,
+    "total_correctas": 0,
+    "total_preguntas": 10
+  }
+}

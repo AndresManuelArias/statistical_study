@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "67_hipotesis_nula_alternativa-20260911143207",
+  "titulo": "Evaluación 67_hipotesis_nula_alternativa",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué característica fundamental define a la hipótesis nula $H_0$?",
+      "opciones": [
+        "a) Es la afirmación que el investigador quiere demostrar con la prueba.",
+        "b) Es la afirmación que se asume verdadera por defecto y representa el estado actual o de no efecto.",
+        "c) Es siempre una afirmación sobre la proporción poblacional, nunca sobre la media.",
+        "d) Es la afirmación que solo se acepta cuando el valor p es menor a 0,05."
+      ],
+      "respuesta_correcta": "b) Es la afirmación que se asume verdadera por defecto y representa el estado actual o de no efecto.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "En el planteamiento de pruebas de hipótesis, ¿dónde siempre se coloca el signo de igualdad?",
+      "opciones": [
+        "a) En la hipótesis alternativa $H_a$ para indicar que el parámetro puede ser igual al valor propuesto.",
+        "b) Se divide equitativamente entre $H_0$ y $H_a$ según el tipo de prueba.",
+        "c) En la hipótesis nula $H_0$, ya sea como $=$, $\\leq$ o $\\geq$.",
+        "d) En la hipótesis nula $H_0$ únicamente con el signo estricto $=$."
+      ],
+      "respuesta_correcta": "c) En la hipótesis nula $H_0$, ya sea como $=$, $\\leq$ o $\\geq$.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Un investigador plantea: \"$H_0: \\mu = 50$; $H_a: \\mu \\neq 50$\". ¿Qué tipo de prueba está planteando?",
+      "opciones": [
+        "a) Unilateral derecha, porque busca diferencias en la dirección positiva.",
+        "b) Unilateral izquierda, porque busca diferencias en la dirección negativa.",
+        "c) Bilateral, porque busca detectar desviaciones del valor en ambas direcciones.",
+        "d) Una prueba que no tiene sentido estadístico porque $H_0$ y $H_a$ no son complementarias."
+      ],
+      "respuesta_correcta": "c) Bilateral, porque busca detectar desviaciones del valor en ambas direcciones.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "¿En qué consiste el error tipo I ($\\alpha$)?",
+      "opciones": [
+        "a) No rechazar $H_0$ cuando en realidad es falsa; es decir, dejar pasar un efecto que existe.",
+        "b) Rechazar $H_0$ cuando en realidad es verdadera; es decir, declarar un efecto que no existe.",
+        "c) Calcular un valor p incorrecto por errores de redondeo en los datos.",
+        "d) Confundir la hipótesis nula con la alternativa al momento de plantear el problema."
+      ],
+      "respuesta_correcta": "b) Rechazar $H_0$ cuando en realidad es verdadera; es decir, declarar un efecto que no existe.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Una empresa prueba si una nueva fóbrica reduce el tiempo promedio de entrega. Si la fábrica sí reduce el tiempo pero la prueba no lo detecta, ¿qué tipo de error se cometió?",
+      "opciones": [
+        "a) Error tipo I: se rechazó $H_0$ indebidamente.",
+        "b) Error tipo II: no se rechazó $H_0$ cuando era falsa.",
+        "c) Error tipo I: se aceptó $H_0$ cuando era verdadera.",
+        "d) No hay error, pues la decisión fue correcta."
+      ],
+      "respuesta_correcta": "b) Error tipo II: no se rechazó $H_0$ cuando era falsa.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "La potencia de una prueba estadística se define como:",
+      "opciones": [
+        "a) $\\alpha + \\beta$, la suma de ambos tipos de error.",
+        "b) $1 - \\alpha$, la probabilidad de no cometer error tipo I.",
+        "c) $1 - \\beta$, la probabilidad de rechazar correctamente una $H_0$ falsa.",
+        "d) $\\beta$, la probabilidad de cometer error tipo II."
+      ],
+      "respuesta_correcta": "c) $1 - \\beta$, la probabilidad de rechazar correctamente una $H_0$ falsa.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Un restaurante afirma que su tiempo promedio de entrega es igual a $30$ minutos. Un cliente sospecha que las entregas tardan más. ¿Cuál es el planteamiento correcto de hipótesis?",
+      "opciones": [
+        "a) $H_0: \\mu = 30$; $H_a: \\mu \\neq 30$",
+        "b) $H_0: \\mu > 30$; $H_a: \\mu \\leq 30$",
+        "c) $H_0: \\mu \\leq 30$; $H_a: \\mu > 30$",
+        "d) $H_0: \\mu = 30$; $H_a: \\mu < 30$"
+      ],
+      "respuesta_correcta": "c) $H_0: \\mu \\leq 30$; $H_a: \\mu > 30$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Una compañía farmacéutica desarrolla un medicamento para reducir la presión arterial. Si durante los ensayos se concluye erróneamente que el medicamento es eficaz cuando en realidad no produce ningún efecto, ¿qué tipo de error se cometió?",
+      "opciones": [
+        "a) Error tipo II, porque no se detectó la ineficacia real del medicamento.",
+        "b) Error tipo I, porque se rechazó la nula ($H_0$: no hay efecto) siendo esta verdadera.",
+        "c) Error tipo I, porque se aceptó la alternativa sin tener evidencia suficiente.",
+        "d) Error tipo II, porque se confirmó $H_0$ cuando era falsa."
+      ],
+      "respuesta_correcta": "b) Error tipo I, porque se rechazó la nula ($H_0$: no hay efecto) siendo esta verdadera.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si se reduce el nivel de significancia $\\alpha$ de 0,05 a 0,01, ¿qué efecto tiene sobre la prueba?",
+      "opciones": [
+        "a) Disminuye tanto el error tipo I como el error tipo II.",
+        "b) Aumenta la potencia de la prueba al ser más exigente.",
+        "c) Disminuye el riesgo de error tipo I pero aumenta el riesgo de error tipo II.",
+        "d) No tiene ningún efecto sobre los errores ni la potencia."
+      ],
+      "respuesta_correcta": "c) Disminuye el riesgo de error tipo I pero aumenta el riesgo de error tipo II.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En el ejemplo del video, un fabricante afirma que el tiempo de calentamiento del horno es menor o igual a $3$ minutos. Se plantea $H_0: \\mu \\leq 3$ y $H_a: \\mu > 3$. Con $n = 50$, $\\bar{x} = 3,4$ y $\\sigma = 0,8$, se obtiene $z = 3,54$. Si $\\alpha = 0,05$ y $z_{crít} = 1,645$, ¿qué decisión se toma?",
+      "opciones": [
+        "a) No se rechaza $H_0$ porque $3,54 < 1,645$.",
+        "b) Se rechaza $H_0$ porque $z > z_{crít}$, evidenciando que el tiempo medio supera 3 minutos.",
+        "c) Se rechaza $H_0$ solo si se usa $\\alpha = 0,01$.",
+        "d) No se puede decidir porque falta calcular la potencia."
+      ],
+      "respuesta_correcta": "b) Se rechaza $H_0$ porque $z > z_{crít}$, evidenciando que el tiempo medio supera 3 minutos.",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 0.0,
+    "total_correctas": 0,
+    "total_preguntas": 10
+  }
+}

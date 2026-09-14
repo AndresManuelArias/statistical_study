@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "48_distribucion_normal-20260910164939",
+  "titulo": "Evaluación 48_distribucion_normal",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué parámetro determina la posición de la campana en una distribución normal?",
+      "opciones": [
+        "a) La desviación estándar $\\sigma$",
+        "b) La media $\\mu$",
+        "c) La varianza $\\sigma^2$",
+        "d) El coeficiente de variación"
+      ],
+      "respuesta_correcta": "b) La media $\\mu$",
+      "respuesta_usuario": "d) El coeficiente de variación",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "En una distribución normal, ¿cuál es la relación entre media, mediana y moda?",
+      "opciones": [
+        "a) La media es mayor que la mediana, que es mayor que la moda",
+        "b) La media es menor que la mediana, que es menor que la moda",
+        "c) Media, mediana y moda son todas iguales",
+        "d) La moda siempre es igual a cero"
+      ],
+      "respuesta_correcta": "c) Media, mediana y moda son todas iguales",
+      "respuesta_usuario": "b) La media es menor que la mediana, que es menor que la moda",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Según la regla empírica 68-95-99.7, ¿qué porcentaje de datos se encuentra dentro de una desviación estándar de la media?",
+      "opciones": [
+        "a) 95%",
+        "b) 99.7%",
+        "c) 68%",
+        "d) 50%"
+      ],
+      "respuesta_correcta": "c) 68%",
+      "respuesta_usuario": "b) 99.7%",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si una variable $X$ se distribuye normalmente con media 100 y desviación estándar 10, ¿entre qué valores se encuentra el 68% de los datos?",
+      "opciones": [
+        "a) Entre 80 y 120",
+        "b) Entre 90 y 110",
+        "c) Entre 70 y 130",
+        "d) Entre 95 y 105"
+      ],
+      "respuesta_correcta": "b) Entre 90 y 110",
+      "respuesta_usuario": "d) Entre 95 y 105",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Cuál es el área total bajo la curva de densidad de una distribución normal?",
+      "opciones": [
+        "a) 0.5",
+        "b) 100",
+        "c) 2",
+        "d) 1"
+      ],
+      "respuesta_correcta": "d) 1",
+      "respuesta_usuario": "a) 0.5",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si los puntajes de un examen se distribuyen normalmente con $\\mu = 75$ y $\\sigma = 5$, según la regla empírica, ¿qué porcentaje de estudiantes obtiene entre 65 y 85 puntos?",
+      "opciones": [
+        "a) 95%",
+        "b) 68%",
+        "c) 99.7%",
+        "d) 50%"
+      ],
+      "respuesta_correcta": "a) 95%",
+      "respuesta_usuario": "d) 50%",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Cómo se denota correctamente que una variable $X$ sigue una distribución normal con media 50 y desviación estándar 4?",
+      "opciones": [
+        "a) $X \\sim N(50, 4)$",
+        "b) $X \\sim N(50, 16)$",
+        "c) $X \\sim N(4, 50)$",
+        "d) $X \\sim N(16, 50)$"
+      ],
+      "respuesta_correcta": "b) $X \\sim N(50, 16)$",
+      "respuesta_usuario": "c) $X \\sim N(4, 50)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Si los ingresos mensuales de los empleados de una empresa se distribuyen normalmente con $\\mu = 2000$ y $\\sigma = 200$, según la regla empírica, ¿qué porcentaje de empleados gana entre 1600 y 2400?",
+      "opciones": [
+        "a) 68%",
+        "b) 95%",
+        "c) 99.7%",
+        "d) 50%"
+      ],
+      "respuesta_correcta": "b) 95%",
+      "respuesta_usuario": "b) 95%",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si se duplica la desviación estándar de una distribución normal manteniendo la media constante, la campana se vuelve:",
+      "opciones": [
+        "a) Más estrecha y más alta",
+        "b) Más ancha y más baja",
+        "c) Igual, solo cambia la posición",
+        "d) Se vuelve asimétrica"
+      ],
+      "respuesta_correcta": "b) Más ancha y más baja",
+      "respuesta_usuario": "d) Se vuelve asimétrica",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En una distribución normal con $\\mu = 100$ y $\\sigma = 15$, ¿cuál es aproximadamente la probabilidad de que un valor sea mayor que 115?",
+      "opciones": [
+        "a) 16%",
+        "b) 32%",
+        "c) 2.5%",
+        "d) 5%"
+      ],
+      "respuesta_correcta": "a) 16%",
+      "respuesta_usuario": "a) 16%",
+      "es_correcta": true
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 20.0,
+    "total_correctas": 2,
+    "total_preguntas": 10
+  }
+}

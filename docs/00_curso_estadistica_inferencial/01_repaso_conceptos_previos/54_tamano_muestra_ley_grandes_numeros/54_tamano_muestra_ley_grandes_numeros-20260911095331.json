@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "54_tamano_muestra_ley_grandes_numeros-20260911095331",
+  "titulo": "Evaluación 54_tamano_muestra_ley_grandes_numeros",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué ocurre con el error estándar de la media $\\sigma_{\\bar{X}}$ cuando el tamaño de la muestra $n$ se incrementa?",
+      "opciones": [
+        "a) Disminuye linealmente",
+        "b) Disminuye proporcionalmente a $1/\\sqrt{n}$",
+        "c) Aumenta proporcionalmente a $\\sqrt{n}$",
+        "d) Permanece constante"
+      ],
+      "respuesta_correcta": "b) Disminuye proporcionalmente a $1/\\sqrt{n}$",
+      "respuesta_usuario": "a) Disminuye linealmente",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Qué establece la Ley de los Grandes Números en términos informales?",
+      "opciones": [
+        "a) La varianza muestral siempre coincide con la varianza poblacional",
+        "b) La media muestral $\\bar{X}$ se acerca a la media poblacional $\\mu$ cuando $n$ crece",
+        "c) Las muestras pequeñas son más representativas que las grandes",
+        "d) La distribución muestral siempre es normal"
+      ],
+      "respuesta_correcta": "b) La media muestral $\\bar{X}$ se acerca a la media poblacional $\\mu$ cuando $n$ crece",
+      "respuesta_usuario": "a) La varianza muestral siempre coincide con la varianza poblacional",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Según la versión formal (débil) de la Ley de los Grandes Números, ¿qué significa que $\\lim_{n \\to \\infty} P(|\\bar{X}_n - \\mu| > \\epsilon) = 0$?",
+      "opciones": [
+        "a) Que la media poblacional $\\mu$ es siempre desconocida",
+        "b) Que el error estándar es siempre cero",
+        "c) Que la probabilidad de que $\\bar{X}$ se desvíe de $\\mu$ más de $\\epsilon$ tiende a cero cuando $n$ crece",
+        "d) Que la varianza poblacional se reduce a cero"
+      ],
+      "respuesta_correcta": "c) Que la probabilidad de que $\\bar{X}$ se desvíe de $\\mu$ más de $\\epsilon$ tiende a cero cuando $n$ crece",
+      "respuesta_usuario": "d) Que la varianza poblacional se reduce a cero",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Según la tabla del archivo, si $\\sigma = 10$ y se duplica la muestra de $n = 100$ a $n = 400$, ¿cómo cambia el error estándar?",
+      "opciones": [
+        "a) Se reduce de 1,0 a 0,5 (se reduce a la mitad)",
+        "b) Se reduce de 1,0 a 0,25 (se reduce a un cuarto)",
+        "c) Permanece en 1,0",
+        "d) Se duplica a 2,0"
+      ],
+      "respuesta_correcta": "a) Se reduce de 1,0 a 0,5 (se reduce a la mitad)",
+      "respuesta_usuario": "b) Se reduce de 1,0 a 0,25 (se reduce a un cuarto)",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué establece la regla de cuatro?",
+      "opciones": [
+        "a) Para reducir el error estándar a la mitad, hay que multiplicar $n$ por 4",
+        "b) Para reducir el error estándar a un cuarto, hay que multiplicar $n$ por 2",
+        "c) Para reducir el error estándar al doble, hay que dividir $n$ entre 4",
+        "d) Para reducir el error estándar a la mitad, hay que dividir $n$ entre 4"
+      ],
+      "respuesta_correcta": "a) Para reducir el error estándar a la mitad, hay que multiplicar $n$ por 4",
+      "respuesta_usuario": "d) Para reducir el error estándar a la mitad, hay que dividir $n$ entre 4",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "En el ejemplo numérico de cables, si $\\sigma = 15$ ohmios y $n = 36$, ¿cuál es el error estándar de la media?",
+      "opciones": [
+        "a) $15 / 36 = 0,42$ ohmios",
+        "b) $15 \\times 6 = 90$ ohmios",
+        "c) $15 / \\sqrt{36} = 2,5$ ohmios",
+        "d) $15 / 6^2 = 0,42$ ohmios"
+      ],
+      "respuesta_correcta": "c) $15 / \\sqrt{36} = 2,5$ ohmios",
+      "respuesta_usuario": "a) $15 / 36 = 0,42$ ohmios",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "En el ejemplo de delivery, ¿qué comportamiento se observa al pasar de 10 a 100 a 1,000 pedidos?",
+      "opciones": [
+        "a) El promedio se mantiene estable desde el inicio",
+        "b) El promedio oscila sin tendencia clara",
+        "c) El promedio se estabiliza y se aproxima al valor real (27,2 minutos)",
+        "d) El promedio se aleja progresivamente del valor real"
+      ],
+      "respuesta_correcta": "c) El promedio se estabiliza y se aproxima al valor real (27,2 minutos)",
+      "respuesta_usuario": "c) El promedio se estabiliza y se aproxima al valor real (27,2 minutos)",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Por qué se dice que hay rendimientos decrecientes al aumentar la muestra?",
+      "opciones": [
+        "a) Porque la media muestral deja de converger",
+        "b) Porque duplicar la precisión requiere cuadruplicar la muestra",
+        "c) Porque el error estándar crece exponencialmente",
+        "d) Porque la varianza poblacional aumenta con $n$"
+      ],
+      "respuesta_correcta": "b) Porque duplicar la precisión requiere cuadruplicar la muestra",
+      "respuesta_usuario": "c) Porque el error estándar crece exponencialmente",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En el ejemplo de cables, ¿qué tamaño de muestra se necesita para que el error estándar pase de 2,5 ohmios a 1,25 ohmios?",
+      "opciones": [
+        "a) 72 cables",
+        "b) 108 cables",
+        "c) 144 cables",
+        "d) 288 cables"
+      ],
+      "respuesta_correcta": "c) 144 cables",
+      "respuesta_usuario": "b) 108 cables",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Según el contenido, ¿de qué factor depende la velocidad de convergencia de la media muestral según la Ley de los Grandes Números?",
+      "opciones": [
+        "a) Solo del tamaño de muestra $n$",
+        "b) Solo de la media poblacional $\\mu$",
+        "c) De la varianza de la población: a mayor $\\sigma$, más lenta la convergencia",
+        "d) Del tipo de distribución, no de la varianza"
+      ],
+      "respuesta_correcta": "c) De la varianza de la población: a mayor $\\sigma$, más lenta la convergencia",
+      "respuesta_usuario": "d) Del tipo de distribución, no de la varianza",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 10.0,
+    "total_correctas": 1,
+    "total_preguntas": 10
+  }
+}

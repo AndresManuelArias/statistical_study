@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "59_distribucion_muestral_parte1-20260911111053",
+  "titulo": "Evaluación 59_distribucion_muestral_parte1",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué es la distribución muestral de la media?",
+      "opciones": [
+        "a) La distribución de los valores de una muestra",
+        "b) La distribución de todas las posibles medias muestrales de tamaño n",
+        "c) La distribución de la población original",
+        "d) La distribución de las desviaciones estándar muestrales"
+      ],
+      "respuesta_correcta": "b) La distribución de todas las posibles medias muestrales de tamaño n",
+      "respuesta_usuario": "b) La distribución de todas las posibles medias muestrales de tamaño n",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Qué símbolo representa la media poblacional?",
+      "opciones": [
+        "a) $\\bar{X}$",
+        "b) $s$",
+        "c) $\\mu$",
+        "d) $\\sigma$"
+      ],
+      "respuesta_correcta": "c) $\\mu$",
+      "respuesta_usuario": "d) $\\sigma$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "La esperanza de la distribución muestral de la media es:",
+      "opciones": [
+        "a) $\\sigma/\\sqrt{n}$",
+        "b) $\\mu$",
+        "c) $\\sigma$",
+        "d) $n$"
+      ],
+      "respuesta_correcta": "b) $\\mu$",
+      "respuesta_usuario": "a) $\\sigma/\\sqrt{n}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si una población tiene $\\mu=50$ y $\\sigma=10$, ¿cuál es el error estándar de la media para $n=25$?",
+      "opciones": [
+        "a) 0,4",
+        "b) 1",
+        "c) 2",
+        "d) 5"
+      ],
+      "respuesta_correcta": "c) 2",
+      "respuesta_usuario": "d) 5",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Para una población con $\\mu=100$ y $\\sigma=20$, si se toma una muestra de $n=16$, el error estándar es:",
+      "opciones": [
+        "a) 1,25",
+        "b) 5",
+        "c) 8",
+        "d) 20"
+      ],
+      "respuesta_correcta": "b) 5",
+      "respuesta_usuario": "a) 1,25",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si la desviación estándar poblacional es $\\sigma=15$ y el tamaño de la muestra es $n=36$, el error estándar de la media es:",
+      "opciones": [
+        "a) 0,417",
+        "b) 2,5",
+        "c) 6",
+        "d) 15"
+      ],
+      "respuesta_correcta": "b) 2,5",
+      "respuesta_usuario": "c) 6",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Qué ocurre con el error estándar de la media cuando aumenta el tamaño de la muestra $n$?",
+      "opciones": [
+        "a) Aumenta",
+        "b) Disminuye",
+        "c) Se mantiene igual",
+        "d) Depende de la media poblacional"
+      ],
+      "respuesta_correcta": "b) Disminuye",
+      "respuesta_usuario": "c) Se mantiene igual",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Si la población es normal, la distribución muestral de la media se distribuye como:",
+      "opciones": [
+        "a) Normal con media $\\mu$ y desviación $\\sigma$",
+        "b) Normal con media $\\mu$ y desviación $\\sigma/\\sqrt{n}$",
+        "c) Uniforme entre 0 y n",
+        "d) Normal con media $\\sigma$ y desviación $\\mu$"
+      ],
+      "respuesta_correcta": "b) Normal con media $\\mu$ y desviación $\\sigma/\\sqrt{n}$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "En el ejemplo del archivo, con $\\mu=70$, $\\sigma=12$, $n=36$, si se obtiene $\\bar{X}=65$, ¿cuántos errores estándar está del centro?",
+      "opciones": [
+        "a) 2",
+        "b) 2,5",
+        "c) 3",
+        "d) 5"
+      ],
+      "respuesta_correcta": "b) 2,5",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "¿Por qué es importante la distribución muestral de la media?",
+      "opciones": [
+        "a) Permite conocer el valor exacto de $\\mu$",
+        "b) Permite cuantificar la incertidumbre al estimar $\\mu$ con una muestra",
+        "c) Es la distribución de los datos originales",
+        "d) Solo se usa en poblaciones normales"
+      ],
+      "respuesta_correcta": "b) Permite cuantificar la incertidumbre al estimar $\\mu$ con una muestra",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 10.0,
+    "total_correctas": 1,
+    "total_preguntas": 10
+  }
+}

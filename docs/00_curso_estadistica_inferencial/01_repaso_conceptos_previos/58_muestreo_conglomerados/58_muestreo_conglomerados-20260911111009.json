@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "58_muestreo_conglomerados-20260911111009",
+  "titulo": "Evaluación 58_muestreo_conglomerados",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué característica fundamental distingue a los conglomerados de los estratos en el muestreo?",
+      "opciones": [
+        "a) Los conglomerados son homogéneos internamente y los estratos son heterogéneos",
+        "b) Los conglomerados son heterogéneos internamente y los estratos son homogéneos",
+        "c) En conglomerados se muestrea cada grupo, en estratos solo algunos",
+        "d) En estratos se seleccionan grupos completos, en conglomerados se muestrea dentro"
+      ],
+      "respuesta_correcta": "b) Los conglomerados son heterogéneos internamente y los estratos son homogéneos",
+      "respuesta_usuario": "b) Los conglomerados son heterogéneos internamente y los estratos son homogéneos",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "En el muestreo por conglomerados, ¿qué se selecciona al azar?",
+      "opciones": [
+        "a) Todos los conglomerados de la población",
+        "b) Algunos elementos de cada conglomerado",
+        "c) Algunos conglomerados de la población",
+        "d) Una sola muestra de toda la población sin agrupar"
+      ],
+      "respuesta_correcta": "c) Algunos conglomerados de la población",
+      "respuesta_usuario": "d) Una sola muestra de toda la población sin agrupar",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Cuándo es más adecuado usar muestreo por conglomerados?",
+      "opciones": [
+        "a) Cuando se conoce exactamente el tamaño de la población",
+        "b) Cuando la población es homogénea y fácil de listar",
+        "c) Cuando la población está dispersa geográficamente o no hay lista completa",
+        "d) Cuando se requiere la mayor precisión posible con muestra pequeña"
+      ],
+      "respuesta_correcta": "c) Cuando la población está dispersa geográficamente o no hay lista completa",
+      "respuesta_usuario": "b) Cuando la población es homogénea y fácil de listar",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "En el ejemplo numérico del archivo, ¿cuál es la media ponderada calculada?",
+      "opciones": [
+        "a) $1,270.30",
+        "b) $1,350.00",
+        "c) $1,200.50",
+        "d) $1,280.00"
+      ],
+      "respuesta_correcta": "a) $1,270.30",
+      "respuesta_usuario": "c) $1,200.50",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué es un conglomerado de una etapa?",
+      "opciones": [
+        "a) Se seleccionan conglomerados y luego una submuestra dentro de cada uno",
+        "b) Se seleccionan todos los conglomerados y se muestrea un solo elemento de cada uno",
+        "c) Se miden todos los elementos de los conglomerados seleccionados",
+        "d) Se dividen los conglomerados en subgrupos antes de medir"
+      ],
+      "respuesta_correcta": "c) Se miden todos los elementos de los conglomerados seleccionados",
+      "respuesta_usuario": "d) Se dividen los conglomerados en subgrupos antes de medir",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "¿Qué representa $M_i$ en la fórmula del estimador de la media por conglomerados?",
+      "opciones": [
+        "a) La media del conglomerado $i$",
+        "b) El número total de conglomerados",
+        "c) El tamaño del conglomerado $i$",
+        "d) El promedio de los tamaños de todos los conglomerados"
+      ],
+      "respuesta_correcta": "c) El tamaño del conglomerado $i$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Por qué la precisión del muestreo por conglomerados suele ser menor que la del muestreo aleatorio simple?",
+      "opciones": [
+        "a) Porque los conglomerados son homogéneos",
+        "b) Porque se seleccionan pocos elementos por conglomerado",
+        "c) Porque los conglomerados son heterogéneos internamente como la población",
+        "d) Porque se muestrea el 100% de cada conglomerado"
+      ],
+      "respuesta_correcta": "c) Porque los conglomerados son heterogéneos internamente como la población",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "En el ejemplo de la vida real del archivo, ¿qué representan las colonias de una ciudad?",
+      "opciones": [
+        "a) Estratos de la población",
+        "b) Conglomerados de la población",
+        "c) Elementos de la muestra",
+        "d) Variables de estudio"
+      ],
+      "respuesta_correcta": "b) Conglomerados de la población",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Cuál es la diferencia principal entre conglomerados de una etapa y de dos etapas?",
+      "opciones": [
+        "a) En una etapa se usan más conglomerados que en dos etapas",
+        "b) En dos etapas se muestrea el 100% de cada conglomerado seleccionado",
+        "c) En una etapa se miden todos los elementos, en dos etapas se toma una submuestra interna",
+        "d) En dos etapas los conglomerados deben ser más pequeños"
+      ],
+      "respuesta_correcta": "c) En una etapa se miden todos los elementos, en dos etapas se toma una submuestra interna",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En el procedimiento del muestreo por conglomerados, ¿cuál es el paso inicial?",
+      "opciones": [
+        "a) Seleccionar $m$ conglomerados al azar",
+        "b) Medir todos los elementos de los conglomerados elegidos",
+        "c) Dividir la población en $M$ conglomerados",
+        "d) Calcular la media de cada conglomerado"
+      ],
+      "respuesta_correcta": "c) Dividir la población en $M$ conglomerados",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 10.0,
+    "total_correctas": 1,
+    "total_preguntas": 10
+  }
+}

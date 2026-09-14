@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "56_muestreo_aleatorio_simple-20260911101849",
+  "titulo": "Evaluación 56_muestreo_aleatorio_simple",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "En un muestreo aleatorio simple de tamaño $n$ de una población de tamaño $N$, ¿cuál es la probabilidad de que un elemento específico sea seleccionado?",
+      "opciones": [
+        "a) $\\frac{N}{n}$",
+        "b) $\\frac{n}{N}$",
+        "c) $\\frac{1}{N}$",
+        "d) $\\frac{1}{n}$"
+      ],
+      "respuesta_correcta": "b) $\\frac{n}{N}$",
+      "respuesta_usuario": null,
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "Para una población de $N = 40$ y una muestra de $n = 10$, ¿cuál es la probabilidad de que un elemento específico sea seleccionado?",
+      "opciones": [
+        "a) 0.10",
+        "b) 0.40",
+        "c) 0.25",
+        "d) 0.025"
+      ],
+      "respuesta_correcta": "c) 0.25",
+      "respuesta_usuario": "b) 0.40",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "En un muestreo aleatorio simple sin reemplazo, ¿cuál es la probabilidad de que el mismo elemento sea seleccionado dos veces?",
+      "opciones": [
+        "a) $\\frac{1}{N}$",
+        "b) $\\frac{1}{n}$",
+        "c) 0",
+        "d) 1"
+      ],
+      "respuesta_correcta": "c) 0",
+      "respuesta_usuario": "c) 0",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "El número de muestras posibles de tamaño $n$ que se pueden formar de una población de tamaño $N$ se calcula con:",
+      "opciones": [
+        "a) $N^n$",
+        "b) $n^N$",
+        "c) $\\binom{N}{n}$",
+        "d) $\\binom{n}{N}$"
+      ],
+      "respuesta_correcta": "c) $\\binom{N}{n}$",
+      "respuesta_usuario": "c) $\\binom{N}{n}$",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Para una población de $N = 40$ y una muestra de $n = 10$, ¿cuántas muestras diferentes son posibles?",
+      "opciones": [
+        "a) 400",
+        "b) 847,660,528",
+        "c) 10,000",
+        "d) 1,000,000"
+      ],
+      "respuesta_correcta": "b) 847,660,528",
+      "respuesta_usuario": "d) 1,000,000",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "La fracción de muestreo se define como:",
+      "opciones": [
+        "a) $\\frac{n}{N}$",
+        "b) $\\frac{N}{n}$",
+        "c) $n \\times N$",
+        "d) $n + N$"
+      ],
+      "respuesta_correcta": "a) $\\frac{n}{N}$",
+      "respuesta_usuario": "b) $\\frac{N}{n}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Para una población de $N = 40$ y una muestra de $n = 10$, ¿cuál es la fracción de muestreo?",
+      "opciones": [
+        "a) 0.25",
+        "b) 0.40",
+        "c) 0.10",
+        "d) 0.025"
+      ],
+      "respuesta_correcta": "a) 0.25",
+      "respuesta_usuario": "a) 0.25",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Cuál de los siguientes NO es un método utilizado para realizar un muestreo aleatorio simple?",
+      "opciones": [
+        "a) Tablas de números aleatorios",
+        "b) Generadores de números aleatorios por computadora",
+        "c) Método de la urna",
+        "d) Muestreo por conveniencia"
+      ],
+      "respuesta_correcta": "d) Muestreo por conveniencia",
+      "respuesta_usuario": "d) Muestreo por conveniencia",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Cuál es una limitación del muestreo aleatorio simple?",
+      "opciones": [
+        "a) Requiere una lista completa de la población",
+        "b) Siempre se realiza con reemplazo",
+        "c) Produce muestras sesgadas",
+        "d) Requiere información previa sobre la población"
+      ],
+      "respuesta_correcta": "a) Requiere una lista completa de la población",
+      "respuesta_usuario": "a) Requiere una lista completa de la población",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "En una población de $N = 2,500$ estudiantes, se selecciona una muestra de $n = 125$. ¿Cuál es la probabilidad de que un estudiante específico sea seleccionado?",
+      "opciones": [
+        "a) 0.05",
+        "b) 0.125",
+        "c) 0.025",
+        "d) 0.5"
+      ],
+      "respuesta_correcta": "a) 0.05",
+      "respuesta_usuario": "c) 0.025",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 50.0,
+    "total_correctas": 5,
+    "total_preguntas": 10
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "43_momentos_variables_aleatorias-20260910152812",
+  "titulo": "Evaluación 43_momentos_variables_aleatorias",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué representa el primer momento alrededor del origen, $\\mu_1' = E(X)$?",
+      "opciones": [
+        "a) La varianza de la distribución",
+        "b) La media de la distribución",
+        "c) La desviación estándar de la distribución",
+        "d) La asimetría de la distribución"
+      ],
+      "respuesta_correcta": "b) La media de la distribución",
+      "respuesta_usuario": "c) La desviación estándar de la distribución",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál es la fórmula correcta para calcular la varianza usando momentos alrededor del origen?",
+      "opciones": [
+        "a) $\\text{Var}(X) = E(X) - [E(X^2)]$",
+        "b) $\\text{Var}(X) = E(X^2) - [E(X)]^2$",
+        "c) $\\text{Var}(X) = [E(X)]^2 - E(X^2)$",
+        "d) $\\text{Var}(X) = E(X^2) \\times [E(X)]^2$"
+      ],
+      "respuesta_correcta": "b) $\\text{Var}(X) = E(X^2) - [E(X)]^2$",
+      "respuesta_usuario": "c) $\\text{Var}(X) = [E(X)]^2 - E(X^2)$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Qué valor tiene siempre el momento centrado de orden 1, $\\mu_1 = E(X - \\mu)$?",
+      "opciones": [
+        "a) 1",
+        "b) $\\mu$",
+        "c) 0",
+        "d) $\\sigma^2$"
+      ],
+      "respuesta_correcta": "c) 0",
+      "respuesta_usuario": "c) 0",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "¿Cuál es $E(X)$?",
+      "opciones": [
+        "a) 0,8",
+        "b) 1,0",
+        "c) 1,1",
+        "d) 1,3"
+      ],
+      "respuesta_correcta": "c) 1,1",
+      "respuesta_usuario": "c) 1,1",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "¿Qué indica el momento centrado de orden 3, $\\mu_3 = E[(X - \\mu)^3]$?",
+      "opciones": [
+        "a) La curtosis de la distribución",
+        "b) La media de la distribución",
+        "c) La varianza de la distribución",
+        "d) La asimetría de la distribución"
+      ],
+      "respuesta_correcta": "d) La asimetría de la distribución",
+      "respuesta_usuario": "d) La asimetría de la distribución",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si $\\text{Var}(X) = 0,49$, ¿cuál es la desviación estándar $\\sigma$?",
+      "opciones": [
+        "a) 0,2401",
+        "b) 0,7",
+        "c) 1,4",
+        "d) 0,49"
+      ],
+      "respuesta_correcta": "b) 0,7",
+      "respuesta_usuario": "a) 0,2401",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "Para la distribución del ejemplo del archivo ($x=1,2,3$ con $P=0,3, 0,5, 0,2$), ¿cuál es $E(X^2)$?",
+      "opciones": [
+        "a) 1,9",
+        "b) 4,1",
+        "c) 3,61",
+        "d) 0,49"
+      ],
+      "respuesta_correcta": "b) 4,1",
+      "respuesta_usuario": "d) 0,49",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Si $\\gamma_1 > 0$, ¿qué se puede afirmar sobre la distribución?",
+      "opciones": [
+        "a) Tiene colas más pesadas que la normal",
+        "b) Es una distribución simétrica",
+        "c) Tiene asimetría positiva (cola a la derecha)",
+        "d) Tiene asimetría negativa (cola a la izquierda)"
+      ],
+      "respuesta_correcta": "c) Tiene asimetría positiva (cola a la derecha)",
+      "respuesta_usuario": "d) Tiene asimetría negativa (cola a la izquierda)",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Para una variable aleatoria $X$ con distribución: $P(X=1)=0,2$, $P(X=2)=0,5$, $P(X=3)=0,3$. ¿Cuál es la varianza $\\text{Var}(X)$?",
+      "opciones": [
+        "a) 0,49",
+        "b) 2,1",
+        "c) 4,9",
+        "d) 0,7"
+      ],
+      "respuesta_correcta": "a) 0,49",
+      "respuesta_usuario": "b) 2,1",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $E(X) = 3$ y $E(X^2) = 10$, ¿cuál es la desviación estándar $\\sigma$?",
+      "opciones": [
+        "a) 1",
+        "b) $\\sqrt{7}$",
+        "c) 7",
+        "d) $\\sqrt{10}$"
+      ],
+      "respuesta_correcta": "a) 1",
+      "respuesta_usuario": "d) $\\sqrt{10}$",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 30.0,
+    "total_correctas": 3,
+    "total_preguntas": 10
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "41_distribucion_bernoulli-20260910145352",
+  "titulo": "Evaluación 41_distribucion_bernoulli",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Qué modela la distribución de Bernoulli?",
+      "opciones": [
+        "a) Varios ensayos independientes con más de dos resultados posibles",
+        "b) Un único ensayo con exactamente dos resultados posibles: éxito o fracaso",
+        "c) Una variable continua con distribución simétrica",
+        "d) La suma de éxitos en múltiples ensayos independientes"
+      ],
+      "respuesta_correcta": "b) Un único ensayo con exactamente dos resultados posibles: éxito o fracaso",
+      "respuesta_usuario": "b) Un único ensayo con exactamente dos resultados posibles: éxito o fracaso",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "En $X \\sim \\text{Bernoulli}(p)$, ¿qué representa el parámetro $p$?",
+      "opciones": [
+        "a) La probabilidad de que el ensayo resulte en fracaso",
+        "b) La varianza de la distribución",
+        "c) La probabilidad de que el ensayo resulte en éxito",
+        "d) El número esperado de fracasos"
+      ],
+      "respuesta_correcta": "c) La probabilidad de que el ensayo resulte en éxito",
+      "respuesta_usuario": "b) La varianza de la distribución",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "¿Cuál es el conjunto de valores posibles que puede tomar $X$ cuando tiene distribución Bernoulli?",
+      "opciones": [
+        "a) $X \\in \\{1, 2\\}$",
+        "b) $X \\in \\{0, 1\\}$",
+        "c) $X \\in \\{0, 1, 2\\}$",
+        "d) $X \\in \\mathbb{R}$"
+      ],
+      "respuesta_correcta": "b) $X \\in \\{0, 1\\}$",
+      "respuesta_usuario": "c) $X \\in \\{0, 1, 2\\}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si $X \\sim \\text{Bernoulli}(0.3)$, ¿cuál es $P(X = 0)$?",
+      "opciones": [
+        "a) 0.3",
+        "b) 0.7",
+        "c) 0.21",
+        "d) 0.5"
+      ],
+      "respuesta_correcta": "b) 0.7",
+      "respuesta_usuario": "a) 0.3",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Si $X \\sim \\text{Bernoulli}(0.3)$, ¿cuál es la esperanza $E(X)$?",
+      "opciones": [
+        "a) 0.7",
+        "b) 0.21",
+        "c) 0.3",
+        "d) 0.5"
+      ],
+      "respuesta_correcta": "c) 0.3",
+      "respuesta_usuario": "c) 0.3",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si $X \\sim \\text{Bernoulli}(0.3)$, ¿cuál es la varianza $V(X)$?",
+      "opciones": [
+        "a) 0.3",
+        "b) 0.7",
+        "c) 0.21",
+        "d) 0.49"
+      ],
+      "respuesta_correcta": "c) 0.21",
+      "respuesta_usuario": "c) 0.21",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "La distribución Bernoulli es un caso especial de la distribución Binomial con:",
+      "opciones": [
+        "a) $n = 0$",
+        "b) $n = 1$",
+        "c) $n = 2$",
+        "d) $p = 0$"
+      ],
+      "respuesta_correcta": "b) $n = 1$",
+      "respuesta_usuario": "d) $p = 0$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "¿Para qué valor de $p$ la varianza de una distribución Bernoulli alcanza su valor máximo?",
+      "opciones": [
+        "a) $p = 0$",
+        "b) $p = 0.25$",
+        "c) $p = 0.5$",
+        "d) $p = 1$"
+      ],
+      "respuesta_correcta": "c) $p = 0.5$",
+      "respuesta_usuario": "a) $p = 0$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "¿Cuál es la fórmula compacta de la función de masa de probabilidad de $X \\sim \\text{Bernoulli}(p)$?",
+      "opciones": [
+        "a) $f(x) = p + (1-p)$ para todo $x \\in \\{0, 1\\}$",
+        "b) $f(x) = p^x \\cdot (1-p)^{1-x}$, con $x \\in \\{0, 1\\}$",
+        "c) $f(x) = p^x \\cdot (1-p)^x$, con $x \\in \\{0, 1\\}$",
+        "d) $f(x) = p^x + (1-p)^{1-x}$, con $x \\in \\{0, 1\\}$"
+      ],
+      "respuesta_correcta": "b) $f(x) = p^x \\cdot (1-p)^{1-x}$, con $x \\in \\{0, 1\\}$",
+      "respuesta_usuario": "d) $f(x) = p^x + (1-p)^{1-x}$, con $x \\in \\{0, 1\\}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $X \\sim \\text{Bernoulli}(0.3)$, ¿cuál es la desviación estándar $\\sigma$?",
+      "opciones": [
+        "a) 0.21",
+        "b) 0.3",
+        "c) $\\sqrt{0.21} \\approx 0.4583$",
+        "d) 0.7"
+      ],
+      "respuesta_correcta": "c) $\\sqrt{0.21} \\approx 0.4583$",
+      "respuesta_usuario": "b) 0.3",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 30.0,
+    "total_correctas": 3,
+    "total_preguntas": 10
+  }
+}

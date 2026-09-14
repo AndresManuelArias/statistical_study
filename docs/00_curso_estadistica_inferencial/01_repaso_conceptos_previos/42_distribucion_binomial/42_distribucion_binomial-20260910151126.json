@@ -1,0 +1,144 @@
+{
+  "evaluacion_id": "42_distribucion_binomial-20260910151126",
+  "titulo": "Evaluación 42_distribucion_binomial",
+  "usuario": {
+    "nombre": ""
+  },
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "enunciado": "¿Cuántos parámetros definen una distribución Binomial?",
+      "opciones": [
+        "a) Uno solo",
+        "b) Dos: n y p",
+        "c) Tres: n, p y q",
+        "d) Cuatro: n, p, q y k"
+      ],
+      "respuesta_correcta": "b) Dos: n y p",
+      "respuesta_usuario": "d) Cuatro: n, p, q y k",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 2,
+      "enunciado": "¿Cuál de las siguientes NO es una condición para modelar un experimento con distribución Binomial?",
+      "opciones": [
+        "a) Ensayos fijos",
+        "b) Dos resultados posibles en cada ensayo",
+        "c) Resultados ordenados en el tiempo",
+        "d) Independencia entre ensayos"
+      ],
+      "respuesta_correcta": "c) Resultados ordenados en el tiempo",
+      "respuesta_usuario": "d) Independencia entre ensayos",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 3,
+      "enunciado": "Una distribución Bernoulli es un caso especial de la distribución Binomial con:",
+      "opciones": [
+        "a) $n = 1$ y $p = 0,5$",
+        "b) $n = 1$ y cualquier valor de $p \\in [0, 1]$",
+        "c) $n = 2$ y $p = 1$",
+        "d) Cualquier $n$ y $p = 0,5$"
+      ],
+      "respuesta_correcta": "b) $n = 1$ y cualquier valor de $p \\in [0, 1]$",
+      "respuesta_usuario": "c) $n = 2$ y $p = 1$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 4,
+      "enunciado": "Si $X \\sim Binomial(n = 10, p = 0,2)$, ¿cuál es la esperanza $E(X)$?",
+      "opciones": [
+        "a) 1",
+        "b) 2",
+        "c) 5",
+        "d) 8"
+      ],
+      "respuesta_correcta": "b) 2",
+      "respuesta_usuario": "b) 2",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 5,
+      "enunciado": "Se lanza una moneda justa ($p = 0,5$) 4 veces. ¿Cuál es la probabilidad de obtener exactamente 2 caras?\n\n$$P(X = 2) = \\binom{4}{2} (0,5)^2 (0,5)^2 = 6 \\times 0,0625$$",
+      "opciones": [
+        "a) 0,0625",
+        "b) 0,25",
+        "c) 0,375",
+        "d) 0,5"
+      ],
+      "respuesta_correcta": "c) 0,375",
+      "respuesta_usuario": "c) 0,375",
+      "es_correcta": true
+    },
+    {
+      "id_pregunta": 6,
+      "enunciado": "Si $X \\sim Binomial(n = 8, p = 0,5)$, ¿cuál es la varianza $V(X)$?\n\n$$V(X) = np(1-p) = 8 \\times 0,5 \\times 0,5$$",
+      "opciones": [
+        "a) 1",
+        "b) 2",
+        "c) $\\sqrt{2}$",
+        "d) 4"
+      ],
+      "respuesta_correcta": "b) 2",
+      "respuesta_usuario": "c) $\\sqrt{2}$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 7,
+      "enunciado": "¿Cuándo se puede aproximar la distribución Binomial mediante la distribución de Poisson?",
+      "opciones": [
+        "a) Cuando $n$ es grande y $p$ es pequeño",
+        "b) Cuando $n$ es grande y $p$ es cercano a 0,5",
+        "c) Cuando $p$ es grande y $n$ es pequeño",
+        "d) Cuando $n = 1$"
+      ],
+      "respuesta_correcta": "a) Cuando $n$ es grande y $p$ es pequeño",
+      "respuesta_usuario": "b) Cuando $n$ es grande y $p$ es cercano a 0,5",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 8,
+      "enunciado": "Un examen tiene 5 preguntas de opción múltiple, cada una con 4 alternativas. Un estudiante responde al azar. Si $X$ es el número de respuestas correctas, $X \\sim Binomial(5, 0,25)$. ¿Cuál es la varianza?\n\n$$V(X) = 5 \\times 0,25 \\times 0,75$$",
+      "opciones": [
+        "a) 0,9375",
+        "b) 1,25",
+        "c) 1,875",
+        "d) 3,75"
+      ],
+      "respuesta_correcta": "a) 0,9375",
+      "respuesta_usuario": "c) 1,875",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 9,
+      "enunciado": "Si $E(X) = 5$ y $V(X) = 2,5$ para una variable binomial, ¿cuáles son los valores de $n$ y $p$?",
+      "opciones": [
+        "a) $n = 25$, $p = 0,2$",
+        "b) $n = 5$, $p = 1$",
+        "c) $n = 10$, $p = 0,5$",
+        "d) $n = 20$, $p = 0,25$"
+      ],
+      "respuesta_correcta": "c) $n = 10$, $p = 0,5$",
+      "respuesta_usuario": "b) $n = 5$, $p = 1$",
+      "es_correcta": false
+    },
+    {
+      "id_pregunta": 10,
+      "enunciado": "Si $X \\sim Binomial(n = 6, p = 0,5)$ y $P(X \\leq 3) = 0,6562$, ¿cuál es $P(X > 3)$?",
+      "opciones": [
+        "a) 0,6562",
+        "b) 0,5",
+        "c) 0,3438",
+        "d) 0,125"
+      ],
+      "respuesta_correcta": "c) 0,3438",
+      "respuesta_usuario": "a) 0,6562",
+      "es_correcta": false
+    }
+  ],
+  "resultado_final": {
+    "calificacion": 20.0,
+    "total_correctas": 2,
+    "total_preguntas": 10
+  }
+}
