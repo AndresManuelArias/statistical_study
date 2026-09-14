@@ -68,6 +68,23 @@ graph LR
 > [!info] Orden sugerido
 > Las unidades 1–4 son el **cimientos**: sin lógica y conjuntos, las demás se entienden a medias. Las unidades 5–7 son el **corazón práctico** (los problemas clásicos). Las 8–9 son **nivel avanzado** para después.
 
+
+> [!tip] 📁 Temas por separado
+> Cada unidad tiene su propio archivo con el contenido completo y **5 preguntas de autoevaluación** interactivas:
+>
+> | Carpeta | Tema |
+> |---------|------|
+> | [`01_logica/01_logica.md`](01_logica/01_logica.md) | Lógica |
+> | [`02_conjuntos/02_conjuntos.md`](02_conjuntos/02_conjuntos.md) | Conjuntos y demostraciones |
+> | [`03_relaciones_funciones/03_relaciones_funciones.md`](03_relaciones_funciones/03_relaciones_funciones.md) | Relaciones y funciones |
+> | [`04_induccion_recursion/04_induccion_recursion.md`](04_induccion_recursion/04_induccion_recursion.md) | Inducción y recursión |
+> | [`05_combinatoria/05_combinatoria.md`](05_combinatoria/05_combinatoria.md) | Combinatoria y probabilidad discreta |
+> | [`06_teoria_numeros/06_teoria_numeros.md`](06_teoria_numeros/06_teoria_numeros.md) | Teoría de números |
+> | [`07_grafos/07_grafos.md`](07_grafos/07_grafos.md) | Grafos y árboles |
+> | [`08_estructuras_algebraicas/08_estructuras_algebraicas.md`](08_estructuras_algebraicas/08_estructuras_algebraicas.md) | Estructuras algebraicas |
+> | [`09_automatas/09_automatas.md`](09_automatas/09_automatas.md) | Autómatas y lenguajes |
+>
+> En la web, cada archivo se abre como una página con su quiz interactivo.
 ---
 
 ## 🔤 3. Unidad 1 — Lógica
@@ -1217,29 +1234,96 @@ flowchart LR
 
 ---
 
-### 7.4.6 Conectividad y problemas clásicos
+#### 7.4.6 Caminos y ciclos eulerianos y hamiltonianos
 
-**Conectividad:** dos vértices están conectados si hay un camino entre ellos. El problema clásico de los **puentes de Königsberg** (¿se puede cruzar cada puente exactamente una vez?) dio origen a la teoría de grafos.
+Los dos problemas más famosos de la teoría de grafos preguntan por recorridos especiales:
 
-- Un grafo tiene un **camino euleriano** si puedes recorrer cada arista una sola vez (el problema de los puentes): existe si a lo sumo 0 o 2 vértices tienen grado impar.
-- Un **camino hamiltoniano** visita cada vértice una sola vez (problema del vendedor viajero: la ruta más barata visitando todas las ciudades).
+> [!abstract] La gran diferencia
+> - **Euleriano:** recorre cada **arista** exactamente una vez (como pintar todas las líneas sin levantar el lápiz).
+> - **Hamiltoniano:** visita cada **vértice** exactamente una vez (como recorrer todas las ciudades sin repetir ninguna).
+
+---
+
+#### 7.4.7 Camino y ciclo euleriano
+
+Un **camino euleriano** recorre **cada arista una sola vez**. Si además empieza y termina en el mismo vértice, se llama **ciclo euleriano** (o circuito euleriano).
+
+> [!tip] Criterio de Euler (fácil de verificar)
+> En un grafo **conexo**:
+> - Hay **ciclo euleriano** si **todos** los vértices tienen grado **par**.
+> - Hay **camino euleriano** (abierto) si hay **exactamente 0 o 2** vértices con grado **impar**.
+
+**Ejemplo de ciclo euleriano** (todos los grados pares):
+
+```mermaid
+flowchart LR
+    A["A (grado 4)"] --- B
+    A --- C
+    B --- C
+    A --- D
+    A --- E
+    D --- E
+```
+
+> Grados: $\\deg(A)=4$, $\\deg(B)=2$, $\\deg(C)=2$, $\\deg(D)=2$, $\\deg(E)=2$ — **todos pares**, así que hay ciclo euleriano. Por ejemplo: $A \\to B \\to C \\to A \\to D \\to E \\to A$. Cada arista se usa una vez.
+
+**Ejemplo de camino euleriano** (exactamente 2 impares):
 
 ```mermaid
 flowchart LR
     A --- B
     B --- C
-    C --- A
-    A --- D
-    D --- B
+    C --- D
 ```
 
-> Puente de Königsberg: 4 vértices (orillas/islas) con grados 3, 3, 3, 5 — todos impares, por eso **no hay** recorrido euleriano (se necesitan 0 o 2 impares).
+> Grados: $\\deg(A)=1$ (impar), $\\deg(B)=2$, $\\deg(C)=2$, $\\deg(D)=1$ (impar). Hay camino euleriano de $A$ a $D$: $A \\to B \\to C \\to D$. Como hay 2 impares, el camino **empieza en uno y termina en el otro**.
 
-> [!info] Euleriano vs Hamiltoniano
-> - **Euleriano:** recorre cada **arista** una vez (pintar todas las líneas sin levantar el lápiz).
-> - **Hamiltoniano:** visita cada **vértice** una vez (recorrer todas las ciudades sin repetir).
-> El primero tiene criterio fácil (contar grados impares); el segundo es un problema **NP-completo** (no hay algoritmo rápido conocido).
+> [!warning] El problema de los puentes de Königsberg
+> La ciudad tenía 4 zonas (orillas e isla) conectadas por 7 puentes. El grafo tiene grados **3, 3, 3, 5**: los **cuatro impares**. Como se necesitan 0 o 2 impares, **no existe** recorrido que cruce cada puente exactamente una vez. Este problema dio origen a la teoría de grafos (Euler, 1736).
 
+---
+
+#### 7.4.8 Camino y ciclo hamiltoniano
+
+Un **camino hamiltoniano** visita **cada vértice exactamente una vez**. Un **ciclo hamiltoniano** vuelve al inicio al final (visita todos los vértices una vez y cierra).
+
+> [!example] Ciclo hamiltoniano
+>
+> ```mermaid
+> flowchart LR
+>     A --- B
+>     B --- C
+>     C --- D
+>     D --- E
+>     E --- A
+> ```
+>
+> El recorrido $A \\to B \\to C \\to D \\to E \\to A$ visita los 5 vértices una sola vez y regresa al inicio: es un **ciclo hamiltoniano**.
+
+**Problema del vendedor viajero (TSP):** encontrar el ciclo hamiltoniano de **costo mínimo** en un grafo ponderado. Aparece en logística (rutas de reparto), diseño de circuitos y planificación.
+
+> [!warning] A diferencia de Euler, no hay criterio simple
+> Decidir si un grafo tiene ciclo hamiltoniano es un problema **NP-completo**: no se conoce algoritmo rápido y, en la práctica, hay que probar muchas combinaciones (casi $n!$ rutas posibles). Hay criterios **suficientes** (Dirac, Ore) que garantizan su existencia en ciertos casos, pero son condiciones fuertes:
+>
+> - **Teorema de Dirac:** si $n \\geq 3$ y todo vértice tiene grado $\\geq n/2$, hay ciclo hamiltoniano.
+> - **Teorema de Ore:** si para todo par de vértices no adyacentes $\\deg(u)+\\deg(v) \\geq n$, hay ciclo hamiltoniano.
+
+---
+
+#### 7.4.9 Comparativa final: Euler vs Hamilton
+
+| Criterio | Euleriano | Hamiltoniano |
+|----------|-----------|--------------|
+| Qué recorre | Cada **arista** una vez | Cada **vértice** una vez |
+| Versión cerrada | Ciclo euleriano | Ciclo hamiltoniano |
+| Criterio fácil | Sí: contar grados pares/impares | No: NP-completo |
+| Problema famoso | Puentes de Königsberg | Vendedor viajero (TSP) |
+| Analogía | Pintar un dibujo sin levantar el lápiz | Tour que visita todas las ciudades |
+| Complejidad de decisión | Polinomial (fácil) | NP-completo (difícil) |
+
+> [!tip] Regla práctica
+> - ¿El grafo es conexo y tiene **0 o 2 grados impares**? → hay Euler: busca el recorrido con confianza.
+> - ¿Necesitas visitar todas las **ciudades** sin repetir? → es Hamilton: no prometas un algoritmo rápido, usa heurísticas (vecino más cercano, 2-opt).
 ---
 
 ### 7.5 Árboles
