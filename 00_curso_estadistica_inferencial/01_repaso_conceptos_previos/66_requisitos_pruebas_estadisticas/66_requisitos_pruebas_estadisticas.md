@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Requisitos+en+las+Pruebas+Estadísticas+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6wkrpA2baMc?si=nkwbGyfXs5z0Ysy_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 Toda prueba estadística válida exige ciertos requisitos: muestreo aleatorio, independencia de observaciones, normalidad (o muestra grande por el Teorema del Límite Central), homocedasticidad y una escala de medición adecuada. Si se violan estos supuestos, los resultados de la prueba dejan de ser confiables.
 

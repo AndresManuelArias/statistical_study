@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Muestras+Independientes+y+Dependientes+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n_5laXbQNUE?si=ObU56XkQKO6ChMQN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 Al comparar dos grupos de datos, las muestras pueden ser independientes (grupos de sujetos distintos) o dependientes o pareadas (los mismos sujetos medidos dos veces). El diseño determina qué estadístico de prueba usar y cómo controlar la variabilidad entre sujetos.
 

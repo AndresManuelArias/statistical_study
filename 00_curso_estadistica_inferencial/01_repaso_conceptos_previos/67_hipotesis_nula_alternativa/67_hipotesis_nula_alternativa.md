@@ -14,7 +14,7 @@ tags:
 - **Canal:** José María Hernández Rivera
 - **Enlace:** https://www.youtube.com/results?search_query=Hipótesis+Nula+y+Alternativa+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xh1YnXHclGg?si=Kd5kUFNpn2bH94NX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## 📋 Resumen
 Toda prueba de hipótesis enfrenta dos conjeturas complementarias: la nula ($H_0$), que representa el estado actual o la no diferencia, y la alternativa ($H_1$ o $H_a$), que es lo que se quiere demostrar. En este tema se explica cómo se plantean, el significado de los signos $=$, $\neq$, $\leq$, $\geq$, los errores tipo I y tipo II, y el nivel de significancia $\alpha$.
 

@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/63_prueba_de_hipotesis/63_prueba_de_hipotesis.md",
+                "file": "consulta_datos_practica.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "63_prueba_de_hipotesis"
+              "title": "consulta_datos_practica"
+            }
+          },
+          {
+            "id": "2ce7d637df2ffb0d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "matematica_discreta/Anotaciones.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Anotaciones"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -188,29 +203,37 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "e7d2116ff8714530",
+  "active": "2ce7d637df2ffb0d",
   "lastOpenFiles": [
+    "consulta_datos_practica.md",
+    "matematica_discreta/Anotaciones.md",
+    "Sin título.md",
+    "matematica_discreta",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/68_aplicacion_prueba_estadistica/68_aplicacion_prueba_estadistica.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/69_zonas_rechazo_toma_decision/69_zonas_rechazo_toma_decision-20260911150424.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/68_aplicacion_prueba_estadistica/68_aplicacion_prueba_estadistica-20260911144250.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/67_hipotesis_nula_alternativa/67_hipotesis_nula_alternativa.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/67_hipotesis_nula_alternativa/67_hipotesis_nula_alternativa-20260911143207.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/66_requisitos_pruebas_estadisticas/66_requisitos_pruebas_estadisticas.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/66_requisitos_pruebas_estadisticas/66_requisitos_pruebas_estadisticas-20260911140442.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/65_muestras_independientes_dependientes/65_muestras_independientes_dependientes.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/65_muestras_independientes_dependientes/65_muestras_independientes_dependientes-20260911135327.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/64_pruebas_parametricas_no_parametricas/64_pruebas_parametricas_no_parametricas.md",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/64_pruebas_parametricas_no_parametricas/64_pruebas_parametricas_no_parametricas-20260911133410.json",
+    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/63_prueba_de_hipotesis/63_prueba_de_hipotesis.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/63_prueba_de_hipotesis/63_prueba_de_hipotesis-20260911115928.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/62_introduccion_estadistica_inferencial/62_introduccion_estadistica_inferencial.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/62_introduccion_estadistica_inferencial/62_introduccion_estadistica_inferencial-20260911114759.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/61_distribucion_muestral_parte2/61_distribucion_muestral_parte2.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/61_distribucion_muestral_parte2/61_distribucion_muestral_parte2-20260911113649.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/60_teorema_limite_central/60_teorema_limite_central.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/60_teorema_limite_central/60_teorema_limite_central-20260911112706.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/59_distribucion_muestral_parte1/59_distribucion_muestral_parte1.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/59_distribucion_muestral_parte1/59_distribucion_muestral_parte1-20260911111053.json",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/58_muestreo_conglomerados/58_muestreo_conglomerados-20260911111009.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/55_tipos_muestreo/55_tipos_muestreo.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/58_muestreo_conglomerados/58_muestreo_conglomerados.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/57_muestreo_aleatorio_estratificado/57_muestreo_aleatorio_estratificado.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/57_muestreo_aleatorio_estratificado/57_muestreo_aleatorio_estratificado-20260911103220.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/56_muestreo_aleatorio_simple/56_muestreo_aleatorio_simple.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/56_muestreo_aleatorio_simple/56_muestreo_aleatorio_simple-20260911101849.json",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/55_tipos_muestreo/55_tipos_muestreo-20260911100956.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/54_tamano_muestra_ley_grandes_numeros/54_tamano_muestra_ley_grandes_numeros.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/54_tamano_muestra_ley_grandes_numeros/54_tamano_muestra_ley_grandes_numeros-20260911095331.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/53_sampling_muestreo/53_sampling_muestreo.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/53_sampling_muestreo/53_sampling_muestreo-20260911093815.json",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/52_distribucion_ji_cuadrada/52_distribucion_ji_cuadrada.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/51_distribucion_f/51_distribucion_f.md",
     "mi_entorno/lib/python3.12/site-packages/scipy/ndimage/tests/dots.png",
@@ -219,14 +242,6 @@
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/49_distribucion_normal_estandar/49_distribucion_normal_estandar.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/48_distribucion_normal/48_distribucion_normal.md",
     "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/47_distribucion_binomial_negativa/47_distribucion_binomial_negativa.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/46_distribucion_geometrica/46_distribucion_geometrica.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/45_distribucion_poisson/45_distribucion_poisson.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/44_distribucion_binomial_parte2/44_distribucion_binomial_parte2.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/43_momentos_variables_aleatorias/43_momentos_variables_aleatorias.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/42_distribucion_binomial/42_distribucion_binomial.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/41_distribucion_bernoulli/41_distribucion_bernoulli.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/40_tipos_distribuciones_probabilidad/40_tipos_distribuciones_probabilidad.md",
-    "00_curso_estadistica_inferencial/01_repaso_conceptos_previos/39_distribuciones_de_probabilidad/39_distribuciones_de_probabilidad.md",
     "mi_entorno/lib/python3.12/site-packages/material/templates/assets/images/favicon.png",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg",
     "mi_entorno/lib/python3.12/site-packages/mkdocs/themes/mkdocs/img/grid.png",

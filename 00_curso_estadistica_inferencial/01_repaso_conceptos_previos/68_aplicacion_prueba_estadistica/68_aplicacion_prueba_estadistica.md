@@ -15,6 +15,8 @@ tags:
 - **Enlace:** https://www.youtube.com/results?search_query=Aplicación+de+la+Prueba+Estadística+|+Estadística+Inferencial
 - **Playlist:** https://www.youtube.com/playlist?list=PLu7vaSuV9737IPl1ZABxsby7SSEN3AZHa
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OFizmbhhOzI?si=TP7k9uhbclTJSIJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📋 Resumen
 Este video explica cómo **aplicar** una prueba estadística en la práctica: los pasos ordenados desde plantear las hipótesis hasta tomar la decisión comparando el estadístico calculado con el valor crítico. Se incluye un ejemplo completo y resuelto paso a paso con un estadístico $t$.
 
