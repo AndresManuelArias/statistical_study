@@ -296,6 +296,38 @@ $$
 
 Ya los conoces del curso de estadística: un **conjunto** es una colección bien definida. Símbolos: $\in$ (pertenece), $\subseteq$ (subconjunto), $\cup$ (unión), $\cap$ (intersección), $\emptyset$ (vacío).
 
+### Definir un conjunto: por extensión y por comprensión
+
+Hay **dos formas equivalentes** de especificar un conjunto:
+
+| Forma | Idea | Ejemplo |
+|-------|------|---------|
+| **Por extensión** | Se **enumeran** todos sus elementos entre llaves | $A = \{1, 2, 3, 4\}$ |
+| **Por comprensión** | Se da la **propiedad** que deben cumplir | $A = \{x \mid x \in \mathbb{N},\ x \leq 4\}$ |
+
+La notación por comprensión se lee así: "el conjunto de todos los $x$ **tal que** ($\mid$) $x$ pertenece a los naturales **y** $x$ es menor o igual a 4".
+
+> [!tip] Truco de lectura
+> Dentro de las llaves siempre hay **dos partes**: (1) el símbolo del elemento y (2) la condición, separadas por $\mid$ ("tal que"):
+> $$\{ \underbrace{x}_{\text{elemento}} \mid \underbrace{x \in \mathbb{N},\ x \leq 4}_{\text{condición}} \}$$
+
+**Reglas importantes:**
+
+- Los elementos **no se repiten**: $\{1, 2, 2, 3\} = \{1, 2, 3\}$.
+- El **orden no importa**: $\{1, 2, 3\} = \{3, 1, 2\}$.
+- La forma por comprensión es **imprescindible** cuando el conjunto es infinito o enorme: no se puede enumerar a los pares, pero sí escribirlos como $\{x \mid x = 2k,\ k \in \mathbb{N}\}$.
+
+**Ejemplos lado a lado:**
+
+| Por extensión | Por comprensión | Conjunto |
+| ------------- | --------------- | -------- |
+| $\{a, e, i, o, u\}$ | $\{x \mid x \text{ es vocal}\}$ | Las vocales |
+| $\{2, 4, 6, 8\}$ | $\{x \mid x \in \mathbb{N},\ x \text{ es par},\ x \leq 8\}$ | Pares hasta 8 |
+| $\{1, 4, 9, 16\}$ | $\{x^2 \mid x \in \mathbb{N},\ 1 \leq x \leq 4\}$ | Cuadrados perfectos pequeños |
+
+> [!info] Conecta con tu curso
+> Esta misma distinción aparece en el **tema 01 de tu curso de estadística inferencial** (*Definición de conjunto*). Lo que aquí es teoría de conjuntos, allá se convierte en el lenguaje del espacio muestral y los sucesos.
+
 ### Métodos de demostración
 
 Demostrar una afirmación es **convencer sin dejar dudas**, con reglas, no con opiniones.
@@ -310,6 +342,7 @@ Demostrar una afirmación es **convencer sin dejar dudas**, con reglas, no con o
 > [!example] Demostración directa mínima
 > Afirmación: "Si $n$ es par, entonces $n^2$ es par".
 > Como $n$ es par, $n = 2k$. Entonces $n^2 = (2k)^2 = 4k^2 = 2(2k^2)$, que es par. ✅
+
 
 ---
 
