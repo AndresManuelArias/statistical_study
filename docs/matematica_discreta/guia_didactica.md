@@ -895,30 +895,250 @@ Trabajar con **residuos**: "el reloj da vueltas". Las 25:00 horas son las 1:00 (
 
 ## 🕸️ 9. Unidad 7 — Grafos y árboles
 
-### Grafos
-
-Un **grafo** es un conjunto de **vértices** (puntos) conectados por **aristas** (líneas). Es un mapa abstracto de conexiones.
+> [!abstract] ¿De qué trata esta unidad?
+> Un **grafo** es un conjunto de **vértices** (puntos) conectados por **aristas** (líneas). Es un mapa abstracto de conexiones: redes sociales, calles, cables, páginas web, moléculas, procesos y tareas.
 
 > [!tip] Analogía
 > Una **red social**: cada persona es un vértice y cada amistad una arista. Un grafo también modela calles, cables, páginas web, moléculas, procesos y tareas.
 
-- **Dirigido:** las aristas tienen flecha (Instagram: tú sigues a alguien, no al revés).
-- **No dirigido:** las aristas son de dos vías (amistad de Facebook).
-- **Ponderado:** las aristas tienen peso (kilómetros, costo, tiempo).
+### 7.1 Definición formal
+
+Un grafo es un par $G = (V, E)$, donde:
+- $V$ = conjunto de **vértices** (nodos).
+- $E$ = conjunto de **aristas** (conexiones entre pares de vértices).
+
+| Concepto | Notación | Ejemplo |
+|----------|----------|---------|
+| Vértices | $V = \{A, B, C\}$ | 3 nodos |
+| Arista | $(A,B) \in E$ | Conexión entre A y B |
+| Grado de un vértice | $\deg(A)$ | Número de aristas que tocan a A |
+| Grafo completo con $n$ vértices | $K_n$ | $\binom{n}{2}$ aristas (todos conectados con todos) |
+
+> [!example] Suma de grados
+> En cualquier grafo, la suma de los grados es el **doble** de las aristas: $\sum \deg(v) = 2|E|$.
+> Por eso en un grafo con 4 aristas la suma de grados es 8: ¡cada arista "cuenta" en sus dos extremos!
+
+---
+
+### 7.2 Tipos de grafos (con diagramas)
+
+#### 1. Grafo simple (no dirigido)
+
+Las aristas son de **dos vías** (amistad de Facebook: si A es amigo de B, B es amigo de A). Sin lazos ni aristas múltiples.
+
+```mermaid
+flowchart LR
+    A --- B
+    A --- C
+    B --- D
+    C --- D
+    B --- C
+```
+
+> Amistades: A—B, A—C, B—C, B—D, C—D. Todos los grados: $\deg(A)=2$, $\deg(B)=3$, $\deg(C)=3$, $\deg(D)=2$. Suma $10 = 2 \cdot 5$ aristas ✅
+
+#### 2. Grafo dirigido (digrafo)
+
+Las aristas tienen **flecha** (Instagram: tú sigues a alguien, no al revés). El orden del par importa: $(u,v) \neq (v,u)$.
+
+```mermaid
+flowchart LR
+    A --> B
+    A --> C
+    B --> C
+    C --> D
+    D --> B
+```
+
+> Aristas: $A \to B$, $A \to C$, $B \to C$, $C \to D$, $D \to B$. Ahora distinguimos **grado de entrada** (flechas que llegan) y **grado de salida** (flechas que salen): $\deg^-(B)=2$ (llegan de A y D), $\deg^+(B)=1$ (sale a C).
+
+#### 3. Grafo ponderado
+
+Cada arista tiene un **peso** (kilómetros, costo, tiempo). Es el modelo de los mapas de navegación y rutas.
+
+```mermaid
+flowchart LR
+    A -- "5" --- B
+    A -- "3" --- C
+    B -- "2" --- C
+    B -- "7" --- D
+    C -- "1" --- D
+```
+
+> La ruta más barata de A a D es $A \to C \to D$ con $3+1=4$, ¡más corta que $A \to B \to D$ ($5+7=12$)!
+
+#### 4. Grafo completo $K_n$
+
+Cada vértice está conectado con **todos** los demás. Con $n$ vértices tiene $\binom{n}{2}$ aristas.
+
+```mermaid
+flowchart LR
+    A --- B
+    A --- C
+    A --- D
+    B --- C
+    B --- D
+    C --- D
+```
+
+> $K_4$: 4 vértices, $\binom{4}{2} = 6$ aristas. Cada vértice tiene grado $n-1 = 3$.
+
+#### 5. Grafo bipartito
+
+Los vértices se dividen en **dos grupos** (por ejemplo, trabajadores y tareas) y las aristas **solo** conectan un grupo con el otro.
+
+```mermaid
+flowchart LR
+    subgraph GrupoX["Grupo X"]
+        direction TB
+        x1["X1"]
+        x2["X2"]
+        x3["X3"]
+    end
+    subgraph GrupoY["Grupo Y"]
+        direction TB
+        y1["Y1"]
+        y2["Y2"]
+    end
+    x1 --- y1
+    x1 --- y2
+    x2 --- y1
+    x3 --- y2
+```
+
+> Modela asignaciones: 3 trabajadores, 2 tareas. Ninguna arista conecta dos personas entre sí ni dos tareas entre sí.
+
+#### 6. Grafo conexo vs. no conexo
+
+- **Conexo:** desde cualquier vértice se llega a cualquier otro (un solo "pedazo").
+- **No conexo:** tiene dos o más **componentes** separadas.
+
+```mermaid
+flowchart LR
+    A --- B
+    B --- C
+    D --- E
+    D --- H
+```
+
+> Este grafo es **no conexo**: la componente $\{A,B,C\}$ y la componente $\{D,E,H\}$ están aisladas. No hay camino de A a D.
+
+#### 7. Ciclo y camino
+
+- Un **camino** recorre vértices distintos sin repetir.
+- Un **ciclo** es un camino que empieza y termina en el mismo vértice sin repetir otros.
+
+```mermaid
+flowchart LR
+    A --- B
+    B --- C
+    C --- D
+    D --- A
+    D --- E
+```
+
+> $A \to B \to C \to D \to A$ es un **ciclo** de longitud 4. $A \to B \to C \to D \to E$ es un **camino** simple.
+
+#### 8. Grafo con lazo (bucle)
+
+Un **lazo** es una arista que conecta un vértice **consigo mismo**. (En mermaid se dibuja una flecha que regresa al mismo nodo.)
+
+```mermaid
+flowchart LR
+    A --> A
+    B --- A
+    B --- C
+    C --- C
+```
+
+> El vértice A tiene un lazo ($A \to A$) y B tiene otro. Un lazo aporta **2** al grado del vértice.
+
+**Resumen rápido de tipos:**
+
+| Tipo | ¿Flechas? | ¿Pesos? | Ejemplo real |
+|------|-----------|---------|--------------|
+| Simple | No | No | Mapa de amistades |
+| Dirigido | Sí | No | Red social de seguidores |
+| Ponderado | Según caso | Sí | GPS / rutas |
+| Completo | No | No | Torneo round-robin (todos contra todos) |
+| Bipartito | No | No | Asignación trabajador–tarea |
+| Conexo / no conexo | Según caso | Según caso | Red de fibra óptica |
+
+---
+
+### 7.3 Representaciones computables
+
+**1) Matriz de adyacencia:** tabla $n \times n$ con $1$ si hay arista, $0$ si no.
+
+> [!example] Para el grafo simple $A-B$, $A-C$ (con vértices A, B, C):
+>
+> | | A | B | C |
+> |---|---|---|---|
+> | **A** | 0 | 1 | 1 |
+> | **B** | 1 | 0 | 0 |
+> | **C** | 1 | 0 | 0 |
+
+**2) Lista de adyacencia:** cada vértice guarda la lista de sus vecinos.
+
+$$A: [B, C],\quad B: [A],\quad C: [A]$$
+
+> [!tip] ¿Matriz o lista?
+> **Matriz** → rápida para preguntar "¿hay arista entre u y v?" pero ocupa $O(n^2)$ memoria. **Lista** → ahorra memoria en grafos dispersos (pocas aristas) y es la estándar en DFS/BFS.
+
+---
+
+### 7.4 Caminos y problemas clásicos
 
 **Conectividad:** dos vértices están conectados si hay un camino entre ellos. El problema clásico de los **puentes de Königsberg** (¿se puede cruzar cada puente exactamente una vez?) dio origen a la teoría de grafos.
 
-- Un grafo tiene un **camino euleriano** si puedes recorrer cada arista una sola vez (el problema de los puentes).
+- Un grafo tiene un **camino euleriano** si puedes recorrer cada arista una sola vez (el problema de los puentes): existe si a lo sumo 0 o 2 vértices tienen grado impar.
 - Un **camino hamiltoniano** visita cada vértice una sola vez (problema del vendedor viajero: la ruta más barata visitando todas las ciudades).
 
-### Árboles
+```mermaid
+flowchart LR
+    A --- B
+    B --- C
+    C --- A
+    A --- D
+    D --- B
+```
+
+> Puente de Königsberg: 4 vértices (orillas/islas) con grados 3, 3, 3, 5 — todos impares, por eso **no hay** recorrido euleriano (se necesitan 0 o 2 impares).
+
+---
+
+### 7.5 Árboles
 
 Un **árbol** es un grafo **conexo sin ciclos** (no hay "círculos" de conexiones). Es la estructura natural de las **jerarquías**.
+
+> [!example] Propiedades equivalentes de un árbol con $n$ vértices
+> 1. Es conexo y sin ciclos.
+> 2. Tiene exactamente $n-1$ aristas.
+> 3. Entre cualquier par de vértices hay **un único** camino.
+
+```mermaid
+flowchart TB
+    raiz["Raíz"] --> h1["Hijo 1"]
+    raiz --> h2["Hijo 2"]
+    h1 --> n1["Nieto 1"]
+    h1 --> n2["Nieto 2"]
+    h2 --> n3["Nieto 3"]
+```
+
+> Un **árbol binario** (2 hijos máximos por nodo) es la base de árboles de búsqueda, montículos (*heaps*), y el DOM de una página web.
 
 - Árbol genealógico, sistema de archivos, torneos deportivos.
 - **Recorridos:** BFS (por niveles, como olas) y DFS (por ramas, hasta el fondo). Son la base de búsquedas en mapas y redes.
 
 ---
+
+### 7.6 Aplicaciones en el mundo real
+
+- **Google Maps:** grafo ponderado de calles + algoritmo de Dijkstra (ruta más corta).
+- **Redes sociales:** grafos dirigidos/no dirigidos; "amigos en común" son vecindades compartidas.
+- **Internet:** la web es un digrafo donde cada página enlaza a otras; el *PageRank* usa su estructura.
+- **Bases de datos:** las relaciones clave–foránea forman un grafo de dependencias.
+- **Optimización:** árbol de expansión mínima (cableado con el menor costo total).
 
 ## 🧬 10. Unidad 8 — Estructuras algebraicas *(avanzado)*
 
