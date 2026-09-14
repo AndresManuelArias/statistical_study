@@ -425,28 +425,195 @@ Un **camino hamiltoniano** visita **cada vértice exactamente una vez**. Un **ci
 
 ## 7.5 Árboles
 
-Un **árbol** es un grafo **conexo sin ciclos** (no hay "círculos" de conexiones). Es la estructura natural de las **jerarquías**.
+Un **árbol** es un grafo **conexo sin ciclos**. Es la estructura natural de las **jerarquías**: sistemas de archivos, DOM de una página, árboles genealógicos, y los árboles de decisión de machine learning.
 
-> [!example] Propiedades equivalentes de un árbol con $n$ vértices
+> [!abstract] Propiedades equivalentes de un árbol con $n$ vértices
+> Se dice que las siguientes afirmaciones son equivalentes (si una se cumple, se cumplen todas):
 > 1. Es conexo y sin ciclos.
 > 2. Tiene exactamente $n-1$ aristas.
 > 3. Entre cualquier par de vértices hay **un único** camino.
+> 4. Es conexo, pero si quitas una arista cualquiera, se desconecta.
+
+---
+
+### 7.5.1 Terminología de árboles
+
+- **Raíz:** nodo especial (designado o elegido) que está "arriba" de todo.
+- **Padre / Hijo:** si hay arista de $u$ a $v$, el padre de $v$ es $u$.
+- **Hermanos:** nodos con el mismo padre.
+- **Hoja (nodo hoja):** nodo sin hijos.
+- **Nodo interno:** al menos un hijo.
+- **Profundidad (nivel):** distancia desde la raíz ($d=0$).
+- **Altura:** la mayor profundidad de cualquier nodo (un árbol con un solo nodo tiene altura 0).
 
 ```mermaid
 flowchart TB
-    raiz["Raíz"] --> h1["Hijo 1"]
-    raiz --> h2["Hijo 2"]
-    h1 --> n1["Nieto 1"]
-    h1 --> n2["Nieto 2"]
-    h2 --> n3["Nieto 3"]
+    A["Raíz (d=0)"] --> B["Hijo 1 (d=1)"]
+    A --> C["Hijo 2 (d=1)"]
+    B --> D["Nieto 1 (d=2) hoja"]
+    B --> E["Nieto 2 (d=2)"]
+    C --> F["Nieto 3 (d=2) hoja"]
+    E --> G["Tataranieto (d=3) hoja"]
 ```
 
-> Un **árbol binario** (2 hijos máximos por nodo) es la base de árboles de búsqueda, montículos (*heaps*), y el DOM de una página web.
+---
 
-- Árbol genealógico, sistema de archivos, torneos deportivos.
-- **Recorridos:** BFS (por niveles, como olas) y DFS (por ramas, hasta el fondo). Son la base de búsquedas en mapas y redes.
+### 7.5.2 Tipos de árboles
+
+**Árbol binario:** cada nodo tiene **a lo sumo 2 hijos** (izquierdo y derecho). Es el más usado en programación.
+
+```mermaid
+flowchart TB
+    A["A"] --> B["B"]
+    A --> C["C"]
+    B --> D["D"]
+    B --> E["E"]
+    C --> F["F"]
+    E --> G["G"]
+```
+
+**Árbol binario de búsqueda (BST):** árbol binario con regla: izquierdo < nodo < derecho. Permite buscar en $O(\log n)$ si está balanceado.
+
+```mermaid
+flowchart TB
+    N8["8"] --> N3["3"]
+    N8 --> N10["10"]
+    N3 --> N1["1"]
+    N3 --> N6["6"]
+    N10 --> N14["14"]
+    N6 --> N4["4"]
+    N6 --> N7["7"]
+    N14 --> N13["13"]
+```
+
+> [!example] Búsqueda en BST
+> Para buscar 7: 8→3→6→7 ✓. Cada paso descarta la mitad (igual que búsqueda binaria en vector ordenado). Complejidad: $O(h)$ donde $h$ es la altura; $h = \log n$ si está balanceado.
+
+**Árbol AVL:** BST que se **re-balancea** automáticamente después de cada inserción/eliminación. Garantiza $h \leq 1.44 \log_2(n+2)$, así que búsqueda siempre $O(\log n)$.
+
+**Árbol N-ario:** cada nodo tiene hasta $N$ hijos (ej. árbol de directorios).
+
+**Montículo (heap):** árbol binario completo (todos los niveles llenos salvo quizás el último, rellenado de izq. a der.) donde el padre es siempre ≥ (max-heap) o ≤ (min-heap) sus hijos. Base de **colas de prioridad**.
+
+**Árbol B:** árbol N-ario balanceado usado en **bases de datos** y sistemas de archivos (ext4, NTFS). Cada nodo contiene varias claves y garantiza altura baja con millones de registros.
 
 ---
+
+### 7.5.3 Recorridos de árboles (DFS y BFS)
+
+En árboles, el recorrido DFS tiene tres variantes según **cuándo se visita** el nodo actual:
+
+```mermaid
+flowchart TB
+    A["1"] --> B["2"]
+    A --> C["3"]
+    B --> D["4"]
+    B --> E["5"]
+    C --> F["6"]
+    C --> G["7"]
+```
+
+| Recorrido | Orden | Resultado |
+|-----------|-------|-----------|
+| **Preorden** | Padre → Izq → Der | 1, 2, 4, 5, 3, 6, 7 |
+| **Inorden** | Izq → Padre → Der | 4, 2, 5, 1, 6, 3, 7 |
+| **Postorden** | Izq → Der → Padre | 4, 5, 2, 6, 7, 3, 1 |
+| **Por niveles (BFS)** | Nivel 0, nivel 1, … | 1, 2, 3, 4, 5, 6, 7 |
+
+> [!example] ¿Para qué sirve cada recorrido?
+> - **Preorden:** copiar/serializar un árbol (el padre va primero, así lo reconstruyes después).
+> - **Inorden:** en un BST, produce los valores **ordenados de menor a mayor**.
+> - **Postorden:** borrar un árbol (borras hijos antes del padre) o calcular tamaño de carpetas.
+
+```python
+# Preorden (recursivo)
+def preorden(nodo):
+    if nodo is None: return
+    print(nodo.valor)    # visitar padre
+    preorden(nodo.izq)
+    preorden(nodo.der)
+
+# Inorden (recursivo)
+def inorden(nodo):
+    if nodo is None: return
+    inorden(nodo.izq)
+    print(nodo.valor)    # padre entre hijos
+    inorden(nodo.der)
+
+# Postorden (recursivo)
+def postorden(nodo):
+    if nodo is None: return
+    postorden(nodo.izq)
+    postorden(nodo.der)
+    print(nodo.valor)    # padre después
+```
+
+**Recorrido por niveles (BFS):** usa una **cola (queue)**, no recursión:
+
+```python
+from collections import deque
+
+def bfs(raiz):
+    if not raiz: return
+    cola = deque([raiz])
+    while cola:
+        nodo = cola.popleft()
+        print(nodo.valor)
+        if nodo.izq: cola.append(nodo.izq)
+        if nodo.der: cola.append(nodo.der)
+```
+
+---
+
+### 7.5.4 Árboles de expansión mínima (MST)
+
+Dado un grafo **ponderado y conexo**, un **árbol de expansión mínima (MST)** es un subconjunto de aristas que conecta todos los vértices con el **menor costo total**, sin ciclos. Tiene exactamente $n-1$ aristas.
+
+> [!abstract] Propiedad clave
+> Si todas las aristas tienen pesos diferentes, el MST es **único**. Si hay empates, puede haber varios MST.
+
+**Algoritmo de Kruskal** (greedy, por aristas):
+1. Ordena todas las aristas por peso (de menor a mayor).
+2. Recorre: si la arista no crea un ciclo → agrégala al MST (usa **Union-Find** para detectar ciclos en tiempo casi-constante).
+3. Para cuando tienes $n-1$ aristas. Complexión: $O(m \log m)$.
+
+```mermaid
+flowchart LR
+    A["1. A-B peso 2 ✓"] --> B["2. C-D peso 2 ✓"]
+    B --> C["3. B-C peso 3 ✓"]
+    C --> D["4. A-C peso 4 → ciclo, skip"]
+    D --> E["5. B-D peso 5 → ciclo, skip"]
+    E --> F["MST: {A-B,C-D,B-C}, costo=7"]
+```
+
+**Algoritmo de Prim** (greedy, desde un vértice):
+1. Elige un vértice inicial.
+2. De todas las aristas que salen del árbol actual, toma la de menor peso que llegue a un vértice nuevo.
+3. Repite hasta cubrir todos los vértices. Con cola de prioridad: $O(m \log n)$.
+
+> [!tip] Kruskal vs Prim
+> - **Kruskal:** mejor para grafos **dispersos** (pocas aristas relativas a vértices).
+> - **Prim:** mejor para grafos **densos** (muchas aristas, pocos vértices).
+
+---
+
+### 7.5.5 Aplicaciones de los árboles
+
+| Árbol | Aplicación |
+|-------|------------|
+| **BST / AVL** | Búsqueda e inserción rápida en colecciones ordenadas |
+| **Heap (montículo)** | Colas de prioridad, Dijkstra, heapsort |
+| **Árbol B / B+** | Índices en bases de datos (millones de registros en disco) |
+| **AST (árbol de sintaxis)** | Compiladores: representar expresiones `(+ (* 2 3) 4)` |
+| **DOM (HTML)** | El navegador interpreta el árbol del documento |
+| **Directorios (ext4)** | Sistema de archivos en tu computadora |
+| **Huffman** | Compresión de datos (ZIP, JPEG, MP3) |
+| **Decision Tree** | Machine Learning (Random Forest = muchos árboles) |
+
+> [!tip] Para practicar
+> - Dibuja el BST que resulta de insertar: 5, 3, 7, 1, 4, 6, 8.
+> - Escribe los recorridos preorden, inorden y postorden de ese BST.
+> - Aplica Kruskal al grafo $K_4$ con pesos 1,2,3,4,5,6 y calcula el costo del MST.
 
 ## 7.6 Aplicaciones en el mundo real
 
