@@ -54,3 +54,17 @@ def fence_chart(
         f'<canvas class="mkdocs-chart" data-chart="{encoded}"></canvas>'
         "</div>"
     )
+
+def fence_mermaid(
+    source,
+    language,
+    css_class,
+    options,
+    md,
+    classes="",
+    id_value="",
+    attrs="",
+    **kwargs,
+):
+    """Emite <div class="mermaid"> con el contenido bruto para Mermaid."""
+    return '<div class="mermaid">' + source + '</div>'

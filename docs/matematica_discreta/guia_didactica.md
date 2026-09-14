@@ -50,7 +50,6 @@ graph LR
     R["r"] --> OR1
     OR1 --> OUT["(p ∧ q) ∨ r"]
 ```
----
 
 ## 🗺️ 2. Mapa del temario (hoja de ruta)
 
@@ -364,6 +363,41 @@ Con $A = \{1, 2, 3\}$, $B = \{3, 4, 5\}$ y universo $\Omega = \{1, 2, 3, 4, 5, 6
 | **Complemento** | $A^c$ (o $\bar{A}$) | Del universo que **no** están en $A$ | $\{4,5,6\}$ | "Todo lo demás" (depende de $\Omega$) |
 | **Diferencia simétrica** | $A \triangle B$ | En uno u otro, pero **no en ambos** | $\{1,2,4,5\}$ | El **XOR** de la Unidad 1 aplicado a conjuntos |
 | **Producto cartesiano** | $A \times B$ | Todos los pares ordenados $(a,b)$ | $\{(1,3),(1,4),...,(3,5)\}$ (9 pares) | Coordenadas (fila, columna) |
+
+### Diagrama de Venn: las operaciones de un vistazo
+
+Un **diagrama de Venn** dibuja los conjuntos como círculos: cada **región** del dibujo es una combinación distinta de pertenencias (estar en $A$, en $B$, en ambos o en ninguno). Con dos conjuntos hay 4 regiones:
+
+```mermaid
+venn-beta
+set A ["A"]
+  text "A∖B"
+set B ["B"]
+  text "B∖A"
+union A,B ["A∩B"]
+```
+
+**Lectura de las regiones (con $A=\{1,2,3\}$, $B=\{3,4,5\}$, $\Omega=\{1,...,6\}$):**
+
+| Región del dibujo | Contiene | Operación que la "prende" |
+|-------------------|----------|---------------------------|
+| Solo dentro de $A$ ($A \setminus B$) | $\{1,2\}$ | **Diferencia** $A \setminus B$ |
+| Solape de ambos ($A \cap B$) | $\{3\}$ | **Intersección** $A \cap B$ |
+| Solo dentro de $B$ ($B \setminus A$) | $\{4,5\}$ | **Diferencia** $B \setminus A$ |
+| Fuera de ambos círculos | $\{6\}$ | **Complemento** $(A \cup B)^c$ |
+
+Cada **operación** enciende una combinación de regiones:
+
+| Operación | Regiones que toma | Resultado ($A=\{1,2,3\}$, $B=\{3,4,5\}$) |
+|-----------|-------------------|------------------------------------------|
+| **Unión** $A \cup B$ | A∖B + A∩B + B∖A (todo lo de ambos círculos) | $\{1,2,3,4,5\}$ |
+| **Intersección** $A \cap B$ | Solo el solape | $\{3\}$ |
+| **Diferencia** $A \setminus B$ | Solo A∖B | $\{1,2\}$ |
+| **Diferencia simétrica** $A \triangle B$ | A∖B + B∖A (todo menos el solape) | $\{1,2,4,5\}$ |
+| **Complemento** $A^c$ | Todo lo que queda **fuera** del círculo de $A$ | $\{4,5,6\}$ |
+
+> [!note] Sobre la versión
+> Los diagramas de Venn de Mermaid usan la sintaxis `venn-beta` (disponible desde Mermaid **v11.12.3**). El sitio mkdocs ya carga Mermaid v11; en Obsidian solo se verán si tu instalación es reciente y trae Mermaid 11.
 
 **Cardinalidad** $|A|$ = número de elementos. Para contar una unión sin contar dos veces lo repetido:
 
