@@ -190,6 +190,88 @@ flowchart LR
 
 **Uso real:** el XOR aparece en casi toda la **criptografía** y en los **circuitos sumadores**. Al sumar dos bits: $0+0=0$, $0+1=1$, $1+0=1$, $1+1=10$ → el bit del resultado es 0 cuando hay acarreo. Es exactamente la tabla del XOR. 
 
+### Ejemplo 3 — Implicación ($p \to q$) y bicondicional ($p \leftrightarrow q$)
+
+Estos dos conectivos ya aparecían en la tabla inicial; aquí se entienden con un ejemplo propio y con su **circuito equivalente**.
+
+#### Implicación ($p \to q$): "si p, entonces q"
+
+> [!tip] Analogía — la promesa
+> "Si estudias, apruebas". La única forma de que la promesa sea **falsa** es que estudies **y** no apruebes. En cualquier otro caso, la promesa se cumple (o no se puede comprobar: si no estudias, no prometimos nada).
+
+La implicación se puede construir con dos puertas: una negación y un OR:
+
+$$
+p \to q \equiv \neg p \lor q
+$$
+
+| $p$ | $q$ | $\neg p$ | $\neg p \lor q$ | $p \to q$ |
+| --- | --- | -------- | -------------- | -------- |
+| V   | V   | F        | V              | V        |
+| V   | F   | F        | F              | F        |
+| F   | V   | V        | V              | V        |
+| F   | F   | V        | V              | V        |
+
+Observa que las columnas $\neg p \lor q$ y $p \to q$ son **idénticas**: son el mismo circuito con otra cara.
+
+```mermaid
+flowchart LR
+    p((p)) --> N["¬ (NO)"]
+    N --> O["∨ (O)"]
+    q((q)) --> O
+    O --> imp["p → q"]
+    style p fill:#90caf9
+    style q fill:#90caf9
+    style N fill:#ffcc80
+    style O fill:#ffcc80
+    style imp fill:#a5d6a7
+```
+
+#### Bicondicional ($p \leftrightarrow q$): "p si y solo si q"
+
+> [!tip] Analogía — los dos interruptores
+> Una lámpara con dos interruptores (escalera): la luz está encendida cuando **ambos están en la misma posición** (los dos arriba o los dos abajo). El bicondicional es verdadero cuando **ambos valores coinciden**.
+
+El bicondicional se construye con dos AND y un OR (más sus negaciones): "ambos verdaderos **o** ambos falsos":
+
+$$
+p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)
+$$
+
+| $p$ | $q$ | $p \land q$ | $\neg p \land \neg q$ | $(p \land q) \lor (\neg p \land \neg q)$ | $p \leftrightarrow q$ |
+| --- | --- | ----------- | --------------------- | ---------------------------------------- | --------------------- |
+| V   | V   | V           | F                     | V                                        | V                     |
+| V   | F   | F           | F                     | F                                        | F                     |
+| F   | V   | F           | F                     | F                                        | F                     |
+| F   | F   | F           | V                     | V                                        | V                     |
+
+```mermaid
+flowchart LR
+    p((p)) --> A1["∧ (Y)"]
+    q((q)) --> A1
+    p --> N1["¬ (NO)"]
+    N1 --> A2["∧ (Y)"]
+    q --> N2["¬ (NO)"]
+    N2 --> A2
+    A1 --> R["∨ (O)"]
+    A2 --> R
+    R --> bic["p ↔ q"]
+    style p fill:#90caf9
+    style q fill:#90caf9
+    style A1 fill:#ffcc80
+    style A2 fill:#ffcc80
+    style N1 fill:#ffcc80
+    style N2 fill:#ffcc80
+    style R fill:#ffcc80
+    style bic fill:#a5d6a7
+```
+
+> [!success] Para recordar
+> - $p \to q$: el **único** caso falso es $V \to F$ (promesa rota).
+> - $p \leftrightarrow q$: verdadero cuando **ambos coinciden** (V–V o F–F); falso cuando se llevan la contra (V–F o F–V).
+
+**Uso real:** la implicación modela reglas y contratos ("si pagas, hay envío gratis"); el bicondicional modela **definiciones exactas** ("un número es par **si y solo si** es divisible por 2") y comparaciones de igualdad en programación.
+
 ### Cuantificadores
 
 - **Universal** $\forall$: "para todo". "$\forall x \in \mathbb{N},\ x \geq 0$" → todos los naturales son ≥ 0.
