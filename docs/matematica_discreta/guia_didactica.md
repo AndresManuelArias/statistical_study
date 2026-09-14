@@ -1881,6 +1881,123 @@ Haz **clic sobre una arista** de la frontera (las que salen de tu árbol a un v�
 > - **Prim:** crece un árbol desde una semilla tomando la frontera más barata. Mejor para grafos **densos** (muchas aristas, pocos vértices). Complejidad O(m log n).
 > - Ambos son *greedy*, ambos dan el MST correcto, y con los mismos pesos del ejemplo llegan al **mismo costo (39)**.
 
+#### 7.5.4.2 Algoritmo de Kruskal: la estrategia global 🧩
+
+Si Prim es *"crece un árbol desde tu casa"*, **Kruskal** es *"tende los cables de barato a caro en todo el vecindario a la vez"*:
+
+> **Kruskal** ordena **todas** las aristas por peso y las recorre de menor a mayor, agregando cada una **solo si no forma un ciclo**.
+
+**Analogía:** imagina que eres la empresa de fibra y en vez de salir de una casa, compras los tramos por lotes: primero los 5 más baratos, luego los 6, los 7... pero **nunca aceptas un tramo que conecte dos casas que ya quedaron unidas** (eso cerraría un ciclo y gastarías cable de más). Al final todas las casas quedan conectadas con el menor gasto posible. 🧩
+
+**Las tres reglas del juego:**
+
+1. Ordena todas las aristas por peso, de menor a mayor.
+2. Recorre la lista y **agrega** la arista si NO forma ciclo (une dos componentes distintas).
+3. Cuando hay n−1 aristas agregadas (n = vértices), tienes el MST.
+
+Usamos el **mismo grafo de las 7 casas**. Aristas ordenadas por peso:
+
+> A-D(5), C-E(5), D-F(6), A-B(7), B-E(7), B-C(8), E-F(8), B-D(9), E-G(9), F-G(11), D-E(15)
+
+**Paso a paso (vigilando los ciclos con *union-find*):**
+
+| Paso | Arista (peso) | ¿Ciclo? | Qué une | Componentes |
+|------|---------------|---------|---------|-------------|
+| 1 | A-D (5) | No | {A} ∪ {D} | {A,D} |
+| 2 | C-E (5) | No | {C} ∪ {E} | {A,D}, {C,E} |
+| 3 | D-F (6) | No | {A,D} ∪ {F} | {A,D,F}, {C,E} |
+| 4 | A-B (7) | No | {A,D,F} ∪ {B} | {A,B,D,F}, {C,E} |
+| 5 | B-E (7) | No | {A,B,D,F} ∪ {C,E} | {A,B,C,D,E,F} |
+| 6 | B-C (8) | **Sí** | — | (se salta) |
+| 7 | E-F (8) | **Sí** | — | (se salta) |
+| 8 | B-D (9) | **Sí** | — | (se salta) |
+| 9 | E-G (9) | No | {A,B,C,D,E,F} ∪ {G} | ¡todos! |
+
+**Costo total = 5 + 5 + 6 + 7 + 7 + 9 = 39** — el mismo que Prim (¡el MST es único, así que ambas estrategias deben coincidir!).
+
+```mermaid
+flowchart LR
+    A["A"] ---|"5"| D["D"]
+    D ---|"6"| F["F"]
+    A ---|"7"| B["B"]
+    B ---|"7"| E["E"]
+    C["C"] ---|"5"| E
+    E ---|"9"| G["G"]
+    B -. "8 ✗ ciclo" .- C
+    E -. "8 ✗ ciclo" .- F
+    B -. "9 ✗ ciclo" .- D
+    F -. "11 ✗ ciclo" .- G
+    D -. "15 ✗ ciclo" .- E
+```
+
+> [!tip] ¿Cómo saber si "forma ciclo" sin dibujar? (union-find)
+> Lleva el registro de qué casa pertenece a qué componente. Para una arista (u,v): si u y v **ya están en la misma componente**, agregarla formaría un ciclo → se descarta. Si están en componentes distintas, se **unen** (union) y la arista entra al MST. Esa estructura se llama **union-find** (o DSU) y hace que Kruskal sea muy rápido.
+
+**Pseudo-código:**
+
+```text
+función kruskal(nodos, aristas):
+    ordenar aristas por peso (menor → mayor)
+    crear union-find con los nodos (cada uno en su componente)
+    mst = []
+    para cada (u, v, peso) en aristas_ordenadas:
+        si encontrar(u) ≠ encontrar(v):     # no forman ciclo
+            unir(u, v)
+            mst.agregar((u, v, peso))
+        si mst tiene n−1 aristas:
+            parar
+    devolver mst
+```
+
+**Implementación en Python (con union-find):**
+
+```python
+def kruskal(nodos, aristas):
+    # aristas = [(u, v, peso), ...]
+    padre = {v: v for v in nodos}
+
+    def encontrar(x):
+        while padre[x] != x:
+            padre[x] = padre[padre[x]]   # compresión de ruta
+            x = padre[x]
+        return x
+
+    def unir(a, b):
+        ra, rb = encontrar(a), encontrar(b)
+        if ra != rb:
+            padre[ra] = rb
+            return True                   # se unieron (no había ciclo)
+        return False                      # ya estaban unidos (ciclo)
+
+    mst = []
+    costo = 0
+    for u, v, w in sorted(aristas, key=lambda e: e[2]):
+        if unir(u, v):
+            mst.append((u, v, w))
+            costo += w
+    return costo, mst
+
+# Los 11 tramos de cable del ejemplo
+cables = [
+    ("A", "B", 7), ("A", "D", 5), ("B", "C", 8), ("B", "D", 9),
+    ("B", "E", 7), ("C", "E", 5), ("D", "E", 15), ("D", "F", 6),
+    ("E", "F", 8), ("E", "G", 9), ("F", "G", 11),
+]
+print(kruskal("ABCDEFG", cables))   # (39, [...A-D, C-E, D-F, A-B, B-E, E-G])
+```
+
+**Complejidad:** ordenar cuesta **O(m log m)** y las operaciones union-find son casi O(1) cada una → **O(m log m)** en total. Para grafos **dispersos** (m ≈ n), Kruskal suele ganarle a Prim.
+
+> 🎮 **Ahora practica tú:** selecciona las aristas **en el orden que Kruskal las agregaría** (de menor peso a mayor, sin formar ciclos). El sistema acepta cualquier arista del peso mínimo actual que no cierre ciclo.
+
+<div class="grafo-ejercicio" data-tipo="kruskal" data-nodos="A,B,C,D,E,F,G" data-aristas="A-B:7,A-D:5,B-C:8,B-D:9,B-E:7,C-E:5,D-E:15,D-F:6,E-F:8,E-G:9,F-G:11">
+
+#### Precisa los clics: orden de Kruskal
+
+Haz **clic sobre una arista** para agregarla al MST: primero las de peso 5, luego la de 6, luego las de 7... pero **nunca una que forme un ciclo** (el sistema lo detecta). ¡Consigue el mismo costo total 39 que con Prim!
+
+</div>
+
 #### 7.5.5 Aplicaciones de los árboles
 
 | Árbol | Aplicación |

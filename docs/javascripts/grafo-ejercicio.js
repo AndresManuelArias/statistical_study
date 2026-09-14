@@ -149,6 +149,7 @@
     var tipo = contenedor.getAttribute("data-tipo") || "adyacencia";
     if (tipo === "prim") { crearEjercicioPrim(contenedor); return; }
     if (tipo === "dijkstra") { crearEjercicioDijkstra(contenedor); return; }
+    if (tipo === "kruskal") { crearEjercicioKruskal(contenedor); return; }
     var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
     var matriz = parseMatriz(contenedor.getAttribute("data-matriz"));
     if (!nodos.length || !matriz.length) return;
@@ -919,6 +920,246 @@
       repintar();
     });
     btnAyuda.addEventListener("click", ayuda);
+    repintar();
+  }
+
+
+
+  /* ---------- ejercicio interactivo: Kruskal ----------
+   * El usuario agrega aristas de menor peso a mayor, sin formar ciclos.
+   * union-find (DSU) para detectar ciclos; acepta empates de peso mínimo.
+   */
+  function crearEjercicioKruskal(contenedor) {
+    var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
+    var aristas = (contenedor.getAttribute("data-aristas") || "").split(",")
+      .map(function (s) {
+        var m = s.trim().match(/^([A-Za-z0-9]+)-([A-Za-z0-9]+):(\d+(?:\.\d+)?)$/);
+        if (!m) return null;
+        return { u: m[1], v: m[2], w: Number(m[3]) };
+      })
+      .filter(Boolean);
+    if (!nodos.length || !aristas.length) return;
+
+    function idxDe(nn, x) { return nn.indexOf(x); }
+    function clave(a, b) {
+      var i = idxDe(nodos, a), j = idxDe(nodos, b);
+      return (i < j ? i + "-" + j : j + "-" + i);
+    }
+    function aristaPorPar(a, b) {
+      for (var k = 0; k < aristas.length; k++) {
+        if (clave(aristas[k].u, aristas[k].v) === clave(a, b)) return aristas[k];
+      }
+      return null;
+    }
+
+    var mst = [];       // aristas elegidas
+    var costo = 0;
+
+    // union-find
+    var dsuPadre;
+    function dsuInit() {
+      dsuPadre = {};
+      nodos.forEach(function (n) { dsuPadre[n] = n; });
+    }
+    function dsuFind(x) {
+      while (dsuPadre[x] !== x) { dsuPadre[x] = dsuPadre[dsuPadre[x]]; x = dsuPadre[x]; }
+      return x;
+    }
+    function dsuUnir(a, b) {
+      var ra = dsuFind(a), rb = dsuFind(b);
+      if (ra === rb) return false;
+      dsuPadre[ra] = rb;
+      return true;
+    }
+    function formaCiclo(a) {
+      // ¿unir a.u y a.v formaría ciclo con el mst actual?
+      var p = {};
+      nodos.forEach(function (n) { p[n] = n; });
+      function f(x) { while (p[x] !== x) { p[x] = p[p[x]]; x = p[x]; } return x; }
+      function un(x, y) { var rx = f(x), ry = f(y); if (rx === ry) return false; p[rx] = ry; return true; }
+      mst.forEach(function (e) { un(e.u, e.v); });
+      return !un(a.u, a.v);
+    }
+
+    // --- UI ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    contenedor.appendChild(titulo);
+
+    var lienzo = document.createElement("div");
+    lienzo.className = "ge-lienzo";
+    lienzo.id = "ge-kruskal-" + (++marcados) + "-lienzo";
+    contenedor.appendChild(lienzo);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    var btnAyuda = document.createElement("button");
+    btnAyuda.type = "button";
+    btnAyuda.className = "ge-boton ge-boton-ayuda";
+    btnAyuda.textContent = "💡 Ayuda";
+    cajaBotones.appendChild(btnReiniciar);
+    cajaBotones.appendChild(btnAyuda);
+    contenedor.appendChild(cajaBotones);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    if (typeof cytoscape === "undefined") {
+      resultado.textContent = "⚠️ Cytoscape.js no cargó.";
+      resultado.className = "ge-resultado ge-error";
+      return;
+    }
+
+    var cy = cytoscape({
+      container: lienzo,
+      elements: {
+        nodes: nodos.map(function (n) {
+          return { data: { id: n, label: n } };
+        }),
+        edges: aristas.map(function (a) {
+          return { data: { id: clave(a.u, a.v), source: a.u, target: a.v, peso: a.w, label: String(a.w) } };
+        })
+      },
+      style: [
+        { selector: "node", style: {
+            "background-color": "#3f51b5", "border-color": "#283593", "border-width": 2,
+            label: "data(label)", color: "#283593", "font-size": 16,
+            "text-valign": "bottom", "text-margin-y": 8, width: 30, height: 30
+        }},
+        { selector: "edge", style: {
+            width: 2.5, "line-color": "#9e9e9e", "curve-style": "bezier",
+            label: "data(label)", color: "#424242", "font-size": 13,
+            "text-rotation": "autorotate", "text-background-color": "#fff",
+            "text-background-opacity": 1, "text-background-padding": 2
+        }},
+        { selector: "edge.ge-mst", style: { "line-color": "#2e7d32", width: 5 }},
+        { selector: "edge.ge-ciclo", style: {
+            "line-color": "#c62828", width: 4, "line-style": "dashed"
+        }},
+        { selector: "edge.ge-sugerida", style: {
+            "line-color": "#ff9800", width: 4, "line-style": "dashed"
+        }}
+      ],
+      layout: { name: "circle", padding: 40 },
+      wheelSensitivity: 0.2,
+      boxSelectionEnabled: false
+    });
+    contenedor._cy = cy;
+
+    function candidatasValidas() {
+      // aristas no elegidas que NO forman ciclo
+      return aristas.filter(function (a) {
+        if (mst.some(function (x) { return clave(x.u, x.v) === clave(a.u, a.v); })) return false;
+        return !formaCiclo(a);
+      });
+    }
+    function repintar() {
+      cy.edges().removeClass("ge-mst ge-ciclo ge-sugerida");
+      mst.forEach(function (e) { cy.$("#" + clave(e.u, e.v)).addClass("ge-mst"); });
+      // hermanar conexos: pintar nodos según componente
+      var comp = {};
+      nodos.forEach(function (n) { comp[n] = dsuFind(n); });
+      cy.nodes().forEach(function (n) {
+        n.style("border-color", "#283593");
+        n.style("border-width", 2);
+      });
+      var sugerida = siguienteSugerida();
+      if (sugerida) cy.$("#" + clave(sugerida.u, sugerida.v)).addClass("ge-sugerida");
+      var unidas = mst.length;
+      titulo.innerHTML =
+        "<strong>Elegidas:</strong> " + unidas + "/" + (nodos.length - 1) + " aristas · " +
+        "<strong>Costo:</strong> " + costo + " · " +
+        (sugerida ? "<strong>Sugerida:</strong> " + sugerida.u + "-" + sugerida.v + " (" + sugerida.w + ")"
+                  : "🎉 MST completo");
+    }
+    function siguienteSugerida() {
+      var validas = candidatasValidas();
+      if (!validas.length) return null;
+      var minW = Infinity;
+      validas.forEach(function (a) { if (a.w < minW) minW = a.w; });
+      var men = validas.filter(function (a) { return a.w === minW; });
+      return men[0];
+    }
+    function ayuda() {
+      var s = siguienteSugerida();
+      if (!s) {
+        resultado.innerHTML = "🎉 ¡MST completo! Costo total = <strong>39</strong>. " +
+          "Aristas: " + mst.map(function (x) { return x.u + "-" + x.v + "(" + x.w + ")"; }).join(", ");
+        resultado.className = "ge-resultado ge-ok";
+        return;
+      }
+      var validas = candidatasValidas();
+      var minW = Infinity;
+      validas.forEach(function (a) { if (a.w < minW) minW = a.w; });
+      var pos = validas.filter(function (a) { return a.w === minW; })
+        .map(function (a) { return a.u + "-" + a.v + " (" + a.w + ")"; });
+      resultado.innerHTML =
+        "💡 Kruskal va de barato a caro. Las aristas del peso mínimo (" + minW + ") que no forman ciclo: " +
+        pos.join(", ") + ".";
+      resultado.className = "ge-resultado ge-error";
+    }
+
+    cy.on("tap", "edge", function (ev) {
+      var e = ev.target;
+      var a = aristaPorPar(e.data("source"), e.data("target"));
+      if (!a) return;
+      // ¿ya elegida?
+      if (mst.some(function (x) { return clave(x.u, x.v) === clave(a.u, a.v); })) {
+        resultado.textContent = "⚠️ Esa arista ya está en tu MST.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // ¿forma ciclo?
+      if (formaCiclo(a)) {
+        resultado.textContent =
+          "❌ " + a.u + "-" + a.v + " (" + a.w + ") formaría un ciclo: ambos extremos ya están conectados.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // peso mínimo entre candidatas válidas
+      var validas = candidatasValidas();   // incluye a
+      var minW = Infinity;
+      validas.forEach(function (x) { if (x.w < minW) minW = x.w; });
+      if (a.w > minW) {
+        var otras = validas.filter(function (x) { return x.w === minW; });
+        resultado.textContent =
+          "❌ Kruskal ordena por peso: primero va " +
+          otras.map(function (x) { return x.u + "-" + x.v + " (" + x.w + ")"; }).join(" o ") +
+          ", no " + a.u + "-" + a.v + " (" + a.w + ").";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      // ✅ correcta
+      mst.push(a);
+      costo += a.w;
+      dsuUnir(a.u, a.v);
+      repintar();
+      resultado.textContent = "✅ ¡Correcto! Agregaste " + a.u + "-" + a.v + " (" + a.w + "). Costo: " + costo + ".";
+      resultado.className = "ge-resultado ge-ok";
+      if (mst.length === nodos.length - 1) {
+        resultado.innerHTML =
+          "🎉 <strong>¡Completaste el MST de Kruskal! Costo total = " + costo + ".</strong> " +
+          "Aristas: " + mst.map(function (x) { return x.u + "-" + x.v + "(" + x.w + ")"; }).join(", ");
+        resultado.className = "ge-resultado ge-ok";
+      }
+    });
+
+    btnReiniciar.addEventListener("click", function () {
+      mst = [];
+      costo = 0;
+      dsuInit();
+      resultado.className = "ge-resultado";
+      resultado.textContent = "";
+      repintar();
+    });
+    btnAyuda.addEventListener("click", ayuda);
+
+    dsuInit();
     repintar();
   }
 
