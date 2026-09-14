@@ -572,30 +572,141 @@ Dado un grafo **ponderado y conexo**, un **árbol de expansión mínima (MST)** 
 > [!abstract] Propiedad clave
 > Si todas las aristas tienen pesos diferentes, el MST es **único**. Si hay empates, puede haber varios MST.
 
-**Algoritmo de Kruskal** (greedy, por aristas):
-1. Ordena todas las aristas por peso (de menor a mayor).
-2. Recorre: si la arista no crea un ciclo → agrégala al MST (usa **Union-Find** para detectar ciclos en tiempo casi-constante).
-3. Para cuando tienes $n-1$ aristas. Complexión: $O(m \log m)$.
+Los dos algoritmos clásicos para encontrarlo son **Kruskal** y **Prim**. Ambos son *greedy* (avaros): en cada paso eligen la mejor opción local con la esperanza de lograr el óptimo global — y en este problema esa estrategia **sí funciona** (se puede demostrar con la propiedad del corte).
+
+---
+
+### 7.5.4.1 Algoritmo de Prim: crecer un árbol desde una semilla 🪴
+
+**La idea en una frase:** Prim **crece un árbol poco a poco** — empieza en un vértice cualquiera (la *semilla*) y en cada paso agrega la **arista más barata** que conecta el árbol que ya tiene con un vértice que todavía no está dentro. Asociado a un ejemplo del mundo real:
+
+> [!example] Analogía: cablear una colonia 🏘️
+> Imagina que hay 7 casas (A–G) y quieres conectarlas a internet con fibra óptica gastando lo **mínimo posible**. Solo puedes tender cables entre casas específicas (las aristas) y cada cable tiene un costo (el peso).
+>
+> **Kruskal** diría: "pongamos todos los cables posibles, y ordenémoslos de barato a caro; vamos tendiendo el más barato que no forme un ciclo".
+> **Prim** diría: "empecemos en mi casa A; desde ahí, tendamos el cable más barato que salga de *mi red actual* hacia una casa nueva, y así hasta cubrir todas".
+
+---
+
+**El grafo de ejemplo (7 casas, 11 cables posibles):**
 
 ```mermaid
 flowchart LR
-    A["1. A-B peso 2 ✓"] --> B["2. C-D peso 2 ✓"]
-    B --> C["3. B-C peso 3 ✓"]
-    C --> D["4. A-C peso 4 → ciclo, skip"]
-    D --> E["5. B-D peso 5 → ciclo, skip"]
-    E --> F["MST: {A-B,C-D,B-C}, costo=7"]
+    A ---|"7"| B
+    A ---|"5"| D
+    B ---|"8"| C
+    B ---|"9"| D
+    B ---|"7"| E
+    C ---|"5"| E
+    D ---|"15"| E
+    D ---|"6"| F
+    E ---|"8"| F
+    E ---|"9"| G
+    F ---|"11"| G
 ```
 
-**Algoritmo de Prim** (greedy, desde un vértice):
-1. Elige un vértice inicial.
-2. De todas las aristas que salen del árbol actual, toma la de menor peso que llegue a un vértice nuevo.
-3. Repite hasta cubrir todos los vértices. Con cola de prioridad: $O(m \log n)$.
+**Reglas del juego (los 3 pasos de Prim):**
 
-> [!tip] Kruskal vs Prim
-> - **Kruskal:** mejor para grafos **dispersos** (pocas aristas relativas a vértices).
-> - **Prim:** mejor para grafos **densos** (muchas aristas, pocos vértices).
+1. **Elige la semilla** — un vértice inicial cualquiera. (Tomaremos **A**.)
+2. **Mira la frontera** — observa todas las aristas que salen del árbol actual y llegan a un vértice **todavía no incluido**. Elige la de **menor peso**.
+3. **Agrega** ese vértice y esa arista al árbol. **Repite** el paso 2 hasta incluir los $n$ vértices (tendrás $n-1$ aristas).
+
+> [!warning] Regla de oro
+> Nunca agregues una arista que **cierre un ciclo**. Si ambos extremos ya están en el árbol, esa arista sobra (crearía un círculo) → descártala aunque sea barata.
 
 ---
+
+**Prim paso a paso (sigue las casillas amarillas 👉):**
+
+| Paso | Árbol actual | ¿Cuál es la arista más barata hacia afuera? | Se agrega | Costo acumulado |
+|------|--------------|---------------------------------------------|-----------|-----------------|
+| 1 | {A} | A-D = 5 (más barata que A-B = 7) | **A-D** | 5 |
+| 2 | {A, D} | D-F = 6 (más barata que A-B=7, D-B=9, D-E=15) | **D-F** | 11 |
+| 3 | {A, D, F} | A-B = 7 (D-B=9, F-E=8, F-G=11) | **A-B** | 18 |
+| 4 | {A, D, F, B} | B-E = 7 (B-C=8, F-E=8, F-G=11, D-B→ciclo ✘, D-E=15) | **B-E** | 25 |
+| 5 | {A, D, F, B, E} | E-C = 5 (más barata que B-C=8, F-G=11, E-G=9) | **E-C** | 30 |
+| 6 | {A, D, F, B, E, C} | E-G = 9 (más barata que F-G = 11) | **E-G** | 39 |
+
+**Resultado:** el MST es {A-D, D-F, A-B, B-E, E-C, E-G} con **costo total = 39**. Es el mismo costo que obtendrías con Kruskal (¡debe coincidir! si el MST es único, ambos algoritmos llegan a las mismas aristas).
+
+**Visualización del crecimiento (pasos 1-6):**
+
+```mermaid
+flowchart LR
+    P1["Paso 1: A-D (5)"] --> P2["Paso 2: +D-F (6)"]
+    P2 --> P3["Paso 3: +A-B (7)"]
+    P3 --> P4["Paso 4: +B-E (7)"]
+    P4 --> P5["Paso 5: +E-C (5)"]
+    P5 --> P6["Paso 6: +E-G (9) = 39"]
+```
+
+**Pseudo-código:**
+
+```
+Prim(grafo, semilla):
+    árbol = {semilla}
+    aristas_MST = []
+    mientras árbol no contenga todos los vértices:
+        # arista de menor peso con un extremo dentro y otro fuera
+        e = min{ (u,v) con peso w  |  u ∈ árbol  y  v ∉ árbol }
+        agregar e a aristas_MST
+        agregar v al árbol
+    devolver aristas_MST
+```
+
+**Implementación en Python (con cola de prioridad):**
+
+```python
+import heapq
+
+def prim(grafo, semilla):
+    """
+    grafo: dict {vértice: [(vecino, peso), ...]}
+    Devuelve el costo total del MST y las aristas elegidas.
+    """
+    visitados = {semilla}
+    # frontera: (costo, u, v) con u dentro, v fuera
+    frontera = [(w, semilla, v) for v, w in grafo[semilla]]
+    heapq.heapify(frontera)
+    aristas = []
+    costo_total = 0
+
+    while frontera:
+        w, u, v = heapq.heappop(frontera)
+        if v in visitados:
+            continue            # crearía ciclo → descartar
+        visitados.add(v)
+        aristas.append((u, v, w))
+        costo_total += w
+        for vecino, peso in grafo[v]:
+            if vecino not in visitados:
+                heapq.heappush(frontera, (peso, v, vecino))
+    return costo_total, aristas
+
+# Grafo del ejemplo (7 casas)
+G = {
+    "A": [("B",7), ("D",5)],
+    "B": [("A",7), ("C",8), ("D",9), ("E",7)],
+    "C": [("B",8), ("E",5)],
+    "D": [("A",5), ("B",9), ("E",15), ("F",6)],
+    "E": [("B",7), ("C",5), ("D",15), ("F",8), ("G",9)],
+    "F": [("D",6), ("E",8), ("G",11)],
+    "G": [("E",9), ("F",11)],
+}
+print(prim(G, "A"))   # (39, [('A','D',5), ('D','F',6), ('A','B',7), ...])
+```
+
+> [!tip] ¿Por qué funciona Prim? (la propiedad del corte)
+> En cualquier momento, el árbol en crecimiento está "dentro" de un corte y el resto del grafo "afuera". El MST global **tiene que** incluir la arista más barata que cruza ese corte (si no la tuviera, cambiarla por esa arista no aumentaría el costo). Prim simplemente toma siempre esa arista → cuando termina, es el MST. Esta misma idea demuestra que Kruskal también es correcto.
+
+**Complejidad:** con una cola de prioridad (heap), cada vértice se inserta y extrae una vez, y cada arista se mira una vez: **O(m log n)**, donde m = aristas y n = vértices.
+
+---
+
+> [!tip] Kruskal vs Prim
+> - **Kruskal:** ordena aristas y agrega las baratas si no forman ciclo. Mejor para grafos **dispersos** (pocas aristas relativas a vértices). Complejidad O(m log m).
+> - **Prim:** crece un árbol desde una semilla tomando la frontera más barata. Mejor para grafos **densos** (muchas aristas, pocos vértices). Complejidad O(m log n).
+> - Ambos son *greedy*, ambos dan el MST correcto, y con los mismos pesos del ejemplo llegan al **mismo costo (39)**.
 
 ### 7.5.5 Aplicaciones de los árboles
 
