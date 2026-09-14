@@ -83,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "edd47304399d913c",
@@ -190,6 +191,8 @@
   },
   "active": "e7d2116ff8714530",
   "lastOpenFiles": [
+    "docs/matematica_discreta/Anotaciones.md",
+    "docs/matematica_discreta/guia_didactica.md",
     "consulta_datos_practica.md",
     "docs/javascripts/mermaid.js",
     "docs/stylesheets/quiz.css",
@@ -201,8 +204,6 @@
     "docs/javascripts/chart.umd.min.js",
     "docs/javascripts",
     "matematica_discreta/guia_didactica.md",
-    "docs/matematica_discreta/guia_didactica.md",
-    "docs/matematica_discreta/Anotaciones.md",
     "docs/matematica_discreta",
     "docs/02_minimos_cuadrados/teoria.md",
     "docs/02_minimos_cuadrados/tablas_calculo.md",

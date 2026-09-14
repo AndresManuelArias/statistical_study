@@ -1087,7 +1087,137 @@ $$A: [B, C],\quad B: [A],\quad C: [A]$$
 
 ---
 
-### 7.4 Caminos y problemas clásicos
+### 7.4 Caminos, cadenas y ciclos
+
+> [!abstract] Tres tipos de recorridos
+> Un **camino**, una **cadena** y un **ciclo** son distintas formas de "recorrer" un grafo. La diferencia está en **qué se permite repetir**: vértices, aristas, o ninguna de las dos.
+
+#### 7.4.1 Longitud de un recorrido
+
+La **longitud** de un recorrido es el número de **aristas** que usa (no de vértices). Un recorrido de $A$ a $D$ por las aristas $(A,B), (B,C), (C,D)$ tiene **longitud 3**.
+
+```mermaid
+flowchart LR
+    A ---|"1"| B
+    B ---|"2"| C
+    C ---|"3"| D
+```
+
+> El recorrido $A \to B \to C \to D$ tiene longitud 3: usa 3 aristas para visitar 4 vértices.
+
+---
+
+#### 7.4.2 Camino (path)
+
+Un **camino** es un recorrido que **no repite vértices** (y por tanto tampoco aristas). Es la forma "limpia" de ir de un punto a otro sin dar vueltas.
+
+| Propiedad | Valor |
+|-----------|-------|
+| ¿Repite vértices? | ❌ No |
+| ¿Repite aristas? | ❌ No |
+| Ejemplo | $A \to B \to C \to D$ |
+
+```mermaid
+flowchart LR
+    A --- B
+    B --- C
+    C --- D
+    D --- B
+    B --- E
+```
+
+> El camino $A \to B \to C \to D$ usa 3 aristas y **4 vértices distintos**. No puede volver a pasar por B (ya lo visitó).
+
+> [!tip] Camino más corto
+> En Google Maps, la ruta sugerida es el **camino más corto** entre dos vértices en un grafo ponderado: el algoritmo de Dijkstra lo encuentra en tiempo $O(E \log V)$.
+
+---
+
+#### 7.4.3 Cadena (trail)
+
+Una **cadena** es un recorrido que **no repite aristas**, pero **puede repetir vértices**. Es más permisiva que un camino.
+
+| Propiedad | Valor |
+|-----------|-------|
+| ¿Repite vértices? | ✅ Sí (permitido) |
+| ¿Repite aristas? | ❌ No |
+| Ejemplo | $A \to B \to C \to B \to D$ |
+
+```mermaid
+flowchart LR
+    A --- B
+    B --- C
+    C --- B2["B (vuelta)"]
+    B2 --- D
+```
+
+> La cadena $A \to B \to C \to B \to D$ **repasa el vértice B** (dos veces), pero cada arista se usa **una sola vez**. Su longitud es 4.
+
+> [!example] En la vida real
+> Un cartero que reparte cartas puede **pasar dos veces por la misma esquina** (vértice) pero no debe **recorrer la misma cuadra** (arista) dos veces en un mismo trayecto. Eso es una cadena.
+
+---
+
+#### 7.4.4 Ciclo (cycle)
+
+Un **ciclo** es un camino **cerrado**: empieza y termina en el mismo vértice, sin repetir otros vértices. En un grafo simple, un ciclo tiene longitud **al menos 3**.
+
+| Propiedad | Valor |
+|-----------|-------|
+| Inicio = final | ✅ Sí |
+| ¿Repite vértices? | Solo el primero/último |
+| Longitud mínima | 3 (grafo simple) |
+
+```mermaid
+flowchart LR
+    A --- B
+    B --- C
+    C --- D
+    D --- A
+```
+
+> El ciclo $A \to B \to C \to D \to A$ tiene longitud 4: cada vértice se visita **una sola vez** y se regresa al punto de partida.
+
+**Ciclo simple vs circuito:**
+
+| Concepto | Definición |
+|----------|------------|
+| **Ciclo** | Camino cerrado que **no repite vértices** (salvo el inicial = final) |
+| **Circuito** | Cadena cerrada que puede repetir vértices pero **no aristas** (recorrido euleriano cerrado) |
+
+```mermaid
+flowchart LR
+    A --- B
+    B --- C
+    C --- A
+    A --- D
+    D --- E
+    E --- B
+```
+
+> Recorrido $A \to B \to C \to A \to D \to E \to B \to A$: es un **circuito** (repasa A y B, pero ninguna arista se usa dos veces). No es un ciclo porque repite A y B.
+
+> [!warning] Error común
+> Un **ciclo no es "cerrar un camino cualquiera"**: debe empezar y terminar en el mismo vértice **sin repetir otros en el medio**. $A \to B \to C \to A$ es ciclo; $A \to B \to C \to B \to A$ no lo es (B se repite).
+
+---
+
+#### 7.4.5 Resumen de recorridos
+
+| Recorrido | ¿Repite vértices? | ¿Repite aristas? | ¿Cerrado? |
+|-----------|:-----------------:|:----------------:|:---------:|
+| **Paseo** (walk) | ✅ | ✅ | Opcional |
+| **Cadena** (trail) | ✅ | ❌ | Opcional |
+| **Camino** (path) | ❌ | ❌ | Opcional |
+| **Circuito** | ✅ | ❌ | ✅ |
+| **Ciclo** (cycle) | ❌ (salvo inicio=final) | ❌ | ✅ |
+
+> [!tip] Cadena de memoria
+> **Camino** = no repito vértices → es el más "limpio". **Cadena** = no repito aristas → puedo volver a un vértice. **Ciclo** = camino cerrado → regreso al inicio.
+
+---
+
+### 7.4.6 Conectividad y problemas clásicos
 
 **Conectividad:** dos vértices están conectados si hay un camino entre ellos. El problema clásico de los **puentes de Königsberg** (¿se puede cruzar cada puente exactamente una vez?) dio origen a la teoría de grafos.
 
@@ -1104,6 +1234,11 @@ flowchart LR
 ```
 
 > Puente de Königsberg: 4 vértices (orillas/islas) con grados 3, 3, 3, 5 — todos impares, por eso **no hay** recorrido euleriano (se necesitan 0 o 2 impares).
+
+> [!info] Euleriano vs Hamiltoniano
+> - **Euleriano:** recorre cada **arista** una vez (pintar todas las líneas sin levantar el lápiz).
+> - **Hamiltoniano:** visita cada **vértice** una vez (recorrer todas las ciudades sin repetir).
+> El primero tiene criterio fácil (contar grados impares); el segundo es un problema **NP-completo** (no hay algoritmo rápido conocido).
 
 ---
 
