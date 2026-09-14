@@ -150,6 +150,7 @@
     if (tipo === "prim") { crearEjercicioPrim(contenedor); return; }
     if (tipo === "dijkstra") { crearEjercicioDijkstra(contenedor); return; }
     if (tipo === "kruskal") { crearEjercicioKruskal(contenedor); return; }
+    if (tipo === "floyd") { crearEjercicioFloyd(contenedor); return; }
     var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
     var matriz = parseMatriz(contenedor.getAttribute("data-matriz"));
     if (!nodos.length || !matriz.length) return;
@@ -1160,6 +1161,267 @@
     btnAyuda.addEventListener("click", ayuda);
 
     dsuInit();
+    repintar();
+  }
+
+
+
+  /* ---------- ejercicio interactivo: Floyd-Warshall ----------
+   * El usuario construye la ruta más corta entre pares de ciudades
+   * (aristas dirigidas). Se precomputa Floyd con matriz "siguiente"
+   * para conocer distancias óptimas y reconstruir la ruta en la ayuda.
+   */
+  function crearEjercicioFloyd(contenedor) {
+    var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
+    var aristas = (contenedor.getAttribute("data-aristas") || "").split(",")
+      .map(function (s) {
+        var m = s.trim().match(/^([A-Za-z0-9]+)-([A-Za-z0-9]+):(\d+(?:\.\d+)?)$/);
+        if (!m) return null;
+        return { u: m[1], v: m[2], w: Number(m[3]) };
+      })
+      .filter(Boolean);
+    var pares = (contenedor.getAttribute("data-pares") || "")
+      .split(",").map(function (s) { return s.trim(); })
+      .map(function (s) { var p = s.split("-"); return { o: p[0], d: p[1] }; })
+      .filter(function (p) { return p.o && p.d; });
+    if (!nodos.length || !aristas.length || !pares.length) return;
+
+    function idxDe(nn, x) { return nn.indexOf(x); }
+    // Floyd con matriz next para reconstruir rutas
+    var n = nodos.length, INF = Infinity;
+    var D = [], next = [];
+    for (var i = 0; i < n; i++) {
+      D.push(new Array(n).fill(INF));
+      next.push(new Array(n).fill(null));
+      D[i][i] = 0;
+    }
+    aristas.forEach(function (a) {
+      var i = idxDe(nodos, a.u), j = idxDe(nodos, a.v);
+      if (a.w < D[i][j]) { D[i][j] = a.w; next[i][j] = j; }
+    });
+    for (var k = 0; k < n; k++)
+      for (var i = 0; i < n; i++)
+        for (var j = 0; j < n; j++)
+          if (D[i][k] + D[k][j] < D[i][j]) {
+            D[i][j] = D[i][k] + D[k][j];
+            next[i][j] = next[i][k];
+          }
+    function rutaOptima(o, d) {
+      var i = idxDe(nodos, o), j = idxDe(nodos, d);
+      if (next[i][j] === null) return null;
+      var r = [o];
+      while (i !== j) { i = next[i][j]; r.push(nodos[i]); }
+      return r;
+    }
+
+    var indicePar = 0;
+    var camino = [];      // aristas del camino actual
+    var costo = 0;
+    var actual;           // ciudad donde estás parado
+
+    // --- UI ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    contenedor.appendChild(titulo);
+
+    var lienzo = document.createElement("div");
+    lienzo.className = "ge-lienzo";
+    lienzo.id = "ge-floyd-" + (++marcados) + "-lienzo";
+    contenedor.appendChild(lienzo);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    var btnDeshacer = document.createElement("button");
+    btnDeshacer.type = "button";
+    btnDeshacer.className = "ge-boton ge-boton-reiniciar";
+    btnDeshacer.textContent = "↩️ Quitar última";
+    var btnAyuda = document.createElement("button");
+    btnAyuda.type = "button";
+    btnAyuda.className = "ge-boton ge-boton-ayuda";
+    btnAyuda.textContent = "💡 Ayuda";
+    cajaBotones.appendChild(btnReiniciar);
+    cajaBotones.appendChild(btnDeshacer);
+    cajaBotones.appendChild(btnAyuda);
+    contenedor.appendChild(cajaBotones);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    if (typeof cytoscape === "undefined") {
+      resultado.textContent = "⚠️ Cytoscape.js no cargó.";
+      resultado.className = "ge-resultado ge-error";
+      return;
+    }
+
+    var edgeId = 0;
+    var cy = cytoscape({
+      container: lienzo,
+      elements: {
+        nodes: nodos.map(function (nn) {
+          return { data: { id: nn, label: nn } };
+        }),
+        edges: aristas.map(function (a) {
+          return { data: { id: "e" + (edgeId++), source: a.u, target: a.v, peso: a.w, label: String(a.w) } };
+        })
+      },
+      style: [
+        { selector: "node", style: {
+            "background-color": "#3f51b5", "border-color": "#283593", "border-width": 2,
+            label: "data(label)", color: "#283593", "font-size": 16,
+            "text-valign": "bottom", "text-margin-y": 8, width: 30, height: 30
+        }},
+        { selector: "node.ge-inicio", style: {
+            "background-color": "#ff9800", "border-color": "#e65100", "border-width": 4
+        }},
+        { selector: "node.ge-destino", style: {
+            "background-color": "#c62828", "border-color": "#8e0000", "border-width": 4
+        }},
+        { selector: "node.ge-actual", style: {
+            "border-color": "#ff9800", "border-width": 5
+        }},
+        { selector: "edge", style: {
+            width: 2.5, "line-color": "#9e9e9e", "curve-style": "bezier",
+            "target-arrow-shape": "triangle", "target-arrow-color": "#9e9e9e",
+            label: "data(label)", color: "#424242", "font-size": 13,
+            "text-rotation": "autorotate", "text-background-color": "#fff",
+            "text-background-opacity": 1, "text-background-padding": 2
+        }},
+        { selector: "edge.ge-mst", style: { "line-color": "#2e7d32", "target-arrow-color": "#2e7d32", width: 5 }},
+        { selector: "edge.ge-error", style: { "line-color": "#c62828", "target-arrow-color": "#c62828", width: 4 }}
+      ],
+      layout: { name: "circle", padding: 50 },
+      wheelSensitivity: 0.2,
+      boxSelectionEnabled: false
+    });
+    contenedor._cy = cy;
+
+    function parActual() { return pares[indicePar]; }
+    function costoOptimo() {
+      var p = parActual();
+      return D[idxDe(nodos, p.o)][idxDe(nodos, p.d)];
+    }
+    function repintar() {
+      var p = parActual();
+      cy.nodes().removeClass("ge-inicio ge-destino ge-actual");
+      cy.nodes("#" + p.o).addClass("ge-inicio");
+      cy.nodes("#" + p.d).addClass("ge-destino");
+      if (actual) cy.nodes("#" + actual).addClass("ge-actual");
+      cy.edges().removeClass("ge-mst ge-error");
+      camino.forEach(function (e) {
+        cy.$("#" + e.id).addClass("ge-mst");
+      });
+      titulo.innerHTML =
+        "<strong>Par " + (indicePar + 1) + "/" + pares.length + ":</strong> " + p.o + " → " + p.d +
+        " · <strong>Óptimo:</strong> " + costoOptimo() +
+        " · <strong>Vas:</strong> " + (camino.length ? costo + "" : "sin empezar") +
+        (actual ? " (estás en " + actual + ")" : "");
+    }
+
+    function ayuda() {
+      var p = parActual();
+      var r = rutaOptima(p.o, p.d);
+      resultado.innerHTML =
+        "💡 La ruta más corta de " + p.o + " a " + p.d + " es <strong>" +
+        (r ? r.join(" → ") : "—") + " = " + costoOptimo() + "</strong>. " +
+        "Haz clic en la primera arista de ese camino (" + r[0] + " → " + r[1] + ").";
+      resultado.className = "ge-resultado ge-error";
+    }
+
+    cy.on("tap", "edge", function (ev) {
+      var e = ev.target;
+      // encontrar la arista por sus datos (source/target/peso)
+      var ar = aristas.filter(function (x) {
+        return x.u === e.data("source") && x.v === e.data("target") && x.w === Number(e.data("peso"));
+      })[0];
+      if (!ar) return;
+      var p = parActual();
+      // ¿ya en el camino?
+      if (camino.some(function (x) { return x.u === ar.u && x.v === ar.v; })) {
+        resultado.textContent = "⚠️ Esa arista ya la usaste en esta ruta.";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      if (!actual) {
+        if (ar.u !== p.o) {
+          resultado.textContent = "❌ Debes empezar en " + p.o + ". Elige una arista que salga de " + p.o + ".";
+          resultado.className = "ge-resultado ge-error";
+          return;
+        }
+      } else {
+        if (ar.u !== actual) {
+          resultado.textContent = "❌ Estás en " + actual + ". Elige una arista que salga de " + actual + " (empezó en " + ar.u + ").";
+          resultado.className = "ge-resultado ge-error";
+          return;
+        }
+      }
+      // ciclo local: ¿volver a un nodo ya visitado?
+      var visitados = {};
+      visitados[p.o] = true;
+      camino.forEach(function (x) { visitados[x.v] = true; });
+      if (visitados[ar.v]) {
+        resultado.textContent = "❌ Esa arista te devuelve a una ciudad ya visitada (formarías un ciclo).";
+        resultado.className = "ge-resultado ge-error";
+        return;
+      }
+      camino.push({ u: ar.u, v: ar.v, w: ar.w, id: e.id() });
+      costo += ar.w;
+      actual = ar.v;
+      repintar();
+      if (ar.v === p.d) {
+        var opt = costoOptimo();
+        if (costo === opt) {
+          resultado.textContent = "✅ ¡Correcto! " + p.o + " → " + p.d + " = " + costo + " (óptimo).";
+          resultado.className = "ge-resultado ge-ok";
+          indicePar++;
+          camino = []; costo = 0; actual = null;
+          if (indicePar >= pares.length) {
+            resultado.innerHTML =
+              "🎉 <strong>¡Completaste Floyd-Warshall para todos los pares!</strong> " +
+              "Distancias: A→C=7, A→D=9, B→D=5. " +
+              "Nota cómo el atajo A→B→C→D (9) es mucho mejor que el vuelo directo (20).";
+            resultado.className = "ge-resultado ge-ok";
+            return;
+          }
+          repintar();
+          var sig = parActual();
+          resultado.textContent += " Siguiente par: " + sig.o + " → " + sig.d + ".";
+        } else {
+          var r = rutaOptima(p.o, p.d);
+          resultado.innerHTML =
+            "❌ Llegaste con costo <strong>" + costo + "</strong>, pero Floyd encuentra <strong>" + opt + "</strong> via " +
+            (r ? r.join(" → ") : "—") + ". Reinicia el par o revisa la ayuda.";
+          resultado.className = "ge-resultado ge-error";
+          camino = []; costo = 0; actual = null;
+          repintar();
+        }
+      } else if (costo > costoOptimo()) {
+        resultado.textContent = "⚠️ Ojo: tu recorrido ya acumula " + costo + ", más que el óptimo (" + costoOptimo() + "). Quizá te convenga deshacer.";
+        resultado.className = "ge-resultado ge-error";
+      } else {
+        resultado.textContent = "➡️ Vas bien: " + costo + " acumulados. Sigue hacia " + p.d + ".";
+        resultado.className = "ge-resultado ge-ok";
+      }
+    });
+
+    btnReiniciar.addEventListener("click", function () {
+      indicePar = 0; camino = []; costo = 0; actual = null;
+      resultado.className = "ge-resultado";
+      resultado.textContent = "";
+      repintar();
+    });
+    btnDeshacer.addEventListener("click", function () {
+      var ult = camino.pop();
+      if (ult) { costo -= ult.w; actual = camino.length ? camino[camino.length - 1].v : null; }
+      repintar();
+      resultado.textContent = "↩️ Quité la última arista. Sigue tú.";
+      resultado.className = "ge-resultado";
+    });
+    btnAyuda.addEventListener("click", ayuda);
     repintar();
   }
 

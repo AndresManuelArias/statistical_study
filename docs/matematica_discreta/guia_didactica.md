@@ -2054,6 +2054,130 @@ Un segundo ejemplo, esta vez con 4 vértices. Interpreta la matriz y conecta las
 <div class="grafo-ejercicio" data-tipo="adyacencia" data-nodos="A,B,C,D" data-matriz="0,1,0,1|1,0,1,1|0,1,0,1|1,1,1,0"></div>
 
 
+### 7.8 El algoritmo de Floyd-Warshall: todas las rutas de una vez 🔄
+
+**(Estructura de datos: grafo ponderado dirigido; admite pesos negativos si no hay ciclos negativos)**
+
+Dijkstra da la ruta más corta **desde un solo origen**. Floyd-Warshall (1962) responde la pregunta completa:
+
+> *"Dame la distancia más corta entre **cualquier** par de vértices, de una sola vez."*
+
+**Analogía:** tienes el catálogo de vuelos entre todas las ciudades. Descubres que, en vez de volar directo (caro o inexistente), a veces conviene **hacer escala**: A → B → C sale más barato que A → C. Floyd prueba **todas las posibles escalas** y anota el mejor precio de cada par en una tabla.
+
+**La idea (programación dinámica):**
+Sea `D[i][j]` la distancia mínima de `i` a `j` usando **solo los primeros k vértices como posibles escalas**. Para pasar de k−1 a k:
+
+```
+D[i][j] = min( D[i][j] ,  D[i][k] + D[k][j] )
+            (sin usar k)   (usando k como escala)
+```
+
+**Ejemplo:** 4 ciudades con vuelos:
+
+```mermaid
+flowchart LR
+    A["A"] -->|"4"| B["B"]
+    B -->|"3"| C["C"]
+    C -->|"2"| D["D"]
+    A -.->|"11 ✗"| C
+    B -.->|"9 ✗"| D
+    A -.->|"20 ✗"| D
+```
+
+| Distancia | Directo | Mejor con escala |
+|-----------|---------|------------------|
+| A → C | 11 | **7** = A→B→C |
+| A → D | 20 | **9** = A→B→C→D |
+| B → D | 9 | **5** = B→C→D |
+
+**Matriz paso a paso** (∞ = no hay vuelo directo):
+
+`D₀` (solo aristas directas):
+
+| D₀ | A | B | C | D |
+|----|---|---|---|---|
+| A | 0 | 4 | 11 | 20 |
+| B | ∞ | 0 | 3 | 9 |
+| C | ∞ | ∞ | 0 | 2 |
+| D | ∞ | ∞ | ∞ | 0 |
+
+`D_B` (B como escala): A→C mejora a 4+3=**7**; A→D mejora a 4+9=**13**.
+
+| D_B | A | B | C | D |
+|-----|---|---|---|---|
+| A | 0 | 4 | **7** | **13** |
+| B | ∞ | 0 | 3 | 9 |
+| C | ∞ | ∞ | 0 | 2 |
+| D | ∞ | ∞ | ∞ | 0 |
+
+`D_C` (C como escala): A→D mejora a 7+2=**9**; B→D mejora a 3+2=**5**.
+
+| D_C | A | B | C | D |
+|-----|---|---|---|---|
+| A | 0 | 4 | 7 | **9** |
+| B | ∞ | 0 | 3 | **5** |
+| C | ∞ | ∞ | 0 | 2 |
+| D | ∞ | ∞ | ∞ | 0 |
+
+`D_D` (D como escala): no mejora nada (D no sale a ningún lado). **Este es el resultado final.**
+
+> [!tip] El atajo mágico 🏆
+> A → D **directo cuesta 20**, pero pasando por B y C cuesta 9. Floyd encuentra ese atajo aunque nadie le diga qué escalas usar: prueba todas en orden y conserva el mínimo.
+
+**Pseudo-código:**
+
+```text
+función floyd_warshall(nodos, aristas):
+    n = tamaño de nodos
+    D = matriz n×n llena de ∞
+    D[i][i] = 0 para todo i
+    para cada (u, v, peso) en aristas:
+        D[u][v] = min(D[u][v], peso)
+    para k en 1..n:                    # vértice escala
+        para i en 1..n:
+            para j en 1..n:
+                D[i][j] = min(D[i][j], D[i][k] + D[k][j])
+    devolver D
+```
+
+**Implementación en Python:**
+
+```python
+def floyd_warshall(nodos, aristas):
+    n = len(nodos)
+    idx = {v: i for i, v in enumerate(nodos)}
+    INF = float("inf")
+    D = [[INF] * n for _ in range(n)]
+    for i in range(n):
+        D[i][i] = 0
+    for u, v, w in aristas:
+        D[idx[u]][idx[v]] = min(D[idx[u]][idx[v]], w)
+    for k in range(n):                 # vértice escala
+        for i in range(n):
+            for j in range(n):
+                D[i][j] = min(D[i][j], D[i][k] + D[k][j])
+    return D
+
+v = ["A", "B", "C", "D"]
+e = [("A","B",4), ("A","C",11), ("A","D",20), ("B","C",3), ("B","D",9), ("C","D",2)]
+D = floyd_warshall(v, e)
+print(D)          # D[A][D] = 9, D[A][C] = 7, D[B][D] = 5, ...
+```
+
+**Complejidad:** tres bucles anidados → **O(n³)** en tiempo y **O(n²)** en memoria. Es simple de programar y brutalmente efectivo para grafos con pocos cientos de nodos (todas las distancias de un mapa de carreteras regional caben sin problema).
+
+> 🎮 **Ahora practica tú:** construye la ruta más corta entre cada par de ciudades haciendo clic en las **aristas** (dirigidas). El grafo es el mismo del ejemplo: A→B→C→D = 9, A→B→C = 7, B→C→D = 5.
+
+<div class="grafo-ejercicio" data-tipo="floyd" data-nodos="A,B,C,D" data-aristas="A-B:4,A-C:11,A-D:20,B-C:3,B-D:9,C-D:2" data-pares="A-D,A-C,B-D">
+
+#### Precisa los clics: la ruta de Floyd
+
+Haz **clic sobre una arista** para avanzar de ciudad en ciudad desde el origen hasta el destino (la arista debe salir de la ciudad donde estás). Si llegas con el costo mínimo, Floyd dirá que es óptima y pasamos al siguiente par. ¡Cuidado con A→D: directo cuesta 20, pero hay un atajo por B y C!
+
+</div>
+
+---
+
 ## 🧬 10. Unidad 8 — Estructuras algebraicas *(avanzado)*
 
 Una **estructura algebraica** es un conjunto con una o más operaciones y reglas. Es el lenguaje con el que las matemáticas describen **patrones y simetrías**: desde los movimientos de un cubo de Rubik hasta los códigos que protegen tus datos.
