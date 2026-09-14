@@ -880,35 +880,163 @@ $$P(\text{ganar}) = \frac{1}{\binom{n}{k}}$$
 
 ## 🔢 8. Unidad 6 — Teoría de números
 
-### Divisibilidad y primos
+La teoría de números estudia los **enteros**: divisores, primos y restos. Es la rama más antigua de las matemáticas y, hoy, la base de la **criptografía moderna** (tu conexión HTTPS, tu tarjeta, tu WhatsApp).
 
-- $a$ divide a $b$ ($a \mid b$) si $b = a \cdot k$ para algún entero $k$: "4 divide a 12" porque $12 = 4 \cdot 3$.
-- **Primo:** divisible solo por 1 y por sí mismo (2, 3, 5, 7, 11…). Los primos son los **"átomos"** de los números: todo número se factoriza en primos de forma única (Teorema Fundamental de la Aritmética).
+> [!tip] ¿Para qué sirve esta unidad?
+> - Cifrar mensajes (RSA, Diffie-Hellman) — sin esto no habría comercio electrónico.
+> - Validar identificadores: ISBN de libros, tarjetas de crédito, cédulas (dígito verificador).
+> - Relojes, calendarios y cualquier cosa cíclica (aritmética modular).
 
-### MCD y algoritmo de Euclides
+---
 
-El **máximo común divisor (MCD)** de $a$ y $b$ es el divisor más grande que comparten.
-- Ejemplo: $\text{MCD}(48, 18) = 6$ porque $48 = 2^4 \cdot 3$ y $18 = 2 \cdot 3^2$; lo común es $2 \cdot 3 = 6$.
+### 8.1 Divisibilidad
 
-**Algoritmo de Euclides** (el más antiguo que se conserva): divide y usa el residuo:
+$a$ **divide** a $b$ (escribimos $a \mid b$) si existe un entero $k$ tal que $b = a \cdot k$.
+
+- $4 \mid 12$ porque $12 = 4 \cdot 3$. ✔
+- $5 \nmid 12$ porque $12 = 5 \cdot k$ **no** tiene solución entera. ✘
+- **Propiedades útiles:**
+  - Si $a \mid b$ y $b \mid c$, entonces $a \mid c$ (transitiva).
+  - Si $a \mid b$ y $a \mid c$, entonces $a \mid (b+c)$ y $a \mid (b-c)$.
+  - Todo entero divide a $0$ ($a \mid 0$ para todo $a \neq 0$), y $1$ y $-1$ dividen a todo entero.
+
+> [!example] Divisible por 9
+> Un número es divisible por 9 si la suma de sus dígitos es divisible por 9: $123456 \to 1+2+3+4+5+6 = 21 \to 2+1=3$, no divisible.
+
+---
+
+### 8.2 Números primos y el Teorema Fundamental de la Aritmética
+
+Un **primo** es un entero $> 1$ divisible solo por 1 y por sí mismo. Los primeros: $2, 3, 5, 7, 11, 13, 17, 19, \dots$
+
+> [!abstract] Teorema Fundamental de la Aritmética
+> Todo entero $n > 1$ se factoriza en primos de **forma única** (salvo el orden):
+> $$n = p_1^{e_1} \cdot p_2^{e_2} \cdots p_k^{e_k}$$
+>
+> Ejemplo: $360 = 2^3 \cdot 3^2 \cdot 5$. No hay otra forma de escribirlo.
+
+**Criba de Eratóstenes** (para hallar primos hasta $n$): tacha los múltiplos de cada primo, lo que queda son primos. Así se encontraron los primos a mano durante siglos.
+
+```mermaid
+flowchart LR
+    subgraph Criba["Criba de Eratóstenes hasta 30"]
+        A["2 ✅ primo"] --> B["tachar 4, 6, 8, ..."]
+        B --> C["3 ✅ primo"]
+        C --> D["tachar 6, 9, 12, ..."]
+        D --> E["5 ✅ primo"]
+        E --> F["tachar 10, 15, ..."]
+        F --> G["7 ✅ primo"]
+        G --> H["..."]
+    end
+```
+
+> [!info] ¿Cuántos primos hay?
+> **Infinitos** (Euclides lo demostró hace 2300 años: si fueran finitos, el producto de todos más 1 sería un número nuevo sin divisor primo conocido). Todo algoritmo de cifrado serio depende de que **encontrar primos grandes es fácil pero factorizar su producto es difícil**.
+
+---
+
+### 8.3 Máximo común divisor (MCD) y algoritmo de Euclides
+
+El **MCD** de $a$ y $b$ es el divisor más grande que comparten. Ejemplo: $\text{MCD}(48, 18) = 6$.
+
+El **algoritmo de Euclides** (el más antiguo que se conserva) divide y usa el residuo:
 
 $$
 48 = 18 \cdot 2 + 12 \qquad 18 = 12 \cdot 1 + 6 \qquad 12 = 6 \cdot 2 + 0
 $$
 
-El último residuo no nulo es el MCD: **6**. Rápido y eficiente, ideal para computadoras.
+El último residuo no nulo es el MCD: **6**. Es rapidísimo, incluso con números de cientos de dígitos.
 
-### Aritmética modular
+```mermaid
+flowchart TD
+    Inicio["MCD(a, b)"] --> Pregunta{"¿b = 0?"}
+    Pregunta -- "sí" --> Fin["MCD = a"]
+    Pregunta -- "no" --> Paso["r = a mod b<br/>a = b, b = r"]
+    Paso --> Pregunta
+    Fin --> Resultado["Ej: MCD(48,18)=6"]
+```
 
-Trabajar con **residuos**: "el reloj da vueltas". Las 25:00 horas son las 1:00 (módulo 24). Escribimos $25 \equiv 1 \ (\text{mod } 24)$.
+> [!tip] MCD por factorización
+> Alternativa: factorizar y tomar los **factores comunes con menor exponente**.
+> $48 = 2^4 \cdot 3$, $18 = 2 \cdot 3^2$ → común $2^1 \cdot 3^1 = 6$. Igual resultado, pero factorizar es lento y Euclides no.
 
-- Sirve para: calendarios, códigos de barras, validación de tarjetas, y **cierta criptografía**.
-- RSA (lo que cifra tu conexión) usa números muy grandes y sus restos módulo otro número. La seguridad está en que **factorizar primos grandes es difícil**.
-
-> [!example] Módulo divertido
-> ¿Qué día de la semana será en 10 días si hoy es lunes? $10 \equiv 3 \ (\text{mod } 7)$ → jueves.
+**Mínimo común múltiplo (mcm):** el múltiplo más pequeño que comparten. Relación clave: $\text{MCD}(a,b) \cdot \text{mcm}(a,b) = a \cdot b$.
+Ejemplo: $\text{mcm}(48,18) = \frac{48 \cdot 18}{6} = 144$.
 
 ---
+
+### 8.4 Aritmética modular (los "restos")
+
+Trabajar con **residuos**: "el reloj da vueltas". Las 25:00 son las 1:00 (módulo 24). Escribimos $25 \equiv 1 \ (\text{mod } 24)$.
+
+**Definición formal:** $a \equiv b \ (\text{mod } m)$ si $m \mid (a - b)$, es decir, $a$ y $b$ dejan el mismo resto al dividir por $m$.
+
+```mermaid
+flowchart LR
+    subgraph Reloj["Reloj módulo 12"]
+        R12["0 (12)"] --- R1["1"] --- R2["2"] --- R3["3"] --- R4["4"]
+        R4 --- R5["5"] --- R6["6"] --- R7["7"] --- R8["8"]
+        R8 --- R9["9"] --- R10["10"] --- R11["11"] --- R12
+    end
+```
+
+**Reglas de cálculo** (igual que las ecuaciones normales):
+
+- Suma: $a \bmod m + b \bmod m = (a+b) \bmod m$
+- Multiplicación: $a \bmod m \cdot b \bmod m = (a \cdot b) \bmod m$
+- Potencia: se puede reducir la base antes de elevar.
+
+> [!example] Último dígito de $7^{2026}$
+> Como $7^2 = 49 \equiv 9$, $7^4 \equiv 9^2 = 81 \equiv 1 \pmod{10}$, y $2026 = 4 \cdot 506 + 2$: $7^{2026} \equiv 7^2 \equiv 9$. **El último dígito es 9.**
+
+---
+
+### 8.5 Inversos modulares y congruencias lineales
+
+El **inverso de $a$ módulo $m$** es el número $a^{-1}$ tal que $a \cdot a^{-1} \equiv 1 \ (\text{mod } m)$. **Existe si y solo si $\text{MCD}(a,m)=1$.**
+
+Ejemplo: inverso de 3 módulo 7. Probamos $3 \cdot x \equiv 1$:
+- $3 \cdot 5 = 15 \equiv 1 \pmod{7}$ → $3^{-1} \equiv 5$.
+
+**Ecuación $a x \equiv b \ (\text{mod } m)$:**
+- Si $\text{MCD}(a,m)=1$: multiplica por el inverso: $x \equiv a^{-1} \cdot b$.
+- Si no: puede no tener solución o tener varias.
+
+> [!warning] Cuidado
+> $2x \equiv 4 \ (\text{mod } 6)$ no se resuelve dividiendo: $x=2$ y $x=5$ son soluciones (dos, porque hay 2 raíces por cada divisor común). La división normal **no es válida** en módulos.
+
+---
+
+### 8.6 Criptografía RSA (aplicación estrella)
+
+RSA cifra mensajes con dos claves (pública y privada). Pasos con números pequeños:
+
+1. **Elige dos primos** $p=17$, $q=11$ → $n = p \cdot q = 187$.
+2. Calcula $\varphi(n) = (p-1)(q-1) = 16 \cdot 10 = 160$ (función de Euler).
+3. **Clave pública** $e$: primo relativo con $\varphi(n)$, p. ej. $e=7$.
+4. **Clave privada** $d$: el inverso de $e$ módulo $\varphi(n)$: $7 \cdot d \equiv 1 \pmod{160}$ → $d=23$ (porque $7 \cdot 23 = 161 = 160+1$).
+
+**Cifrar** un mensaje numérico $M$: $C = M^e \bmod n$. **Descifrar**: $M = C^d \bmod n$.
+
+> [!abstract] ¿Por qué es seguro?
+> Conocer $n$ y $e$ (públicos) no basta: para hallar $d$ hay que factorizar $n$. Con primos de 300 dígitos, factorizar toma **miles de años** con computadoras actuales. La seguridad está en la **dificultad de factorizar**.
+
+---
+
+### 8.7 Aplicaciones del mundo real
+
+| Aplicación | Idea matemática |
+|------------|-----------------|
+| **ISBN-13 / tarjetas de crédito** | Dígito verificador con aritmética módulo 10 (algoritmo de Luhn) |
+| **Cédula / DNI** | Un dígito extra calculado con módulo 11 detecta errores de escritura |
+| **Criptografía (RSA, ElGamal)** | Primos enormes, inversos modulares, exponenciación módulo $n$ |
+| **Calendarios** | El año bisiesto: divisible por 4, no por 100, salvo por 400 (¡módulo 400!) |
+| **Hashing / checksums** | Reducir datos enormes a un resto módulo un número (como `crc32`) |
+
+> [!tip] Para practicar
+> - Calcula $\text{MCD}(252, 105)$ con Euclides en 3 divisiones.
+> - Halla el inverso de 5 módulo 12 (pista: $\text{MCD}(5,12)=1$).
+> - Cifra el mensaje $M=5$ con RSA usando $p=3, q=11, e=3$ (hazlo a mano, ¡funciona!).
 
 ## 🕸️ 9. Unidad 7 — Grafos y árboles
 
@@ -1361,33 +1489,300 @@ flowchart TB
 
 ## 🧬 10. Unidad 8 — Estructuras algebraicas *(avanzado)*
 
-Una **estructura algebraica** es un conjunto con una o más operaciones y reglas. La más importante: el **grupo**.
+Una **estructura algebraica** es un conjunto con una o más operaciones y reglas. Es el lenguaje con el que las matemáticas describen **patrones y simetrías**: desde los movimientos de un cubo de Rubik hasta los códigos que protegen tus datos.
 
-**Grupo** $(G, *)$: un conjunto con una operación que cumple:
-1. **Clausura:** operar dos elementos da otro del conjunto.
-2. **Asociatividad:** $(a * b) * c = a * (b * c)$.
-3. **Identidad:** existe un elemento neutro (el 0 en la suma, el 1 en la multiplicación).
-4. **Inversos:** cada elemento tiene su "opuesto" (suma: $-a$; mult: $1/a$).
-
-Ejemplo: los enteros con la suma forman un grupo. Los enteros con la multiplicación **no** (el 2 no tiene inverso entero).
-
-> [!info] ¿Para qué?
-> Los grupos estudian **simetrías** (movimientos de un cubo, patrones), y son la base matemática de criptografía y códigos. Si te apasionan, este es el puente entre lo discreto y el álgebra moderna.
+> [!tip] ¿Para qué sirve esta unidad?
+> - Criptografía moderna (curvas elípticas, Diffie-Hellman) vive dentro de **grupos**.
+> - Códigos detectores y correctores de errores (el ISBN, los códigos QR) usan estructuras algebraicas.
+> - Los **isomorfismos** revelan cuándo dos sistemas "son el mismo" con otro nombre.
 
 ---
+
+### 10.1 Operación binaria y sus propiedades
+
+Una **operación binaria** $\ast$ en un conjunto $S$ combina dos elementos de $S$ y produce otro de $S$ (clausura): $a \ast b \in S$ para todo $a, b \in S$.
+
+Propiedades que puede tener:
+
+| Propiedad | Definición | Ejemplo (suma en $\mathbb{Z}$) |
+|-----------|------------|-------------------------------|
+| **Clausura** | $a \ast b \in S$ siempre | $2+3 = 5 \in \mathbb{Z}$ ✔ |
+| **Asociativa** | $(a \ast b) \ast c = a \ast (b \ast c)$ | $(2+3)+4 = 2+(3+4)$ ✔ |
+| **Conmutativa** | $a \ast b = b \ast a$ | $2+3 = 3+2$ ✔ |
+| **Elemento identidad** | $\exists e: a \ast e = e \ast a = a$ | $a + 0 = a$ → $e=0$ ✔ |
+| **Inverso** | $\forall a, \exists b: a \ast b = b \ast a = e$ | $a + (-a) = 0$ ✔ |
+
+> [!warning] No todas las operaciones son conmutativas
+> La resta en $\mathbb{Z}$ es asociativa solo con cuidado: $8-(3-2) \neq (8-3)-2$ ($7 \neq 3$). La **multiplicación de matrices** no es conmutativa: $AB \neq BA$ en general.
+
+---
+
+### 10.2 Semigrupo, monoide y grupo
+
+Cada estructura añade reglas:
+
+```mermaid
+flowchart LR
+    A["Semigrupo<br/>operación + asociativa"] --> B["Monoide<br/>+ elemento identidad"]
+    B --> C["Grupo<br/>+ inversos"]
+    C --> D["Grupo abeliano<br/>+ conmutativa"]
+```
+
+- **Semigrupo:** $S$ con operación asociativa (p. ej. $\mathbb{Z}^{+}$ con la suma: sí asociativa, sin neutro ni inversos).
+- **Monoide:** semigrupo con identidad (p. ej. $\mathbb{Z}$ con la multiplicación: $e=1$, pero sin inversos).
+- **Grupo:** monoide con inversos.
+- **Grupo abeliano** (o conmutativo): grupo donde la operación conmuta.
+
+> [!example] El grupo más familiar
+> Los enteros con la suma $(\mathbb{Z}, +)$ forman un **grupo abeliano**:
+> $e=0$, inverso de $a$ es $-a$, y $a+b=b+a$.
+> Los enteros con la multiplicación $(\mathbb{Z}, \cdot)$ **no** son grupo: el 2 no tiene inverso entero (1/2 no es entero).
+
+---
+
+### 10.3 Tablas de Cayley
+
+Una **tabla de Cayley** muestra el resultado de operar cada par. La del grupo $(\mathbb{Z}_4, +)$ módulo 4:
+
+| $+$ | 0 | 1 | 2 | 3 |
+|-----|---|---|---|---|
+| **0** | 0 | 1 | 2 | 3 |
+| **1** | 1 | 2 | 3 | 0 |
+| **2** | 2 | 3 | 0 | 1 |
+| **3** | 3 | 0 | 1 | 2 |
+
+> [!tip] Cómo "leer" una tabla de Cayley
+> - La fila del **identidad** (0) y la columna del 0 repiten el otro operando: ahí se ve $e$.
+> - Si la tabla es **simétrica** por la diagonal, el grupo es abeliano (esta lo es ✔).
+> - Cada fila/columna es una **permutación** de los elementos: señal de que hay inversos.
+
+---
+
+### 10.4 Subgrupos, orden y grupos cíclicos
+
+**Subgrupo:** un subconjunto $H \subseteq G$ que es grupo con la misma operación. Ejemplo: los pares $\{0, 2, 4, \dots\}$ forman un subgrupo de $(\mathbb{Z}, +)$.
+
+**Orden de un elemento:** el menor $k > 0$ tal que $a^k = e$. En $(\mathbb{Z}_4, +)$, el elemento 2 tiene orden 2 (porque $2+2 = 0$).
+
+**Grupo cíclico:** un grupo donde existe un elemento $g$ (el **generador**) tal que sus potencias producen todo el grupo: $G = \{g^0, g^1, \dots, g^{n-1}\}$.
+
+```mermaid
+flowchart LR
+    G["g=1 genera Z4"] --> P["1 → 2 → 3 → 0 → 1 → ..."]
+    P --> Todo["{0,1,2,3} = todo el grupo"]
+```
+
+> [!info] Los grupos cíclicos son la llave de la criptografía
+> El grupo $\mathbb{Z}_p^*$ (enteros no nulos módulo un primo grande) es cíclico. El **logaritmo discreto** (dado $g$ y $g^x$, hallar $x$) es fácil de calcular pero **difícil de invertir**, y de ahí nacen Diffie-Hellman y ElGamal.
+
+---
+
+### 10.5 Anillos, cuerpos y dominios
+
+| Estructura | Dos operaciones | Ejemplo |
+|------------|-----------------|---------|
+| **Anillo** | $(R,+,\cdot)$: suma abeliana + multiplicación asociativa y distributiva | $\mathbb{Z}$ con + y · |
+| **Dominio íntegro** | Anillo conmutativo sin divisores de cero ($ab=0 \Rightarrow a=0$ o $b=0$) | $\mathbb{Z}$ no tiene divisores de cero |
+| **Cuerpo (campo)** | Anillo donde todo elemento $\neq 0$ tiene inverso multiplicativo | $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{Z}_p$ con primos |
+
+> [!abstract] Propiedad clave de los cuerpos
+> En un cuerpo se puede **dividir**. $\mathbb{Z}_p = \{0,1,\dots,p-1\}$ con la aritmética módulo $p$ es un cuerpo **si y solo si** $p$ es primo. Por eso RSA usa primos: para poder calcular inversos $e^{-1}$.
+>
+> Ejemplo: en $\mathbb{Z}_7$, el inverso de 3 es 5 porque $3 \cdot 5 = 15 \equiv 1$.
+
+---
+
+### 10.6 Homomorfismos e isomorfismos
+
+Un **homomorfismo** es una función que "respeta" la operación: $f(a \ast b) = f(a) \cdot f(b)$.
+
+Un **isomorfismo** es un homomorfismo biyectivo: los dos grupos son **estructuralmente iguales**, solo cambian los nombres.
+
+> [!example] El mismo grupo con otro nombre
+> $(\mathbb{Z}_4, +)$ y las **rotaciones de un cuadrado** (90°, 180°, 270°, 0°) son isomorfos:
+> - $-f(1) = \text{rotar } 90°$, $f(2) = 180°$, etc.
+> - Girar 90° + girar 180° = girar 270° ↔ $1 + 2 = 3 \pmod{4}$. **Las tablas de Cayley coinciden.**
+
+```mermaid
+flowchart LR
+    Z4["Z4: 0,1,2,3"] -- "f" --> R["Rotaciones: 0°,90°,180°,270°"]
+    R -- "f⁻¹" --> Z4
+```
+
+> [!tip] ¿Para qué sirven los isomorfismos?
+> Si ya entiendes una estructura, **todas sus isomorfas** se comportan igual. Los códigos de corrección de errores y la teoría de Galois (¿se puede resolver una ecuación con radicales?) viven de esta idea.
+
+---
+
+### 10.7 Aplicaciones
+
+| Aplicación | Estructura usada |
+|------------|------------------|
+| **Curvas elípticas / ECC** | Grupos de puntos sobre cuerpos finitos |
+| **Códigos QR / Reed-Solomon** | Cuerpos $GF(2^m)$ (Extensión de campos) |
+| **Verificación ISBN** | Aritmética módulo 11 |
+| **Cubo de Rubik** | Grupo de permutaciones (¡43 trillones de posiciones!) |
+| **Cristalografía** | Grupos de simetrías |
+
+> [!tip] Para practicar
+> - Construye la tabla de Cayley de $\mathbb{Z}_5$ con la suma y verifica que cada fila sea una permutación.
+> - Verifica que los pares forman un subgrupo de $(\mathbb{Z}, +)$ probando las 4 propiedades.
+> - Decide si $\{0, 2, 4\}$ es un grupo módulo 6 (pista: 2 tiene inverso? 2·? ≡ 1).
 
 ## 🤖 11. Unidad 9 — Autómatas y lenguajes *(avanzado)*
 
-Un **autómata finito** es una máquina con un número finito de **estados** que cambia según la **entrada**. El semáforo de la introducción es un autómata (rojo → amarillo → verde).
+Un **autómata finito** es una máquina abstracta con un número finito de **estados** que cambia según la **entrada**. Está en el corazón de los compiladores, la validación de formularios, los buscadores y hasta el semáforo de la calle.
 
-- **Expresiones regulares (regex):** patrones para validar textos. Ejemplo: `^\d{3}-\d{4}$` valida un teléfono tipo "555-1234".
-- **Gramáticas:** reglas para construir lenguajes (de programación o naturales). Con ellas se hacen los **compiladores**.
-- **Máquina de Turing:** el modelo de computación más general; lo que un algoritmo puede (o no puede) hacer.
-
-> [!example] Validar un correo
-> Un autómata puede decidir si "usuario@dominio.com" es válido: pasa por estados (usuario → @ → dominio → extensión) y acepta o rechaza al final. Eso haces cada vez que llenas un formulario web.
+> [!tip] ¿Para qué sirve esta unidad?
+> - Los **compiladores** de C, Python o Java usan autómatas y gramáticas para entender tu código.
+> - Cada vez que validas un email o un teléfono con `regex`, usas un autómata.
+> - La **máquina de Turing** define qué puede (y qué **no**) calcular una computadora.
 
 ---
+
+### 11.1 Autómata finito determinista (DFA)
+
+Un **DFA** (Deterministic Finite Automaton) es una quíntupla $(Q, \Sigma, \delta, q_0, F)$:
+
+- $Q$: conjunto finito de **estados**.
+- $\Sigma$: **alfabeto** (símbolos de entrada).
+- $\delta$: **función de transición** (estado + símbolo → estado).
+- $q_0$: **estado inicial**.
+- $F$: **estados de aceptación** (finales).
+
+> [!example] El semáforo
+> Estados: {🟢, 🟡, 🔴}. Alfabeto: {tick} (el tiempo avanza). Aceptación: no hay (nunca "termina").
+
+```mermaid
+flowchart LR
+    V["🟢 Verde"] --> Y["🟡 Amarillo"] --> R["🔴 Rojo"] --> V
+```
+
+---
+
+### 11.2 Reconocimiento de cadenas
+
+El autómata **lee** la cadena símbolo a símbolo. Si al terminar está en un estado de aceptación, la **acepta**; si no, la **rechaza**.
+
+> [!example] Paridad de unos (detector de número par de 1s)
+> Estados: $q_0$ (par), $q_1$ (impar). Alfabeto $\{0, 1\}$. Aceptación: $q_0$.
+
+```mermaid
+flowchart LR
+    q0[("q0 ✔ par")] -- "1" --> q1[("q1 impar")]
+    q1 -- "1" --> q0
+    q0 -- "0" --> q0
+    q1 -- "0" --> q1
+    Inicio(["inicio"]) --> q0
+```
+
+- Cadena `1101`: $q_0 \xrightarrow{1} q_1 \xrightarrow{1} q_0 \xrightarrow{0} q_0 \xrightarrow{1} q_1$ → termina en $q_1$ → **rechaza** (3 unos = impar).
+- Cadena `1010`: termina en $q_0$ → **acepta** (2 unos = par).
+
+> [!note] Lenguaje aceptado
+> El **lenguaje** $L(M)$ de un autómata es el conjunto de todas las cadenas que acepta. Los lenguajes que acepta un DFA se llaman **lenguajes regulares**.
+
+---
+
+### 11.3 NFA y equivalencia con DFA
+
+Un **NFA** (autómata finito no determinista) puede tener **varias transiciones** para el mismo símbolo (o transiciones $\varepsilon$ sin consumir símbolo). "Adivina" o explora todos los caminos a la vez.
+
+```mermaid
+flowchart LR
+    q0[("q0")] -- "0" --> q0
+    q0 -- "1" --> q1[("q1 ✔")]
+    q1 -- "0,1" --> q1
+```
+
+> [!abstract] Teorema clave
+> **Todo NFA se puede convertir a un DFA equivalente** (construcción de subconjuntos). Los NFA no añaden poder, solo **comodidad**: son más fáciles de diseñar y los DFA más fáciles de implementar. Ambos reconocen exactamente los **lenguajes regulares**.
+
+---
+
+### 11.4 Expresiones regulares (regex)
+
+Una **expresión regular** es una forma compacta de describir un lenguaje regular. Con ellas se construyen los autómatas automáticamente.
+
+| Operador | Significado | Ejemplo |
+|----------|-------------|---------|
+| $\mid$ (unión) | "o" | `ab\|cd` acepta `ab` o `cd` |
+| $\ast$ (estrella) | 0 o más veces | `ab*` acepta `a`, `ab`, `abb`, ... |
+| $+$ | 1 o más veces | `a+` acepta `a`, `aa`, ... |
+| `?` | 0 o 1 vez | `colou?r` acepta `color`, `colour` |
+
+> [!example] Teléfono
+> `^\d{3}-\d{4}$` acepta `555-1234` pero rechaza `5551234`, `555-123`, `abc-defg`. El `\d` significa "dígito" y `{3}` "exactamente 3".
+
+```mermaid
+flowchart LR
+    subgraph Regex["Patrón: \d{3}-\d{4}"]
+        D1["3 dígitos"] --> Guion["-"] --> D2["4 dígitos"] --> OK["✔ acepta"]
+    end
+```
+
+> [!warning] Regex no puede "contar"
+> No existe una regex que acepte exactamente las cadenas con el **mismo número** de `a` y `b` (`aⁿbⁿ`). Ese lenguaje no es regular: se necesitan **gramáticas** más potentes (context-free).
+
+---
+
+### 11.5 Gramáticas formales y jerarquía de Chomsky
+
+Una **gramática** $G = (V, \Sigma, P, S)$ genera cadenas aplicando **reglas de producción**. Ejemplo para un teléfono:
+
+```
+<S>  →  <d> <d> <d> "-" <d> <d> <d> <d>
+<d>  →  0 | 1 | 2 | ... | 9
+```
+
+Aplicando las reglas: `<S>` → `555-1234`. ✔
+
+**Jerarquía de Chomsky** (poder creciente):
+
+| Tipo | Nombre | Reconocido por | Ejemplo |
+|------|--------|----------------|---------|
+| 3 | **Regular** | Autómatas finitos / regex | `ab*c` |
+| 2 | **Libre de contexto** | Autómatas con pila | `aⁿbⁿ` |
+| 1 | **Sensible al contexto** | Autómatas lineales acotados | `aⁿbⁿcⁿ` |
+| 0 | **Recursivamente enumerable** | Máquina de Turing | Lenguajes de programación |
+
+> [!info] ¿Dónde entran los lenguajes de programación?
+> Python, C, Java son **libres de contexto** en su sintaxis (esto permite escribir sus **compiladores** con herramientas como Yacc/Bison). Las **reglas de tipos** (que `int + string` sea error) van más allá y necesitan análisis semántico adicional.
+
+---
+
+### 11.6 Máquina de Turing
+
+La **máquina de Turing** (1936) es el modelo más general de computación: una cinta infinita, un cabezal lector/escritor y una tabla de reglas. Es el "abuelo" de las computadoras.
+
+```mermaid
+flowchart LR
+    subgraph Cinta["Cinta infinita"]
+        C1["□"] --- C2["1"] --- C3["0"] --- C4["1"] --- C5["□"]
+    end
+    Cabezal["Cabezal lee/lee/escribe/mueve"] --> C3
+    Reglas["Tabla de reglas<br/>(estado, símbolo) → (nuevo estado, escribir, mover)"]
+```
+
+> [!abstract] Tesis de Church–Turing
+> **Toda** función computable puede calcularla una máquina de Turing. Y existen problemas **indecidibles**: el problema de la **parada** (¿termina este programa alguna vez?) no tiene algoritmo que lo resuelva para todos los programas. Es la frontera de lo que una computadora puede hacer.
+
+---
+
+### 11.7 Aplicaciones
+
+| Aplicación | Autómata / gramática |
+|------------|----------------------|
+| **Compiladores** | Analizadores léxico (DFA) + sintáctico (gramática libre de contexto) |
+| **Buscadores / regex** | Autómatas finitos (librerías `re`, `grep`, validación web) |
+| **Protocolos de red** | Autómatas de estados (TCP: SYN → SYN-ACK → ACK...) |
+| **IA conversacional** | Máquinas de estados para diálogos |
+| **Teoría de la computación** | Máquina de Turing, problemas indecidibles |
+
+> [!tip] Para practicar
+> - Diseña un DFA que acepte cadenas que **terminen en `01`** (pista: 3 estados).
+> - Escribe la regex para un correo simplificado: `usuario@dominio.ext`.
+> - Explica por qué `aⁿbⁿ` **no** se puede reconocer con un autómata finito.
 
 ## 🎯 12. Cómo estudiar matemática discreta (método)
 
