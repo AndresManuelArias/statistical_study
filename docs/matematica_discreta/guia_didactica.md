@@ -122,6 +122,84 @@ Una **proposición** es una oración que **puede ser verdadera o falsa** (aunque
 > [!warning] El clásico error
 > $p \to q$ (condicional) **no significa causa**. "Si llueve, la calle se moja" es verdadera aunque hoy no llueva (si no llueve, no prometimos nada). Solo es falsa si **llueve y NO se moja**.
 
+### Tautología, contradicción y contingencia 🧭
+
+Cada fórmula lógica, al completar su tabla de verdad, queda en **una de tres cajas**. Mirar la **columna final** (el resultado) lo dice todo:
+
+| Tipo | La columna final... | Ejemplo clásico | Apodo |
+|------|---------------------|-----------------|-------|
+| **Tautología** | es **toda V** (verdadera pase lo que pase) | $p \lor \neg p$ | "siempre gana" 🏆 |
+| **Contradicción** | es **toda F** (falsa pase lo que pase) | $p \land \neg p$ | "siempre pierde" 💀 |
+| **Contingencia** | **mezcla V y F** (depende de los valores) | $p \land q$ | "a veces gana, a veces no" 🤷 |
+
+> [!tip] La regla del pulgar (sin hacer TODA la tabla)
+> Para clasificar una fórmula, solo necesitas **dos miradas**:
+> - ¿Hay **alguna** fila con F? → *no* es tautología.
+> - ¿Hay **alguna** fila con V? → *no* es contradicción.
+> - Si tiene ambas → es contingencia. ¡No necesitas rellenar 16 filas para darte cuenta!
+
+**1) Tautología: $p \lor \neg p$ (ley del tercero excluido)**
+
+"O llueve o no llueve" — siempre es cierto, no hay tercera opción.
+
+| $p$ | $\neg p$ | $p \lor \neg p$ |
+| --- | -------- | --------------- |
+| V   | F        | **V**           |
+| F   | V        | **V**           |
+
+La última columna es **V en todas las filas** → **tautología**. Son las "leyes" de la lógica: se cumplen siempre, como plantillas que nunca fallan.
+
+**2) Contradicción: $p \land \neg p$**
+
+"Está lloviendo y NO está lloviendo" — imposible en cualquier mundo.
+
+| $p$ | $\neg p$ | $p \land \neg p$ |
+| --- | -------- | ---------------- |
+| V   | F        | **F**            |
+| F   | V        | **F**            |
+
+La última columna es **F en todas las filas** → **contradicción**. En programación, una condición contradictoria es un *dead code*: el bloque nunca se ejecuta. En demostraciones, llegar a una contradicción es la señal de que la hipótesis era falsa (demostración por reducción al absurdo).
+
+**3) Contingencia: $p \land q$**
+
+"Dos requisitos a la vez": el resultado depende de los valores de entrada.
+
+| $p$ | $q$ | $p \land q$ |
+| --- | --- | ----------- |
+| V   | V   | **V**       |
+| V   | F   | **F**       |
+| F   | V   | **F**       |
+| F   | F   | **F**       |
+
+La última columna **mezcla V y F** → **contingencia**. La mayoría de las fórmulas "normales" (condicionales, AND, OR cuando dependen de sus entradas) son contingencias.
+
+> [!success] Truco: la fórmula $p \to q$ es contingencia
+> Mira su columna final: V, F, V, V → tiene V y F → **contingencia**. Solo las fórmulas "especiales" (como $p \lor \neg p$) se escapan de la contingencia.
+
+**Ejemplos extra para practicar:**
+
+| Fórmula | Última columna | Clasificación |
+|---------|----------------|---------------|
+| $(p \to q) \lor (q \to p)$ | V, V, V, V | **Tautología** |
+| $p \leftrightarrow \neg p$ | F, F | **Contradicción** |
+| $p \land \neg q$ | F, V, F, F | **Contingencia** |
+| $(p \lor q) \leftrightarrow (q \lor p)$ | V, V, V, V | **Tautología** (la OR conmuta) |
+
+> [!example] En el mundo real
+> - **Tautología** = una cláusula de contrato que no se puede romper ("el que firma, acepta los términos").
+> - **Contradicción** = un requisito imposible ("este software es 100% seguro y acepta cualquier contraseña").
+> - **Contingencia** = la condición típica de un `if`: depende de los datos del momento.
+
+> 🎮 **Ahora practica tú:** en el ejercicio de abajo, clasifica cada fórmula mirando su última columna de la tabla de verdad. El sistema te explica cada fallo.
+
+<div class="grafo-ejercicio" data-tipo="tabla" data-formulas="p ∨ ¬p|V,V|Tautología;p ∧ ¬p|F,F|Contradicción;p ∧ q|V,F,F,F|Contingencia;p → q|V,F,V,V|Contingencia;(p → q) ∨ (q → p)|V,V,V,V|Tautología;p ∧ ¬q|F,V,F,F|Contingencia;p ↔ ¬p|F,F|Contradicción;(p ∨ q) ↔ (q ∨ p)|V,V,V,V|Tautología">
+
+#### Precisa la clasificación
+
+Se muestra una fórmula y los valores de su **última columna** (fila por fila). Haz clic en **Tautología**, **Contradicción** o **Contingencia** según corresponda. ¡Hay 3 tautologías, 2 contradicciones y 3 contingencias escondidas!
+
+</div>
+
 ### Circuitos lógicos (a partir de la tabla de verdad)
 
 Cada columna de la tabla anterior se puede **construir físicamente** con puertas lógicas: el **Y** ($\land$) es una compuerta *AND*, el **O** ($\lor$) es una *OR* y la negación ($\neg$) es una *NOT*. Este circuito genera exactamente las columnas $p \land q$ y $p \lor q$:

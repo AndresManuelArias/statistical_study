@@ -152,6 +152,8 @@
     if (tipo === "kruskal") { crearEjercicioKruskal(contenedor); return; }
     if (tipo === "floyd") { crearEjercicioFloyd(contenedor); return; }
     if (tipo === "flujo") { crearEjercicioFlujo(contenedor); return; }
+    if (tipo === "tabla") { crearEjercicioTabla(contenedor); return; }
+    if (tipo === "tablaverdad") { crearEjercicioTablaVerdad(contenedor); return; }
     var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
     var matriz = parseMatriz(contenedor.getAttribute("data-matriz"));
     if (!nodos.length || !matriz.length) return;
@@ -1679,6 +1681,334 @@
     });
     btnAyuda.addEventListener("click", ayuda);
     repintar();
+  }
+
+
+
+  /* ---------- ejercicio interactivo: Tautología / Contradicción / Contingencia ----------
+   * data-formulas="nombre|V,F,V,V|Contingencia;..."
+   * El usuario ve la fórmula + su última columna y clasifica.
+   */
+  function crearEjercicioTabla(contenedor) {
+    var formulas = (contenedor.getAttribute("data-formulas") || "").split(";")
+      .map(function (s) {
+        var partes = s.split("|");
+        return {
+          nombre: (partes[0] || "").trim(),
+          valores: (partes[1] || "").split(",").map(function (x) { return x.trim().toUpperCase(); }),
+          tipo: (partes[2] || "").trim()
+        };
+      })
+      .filter(function (f) { return f.nombre && f.tipo && f.valores.length; });
+    if (!formulas.length) return;
+
+    var indice = 0;
+    var aciertos = 0;
+    var intentos = 0;
+    var primerIntento = 0;
+
+    // --- UI ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    contenedor.appendChild(titulo);
+
+    var cajaFormula = document.createElement("div");
+    cajaFormula.className = "ge-tabla-formula";
+    contenedor.appendChild(cajaFormula);
+
+    var cajaValores = document.createElement("div");
+    cajaValores.className = "ge-tabla-valores";
+    contenedor.appendChild(cajaValores);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var tipos = ["Tautología", "Contradicción", "Contingencia"];
+    var mapTipo = { "Tautología": "Tautología", "Contradicción": "Contradicción", "Contingencia": "Contingencia" };
+    var botones = {};
+    tipos.forEach(function (t) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ge-boton ge-boton-clasif";
+      b.textContent = t;
+      botones[t] = b;
+      cajaBotones.appendChild(b);
+    });
+    contenedor.appendChild(cajaBotones);
+
+    var cajaReiniciar = document.createElement("div");
+    cajaReiniciar.className = "ge-botones";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    cajaReiniciar.appendChild(btnReiniciar);
+    contenedor.appendChild(cajaReiniciar);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    function analisis(valores) {
+      var hayV = valores.indexOf("V") !== -1;
+      var hayF = valores.indexOf("F") !== -1;
+      if (hayV && !hayF) return "Tautología";
+      if (!hayV && hayF) return "Contradicción";
+      return "Contingencia";
+    }
+
+    function pintarValores(f) {
+      cajaValores.innerHTML = "";
+      var fila = document.createElement("div");
+      fila.className = "ge-tabla-fila";
+      var lab = document.createElement("span");
+      lab.className = "ge-tabla-rotulo";
+      lab.textContent = "Última columna:";
+      fila.appendChild(lab);
+      f.valores.forEach(function (v) {
+        var chip = document.createElement("span");
+        chip.className = "ge-tabla-chip " + (v === "V" ? "ge-v" : "ge-f");
+        chip.textContent = v;
+        fila.appendChild(chip);
+      });
+      cajaValores.appendChild(fila);
+    }
+
+    function mostrar() {
+      var f = formulas[indice];
+      titulo.innerHTML = "<strong>Fórmula " + (indice + 1) + "/" + formulas.length + ":</strong> " +
+        "<code>" + f.nombre + "</code> · Aciertos al primer intento: " + primerIntento + "/" + formulas.length;
+      cajaFormula.innerHTML = "";
+      var mono = document.createElement("div");
+      mono.className = "ge-tabla-expresion";
+      mono.textContent = f.nombre;
+      cajaFormula.appendChild(mono);
+      pintarValores(f);
+      resultado.className = "ge-resultado";
+      resultado.textContent = "";
+      Object.keys(botones).forEach(function (k) { botones[k].disabled = false; });
+    }
+
+    function clasificar(tipo) {
+      var f = formulas[indice];
+      intentos++;
+      if (tipo === f.tipo) {
+        if (intentos === aciertos + 1) primerIntento++;  // acertado al primer intento de esta fórmula
+        aciertos++;
+        resultado.textContent = "✅ ¡Correcto! " + f.nombre + " es " + f.tipo + ".";
+        resultado.className = "ge-resultado ge-ok";
+        Object.keys(botones).forEach(function (k) { botones[k].disabled = true; });
+        if (indice + 1 >= formulas.length) {
+          resultado.innerHTML =
+            "🎉 <strong>¡Completaste las " + formulas.length + " fórmulas!</strong> " +
+            "Aciertos al primer intento: " + primerIntento + "/" + formulas.length + ". " +
+            "Recuerda: toda V = tautología, toda F = contradicción, mezcla = contingencia.";
+          resultado.className = "ge-resultado ge-ok";
+          return;
+        }
+        setTimeout(function () {
+          indice++;
+          mostrar();
+        }, 900);
+      } else {
+        var a = analisis(f.valores);
+        var msg = "";
+        if (tipo === "Tautología") {
+          msg = "No es tautología: la última columna tiene una F (y la tautología exige TODA V). " +
+                "En realidad es " + f.tipo + ".";
+        } else if (tipo === "Contradicción") {
+          msg = "No es contradicción: la última columna tiene una V (y la contradicción exige TODA F). " +
+                "En realidad es " + f.tipo + ".";
+        } else {
+          msg = "No es contingencia: la última columna no mezcla V y F. " +
+                (a === "Tautología" ? "Es TODA V → tautología." : "Es TODA F → contradicción.") +
+                " En realidad es " + f.tipo + ".";
+        }
+        resultado.textContent = "❌ " + msg;
+        resultado.className = "ge-resultado ge-error";
+      }
+    }
+
+    Object.keys(botones).forEach(function (t) {
+      botones[t].addEventListener("click", function () { clasificar(t); });
+    });
+    btnReiniciar.addEventListener("click", function () {
+      indice = 0; aciertos = 0; intentos = 0; primerIntento = 0;
+      mostrar();
+    });
+    mostrar();
+  }
+
+
+
+  /* ---------- ejercicio interactivo: rellenar la tabla de verdad ----------
+   * data-proposiciones="nombre|*p:VF,¬p:FV,p∨¬p:VV;..."
+   *   - ";" separa proposiciones
+   *   - "|" separa nombre y columnas
+   *   - "," separa columnas
+   *   - cada columna: "*etiqueta:vfvf" (el * marca columna DADA, no editable)
+   * El usuario rellena las columnas editables con V/F y el sistema califica.
+   */
+  function crearEjercicioTablaVerdad(contenedor) {
+    var proposiciones = (contenedor.getAttribute("data-proposiciones") || "").split(";")
+      .map(function (s) {
+        var partes = s.split("|");
+        var cols = (partes[1] || "").split(",").filter(function (c) { return c; }).map(function (c) {
+          var m = /^(\*?)([^:]+):([VF]+)$/.exec(c.trim());
+          if (!m) return null;
+          return { dada: m[1] === "*", etiqueta: m[2].trim(), sol: m[3].split("") };
+        }).filter(function (c) { return c; });
+        return { nombre: (partes[0] || "").trim(), cols: cols };
+      })
+      .filter(function (p) { return p.nombre && p.cols.length; });
+    if (!proposiciones.length) return;
+
+    var indice = 0;
+    var celdas = [];        // {boton, sol, state: "", "V", "F", ok/err}
+    var comprobado = false;
+
+    // --- UI ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    contenedor.appendChild(titulo);
+
+    var cajaExpresion = document.createElement("div");
+    cajaExpresion.className = "ge-tabla-expresion";
+    contenedor.appendChild(cajaExpresion);
+
+    var cajaTabla = document.createElement("div");
+    cajaTabla.className = "ge-tabla-wrap";
+    contenedor.appendChild(cajaTabla);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var btnComprobar = document.createElement("button");
+    btnComprobar.type = "button";
+    btnComprobar.className = "ge-boton ge-boton-comprobar";
+    btnComprobar.textContent = "✅ Comprobar";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    cajaBotones.appendChild(btnComprobar);
+    cajaBotones.appendChild(btnReiniciar);
+    contenedor.appendChild(cajaBotones);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    // --- render de la proposición actual ---
+    function mostrar() {
+      var p = proposiciones[indice];
+      comprobado = false;
+      celdas = [];
+      titulo.innerHTML = "<strong>Proposición " + (indice + 1) + "/" + proposiciones.length + ":</strong> completa la tabla de verdad y pulsa <em>Comprobar</em>.";
+      cajaExpresion.textContent = p.nombre;
+      cajaTabla.innerHTML = "";
+
+      var tabla = document.createElement("table");
+      tabla.className = "ge-tabla ge-tabla-verdad";
+
+      // cabecera
+      var thead = document.createElement("thead");
+      var filaH = document.createElement("tr");
+      p.cols.forEach(function (c) {
+        var th = document.createElement("th");
+        th.textContent = c.etiqueta;
+        filaH.appendChild(th);
+      });
+      thead.appendChild(filaH);
+      tabla.appendChild(thead);
+
+      // cuerpo
+      var tbody = document.createElement("tbody");
+      var nfilas = p.cols[0].sol.length;
+      for (var f = 0; f < nfilas; f++) {
+        var tr = document.createElement("tr");
+        p.cols.forEach(function (c, j) {
+          var td = document.createElement("td");
+          if (c.dada) {
+            td.className = "ge-tabla-dada";
+            td.textContent = c.sol[f];
+          } else {
+            var boton = document.createElement("button");
+            boton.type = "button";
+            boton.className = "ge-tv-celda";
+            boton.textContent = "·";
+            boton.setAttribute("aria-label", "Celda fila " + (f + 1) + ", columna " + c.etiqueta);
+            boton.addEventListener("click", function (ev) {
+              if (comprobado) return;
+              var estado = ev.target.getAttribute("data-estado") || "";
+              var mapa = { "": "V", "V": "F", "F": "" };
+              var next = mapa[estado] || "V";
+              ev.target.setAttribute("data-estado", next);
+              ev.target.textContent = next === "" ? "·" : next;
+              ev.target.className = "ge-tv-celda" + (next === "V" ? " ge-tv-v" : next === "F" ? " ge-tv-f" : "");
+            });
+            td.appendChild(boton);
+            celdas.push({ boton: boton, sol: c.sol[f], fila: f, col: j });
+          }
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      }
+      tabla.appendChild(tbody);
+      cajaTabla.appendChild(tabla);
+
+      var nota = document.createElement("div");
+      nota.className = "ge-tabla-nota";
+      nota.textContent = "💡 Haz clic en cada casilla para alternar V / F. Las columnas sombreadas (p, q) ya están dadas.";
+      cajaTabla.appendChild(nota);
+
+      resultado.className = "ge-resultado";
+      resultado.textContent = "";
+      btnComprobar.disabled = false;
+    }
+
+    function clasificarCelda(c) {
+      var estado = c.boton.getAttribute("data-estado") || "";
+      if (estado === c.sol) {
+        c.boton.className = "ge-tv-celda ge-tv-ok";
+        c.boton.textContent = c.sol;
+        c.boton.setAttribute("data-correcta", "1");
+        return true;
+      }
+      c.boton.className = "ge-tv-celda ge-tv-mal";
+      c.boton.setAttribute("data-correcta", "0");
+      c.boton.title = "Correcto: " + c.sol;
+      return false;
+    }
+
+    function comprobar() {
+      if (comprobado) return;
+      comprobado = true;
+      var correctas = 0;
+      celdas.forEach(function (c) {
+        if (clasificarCelda(c)) correctas++;
+      });
+      var total = celdas.length;
+      var todas = correctas === total;
+      resultado.className = "ge-resultado " + (todas ? "ge-ok" : "ge-error");
+      if (todas) {
+        if (indice + 1 >= proposiciones.length) {
+          resultado.innerHTML = "🎉 <strong>¡Tabla completada correctamente!</strong> Terminaste las " + proposiciones.length +
+            " proposiciones. Revisa el resumen: toda V = tautología, toda F = contradicción, mezcla = contingencia.";
+        } else {
+          resultado.innerHTML = "✅ <strong>¡Perfecto!</strong> " + correctas + "/" + total + " celdas correctas. Siguiente proposición…";
+        }
+        btnComprobar.disabled = true;
+        if (indice + 1 < proposiciones.length) {
+          setTimeout(function () { indice++; mostrar(); }, 1200);
+        }
+      } else {
+        resultado.textContent = "❌ Aún no: " + correctas + "/" + total + " celdas correctas. Las incorrectas muestran la solución al pasar el cursor. Corrige y vuelve a comprobar.";
+        btnComprobar.disabled = false;
+      }
+    }
+
+    btnComprobar.addEventListener("click", comprobar);
+    btnReiniciar.addEventListener("click", function () { indice = 0; mostrar(); });
+    mostrar();
   }
 
 

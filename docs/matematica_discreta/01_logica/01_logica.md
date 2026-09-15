@@ -19,13 +19,13 @@ Una **proposición** es una oración que **puede ser verdadera o falsa** (aunque
 
 ## Conectivos lógicos
 
-| Conectivo | Símbolo | Se lee | Se cumple cuando… | Analogía |
-|-----------|---------|--------|-------------------|----------|
-| Negación | $\neg p$ | "no p" | p es falsa | Interruptor apagado |
-| Conjunción | $p \land q$ | "p y q" | **ambos** verdaderos | Lista de requisitos: necesitas TODOS |
-| Disyunción | $p \lor q$ | "p o q" | **al menos uno** verdadero | Menú: puedes elegir uno u otro |
-| Condicional | $p \to q$ | "si p, entonces q" | falsa solo si p verdadera y q falsa | Promesa: "si estudias, apruebas" |
-| Bicondicional | $p \leftrightarrow q$ | "p si y solo si q" | ambos iguales | Términos de un contrato |
+| Conectivo     | Símbolo               | Se lee             | Se cumple cuando…                   | Analogía                             |
+| ------------- | --------------------- | ------------------ | ----------------------------------- | ------------------------------------ |
+| Negación      | $\neg p$              | "no p"             | p es falsa                          | Interruptor apagado                  |
+| Conjunción    | $p \land q$           | "p y q"            | **ambos** verdaderos                | Lista de requisitos: necesitas TODOS |
+| Disyunción    | $p \lor q$            | "p o q"            | **al menos uno** verdadero          | Menú: puedes elegir uno u otro       |
+| Condicional   | $p \to q$             | "si p, entonces q" | falsa solo si p verdadera y q falsa | Promesa: "si estudias, apruebas"     |
+| Bicondicional | $p \leftrightarrow q$ | "p si y solo si q" | ambos iguales                       | Términos de un contrato              |
 
 > [!tip] Truco de memoria (¡como tu Anotaciones.md!)
 > El **∧** ("y") parece una **V invertida**, y el **∨** ("o") es la V normal. **"La V invertida es el Y"** → la conjunción es el Y. Si la V está normal (apuntando abajo… hacia el *o* abierto), es el *o*. Easy.

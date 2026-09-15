@@ -146,3 +146,67 @@
   border-radius: 6px;
   margin: 8px 0;
 }
+
+/* --- Ejercicio Tautología / Contradicción / Contingencia --- */
+.ge-boton-clasif {
+  background: #7e57c2;
+}
+
+.ge-tabla-expresion {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #4527a0;
+  background: #ede7f6;
+  border: 2px solid #b39ddb;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 6px 0;
+}
+
+.ge-tabla-valores {
+  margin: 10px 0;
+}
+
+.ge-tabla-fila {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ge-tabla-rotulo {
+  font-weight: 600;
+  color: #555;
+  margin-right: 6px;
+}
+
+.ge-tabla-chip {
+  display: inline-block;
+  min-width: 34px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.ge-tabla-chip.ge-v {
+  background: #c8e6c9;
+  color: #2e7d32;
+  border: 1px solid #81c784;
+}
+
+.ge-tabla-chip.ge-f {
+  background: #ffcdd2;
+  color: #b71c1c;
+  border: 1px solid #ef9a9a;
+}
+
+.ge-boton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+}
