@@ -192,6 +192,14 @@ La última columna **mezcla V y F** → **contingencia**. La mayoría de las fó
 
 > 🎮 **Ahora practica tú:** en el ejercicio de abajo, clasifica cada fórmula mirando su última columna de la tabla de verdad. El sistema te explica cada fallo.
 
+<div class="grafo-ejercicio" data-tipo="tablaverdad" data-proposiciones="p ∨ ¬p|*p:VF,¬p:FV,p∨¬p:VV;p ∧ ¬p|*p:VF,¬p:FV,p∧¬p:FF;p ∧ q|*p:VVFF,*q:VFVF,p∧q:VFFF;p → q|*p:VVFF,*q:VFVF,p→q:VFVV">
+
+#### Rellena la tabla de verdad
+
+Se muestra una proposición. Las columnas de **entrada** (p, q) ya vienen dadas; tú debes completar las columnas de las **subfórmulas y el resultado** haciendo clic en cada casilla para alternar **V / F**. Al pulsar **Comprobar**, el sistema califica celda por celda: ✅ marca las correctas y ❌ las incorrectas (deja el cursor sobre una roja para ver la solución).
+
+</div>
+
 <div class="grafo-ejercicio" data-tipo="tabla" data-formulas="p ∨ ¬p|V,V|Tautología;p ∧ ¬p|F,F|Contradicción;p ∧ q|V,F,F,F|Contingencia;p → q|V,F,V,V|Contingencia;(p → q) ∨ (q → p)|V,V,V,V|Tautología;p ∧ ¬q|F,V,F,F|Contingencia;p ↔ ¬p|F,F|Contradicción;(p ∨ q) ↔ (q ∨ p)|V,V,V,V|Tautología">
 
 #### Precisa la clasificación
@@ -365,6 +373,18 @@ flowchart LR
 > - $p \leftrightarrow q$: verdadero cuando **ambos coinciden** (V–V o F–F); falso cuando se llevan la contra (V–F o F–V).
 
 **Uso real:** la implicación modela reglas y contratos ("si pagas, hay envío gratis"); el bicondicional modela **definiciones exactas** ("un número es par **si y solo si** es divisible por 2") y comparaciones de igualdad en programación.
+
+<div class="grafo-ejercicio" data-tipo="circuito" data-circuitos="¬p|NOT:p;;p ∧ q|AND:p,q;;p → q|NOT:p;OR:s1,q;;¬(p ∧ q)|NAND:p,q|AND:p,q;NOT:s1;;(p ∧ q) ∨ r|AND:p,q;OR:s1,r;;p ⊕ q|XOR:p,q">
+
+#### Construye el circuito lógico en 3 pasos
+
+1. **Lee la proposición** objetivo (la que hay que transformar en circuito).
+2. **Elige compuertas** del panel (AND, OR, NOT, NAND, NOR, XOR): cada clic coloca una compuerta y la conecta a las entradas libres (o a la salida anterior).
+3. Cuando el sistema valide todas las compuertas, habrás convertido la proposición en un circuito equivalente. 💡 Usa la pista si te atascas.
+
+**Nota:** algunas proposiciones admiten más de una construcción válida (p. ej. $\neg(p \land q)$ se puede hacer con una NAND directa o con AND + NOT). ¡El sistema acepta ambas!
+
+</div>
 
 ### Cuantificadores
 

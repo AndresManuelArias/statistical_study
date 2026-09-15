@@ -155,6 +155,7 @@ Demostrar una afirmación es **convencer sin dejar dudas**, con reglas, no con o
 > Afirmación: "Si $n$ es par, entonces $n^2$ es par".
 > Como $n$ es par, $n = 2k$. Entonces $n^2 = (2k)^2 = 4k^2 = 2(2k^2)$, que es par. ✅
 
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py` o directamente en esta página web.

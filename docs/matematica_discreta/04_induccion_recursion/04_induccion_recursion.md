@@ -137,6 +137,7 @@ Cuando la definición de un objeto es recursiva (como los árboles o las listas)
 > [!tip] En la práctica
 > Cada vez que escribes una función sobre un árbol o una lista enlazada, estás haciendo inducción estructural: un caso para la base (lista vacía / hoja) y otro que combina el resto.
 
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py` o directamente en esta página web.

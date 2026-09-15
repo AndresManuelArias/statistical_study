@@ -149,6 +149,7 @@ flowchart LR
 > - Verifica que los pares forman un subgrupo de $(\mathbb{Z}, +)$ probando las 4 propiedades.
 > - Decide si $\{0, 2, 4\}$ es un grupo módulo 6 (pista: 2 tiene inverso? 2·? ≡ 1).
 
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py` o directamente en esta página web.

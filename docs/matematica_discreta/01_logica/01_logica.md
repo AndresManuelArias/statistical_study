@@ -19,13 +19,13 @@ Una **proposición** es una oración que **puede ser verdadera o falsa** (aunque
 
 ## Conectivos lógicos
 
-| Conectivo     | Símbolo               | Se lee             | Se cumple cuando…                   | Analogía                             |
-| ------------- | --------------------- | ------------------ | ----------------------------------- | ------------------------------------ |
-| Negación      | $\neg p$              | "no p"             | p es falsa                          | Interruptor apagado                  |
-| Conjunción    | $p \land q$           | "p y q"            | **ambos** verdaderos                | Lista de requisitos: necesitas TODOS |
-| Disyunción    | $p \lor q$            | "p o q"            | **al menos uno** verdadero          | Menú: puedes elegir uno u otro       |
-| Condicional   | $p \to q$             | "si p, entonces q" | falsa solo si p verdadera y q falsa | Promesa: "si estudias, apruebas"     |
-| Bicondicional | $p \leftrightarrow q$ | "p si y solo si q" | ambos iguales                       | Términos de un contrato              |
+| Conectivo | Símbolo | Se lee | Se cumple cuando… | Analogía |
+|-----------|---------|--------|-------------------|----------|
+| Negación | $\neg p$ | "no p" | p es falsa | Interruptor apagado |
+| Conjunción | $p \land q$ | "p y q" | **ambos** verdaderos | Lista de requisitos: necesitas TODOS |
+| Disyunción | $p \lor q$ | "p o q" | **al menos uno** verdadero | Menú: puedes elegir uno u otro |
+| Condicional | $p \to q$ | "si p, entonces q" | falsa solo si p verdadera y q falsa | Promesa: "si estudias, apruebas" |
+| Bicondicional | $p \leftrightarrow q$ | "p si y solo si q" | ambos iguales | Términos de un contrato |
 
 > [!tip] Truco de memoria (¡como tu Anotaciones.md!)
 > El **∧** ("y") parece una **V invertida**, y el **∨** ("o") es la V normal. **"La V invertida es el Y"** → la conjunción es el Y. Si la V está normal (apuntando abajo… hacia el *o* abierto), es el *o*. Easy.
@@ -41,6 +41,92 @@ Una **proposición** es una oración que **puede ser verdadera o falsa** (aunque
 
 > [!warning] El clásico error
 > $p \to q$ (condicional) **no significa causa**. "Si llueve, la calle se moja" es verdadera aunque hoy no llueva (si no llueve, no prometimos nada). Solo es falsa si **llueve y NO se moja**.
+
+## Tautología, contradicción y contingencia 🧭
+
+Cada fórmula lógica, al completar su tabla de verdad, queda en **una de tres cajas**. Mirar la **columna final** (el resultado) lo dice todo:
+
+| Tipo | La columna final... | Ejemplo clásico | Apodo |
+|------|---------------------|-----------------|-------|
+| **Tautología** | es **toda V** (verdadera pase lo que pase) | $p \lor \neg p$ | "siempre gana" 🏆 |
+| **Contradicción** | es **toda F** (falsa pase lo que pase) | $p \land \neg p$ | "siempre pierde" 💀 |
+| **Contingencia** | **mezcla V y F** (depende de los valores) | $p \land q$ | "a veces gana, a veces no" 🤷 |
+
+> [!tip] La regla del pulgar (sin hacer TODA la tabla)
+> Para clasificar una fórmula, solo necesitas **dos miradas**:
+> - ¿Hay **alguna** fila con F? → *no* es tautología.
+> - ¿Hay **alguna** fila con V? → *no* es contradicción.
+> - Si tiene ambas → es contingencia. ¡No necesitas rellenar 16 filas para darte cuenta!
+
+**1) Tautología: $p \lor \neg p$ (ley del tercero excluido)**
+
+"O llueve o no llueve" — siempre es cierto, no hay tercera opción.
+
+| $p$ | $\neg p$ | $p \lor \neg p$ |
+| --- | -------- | --------------- |
+| V   | F        | **V**           |
+| F   | V        | **V**           |
+
+La última columna es **V en todas las filas** → **tautología**. Son las "leyes" de la lógica: se cumplen siempre, como plantillas que nunca fallan.
+
+**2) Contradicción: $p \land \neg p$**
+
+"Está lloviendo y NO está lloviendo" — imposible en cualquier mundo.
+
+| $p$ | $\neg p$ | $p \land \neg p$ |
+| --- | -------- | ---------------- |
+| V   | F        | **F**            |
+| F   | V        | **F**            |
+
+La última columna es **F en todas las filas** → **contradicción**. En programación, una condición contradictoria es un *dead code*: el bloque nunca se ejecuta. En demostraciones, llegar a una contradicción es la señal de que la hipótesis era falsa (demostración por reducción al absurdo).
+
+**3) Contingencia: $p \land q$**
+
+"Dos requisitos a la vez": el resultado depende de los valores de entrada.
+
+| $p$ | $q$ | $p \land q$ |
+| --- | --- | ----------- |
+| V   | V   | **V**       |
+| V   | F   | **F**       |
+| F   | V   | **F**       |
+| F   | F   | **F**       |
+
+La última columna **mezcla V y F** → **contingencia**. La mayoría de las fórmulas "normales" (condicionales, AND, OR cuando dependen de sus entradas) son contingencias.
+
+> [!success] Truco: la fórmula $p \to q$ es contingencia
+> Mira su columna final: V, F, V, V → tiene V y F → **contingencia**. Solo las fórmulas "especiales" (como $p \lor \neg p$) se escapan de la contingencia.
+
+**Ejemplos extra para practicar:**
+
+| Fórmula | Última columna | Clasificación |
+|---------|----------------|---------------|
+| $(p \to q) \lor (q \to p)$ | V, V, V, V | **Tautología** |
+| $p \leftrightarrow \neg p$ | F, F | **Contradicción** |
+| $p \land \neg q$ | F, V, F, F | **Contingencia** |
+| $(p \lor q) \leftrightarrow (q \lor p)$ | V, V, V, V | **Tautología** (la OR conmuta) |
+
+> [!example] En el mundo real
+> - **Tautología** = una cláusula de contrato que no se puede romper ("el que firma, acepta los términos").
+> - **Contradicción** = un requisito imposible ("este software es 100% seguro y acepta cualquier contraseña").
+> - **Contingencia** = la condición típica de un `if`: depende de los datos del momento.
+
+> 🎮 **Ahora practica tú:** en el ejercicio de abajo, clasifica cada fórmula mirando su última columna de la tabla de verdad. El sistema te explica cada fallo.
+
+<div class="grafo-ejercicio" data-tipo="tablaverdad" data-proposiciones="p ∨ ¬p|*p:VF,¬p:FV,p∨¬p:VV;p ∧ ¬p|*p:VF,¬p:FV,p∧¬p:FF;p ∧ q|*p:VVFF,*q:VFVF,p∧q:VFFF;p → q|*p:VVFF,*q:VFVF,p→q:VFVV">
+
+### Rellena la tabla de verdad
+
+Se muestra una proposición. Las columnas de **entrada** (p, q) ya vienen dadas; tú debes completar las columnas de las **subfórmulas y el resultado** haciendo clic en cada casilla para alternar **V / F**. Al pulsar **Comprobar**, el sistema califica celda por celda: ✅ marca las correctas y ❌ las incorrectas (deja el cursor sobre una roja para ver la solución).
+
+</div>
+
+<div class="grafo-ejercicio" data-tipo="tabla" data-formulas="p ∨ ¬p|V,V|Tautología;p ∧ ¬p|F,F|Contradicción;p ∧ q|V,F,F,F|Contingencia;p → q|V,F,V,V|Contingencia;(p → q) ∨ (q → p)|V,V,V,V|Tautología;p ∧ ¬q|F,V,F,F|Contingencia;p ↔ ¬p|F,F|Contradicción;(p ∨ q) ↔ (q ∨ p)|V,V,V,V|Tautología">
+
+### Precisa la clasificación
+
+Se muestra una fórmula y los valores de su **última columna** (fila por fila). Haz clic en **Tautología**, **Contradicción** o **Contingencia** según corresponda. ¡Hay 3 tautologías, 2 contradicciones y 3 contingencias escondidas!
+
+</div>
 
 ## Circuitos lógicos (a partir de la tabla de verdad)
 
@@ -208,6 +294,18 @@ flowchart LR
 
 **Uso real:** la implicación modela reglas y contratos ("si pagas, hay envío gratis"); el bicondicional modela **definiciones exactas** ("un número es par **si y solo si** es divisible por 2") y comparaciones de igualdad en programación.
 
+<div class="grafo-ejercicio" data-tipo="circuito" data-circuitos="¬p|NOT:p;;p ∧ q|AND:p,q;;p → q|NOT:p;OR:s1,q;;¬(p ∧ q)|NAND:p,q|AND:p,q;NOT:s1;;(p ∧ q) ∨ r|AND:p,q;OR:s1,r;;p ⊕ q|XOR:p,q">
+
+### Construye el circuito lógico en 3 pasos
+
+1. **Lee la proposición** objetivo (la que hay que transformar en circuito).
+2. **Elige compuertas** del panel (AND, OR, NOT, NAND, NOR, XOR): cada clic coloca una compuerta y la conecta a las entradas libres (o a la salida anterior).
+3. Cuando el sistema valide todas las compuertas, habrás convertido la proposición en un circuito equivalente. 💡 Usa la pista si te atascas.
+
+**Nota:** algunas proposiciones admiten más de una construcción válida (p. ej. $\neg(p \land q)$ se puede hacer con una NAND directa o con AND + NOT). ¡El sistema acepta ambas!
+
+</div>
+
 ## Cuantificadores
 
 - **Universal** $\forall$: "para todo". "$\forall x \in \mathbb{N},\ x \geq 0$" → todos los naturales son ≥ 0.
@@ -223,6 +321,7 @@ $$
 
 > [!example] Para practicar
 > Escribe en símbolos: "No todos los estudiantes llegaron temprano". Pista: niégale el $\forall$ y verás aparecer un $\exists$ con negación.
+
 
 ## ✅ Evaluación
 

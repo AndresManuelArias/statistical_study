@@ -1272,6 +1272,7 @@ Haz **clic sobre las aristas** para construir un camino desde s hasta t usando t
 
 </div>
 
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py` o directamente en esta página web.

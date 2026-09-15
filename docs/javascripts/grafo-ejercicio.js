@@ -154,6 +154,7 @@
     if (tipo === "flujo") { crearEjercicioFlujo(contenedor); return; }
     if (tipo === "tabla") { crearEjercicioTabla(contenedor); return; }
     if (tipo === "tablaverdad") { crearEjercicioTablaVerdad(contenedor); return; }
+    if (tipo === "circuito") { crearEjercicioCircuito(contenedor); return; }
     var nodos = parseNodos(contenedor.getAttribute("data-nodos"));
     var matriz = parseMatriz(contenedor.getAttribute("data-matriz"));
     if (!nodos.length || !matriz.length) return;
@@ -2009,6 +2010,257 @@
     btnComprobar.addEventListener("click", comprobar);
     btnReiniciar.addEventListener("click", function () { indice = 0; mostrar(); });
     mostrar();
+  }
+
+
+
+  /* ---------- ejercicio interactivo: convertir proposición en circuito ----------
+   * data-circuitos="¬p|NOT:p;;p ∧ q|AND:p,q;;p → q|NOT:p;OR:s1,q;;¬(p ∧ q)|NAND:p,q|AND:p,q;NOT:s1;;..."
+   *   - ";;" separa circuitos
+   *   - "|" separa variantes del mismo circuito (soluciones alternativas)
+   *   - ";" separa pasos de una variante; cada paso es COMPUERTA:entradas
+   *   - "sN" es la salida del paso N (alimenta compuertas siguientes)
+   * El usuario elige compuertas del panel; el sistema valida cada paso.
+   */
+  function crearEjercicioCircuito(contenedor) {
+    var CATALOGO = {
+      NOT:  { nombre: "NOT",  simbolo: "\u00ac", entradas: 1, color: "#e57373" },
+      AND:  { nombre: "AND",  simbolo: "\u2227", entradas: 2, color: "#7986cb" },
+      OR:   { nombre: "OR",   simbolo: "\u2228", entradas: 2, color: "#4db6ac" },
+      NAND: { nombre: "NAND", simbolo: "\u22bc", entradas: 2, color: "#9575cd" },
+      NOR:  { nombre: "NOR",  simbolo: "\u22bd", entradas: 2, color: "#f06292" },
+      XOR:  { nombre: "XOR",  simbolo: "\u2295", entradas: 2, color: "#ffb74d" }
+    };
+
+    var circuitos = (contenedor.getAttribute("data-circuitos") || "").split(";;")
+      .map(function (seg) {
+        var partes = seg.split("|");
+        var variantes = partes.slice(1).map(function (v) {
+          return v.split(";").filter(function (s) { return s; }).map(function (pasoS) {
+            var m = /^([A-Z]+):([a-z0-9,]+)$/.exec(pasoS.trim());
+            return m ? { tipo: m[1], entradas: m[2].split(",") } : null;
+          }).filter(function (x) { return x; });
+        }).filter(function (v) { return v.length; });
+        return { nombre: (partes[0] || "").trim(), variantes: variantes };
+      })
+      .filter(function (c) { return c.nombre && c.variantes.length; });
+    if (!circuitos.length) return;
+
+    var indice = 0;
+    var pasos = [];      // pasos elegidos: {tipo, entradasReales}
+    var activas = [];    // variantes que coinciden con el prefijo actual
+
+    // --- UI ---
+    var titulo = document.createElement("p");
+    titulo.className = "ge-estado";
+    contenedor.appendChild(titulo);
+
+    var cajaObjetivo = document.createElement("div");
+    cajaObjetivo.className = "ge-cir-objetivo";
+    contenedor.appendChild(cajaObjetivo);
+
+    var cajaEntradas = document.createElement("div");
+    cajaEntradas.className = "ge-cir-fila ge-cir-entradas";
+    contenedor.appendChild(cajaEntradas);
+
+    var cajaCircuit = document.createElement("div");
+    cajaCircuit.className = "ge-cir-fila ge-cir-construccion";
+    contenedor.appendChild(cajaCircuit);
+
+    var cajaPanel = document.createElement("div");
+    cajaPanel.className = "ge-botones ge-cir-panel";
+    contenedor.appendChild(cajaPanel);
+
+    var cajaBotones = document.createElement("div");
+    cajaBotones.className = "ge-botones";
+    var btnAyuda = document.createElement("button");
+    btnAyuda.type = "button";
+    btnAyuda.className = "ge-boton ge-boton-ayuda";
+    btnAyuda.textContent = "💡 Ayuda";
+    var btnReiniciar = document.createElement("button");
+    btnReiniciar.type = "button";
+    btnReiniciar.className = "ge-boton ge-boton-reiniciar";
+    btnReiniciar.textContent = "🔄 Reiniciar";
+    cajaBotones.appendChild(btnAyuda);
+    cajaBotones.appendChild(btnReiniciar);
+    contenedor.appendChild(cajaBotones);
+
+    var resultado = document.createElement("div");
+    resultado.className = "ge-resultado";
+    contenedor.appendChild(resultado);
+
+    function letrasOriginales() {
+      var set = [];
+      circuitos[indice].variantes.forEach(function (v) {
+        v.forEach(function (paso) {
+          paso.entradas.forEach(function (e) {
+            if (/^[a-z]$/.test(e) && set.indexOf(e) === -1) set.push(e);
+          });
+        });
+      });
+      return set.sort();
+    }
+
+    function entradasOriginalesDisponibles() {
+      var usadas = {};
+      pasos.forEach(function (paso) {
+        paso.entradasReales.forEach(function (e) {
+          if (/^[a-z]$/.test(e)) usadas[e] = true;
+        });
+      });
+      return letrasOriginales().filter(function (l) { return !usadas[l]; });
+    }
+
+    function resolverEntradas(compuerta) {
+      var n = CATALOGO[compuerta].entradas;
+      var res = [];
+      var orig = entradasOriginalesDisponibles();
+      orig.forEach(function (o) { if (res.length < n) res.push(o); });
+      for (var i = 1; i <= pasos.length + 1 && res.length < n; i++) {
+        var sId = "s" + i;
+        if (pasos.length >= i) res.push(sId);
+      }
+      return res;
+    }
+
+    function compuertasValidas() {
+      var set = [];
+      activas.forEach(function (v) {
+        var t = v[pasos.length].tipo;
+        if (set.indexOf(t) === -1) set.push(t);
+      });
+      return set;
+    }
+
+    function dibujar() {
+      var c = circuitos[indice];
+      // objetivo
+      cajaObjetivo.innerHTML = "";
+      var obj = document.createElement("div");
+      obj.className = "ge-tabla-expresion";
+      obj.textContent = "Objetivo: " + c.nombre;
+      cajaObjetivo.appendChild(obj);
+      var sub = document.createElement("div");
+      sub.className = "ge-cir-sub";
+      sub.textContent = "Elige las compuertas del panel para construir el circuito equivalente.";
+      cajaObjetivo.appendChild(sub);
+
+      // entradas
+      cajaEntradas.innerHTML = "";
+      var etq = document.createElement("span");
+      etq.className = "ge-cir-rotulo";
+      etq.textContent = "Entradas:";
+      cajaEntradas.appendChild(etq);
+      letrasOriginales().forEach(function (l) {
+        var b = document.createElement("span");
+        b.className = "ge-cir-bloque ge-cir-entrada";
+        b.textContent = l;
+        b.setAttribute("title", "Entrada " + l);
+        cajaEntradas.appendChild(b);
+        var fl = document.createElement("span");
+        fl.className = "ge-cir-flecha";
+        fl.textContent = "\u2192";
+        cajaEntradas.appendChild(fl);
+      });
+
+      // construcción
+      cajaCircuit.innerHTML = "";
+      pasos.forEach(function (paso, i) {
+        var bloq = document.createElement("div");
+        var cat = CATALOGO[paso.tipo];
+        bloq.className = "ge-cir-compuerta";
+        bloq.style.background = cat.color;
+        bloq.innerHTML = "<span class='ge-cir-cat-nombre'>" + cat.nombre + "</span>" +
+          "<span class='ge-cir-cat-simbolo'>" + cat.simbolo + "</span>" +
+          "<span class='ge-cir-cat-entradas'>ent: " + paso.entradasReales.join(",") + "</span>";
+        cajaCircuit.appendChild(bloq);
+        var sId = "s" + (i + 1);
+        var fl = document.createElement("span");
+        fl.className = "ge-cir-flecha";
+        fl.textContent = "\u2192 " + sId;
+        cajaCircuit.appendChild(fl);
+      });
+      if (completo()) {
+        var fin = document.createElement("span");
+        fin.className = "ge-cir-fin";
+        fin.textContent = "Salida: " + c.nombre;
+        cajaCircuit.appendChild(fin);
+      }
+    }
+
+    function completo() {
+      return activas.some(function (v) { return v.length === pasos.length; });
+    }
+
+    function elegirCompuerta(tipo) {
+      if (completo()) return;
+      var validas = compuertasValidas();
+      if (validas.indexOf(tipo) === -1) {
+        resultado.className = "ge-resultado ge-error";
+        resultado.textContent = "❌ " + CATALOGO[tipo].nombre + " no encaja aquí. " +
+          pista(validas);
+        return;
+      }
+      var entradas = resolverEntradas(tipo);
+      pasos.push({ tipo: tipo, entradasReales: entradas });
+      activas = activas.filter(function (v) { return v[pasos.length - 1].tipo === tipo; });
+      dibujar();
+      if (completo()) {
+        var c = circuitos[indice];
+        resultado.className = "ge-resultado ge-ok";
+        if (indice + 1 >= circuitos.length) {
+          resultado.innerHTML = "🎉 <strong>¡Circuito construido!</strong> " + c.nombre +
+            " terminaste las " + circuitos.length + " proposiciones. Las compuertas que usaste son las que ves en el circuito.";
+        } else {
+          resultado.innerHTML = "✅ <strong>¡Circuito correcto!</strong> " + c.nombre +
+            " se construyó con " + pasos.length + (pasos.length === 1 ? " compuerta." : " compuertas.") +
+            " Siguiente proposición…";
+        }
+        btnAyuda.disabled = true;
+        if (indice + 1 < circuitos.length) {
+          setTimeout(function () { indice++; pasos = []; activas = circuitos[indice].variantes.slice(); dibujar(); resultado.className = "ge-resultado"; resultado.textContent = ""; btnAyuda.disabled = false; }, 1400);
+        }
+      } else {
+        resultado.className = "ge-resultado ge-ok";
+        resultado.textContent = "✅ ¡Bien! " + CATALOGO[tipo].nombre + " agregada. Sigue eligiendo compuertas.";
+      }
+    }
+
+    function pista(validas) {
+      if (!validas.length) return "Revisa el orden de la proposición.";
+      var lista = validas.map(function (t) { return CATALOGO[t].nombre + " (" + CATALOGO[t].simbolo + ")"; }).join(" o ");
+      return "La siguiente compuerta debería ser " + lista + ".";
+    }
+
+    function mostrarAyuda() {
+      var validas = compuertasValidas();
+      resultado.className = "ge-resultado";
+      if (completo()) {
+        resultado.textContent = "¡Ya terminaste este circuito! Pulsa Reiniciar o espera el siguiente.";
+        return;
+      }
+      resultado.textContent = "💡 " + pista(validas);
+    }
+
+    // panel de compuertas
+    Object.keys(CATALOGO).forEach(function (t) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ge-boton ge-cir-compuerta-boton";
+      b.setAttribute("data-compuerta", t);
+      b.innerHTML = CATALOGO[t].nombre + " (" + CATALOGO[t].simbolo + ")";
+      b.addEventListener("click", function () { elegirCompuerta(t); });
+      cajaPanel.appendChild(b);
+    });
+    btnAyuda.addEventListener("click", mostrarAyuda);
+    btnReiniciar.addEventListener("click", function () {
+      indice = 0; pasos = []; activas = circuitos[indice].variantes.slice(); dibujar();
+      resultado.className = "ge-resultado"; resultado.textContent = ""; btnAyuda.disabled = false;
+    });
+
+    // start
+    activas = circuitos[indice].variantes.slice();
+    dibujar();
   }
 
 

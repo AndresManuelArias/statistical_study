@@ -167,6 +167,7 @@ RSA cifra mensajes con dos claves (pública y privada). Pasos con números peque
 > - Halla el inverso de 5 módulo 12 (pista: $\text{MCD}(5,12)=1$).
 > - Cifra el mensaje $M=5$ con RSA usando $p=3, q=11, e=3$ (hazlo a mano, ¡funciona!).
 
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py` o directamente en esta página web.

@@ -162,6 +162,7 @@ flowchart LR
 > - Escribe la regex para un correo simplificado: `usuario@dominio.ext`.
 > - Explica por qué `aⁿbⁿ` **no** se puede reconocer con un autómata finito.
 
+
 ## ✅ Evaluación
 
 A continuación se presentan las preguntas de opción múltiple sobre el tema. Se responden en la aplicación `evaluador.py` o directamente en esta página web.
