@@ -63,13 +63,13 @@ tags:
 - **Demostraciones:** directa, contrapositiva, contradicción (reducción al absurdo) y casos.
 
 ### Fórmulas imprescindibles
-| Concepto | Fórmula |
-|----------|---------|
-| Cardinalidad del potencia | $\lvert\mathcal{P}(A)\rvert = 2^{n}$ |
-| Cardinalidad del producto | $\lvertA \times B\rvert = \lvertA\rvert\cdot\lvertB\rvert$ |
-| Inclusión-exclusión (2) | $\lvertA \cup B\rvert = \lvertA\rvert + \lvertB\rvert - \lvertA \cap B\rvert$ |
-| De Morgan (conjuntos) | $(A \cup B)^c = A^c \cap B^c$ |
-| Diferencia simétrica | $A \triangle B = (A \setminus B) \cup (B \setminus A)$ |
+| Concepto                  | Fórmula                                                                       |
+| ------------------------- | ----------------------------------------------------------------------------- |
+| Cardinalidad del potencia | $\vert\mathcal{P}(A)\vert = 2^{n}$                                          |
+| Cardinalidad del producto | $\vert A \times B\vert = \vert A\vert\cdot\vert B\vert$                    |
+| Inclusión-exclusión (2)   | $\vert A \cup B\vert = \vert A\vert + \vert B\vert - \vert A \cap B\vert$ |
+| De Morgan (conjuntos)     | $(A \cup B)^c = A^c \cap B^c$                                                 |
+| Diferencia simétrica      | $A \triangle B = (A \setminus B) \cup (B \setminus A)$                        |
 
 ### Errores que cuestan puntos
 - ❌ Olvidar restar la intersección al contar una unión.
@@ -94,12 +94,12 @@ tags:
 - Solo las **biyectivas** tienen inversa.
 
 ### Fórmulas imprescindibles
-| Concepto | Fórmula |
-|----------|---------|
-| Nº de funciones $A \to B$ | $n^{m}$ (con $\lvertA\rvert=m$, $\lvertB\rvert=n$) |
-| Nº de funciones inyectivas | $n(n-1)\cdots(n-m+1)$ |
-| Nº de biyecciones | $n!$ (solo si $m=n$) |
-| Composición | $(g \circ f)(x) = g(f(x))$ |
+| Concepto                   | Fórmula                                            |
+| -------------------------- | -------------------------------------------------- |
+| Nº de funciones $A \to B$  | $n^{m}$ (con $\vert A\vert=m$, $\vert B\vert=n$) |
+| Nº de funciones inyectivas | $n(n-1)\cdots(n-m+1)$                              |
+| Nº de biyecciones          | $n!$ (solo si $m=n$)                               |
+| Composición                | $(g \circ f)(x) = g(f(x))$                         |
 
 ### Errores que cuestan puntos
 - ❌ Creer que simétrica y antisimétrica son opuestas: "=" es **ambas**.
@@ -152,14 +152,14 @@ tags:
 - **Probabilidad discreta:** $P = \dfrac{\text{favorables}}{\text{posibles}}$ (resultados equiprobables).
 
 ### Fórmulas imprescindibles
-| Concepto | Fórmula |
-|----------|---------|
-| Permutaciones $P(n,k)$ | $\dfrac{n!}{(n-k)!}$ |
-| Combinaciones $\binom{n}{k}$ | $\dfrac{n!}{k!(n-k)!}$ |
-| Con repetición | $n^{k}$ |
-| Identidad de Pascal | $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$ |
-| Binomio de Newton | $(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^{k}$ |
-| Inclusión-exclusión (3) | $\lvertA\cup B\cup C\rvert = \sum\lvertA_i\rvert - \sum\lvertA_i\cap A_j\rvert + \lvertA\cap B\cap C\rvert$ |
+| Concepto                     | Fórmula                                                                                                     |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Permutaciones $P(n,k)$       | $\dfrac{n!}{(n-k)!}$                                                                                        |
+| Combinaciones $\binom{n}{k}$ | $\dfrac{n!}{k!(n-k)!}$                                                                                      |
+| Con repetición               | $n^{k}$                                                                                                     |
+| Identidad de Pascal          | $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$                                                            |
+| Binomio de Newton            | $(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^{k}$                                                          |
+| Inclusión-exclusión (3)      | $\vert A\cup B\cup C\vert = \sum\vert A_i\vert - \sum\vert A_i\cap A_j\vert + \vert A\cap B\cap C\vert$ |
 
 ### Errores que cuestan puntos
 - ❌ Usar permutaciones cuando el orden no importa (o al revés).
@@ -217,15 +217,15 @@ tags:
 - **Algoritmos clave:** Prim (crece desde una semilla), Kruskal (aristas baratas + union-find), Dijkstra (ruta más corta), Floyd-Warshall (todos los pares), flujo máximo (Ford-Fulkerson).
 
 ### Fórmulas imprescindibles
-| Concepto | Fórmula |
-|----------|---------|
-| Aristas de $K_n$ | $\binom{n}{2} = \dfrac{n(n-1)}{2}$ |
-| Suma de grados | $\sum \deg(v) = 2\lvertE\rvert$ |
-| Árbol con $n$ vértices | $\lvertE\rvert = n-1$ |
-| MST (Prim/Kruskal) | costo del ejemplo = **39** (grafo A–G) |
-| Hoja del árbol binario completo | $\text{hojas} = \text{internos} + 1$ |
-| Dijkstra | rutas más cortas, peses ≥ 0, $O((V+E)\log V)$ |
-| Teorema del flujo | **flujo máximo = corte mínimo** (Ford-Fulkerson) |
+| Concepto                        | Fórmula                                          |
+| ------------------------------- | ------------------------------------------------ |
+| Aristas de $K_n$                | $\binom{n}{2} = \dfrac{n(n-1)}{2}$               |
+| Suma de grados                  | $\sum \deg(v) = 2\vert E\vert$                  |
+| Árbol con $n$ vértices          | $\vert E\vert = n-1$                            |
+| MST (Prim/Kruskal)              | costo del ejemplo = **39** (grafo A–G)           |
+| Hoja del árbol binario completo | $\text{hojas} = \text{internos} + 1$             |
+| Dijkstra                        | rutas más cortas, peses ≥ 0, $O((V+E)\log V)$    |
+| Teorema del flujo               | **flujo máximo = corte mínimo** (Ford-Fulkerson) |
 
 ### Errores que cuestan puntos
 - ❌ Llamar "árbol" a cualquier grafo: un árbol **no tiene ciclos**.
@@ -309,8 +309,8 @@ Maratón de 10 minutos — si algo falla, vuelve a esa unidad.
 |---|----------|-------------------------------|
 | 1 | Única fila falsa de $p \to q$ | $V \to F$ |
 | 2 | Tautología / contradicción / contingencia | toda V / toda F / mezcla |
-| 3 | $\lvert\mathcal{P}(A)\rvert$ con $\lvertA\rvert=n$ | $2^n$ |
-| 4 | Inclusión-exclusión 2 conjuntos | $\lvertA\rvert+\lvertB\rvert-\lvertA\cap B\rvert$ |
+| 3 | $\vert\mathcal{P}(A)\vert$ con $\vert A\vert=n$ | $2^n$ |
+| 4 | Inclusión-exclusión 2 conjuntos | $\vert A\vert+\vert B\vert-\vert A\cap B\vert$ |
 | 5 | Equivalencia vs. orden parcial | R+S+T vs. R+A+T (la 2ª con antisimétrica) |
 | 6 | Fórmula de permutaciones / combinaciones | $n!/(n-k)!$ / $n!/(k!(n-k)!)$ |
 | 7 | Hanoi con $n$ discos | $2^n - 1$ |
@@ -318,7 +318,7 @@ Maratón de 10 minutos — si algo falla, vuelve a esa unidad.
 | 9 | MCD con Euclides | último residuo no nulo |
 | 10 | $\text{MCD}(a,b)\cdot\text{mcm}(a,b)$ | $a\cdot b$ |
 | 11 | Fractura de RSA | factorizar $n=pq$ |
-| 12 | Suma de grados de un grafo | $2\lvertE\rvert$ |
+| 12 | Suma de grados de un grafo | $2\vert E\vert$ |
 | 13 | Árbol con $n$ vértices | $n-1$ aristas, sin ciclos, un único camino |
 | 14 | Euler vs. Hamilton | todas las aristas vs. todos los vértices |
 | 15 | Flujo máximo | = corte mínimo |
