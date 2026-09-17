@@ -13,6 +13,9 @@ markdown_extensions:
   - obsidian_callouts
   - admonition
   - pymdownx.details
+  - pymdownx.tasklist:      # <-- Listas de tareas [ ] con checkbox
+      custom_checkbox: true
+      clickable_checkbox: true
   - footnotes          # <-- Nueva extensión para notas al pie
   - attr_list
   - md_in_html
