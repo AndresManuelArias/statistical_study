@@ -63,13 +63,13 @@ tags:
 - **Demostraciones:** directa, contrapositiva, contradicción (reducción al absurdo) y casos.
 
 ### Fórmulas imprescindibles
-| Concepto                  | Fórmula                                                                       |
-| ------------------------- | ----------------------------------------------------------------------------- |
-| Cardinalidad del potencia | $\vert\mathcal{P}(A)\vert = 2^{n}$                                          |
-| Cardinalidad del producto | $\vert A \times B\vert = \vert A\vert\cdot\vert B\vert$                    |
+| Concepto                  | Fórmula                                                                   |
+| ------------------------- | ------------------------------------------------------------------------- |
+| Cardinalidad del potencia | $\vert\mathcal{P}(A)\vert = 2^{n}$                                        |
+| Cardinalidad del producto | $\vert A \times B\vert = \vert A\vert\cdot\vert B\vert$                   |
 | Inclusión-exclusión (2)   | $\vert A \cup B\vert = \vert A\vert + \vert B\vert - \vert A \cap B\vert$ |
-| De Morgan (conjuntos)     | $(A \cup B)^c = A^c \cap B^c$                                                 |
-| Diferencia simétrica      | $A \triangle B = (A \setminus B) \cup (B \setminus A)$                        |
+| De Morgan (conjuntos)     | $(A \cup B)^c = A^c \cap B^c$                                             |
+| Diferencia simétrica      | $A \triangle B = (A \setminus B) \cup (B \setminus A)$                    |
 
 ### Errores que cuestan puntos
 - ❌ Olvidar restar la intersección al contar una unión.
