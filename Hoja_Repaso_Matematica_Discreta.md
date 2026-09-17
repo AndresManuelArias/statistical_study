@@ -1,5 +1,7 @@
 ---
-titulo: Hoja de Repaso para la Evaluación
+aliases:
+  - Hoja de Repaso Evaluación
+  - Repaso Matemática Discreta
 tipo: plantilla-estudio
 tags:
   - matematica-discreta
@@ -12,8 +14,8 @@ tags:
 > [!tip] Cómo usar esta plantilla
 > 1. **Antes de estudiar:** léela entera una vez (15 min) para tener el mapa completo en la cabeza.
 > 2. **Al estudiar cada unidad:** cubre la columna de fórmulas con la mano e intenta recordarlas; marca el ✅ de "Autochequeo" solo si puedes explicarlo en voz alta (técnica Feynman).
-> 3. **La víspera:** usa solo la sección [🚀 Repaso exprés de última hora](#repaso-expres-de-ultima-hora).
-> 4. **Anota tus dudas** al final en [📝 Mis apuntes y dudas](#mis-apuntes-y-dudas). Si no puedes llenar una casilla, ese es tu tema a repasar.
+> 3. **La víspera:** usa solo la sección [[#🚀 Repaso exprés de última hora]].
+> 4. **Anota tus dudas** al final en [[#📝 Mis apuntes y dudas]]. Si no puedes llenar una casilla, ese es tu tema a repasar.
 
 > [!warning] La regla #1 en un examen
 > **Pregunta: ¿el orden importa?** Sí → permutación / digrafo. No → combinación / grafo simple.
@@ -343,6 +345,21 @@ Maratón de 10 minutos — si algo falla, vuelve a esa unidad.
 > | ___ | ______________ | ____________________ | ☐ |
 > | ___ | ______________ | ____________________ | ☐ |
 > | ___ | ______________ | ____________________ | ☐ |
+
+---
+
+## 🔗 Temas relacionados
+
+- [[guia_didactica|📖 Guía didáctica completa]]
+- [[01_logica|🔤 Unidad 1 — Lógica]]
+- [[02_conjuntos|🧩 Unidad 2 — Conjuntos]]
+- [[03_relaciones_funciones|🔗 Unidad 3 — Relaciones y funciones]]
+- [[04_induccion_recursion|🪜 Unidad 4 — Inducción y recursión]]
+- [[05_combinatoria|🧮 Unidad 5 — Combinatoria]]
+- [[06_teoria_numeros|🔢 Unidad 6 — Teoría de números]]
+- [[07_grafos|🕸️ Unidad 7 — Grafos y árboles]]
+- [[08_estructuras_algebraicas|🧬 Unidad 8 — Estructuras algebraicas]]
+- [[09_automatas|🤖 Unidad 9 — Autómatas y lenguajes]]
 
 ---
 
